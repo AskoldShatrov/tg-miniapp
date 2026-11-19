@@ -167,6 +167,17 @@
   .stat span{font:600 9px/1 var(--fm);letter-spacing:.6px;color:var(--overlay1)}
   .s-pass b{color:var(--green)} .s-fail b{color:var(--maroon)} .s-open b{color:var(--yellow)}
 
+  /* Что на самом деле означает каждый статус — чтобы OPEN не выглядело как «ничего не делается» */
+  .legend{
+    display:flex;flex-wrap:wrap;gap:6px 12px;margin:-4px 0 12px;padding:9px 10px;
+    border-radius:var(--radius-sm);background:var(--surface0);border:1px solid var(--surface1);
+    font:600 9.5px/1.4 var(--fm);color:var(--subtext0);
+  }
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .legend i{width:7px;height:7px;border-radius:2px;display:inline-block;flex:none}
+  .lg-pass{background:var(--green)} .lg-fail{background:var(--maroon)}
+  .lg-open{background:var(--yellow)} .lg-quest{background:var(--blue)}
+
   .tree{font:12px/1.4 var(--fm)}
   .tnode{margin:0}
   .trow{
@@ -298,9 +309,15 @@
         <span id="stripTime" style="margin-left:auto;color:var(--overlay0)">…</span>
       </div>
       <div class="summary">
-        <div class="stat s-pass"><b id="cntPass">0</b><span>PASS</span></div>
-        <div class="stat s-fail"><b id="cntFail">0</b><span>FAIL</span></div>
-        <div class="stat s-open"><b id="cntOpen">0</b><span>OPEN</span></div>
+        <div class="stat s-pass"><b id="cntPass">0</b><span>PASS · готово</span></div>
+        <div class="stat s-fail"><b id="cntFail">0</b><span>FAIL · провалено</span></div>
+        <div class="stat s-open"><b id="cntOpen">0</b><span>OPEN · в разработке</span></div>
+      </div>
+      <div class="legend" title="Расшифровка статусов">
+        <span><i class="lg-pass"></i>PASS — готово и проверено</span>
+        <span><i class="lg-fail"></i>FAIL — не прошло проверку</span>
+        <span><i class="lg-open"></i>OPEN — в разработке / ждёт решения</span>
+        <span><i class="lg-quest"></i>QUESTION — нужно уточнение</span>
       </div>
       <div class="tree" id="tree"></div>
       <div class="tree-foot">нажми на строку, чтобы раскрыть / свернуть</div>
@@ -336,13 +353,13 @@
 const DEMO = {
   meta: { demo: true, label: "DEMO · встроенная заглушка", session: "miniapp-demo" },
   cards: [
-    { id:"Q-001", status:"OPEN", statusLabel:"ОТКРЫТ", title:"Как не потерять вопрос в потоке задач?",
+    { id:"Q-001", status:"OPEN", statusLabel:"В РАБОТЕ", title:"Как не потерять вопрос в потоке задач?",
       body:"Пользователь присылает длинные голосовые и плотные тексты. Нужна короткая карточка с формулировкой, статусом и быстрым действием — вместо простыни сообщений.",
       tags:["эргономика","входящие","приоритет"] },
     { id:"Q-002", status:"QUESTION", statusLabel:"УТОЧНИТЬ", title:"Что считается «готовым» шагом?",
       body:"В дереве задач статусы PASS/FAIL/OPEN, но критерии перехода не всегда видны. Уточнить порог, прежде чем переводить задачу в работу.",
       tags:["гейты","критерии","progress.json"] },
-    { id:"Q-003", status:"OPEN", statusLabel:"ОТКРЫТ", title:"Показать дерево текущих задач целиком?",
+    { id:"Q-003", status:"OPEN", statusLabel:"В РАБОТЕ", title:"Показать дерево текущих задач целиком?",
       body:"Хочется видеть T1..T11 компактно, с вложенными подзадачами и суммарными счётчиками, не открывая отдельный отчёт.",
       tags:["дерево","дашборд","T1—T11"] }
   ],
