@@ -54,11 +54,32 @@
   }
   .htitle{font-size:15px;font-weight:700;letter-spacing:.2px}
   .hsub{font-size:11px;color:var(--overlay2);margin-top:2px;font-family:var(--fm)}
+  .hbadges{margin-left:auto;display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
   .hbadge{
-    margin-left:auto;font:600 10px/1 var(--fm); color:var(--yellow);
+    font:600 10px/1 var(--fm); color:var(--yellow);
     border:1px solid rgba(249,226,175,.35); border-radius:999px; padding:6px 9px;
-    background:rgba(249,226,175,.07); letter-spacing:.5px;
+    background:rgba(249,226,175,.07); letter-spacing:.5px; white-space:nowrap;
   }
+  /* живой счётчик агентов */
+  .agentbadge{
+    font:700 10px/1 var(--fm); color:var(--green);
+    border:1px solid rgba(166,227,161,.4); border-radius:999px; padding:6px 9px;
+    background:rgba(166,227,161,.09); letter-spacing:.3px; white-space:nowrap;
+    transition:.2s ease;
+  }
+  .agentbadge.idle{color:var(--overlay1);border-color:var(--surface1);background:transparent}
+  .agentbadge.game{color:var(--yellow);border-color:rgba(249,226,175,.4);background:rgba(249,226,175,.09)}
+  .gamebadge{
+    font:700 10px/1 var(--fm);color:var(--peach);border:1px solid rgba(250,179,135,.4);
+    border-radius:999px;padding:6px 9px;background:rgba(250,179,135,.09);white-space:nowrap;
+  }
+  .live-strip{
+    display:flex;align-items:center;gap:8px;margin:-4px 0 12px;padding:8px 10px;
+    border-radius:var(--radius-sm);background:rgba(166,227,161,.06);
+    border:1px solid rgba(166,227,161,.2);font:600 10.5px/1.3 var(--fm);color:var(--subtext0);
+  }
+  .live-strip b{color:var(--green);font-size:12px}
+  .live-strip .dot-live{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(166,227,161,.15)}
 
   /* ---------- tabs ---------- */
   nav.tabs{
@@ -225,7 +246,11 @@
       <div class="htitle">Карточки и задачи</div>
       <div class="hsub" id="hsub">сессия · miniapp-demo</div>
     </div>
-    <div class="hbadge" title="Демо-данные, встроенные в файл">DEMO</div>
+    <div class="hbadges">
+      <div class="agentbadge" id="agentBadge" title="работающих агентов">🤖 …</div>
+      <div class="gamebadge" id="gameBadge" style="display:none" title="режим игры">🎮 ИГРА</div>
+      <div class="hbadge" title="Демо-данные, встроенные в файл">DEMO</div>
+    </div>
   </header>
 
   <nav class="tabs" id="tabs">
@@ -263,6 +288,11 @@
 
     <section class="screen" id="screen-tree">
       <div class="eyebrow">Дерево задач · T1—T11</div>
+      <div class="live-strip" id="liveStrip">
+        <span class="dot-live"></span>
+        <span>агентов сейчас <b id="stripAgents">…</b> · воркеров <b id="stripWorkers">…</b></span>
+        <span id="stripTime" style="margin-left:auto;color:var(--overlay0)">…</span>
+      </div>
       <div class="summary">
         <div class="stat s-pass"><b id="cntPass">0</b><span>PASS</span></div>
         <div class="stat s-fail"><b id="cntFail">0</b><span>FAIL</span></div>
@@ -463,6 +493,34 @@ if (tg) {
 } else {
   $("#hsub").textContent = "сессия · " + DEMO.meta.session;
 }
+
+/* ---------- живой статус агентов ----------
+   status.json лежит на том же домене (GitHub Pages шлёт ACAO: *),
+   поэтому обычный fetch работает и в WebView Telegram. */
+async function refreshAgentStatus(){
+  try{
+    const r = await fetch("status.json?ts=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) return;
+    const s = await r.json();
+    const n = Number(s.agents)||0;
+    const word = n===1 ? "агент" : (n>=2 && n<=4 ? "агента" : "агентов");
+    const badge = $("#agentBadge");
+    if(badge){
+      badge.textContent = `🤖 ${n} ${word}`;
+      badge.title = `${s.workers||0} воркеров · обновлено ${s.ts_human||"—"}` + (s.game_mode?" · во время игры":"");
+      badge.classList.toggle("idle", n===0);
+      badge.classList.toggle("game", !!s.game_mode);
+    }
+    const gb = $("#gameBadge");
+    if(gb){ gb.style.display = s.game_mode ? "" : "none"; gb.title = s.game_reason||"режим игры"; }
+    const sa=$("#stripAgents"), sw=$("#stripWorkers"), st=$("#stripTime");
+    if(sa) sa.textContent = n;
+    if(sw) sw.textContent = (s.workers||0);
+    if(st) st.textContent = ((s.ts_human||"").slice(11,16) || "—");
+  }catch(e){ /* офлайн или 404 — оставляем последнее известное значение */ }
+}
+refreshAgentStatus();
+setInterval(refreshAgentStatus, 30000);
 
 function sendToAgent(){
   const payload = {
