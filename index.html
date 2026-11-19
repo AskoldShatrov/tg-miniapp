@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1e1e2e">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<title>Mini App · Карточки и дерево задач</title>
+<style>
+  :root{
+    /* Catppuccin Mocha */
+    --crust:#11111b; --mantle:#181825; --base:#1e1e2e; --surface0:#313244;
+    --surface1:#45475a; --surface2:#585b70; --overlay0:#6c7086; --overlay1:#7f849c;
+    --overlay2:#9399b2; --subtext0:#a6adc8; --subtext1:#bac2de; --text:#cdd6f4;
+    --lavender:#cba6f7; --blue:#89b4fa; --sapphire:#74c7ec; --sky:#89dceb;
+    --teal:#94e2d5; --green:#a6e3a1; --yellow:#f9e2af; --peach:#fab387;
+    --maroon:#f38ba8; --pink:#f5c2e7; --rosewater:#f5e0dc;
+    --radius:16px; --radius-sm:11px; --gap:12px;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --ff:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --fm:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:
+      radial-gradient(900px 500px at 12% -10%,rgba(137,180,250,.10),transparent 60%),
+      radial-gradient(700px 500px at 110% 10%,rgba(203,166,247,.10),transparent 55%),
+      var(--crust);
+    color:var(--text); font-family:var(--ff);
+    -webkit-font-smoothing:antialiased;
+    display:flex; align-items:center; justify-content:center;
+    padding:16px; overscroll-behavior:none;
+  }
+  .app{
+    width:100%; max-width:480px; height:min(860px,calc(100dvh - 32px));
+    background:linear-gradient(180deg,var(--base),var(--mantle));
+    border:1px solid var(--surface0); border-radius:26px;
+    box-shadow:var(--shadow); display:flex; flex-direction:column; overflow:hidden;
+    position:relative;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    padding:18px 18px 12px; border-bottom:1px solid var(--surface0);
+    display:flex; align-items:center; gap:12px; flex:0 0 auto;
+    background:rgba(17,17,27,.35);
+  }
+  .logo{
+    width:40px;height:40px;border-radius:13px;flex:0 0 auto;
+    background:linear-gradient(145deg,var(--lavender),var(--blue));
+    display:grid;place-items:center; color:var(--crust); font-weight:800;font-size:17px;
+    box-shadow:0 6px 16px rgba(137,180,250,.25);
+  }
+  .htitle{font-size:15px;font-weight:700;letter-spacing:.2px}
+  .hsub{font-size:11px;color:var(--overlay2);margin-top:2px;font-family:var(--fm)}
+  .hbadge{
+    margin-left:auto;font:600 10px/1 var(--fm); color:var(--yellow);
+    border:1px solid rgba(249,226,175,.35); border-radius:999px; padding:6px 9px;
+    background:rgba(249,226,175,.07); letter-spacing:.5px;
+  }
+
+  /* ---------- tabs ---------- */
+  nav.tabs{
+    display:flex; gap:6px; padding:10px 12px; flex:0 0 auto;
+    border-bottom:1px solid var(--surface0);
+  }
+  .tab{
+    flex:1; appearance:none; border:1px solid transparent; background:transparent;
+    color:var(--overlay2); font:600 12px/1 var(--ff); padding:9px 4px;
+    border-radius:11px; cursor:pointer; display:flex; align-items:center;
+    justify-content:center; gap:6px; transition:.16s ease; position:relative;
+  }
+  .tab:hover{color:var(--subtext1);background:var(--surface0)}
+  .tab .key{
+    font:700 9px/1 var(--fm); color:var(--overlay0);
+    border:1px solid var(--surface1); border-radius:5px; padding:2px 4px;
+  }
+  .tab.active{
+    color:var(--text); background:var(--surface0);
+    border-color:var(--surface1); box-shadow:inset 0 0 0 1px rgba(205,214,244,.03);
+  }
+  .tab.active .key{color:var(--blue);border-color:rgba(137,180,250,.5)}
+
+  /* ---------- scroll area ---------- */
+  main{flex:1 1 auto; overflow-y:auto; overflow-x:hidden; padding:14px 14px 8px; scrollbar-width:thin; scrollbar-color:var(--surface1) transparent}
+  main::-webkit-scrollbar{width:6px}
+  main::-webkit-scrollbar-thumb{background:var(--surface1);border-radius:6px}
+  .screen{display:none;animation:fade .18s ease}
+  .screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+  .eyebrow{font:700 10px/1 var(--fm); letter-spacing:1.2px; color:var(--overlay1); text-transform:uppercase; margin:2px 0 10px}
+
+  /* ---------- card screen ---------- */
+  .qcard{
+    background:linear-gradient(160deg,var(--surface0),rgba(49,50,68,.55));
+    border:1px solid var(--surface1); border-radius:var(--radius);
+    padding:16px; box-shadow:0 8px 24px rgba(0,0,0,.18); position:relative; overflow:hidden;
+  }
+  .qcard:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--lavender)}
+  .qtop{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+  .qid{font:600 11px/1 var(--fm);color:var(--overlay2)}
+  .chip{font:700 10px/1 var(--fm);padding:5px 8px;border-radius:999px;letter-spacing:.4px}
+  .chip.open{color:var(--yellow);background:rgba(249,226,175,.10);border:1px solid rgba(249,226,175,.30)}
+  .chip.progress{color:var(--sky);background:rgba(137,220,235,.10);border:1px solid rgba(137,220,235,.30)}
+  .chip.question{color:var(--lavender);background:rgba(203,166,247,.10);border:1px solid rgba(203,166,247,.30)}
+  .qtitle{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 10px}
+  .qbody{font-size:13px;line-height:1.55;color:var(--subtext1);margin:0}
+  .qmeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .tag{font:600 10px/1 var(--fm);color:var(--overlay1);background:var(--mantle);border:1px solid var(--surface1);border-radius:7px;padding:5px 7px}
+  .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+  .btn{
+    appearance:none;border-radius:var(--radius-sm);padding:11px 6px;cursor:pointer;
+    font:700 12px/1.1 var(--ff);transition:.15s ease;border:1px solid transparent;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--blue);color:var(--crust)}
+  .btn-primary:hover{background:var(--sapphire)}
+  .btn-ghost{background:var(--surface1);color:var(--text)}
+  .btn-ghost:hover{background:var(--surface2)}
+  .btn-warn{background:transparent;color:var(--peach);border-color:rgba(250,179,135,.45)}
+  .btn-warn:hover{background:rgba(250,179,135,.1)}
+  .btn.done{opacity:.45;pointer-events:none}
+
+  .nav-cards{display:flex;align-items:center;justify-content:space-between;margin:14px 2px 0}
+  .dots{display:flex;gap:5px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--surface1);transition:.2s}
+  .dot.on{width:18px;border-radius:6px;background:var(--lavender)}
+  .counter{font:600 11px/1 var(--fm);color:var(--overlay1)}
+
+  .hint{
+    margin-top:14px;padding:11px 12px;border-radius:var(--radius-sm);
+    background:rgba(137,180,250,.06);border:1px dashed rgba(137,180,250,.25);
+    font-size:11.5px;line-height:1.5;color:var(--subtext0);
+  }
+  .hint b{color:var(--blue)}
+
+  /* ---------- tree screen ---------- */
+  .summary{display:flex;gap:8px;margin-bottom:14px}
+  .stat{
+    flex:1;background:var(--surface0);border:1px solid var(--surface1);
+    border-radius:var(--radius-sm);padding:10px 8px;text-align:center;
+  }
+  .stat b{display:block;font:800 18px/1 var(--fm)}
+  .stat span{font:600 9px/1 var(--fm);letter-spacing:.6px;color:var(--overlay1)}
+  .s-pass b{color:var(--green)} .s-fail b{color:var(--maroon)} .s-open b{color:var(--yellow)}
+
+  .tree{font:12px/1.4 var(--fm)}
+  .tnode{margin:0}
+  .trow{
+    display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:9px;
+    cursor:pointer;transition:.14s ease;user-select:none;border:1px solid transparent;
+  }
+  .trow:hover{background:var(--surface0)}
+  .trow.parent{font-weight:700}
+  .twist{width:14px;text-align:center;color:var(--overlay1);font-size:10px;transition:transform .15s}
+  .twist.open{transform:rotate(90deg)}
+  .twist.leaf{color:var(--surface2)}
+  .tid{color:var(--overlay1);min-width:30px;font-size:11px}
+  .tname{color:var(--subtext1);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--ff);font-size:12px}
+  .status{font:700 9px/1 var(--fm);letter-spacing:.5px;padding:4px 6px;border-radius:6px}
+  .st-PASS{color:var(--green);background:rgba(166,227,161,.1);border:1px solid rgba(166,227,161,.3)}
+  .st-FAIL{color:var(--maroon);background:rgba(243,139,168,.1);border:1px solid rgba(243,139,168,.3)}
+  .st-OPEN{color:var(--yellow);background:rgba(249,226,175,.1);border:1px solid rgba(249,226,175,.3)}
+  .children{margin-left:18px;padding-left:10px;border-left:1px solid var(--surface1);display:none}
+  .children.open{display:block;animation:fade .15s ease}
+  .tree-foot{margin-top:12px;font:600 10px/1.5 var(--fm);color:var(--overlay0);text-align:center}
+
+  /* ---------- decisions ---------- */
+  .dlist{display:flex;flex-direction:column;gap:9px}
+  .dec{
+    background:var(--surface0);border:1px solid var(--surface1);border-radius:var(--radius-sm);
+    padding:12px;display:grid;grid-template-columns:1fr auto;gap:8px;transition:.15s;
+  }
+  .dec:hover{border-color:var(--surface2);transform:translateX(2px)}
+  .dec h4{margin:0 0 5px;font-size:13px;font-weight:700;line-height:1.35;color:var(--text)}
+  .dec p{margin:0;font-size:11.5px;line-height:1.5;color:var(--overlay2)}
+  .dec .src{margin-top:7px;font:600 10px/1 var(--fm);color:var(--overlay0)}
+  .v{font:800 9px/1 var(--fm);letter-spacing:.5px;padding:5px 7px;border-radius:6px;height:fit-content;white-space:nowrap}
+  .v-PASS{color:var(--green);background:rgba(166,227,161,.1);border:1px solid rgba(166,227,161,.3)}
+  .v-FAIL{color:var(--maroon);background:rgba(243,139,168,.1);border:1px solid rgba(243,139,168,.3)}
+  .v-OPEN{color:var(--yellow);background:rgba(249,226,175,.1);border:1px solid rgba(249,226,175,.3)}
+
+  /* ---------- hotkey bar ---------- */
+  .hotbar{
+    flex:0 0 auto;display:flex;align-items:center;gap:6px;justify-content:center;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    border-top:1px solid var(--surface0);background:rgba(17,17,27,.55);
+  }
+  .hk{display:flex;align-items:center;gap:5px;font:600 10px/1 var(--ff);color:var(--overlay1)}
+  .hk kbd{
+    font:700 10px/1 var(--fm);color:var(--subtext1);background:var(--surface0);
+    border:1px solid var(--surface2);border-bottom-width:2px;border-radius:6px;padding:4px 6px;min-width:20px;text-align:center;
+  }
+  .sep{width:1px;height:16px;background:var(--surface1);margin:0 2px}
+
+  /* ---------- toast ---------- */
+  .toast{
+    position:absolute;left:50%;bottom:64px;transform:translate(-50%,12px);
+    background:var(--surface2);color:var(--text);border:1px solid var(--overlay0);
+    padding:9px 14px;border-radius:999px;font:600 11.5px/1 var(--ff);
+    box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s ease;z-index:10;white-space:nowrap;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:420px){
+    body{padding:0}
+    .app{max-width:none;height:100dvh;border-radius:0;border:none}
+  }
+  @media (max-height:620px){
+    header{padding:12px 16px 8px}
+    .logo{width:34px;height:34px}
+    .actions .btn{padding:9px 4px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <header>
+    <div class="logo">M</div>
+    <div>
+      <div class="htitle">Карточки и задачи</div>
+      <div class="hsub" id="hsub">сессия · miniapp-demo</div>
+    </div>
+    <div class="hbadge" title="Демо-данные, встроенные в файл">DEMO</div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="card"><span>▤</span> Вопрос <span class="key">1</span></button>
+    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">2</span></button>
+    <button class="tab" data-tab="decisions"><span>◈</span> Вердикты <span class="key">3</span></button>
+  </nav>
+
+  <main id="main">
+    <section class="screen active" id="screen-card">
+      <div class="eyebrow">Вопрос пользователя · <span id="cardCount">1 / 3</span></div>
+      <div class="qcard" id="qcard">
+        <div class="qtop">
+          <span class="qid" id="qId">Q-001</span>
+          <span class="chip question" id="qStatus">ОТКРЫТ</span>
+        </div>
+        <h1 class="qtitle" id="qTitle">—</h1>
+        <p class="qbody" id="qBody">—</p>
+        <div class="qmeta" id="qTags"></div>
+        <div class="actions">
+          <button class="btn btn-primary" data-act="Ответить">Ответить</button>
+          <button class="btn btn-ghost" data-act="Уточнить">Уточнить</button>
+          <button class="btn btn-warn" data-act="В работу">В работу</button>
+        </div>
+      </div>
+      <div class="nav-cards">
+        <div class="dots" id="dots"></div>
+        <div class="counter" id="counter">← / →</div>
+      </div>
+      <div class="hint">
+        Подсказка: <b>1/2/3</b> переключают экраны, <b>Esc</b> сбрасывает вид.
+        Карточки листаются кликом по точкам или стрелками ← →.
+      </div>
+    </section>
+
+    <section class="screen" id="screen-tree">
+      <div class="eyebrow">Дерево задач · T1—T11</div>
+      <div class="summary">
+        <div class="stat s-pass"><b id="cntPass">0</b><span>PASS</span></div>
+        <div class="stat s-fail"><b id="cntFail">0</b><span>FAIL</span></div>
+        <div class="stat s-open"><b id="cntOpen">0</b><span>OPEN</span></div>
+      </div>
+      <div class="tree" id="tree"></div>
+      <div class="tree-foot">нажми на строку, чтобы раскрыть / свернуть</div>
+    </section>
+
+    <section class="screen" id="screen-decisions">
+      <div class="eyebrow">Последние вердикты</div>
+      <div class="dlist" id="dlist"></div>
+    </section>
+  </main>
+
+  <div class="hotbar">
+    <span class="hk"><kbd>1</kbd> Карточка</span>
+    <span class="sep"></span>
+    <span class="hk"><kbd>2</kbd> Дерево</span>
+    <span class="sep"></span>
+    <span class="hk"><kbd>3</kbd> Вердикты</span>
+    <span class="sep"></span>
+    <span class="hk"><kbd>Esc</kbd> Сброс</span>
+    <span class="sep"></span>
+    <button class="hk" id="sendAgent" style="border:1px solid var(--green);border-radius:9px;padding:4px 10px;color:var(--green);cursor:pointer">➤ Отправить агенту</button>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* =========================================================
+   ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
+   Источник концепта: progress.json / wants.json — НЕ читались
+   этим файлом и НЕ изменялись. Значения иллюстративные.
+   ========================================================= */
+const DEMO = {
+  meta: { demo: true, label: "DEMO · встроенная заглушка", session: "miniapp-demo" },
+  cards: [
+    { id:"Q-001", status:"OPEN", statusLabel:"ОТКРЫТ", title:"Как не потерять вопрос в потоке задач?",
+      body:"Пользователь присылает длинные голосовые и плотные тексты. Нужна короткая карточка с формулировкой, статусом и быстрым действием — вместо простыни сообщений.",
+      tags:["эргономика","входящие","приоритет"] },
+    { id:"Q-002", status:"QUESTION", statusLabel:"УТОЧНИТЬ", title:"Что считается «готовым» шагом?",
+      body:"В дереве задач статусы PASS/FAIL/OPEN, но критерии перехода не всегда видны. Уточнить порог, прежде чем переводить задачу в работу.",
+      tags:["гейты","критерии","progress.json"] },
+    { id:"Q-003", status:"OPEN", statusLabel:"ОТКРЫТ", title:"Показать дерево текущих задач целиком?",
+      body:"Хочется видеть T1..T11 компактно, с вложенными подзадачами и суммарными счётчиками, не открывая отдельный отчёт.",
+      tags:["дерево","дашборд","T1—T11"] }
+  ],
+  tree: [
+    { id:"T1", name:"Каркас мини-аппа", status:"PASS", children:[
+      { id:"T1.1", name:"Три вкладки", status:"PASS" },
+      { id:"T1.2", name:"Hotkeys 1/2/3, Esc", status:"PASS" }
+    ]},
+    { id:"T2", name:"Метрики прогресса", status:"FAIL", children:[
+      { id:"T2.1", name:"progress.json", status:"PASS" },
+      { id:"T2.2", name:"claims.json", status:"FAIL" }
+    ]},
+    { id:"T3", name:"Реестр хотелок", status:"OPEN" },
+    { id:"T4", name:"Карточки вопросов", status:"PASS" },
+    { id:"T5", name:"Дерево задач", status:"PASS", children:[
+      { id:"T5.1", name:"PASS/FAIL/OPEN", status:"PASS" },
+      { id:"T5.2", name:"Свёртка узлов", status:"OPEN" }
+    ]},
+    { id:"T6", name:"Лента вердиктов", status:"PASS" },
+    { id:"T7", name:"Адаптив под телефон", status:"PASS" },
+    { id:"T8", name:"Палитра Catppuccin", status:"PASS" },
+    { id:"T9", name:"Гейты P0-1…P0-3", status:"FAIL" },
+    { id:"T10", name:"Отрицательные результаты", status:"OPEN" },
+    { id:"T11", name:"Проверка целостности демо", status:"OPEN" }
+  ],
+  decisions: [
+    { h:"H020", verdict:"FAIL", title:"Отрицательный результат зафиксирован", note:"Гипотеза не подтвердилась — вывод сохранён в claims как отрицательный кейс, без смены порогов.", src:"claims · H020" },
+    { h:"P0-1", verdict:"FAIL", title:"Гейт P0-1 не пройден", note:"Закрыт с результатом FAIL: требуется повторная проверка перед снятием.", src:"progress · gate" },
+    { h:"P0-2", verdict:"PASS", title:"Гейт P0-2 закрыт", note:"Условия выполнены, статус зафиксирован в отчёте.", src:"progress · gate" },
+    { h:"P0-3", verdict:"OPEN", title:"Гейт P0-3 ожидает", note:"Открыт: нет данных для verifier, проверка не запускалась.", src:"progress · gate" },
+    { h:"RK-7", verdict:"OPEN", title:"Радар хотелок: не потерять идеи", note:"Идеи из сообщений собраны, часть не превращена в карточки.", src:"wants · demo" }
+  ]
+};
+
+/* ---------- helpers ---------- */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+let toastTimer;
+function toast(msg){
+  const t=$("#toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("show"),1900);
+}
+
+/* ---------- tabs ---------- */
+const order=["card","tree","decisions"];
+function setTab(name){
+  $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
+  $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
+  $("#main").scrollTop=0;
+}
+$$(".tab").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+
+/* ---------- cards ---------- */
+let ci=0;
+const actions={}; // id -> chosen action
+function renderCard(){
+  const c=DEMO.cards[ci];
+  $("#qId").textContent=c.id;
+  const chosen=actions[c.id];
+  const st=$("#qStatus");
+  st.textContent = chosen ? ({ "Ответить":"ОТВЕЧЕН", "Уточнить":"УТОЧНЯЕТСЯ", "В работу":"В РАБОТЕ" }[chosen]) : c.statusLabel;
+  st.className="chip "+(!chosen && c.status==="QUESTION"?"question":(chosen==="В работу"?"progress":"open"));
+  $("#qTitle").textContent=c.title;
+  $("#qBody").textContent=c.body;
+  $("#qTags").innerHTML=c.tags.map(t=>`<span class="tag">#${t}</span>`).join("");
+  $("#cardCount").textContent=`${ci+1} / ${DEMO.cards.length}`;
+  $("#counter").textContent=`${ci+1} / ${DEMO.cards.length}`;
+  $("#dots").innerHTML=DEMO.cards.map((_,i)=>`<span class="dot ${i===ci?"on":""}"></span>`).join("");
+  $$("#dots .dot").forEach((d,i)=>d.addEventListener("click",()=>{ci=i;renderCard()}));
+  $$("#qcard .btn").forEach(b=>{
+    b.classList.toggle("done", !!chosen && chosen!==b.dataset.act);
+    b.textContent = (chosen===b.dataset.act ? "✓ "+b.dataset.act : b.dataset.act);
+  });
+}
+$$("#qcard .btn").forEach(b=>b.addEventListener("click",()=>{
+  const c=DEMO.cards[ci]; actions[c.id]=b.dataset.act;
+  toast(c.id+" → "+b.dataset.act); renderCard();
+}));
+
+/* ---------- tree ---------- */
+function statusCounts(nodes){
+  const out={PASS:0,FAIL:0,OPEN:0};
+  (function walk(list){ list.forEach(n=>{ out[n.status]=(out[n.status]||0)+1; if(n.children)walk(n.children) }) })(nodes);
+  return out;
+}
+function nodeHTML(n){
+  const has=!!(n.children&&n.children.length);
+  return `<div class="tnode">
+    <div class="trow ${has?"parent":""}" data-toggle="${has?1:0}">
+      <span class="twist ${has?"":"leaf"}">${has?"▶":"·"}</span>
+      <span class="tid">${n.id}</span>
+      <span class="tname">${n.name}</span>
+      <span class="status st-${n.status}">${n.status}</span>
+    </div>
+    ${has?`<div class="children">${n.children.map(nodeHTML).join("")}</div>`:""}
+  </div>`;
+}
+function renderTree(){
+  $("#tree").innerHTML=DEMO.tree.map(nodeHTML).join("");
+  const c=statusCounts(DEMO.tree);
+  $("#cntPass").textContent=c.PASS; $("#cntFail").textContent=c.FAIL; $("#cntOpen").textContent=c.OPEN;
+  $$("#tree .trow[data-toggle='1']").forEach(row=>{
+    row.addEventListener("click",()=>{
+      const kids=row.nextElementSibling;
+      kids.classList.toggle("open");
+      row.querySelector(".twist").classList.toggle("open");
+    });
+  });
+}
+
+/* ---------- decisions ---------- */
+function renderDecisions(){
+  $("#dlist").innerHTML=DEMO.decisions.map(d=>`
+    <div class="dec">
+      <div>
+        <h4>${d.h} · ${d.title}</h4>
+        <p>${d.note}</p>
+        <div class="src">${d.src}</div>
+      </div>
+      <span class="v v-${d.verdict}">${d.verdict}</span>
+    </div>`).join("");
+}
+
+/* ---------- keyboard ---------- */
+document.addEventListener("keydown",e=>{
+  if(e.key==="1"){setTab("card")}
+  else if(e.key==="2"){setTab("tree")}
+  else if(e.key==="3"){setTab("decisions")}
+  else if(e.key==="Escape"){
+    // Сброс: закрыть все узлы дерева, вернуть первую карточку и первый экран
+    $$("#tree .children").forEach(x=>x.classList.remove("open"));
+    $$("#tree .twist").forEach(x=>x.classList.remove("open"));
+    ci=0; renderCard(); setTab("card"); toast("Сброс вида");
+  }
+  else if(e.key==="ArrowRight"){ if($("#screen-card").classList.contains("active")){ci=(ci+1)%DEMO.cards.length;renderCard()} }
+  else if(e.key==="ArrowLeft"){ if($("#screen-card").classList.contains("active")){ci=(ci-1+DEMO.cards.length)%DEMO.cards.length;renderCard()} }
+  else return;
+  e.preventDefault();
+});
+
+/* ---------- Telegram Mini App ---------- */
+const tg = window.Telegram && window.Telegram.WebApp;
+if (tg) {
+  tg.ready();
+  tg.expand();
+  const p = tg.themeParams || {};
+  if (p.accent_text_color) document.documentElement.style.setProperty("--accent", p.accent_text_color);
+  const badge = document.querySelector(".hbadge");
+  if (badge) { badge.textContent = "TG · LIVE"; badge.title = "Подключено к боту"; }
+  $("#hsub").textContent = "Telegram Mini App · " +
+    (((tg.initDataUnsafe || {}).user || {}).first_name || "client");
+} else {
+  $("#hsub").textContent = "сессия · " + DEMO.meta.session;
+}
+
+function sendToAgent(){
+  const payload = {
+    source: "miniapp",
+    card: DEMO.cards[ci] ? { id: DEMO.cards[ci].id, title: DEMO.cards[ci].title } : null,
+    actions: actions,
+    tab: ((document.querySelector(".tab.active") || {}).dataset || {}).tab || "card"
+  };
+  if (tg) { tg.sendData(JSON.stringify(payload)); tg.close(); }
+  else { toast("Открой приложение через бот /app, чтобы отправить агенту"); }
+}
+const sendBtn = $("#sendAgent");
+if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
+
+/* ---------- init ---------- */
+renderCard(); renderTree(); renderDecisions();
+</script>
+</body>
+</html>
