@@ -495,12 +495,18 @@ if (tg) {
 }
 
 /* ---------- живой статус агентов ----------
-   status.json лежит на том же домене (GitHub Pages шлёт ACAO: *),
-   поэтому обычный fetch работает и в WebView Telegram. */
+  GitHub Pages кеширует на 10 мин и игнорирует ?ts, поэтому основной
+  источник — raw.githubusercontent.com (CORS *, query обходит кеш).
+  Фолбэк — status.json на том же домене, если raw режется сетью. */
+const STATUS_URLS = [
+  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/HEAD/status.json",
+  "status.json"
+];
 async function refreshAgentStatus(){
-  try{
-    const r = await fetch("status.json?ts=" + Date.now(), {cache:"no-store"});
-    if(!r.ok) return;
+  for(const base of STATUS_URLS){
+   try{
+    const r = await fetch(base + "?ts=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) continue;
     const s = await r.json();
     const n = Number(s.agents)||0;
     const word = n===1 ? "агент" : (n>=2 && n<=4 ? "агента" : "агентов");
@@ -517,7 +523,9 @@ async function refreshAgentStatus(){
     if(sa) sa.textContent = n;
     if(sw) sw.textContent = (s.workers||0);
     if(st) st.textContent = ((s.ts_human||"").slice(11,16) || "—");
-  }catch(e){ /* офлайн или 404 — оставляем последнее известное значение */ }
+      return;
+   }catch(e){ /* следующий источник, офлайн — оставляем последнее значение */ }
+  }
 }
 refreshAgentStatus();
 setInterval(refreshAgentStatus, 30000);
