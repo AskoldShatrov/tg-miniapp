@@ -1,0 +1,5414 @@
+{
+  "version": 1,
+  "built_from": [
+    "atlas.json",
+    "wants.json",
+    "claims.json",
+    "goals.json"
+  ],
+  "counts": {
+    "nodes": 389,
+    "edges": 63,
+    "by_kind": {
+      "author": 2,
+      "video": 9,
+      "claim": 139,
+      "verdict": 14,
+      "hypothesis": 4,
+      "want": 102,
+      "goal": 119
+    }
+  },
+  "grids": [
+    {
+      "id": "authors",
+      "title": "Сетка авторов",
+      "group_by": "author",
+      "filter": {
+        "kind": [
+          "author",
+          "video",
+          "claim"
+        ]
+      }
+    },
+    {
+      "id": "videos",
+      "title": "Сетка видео",
+      "group_by": "video",
+      "filter": {
+        "kind": [
+          "video",
+          "claim",
+          "verdict"
+        ]
+      }
+    },
+    {
+      "id": "ideas",
+      "title": "Группировка идей",
+      "group_by": "theme",
+      "filter": {
+        "kind": [
+          "claim",
+          "hypothesis",
+          "want",
+          "goal"
+        ]
+      }
+    },
+    {
+      "id": "demoparser",
+      "title": "Демопарсер: метод→алгоритм→математика→поле",
+      "group_by": "chain",
+      "filter": {
+        "kind": [
+          "method",
+          "algorithm",
+          "math",
+          "hypothesis"
+        ]
+      }
+    },
+    {
+      "id": "signals",
+      "title": "Гипотезы: сигнал / шум / прорыв",
+      "group_by": "status",
+      "filter": {
+        "kind": [
+          "hypothesis",
+          "verdict"
+        ]
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "author:teamo",
+      "kind": "author",
+      "text": "teamo",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": []
+    },
+    {
+      "id": "video:92bP6FYpbYM",
+      "kind": "video",
+      "text": "92bP6FYpbYM",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:teamo"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C1",
+      "kind": "claim",
+      "text": "На Dust2 жёсткая структура из 5 ролей: лонг-опорник, ротейтор, авик, б-ротейтор, б-опорник",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "freeze_topology_v5.players/topo_key/t_rel_s (кто где на +5…+15 с) + duels_v5.killer_place. Явных меток ролей нет — role как доля по матчу в behavior_v2"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C2",
+      "kind": "claim",
+      "text": "Главный закон D2: нельзя одновременно остаться и без лонга, и без шорта",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "freeze_topology_v5.players (множество place на t_rel_s=+5/+10/+15) vs freeze_topology_v5.winner; duels_v5.killer_place/victim_place"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C3",
+      "kind": "claim",
+      "text": "По числу прилетевших гранат считать число людей на лонге",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "Нужны grenade_thrown / *grenade_detonate с тиком и игроком — их нет ни в одном из 6 наборов; ближайшее freeze_topology_v5 + duels_v5 даёт только число людей, не число гранат"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C4",
+      "kind": "claim",
+      "text": "Смок на парик раньше минуты 40 — грубая ошибка",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "Нужен smokegrenade_detonate.tick минус rounds_v5.freeze_tick; в 6 наборах нет событий гранат, есть только timings_v5 дельты"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C5",
+      "kind": "claim",
+      "text": "На лонге «никогда не пикать, если вас могут смотреть»",
+      "answer_short": "уже проверено",
+      "status": "verified",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "contact_los_v4.first_viewer/lead_ticks/first_view_mutual + duels_v5.won/headshot; проверено в 08/B1/B2: raycast меняет вердикт у ~37% дуэлей, «увидел первым→победил» значимого эффе"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C6",
+      "kind": "claim",
+      "text": "Яму нельзя брать в соло — рядом всегда должен быть мейт",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "paths_v5.attacker.points / victim.points ([tick,X,Y,yaw,place,equip,health]) — изоляция по X/Y и place за 8 с; duels_v5.victim_place; freeze_topology_v5.players на +5 с"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C7",
+      "kind": "claim",
+      "text": "«Двойной запик» используется в абсолютно каждой катке",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:92bP6FYpbYM"
+        },
+        {
+          "type": "check",
+          "id": "freeze_topology_v5.topo_key (два игрока в одной зоне) + duels_v5.killer_place/victim_place в одном раунде"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:4XNSl3Iw0YA",
+      "kind": "video",
+      "text": "4XNSl3Iw0YA",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:teamo"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C8",
+      "kind": "claim",
+      "text": "Ancient: зона держится, пока есть смок/сетап; смок кончился — зону отдай",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:4XNSl3Iw0YA"
+        },
+        {
+          "type": "check",
+          "id": "Триггер «конец смока» требует smokegrenade_expired.tick — отсутствует; доступен только исход duels_v5.won + paths_v5 отступление"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C9",
+      "kind": "claim",
+      "text": "Ancient: если на банан летит много гранат — лучше отдать зону, иначе смерть",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:4XNSl3Iw0YA"
+        },
+        {
+          "type": "check",
+          "id": "Счёт гранат недоступен; проверяемая часть — paths_v5.attacker.points (откат по X/Y) → duels_v5.won/death"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C10",
+      "kind": "claim",
+      "text": "Ancient: выигрывает тот, кто применил больше гранат и лучше стрелял",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:4XNSl3Iw0YA"
+        },
+        {
+          "type": "check",
+          "id": "«Лучше стрелял» — shot_metrics (aim_offset_view_deg, hit-proxy) + duels_v5.headshot/won; «больше гранат» — нет поля"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C11",
+      "kind": "claim",
+      "text": "Ancient: слышишь гранаты на миду → уходи и принимай раш",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:4XNSl3Iw0YA"
+        },
+        {
+          "type": "check",
+          "id": "Звук/гранаты в демо нет; ближайшее — contact_los_v4.approach.class (closing/retreating/stable) + paths_v5"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:3nyLNEMoZHE",
+      "kind": "video",
+      "text": "3nyLNEMoZHE",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:teamo"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C12",
+      "kind": "claim",
+      "text": "Tips: вся игра делится на 3 тайминга",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:3nyLNEMoZHE"
+        },
+        {
+          "type": "check",
+          "id": "timings_v5: time_to_first_view_ms, time_view_to_fire_ms, time_fire_to_hurt_ms, time_hurt_to_death_ms — 4 дельты, прямой разметки на 3 фазы нет"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C13",
+      "kind": "claim",
+      "text": "Tips: на exec нужно 2 смока и 2 молика",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:3nyLNEMoZHE"
+        },
+        {
+          "type": "check",
+          "id": "Нет grenade_thrown/*detonate; косвенно duels_v5.bomb_site иисходы, но состав гранат не восстановить"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C14",
+      "kind": "claim",
+      "text": "Tips: видя 2 смока, игрок окна стягивается под Б",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:3nyLNEMoZHE"
+        },
+        {
+          "type": "check",
+          "id": "contact_los_v4.rotation.rotations / time_to_first_rotation_s + paths_v5.attacker.points; сам факт «2 смока» недоступен — проверяется только ротация"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C15",
+      "kind": "claim",
+      "text": "Tips: отданный смок = противник ждёт и укрепляет точку",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:3nyLNEMoZHE"
+        },
+        {
+          "type": "check",
+          "id": "freeze_topology_v5.players/topo_key на +5…+15 с + duels_v5.killer_place/won; смок как триггер отсутствует"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:oUne9WN4YrM",
+      "kind": "video",
+      "text": "oUne9WN4YrM",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:teamo"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C16",
+      "kind": "claim",
+      "text": "Контрстрейф ускоряет остановку и не даёт стрелять на ходу",
+      "answer_short": "уже проверено",
+      "status": "verified",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "shot_metrics: peek_speed_250ms, pre_shot_displacement_250ms, aim_offset_view_deg; проверено в C1.md: counterstrafe 25.1%, WR по ему нет"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C17",
+      "kind": "claim",
+      "text": "При широком стрейфе ранний ЛКМ → пуля летит не туда",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "shot_metrics.peek_speed_250ms × aim_offset_view_deg / hit-proxy; shot_hit_model_v2 бинны offset→hit"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C18",
+      "kind": "claim",
+      "text": "Держать прицел на уровне головы",
+      "answer_short": "уже проверено",
+      "status": "verified",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "shot_hit_model_v2 (aim_offset_view_deg, β=−0.1766°/OR 0.838) + duels_v5.hitgroup/headshot; hit — прокси ±2 тика"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C19",
+      "kind": "claim",
+      "text": "~20% килов делаются одной клавиатурой, без движения мышкой",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "paths_v5.attacker.points: displacement по X/Y при почти неизменном yaw + duels_v5.death_id/weapon/killer; доля таких дуэлей"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C20",
+      "kind": "claim",
+      "text": "Donk «не отпускает человека со своего прицела»",
+      "answer_short": "уже проверено",
+      "status": "verified",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "shot_metrics.aim_offset_view_deg по shooter_steamid, aim_offset_view_by_distance; проверено в 13-shot-hit-model.md (подтверждено, но hit — прокси, нет bullet_impact)"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C21",
+      "kind": "claim",
+      "text": "В рандомной ситуации пикать всегда широко",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "duels_v5.distance/killer_place + contact_los_v4.approach.class; «широко/узко» как edge_gap_deg() из tools/aim_pixel.py — инструмент есть, но не входит в 6 наборов"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C22",
+      "kind": "claim",
+      "text": "Короткий пик — только для распика позиций / байта AWP",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:oUne9WN4YrM"
+        },
+        {
+          "type": "check",
+          "id": "duels_v5.weapon (AWP) × killer_place/victim_place × contact_los_v4.occupancy.place_hist/distinct_places, first_view_killer_angle"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:56Lmai3Juvo",
+      "kind": "video",
+      "text": "56Lmai3Juvo",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:teamo"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C23",
+      "kind": "claim",
+      "text": "«Мышечной памяти не существует»",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:56Lmai3Juvo"
+        },
+        {
+          "type": "check",
+          "id": "Нужны sens/mouse-trace и повторы одного упражнения — в демо нет ни sens, ни мыши, ни метки «одно упражнение»"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C24",
+      "kind": "claim",
+      "text": "То, что называют мышечной памятью — моторная программа",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:56Lmai3Juvo"
+        },
+        {
+          "type": "check",
+          "id": "Нет поля моторной программы; ближайшее — стабильность aim_offset_view_deg между раундами, но это прокси"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C25",
+      "kind": "claim",
+      "text": "Частая смена sens ускоряет пересчёт формулы; скилл не теряется",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:56Lmai3Juvo"
+        },
+        {
+          "type": "check",
+          "id": "sens отсутствует в fire_bullets и во всех 6 наборах"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C26",
+      "kind": "claim",
+      "text": "Во время саккады человек ничего не видит",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:56Lmai3Juvo"
+        },
+        {
+          "type": "check",
+          "id": "Eye-tracking / record-прицела нет; timings_v5.first_view_* — прокси по геометрии, не взгляд"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C27",
+      "kind": "claim",
+      "text": "Donk — лучший стрелок, но не лучший аимер",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:56Lmai3Juvo"
+        },
+        {
+          "type": "check",
+          "id": "shot_hit_model_v2 hit-proxy + duels_v5.headshot/weapon/distance по killer_steamid; ранг «лучший» требует выборки"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "author:143_Aim_Club",
+      "kind": "author",
+      "text": "143 Aim Club",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": []
+    },
+    {
+      "id": "video:KN76VmZSWAY",
+      "kind": "video",
+      "text": "KN76VmZSWAY",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:143_Aim_Club"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C28",
+      "kind": "claim",
+      "text": "Реакция убыстреется, когда знаешь точные пиксели появления врага (exact pixels)",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:KN76VmZSWAY"
+        },
+        {
+          "type": "check",
+          "id": "aim_pixel.py мапит yaw/pitch→пиксель цели, но кадра и GT прицела нет; «пиксель» здесь — место появления, не screen coordinate из демо"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C29",
+      "kind": "claim",
+      "text": "Долгий фиксинг одного пикселя замедляет реакцию",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:KN76VmZSWAY"
+        },
+        {
+          "type": "check",
+          "id": "Прокси длительности холда: freeze_topology_v5.freeze_tick → timings_v5.time_to_first_view_ms, first_view_side + duels_v5.won"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C30",
+      "kind": "claim",
+      "text": "Jiggle-peek вместо статичного холда: hide→swing→hide",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:KN76VmZSWAY"
+        },
+        {
+          "type": "check",
+          "id": "paths_v5.attacker.points — осцилляции X/Y и yaw за 8 с; timings_v5.time_view_to_fire_ms"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C31",
+      "kind": "claim",
+      "text": "Реагировать на то, что произошло, а не на предсказание (не prefire)",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:KN76VmZSWAY"
+        },
+        {
+          "type": "check",
+          "id": "timings_v5.time_view_to_fire_ms (отрицательные значения = выстрел раньше first_view) × shot_hit_model hit-proxy"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C32",
+      "kind": "claim",
+      "text": "Тесты реакции (170 мс у Astralis, 113 мс автора) определяют игру",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:KN76VmZSWAY"
+        },
+        {
+          "type": "check",
+          "id": "Reaction-test недоступен; автор сам опровергает: «that was complete, nasty bullshit. I normally get around 140 milliseconds»"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:RJ5j0_54zHY",
+      "kind": "video",
+      "text": "RJ5j0_54zHY",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:143_Aim_Club"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C33",
+      "kind": "claim",
+      "text": "Чем лучше пассивный аим, тем меньше роль активного",
+      "answer_short": "уже проверено",
+      "status": "verified",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:RJ5j0_54zHY"
+        },
+        {
+          "type": "check",
+          "id": "shot_hit_model_v2 (offset→hit, подтверждено) + duels_v5.distance; проверено в 13-shot-hit-model.md: hit — прокси, LOS/геометрия не моделируются"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C34",
+      "kind": "claim",
+      "text": "Простой выстрел: 80/100 у хорошего, 95/100 у Donk",
+      "answer_short": "измеряемо",
+      "status": "measuring",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:RJ5j0_54zHY"
+        },
+        {
+          "type": "check",
+          "id": "shot_metrics hit_victim_proxy + shooter_steamid, distance_to_victim_at_shot; shot_hit_model_v2 по кластерам match×round"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C35",
+      "kind": "claim",
+      "text": "«Пиксель монитора ↔ положение мыши» — не объект тренировки",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:RJ5j0_54zHY"
+        },
+        {
+          "type": "check",
+          "id": "sens/мышь/разрешение игрока в демо отсутствуют; ещё одно значение «пикселя», отличное от screen coordinate демо"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C36",
+      "kind": "claim",
+      "text": "Закон убывающей полезности: тренировка аима до ~7 уровня быстра, дальше пропасти",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:RJ5j0_54zHY"
+        },
+        {
+          "type": "check",
+          "id": "Нет временных рядов skill по игроку в демо; ближайшее — shot_hit_model_v2 batch-уровень, не trajectory"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:35AhYJHC9DU",
+      "kind": "video",
+      "text": "35AhYJHC9DU",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:143_Aim_Club"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C37",
+      "kind": "claim",
+      "text": "FOV из CS/Valorant не влияет на импрув; стандарт 103°",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:35AhYJHC9DU"
+        },
+        {
+          "type": "check",
+          "id": "FOV-конфиг игрока в демо отсутствует; aim_pixel.py использует фиксированный VFOV 73.74° как допущение"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "video:OLL0zIxi1Uw",
+      "kind": "video",
+      "text": "OLL0zIxi1Uw",
+      "answer_short": "",
+      "status": "open",
+      "refs": [
+        {
+          "type": "authored_by",
+          "id": "author:143_Aim_Club"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C38",
+      "kind": "claim",
+      "text": "Задержка 1 с перед сценарием лечит привычку тыкать рестарт",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:OLL0zIxi1Uw"
+        },
+        {
+          "type": "check",
+          "id": "Настройки аимтренера в демо не фиксируются"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C39",
+      "kind": "claim",
+      "text": "Sens считать в см на 360°",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:OLL0zIxi1Uw"
+        },
+        {
+          "type": "check",
+          "id": "sens и DPI в демо отсутствуют"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "claim:C40",
+      "kind": "claim",
+      "text": "Тренажёры (Kovaak/Aimbeast) дают изолированный активный аим; комьюнити и bench — главная ценность",
+      "answer_short": "неизмеримо",
+      "status": "open",
+      "source": "N2",
+      "refs": [
+        {
+          "type": "quote",
+          "id": ""
+        },
+        {
+          "type": "video",
+          "id": "video:RJ5j0_54zHY"
+        },
+        {
+          "type": "check",
+          "id": "Нет логов аимтренеров и связей с демо"
+        }
+      ],
+      "confidence": "auto"
+    },
+    {
+      "id": "verdict:C18",
+      "kind": "verdict",
+      "text": "подтверждено (прокси)",
+      "answer_short": "подтверждено (прокси)",
+      "status": "signal",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "47 248 дуэли / 6 676 выстрелов"
+        },
+        {
+          "type": "ci",
+          "id": "β=−0.177 [−0.196, −0.157]"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C16",
+      "kind": "verdict",
+      "text": "подтверждено (часть «движение вредит»)",
+      "answer_short": "подтверждено (часть «движение вредит»)",
+      "status": "signal",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "5 852 дуэли / 6 676 выстрелов"
+        },
+        {
+          "type": "ci",
+          "id": "β(peek)=−0.00526 [−0.00627, −0.00425]"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C17",
+      "kind": "verdict",
+      "text": "отрицательно",
+      "answer_short": "отрицательно",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "6 676 выстрелов, 235 кластеров"
+        },
+        {
+          "type": "ci",
+          "id": "β_int=−0.0082 [−0.0285, +0.0122], p=0.43"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C27",
+      "kind": "verdict",
+      "text": "подтверждено направление (не ранг 1)",
+      "answer_short": "подтверждено направление (не ранг 1)",
+      "status": "signal",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "207 дуэлей donk; 125 игроков с n≥120"
+        },
+        {
+          "type": "ci",
+          "id": "WR [0.686, 0.803]; HS [0.531, 0.663]"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C19",
+      "kind": "verdict",
+      "text": "отрицательно как число",
+      "answer_short": "отрицательно как число",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "46 193 дуэли"
+        },
+        {
+          "type": "ci",
+          "id": "2° [0.238, 0.246]"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C21",
+      "kind": "verdict",
+      "text": "отрицательно",
+      "answer_short": "отрицательно",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "893 narrow / 196 wide"
+        },
+        {
+          "type": "ci",
+          "id": "[−6.9, +8.3] п.п."
+        }
+      ]
+    },
+    {
+      "id": "verdict:C31",
+      "kind": "verdict",
+      "text": "отрицательно (знак наоборот)",
+      "answer_short": "отрицательно (знак наоборот)",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "3 811 prefire / 38 049 reactive"
+        },
+        {
+          "type": "ci",
+          "id": "[+3.18, +6.96] п.п."
+        }
+      ]
+    },
+    {
+      "id": "verdict:C5",
+      "kind": "verdict",
+      "text": "отрицательно",
+      "answer_short": "отрицательно",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "811 killer / 516 victim"
+        },
+        {
+          "type": "ci",
+          "id": "[−4.71, +10.86] п.п."
+        }
+      ]
+    },
+    {
+      "id": "verdict:C7",
+      "kind": "verdict",
+      "text": "отрицательно (не 100%)",
+      "answer_short": "отрицательно (не 100%)",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "937 dust2-раундов"
+        },
+        {
+          "type": "ci",
+          "id": "+15 с [0.874, 0.913]"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C1",
+      "kind": "verdict",
+      "text": "отрицательно",
+      "answer_short": "отрицательно",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "937 раундов × 2 команды"
+        },
+        {
+          "type": "ci",
+          "id": "—"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C2",
+      "kind": "verdict",
+      "text": "подтверждено (как привычка)",
+      "answer_short": "подтверждено (как привычка)",
+      "status": "signal",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "937 раундов × 3 момента"
+        },
+        {
+          "type": "ci",
+          "id": "+10 с [0.0029, 0.0139]"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C14",
+      "kind": "verdict",
+      "text": "отрицательно",
+      "answer_short": "отрицательно",
+      "status": "refuted",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "640 дуэлей с ротацией"
+        },
+        {
+          "type": "ci",
+          "id": "DiD [−1.40, +4.88] п.п."
+        }
+      ]
+    },
+    {
+      "id": "verdict:C12",
+      "kind": "verdict",
+      "text": "непроверяемо",
+      "answer_short": "непроверяемо",
+      "status": "open",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "44 209–46 833 дуэли"
+        },
+        {
+          "type": "ci",
+          "id": "—"
+        }
+      ]
+    },
+    {
+      "id": "verdict:C34",
+      "kind": "verdict",
+      "text": "непроверяемо",
+      "answer_short": "непроверяемо",
+      "status": "open",
+      "confidence": "auto",
+      "source": "67-video-claims",
+      "refs": [
+        {
+          "type": "n",
+          "id": "47 248 / 207"
+        },
+        {
+          "type": "ci",
+          "id": "—"
+        }
+      ]
+    },
+    {
+      "id": "hypothesis:T1_винрейт",
+      "kind": "hypothesis",
+      "text": "T1 винрейт",
+      "answer_short": "предрегистрировать порог ≥0.60, прогон",
+      "status": "open",
+      "source": "EVOLUTION",
+      "refs": [
+        {
+          "type": "v1",
+          "id": "8 матчей, 0.558"
+        },
+        {
+          "type": "v2",
+          "id": "wp_v3/v4 на 64 матчах → 0.576, отрицательно"
+        },
+        {
+          "type": "v3",
+          "id": "T1b: позиции 10 + AWP-possession + экономика"
+        }
+      ],
+      "gate": "8 матчей, 0.558",
+      "confidence": "auto"
+    },
+    {
+      "id": "hypothesis:T2_игрок",
+      "kind": "hypothesis",
+      "text": "T2 игрок",
+      "answer_short": "не открывать без контрфактики",
+      "status": "refuted",
+      "source": "EVOLUTION",
+      "refs": [
+        {
+          "type": "v1",
+          "id": "ICC 0.013–0.081"
+        },
+        {
+          "type": "v2",
+          "id": "reversal ICC 0.055 → исход 0.004"
+        },
+        {
+          "type": "v3",
+          "id": "закрыто: почерк ≠ победа"
+        }
+      ],
+      "gate": "ICC 0.013–0.081",
+      "confidence": "auto"
+    },
+    {
+      "id": "hypothesis:T3_бай_AWP",
+      "kind": "hypothesis",
+      "text": "T3 бай/AWP",
+      "answer_short": "v4: FeatureFrame + v4 оверлей на реальном матче",
+      "status": "open",
+      "source": "EVOLUTION",
+      "refs": [
+        {
+          "type": "v1",
+          "id": "сырой приор 12.38%"
+        },
+        {
+          "type": "v2",
+          "id": "калибровка ECE 0.0066"
+        },
+        {
+          "type": "v3",
+          "id": "live HUD v3 + dossier под иконками"
+        }
+      ],
+      "gate": "сырой приор 12.38%",
+      "confidence": "auto"
+    },
+    {
+      "id": "hypothesis:T4_сканфид",
+      "kind": "hypothesis",
+      "text": "T4 сканфид",
+      "answer_short": "REAL n≥60, FP>0, переобучение",
+      "status": "open",
+      "source": "EVOLUTION",
+      "refs": [
+        {
+          "type": "v1",
+          "id": "синтетика precision 0.985"
+        },
+        {
+          "type": "v2",
+          "id": "REAL n=20 P=1.0/ECE 0.4176"
+        },
+        {
+          "type": "v3",
+          "id": "cyan quality fix ECE 0.1176"
+        }
+      ],
+      "gate": "синтетика precision 0.985",
+      "confidence": "auto"
+    },
+    {
+      "id": "want:w2611190905099141",
+      "kind": "want",
+      "text": "FaceIT: демки королей (dust2) + топ-1000",
+      "answer_short": "19.11: пользователь подтвердил — карта de_dust2 приоритетна, топ-1000 ведём ТОЛЬКО по dust2. Инжест (78-top1000-dust2-ingest.md): +100 матчей, всего 307 dust2 в БД. На ПК запущена ",
+      "status": "doing",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905099d36",
+      "kind": "want",
+      "text": "Раздельные ресурсы: демки качать и разбирать на ПК, не на ноуте",
+      "answer_short": "ПК (192.168.31.230, D:\\hltv/C:\\hltv, ~100 ГБ) скачивает и парсит HLTV/FACEIT демки; ноут только ставит задачи через pc-bridge :8898 и читает готовый JSON. Скилл ~/.config/opencode/",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111909050929f4",
+      "kind": "want",
+      "text": "44: финальная проверка нативного HUD в живом матче — не подтверждено (инъекция)",
+      "answer_short": "Свежий прогон: инъекция enemy1..enemy4 из test_gsi_payload_awp.json, allplayers в GSI отсутствуют; подлинный кадр 04:53 сохранён. Отчёт overnight/44-native-hud-live.md, PNG /tmp/op",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090509268d",
+      "kind": "want",
+      "text": "Дозавершить LLM-дайджест 89 чанков (digest_v2)",
+      "answer_short": "19.11 07:15 MSK: генерация на ПК жива (19/36 перегенерировано, 72/89 файлов), старый оркестратор умер. Запущен автономный финишер ~/pc-bridge/digest_v2_finish.py (PID 1676064): ждё",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090509ff37",
+      "kind": "want",
+      "text": "Приоритеты недели по реестру гипотез: P0 T3 в продакшен и новый источник для T1",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090509b70f",
+      "kind": "want",
+      "text": "Безотказная связка телефон ↔ ноут ↔ ПК",
+      "answer_short": "19.11: связка работает: ноут-сервер + OpenTunnel, ADB Wi-Fi 35301 (порт сохраняется и перебирается), диск 91% (37G свободно). Самовосстановление: opencode-health.timer (сервер/тунн",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111909050902b4",
+      "kind": "want",
+      "text": "INVENTORS (invento.rs) как резервный ИИ-канал при проблемах OpenCode",
+      "answer_short": "Резерв на телефоне, ноуте и ПК: когда OpenCode недоступен/упирается в лимиты. Учесть: сайт только через SmartNet 7900, реально работает только DeepSeek V4.1 Flash (остальные модели",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905091702",
+      "kind": "want",
+      "text": "Онтология мувов: ~1000 подкатегорий + правила",
+      "answer_short": "MOVE-ONTOLOGY.md: 10 категорий × ~100 подкатегорий, rules из видео jerry/ostin/teamo и голосовых. Seed R1-R8 (суицид-пик, соло ловер без инфо, лонг без респа, смок на парике и т.д.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090509341e",
+      "kind": "want",
+      "text": "Мастер-план: архитектор vs cheap-рутина",
+      "answer_short": "~/overnight/MASTERPLAN.md. Дорогая модель = цель/гейты/ревью; cheap = рутина. Цели T1 contested AUC>0.60, T2 player residual, T3 калиброванный бай/AWP (ECE<0.05). Гейты G1-G6. Прек",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090509f81c",
+      "kind": "want",
+      "text": "Параллельный вал: 8 агентов",
+      "answer_short": "FaceIT kings/top1000, оценка-теория, сложность/агрегация, real GT, сжатие L2, биометрия мыши, HUD live. Отчёты 48..55.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090509b7cc",
+      "kind": "want",
+      "text": "HLTV-демо: непрерывная загрузка на общие ресурсы Windows-ПК",
+      "answer_short": "Обновлено 19.11 01:50 MSK: HLTV 374/374 ссылокdone, остаток 0; финальный проход 245 ссылок за 4.345 ч = 56.4/ч; парсинг 658 done/2 retry. :8877 с ноута не отвечает (http=000), лог ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905091fa7",
+      "kind": "want",
+      "text": "Сделать Telegram-бота агентом-помощником по VPN/DPI для телефона",
+      "answer_short": "Готово: ретраи Telegram API через 7900 в report_bot.call(), исправлен NameError TABS_LIMIT (бот теперь переживает рестарт), добавлены /vpn status и /vpn diagnose, сервис перезапуще",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905091ece",
+      "kind": "want",
+      "text": "Пауза: не открывать CS 30 минут",
+      "answer_short": "С 22:36 до 23:06 +0300 не запускать cs2.exe, задачи OpenCodeCs2Gt/Probe5, bot-GT и команды на ПК, забирающие фокус. Флаг: ~/shared-repo/bots/no_cs_until.json",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905091f7a",
+      "kind": "want",
+      "text": "Поднять sshd на Windows (порт 22 закрыт)",
+      "answer_short": "Повторная проверка 16:41 UTC: ПК жив (:8877=200), но SSH :22 timeout, HTTP-агент :8899 не отвечает, GSI :3000 не отвечает. Скриншот 19:34 MSK: CS2 НЕ открыта, на ПК идёт парсинг HL",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905181f80",
+      "kind": "want",
+      "text": "Скилл проверки сообщений и выполненных целей",
+      "answer_short": "Ловить все «хочу» из сообщений, сверять с done-целями и шагами",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119090518006d",
+      "kind": "want",
+      "text": "Виджет хотелок: сделано / не сделано",
+      "answer_short": "PNG-дашборд с метриками, колонками и плашкой забытого",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611190905181281",
+      "kind": "want",
+      "text": "Предложения по эволюции и апгрейду идей",
+      "answer_short": "Конкретные гейты/связи/декомпозиция для каждой открытой хотелки",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119190741c5bb",
+      "kind": "want",
+      "text": "Присылать фото/картинку прямо в сообщении ТГ-бота (show.viewer PNG)",
+      "answer_short": "",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119190741dca0",
+      "kind": "want",
+      "text": "Запустить все задачи research-slowdown, не останавливаться на анализе",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611191907416032",
+      "kind": "want",
+      "text": "Починить дизайн экономического оверлея: изменения от раунда к раунду и трекинг",
+      "answer_short": "",
+      "status": "doing",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611191907418a78",
+      "kind": "want",
+      "text": "Починить что у всех противников одинаковая экономика в оверлее",
+      "answer_short": "",
+      "status": "doing",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119190741c254",
+      "kind": "want",
+      "text": "Исследования не должны заканчиваться «по уму» — доводить до результата",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111919074178dc",
+      "kind": "want",
+      "text": "Вводить все хотелки из сообщений в реестр, не терять",
+      "answer_short": "",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111919074113f0",
+      "kind": "want",
+      "text": "Не допускать простоя на бесплатных моделях",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111920475419c6",
+      "kind": "want",
+      "text": "Экономика: прогонять инференс на массиве игр / тысячах демок и классифицировать кейсы по болезненности",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192047545ff7",
+      "kind": "want",
+      "text": "Экономика: гнать симуляции сценариев, чтобы понимать, чего ждать от оффлайн-парсинга",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119204754b83c",
+      "kind": "want",
+      "text": "Экономика: 100%-ные сценарии оружия — 2 калаша contra 5 в килфиде, скаут vs дигл, отличать Галил от калаша/AVP",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111920475426f6",
+      "kind": "want",
+      "text": "Экономика: правила вывода из килфида (двое убили с калаша → два калаша; дроп калаша при 5 HP)",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119204754227b",
+      "kind": "want",
+      "text": "Свести погрешность прогнозов экономики к малому проценту — критерий качества в симуляциях, чтобы не выводило «полную хуйню»",
+      "answer_short": "",
+      "status": "doing",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119204754d1f3",
+      "kind": "want",
+      "text": "Связать экономику с радаром: определять подбор дропа противником по движению в зону смерти + тайминг + время там",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192047547b3a",
+      "kind": "want",
+      "text": "Автоматически предполагать, что противник сейвил оружие — без ручных подсказок «Кот Харитон, противник засейвил калаш»",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111920475496aa",
+      "kind": "want",
+      "text": "Пока оверлей сырой — пусть поиграет с ботами, не в live",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192047545e1d",
+      "kind": "want",
+      "text": "Экономика: определять, когда у противника НЕТ денег (usbonus 2/3) и когда команда может закупиться как Furia с Galil'ами",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192047543fb0",
+      "kind": "want",
+      "text": "Не терять базовый функционал из прошлых сообщений: демо-чекер, hotkeys в index.html/clickable.html/scanfeed, ширина строки вердикта",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192048500038",
+      "kind": "want",
+      "text": "Прогнать инференс экономики на массиве демок: перечислить все сценарии и найти наиболее болезненные кейсы",
+      "answer_short": "Не по одной игре: прогон на массиве, классификация сценариев, ранжирование по боли/частоте ошибок. Отдельный отчёт.",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119204850ca9c",
+      "kind": "want",
+      "text": "Определять число оружия по килфиду с оценкой уверенности по сценарию (2 калаша против 5 в килфиде)",
+      "answer_short": "Если убили с калаша, потом его тимейт тоже убил с калаша — скорее всего два калаша, но уверенность зависит от сценария; не выдавать 100% там, где нет железной гарантии.",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26111920485061a0",
+      "kind": "want",
+      "text": "Прогнать симуляцию дроп-сценария: игрок вышел в длину с калашем, осталось 5 HP, дропнул калаш тимейту",
+      "answer_short": "Классический кейс потери/передачи оружия. Симуляция должна показывать, что алгоритм понимает передачу, а не списывает калаш.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192048508e92",
+      "kind": "want",
+      "text": "Оффлайн-парсинг на понятных алгоритмах: свести погрешность прогнозов к минимуму, польза без вреда",
+      "answer_short": "Алгоритмы, о которых мы понимаем, чего ждать; чтобы не материться на полную хуйню в выводе. Калибровать ошибку, а не просто выдавать результат.",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192048503b4b",
+      "kind": "want",
+      "text": "Сценарии гарантированного определения (скаут точно дигл, не Галил/калаш/АВП) — прогон на тысячах демок",
+      "answer_short": "Выделить конечный набор кейсов, где модель может уверенно написать точное оружие, и натренировать/проверить это на тысячах демо; не называть Галил/калаш/АВП там, где нет уверенност",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192048506439",
+      "kind": "want",
+      "text": "Связать инференс экономики с радарфидом: определять, смог ли противник подобрать оружие",
+      "answer_short": "Оверлей должен сам понимать подбор калаша/дропа, а не ждать ручной подсказки «Кот Харитон, противник засейвил калаш».",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119204850de01",
+      "kind": "want",
+      "text": "Радар-эвристика подбора: заход в зону смерти убитого тимейта на нужный тайминг + время там = вероятно подобрал оружие",
+      "answer_short": "Учесть конкретный сценарий: противник был с диглом, выиграл калаш 1в3 и засейвил калаш/Авик с нашего кэтэшника. Степень точности эвристики должна быть оценена.",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192048505984",
+      "kind": "want",
+      "text": "Критерий качества симуляций: ошибка инференса не больше заданного малого процента",
+      "answer_short": "В симуляциях и критериях качества явно зафиксировать порог малой ошибки, чтобы прогноз не подъёбывал люто.",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261119204850911d",
+      "kind": "want",
+      "text": "Посмотреть топ-видео Остина про экономику CS2 как референс для модели",
+      "answer_short": "«У Остина топ видео про экономику» — использовать как источник для понимания экономики CS2 и улучшения инференса.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611192049586027",
+      "kind": "want",
+      "text": "Тестировать экономический оверлей на играх с ботами вместо живого матча, пока не станет пригодным",
+      "answer_short": "«Сейчас играть с этой хуйней — насилие над собой. Пусть просто с ботами поиграет.» Перевести прогон в bot-матчи, снять с себя роль тестера.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052032f93",
+      "kind": "want",
+      "text": "Ответить на тему конфиденциальности/приватности: обезличенные примеры сообщений + правило, что сырые личные данные не оседают в БД чатбота и не попадают в дашбо",
+      "answer_short": "",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052466681",
+      "kind": "want",
+      "text": "Кайф",
+      "answer_short": "не отвечено · 18.11.2026 03:06:26 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246dcbb",
+      "kind": "want",
+      "text": "А через час увидел что он проебал все лимиты на создание 78 шагов для тупой модели (я типа сказала что тупая будет делать) и скелета проекта и по сути половину ",
+      "answer_short": "не отвечено · 18.11.2026 03:07:50 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246c2c5",
+      "kind": "want",
+      "text": "Умная модель отвечает медленнее обычно",
+      "answer_short": "не отвечено · 18.11.2026 03:08:59 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246a3b8",
+      "kind": "want",
+      "text": "Я вот чето в очередноц раз не почитал план и пустил все на афк и какой-то кал вышел",
+      "answer_short": "не отвечено · 18.11.2026 03:09:31 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246af9c",
+      "kind": "want",
+      "text": "Просто хочется я чтоб с первого раза навайбкодилчя кайф",
+      "answer_short": "не отвечено · 18.11.2026 03:10:09 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246c9d1",
+      "kind": "want",
+      "text": "Будто бы все равно скам",
+      "answer_short": "не отвечено · 18.11.2026 04:03:24 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052467b95",
+      "kind": "want",
+      "text": "Хотя задача вроде ну не оч сложная у меня Через тг бота получить ссылку Сходить в апи Скушать Отдать ллм Посудить ответ Отдать ллм Сохранить Отправить ответ",
+      "answer_short": "не отвечено · 18.11.2026 04:04:41 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052469c98",
+      "kind": "want",
+      "text": "Типа месяц игры со сканфидом и уже будет хорошее чувство экономики",
+      "answer_short": "не отвечено · 18.11.2026 04:05:47 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246e8a8",
+      "kind": "want",
+      "text": "Эксди",
+      "answer_short": "не отвечено · 18.11.2026 04:07:32 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26112000524601f4",
+      "kind": "want",
+      "text": "Типа кол в чат тестом на раунд?",
+      "answer_short": "не отвечено · 18.11.2026 04:07:45 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052465c16",
+      "kind": "want",
+      "text": "Влад3 гений",
+      "answer_short": "не отвечено · 18.11.2026 04:07:57 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052462679",
+      "kind": "want",
+      "text": "Не он крутой чел у него блять тима с iM чето делает в топ5",
+      "answer_short": "не отвечено · 18.11.2026 04:08:30 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246c5b4",
+      "kind": "want",
+      "text": "Я кст хотел посмотреть есть ли смысл скайбокс эдж для мм брать",
+      "answer_short": "не отвечено · 18.11.2026 04:13:40 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052462b61",
+      "kind": "want",
+      "text": "Типа там вот анализ прошников круто выглядит но работает ли это для работяг и что оно может дать",
+      "answer_short": "не отвечено · 18.11.2026 04:14:04 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26112000524669b6",
+      "kind": "want",
+      "text": "Холопа",
+      "answer_short": "не отвечено · 18.11.2026 04:16:27 · telegram",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052460530",
+      "kind": "want",
+      "text": "ОБЯЗАТЕЛЬНО загрузи скилл hypothesis-check через tool skill до начала работы. Проверь гипотезу H146 из бэклога: «19 вердиктов, 14/14 E2E». Источник: 38-sprint3-",
+      "answer_short": "не отвечено · 20.11 00:51 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052463688",
+      "kind": "want",
+      "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на ",
+      "answer_short": "не отвечено · 20.11 00:51 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052469a58",
+      "kind": "want",
+      "text": "у меня проводятся дальнейшие исследовани по кс??",
+      "answer_short": "не отвечено · 20.11 00:51 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246a1ca",
+      "kind": "want",
+      "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы. <file name=\"filescene-20261120-0050",
+      "answer_short": "не отвечено · 20.11 00:50 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246de62",
+      "kind": "want",
+      "text": "ДЕМО. Выборочная закачка top1000 по dust2: проверить, что приоритет — только dust2, посчитать стоимость по трафику и диску. Гейт: бюджет не превышен, план конкр",
+      "answer_short": "не отвечено · 20.11 00:50 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052463b90",
+      "kind": "want",
+      "text": "ФИД. Инвентарь демо: дедупликация, покрытие по 7 картам, свободное место на диске (сейчас 100%, 3.9 ГБ). Предложить конкретный cleanup-список без удаления чужих",
+      "answer_short": "не отвечено · 20.11 00:42 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246786d",
+      "kind": "want",
+      "text": "ФИД. Сверить состояние HLTV/FACEIT-фида: 374/374 ссылок, 658 parse done / 2 retry, 100 новых демо на ПК, бюджет 25 ГБ. Проверить через pc-bridge :8898 и логи. Г",
+      "answer_short": "не отвечено · 20.11 00:39 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052468b4b",
+      "kind": "want",
+      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib",
+      "answer_short": "не отвечено · 20.11 00:36 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246135d",
+      "kind": "want",
+      "text": "СКАНФИД. T4 OPEN: расширить REAL-набор до n>=60 кадров с FP>0, измерить precision/recall и ECE по dot_quality с Wilson CI и честным baseline. Гейт: n>=60, FP>0,",
+      "answer_short": "не отвечено · 20.11 00:32 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246cd99",
+      "kind": "want",
+      "text": "Исследуй codebase в /home/nyaka по теме переобучения `dot_quality` под cyan-сигнал. Нужна thoroughness: very thorough. Найди и кратко отчитайся (с путями и ключ",
+      "answer_short": "не отвечено · 20.11 00:30 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052463b06",
+      "kind": "want",
+      "text": "СКАНФИД. Переобучить dot_quality под cyan на новых кадрах, вложенный 5-fold CV, явная оговорка про утечку, сравнить ECE/Brier. Гейт: ECE<0.15 на holdout при n>=",
+      "answer_short": "не отвечено · 20.11 00:28 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052463476",
+      "kind": "want",
+      "text": "РАДАР. Тепловые карты зон: пересчитать adjusted winrate по новому корпусу (7 карт, 320 демо), честно отделить «нет сигнала» от «плохо». Гейт: нижняя граница CI ",
+      "answer_short": "не отвечено · 20.11 00:20 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246f004",
+      "kind": "want",
+      "text": "РАДАР. Проверить калибровку confidence детектора на свежих REAL-кадрах с ненулевым FP (иначе калибровка неидентифицируема). Извлечь кадры, посчитать ECE/Brier д",
+      "answer_short": "не отвечено · 20.11 00:20 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246c023",
+      "kind": "want",
+      "text": "плохо что ты не понял сделай скилл который лучше распознает что надо к прошлым сессяим обратиться если вопрос странный слишком",
+      "answer_short": "не отвечено · 20.11 00:18 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200052465da0",
+      "kind": "want",
+      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в ",
+      "answer_short": "не отвечено · 20.11 00:18 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246413c",
+      "kind": "want",
+      "text": "РАДАР. Новый источник: 307 dust2-матчей из 78-top1000-dust2-ingest.md. Построить НОВЫЙ набор кадров (не старые 20/92) и проверить cyan-детектор врагов с GT по s",
+      "answer_short": "не отвечено · 20.11 00:14 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120005246c70b",
+      "kind": "want",
+      "text": "ИДЕИ. Обновить EVOLUTION.md-логику по результатам новой ночи: какие задачи перешли в v2/v3, какие закрыты отрицательно и почему не переоткрываются. Новый отчёт ",
+      "answer_short": "не отвечено · 20.11 00:02 · session",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143ffc3",
+      "kind": "want",
+      "text": "Игровой режим: не мешать играть в CS2, включать/снимать авто по сообщению",
+      "answer_short": "Просьба 02:14 и 02:22. Скилл game-mode есть, но включался вручную с опозданием на 10 мин.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200241431d95",
+      "kind": "want",
+      "text": "Показывать в мини-апе количество работающих агентов и транслировать это",
+      "answer_short": "Просьба 02:18. Код счётчика был, но не задеплоен на GitHub Pages.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143491d",
+      "kind": "want",
+      "text": "Сделать статусы в мини-апе понятнее: OPEN = в разработке, наглядная легенда и управление",
+      "answer_short": "Просьба 02:31: 'open в миниапп означает что в разработке? Можно ли сделать понятнее'.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143cab5",
+      "kind": "want",
+      "text": "Убрать периодически открывающееся окно PowerShell на ПК даже в игровом режиме",
+      "answer_short": "Просьба 02:27 и 02:31. Причина: exclusive-задача c09_425_parse стартовала в 02:16 до включения режима и работала до 02:33.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26112002414345ae",
+      "kind": "want",
+      "text": "Проанализировать запросы за последние 2-3 дня и сумеризировать по всем просьбам пользователя",
+      "answer_short": "Просьба 02:14: что хотел, как реагировал, чего ждал.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200241438cdc",
+      "kind": "want",
+      "text": "Проанализировать, во что впираюсь и почему так мало результата",
+      "answer_short": "Просьба 02:24: анализ прошлой истории даже без ПК.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143c9d0",
+      "kind": "want",
+      "text": "Проанализировать скорость ответа в TG-боте: на что тратится время и насколько эффективно",
+      "answer_short": "Просьба 02:27.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143a567",
+      "kind": "want",
+      "text": "Мини-ап: писать текстом и записывать голосовые как в TG",
+      "answer_short": "Просьба 02:31, поднималась не раз. Блок: статический GitHub Pages, sendData() только короткая строка, нужен HTTPS-upload endpoint.",
+      "status": "deferred",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26112002414331cd",
+      "kind": "want",
+      "text": "Эргономика и дизайн мини-апа: более наглядное управление",
+      "answer_short": "Просьба 02:31.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143dba6",
+      "kind": "want",
+      "text": "Ответить: важен ли подключённый по ADB телефон для текущих процессов",
+      "answer_short": "Просьба 02:20.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120024143197b",
+      "kind": "want",
+      "text": "Ответить: игра на ПК не мешает исследованиям и работе на ноутбуке",
+      "answer_short": "Просьба 02:22.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611200243563051",
+      "kind": "want",
+      "text": "Список в markdown всех статистик на экране scanfeed по группам",
+      "answer_short": "Просьба 02:39:48: дать список статистик, которые показаны в сканфиде, сгруппировать; перед отправкой запустить агента-критика.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26112002435610ee",
+      "kind": "want",
+      "text": "Запускать агента-критика для проверки ответа перед отправкой в TG",
+      "answer_short": "Просьба 02:39:48.",
+      "status": "done",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611201108502ba8",
+      "kind": "want",
+      "text": "Мини-ап: человеческая группировка промптов (не хронология, а смысловые группы)",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w26112011085054e8",
+      "kind": "want",
+      "text": "Мини-ап: несколько видов деревьев для одних и тех же промптов",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611201108503c24",
+      "kind": "want",
+      "text": "Мини-ап: агрегированный просмотр всех промптов совокупностью",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120110850a5ed",
+      "kind": "want",
+      "text": "Мини-ап: просмотр промптов за последние 3 дня / настраиваемое окно",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120110850a80e",
+      "kind": "want",
+      "text": "Мини-ап: связи промптов с требованиями, хотелками и оценками",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120110850bed0",
+      "kind": "want",
+      "text": "Мини-ап: короткий ответ «в пару слов» на каждый промпт",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120110850b26a",
+      "kind": "want",
+      "text": "Вести разработку проектов с телефона через OpenCode как харнесс, с ветками",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120110850c2ef",
+      "kind": "want",
+      "text": "Постоянно измерять производительность при 3/10/40 агентах и искать шедоу-баны",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120110931face",
+      "kind": "want",
+      "text": "Мини-ап: ручная установка связей между промптами, хотелками и оценками",
+      "answer_short": "",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611201131499312",
+      "kind": "want",
+      "text": "Разборы видео вынести отдельно: сетка авторов, сетка видео, группировка видео и grouping идей",
+      "answer_short": "По образцу дерева промптов: одни данные — несколько сеток (автор/видео/идея), у каждого узла вердикт «в пару слов» и связи с проверкой по демо. Источник: N2-video-claims.md, 67-vid",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w261120113149ba5c",
+      "kind": "want",
+      "text": "Демопарсер вынести отдельно: модель парсинга демок — идеи, алгоритмы, математика, методы, гипотезы прорывные/непрорывные, шум/сигнал",
+      "answer_short": "Таксономия method→algorithm→math→field + слой гипотез с предрегистрированным гейтом и меткой сигнал/шум. Источник: 02-demoparser-v3.md, EVOLUTION.md.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "want:w2611201131491a4f",
+      "kind": "want",
+      "text": "Сделать атлас знаний отдельным структурированным слоем для мини-апа, а не очередным отчётом",
+      "answer_short": "~/.config/opencode/atlas.json + atlas_build.py; 5 сеток как виды одного графа; читать как tree.json/decisions.json.",
+      "status": "doing",
+      "confidence": "auto",
+      "refs": [
+        "wants.json"
+      ]
+    },
+    {
+      "id": "claim:GATE-T1",
+      "kind": "claim",
+      "text": "Гейт T1: wp_v3-признаки дают прирост contested AUC > 0.60 при нижней границе cluster 95% CI > 0.55, ECE < 0.05 на ≥30 held-out матчах",
+      "answer_short": "256 train / 64 test по match_id; своя полоса base 0.5772 (n=2329) → 0.5762 (n=2301), cluster CI (0.5631, 0.5919); фикс. полоса 0.5772 → 0.5753, CI (0.5569, 0.5936); ECE 0.0195 → 0.",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/T1-winrate-v4.md; overnight/72-hypothesis-ledger.md §1.1; overnight/MASTERPLAN-v2.md §1"
+      ]
+    },
+    {
+      "id": "claim:GATE-T2",
+      "kind": "claim",
+      "text": "Гейт T2: личный остаток игрока даёт out-of-sample прирост с CI > 0 и ICC игрока в исходе > 0.05 при стабильном ранжировании",
+      "answer_short": "3 независимые проверки (N3, v1, v2). v1: ΔAUC −0.0039 [−0.0169, +0.0097], ICC 0.0046, split-half rho 0.064, holdout rho −0.078. v2 (255/64, 18446 наблюдений): reversal-only ΔAUC −0",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/T2-player.md; overnight/T2-player-v2.md; overnight/72-hypothesis-ledger.md §1.1; overnight/MASTERPLAN-v2.md §1"
+      ]
+    },
+    {
+      "id": "claim:GATE-T3",
+      "kind": "claim",
+      "text": "Гейт T3: калибровка P(full buy) и P(AWP-килл) проходит ECE < 0.05 и покрытие > 60%",
+      "answer_short": "Вложенный 5-fold CV по match_id + Platt. P(full buy): n=54744, ECE max 0.0073, coverage 90.5%, Brier 0.1122, AUC 0.882. P(AWP-килл, killer): n=46351, ECE 0.0066, coverage 96.9%, Br",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/T3-buy-awp.md; overnight/72-hypothesis-ledger.md §1.1; .config/opencode/progress.json (T3); overnight/MASTERPLAN-v2.md §1"
+      ]
+    },
+    {
+      "id": "claim:GATE-T4",
+      "kind": "claim",
+      "text": "Гейт T4: честные метрики scanfeed против факта с n и baseline; confidence откалиброван по REAL-кадрам",
+      "answer_short": "Демо: 120/120 килов совпали, coverage 1.0; two-AK TP4 FP0 FN3 TN9 → P=1.0 R=0.5714 accuracy 0.8125; бай persistence 0.6129 < baseline 0.7742, AWP-rule 0.6452 > 0.5161 (n=31 переход",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/73-t4-donk-benchmark.md; .config/opencode/progress.json (T4.4); overnight/MASTERPLAN-v2.md §1"
+      ]
+    },
+    {
+      "id": "claim:H-T1-01",
+      "kind": "claim",
+      "text": "Пять признаков wp_v3 (smoke_adv, buy_full_adv, equip_adv_k$, los_adv, los_lead_s) дают прирост contested AUC",
+      "answer_short": "base 0.5772 → 0.5762, cluster CI (0.5631, 0.5919); фикс. полоса 0.5772 → 0.5753, CI (0.5569, 0.5936); 34/64 матчей улучшение; ECE 0.0195 → 0.0181; 41095/10223 состояний",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1"
+      ]
+    },
+    {
+      "id": "claim:H-T1-02",
+      "kind": "claim",
+      "text": "Plant/defuse и LOS-признаки несут сигнал на полном корпусе",
+      "answer_short": "plant/defuse только 40 демо с bomb-кэшем; LOS только 40 матчей, на остальных 280 = 0 (без утечки, но со сниженной мощностью)",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1"
+      ]
+    },
+    {
+      "id": "claim:H-T2-01",
+      "kind": "claim",
+      "text": "Надёжный «почерк» мыши переносится в предсказание победы раунда",
+      "answer_short": "ΔAUC reversal-only −0.0043 [−0.0105, +0.0015]; все 5 конфигураций ΔAUC ≤ 0; ICC игрока в исходе 0.0040 против порога 0.05; бутстрепы ΔAUC>0 = 9.5%; 255/64 матчей, 18446 наблюдений",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1; overnight/T2-player-v2.md"
+      ]
+    },
+    {
+      "id": "claim:H-T2-02",
+      "kind": "claim",
+      "text": "Признак yaw_reversal_rate надёжно различает игроков (ICC измерения)",
+      "answer_short": "ICC(1,1) 0.0548 [0.0475, 0.0887], F=2.65, p=1.7e-48, 337 игроков; split-half 0.480; ρ(профиль, остаток исхода) = −0.015",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1; overnight/T2-player-v2.md §4"
+      ]
+    },
+    {
+      "id": "claim:H-T3-01",
+      "kind": "claim",
+      "text": "P(full buy | состояние) и P(AWP-килл | buy, equip) откалиброваны",
+      "answer_short": "P(full buy): n=54744, ECE 0.0073, coverage 90.5%, Brier 0.1122, AUC 0.882. P(AWP-килл): n=46351 killer / 92864 стороны, ECE 0.0066/0.0064, coverage 96.9%, AUC 0.756/0.702",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1; overnight/T3-buy-awp.md"
+      ]
+    },
+    {
+      "id": "claim:H-T3-02",
+      "kind": "claim",
+      "text": "P(есть AWP | buy, equip) идентифицируемо",
+      "answer_short": "Нет weapon_purchase; знаменатель — дуэль-стороны при уже случившемся киле; 1632 equip=None исключены",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1; overnight/T3-buy-awp.md §«AWP-килл — это НЕ P(есть AWP)»"
+      ]
+    },
+    {
+      "id": "claim:H-T3-03",
+      "kind": "claim",
+      "text": "Сырой dust2-AWP-приор переносится на все карты",
+      "answer_short": "ECE 0.0224, Brier 0.0906, AUC 0.646 (n=92864); систематическая ошибка бакета rich 3.0 п.п.; разброс по картам 4.92–6.0 п.п.",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.1; overnight/T3-buy-awp.md §2"
+      ]
+    },
+    {
+      "id": "claim:V-C18",
+      "kind": "claim",
+      "text": "Держать прицел на уровне головы: наведение ближе коррелирует с попаданием (прокси)",
+      "answer_short": "47248 дуэлей / 6676 выстрелов; HS 49.7%; β(offset)=−0.1766 [−0.1964, −0.1568], OR 0.838/°",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/67-video-claims-verification.md; overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C16",
+      "kind": "claim",
+      "text": "Контрстрейф: движение снижает попадание; эффект остановки не подтверждён",
+      "answer_short": "5852 дуэли; β(peek)=−0.00526 [−0.00627, −0.00425]; brake 25.1% [24.0, 26.2]",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/67-video-claims-verification.md; overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C17",
+      "kind": "claim",
+      "text": "Ранний ЛКМ при широком стрейфе усиливает промах (взаимодействие peek×offset)",
+      "answer_short": "6676 выстрелов, 235 кластеров; β_int=−0.0082 [−0.0285, +0.0122], p=0.43",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C27",
+      "kind": "claim",
+      "text": "Donk — лучший стрелок, но не лучший аимер (направление рангов)",
+      "answer_short": "207 дуэлей; WR 74.9% [0.686, 0.803] → 3/125; HS 59.9% [0.531, 0.663] → 19/125",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C19",
+      "kind": "claim",
+      "text": "≈20% килов без мыши",
+      "answer_short": "46193 дуэли; доля ratio(Δyaw<порог)≥0.8: 1° 8.7%, 2° 24.2% [0.238, 0.246], 3° 40.2% — линейно от порога",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C21",
+      "kind": "claim",
+      "text": "В рандомной ситуации пикать широко",
+      "answer_short": "893 narrow / 196 wide; Δ hit +0.0007 [−6.9, +8.3] п.п.",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C31",
+      "kind": "claim",
+      "text": "Реагировать, а не prefire",
+      "answer_short": "3811 prefire / 38049 reactive; prefire выше WR на +5.07 п.п. [+3.18, +6.96]",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C5",
+      "kind": "claim",
+      "text": "«Увидел первым → победил»",
+      "answer_short": "811 killer / 516 victim; diff +2.97 п.п. [−4.71, +10.86], 11 кластеров; исторический r=0.0165",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C7",
+      "kind": "claim",
+      "text": "Двойной запик в абсолютно каждой катке",
+      "answer_short": "937 dust2-раундов; +15с 89.54% [0.874, 0.913]; topo_key→win AUC 0.516",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C1",
+      "kind": "claim",
+      "text": "5 ролей = 5 разных зон на freeze",
+      "answer_short": "937 раундов ×2; 3.50 зоны, 5+ только 14.25%; ICC ролей 0.013–0.081",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C2",
+      "kind": "claim",
+      "text": "Нельзя остаться и без лонга, и без шорта (дескриптивная привычка T)",
+      "answer_short": "937 раундов; +5с 2.24% [1.47, 3.40], +10с 0.64% [0.29, 1.39], +15с 1.60%",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C14",
+      "kind": "claim",
+      "text": "Видя смок, стягиваются под Б / ротация после контакта",
+      "answer_short": "640 дуэлей; 38/92 = 41.3%; DiD +1.6 п.п. [−1.4, +4.9], p=0.27",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C12",
+      "kind": "claim",
+      "text": "Вся игра делится на 3 тайминга",
+      "answer_short": "44209–46833 дуэли; 4 фазы, 50.7% нулей в t2fv",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C34",
+      "kind": "claim",
+      "text": "Простой выстрел 80/100, у Donk 95/100",
+      "answer_short": "47248 / 207 дуэлей; есть только headshot 49.7% / 59.9%",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:V-C8",
+      "kind": "claim",
+      "text": "Зона держится пока есть смок; больше гранат → победа (C8 + C4/C9/C10/C13)",
+      "answer_short": "n=0 событий grenade_thrown/detonate/smoke_expired; только weapon=hegrenade у 408 дуэлей",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.2"
+      ]
+    },
+    {
+      "id": "claim:M-E02",
+      "kind": "claim",
+      "text": "Килл на full buy / преимущество по закупу / full против eco дают стабильный within-round сигнал (E02/E06/E05)",
+      "answer_short": "Δ +0.190→+0.215 [0.194, 0.236]; +0.205→+0.239 [0.214, 0.263]; +0.131→+0.150 [0.134, 0.165]; 1437 раундов, BH q=0.000; discovery→holdout",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/59-empirical-move-rules.md; overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-E07",
+      "kind": "claim",
+      "text": "Недостаток закупа / килл на eco / eco против full / force / пистолет / deagle — SIGNAL мува (E07/E01/E04/E03/W01/W05)",
+      "answer_short": "Δ −0.227 [−0.250, −0.204]; −0.153; −0.145; −0.065; −0.150; −0.060; все q=0.000",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-W02",
+      "kind": "claim",
+      "text": "Дуэль из винтовки — сигнал мува",
+      "answer_short": "Δ +0.122→+0.147 [0.121, 0.173], BH q=0.000, 1437 раундов",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-T04",
+      "kind": "claim",
+      "text": "Поздний килл (≤10 с до последнего) — сигнал мува",
+      "answer_short": "Δ +0.072→+0.066 [0.044, 0.088], BH q=0.000",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-S02",
+      "kind": "claim",
+      "text": "Бодишот (S02) против хедшота (S01) — сигнал мува",
+      "answer_short": "S02 Δ +0.050 [0.024, 0.076]; S01 Δ −0.050 [−0.076, −0.024]; оба q=0.000",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-T02",
+      "kind": "claim",
+      "text": "Первый/ранний килл в зоне (T02/T03) — сигнал мува",
+      "answer_short": "T02 Δ −0.073 [−0.093, −0.054] q=0.000; T03 Δ −0.034 [−0.053, −0.012] q=0.004",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-U01",
+      "kind": "claim",
+      "text": "Паттерны thrusmoke/прострел/зона/лонг (U01/U02/U03/Z01/Z06 и др. 20) воспроизводятся",
+      "answer_short": "20 паттернов, Δ ≈ 0.000…+0.015, CI покрывают 0, q 0.063–0.995; негативные контроли R02 +0.004 [−0.020, +0.027], R10 +0.002 [−0.011, +0.016]",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-WEAK",
+      "kind": "claim",
+      "text": "Слабые паттерны Z03/Z04/Z05/C01/C04/D01 дают устойчивый сигнал",
+      "answer_short": "Δ 0.014–0.046, q 0.012–0.039",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-NAIVE",
+      "kind": "claim",
+      "text": "Наивный entity-level WR является мерой «мува»",
+      "answer_short": "Случайный паттерн даёт +0.044 / +0.101",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:M-CAUSE",
+      "kind": "claim",
+      "text": "Причинность «делай так — выиграешь» выводима из данных",
+      "answer_short": "Только kill-события; нет проигранных дуэлей и «паттерн был, килла не было»",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.3"
+      ]
+    },
+    {
+      "id": "claim:L-L1",
+      "kind": "claim",
+      "text": "L1 lossless (int16 юниты + 0.01°) сохраняет сигнал shot_hit и WP",
+      "answer_short": "195247 выстрелов, 6799 кластеров; β −0.177353 → L1 −0.177275, Δβ 0.04%, Spearman 0.9999; WP 64 матча, contested 0.5786, ΔAUC 0.0000; 13.29× сжатия",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/33-demo-compression-result.md; overnight/53-compression-allmaps.md; overnight/72-hypothesis-ledger.md §1.4"
+      ]
+    },
+    {
+      "id": "claim:L-L2",
+      "kind": "claim",
+      "text": "L2a/L2b (cell 64/256, 22.5°/45°) пригодны для пересчёта shot-признаков",
+      "answer_short": "L2a Δβ 60.88% (-bin 0–1°: 36877→448), L2b 83.39% (→0); Spearman 0.41/0.31; 29-кратное воспроизведение 60.9%/82.2%",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.4"
+      ]
+    },
+    {
+      "id": "claim:L-C2A1",
+      "kind": "claim",
+      "text": "Порог L2 c2_a1 (cell 2, 1°) даёт выигрыш в объёме",
+      "answer_short": "Δβ 0.85% — гейт проходит, но 17 Б/строку = ровно как L1 (13.29×); первый схема с выигрышем c4_a2 (15 Б) уже Δβ 2.57% — FAIL",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.4"
+      ]
+    },
+    {
+      "id": "claim:L-WPGRID",
+      "kind": "claim",
+      "text": "WP устойчив к сдвигу death/plant-тиков на сетку вплоть до 64",
+      "answer_short": "2338 contested, pooled 0.8467, contested 0.5786; ΔAUC ≤ +0.001 на сетке 64 при допуске 0.01; 320 матчей",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.4"
+      ]
+    },
+    {
+      "id": "claim:L-ASSERT",
+      "kind": "claim",
+      "text": "ASSERT-инварианты квантования выполняются (pe ≤ cell/√2 и т.д.)",
+      "answer_short": "2347733 строки, 0 нарушений; максимумы = теоретическим границам",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.4"
+      ]
+    },
+    {
+      "id": "claim:L-MAPS",
+      "kind": "claim",
+      "text": "Ошибка квантования переносится на все 7 карт",
+      "answer_short": "Поток тик-окон только dust2+ancient: 99.2% / 0.8%; ошибки совпали в пределах шума (XY 0.3708 / 0.3681)",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.4"
+      ]
+    },
+    {
+      "id": "claim:R-PREC",
+      "kind": "claim",
+      "text": "Детектор врагов на реальных spectator-кадрах даёт измеренную precision/recall",
+      "answer_short": "REAL-парный захват realgt_02, GT из GSI через гомографию SIFT: 30 кадров / 20 пар / 28 GT-позиций; tp=17, fp=0, fn=11 → precision 1.0, recall 0.6071, F1 0.7555",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/64-radar-recalib-live.md; overnight/72-hypothesis-ledger.md §1.5"
+      ]
+    },
+    {
+      "id": "claim:R-ECE",
+      "kind": "claim",
+      "text": "Уверенность радар-детектора откалибрована (ECE < 0.05)",
+      "answer_short": "ECE 0.4176 (conf 0.5–0.7 при acc 1.0; conf 0.5 n=10, conf 0.7 n=7); dot_quality обучен на красных точках и систематически недооценивает cyan-детекции (штраф −0.30)",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/64-radar-recalib-live.md; overnight/72-hypothesis-ledger.md §1.5; overnight/GATE-T4"
+      ]
+    },
+    {
+      "id": "claim:R-RED",
+      "kind": "claim",
+      "text": "«Красный = враг» (как в отчёте 52)",
+      "answer_short": "CT (враг) = cyan H≈97, 27/28 сэмплов; T (свои) = orange H≈26, 62/63; красные блобы — артефакты HUD в 11/20 кадров, не совпадают с GT; 0 TP",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.5; overnight/64-radar-recalib-live.md"
+      ]
+    },
+    {
+      "id": "claim:R-SMALL",
+      "kind": "claim",
+      "text": "Малый радар доступен как поверхность для калибровки",
+      "answer_short": "2 spectator-захвата: realgt_02 — overview_map по центру, малого радара нет; realgt_03 — чёрный прямоугольник, SIFT 1/166 → none_unstable / REAL_BLOCKED | ТРИАЖ 19.11 20:45: verdict",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.5; overnight/89-live-demo-parity.md"
+      ]
+    },
+    {
+      "id": "claim:R-RECALL",
+      "kind": "claim",
+      "text": "Recall ниже 1.0 — ошибка сопоставления GT, а не ограничение поверхности",
+      "answer_short": "Чувствительность radius 0.015 → 0.020: результат не меняется; 11 GT-точек не имеют видимого cyan-блоба (этажи/стены/не дорисовывается)",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/72-hypothesis-ledger.md §1.5"
+      ]
+    },
+    {
+      "id": "claim:N89-01",
+      "kind": "claim",
+      "text": "Live (GSI) и demo (demoparser) дают совпадающие поля: шкала раунда, номер раунда, исход, 10 игроков",
+      "answer_short": "t_rel_s=(tick−start)/64 (64 Гц) против фаз FREEZE/LIVE/OVER; номер раунда 1-based в обоих; winner/end_reason в TL, в GSI только счёт+фаза; 10 игроков: GSI spectator allplayers,.dem",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/89-live-demo-parity.md §1–2"
+      ]
+    },
+    {
+      "id": "claim:N89-02",
+      "kind": "claim",
+      "text": "Три правила переносятся между live и demo: AWP-наследие, гранатный счётчик, позиционные признаки",
+      "answer_short": "AWP-наследие: 0.6452 против baseline 0.5161 (отчёт 73); прецедент buy_awp_live.json обучен на демо и потребляется gsi_service_v3.py. Гранаты: grenade_thrown/detonate 68/102/101/70 ",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/89-live-demo-parity.md §3.1"
+      ]
+    },
+    {
+      "id": "claim:N89-03",
+      "kind": "claim",
+      "text": "Экономика и визуальная confidence-калибровка не переносятся без новых источников",
+      "answer_short": "В TL нет money/equip/buy-event; демо-эвристика 0.6129 / 0.5161 < always-full 0.7742 (отчёт 73). Для радара нужны OBS-пиксели + spectator-GSI; при 0 FP и single_class=true калибровк",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/89-live-demo-parity.md §3.2"
+      ]
+    },
+    {
+      "id": "claim:N89-04",
+      "kind": "claim",
+      "text": "Инвариант §4 MASTERPLAN-v2: на совпадающих полях адаптеры дают одинаковый результат на одном и том же раунде",
+      "answer_short": "Требуется прогнать три правила из §3.1 на gsi и demo на одном раунде; расхождения допустимы только в money/equip/hp/winner с null/approx/quality | ТРИАЖ 19.11 20:45: verdict open→f",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §4; overnight/01–04 (P1-4 gate)"
+      ]
+    },
+    {
+      "id": "claim:N90-01",
+      "kind": "claim",
+      "text": "Пороги вывода денег/бая/гранат в отчёте 90 были эвристиками без n и CI и требовали калибровки до использования",
+      "answer_short": "Было: 0.55/0.20, 4750/3500/1700, «гранатный набор» без измерений. Метка до калибровки — ВЫВОД, не точность. Закрыто отчётом 94: n=12448, измеренные пороги 1975/3475, точность 98.37",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/90-economy-inference-rules.md §6; overnight/94-economy-inference-calib.md"
+      ]
+    },
+    {
+      "id": "claim:N94-01",
+      "kind": "claim",
+      "text": "Измеренные пороги equip → buy заменяют догадки 90 и повышают точность разделения классов",
+      "answer_short": "n=12448 пар: full 9158 (73.6% [72.8, 74.3]), eco 2482 (19.9% [19.2, 20.7]), force 808 (6.5% [6.1, 6.9]). Измеренные (<1975 / 1975–3475 / ≥3475): 98.37% [98.13, 98.56] против старых",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/94-economy-inference-calib.md §2.1–3"
+      ]
+    },
+    {
+      "id": "claim:N94-02",
+      "kind": "claim",
+      "text": "P(AWP-килл) по equip-тиру измерено и заменяет «вероятно» численной вероятностью",
+      "answer_short": "Базовая частота 10.38%; equip ≥4750 (rich_4_75kplus) 10.88%; 3500–4750 (full) 0.74%; eco_lt2k 1.44%; force_2_3_5k 1.17% (buy_awp_live tier_priors)",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/94-economy-inference-calib.md §2.2–3"
+      ]
+    },
+    {
+      "id": "claim:N94-03",
+      "kind": "claim",
+      "text": "Условие «выжил» для AWP и «выжил → не докупил броню» измерено",
+      "answer_short": "Прямое измерение: НЕТ ДАННЫХ, n=0 в обоих правилаx. Прокси: медианный equip после победы 4864.5 [4831.0, 4898.0] (n=5978) против после поражения 3582.7 [3534.7, 3630.8] (n=5978), р",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/94-economy-inference-calib.md §2.2–2.3, §4"
+      ]
+    },
+    {
+      "id": "claim:N94-04",
+      "kind": "claim",
+      "text": "Гранатный набор по классу закупа измерен (среднее число гранат на сторону-раунд)",
+      "answer_short": "utility_rows, 9 демо: full n=231 → 9.45 [8.86, 10.05] (медиана 10); force n=15 → 7.27 [4.92, 9.61] (медиана 6); eco n=61 → 6.36 [5.07, 7.65] (медиана 4)",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/94-economy-inference-calib.md §2.4–3"
+      ]
+    },
+    {
+      "id": "claim:N94-05",
+      "kind": "claim",
+      "text": "Все связи в калибровке экономики — ассоциации, не причины; ограничения задокументированы",
+      "answer_short": "Оговорки: equip — прокси, а не банк; 98.37% — воспроизведение разметки; гранаты только в 9 демо, n=15 force даёт широкий CI; P(AWP-килл) ≠ P(есть AWP) и n/CI недоступны; регрессия ",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/94-economy-inference-calib.md §5"
+      ]
+    },
+    {
+      "id": "claim:N95-01",
+      "kind": "claim",
+      "text": "Три работающих правила вынесены в core/FeatureFrame как чистые функции без I/O",
+      "answer_short": "core/feature_frame.py: normalize_tick, round_slot, resample_64, kill_feed, control_zones, nearest_teammate, man_gap, position_features, grenade_counter, awp_inheritance, has_awp, b",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/95-feature-frame.md §3"
+      ]
+    },
+    {
+      "id": "claim:N95-02",
+      "kind": "claim",
+      "text": "Два тонких адаптера (gsi.py, demo.py) приводят источники к контракту FeatureFrame без вычисления признаков",
+      "answer_short": "Отсутствие данных — None, а не False; quality.latency_s ±1 с, tick_offset=null, spectator_only, grenade_semantics; demo join по (round, ближайший tick) с допуском 0.25 с, pos=null ",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/95-feature-frame.md §4"
+      ]
+    },
+    {
+      "id": "claim:N95-03",
+      "kind": "claim",
+      "text": "FeatureFrame проверен на реальных прогонах (320 демо, parse_ticks, калибровки) и parity на одном раунде",
+      "answer_short": "Проверено только: py_compile всех модулей + микро-тест на синтетических словарях (carried-гранаты и AWP-флаг в GSI; kill-feed с headshot и grenade_count={'smoke':1} в demo; pos_ava",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/95-feature-frame.md §5"
+      ]
+    },
+    {
+      "id": "claim:G01",
+      "kind": "claim",
+      "text": "G1 real-data: правка детектора сопровождается перепрогоном на реальных кадрах",
+      "answer_short": "После data-driven цветового гейта и SIFT-геометрии детектор перепрогонялся на 20 парных REAL-кадрах (30 кадров, 28 GT-позиций); 39 — 20 парных кадров via allplayers_position",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.1; overnight/64-radar-recalib-live.md; overnight/39-real-bot-gt.md"
+      ]
+    },
+    {
+      "id": "claim:G02",
+      "kind": "claim",
+      "text": "G2 stale: метрика на старых detections помечается устаревшей",
+      "answer_short": "82: « живой HUD» 06:08–06:28 строился на скриншоте от 04:53, phase=warmup, allplayers=0; 87: выводы из stale-справки «FACEIT 0 демо» (01:45, позже опровергнута); MASTERPLAN §1 до с",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.1; overnight/82-work-review.md; overnight/87-critic-review.md"
+      ]
+    },
+    {
+      "id": "claim:G03",
+      "kind": "claim",
+      "text": "G3 multiple comparisons: FDR / число сравнений всегда указано",
+      "answer_short": "59: BH q=0.05 на 43 сравнения + 2 негативных контроля R02/R10; 67:.cluster-bootstrap 2000 реплик по match_id, CR1 cluster-robust 235 кластеров / 6676 выстрелов; T1/T2: cluster CI п",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.1; overnight/72-hypothesis-ledger.md §1.2–1.3"
+      ]
+    },
+    {
+      "id": "claim:G04",
+      "kind": "claim",
+      "text": "G4 causation: формулировки «ассоциация/сигнал», а не «причина»",
+      "answer_short": "72: «Все связи — ассоциации (G4), не причины»; M-CAUSE помечен непроверяемым; T3 §6: equip ↔ AWP ↔ роль ↔ сторона ↔ карта — ассоциация; 94 §5: регрессия к среднему, эндогенность",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.1; overnight/72-hypothesis-ledger.md (введение, §1.3); overnight/T3-buy-awp.md §конфаундинг"
+      ]
+    },
+    {
+      "id": "claim:G05",
+      "kind": "claim",
+      "text": "G5 calibration: используется ECE/reliability, а не «точность»",
+      "answer_short": "T3: reliability-диаграммы, ECE max 0.0073/0.0066, Brier/AUC/MCE вместе с ECE. Радар: ECE 0.4176 подан именно как калибровочная метрика, а не «42% ошибок»",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.1; overnight/T3-buy-awp.md; overnight/64-radar-recalib-live.md"
+      ]
+    },
+    {
+      "id": "claim:G06",
+      "kind": "claim",
+      "text": "G6 held-out: никакой настройки на тестовых матчах",
+      "answer_short": "T1: 256/64 по match_id, 8 прежних test-матчей остаются в held-out; T2: 255/64, профиль и residual только на train, ρ=−0.015; T3: вложенный 5-fold + Platt на внутреннем holdout; 42:",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.1; T1/T2/T3 отчёты; overnight/42-voice-03-holdout.md"
+      ]
+    },
+    {
+      "id": "claim:G07",
+      "kind": "claim",
+      "text": "G7 сначала гейт, потом задача: ни одной задачи без заранее записанного порога",
+      "answer_short": "82: T1-прогон на 8 матчах не дал вердикта и вынудил retry; правила появились в 05:50, когда T1/T2 уже закрыли. MASTERPLAN.md mtime 05:50, goal 04:38",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md §4"
+      ]
+    },
+    {
+      "id": "claim:G08",
+      "kind": "claim",
+      "text": "G8 скриншот на реальном фоне: UI не готов без свежего кадра 2560×1440 с phase=live, allplayers>0",
+      "answer_short": "87: мокапы на тёмном холсте; слайд 2 «живой матч» с чёрным прямоугольником ~340×200; пунктирные заглушки вместо мокапов; CSS background-image:url(file://…) не рендерится; теста кон",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/87-critic-review.md №1, №5, №6, №9"
+      ]
+    },
+    {
+      "id": "claim:G09",
+      "kind": "claim",
+      "text": "G9 факт до интерпретации: mtime кадра, свежесть GSI, monitor_id/DXGI проверяются перед выводом",
+      "answer_short": "82: гипотеза «session 0» не подтвердилась (~20 мин + ~20 ручных dispatch); настоящая причина monitor:0 / WGC, лечение monitor_id + method:1 (DXGI); скриншот от 04:53 приняли за жив",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md №3; overnight/87-critic-review.md"
+      ]
+    },
+    {
+      "id": "claim:G10",
+      "kind": "claim",
+      "text": "G10 вердикт, а не шаги: прогресс = PASS/FAIL/OPEN, «100%» запрещено",
+      "answer_short": "progress.py печатает «19/19 шагов … 100%» при T1 FAIL, T2 FAIL, T4 open, T3 PASS; в progress.json у T4 verdict open, но все 4 шага done. Итог по MASTERPLAN-v2: 1 PASS · 2 FAIL · 1 ",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/87-critic-review.md №2; .config/opencode/progress.json"
+      ]
+    },
+    {
+      "id": "claim:G11",
+      "kind": "claim",
+      "text": "G11 единый источник чисел: claims.json с claim_id/value/n/source/verdict/updatedAt, разные ключи для калибровки радара и AWP",
+      "answer_short": "Создан /home/nyaka/claims.json: 94 плоские записи с id/claim/source_report/verdict/evidence/caveats/date; ключи разделены: R-ECE (радар, ECE 0.4176) против GATE-T3/N94-02 (AWP, ECE",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/87-critic-review.md №3; настоящий файл /home/nyaka/claims.json"
+      ]
+    },
+    {
+      "id": "claim:G12",
+      "kind": "claim",
+      "text": "G12 REAL/SYNTHETIC: SYNTHETIC никогда не входит в REAL-вердикт; при 0 FP confidence неидентифицируем",
+      "answer_short": "73: три источника факта (REAL/DEMO/SYNTHETIC) разнесены по блокам JSON; SYNTHETIC P≈0.984 не участвует в вердикте; REAL P=1.0/ECE=0.4176 при 0 FP → OPEN, PASS невозможен",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/73-t4-donk-benchmark.md §5; overnight/89-live-demo-parity.md §4"
+      ]
+    },
+    {
+      "id": "claim:G13",
+      "kind": "claim",
+      "text": "G13 роли технически: архитектор не запускает dispatch.py/скриншоты/opencode run вручную",
+      "answer_short": "82: 64 shell-вызова dispatch.py с 01:15 по 06:16 (~20 за 17 мин на OBS, ~27 за 43 мин 04:16–04:59, 10 за 25 мин на pipeline); ~3.5 ч переключений; правило зафиксировано в 04:38 (фа",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md №4"
+      ]
+    },
+    {
+      "id": "claim:G14",
+      "kind": "claim",
+      "text": "G14 передача контекста: HANDOFF.md + следующий список задач до SPRINT_DONE",
+      "answer_short": "84.5 мин холостых SPRINT_DONE (8 пульсов 02:58–04:10) + 36.8 мин холодного старта (04:15→04:52 перечитка контекста) + 47.2 мин щелей внутри спринта = ~121 мин накладных",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md №1"
+      ]
+    },
+    {
+      "id": "claim:G15",
+      "kind": "claim",
+      "text": "G15 sample-size до прогона: T1/T1b сразу ≥30 held-out и cluster CI; различать ICC измерения и ICC вклада",
+      "answer_short": "T1-v1: 8 held-out / 1406 состояний → forced retry на 64; T2-v1/v2 «дожимали» после двух нулей; ловушка двух ICC (0.0548 измерения против 0.0040 вклада) выяснилась только в v2",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md №5"
+      ]
+    },
+    {
+      "id": "claim:G16",
+      "kind": "claim",
+      "text": "G16 предохранители нагрузки: лимит result.files, архивация на каждом /result, health-timeout ≥ 3× p99, TTL для running",
+      "answer_short": "Сделано: slim_state 538 319 137 Б → 972 КБ, health 73.4 с → 0.007 с, --max-time 3 → 10 с (05:53), петля 7 рестартов прекратилась к 05:58. Не сделано/не проверено: 17 задач running ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md №2; overnight/87-critic-review.md №10"
+      ]
+    },
+    {
+      "id": "claim:G17",
+      "kind": "claim",
+      "text": "G17 уникальный ID: канонический ID + mergedFrom; дедупликация до создания",
+      "answer_short": "Дубли goals.json: A1 (08:54/08:55), A2 (08:54 ×2), B1/B2/B4 (09:00–09:07), C1/C2 (09:00/09:01 и 09:06/09:07); две ручные консолидации ~7 ч 25 мин (17:24 18.11 → 00:49 19.11)",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §6.2; overnight/82-work-review.md (ещё три потери)"
+      ]
+    },
+    {
+      "id": "claim:O1",
+      "kind": "claim",
+      "text": "O1: T4 ECE 0.4176 при 0 FP и n=20 снят — получены REAL-кадры с ненулевым FP и переобучен dot_quality",
+      "answer_short": "Текущее состояние: tp=17 fp=0 fn=11, n=20, ECE 0.4176, realgt_03 REAL_BLOCKED | P0-3 ПРОГОН 21:40: REAL n=90 пар (realgt_06), FP=98>0, tp=57, precision 0.3677 [0.296;0.446], ECE(5 ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3"
+      ]
+    },
+    {
+      "id": "claim:O2",
+      "kind": "claim",
+      "text": "O2: три одновременно работающих оверлея заменены одной панелью по скриншот-гейту",
+      "answer_short": "Свежий кадр 06:39:18 (2560×1440): окно «Scanfeed overlay» с рамкой и scrollbar'ом, круг-радар ~450 px слева, карточка v3 справа поверх netgraph; overlay_disable_diag.txt — «Отказан",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3; overnight/87-critic-review.md №1, №9"
+      ]
+    },
+    {
+      "id": "claim:O3",
+      "kind": "claim",
+      "text": "O3: прогресс-виджет показывает 1 PASS · 2 FAIL · 1 OPEN, пороги — контурные бары, единый claims.json подключён к рендерам",
+      "answer_short": "По-прежнему 19/19 = 100%; три зелёных заполненных бара «цель» (92%, 84%, 100%) при 0.558 против цели 0.60; claims.json создан этим отчётом, но progress.py/деки ещё не переведены на",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3; overnight/87-critic-review.md №2, №7"
+      ]
+    },
+    {
+      "id": "claim:O4",
+      "kind": "claim",
+      "text": "O4: мокапы пересняты поверх реального светлого Dust2, заглушки заменены <img>, пройден тест контраста",
+      "answer_short": "Слайды 3–5: пустые пунктирные прямоугольники, CSS background-image:url(file:///…overlay_mock_*.png) не рендерится, миниатюры наезжают на футер; вайрфреймы на тёмном фоне",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3; overnight/87-critic-review.md №5, №6"
+      ]
+    },
+    {
+      "id": "claim:O5",
+      "kind": "claim",
+      "text": "O5: отладочная строка и [НЕТ ДАННЫХ] убраны из игрового HUD, осталось 2 честных числа крупнее 20 px",
+      "answer_short": "В кадре: «AWP-УГРОЗА ? — [НЕТ ДАННЫХ]», «▲ угрозы: нет данных», внизу «P(AWP-килл) ≠ P(есть AWP) · ECE 0.0066 · гранаты: нет данных»; mocks обещали 7.24% / «AWP В ИНВЕНТАРЕ»",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3; overnight/87-critic-review.md №8"
+      ]
+    },
+    {
+      "id": "claim:O6",
+      "kind": "claim",
+      "text": "O6: 7 расхождений R2 из 12 пар исправлены и T1b открыт с предварительным гейтом",
+      "answer_short": "7 из 12 R2-вердиктов сканфида расходятся с engine-позициями (отчёт 88); новые источники (позиции 10, AWP-ownership, economy series) ещё не доведены до T1b | ТРИАЖ 19.11 20:45: verd",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3, §3; overnight/89-live-demo-parity.md"
+      ]
+    },
+    {
+      "id": "claim:O7",
+      "kind": "claim",
+      "text": "O7: эвристические пороги вывода экономики заменены измеренными частотами с n и CI",
+      "answer_short": "Закрыто отчётом 94: n=12448 пар, пороги <1975 / 1975–3475 / ≥3475, точность 98.37% [98.13, 98.56] против 96.88% старыми; гранаты full 9.45 [8.86,10.05] / force 7.27 [4.92,9.61] / e",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3; overnight/94-economy-inference-calib.md"
+      ]
+    },
+    {
+      "id": "claim:O8",
+      "kind": "claim",
+      "text": "O8: pc-bridge полностью защищён — TTL для running, лимит state, архивация result.files на каждом /result",
+      "answer_short": "17 записей running (в т.ч. с 01:xx) и 10 queued на момент ревью 87; state раздувался до 538 МБ, health 73.4 с; частичный фикс (slim_state, max-time 10) сделан, но TTL-перевод висящ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §2.3; overnight/87-critic-review.md №10"
+      ]
+    },
+    {
+      "id": "claim:P0-1",
+      "kind": "claim",
+      "text": "P0-1: один оверлей в кадре — свежий скриншот 2560×1440, phase=live, allplayers>0, ровно одна панель, центр и левая треть чистые",
+      "answer_short": "Гейт поставлен; последний доступный кадр 06:39:18 показывает три оверлея и отсутствие проверенного сценария phase=live/allplayers>0 | ТРИАЖ 19.11 20:45: verdict open→fail; источник",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5"
+      ]
+    },
+    {
+      "id": "claim:P0-2",
+      "kind": "claim",
+      "text": "P0-2: progress.py печатает 1 PASS · 2 FAIL · 1 OPEN; pass=1, fail/open=0; пороги — контурные бары; claims.json с полями; autoOpen убран",
+      "answer_short": "claims.json создан (94 записи, раздельные ключи калибровки радара и AWP); progress.py и бары ещё не переведены; autoOpen не убран | ПРОВЕРКА 21:25: код переведён — ~/.config/openco",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5; настоящий файл /home/nyaka/claims.json"
+      ]
+    },
+    {
+      "id": "claim:P0-3",
+      "kind": "claim",
+      "text": "P0-3: T4 снимает OPEN — REAL n ≥ 60 и FP > 0, ECE/reliability по REAL, SYNTHETIC отдельно",
+      "answer_short": "Сейчас REAL n=20, fp=0, ECE 0.4176; требуется n≥60 и ненулевой FP | P0-3 ПРОГОН 21:40: REAL n=90 пар (realgt_06), FP=98>0, tp=57, precision 0.3677 [0.296;0.446], ECE(5 bin)=0.2232,",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5"
+      ]
+    },
+    {
+      "id": "claim:P1-4",
+      "kind": "claim",
+      "text": "P1-4: FeatureFrame core + 2 адаптера — инвариант §4 на одном раунде, три правила дают одинаковый результат на gsi и demo",
+      "answer_short": "Код создан и проходит py_compile + синтетический микро-тест; реальные прогоны и parity на одном раунде не проводились | ТРИАЖ 19.11 20:45: verdict open→fail; источник overnight/cla",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5; overnight/95-feature-frame.md"
+      ]
+    },
+    {
+      "id": "claim:P1-5",
+      "kind": "claim",
+      "text": "P1-5: T1b на новых источниках — гейт ≥30 held-out + cluster CI записан до первого прогона, 7 расхождений R2 исправлены",
+      "answer_short": "7 расхождений R2 из 12 пар не исправлены; гейт T1b ещё не зафиксирован до прогона | ТРИАЖ 19.11 20:45: verdict open→pass; источник overnight/claims_open_triage_2045.md",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5"
+      ]
+    },
+    {
+      "id": "claim:P2-6",
+      "kind": "claim",
+      "text": "P2-6: каждый порог из 90 заменён на частоту с n и CI по duels_all_v5 + round_wins; до калибровки метка «вывод»",
+      "answer_short": "Выполнено: n=12448 пар, измеренные пороги 1975/3475, 98.37% [98.13, 98.56]; гранаты по 231/15/61 строкам; артефакт data/economy_inference_calib.json с разделами rules.1…rules.4 и s",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5; overnight/94-economy-inference-calib.md"
+      ]
+    },
+    {
+      "id": "claim:P2-7",
+      "kind": "claim",
+      "text": "P2-7: архивация result.files на каждом /result, health-timeout ≥ 3× p99, TTL-перевод running → failed, причина рестарта в логе",
+      "answer_short": "Частично: slim_state 538 МБ → 972 КБ, health 73.4 с → 0.007 с, max-time 10 с; TTL и логирование причины не подтверждены",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "overnight/MASTERPLAN-v2.md §5"
+      ]
+    },
+    {
+      "id": "claim:SYN-01",
+      "kind": "claim",
+      "text": "SYNTHETIC bot-GT: engine-координаты, отрисованные поверх PNG радара, дают близкие precision/recall",
+      "answer_short": "P=0.9854 / R=0.6168 / ECE=0.1855 (n=907); P=0.9831 / R=0.5951 / ECE=0.1831 (n=604). В сводке 82: SYNTHETIC P 0.9854 / R 0.6168 — не валидация | ТРИАЖ 19.11 20:45: verdict open→fail",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/73-t4-donk-benchmark.md строка 18; overnight/82-work-review.md строка 23"
+      ]
+    },
+    {
+      "id": "claim:SYN-02",
+      "kind": "claim",
+      "text": "SYNTHETIC-метрики ~0.984 precision спасают вердикт T4",
+      "answer_short": "SYNTHETIC даёт P≈0.984 / R≈0.60 / ECE≈0.184 на 907 и 604 кадрах против REAL P=1.0 / ECE=0.4176 при n=20 и 0 FP | ТРИАЖ 19.11 20:45: verdict open→fail; источник overnight/claims_ope",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/73-t4-donk-benchmark.md §5, строка 161; .config/opencode/progress.json (T4.4)"
+      ]
+    },
+    {
+      "id": "claim:T1C-01",
+      "kind": "claim",
+      "text": "T1c с полным покрытием позиций 320/320 поднимет contested AUC до ≥0.60",
+      "answer_short": "contested 0.5504→0.5572 (n 2483→2138), cluster CI нижняя 0.5399, ECE 0.0305, 64 held-out матча",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "turngame/overnight/108-t1c.md"
+      ]
+    },
+    {
+      "id": "claim:S4H-O1",
+      "kind": "claim",
+      "text": "Задача O1 выполнена в автономном 4h-спринте",
+      "answer_short": "exit=0; отчёт есть",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/sprint4h/O1.md"
+      ]
+    },
+    {
+      "id": "claim:S4H-O2",
+      "kind": "claim",
+      "text": "Задача O2 выполнена в автономном 4h-спринте",
+      "answer_short": "exit=1; отчёт отсутствует",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/sprint4h/O2.md"
+      ]
+    },
+    {
+      "id": "claim:CAL-RADAR-ECE",
+      "kind": "claim",
+      "text": "Калибровка радара (честный дедуктивный GT): ECE 0.412 при n=21 — порог ECE<0.05 НЕ подтверждён",
+      "answer_short": "ECE 0.412, n=21 — дедуктивный сабсет GT из A2.md:64-65 и 12-radar-fix.md:78. Отрицательный результат зафиксирован.",
+      "status": "fail",
+      "confidence": "auto",
+      "refs": [
+        "overnight/A2.md:64-65; overnight/12-radar-fix.md:78; overnight/87-critic-review.md №3"
+      ]
+    },
+    {
+      "id": "claim:CAL-AWP-ECE",
+      "kind": "claim",
+      "text": "Калибровка AWP P(AWP-килл|buy,equip): ECE 0.0066 при n=46351 — порог ECE<0.05 взят",
+      "answer_short": "Вложенный 5-fold CV по match_id + Platt: n=46351 killer, ECE 0.0066, coverage 96.9%, Brier 0.0858, AUC 0.756.",
+      "status": "pass",
+      "confidence": "auto",
+      "refs": [
+        "overnight/T3-buy-awp.md; overnight/72-hypothesis-ledger.md §1.1; GATE-T3"
+      ]
+    },
+    {
+      "id": "goal:gmwlj68guaypf",
+      "kind": "goal",
+      "text": "Проверить доску целей в TUI",
+      "answer_short": "Нажать Ctrl+G / /goals после /reload, убедиться что видны разделы",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwljvushzd0v",
+      "kind": "goal",
+      "text": "Разобрать 1000 часов CS2-видео moreostins",
+      "answer_short": "Бесплатные возобновляемые каналы: локальный whisper.cpp Vulkan (безлимит), Kaggle T4 (~600 ч/нед), Colab, Cloudflare Workers AI (~107 ч/мес), Deepgram $200 (~700 ч разово). Скрипты",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwlm9x335d37",
+      "kind": "goal",
+      "text": "Максимально конфиденциальная обработка переписки",
+      "answer_short": "Найден экспорт ~/Telegram Desktop/ChatExport_2026-11-18 (1.8ГБ, 11684 сообщений, 2617 голосовых). Локальная LLM Qwen2.5 7B Q4_K_M готова. Парсер сделан: /tmp/opencode/ivan_export/m",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwlon8g7jr3b",
+      "kind": "goal",
+      "text": "Мониторинг экспорта данных Telegram",
+      "answer_short": "Фоновый скрипт /tmp/opencode/monitor/monitor.py раз в минуту проверяет прогресс по OCR; при застое 2+ минуты нажимает 'Skip this file'. Лог: /tmp/opencode/monitor/monitor.log",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwlpd8eiio9h",
+      "kind": "goal",
+      "text": "Ночной спринт №2: 8 часов максимальной разработки",
+      "answer_short": "План ~/overnight/PLAN-8H.md. Фазы A (D1-D3), B (D4-D6), C (D7), D (верификация), E (сдача). Волна A запущена: A1, A2, B1, B4",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwlpi9vwrqst",
+      "kind": "goal",
+      "text": "НУЖНО УЧАСТИЕ ПОЛЬЗОВАТЕЛЯ: разместить 30+ кадров вручную",
+      "answer_short": "Автоматизация исчерпана: CS2 запускалась с 10 ботами, но все exec-хуки (de_dust2.cfg, gamemode_server.cfg, wait) дают 'no local client'; игра в нативном Wayland без X11-окна, ydoto",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwm2xvpep8dz",
+      "kind": "goal",
+      "text": "Вернуть монитор экспорта и проконтролировать пайплайн",
+      "answer_short": "Дубль переходный: второй экземпляр (PID 25303/25309) уже завершился, остался один запущенный пайплайн PID 12189 (15:08). Прогресс 956→1316 транскриптов за ~1 мин, всего 2617. Реаль",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwm3atz3rxo6",
+      "kind": "goal",
+      "text": "Восстановить монитор OCR экспорта Telegram (потерян при перезагрузке)",
+      "answer_short": "Скрипт /tmp/opencode/monitor/monitor.py и лог исчезли при очистке /tmp 18.11. Проверял прогресс OCR раз в минуту и при застое 2+ мин нажимал 'Skip this file'. Нужны от пользователя",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwm4lwo0dfgi",
+      "kind": "goal",
+      "text": "Кооперативный режим Windows-ПК: не мешать Steam/CS2",
+      "answer_short": "Co-op и отказоустойчивость: задачи onlogon /it в сессии 1, HTTP-канал /cmd + /result как запасной при падении SSH, watchdog на ноуте подхватывает после ребута. Пайплайн по-прежнему",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwm7as8tb3m0",
+      "kind": "goal",
+      "text": "Локальная LLM-классификация конфиденциальности голосовых",
+      "answer_short": "Классификатор V3 (исправленный: голосовые как источник, приоритет по PII/именам, GPU -ngl 12) запущен и, судя по логу, завершил 4 батча на 100 кандидатах. ПК сейчас недоступен (pin",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwm9ho0x7l36",
+      "kind": "goal",
+      "text": "Поднять sshd на Windows (порт 22 закрыт)",
+      "answer_short": "Повторная проверка 16:41 UTC: ПК жив (:8877=200), но SSH :22 timeout, HTTP-агент :8899 не отвечает, GSI :3000 не отвечает. Скриншот 19:34 MSK: CS2 НЕ открыта, на ПК идёт парсинг HL",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwmn9j3roiai",
+      "kind": "goal",
+      "text": "Сделать Telegram-бота агентом-помощником по VPN/DPI для телефона",
+      "answer_short": "19.11 ~11:26 MSK: повторный сбой — Telegram висел на «Подключение прокси…». Причина: в приложении остался включённым внутренний прокси (активный 138.16.73.160:63761, Лондон — недос",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwmvgxhotjw5",
+      "kind": "goal",
+      "text": "Параллельный вал: 8 агентов",
+      "answer_short": "FaceIT kings/top1000, оценка-теория, сложность/агрегация, real GT, сжатие L2, биометрия мыши, HUD live. Отчёты 48..55.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwmvsy8rkd7k",
+      "kind": "goal",
+      "text": "Мастер-план: архитектор vs cheap-рутина",
+      "answer_short": "~/overnight/MASTERPLAN.md. Дорогая модель = цель/гейты/ревью; cheap = рутина. Цели T1 contested AUC>0.60, T2 player residual, T3 калиброванный бай/AWP (ECE<0.05). Гейты G1-G6. Прек",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwmvy3irrohy",
+      "kind": "goal",
+      "text": "Безотказная связка телефон ↔ ноут ↔ ПК",
+      "answer_short": "19.11: связка работает: ноут-сервер + OpenTunnel, ADB Wi-Fi 35301 (порт сохраняется и перебирается), диск 91% (37G свободно). Самовосстановление: opencode-health.timer (сервер/тунн",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwmw0v11awbs",
+      "kind": "goal",
+      "text": "Онтология мувов: ~1000 подкатегорий + правила",
+      "answer_short": "MOVE-ONTOLOGY.md: 10 категорий × ~100 подкатегорий, rules из видео jerry/ostin/teamo и голосовых. Seed R1-R8 (суицид-пик, соло ловер без инфо, лонг без респа, смок на парике и т.д.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwmwcc5rlbby",
+      "kind": "goal",
+      "text": "Дозавершить LLM-дайджест 89 чанков (digest_v2)",
+      "answer_short": "19.11 07:15 MSK: генерация на ПК жива (19/36 перегенерировано, 72/89 файлов), старый оркестратор умер. Запущен автономный финишер ~/pc-bridge/digest_v2_finish.py (PID 1676064): ждё",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwn1h8mesfwm",
+      "kind": "goal",
+      "text": "44: финальная проверка нативного HUD в живом матче — не подтверждено (инъекция)",
+      "answer_short": "Свежий прогон: инъекция enemy1..enemy4 из test_gsi_payload_awp.json, allplayers в GSI отсутствуют; подлинный кадр 04:53 сохранён. Отчёт overnight/44-native-hud-live.md, PNG /tmp/op",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwn209m33ku7",
+      "kind": "goal",
+      "text": "Раздельные ресурсы: демки качать и разбирать на ПК, не на ноуте",
+      "answer_short": "ПК (192.168.31.230, D:\\hltv/C:\\hltv, ~100 ГБ) скачивает и парсит HLTV/FACEIT демки; ноут только ставит задачи через pc-bridge :8898 и читает готовый JSON. Скилл ~/.config/opencode/",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwn5jme4mw1q",
+      "kind": "goal",
+      "text": "VK-бот как аварийный канал управления Windows-ПК",
+      "answer_short": "19.11 ~11:06 MSK: вход в VK и Mail.ru на телефоне восстановлен. Причина сбоя — включённая мной 2FA на VK ID для ключа бота (ВК разлогинил сессии; VK ID общий с Mail). ВК-приложение",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwn6md2q490g",
+      "kind": "goal",
+      "text": "Непрерывная работа по открытым направлениям: радар, скан, оверлей, T5",
+      "answer_short": "Воркер ~/scripts/background/open_worker.sh крутит 6 задач из open_tracks.txt по кругу, лог ~/overnight/open_tracks.log, отчёты в ~/overnight/open_tracks/. Сторож в pipeline_watchdo",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwn9lstvty1k",
+      "kind": "goal",
+      "text": "Провести анализ ВСЕХ 2617 голосовых на идеи и новые цели",
+      "answer_short": "Запущено на Windows-ПК по split-resources (тяжёлая локальная LLM — не ноут): pc-bridge задача aee20630a8a2, скрипт ~/pc-bridge/share/extract_voice_ideas_local.py, llama-server ПК :",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnbsptie998",
+      "kind": "goal",
+      "text": "T4: снять OPEN — нужен OBS-REAL с FP>0 и дискриминация dot_quality",
+      "answer_short": "20.11 11:20–11:24 MSK, C04-612 (prereg PASS до/после, 15/15 гейтов, seed 821864846): числовой гейт T4 n=820/FP=394/ECE 0.0287 <0.15 PASS и устойчив к новому сиду. Но строгий T4 ост",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnc3l0s0h4j",
+      "kind": "goal",
+      "text": "Снять все 4 блока в progress.json",
+      "answer_short": "19.11 20:45: ПК 192.168.31.250 ОТВЕЧАЕТ (ping OK), pc-bridge :8898 health ok, telemetry_age=30s; старый адрес .230 мёртв. Продолжаю снятие 4 блоков: P0-1.2/1.3 и T10.4 — проба конс",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwncet2h6dvl",
+      "kind": "goal",
+      "text": "AI-обзор ленты Telegram",
+      "answer_short": "Сделано: ~/shared-repo/bots/feed_digest.py (юзербот читает каналы основного аккаунта через прокси 7900, гонит пачку через opencode run, шлёт дайджест в Избранное), systemd-юниты fe",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnewhxjz7pf",
+      "kind": "goal",
+      "text": "C09-73: 100 новых FaceIT dust2 демо — парсинг на ПК, duels, сверка с 307",
+      "answer_short": "19.11 13:41 MSK (живой аудит C07-87, задача 7d3178908a73): закачка C09-73 идёт — C:\\faceit_demos_new = 78 zst / 14.98 ГБ (13:37 present=68/100, 13:41 +10 topup). c09_73_ids.json = ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnjlo3f48ry",
+      "kind": "goal",
+      "text": "Автономный 4ч-спринт: MASTERPLAN-v2 OPEN + бэклог гипотез",
+      "answer_short": "Старт 19.11 15:44 MSK, конец 19:44. Контроллер ~/scripts/background/sprint4h_controller.sh: каждые 10 мин один free-субагент (opencode-go/hy4-flash-free), очередь 484 (O1-O8 + 476 ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnkhspgdiro",
+      "kind": "goal",
+      "text": "H072 Untraded death проверена",
+      "answer_short": "Доля 81.08% при n=47248, кластерный CI 80.46-81.68%; отчёт H072-UNTRADED-DEATH.md; H072.md не перезаписан (чужой черновик)",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnudzi1arot",
+      "kind": "goal",
+      "text": "8ч автономный CS2-прорыв: довести проект до честных гейтов",
+      "answer_short": "22:38 MSK. Итог 2-часового ручного рывка: (1) найден и устранён мёртвый GSI-приёмник :3000 — allplayers=10, P0-1 гейт 1/7→6/7, T10 разблокирован; (2) T14: 28 OPEN триажировано, 10 ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwnv75mcyvrj",
+      "kind": "goal",
+      "text": "Ночная смена 21:02→05:02: 8 часов гарантированной работы",
+      "answer_short": "Восстановлены воркеры (cgroup-баг ватчдога), добавлены open-worker.service, cloud-worker@.service, night-shift.timer и 8h таймер. Диспетчер: <=1 агента 10 мин -> Recovery, 20 мин -",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo342fy7r6w",
+      "kind": "goal",
+      "text": "Отдельная сцена открытия файла + масштабирование агентов",
+      "answer_short": "Плагин show-viewer: панель show.file, блок files, команда /filescene, mpv/evince по 'o'. Агенты: wants MAX_AGENTS 3→8, watchdog c1..c4, night_shift масштаб по объёму очереди, промп",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo3mnqwrlt9",
+      "kind": "goal",
+      "text": "Зафиксировать объём демок и остановить закачку",
+      "answer_short": "20.11 01:05 уточнение: всего 470 .dem / 128 ГБ (40 base + 280 demos_more в turngame + 141 Documents/FaceitDemos + 8 tmp). Из них 280 скачано 18.11 (85 ГБ). Локальный процесс C09 «1",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo3mnr3080l",
+      "kind": "goal",
+      "text": "Освободить диск ноута переносом на телефон",
+      "answer_short": "20.11 01:25: кэши браузеров удалены (~4.4 ГБ: camoufox, puppeteer, ms-playwright, tracker3, chrome-headless), свободно 5.5→8.3 ГБ. Курс Event Sourcing 6/6 part на телефоне (/sdcard",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo3qkc3zfih",
+      "kind": "goal",
+      "text": "Пилот сжатия демок по гейтам G0-G5",
+      "answer_short": "Не скачивать новые демо. 5 демо по картам, симлинки в /tmp, предрегистрация из bots/T12-demo-compression.md. Измерить .dem → L1 и β/AUC. Отрицательный результат фиксировать.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo3tbwy8cu5",
+      "kind": "goal",
+      "text": "Разовая авторизация ASR userbot (@Speechpro_ASR_bot)",
+      "answer_short": "20.11 01:42 проверено: asr_forwarder.py --check -> АВТОРИЗОВАНО: False. @Speechpro_ASR_bot НЕ работает, расшифровка локальным whisper (задача всё равно принята агентом, лог 01:28:4",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo6d3c835a2",
+      "kind": "goal",
+      "text": "Game mode активен: не мешать игре",
+      "answer_short": "20.11 02:34: усилено — добавлен гейт на /task в bridge_server.py: в игровом режиме воркеру не раздаются даже уже лежащие в очереди задачи (иначе ПК подхватит их и откроет видимый P",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo6d3cg7zke",
+      "kind": "goal",
+      "text": "Скилл game-mode создан и подхвачен системой",
+      "answer_short": "SKILL.md + scripts/game_guard.py; гейты встроены в cloud_worker.sh, open_worker.sh, wants_worker.sh; проверено: check-task блокирует ПК-задачи (exit 1), PAUSE_GAMEMODE в логах для ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwo89gmc0hqy",
+      "kind": "goal",
+      "text": "Починить задержки ТГ-ответов и доставку задач в remote-agent-bot",
+      "answer_short": "20.11 05:4x: включена server-side авто-компакция в opencode.jsonc (auto=true, keep 15000, buffer 15%); в remote_agent_bot.py добавлен вызов POST /api/session/{sid}/compact каждые 1",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwocoyzpoyvf",
+      "kind": "goal",
+      "text": "Починить детекцию температуры в телеметрии TG-бота",
+      "answer_short": "temp_c был blind max по датчикам без источника; добавлены приоритет CPU→GPU→плата, отсев >105°C, temp_source/temp_rejected",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwocoyzzeul5",
+      "kind": "goal",
+      "text": "Скилл telemetry-lookup + rich-формат",
+      "answer_short": "20.11 05:2x: подключён стек telegramify-markdown v1.4.2 + TFM: send_formatted() в remote_agent_bot.py пробует sendRichMessage (Bot API 10.1) -> entities -> HTML -> plain. TFM.md со",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwodu1w07dm6",
+      "kind": "goal",
+      "text": "Десятки агентов по всем открытым проектам",
+      "answer_short": "По прямому указанию пользователя: ограничений по очередности нет, агенты запускаются по сложности. Первый залп — 18 агентов по гейтам P0-1..P2-7, O1..O8, мини-ап, аудит claims/гипо",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwof2rv0jhfa",
+      "kind": "goal",
+      "text": "C06-486 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S11",
+      "answer_short": "Гейт ДО прогона: n=35840 (140 матчей × 256 death-окон, валентность 2^8), FP bona fide, FDR>0 с Wilson lo>0, непересечение с S01–S10, 3-кадровый ghost live→lost после dropout, found",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoi07nld980",
+      "kind": "goal",
+      "text": "C06-502 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S12",
+      "answer_short": "Гейт зафиксирован ДО прогона: n=71679 после дедупликации единственной (match_id,tick)-коллизии с S05 из сырого S12 (71680 кадров, 140 матчей × 512 death-окон, валентность 2^9), FP ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoi3pee8w2p",
+      "kind": "goal",
+      "text": "C06-518 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S13",
+      "answer_short": "Гейт ДО прогона: FP-доля измерима и >0 (FDR point + Wilson lo>0), corpus disjoint с S01–S12, 3-кадровый ghost live→lost после dropout, found+unfound=expected, lost≤found, без запис",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoikjeszcgw",
+      "kind": "goal",
+      "text": "H182 voice-01..04: отчёт написан, расхождение по voice-03 найдено",
+      "answer_short": "Проверка гипотезы H182 по N-FINAL.md (строка 51). Отчёт ~/overnight/hypothesis/H182_run1795150829.md, валидация check=s OK. Вердикт: подтверждена частично; voice-01/02/04 совпадают",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwojky09muvq",
+      "kind": "goal",
+      "text": "H198: curl :8765 4 endpoint — проверено",
+      "answer_short": "Проверка гипотезы H198 по N10-scanfeed-status.md, строка 14. Отчёт ~/overnight/hypothesis/H198_run1795151600.md, валидация check=OK. Порог prereg зафиксирован до прогона.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwojxk5x1jxr",
+      "kind": "goal",
+      "text": "H238 — Crossref API: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H238_run1795152963.md. Источник N12b-academic-ru-psych.md строка 22. 2 запроса к api.crossref.org: оба HTTP 200, DOI/метаданные совпадают, поиск находи",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwojzpe67n70",
+      "kind": "goal",
+      "text": "H231 — websearch (встроенный): проверка завершена (опровергнута)",
+      "answer_short": "Источник N12b-academic-ru-psych.md строка 15: «websearch (встроенный) | пусто». Отчёт ~/overnight/hypothesis/H231_run1795152780.md, валидация check=OK. 6 вызовов: 4 непустых (7–10 ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok0e7ynrgc",
+      "kind": "goal",
+      "text": "H221 YAACS 2026 — проверка завершена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H221_run1795152354.md; check=OK, prereg PASS 8/8, summarize источников неизменна. Источник и числа подтверждены (arXiv:2607.04336, acc 88.6% @ FPR 0.97",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok10u8x1dw",
+      "kind": "goal",
+      "text": "H247 — Жигарев 2019 (Dota 2, Virtus.pro) проверена: подтверждена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H247_run1795153255.md, check=OK. Источник N12b-academic-ru-psych.md (строки 77, 427), SHA-256 неизменен. 2 независимых канала: DOI 10.33619/2414-2948/4",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok162i7dwz",
+      "kind": "goal",
+      "text": "H235 — CyberLeninka API: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H235_run1795152952.md, check=OK (problems=[]), prereg 4/4 PASS. Источник N12b-academic-ru-psych.md строка 19. POST /api/search с JSON-телом и mode=arti",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok1itdfr25",
+      "kind": "goal",
+      "text": "H244 — Довгаль 2017 (Вестник АГУ): проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H244_run1795153078.md, check=OK. Источник N12b-academic-ru-psych.md строка 67, SHA-256 неизменен. Страница КиберЛенинки подтвердила 5/5 полей: заглавие",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok28uvzfkc",
+      "kind": "goal",
+      "text": "H248 — Котлов/Фирсова 2023: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H248_run1795153259.md, валидация структуры OK. Источник N12b-academic-ru-psych.md строка 78, SHA-256 неизменен. Прямая страница CyberLeninka (HTTP 200)",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok2emnxmvm",
+      "kind": "goal",
+      "text": "H242 — Осин/Мурашко 2023: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H242_run1795153073.md, check=OK. Источник N12b-academic-ru-psych.md строка 65, SHA-256 неизменен. Первичный источник CyberLeninka: 4/4 поля совпали (Ос",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok36b85lal",
+      "kind": "goal",
+      "text": "H246 — Альотум 2024 (биометрия динамики мыши): проверка завершена — подтверждена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H246_run1795153254.md, валидация check=OK (problems=[]). Источник N12b-academic-ru-psych.md строка 69, SHA-256 8d072f39… неизменен. Прямая страница Cyb",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok3jili83q",
+      "kind": "goal",
+      "text": "H249 — Kadan/Li/Chen 2018: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H249_run1795153263.md; структура проверена вручную (6/6 разделов, n/CI/вердикт заполнены). Источник N12b-academic-ru-psych.md строка 79, SHA-256 неизме",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok56aeuk64",
+      "kind": "goal",
+      "text": "R02p: малый радар в spectator доступен — гейт пройден (102 REAL-кадра)",
+      "answer_short": "16-я итерация R02. Предрегистрация R02P-NEWCORPUS зафиксирована ДО прогона (16 SHA, на момент прогона 16/16). Свежий прогон R02p: gate_frames=102, verdict=PASS; всего 382 спаренных",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok7z63am2t",
+      "kind": "goal",
+      "text": "H251 — Павлов/Пятин/Мякишева 2023 (обзор нейрофизиологии киберспортсменов): проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H251_run1795153552.md, check=OK, prereg H251 PASS 6/6. Источник N12b-academic-ru-psych.md строка 81, SHA-256 неизменен. CyberLeninka + Crossref: 6/6 cl",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok81rl9s2r",
+      "kind": "goal",
+      "text": "H253 — Ганичева/Поликанова 2024 (айтрекинг в биатлоне): проверена, подтверждена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H253_run1795153611.md, валидация hypothesis_report.py check = OK (problems=[], вердикт подтверждена). Источник N12b-academic-ru-psych.md строка 83, SHA",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwok9alb72u9",
+      "kind": "goal",
+      "text": "H252 — Маркин/Руссу 2024 (dual-task в командном киберспорте): проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H252_run1795153567.md; структура валидирована (6/6 разделов, n/CI/вердикт). Источник N12b-academic-ru-psych.md строка 82, SHA-256 8d072f39… неизменен (",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokb9q9pw1d",
+      "kind": "goal",
+      "text": "H257 — Lebeau et al. 2016 (Quiet eye meta-analysis): проверка завершена, подтверждена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H257_run1795153828.md, hypothesis_report.py check=OK, prereg H257 PASS (7 порогов, SHA источника неизменен). Источник N12b-academic-ru-psych.md:103. Дв",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokd2mgpeqq",
+      "kind": "goal",
+      "text": "H260 — Green & Swets (1966) Signal Detection Theory and Psychophysics: проверка завершена (подтверждена)",
+      "answer_short": "Библиографическая проверка по N12b-academic-ru-psych.md строка 119. Отчёт ~/overnight/hypothesis/H260_run1795153926.md, hypothesis_report.py check=OK.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokhjv5lw0x",
+      "kind": "goal",
+      "text": "H264 — Poulus et al. (2020): проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H264_run1795154031.md, check=OK, prereg H264 PASS (6 порогов, SHA источника неизменен). Источник N12b-academic-ru-psych.md:152. Crossref + OpenAlex + d",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokik7qh945",
+      "kind": "goal",
+      "text": "H265 — Csikszentmihalyi (1990) Flow: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H265_run1795154037.md, hypothesis_report.py check=OK (problems=[]). Источник N12b-academic-ru-psych.md:153, SHA-256 8d072f39… неизменен. 4 независимых ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokl8cd38a0",
+      "kind": "goal",
+      "text": "H270 — ESTA (arXiv:2209.09861) подтверждена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H270_run1795154302.md: bibliographic check по arXiv abs + GitHub pnxenopoulos/esta, 6/6 полей совпали, входной вердикт «неизвестно» → «подтверждена».",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokplvolz3j",
+      "kind": "goal",
+      "text": "H276 — Beckers & Halpern (2019) Abstracting causal models: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H276_run1795154482.md; hypothesis_report.py check OK (6 разделов, n/CI заполнены, вердикт подтверждена), prereg H276 PASS 5/5, SHA-256 источника 8d072f",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokqjstywzv",
+      "kind": "goal",
+      "text": "H279 — Ahmed & Traoré (2007), mouse dynamics: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H279_run1795154549.md (check=OK). Источник N12b-academic-ru-psych.md:285, SHA-256 8d072f39… неизменен. Crossref + OpenAlex (W2093197020): 7/7 полей сов",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwokttjygv7x",
+      "kind": "goal",
+      "text": "H281 — Kang/Woo/Park/Kim (2012), бот-детекция по party-play логам: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H281_run1795154653.md, hypothesis_report.py check=OK (problems=[]), prereg H281_run1795154653 PASS, SHA источника 8d072f39… неизменен. Источник N12b-ac",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwola3pmaz8o",
+      "kind": "goal",
+      "text": "H291 — «смурф/чит» детектор: проверка завершена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H291_run1795155053.md (check=OK, prereg H291 PASS, SHA источника неизменен). Источник N12b-academic-ru-psych.md:360. Библиография трёх DOI и методологи",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwolbcdjwqrd",
+      "kind": "goal",
+      "text": "H296 — «Пробитие смоков меняет исход» (U08): проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H296_run1795155394.md, hypothesis_report.py check=OK (problems=[]), prereg H296 PASS 4/4 SHA. Источник N13 (строки U08/186/196) снят дословно; пересчёт",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwolcpng1yxv",
+      "kind": "goal",
+      "text": "H297 — «Роль X выигрывает больше»: проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H297_run1795155463.md, hypothesis_report check OK, prereg H297 PASS 6/6. Числа C1.md §6 воспроизведены в точности: WR 58.8–70.5% (5 осей, 5753 дуэли), ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwom44j18ovt",
+      "kind": "goal",
+      "text": "H322 — «Force / eco buy»: проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H322_run1795156792.md (check=OK, problems=[]). Источник N14-cross-demo-scaling.md §3/§7.4/§9.8, SHA-256 e9f5d92b… неизменен. Prereg H322_run1795156792 ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwom7hmbz5ua",
+      "kind": "goal",
+      "text": "H325 — «полная карта событий/топологии/аима»: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H325_run1795156890.md, hypothesis_report.py check=OK, prereg H325_run1795156890 PASS (6 гейтов, оба SHA неизменны). Источник N15-midnight-digest.md стр",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoman75odn4",
+      "kind": "goal",
+      "text": "H326 — «27-research-plan-draft.md (1049 стр)»: проверка завершена (подтверждена частично)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H326_run1795156959.md, структура валидирована (6/6 разделов, n/CI/вердикт), prereg H326 PASS по SHA входов. Источник N15-midnight-digest.md строка 10. ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwommxsyc3z9",
+      "kind": "goal",
+      "text": "H334 — «почерк есть (прокси)» для tick16_v3 подтверждён",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H334_run1795157323.md, check=OK, prereg H334 PASS 5/5 гейтов и 7/7 SHA. Независимый прогон mouse_biometrics_proxy.py: n=35 игроков/36 матчей, split-hal",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwomxtbxnor0",
+      "kind": "goal",
+      "text": "H345 — micro_corr_rate: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H345_run1795157955.md. Источник N16-mouse-biometrics-proxy.md, SHA-256 a49cf433… неизменен. Вердикт: подтверждена в рамках низкочастотного демо-прокси.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwon64rghd30",
+      "kind": "goal",
+      "text": "H349: move_view_angle_med — проверка завершена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H349_run1795158449.md по N16-mouse-biometrics-proxy.md; 5/6 порогов prereg PASS; вердикт подтверждена (с оговоркой по 16 Гц).",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoncoml3dbc",
+      "kind": "goal",
+      "text": "H354 — Контестовая выборка: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H354_run1795158634.md (check=OK). Прогон skill_residual.py seed 20261119 в свежий out-dir: 9397 событий (23.2%), 4072 раунда, 5661 round-side, train 75",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwone1n0e69j",
+      "kind": "goal",
+      "text": "H356 — τ² игрока, population n≥20: проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H356_run1795158864.md; check=OK; prereg PASS 5/5. Источник N3-skill-residual.md:117.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwonfqi2btl9",
+      "kind": "goal",
+      "text": "H357 — τ² игрока, все ≥2 матчей: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H357_run1795158885.md, hypothesis_report.py check=OK (problems=[], вердикт подтверждена). Источник N3-skill-residual.md:118, SHA-256 неизменен. Независ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoniwd8plto",
+      "kind": "goal",
+      "text": "H359 — Epoch (первая/вторая половина порядка парсинга): проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H359_run1795159101.md, hypothesis_report.py check=OK, prereg PASS 3/3. Источник N3-skill-residual.md:122,155, SHA неизменен. G3 epoch r≥0.3 НЕТ: primar",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwonlaojqnew",
+      "kind": "goal",
+      "text": "C01-593: новый набор кадров — cyan-детектор против spectator-GSI allplayers",
+      "answer_short": "PRIMARY-гейт PASS ДО/ПОСЛЕ прогона: recall 0.7886 [0.7595,0.8151] Wilson 95%, FP 0/210 [0,0.0180], n=210. D 560 кадров, нулевое пересечение со всеми 10 предшественниками; соль c01_",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwonlgo0mcq6",
+      "kind": "goal",
+      "text": "H363 — Survival descriptive проверена (подтверждена как описание)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H363_run1795159290.md, hypothesis_report.py check=OK (problems=[]). Источник N3-skill-residual.md строка 126, SHA-256 1a46475f… неизменен. Числа 277 / ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwonnxjdi3sb",
+      "kind": "goal",
+      "text": "H365 — формула U=(bought−thrown)/bought проверена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H365_run1795159384.md; check=OK, prereg H365 PASS (3 SHA неизменны). Источник N4-closure-gap.md §0/§1, SHA 62e22be6… неизменен. Пересчёт по сырым behav",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwontw63vy0l",
+      "kind": "goal",
+      "text": "H369 — core/full проверена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H369_run1795159505.md, check=OK, prereg H369 PASS. core r=0.1264 (гейт A9 r>=0.25 провален); full r=0.4196 формально проходит, но декомпозиция: T+X=0.1",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoo7tfwdngy",
+      "kind": "goal",
+      "text": "H385 — closure-gap ↔ u_p из A1: проверка завершена (недостаточно данных)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H385_run1795160355.md, hypothesis_report.py check=OK. Источник N4-closure-gap.md §2 ст.50: u_p из A1 в данных отсутствует, сравнить не с чем. Верификат",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoo971on379",
+      "kind": "goal",
+      "text": "H384 — closure-rate split-half r>0.25: проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H384_run1795160346.md, check=OK (6/6 разделов, вердикт заполнен); prereg H384_run1795160346 PASS 7/7, 5/5 SHA unchanged. Источник N4-closure-gap.md:49.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoo9r5lqtnr",
+      "kind": "goal",
+      "text": "H381 — Holdout WP/gap: числа подтверждены, прогноз опровергнут (утечка через X)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H381_run1795160304.md (check OK), prereg PASS, бэклог H381 -> done. Перезапуск tools/closure_gap.py без --save воспроизвёл ровно train 2092 / test 480,",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoohxwqnfq8",
+      "kind": "goal",
+      "text": "H395 — «увидел первым → победил»: проверка завершена (опровергнута, отрицательный результат воспроизведён)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H395_run1795160804.md, hypothesis_report.py check=OK (problems=[]), prereg H395_run1795160804 PASS (5 порогов, 2 SHA неизменны). Источник N7-debut.md (",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwooi2phd69d",
+      "kind": "goal",
+      "text": "H397 — first view → win на seen (n=1243): проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H397_run1795160804.md, check=OK (6 разделов, n/CI/вердикт). Источник N7-debut.md §2 строка 37: r=0.0248, naive-AUC=0.5129, n=1243 — отрицательный резул",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwool89kdqy0",
+      "kind": "goal",
+      "text": "H405 — A6: OOS AUC > 0.55 проверена (опровергнута — гейт не пройден)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H405_run1795160944.md (check=OK, prereg H405_run1795160944 PASS 7/7 SHA). Источник N7-debut.md §7:100 и §3:51; первичные числа ~/runtime/tmp-checkpoint",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoonb4th9o4",
+      "kind": "goal",
+      "text": "H394 — `won` из `duels_all_v5`: проверка завершена (подтверждена с оговоркой)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H394_run1795160803.md, hypothesis_report.py check=OK (problems=[]), prereg H394_run1795160803 PASS (3 порога, 3 SHA неизменны). Источник N7-debut.md §1",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoos9q3s96y",
+      "kind": "goal",
+      "text": "H429 — проверка гипотезы завершена (отрицательный результат валидации входа)",
+      "answer_short": "Вердикт: недостаточно данных. Зафиксирован артефакт парсера: «Гипотеза (N13)» и «Статус» — заголовки колонок таблицы voice-01-map-variability.md:7; реальные K02/K01/K05/K03/K06/K10",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwooxpc7mxuo",
+      "kind": "goal",
+      "text": "H393 — edge_gap_deg через awpy-меш с кэшем: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H393_run1795160803.md, hypothesis_report.py check=OK, prereg H393 PASS (8 порогов, 9 SHA неизменны). Источник N7-debut.md §1 строка 2, SHA 5c637f36… не",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwooyonyoax4",
+      "kind": "goal",
+      "text": "H476 — C7 «двойной запик в абсолютно каждой катке»: проверка завершена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H476_run1795161631.md, hypothesis_report.py check OK (problems=[]). Источник voice-10-double-peek-freeze.md; n=937 dust2-раундов. Буквальная версия (10",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwooytya317t",
+      "kind": "goal",
+      "text": "H431 — K01 «Даст/Мираж вводят в заблуждение своей простотой»: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H431_run1795161259.md, check=OK, prereg H431_run1795161259 PASS 3/3 SHA. Пересчёт 4186 снимков: de_dust2 937 раундов/493 уник. topo/rare@100 0.849 — ма",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoozrhqlav4",
+      "kind": "goal",
+      "text": "H470 — «Победа, contested»: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H470_run1795161628.md; source voice-08-prefire.md строки 10/30/33, SHA-256 20ee28a7…e796. Числа дословно совпали: 0.7045 [0.6796,0.7257] vs 0.6555 [0.6",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwop35cq3aq8",
+      "kind": "goal",
+      "text": "H443 — эффект калла (C02): недостаточно данных",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H443_run1795161454.md, hypothesis_report.py check=OK. Источник voice-03-important-rounds.md:10. Эффект самого калла неизмерим: в .dem нет аудиодорожки ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwop3hqhjlce",
+      "kind": "goal",
+      "text": "H471 — логит won~prefire+контроли проверен (опровергнута как голосовойclaim)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H471_run1795161628.md, check=OK. Источник voice-08-prefire.md §2, SHA 20ee28a7… неизменен. ALL n=44073/6362: β=+0.1471 [0.0668,0.2274], p=3.3e−4 (OR 1.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwop3vbng9kr",
+      "kind": "goal",
+      "text": "H400 — WCB+BH по 12 признакам дебюта (N7 §5): проверка 3/12",
+      "answer_short": "Проверить число 3/12 и оговорку «1 карта/11 матчей, p у порога WCB» по первичным данным; отчёт ~/overnight/hypothesis/H400_run1795160806.md",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwop3vvvqm1f",
+      "kind": "goal",
+      "text": "Мини-ап: вкладка «Промпты» — человеческая сортировка",
+      "answer_short": "141 промпт, 8 тем, связи с 90 хотелками, три режима (по темам/по времени/дерево), ручные ответы и связи в localStorage. Задеплоено на GitHub Pages BUILD 20261120-1115.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwop96l6n0lf",
+      "kind": "goal",
+      "text": "H469 — «Победа, все дуэли»: проверка завершена (подтверждена дескриптивно)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H469_run1795161627.md, check=OK (problems=[]), prereg 4/4 PASS, SHA источника voice-08-prefire.md 20ee28a7… неизменен. Независимый пересчёт по timings_",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwop9bzmhhn4",
+      "kind": "goal",
+      "text": "Мини-ап «Дерево промптов»: шесть видов графа и ручные связи",
+      "answer_short": "Спецификация ~/overnight/2026-11-20-miniapp-prompt-tree-design.md: 6 видов (лента 3 дня, дерево проекта, ветки OpenCode, сетка хотелок, судебная, неотвеченные), модель Node/Edge, a",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwope5jej8dw",
+      "kind": "goal",
+      "text": "H503 — B. Только post-частота (вьюер − не-вьюер): проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H503_run1795162200.md (валидация структуры OK, 6/6 разделов, вердикт без ЧЕРНОВИК; CJK-вкраплений 0). Источник voice-14-rotation-reaction.md строка 25,",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwopfnu8xuai",
+      "kind": "goal",
+      "text": "H506 — «Статичная роль vs динамическая изоляция»: проверка завершена (опровергнута в заявленной форме)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H506_run1795162244.md (6 разделов, n/CI/вердикт заполнены). Источник voice-15-lurker-dynamics.md строка 19, SHA b477c84a… неизменен. Разница isolation ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwophe3y5fcf",
+      "kind": "goal",
+      "text": "H494 — Freeze-срез «t_rel/place» и прокси буста: проверка завершена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H494_run1795161946.md, hypothesis_report.py check=OK (6/6 разделов, вердикт заполнен). Источник voice-13-timing-role.md:22 (гейт :35), SHA-256 неизмене",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwopjgdwkxwc",
+      "kind": "goal",
+      "text": "H507 — «Динамика внутриигровая»: проверка завершена (подтверждена)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H507_run1795162277.md; check=OK, вердикт подтверждена. Источник voice-15 строка 20. Независимый пересчёт h507_recompute.py по 47k дуэлям paths_v5 + ког",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwopp3g5g75u",
+      "kind": "goal",
+      "text": "H526 — «Мираж вариативен»: проверка завершена (недостаточно данных)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H526_run1795162526.md, hypothesis_report.py check=OK, prereg H526_run1795162526 PASS (SHA 3 файлов неизменны). Ключевая находка: указанный источник los",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoq5oho9e60",
+      "kind": "goal",
+      "text": "H546 — независимая репликация «Дуст = одна ротация» (малое число topo_key): опровергнута",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H546_run1795163585.md, check=OK (problems=[], вердикт опровергнута). Источник voice-12-dust-rotation.md, SHA-256 неизменен. Prereg H546_run1795163585 P",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqdefky9jc",
+      "kind": "goal",
+      "text": "H547 — «Дуст = одна ротация» как малое число мест боя: проверка завершена (опровергнута дескриптивно)",
+      "answer_short": "Независимая репликация voice-12 §2.3 своим скриптом из ~/turngame/data/dust2_scenarios.jsonl (9295 дуэлей): уник. killer_cell 1475, top-1 0.85%, top-5 3.34%, топ-5 клеток и 1.14% s",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqflctfsju",
+      "kind": "goal",
+      "text": "H558: независимая репликация A-pre — не подтверждена (отрицательный результат воспроизведён)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H558_run1795163621.md готов (6/6 разделов, вердикт заполнен). Источник voice-14 строка 19: mean -0.0143, CI [-0.0389,+0.0106], p=0.294, n=1327. Независ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqki3m11pv",
+      "kind": "goal",
+      "text": "H561 — репликация страты по стороне вьюера: опровергнута",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H561_run1795163632.md (структура OK, вердикт опровергнута). Источник voice-14-rotation-reaction.md строка 22, SHA f153c64d… неизменен. T n=609 +0.005 C",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqo2v8ba11",
+      "kind": "goal",
+      "text": "H575 — «Авик: прострел вместо дуэли»: проверка завершена (опровергнута)",
+      "answer_short": "Независимая репликация по behavior_v2.json ось Sniper, WR по dominant axis. Отчёт ~/overnight/hypothesis/H575_run1795163702.md, check=OK, prereg H575 PASS (3 SHA неизменны). Числа ",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqpi29v8mp",
+      "kind": "goal",
+      "text": "H581 — независимая репликация «Первый/второй на входе»: проверка завершена (опровергнута)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H581_run1795163887.md, структура валидирована (6/6 разделов, n/CI/вердикт). Пороги зафиксированы ДО прогона (prereg H581 PASS, SHA данных и источника н",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqr7qosnq1",
+      "kind": "goal",
+      "text": "H600 — независимая репликация «увидел первым → победил»: проверка завершена",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H600_run1795163894.md (check=OK, prereg 5/5 PASS, 8/8 SHA). Пересчёт из per-death JSONL дал точное совпадение со сводками: база 61.12% (811/1327), смен",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqrppq6zny",
+      "kind": "goal",
+      "text": "H594 — репликация «паника-прокси» в wp_v2.json: сигнал не подтверждён",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H594_run1795163891.md, check=OK (problems=[]), prereg H594 PASS 5/5 SHA. Независимый переанализ метрик: contested AUC memory-only 0.5739, 95% CI [0.507",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwoqwf1d6tlg",
+      "kind": "goal",
+      "text": "H604 — независимая репликация «закуп/экономика/пистолетки даже против фулбая»: отчёт готов",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H604_run1795163895.md, hypothesis_report check=OK, prereg 7/7 PASS. Своя реализация (stdlib) воспроизвела economy AUC t0 0.7573, кластерный 95% CI [0.6",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmworxev2e81g",
+      "kind": "goal",
+      "text": "H723: независимая laptop-репликация смысла «одной ротации» — отчёт готов",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H723_run1795166403.md, hypothesis_report.py check=OK (problems=[]). Источник voice-12-dust-rotation.md, SHA b6ef9dab… зафиксирован. Независимый пересчё",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwos0gx8f2gs",
+      "kind": "goal",
+      "text": "H728 — три матч-пары ролей проверены (независимая laptop-репликация)",
+      "answer_short": "Отчёт ~/overnight/hypothesis/H728_run1795166523.md, check=OK, prereg H728 PASS (4/4 SHA). Репликация с нуля: n 1009/491/650 и Δ +5/−129/+207 мс совпали точно, p 0.953/0.303/0.066 (",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "author:teamo",
+      "to": "video:92bP6FYpbYM",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C1",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C2",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C3",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C4",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C5",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C6",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:92bP6FYpbYM",
+      "to": "claim:C7",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:teamo",
+      "to": "video:4XNSl3Iw0YA",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:4XNSl3Iw0YA",
+      "to": "claim:C8",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:4XNSl3Iw0YA",
+      "to": "claim:C9",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:4XNSl3Iw0YA",
+      "to": "claim:C10",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:4XNSl3Iw0YA",
+      "to": "claim:C11",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:teamo",
+      "to": "video:3nyLNEMoZHE",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:3nyLNEMoZHE",
+      "to": "claim:C12",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:3nyLNEMoZHE",
+      "to": "claim:C13",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:3nyLNEMoZHE",
+      "to": "claim:C14",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:3nyLNEMoZHE",
+      "to": "claim:C15",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:teamo",
+      "to": "video:oUne9WN4YrM",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C16",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C17",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C18",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C19",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C20",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C21",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:oUne9WN4YrM",
+      "to": "claim:C22",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:teamo",
+      "to": "video:56Lmai3Juvo",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:56Lmai3Juvo",
+      "to": "claim:C23",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:56Lmai3Juvo",
+      "to": "claim:C24",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:56Lmai3Juvo",
+      "to": "claim:C25",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:56Lmai3Juvo",
+      "to": "claim:C26",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:56Lmai3Juvo",
+      "to": "claim:C27",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:143_Aim_Club",
+      "to": "video:KN76VmZSWAY",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:KN76VmZSWAY",
+      "to": "claim:C28",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:KN76VmZSWAY",
+      "to": "claim:C29",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:KN76VmZSWAY",
+      "to": "claim:C30",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:KN76VmZSWAY",
+      "to": "claim:C31",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:KN76VmZSWAY",
+      "to": "claim:C32",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:143_Aim_Club",
+      "to": "video:RJ5j0_54zHY",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:RJ5j0_54zHY",
+      "to": "claim:C33",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:RJ5j0_54zHY",
+      "to": "claim:C34",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:RJ5j0_54zHY",
+      "to": "claim:C35",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:RJ5j0_54zHY",
+      "to": "claim:C36",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:143_Aim_Club",
+      "to": "video:35AhYJHC9DU",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:35AhYJHC9DU",
+      "to": "claim:C37",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "author:143_Aim_Club",
+      "to": "video:OLL0zIxi1Uw",
+      "type": "authored",
+      "note": ""
+    },
+    {
+      "from": "video:OLL0zIxi1Uw",
+      "to": "claim:C38",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:OLL0zIxi1Uw",
+      "to": "claim:C39",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "video:RJ5j0_54zHY",
+      "to": "claim:C40",
+      "type": "contains",
+      "note": ""
+    },
+    {
+      "from": "claim:C18",
+      "to": "verdict:C18",
+      "type": "supports",
+      "note": "47 248 дуэли / 6 676 выстрелов"
+    },
+    {
+      "from": "claim:C16",
+      "to": "verdict:C16",
+      "type": "supports",
+      "note": "5 852 дуэли / 6 676 выстрелов"
+    },
+    {
+      "from": "claim:C17",
+      "to": "verdict:C17",
+      "type": "refutes",
+      "note": "6 676 выстрелов, 235 кластеров"
+    },
+    {
+      "from": "claim:C27",
+      "to": "verdict:C27",
+      "type": "supports",
+      "note": "207 дуэлей donk; 125 игроков с n≥120"
+    },
+    {
+      "from": "claim:C19",
+      "to": "verdict:C19",
+      "type": "refutes",
+      "note": "46 193 дуэли"
+    },
+    {
+      "from": "claim:C21",
+      "to": "verdict:C21",
+      "type": "refutes",
+      "note": "893 narrow / 196 wide"
+    },
+    {
+      "from": "claim:C31",
+      "to": "verdict:C31",
+      "type": "refutes",
+      "note": "3 811 prefire / 38 049 reactive"
+    },
+    {
+      "from": "claim:C5",
+      "to": "verdict:C5",
+      "type": "refutes",
+      "note": "811 killer / 516 victim"
+    },
+    {
+      "from": "claim:C7",
+      "to": "verdict:C7",
+      "type": "refutes",
+      "note": "937 dust2-раундов"
+    },
+    {
+      "from": "claim:C1",
+      "to": "verdict:C1",
+      "type": "refutes",
+      "note": "937 раундов × 2 команды"
+    },
+    {
+      "from": "claim:C2",
+      "to": "verdict:C2",
+      "type": "supports",
+      "note": "937 раундов × 3 момента"
+    },
+    {
+      "from": "claim:C14",
+      "to": "verdict:C14",
+      "type": "refutes",
+      "note": "640 дуэлей с ротацией"
+    },
+    {
+      "from": "claim:C12",
+      "to": "verdict:C12",
+      "type": "measured_by",
+      "note": "44 209–46 833 дуэли"
+    },
+    {
+      "from": "claim:C34",
+      "to": "verdict:C34",
+      "type": "measured_by",
+      "note": "47 248 / 207"
+    }
+  ],
+  "updatedAt": "2026-11-20T12:29:10+0300"
+}
