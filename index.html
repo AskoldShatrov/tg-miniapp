@@ -823,7 +823,9 @@ setInterval(refreshReplies, 5000);
 setInterval(refreshEconomy, 60000);
 
 /* ---------- init ---------- */
-renderTree(); renderDecisions(); renderSessions(); renderChat(); setTab("economy");
+renderTree(); renderDecisions(); renderSessions(); renderChat();
+const initTab = new URLSearchParams(location.search).get("tab");
+setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "economy");
 </script>
 </body>
 </html>
