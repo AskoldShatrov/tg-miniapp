@@ -1,0 +1,576 @@
+[
+  {
+    "id": "T1",
+    "name": "Винрейт-тренер раунда",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T1.1",
+        "name": "Собрать held-out сет ≥30 матчей",
+        "status": "PASS"
+      },
+      {
+        "id": "T1.2",
+        "name": "Прогон wp_v2 + economy (v5)",
+        "status": "PASS"
+      },
+      {
+        "id": "T1.3",
+        "name": "Признаки contact/LOS",
+        "status": "PASS"
+      },
+      {
+        "id": "T1.4",
+        "name": "Калибровка ECE < 0.05",
+        "status": "PASS"
+      },
+      {
+        "id": "T1.5",
+        "name": "Гейт G6: не трогать тестовые матчи",
+        "status": "PASS"
+      },
+      {
+        "id": "T1.6",
+        "name": "Вердикт было→стало→порог",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T2",
+    "name": "Личный вклад игрока",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T2.1",
+        "name": "behavior_v2 + mouse_fingerprint_proxy",
+        "status": "PASS"
+      },
+      {
+        "id": "T2.2",
+        "name": "player residual модель",
+        "status": "PASS"
+      },
+      {
+        "id": "T2.3",
+        "name": "Out-of-sample прирост лог-лосса",
+        "status": "PASS"
+      },
+      {
+        "id": "T2.4",
+        "name": "Стабильность ранжирования на holdout",
+        "status": "PASS"
+      },
+      {
+        "id": "T2.5",
+        "name": "Гейт: без тавтологии (survival/isolation)",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T3",
+    "name": "Калиброванный бай/AWP-риск",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T3.1",
+        "name": "economy_level_model",
+        "status": "PASS"
+      },
+      {
+        "id": "T3.2",
+        "name": "Калибровка AWP-приора 12.38%",
+        "status": "PASS"
+      },
+      {
+        "id": "T3.3",
+        "name": "Reliability-диаграмма P(full buy)",
+        "status": "PASS"
+      },
+      {
+        "id": "T3.4",
+        "name": "Гейт G5: ECE < 0.05, покрытие > 60%",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T4",
+    "name": "Донк-бенчмарк scanfeed: предсказание против факта",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T4.1",
+        "name": "Выгрузить события демки (килы, баи, equip, выстрелы)",
+        "status": "PASS"
+      },
+      {
+        "id": "T4.2",
+        "name": "Сверить kill-feed и 'два калаша' с фактом",
+        "status": "PASS"
+      },
+      {
+        "id": "T4.3",
+        "name": "Бай/угрозы/AWP: предсказание vs факт следующего раунда",
+        "status": "PASS"
+      },
+      {
+        "id": "T4.4",
+        "name": "Метрики, baseline, вердикт и отчёт",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T5",
+    "name": "T1c — винрейт с полным покрытием позиций 320/320",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T5.1",
+        "name": "Зафиксировать prereg T1c с тем же порогом и причиной переоткрытия до прогона",
+        "status": "PASS"
+      },
+      {
+        "id": "T5.2",
+        "name": "Потоково собрать признаки из allplayers_positions batch1+batch2 (портфель 1.9 ГБ, RAM ~3 ГБ)",
+        "status": "PASS"
+      },
+      {
+        "id": "T5.3",
+        "name": "Прогнать wp_t1c с воспроизведённым сплитом 256/64, посчитать contested AUC/CI/ECE",
+        "status": "PASS"
+      },
+      {
+        "id": "T5.4",
+        "name": "Сверить вердикт с claims.json и записать в MASTERPLAN-v2 §9 и progress T5",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T6",
+    "name": "Закачка и разбор демок (Windows-ПК)",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "T6.1",
+        "name": "HLTV: 245/245 ссылок → 374 демо",
+        "status": "PASS"
+      },
+      {
+        "id": "T6.2",
+        "name": "FACEIT kings batch: 43/43",
+        "status": "PASS"
+      },
+      {
+        "id": "T6.3",
+        "name": "FACEIT-мост: прирост новых демо",
+        "status": "PASS"
+      },
+      {
+        "id": "T6.4",
+        "name": "Распарсить 32 .dem.zst",
+        "status": "PASS"
+      },
+      {
+        "id": "T6.5",
+        "name": "Синхронизация PC→laptop",
+        "status": "PASS"
+      },
+      {
+        "id": "T6.6",
+        "name": "Live: активная закачка прямо сейчас",
+        "status": "PASS"
+      },
+      {
+        "id": "T6.7",
+        "name": "FACEIT: batch remaining 125 демо",
+        "status": "OPEN"
+      }
+    ]
+  },
+  {
+    "id": "T7",
+    "name": "Иерархия зон и death-review FACEIT",
+    "status": "FAIL",
+    "children": [
+      {
+        "id": "T7.1",
+        "name": "Изучить аналоги: DemoLab, cs2-demo-live-2d, cs2d, awpy",
+        "status": "PASS"
+      },
+      {
+        "id": "T7.2",
+        "name": "Настоящий радар и калибровка de_dust2",
+        "status": "PASS"
+      },
+      {
+        "id": "T7.3",
+        "name": "Иерархия: B/MID/A/SPAWN → тайлы 64px → дуэль",
+        "status": "PASS"
+      },
+      {
+        "id": "T7.4",
+        "name": "Анимация дуэлей по тикам на радаре",
+        "status": "PASS"
+      },
+      {
+        "id": "T7.5",
+        "name": "Death-review теги (died alone / not traded / caught off guard)",
+        "status": "PASS"
+      },
+      {
+        "id": "T7.6",
+        "name": "Линковка с HLTV и общий пул без двойного счёта",
+        "status": "FAIL"
+      },
+      {
+        "id": "T7.7",
+        "name": "Сверить со старым скрином и готовыми аналогами",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T8",
+    "name": "Аварийный контур управления через VK-бота",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T8.1",
+        "name": "Зафиксировать требование: контур вне домашнего VPN и Telegram",
+        "status": "PASS"
+      },
+      {
+        "id": "T8.2",
+        "name": "Создать сообщество PCBridgeControl и включить бот",
+        "status": "PASS"
+      },
+      {
+        "id": "T8.3",
+        "name": "Получить токен доступа сообщества, положить в файл с правами 600",
+        "status": "PASS"
+      },
+      {
+        "id": "T8.4",
+        "name": "Деплой демона бота на ПК: ping / bundle / fix / status",
+        "status": "PASS"
+      },
+      {
+        "id": "T8.5",
+        "name": "Проверить 3 команды с мобилы без VPN, задержка <=60 с",
+        "status": "PASS"
+      },
+      {
+        "id": "T8.6",
+        "name": "Демон VK-бота ping/status/bundle/fix готов к токену",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T9",
+    "name": "Телефон: стабильный интернет и VPN в мобильной сети",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T9.1",
+        "name": "Авторежим: WiFi -> выборочный прокси 7900, мобильная -> системный :0",
+        "status": "PASS"
+      },
+      {
+        "id": "T9.2",
+        "name": "Выбрать узел, доступный с мобильного (Румыния/Израиль/Канада)",
+        "status": "PASS"
+      },
+      {
+        "id": "T9.3",
+        "name": "v2rayNG: профиль TG-Helmuth + правила DNS/Bank/Gosuslugi/RF-direct",
+        "status": "PASS"
+      },
+      {
+        "id": "T9.4",
+        "name": "Убрать конфликт: сторож не убивает v2rayNG, внутренний прокси Telegram выключен",
+        "status": "PASS"
+      },
+      {
+        "id": "T9.5",
+        "name": "Проверка с мобилы: TG API 302 / Web 200, YouTube 200, Сбер 200",
+        "status": "PASS"
+      },
+      {
+        "id": "T9.6",
+        "name": "Удержание туннеля >=30 мин: автоподключение и закрепление приложения",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "P0-1",
+    "name": "Оверлей P0-1: кадр с allplayers>0",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "P0-1.1",
+        "name": "Зафиксировать конъюнктивный гейт G1–G6 до прогона",
+        "status": "PASS"
+      },
+      {
+        "id": "P0-1.2",
+        "name": "Получить allplayers>0 через spectator/GOTV",
+        "status": "PASS"
+      },
+      {
+        "id": "P0-1.3",
+        "name": "Проверить G4/G5/G6 на кадре с allplayers>0",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "S4H",
+    "name": "Автономный 4h-спринт (MASTERPLAN-v2 + бэклог)",
+    "status": "FAIL",
+    "children": [
+      {
+        "id": "O1",
+        "name": "O1",
+        "status": "PASS"
+      },
+      {
+        "id": "O2",
+        "name": "O2",
+        "status": "FAIL"
+      }
+    ]
+  },
+  {
+    "id": "T10",
+    "name": "Экономический HUD: per-enemy и динамика по раундам",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T10.1",
+        "name": "Карта сложности + 50 идей (research-slowdown)",
+        "status": "PASS"
+      },
+      {
+        "id": "T10.2",
+        "name": "Предрегистрация 4 гипотез до прогона",
+        "status": "PASS"
+      },
+      {
+        "id": "T10.3",
+        "name": "Проверка на локальных дампах GSI/overlay",
+        "status": "PASS"
+      },
+      {
+        "id": "T10.4",
+        "name": "Патч gsi_service/HUD и верификация",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T11",
+    "name": "T1b + R2: новые источники и исправление вердиктов",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T11.1",
+        "name": "Разобрать новые источники и расхождение R2",
+        "status": "PASS"
+      },
+      {
+        "id": "T11.2",
+        "name": "Предрегистрировать гейт T1b",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T12",
+    "name": "O7: калибровка порогов экономики по частотам",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T12.1",
+        "name": "Посчитать частоты и CI по duels_all_v5",
+        "status": "PASS"
+      },
+      {
+        "id": "T12.2",
+        "name": "Заменить эвристические пороги",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T13",
+    "name": "O1/T4: зонд REAL-кадров с ненулевым FP",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T13.1",
+        "name": "Найти REAL-кадры с fp>0 в готовых данных",
+        "status": "PASS"
+      },
+      {
+        "id": "T13.2",
+        "name": "Пересчитать ECE или зафиксировать блокер",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T14",
+    "name": "Claims: закрыть 28 OPEN по существующим отчётам",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T14.1",
+        "name": "Сверить 28 OPEN с отчётами",
+        "status": "PASS"
+      },
+      {
+        "id": "T14.2",
+        "name": "Проставить вердикты и следующие шаги",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T15",
+    "name": "digest_v2: дозавершить LLM-дайджест",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T15.1",
+        "name": "Обработать оставшиеся чанки",
+        "status": "PASS"
+      },
+      {
+        "id": "T15.2",
+        "name": "Свести итоговый дайджест",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T16",
+    "name": "Гипотезы бэклога: продолжить после H108",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T16.1",
+        "name": "Проверить H109+ по готовым данным",
+        "status": "PASS"
+      },
+      {
+        "id": "T16.2",
+        "name": "Зафиксировать отрицательные результаты",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T17",
+    "name": "Онтология мувов: каркас таксономии",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T17.1",
+        "name": "Собрать кандидатов категорий из voice/turngame",
+        "status": "PASS"
+      },
+      {
+        "id": "T17.2",
+        "name": "Сформулировать критерии и gating",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T18",
+    "name": "R2-системность: доля расхождений на демо с 10 позициями",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T18.1",
+        "name": "Подтвердить фикс 12/12 по отчёту 93",
+        "status": "PASS"
+      },
+      {
+        "id": "T18.2",
+        "name": "Посчитать долю расхождений на 320 демо или блокер",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "C11-379",
+    "name": "demoparser v4: 7-я репликация на новых демо",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "C11-379.1",
+        "name": " Выбрать 7 новых демо, disjoint со всеми 84 кандидатами прошлых репликаций",
+        "status": "PASS"
+      },
+      {
+        "id": "C11-379.2",
+        "name": "Собрать парсер C11-379-parser.py (адаптация v4 + новое измерение)",
+        "status": "PASS"
+      },
+      {
+        "id": "C11-379.3",
+        "name": "Зафиксировать prereg C11-379 ДО прогона (пороги + SHA защищённых)",
+        "status": "PASS"
+      },
+      {
+        "id": "C11-379.4",
+        "name": "Прогнать парсер в turngame/.venv, проверить гейт",
+        "status": "PASS"
+      },
+      {
+        "id": "C11-379.5",
+        "name": "Написать отчёт C11-379.md с реальными цифрами",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "C06-422",
+    "name": "СКАНФИД: FP-доля на корпусе S10",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "C06-422.1",
+        "name": "Изучить prereg и скрипты C06-406, выбрать фазу S10",
+        "status": "PASS"
+      },
+      {
+        "id": "C06-422.2",
+        "name": "Создать lib/build, зафиксировать prereg C06-422C",
+        "status": "PASS"
+      },
+      {
+        "id": "C06-422.3",
+        "name": "Собрать corpus S10 (17920 кадров), проверить disjointness",
+        "status": "PASS"
+      },
+      {
+        "id": "C06-422.4",
+        "name": "Prereg C06-422, прогон enemy_model + 3-frame + chains",
+        "status": "PASS"
+      },
+      {
+        "id": "C06-422.5",
+        "name": "Отчёт C06-422.md, гейт,证明 no writes to data",
+        "status": "PASS"
+      }
+    ]
+  }
+]

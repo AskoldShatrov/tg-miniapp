@@ -1,0 +1,58 @@
+[
+  {
+    "h": "GATE-T1",
+    "verdict": "FAIL",
+    "title": "Гейт T1: wp_v3-признаки дают прирост contested AUC > 0.60 при нижней границе cluster 95% CI > 0",
+    "note": "256 train / 64 test по match_id; своя полоса base 0.5772 (n=2329) → 0.5762 (n=2301), cluster CI (0.5631, 0.5919); фикс. полоса 0.5772 → 0.5753, CI (0.5569, 0.5936); ECE 0",
+    "src": "overnight/T1-winrate-v4.md; overnight/72-hypothesis-ledger.md §1.1; overnight/MASTERPLAN-v"
+  },
+  {
+    "h": "GATE-T2",
+    "verdict": "FAIL",
+    "title": "Гейт T2: личный остаток игрока даёт out-of-sample прирост с CI > 0 и ICC игрока в исходе > 0.05",
+    "note": "3 независимые проверки (N3, v1, v2). v1: ΔAUC −0.0039 [−0.0169, +0.0097], ICC 0.0046, split-half rho 0.064, holdout rho −0.078. v2 (255/64, 18446 наблюдений): reversal-on",
+    "src": "overnight/T2-player.md; overnight/T2-player-v2.md; overnight/72-hypothesis-ledger.md §1.1;"
+  },
+  {
+    "h": "GATE-T3",
+    "verdict": "PASS",
+    "title": "Гейт T3: калибровка P(full buy) и P(AWP-килл) проходит ECE < 0.05 и покрытие > 60%",
+    "note": "Вложенный 5-fold CV по match_id + Platt. P(full buy): n=54744, ECE max 0.0073, coverage 90.5%, Brier 0.1122, AUC 0.882. P(AWP-килл, killer): n=46351, ECE 0.0066, coverage",
+    "src": "overnight/T3-buy-awp.md; overnight/72-hypothesis-ledger.md §1.1; .config/opencode/progress"
+  },
+  {
+    "h": "GATE-T4",
+    "verdict": "OPEN",
+    "title": "Гейт T4: честные метрики scanfeed против факта с n и baseline; confidence откалиброван по REAL-",
+    "note": "Демо: 120/120 килов совпали, coverage 1.0; two-AK TP4 FP0 FN3 TN9 → P=1.0 R=0.5714 accuracy 0.8125; бай persistence 0.6129 < baseline 0.7742, AWP-rule 0.6452 > 0.5161 (n=",
+    "src": "overnight/73-t4-donk-benchmark.md; .config/opencode/progress.json (T4.4); overnight/MASTER"
+  },
+  {
+    "h": "H-T1-01",
+    "verdict": "FAIL",
+    "title": "Пять признаков wp_v3 (smoke_adv, buy_full_adv, equip_adv_k$, los_adv, los_lead_s) дают прирост ",
+    "note": "base 0.5772 → 0.5762, cluster CI (0.5631, 0.5919); фикс. полоса 0.5772 → 0.5753, CI (0.5569, 0.5936); 34/64 матчей улучшение; ECE 0.0195 → 0.0181; 41095/10223 состояний",
+    "src": "overnight/72-hypothesis-ledger.md §1.1"
+  },
+  {
+    "h": "H-T1-02",
+    "verdict": "OPEN",
+    "title": "Plant/defuse и LOS-признаки несут сигнал на полном корпусе",
+    "note": "plant/defuse только 40 демо с bomb-кэшем; LOS только 40 матчей, на остальных 280 = 0 (без утечки, но со сниженной мощностью)",
+    "src": "overnight/72-hypothesis-ledger.md §1.1"
+  },
+  {
+    "h": "H-T2-01",
+    "verdict": "FAIL",
+    "title": "Надёжный «почерк» мыши переносится в предсказание победы раунда",
+    "note": "ΔAUC reversal-only −0.0043 [−0.0105, +0.0015]; все 5 конфигураций ΔAUC ≤ 0; ICC игрока в исходе 0.0040 против порога 0.05; бутстрепы ΔAUC>0 = 9.5%; 255/64 матчей, 18446 н",
+    "src": "overnight/72-hypothesis-ledger.md §1.1; overnight/T2-player-v2.md"
+  },
+  {
+    "h": "H-T2-02",
+    "verdict": "PASS",
+    "title": "Признак yaw_reversal_rate надёжно различает игроков (ICC измерения)",
+    "note": "ICC(1,1) 0.0548 [0.0475, 0.0887], F=2.65, p=1.7e-48, 337 игроков; split-half 0.480; ρ(профиль, остаток исхода) = −0.015",
+    "src": "overnight/72-hypothesis-ledger.md §1.1; overnight/T2-player-v2.md §4"
+  }
+]
