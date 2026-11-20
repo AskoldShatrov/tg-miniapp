@@ -1150,7 +1150,7 @@ async function refreshAgentStatus(){
   }
 }
 refreshAgentStatus();
-setInterval(refreshAgentStatus, 30000);
+setInterval(refreshAgentStatus, 5000);
 /* Шапка — рабочий элемент: обновляет данные И открывает живой ход работ. */
 const hdr=$("#hdr"); if(hdr) hdr.addEventListener("click",()=>{
   hdr.classList.add("refreshing");
@@ -1189,7 +1189,7 @@ async function refreshSessions(){
   }
 }
 refreshSessions();
-setInterval(refreshSessions, 30000);
+setInterval(refreshSessions, 5000);
 
 /* Ручное обновление: кнопка ⟳ во вкладке «Сессии». Показывает, что данные
    реально перечитаны, а не закешированы WebView/ Pages. */
