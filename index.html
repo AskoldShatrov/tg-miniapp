@@ -424,7 +424,7 @@
       <div class="eyebrow">Дерево задач · T1—T11</div>
       <div class="live-strip" id="liveStrip">
         <span class="dot-live"></span>
-        <span>агентов сейчас <b id="stripAgents">…</b> · воркеров <b id="stripWorkers">…</b></span>
+        <span title="агенты — живые процессы opencode run; сессии — вкладки OpenCode за сутки; сабагенты — дочерние сессии; воркеры — systemd-сервисы">в работе <b id="stripAgents">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
         <span id="stripNote" style="color:var(--yellow)"></span>
         <span id="stripTime" style="margin-left:auto;color:var(--overlay0)">…</span>
       </div>
@@ -654,7 +654,7 @@ function absTime(s){
 function renderSessions(){
   // Сортируем здесь, а не только на бэкенде: порядок по времени — инвариант вкладки.
   const list=(SESSIONS.sessions||[]).slice().sort((a,b)=>(b.updated||0)-(a.updated||0));
-  $("#sessionsCount").textContent=list.length;
+  $("#sessionsCount").textContent=(SESSIONS.total_active||list.length)+" (показано "+list.length+")";
   $("#sessionsTime").textContent=SESSIONS.fetched_human||"—";
   const fetched=Number(SESSIONS.fetched_at||0)*1000;
   const stale=fetched && Date.now()-fetched>5*60000;
@@ -737,15 +737,22 @@ async function refreshAgentStatus(){
     const word = n===1 ? "агент" : (n>=2 && n<=4 ? "агента" : "агентов");
     const badge = $("#agentBadge");
     if(badge){
-      badge.textContent = `🤖 ${n} ${word}`;
-      badge.title = `${s.workers||0} воркеров · обновлено ${s.ts_human||"—"}` + (s.game_mode?" · во время игры":"");
+      badge.textContent = `🤖 ${n} в работе`;
+      badge.title = `агенты = живые процессы opencode run (${n})\n` +
+        `сессии = вкладки OpenCode за 24 ч (${Number(s.sessions_active)||0})\n` +
+        `сабагенты = дочерние сессии (${Number(s.subagents)||0})\n` +
+        `воркеры = systemd-сервисы (${s.workers||0})\n` +
+        `обновлено ${s.ts_human||"—"}` + (s.game_mode?" · во время игры":"");
       badge.classList.toggle("idle", n===0);
       badge.classList.toggle("game", !!s.game_mode);
     }
     const gb = $("#gameBadge");
     if(gb){ gb.style.display = s.game_mode ? "" : "none"; gb.title = s.game_reason||"режим игры"; }
-    const sa=$("#stripAgents"), sw=$("#stripWorkers"), st=$("#stripTime"), sn=$("#stripNote");
+    const sa=$("#stripAgents"), ss=$("#stripSessions"), sb=$("#stripSub"),
+          sw=$("#stripWorkers"), st=$("#stripTime"), sn=$("#stripNote");
     if(sa) sa.textContent = n;
+    if(ss) ss.textContent = Number(s.sessions_active)||0;
+    if(sb) sb.textContent = Number(s.subagents)||0;
     if(sw) sw.textContent = (s.workers||0);
     if(sn) sn.textContent = s.note || "";
     if(st) st.textContent = ((s.ts_human||"").slice(11,16) || "—");
