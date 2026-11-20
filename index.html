@@ -286,50 +286,52 @@
 <div class="app" id="app">
 
   <header>
-    <div class="logo">M</div>
+    <div class="logo">₲</div>
     <div>
-      <div class="htitle">Карточки и задачи</div>
-      <div class="hsub" id="hsub">сессия · miniapp-demo</div>
+      <div class="htitle">Экономика · CS2</div>
+      <div class="hsub" id="hsub">загрузка…</div>
     </div>
     <div class="hbadges">
       <div class="agentbadge" id="agentBadge" title="работающих агентов">🤖 …</div>
       <div class="gamebadge" id="gameBadge" style="display:none" title="режим игры">🎮 ИГРА</div>
-      <div class="hbadge" title="Демо-данные, встроенные в файл">DEMO</div>
+      <div class="hbadge" id="buildBadge" title="сборка">…</div>
     </div>
   </header>
 
   <nav class="tabs" id="tabs">
-    <button class="tab active" data-tab="card"><span>▤</span> Вопрос <span class="key">1</span></button>
-    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">2</span></button>
-    <button class="tab" data-tab="decisions"><span>◈</span> Вердикты <span class="key">3</span></button>
+    <button class="tab active" data-tab="economy"><span>₲</span> Экономика <span class="key">1</span></button>
+    <button class="tab" data-tab="chat"><span>✉</span> Чат <span class="key">2</span></button>
+    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">3</span></button>
     <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
   </nav>
 
   <main id="main">
-    <section class="screen active" id="screen-card">
-      <div class="eyebrow">Вопрос пользователя · <span id="cardCount">1 / 3</span></div>
-      <div class="qcard" id="qcard">
-        <div class="qtop">
-          <span class="qid" id="qId">Q-001</span>
-          <span class="chip question" id="qStatus">ОТКРЫТ</span>
+    <section class="screen active" id="screen-economy">
+      <div class="eyebrow">Калибровка экономики · метка «вывод», не «точность»</div>
+      <div class="qcard">
+        <div class="qtop"><span class="qid">ЭКОНОМИКА</span><span class="chip open">ВЫВОД</span></div>
+        <h1 class="qtitle">Считаем класс закупа по деньгам</h1>
+        <p class="qbody">Введи equip/деньги игрока — получишь класс закупа, долю класса с CI и медиану по калиброванным правилам (n=92 864).</p>
+        <div style="display:flex;gap:8px;margin:12px 0;flex-wrap:wrap">
+          <input id="ecoInput" type="number" value="2700" min="0" step="50"
+                 style="flex:1;min-width:140px;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);border-radius:9px;padding:9px 11px;font:inherit">
+          <button id="ecoCalc" class="btn btn-primary">Рассчитать</button>
         </div>
-        <h1 class="qtitle" id="qTitle">—</h1>
-        <p class="qbody" id="qBody">—</p>
-        <div class="qmeta" id="qTags"></div>
-        <div class="actions">
-          <button class="btn btn-primary" data-act="Ответить">Ответить</button>
-          <button class="btn btn-ghost" data-act="Уточнить">Уточнить</button>
-          <button class="btn btn-warn" data-act="В работу">В работу</button>
-        </div>
+        <div class="qbody" id="ecoResult">Загрузка правил…</div>
       </div>
-      <div class="nav-cards">
-        <div class="dots" id="dots"></div>
-        <div class="counter" id="counter">← / →</div>
+      <div class="summary" id="ecoTiers" style="margin-top:12px"></div>
+      <div class="hint" id="ecoNote" style="margin-top:10px"></div>
+    </section>
+
+    <section class="screen" id="screen-chat">
+      <div class="eyebrow">Переписка с агентом</div>
+      <div class="dlist" id="chatLog" style="min-height:180px"></div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <input id="chatInput" type="text" placeholder="Написать агенту…"
+               style="flex:1;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);border-radius:9px;padding:9px 11px;font:inherit">
+        <button id="chatSend" class="btn btn-primary">➤</button>
       </div>
-      <div class="hint">
-        Подсказка: <b>1/2/3/4</b> переключают экраны, <b>Esc</b> сбрасывает вид.
-        Карточки листаются кликом по точкам или стрелками ← →.
-      </div>
+      <div class="hint">Отправка закрывает мини-ап — так устроен Telegram WebApp. Открой его заново через /app: ответ подтянется из replies.json автоматически.</div>
     </section>
 
     <section class="screen" id="screen-tree">
@@ -378,17 +380,15 @@
   </main>
 
   <div class="hotbar">
-    <span class="hk"><kbd>1</kbd> Карточка</span>
+    <span class="hk"><kbd>1</kbd> Экономика</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>2</kbd> Дерево</span>
+    <span class="hk"><kbd>2</kbd> Чат</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>3</kbd> Вердикты</span>
+    <span class="hk"><kbd>3</kbd> Дерево</span>
     <span class="sep"></span>
     <span class="hk"><kbd>4</kbd> Сессии</span>
     <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
-    <span class="sep"></span>
-    <button class="hk" id="sendAgent" style="border:1px solid var(--green);border-radius:9px;padding:4px 10px;color:var(--green);cursor:pointer">➤ Отправить агенту</button>
   </div>
 
   <div class="toast" id="toast"></div>
@@ -397,7 +397,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-0552";
+const BUILD = "20261120-0625";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -458,7 +458,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["card","tree","decisions","sessions"];
+const TAB_IDS=["economy","chat","tree","sessions"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
@@ -593,18 +593,15 @@ function renderSessions(){
 
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{
-  if(e.key==="1"){setTab("card")}
-  else if(e.key==="2"){setTab("tree")}
-  else if(e.key==="3"){setTab("decisions")}
+  if(e.key==="1"){setTab("economy")}
+  else if(e.key==="2"){setTab("chat"); renderChat();}
+  else if(e.key==="3"){setTab("tree")}
   else if(e.key==="4"){setTab("sessions")}
   else if(e.key==="Escape"){
-    // Сброс: закрыть все узлы дерева, вернуть первую карточку и первый экран
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
-    ci=0; renderCard(); setTab("card"); toast("Сброс вида");
+    setTab("economy"); toast("Сброс вида");
   }
-  else if(e.key==="ArrowRight"){ if($("#screen-card").classList.contains("active")){ci=(ci+1)%DEMO.cards.length;renderCard()} }
-  else if(e.key==="ArrowLeft"){ if($("#screen-card").classList.contains("active")){ci=(ci-1+DEMO.cards.length)%DEMO.cards.length;renderCard()} }
   else return;
   e.preventDefault();
 });
@@ -625,6 +622,7 @@ if (tg) {
 }
 /* Видимая метка сборки: если открыта старая закешированная версия — её видно сразу. */
 $("#hsub").textContent += " · сборка " + BUILD.slice(4,6) + "." + BUILD.slice(6,8) + " " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
+const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
   GitHub Pages кеширует на 10 мин и игнорирует ?ts, поэтому основной
@@ -711,8 +709,121 @@ function sendToAgent(){
 const sendBtn = $("#sendAgent");
 if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
 
+/* ---------- экономика: калькулятор по калиброванным правилам ---------- */
+let ECONOMY = null;
+const DATA_URLS = [
+  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",
+  ""
+];
+async function refreshEconomy(){
+  for(const base of DATA_URLS){
+    try{
+      const r = await fetch(base + "economy.json?ts=" + Date.now(), {cache:"no-store"});
+      if(!r.ok) continue;
+      ECONOMY = await r.json();
+      renderEconomy();
+      return;
+    }catch(e){ /* следующий источник */ }
+  }
+  const box = $("#ecoResult");
+  if(box) box.textContent = "Не удалось загрузить economy.json — проверь сеть.";
+}
+function ecoClass(v){
+  const t = ECONOMY && ECONOMY.thresholds ? ECONOMY.thresholds : {t1:1975,t2:3475};
+  return v < t.t1 ? "eco" : (v < t.t2 ? "force" : "full");
+}
+function renderEconomy(){
+  if(!ECONOMY) return;
+  const freq = ECONOMY.class_frequencies || {};
+  const tiers = $("#ecoTiers");
+  if(tiers){
+    tiers.innerHTML = ["eco","force","full"].map(k=>{
+      const f = freq[k] || {p:0, ci95:[0,0]};
+      const cls = k === "eco" ? "open" : (k === "force" ? "fail" : "pass");
+      return '<div class="stat s-'+cls+'"><b>'+(f.p*100).toFixed(1)+'%</b><span>'+k.toUpperCase()+
+             ' · '+((f.ci95&&f.ci95[0]||0)*100).toFixed(1)+'–'+((f.ci95&&f.ci95[1]||0)*100).toFixed(1)+
+             '% · n='+(f.n||"—")+'</span></div>';
+    }).join("");
+  }
+  const note = $("#ecoNote");
+  if(note) note.textContent = ECONOMY.label_note || "";
+  calcEconomy();
+}
+function calcEconomy(){
+  const box = $("#ecoResult");
+  const inp = $("#ecoInput");
+  if(!box || !ECONOMY || !inp) return;
+  const v = Number(inp.value);
+  if(!isFinite(v)){ box.textContent = "Введи деньги/equip целым числом."; return; }
+  const k = ecoClass(v);
+  const f = (ECONOMY.class_frequencies||{})[k] || {};
+  const med = (ECONOMY.equip_median_by_class||{})[k] || {};
+  const awp = ECONOMY.awp || {};
+  const t = ECONOMY.thresholds || {t1:1975,t2:3475};
+  box.innerHTML = '<b>'+v+'</b> → класс <b>'+k.toUpperCase()+'</b> (пороги '+t.t1+'/'+t.t2+').'+
+    ' Доля класса '+(f.p*100).toFixed(1)+'% ['+((f.ci95&&f.ci95[0]||0)*100).toFixed(1)+'–'+
+    ((f.ci95&&f.ci95[1]||0)*100).toFixed(1)+'], медиана equip '+(med.median===undefined?"—":med.median)+'.'+
+    ' P(AWP-килл при equip≥4750) '+((awp.p||0)*100).toFixed(1)+'%. Метка: ВЫВОД, не точность.';
+}
+const ecoBtn = $("#ecoCalc"); if(ecoBtn) ecoBtn.addEventListener("click", calcEconomy);
+const ecoInp = $("#ecoInput"); if(ecoInp) ecoInp.addEventListener("change", calcEconomy);
+
+/* ---------- чат: отправка через WebApp.sendData + чтение replies.json ---------- */
+const CHAT_KEY = "miniapp_chat_v1";
+const userID = String((((typeof tg !== "undefined" && tg && tg.initDataUnsafe || {}).user || {}).id) || "0");
+let CHAT = {sent:[], replies:{}};
+try { CHAT = JSON.parse(localStorage.getItem(CHAT_KEY) || JSON.stringify(CHAT)); } catch(e){}
+function escHtml(x){
+  return String(x).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function renderChat(){
+  const log = $("#chatLog"); if(!log) return;
+  const reps = (CHAT.replies && CHAT.replies[userID]) || [];
+  const out = [];
+  (CHAT.sent||[]).slice(-25).forEach(m =>
+    out.push('<div class="d"><b>ты:</b> '+escHtml(m.text)+' <small>'+escHtml(m.t||"")+'</small></div>'));
+  reps.slice(-25).forEach(r =>
+    out.push('<div class="d"><b>агент:</b> '+escHtml(r.text)+' <small>'+escHtml(absTime(r))+'</small></div>'));
+  log.innerHTML = out.length ? out.join("") : '<div class="d">Сообщений пока нет. Напиши агенту ниже.</div>';
+  log.scrollTop = log.scrollHeight;
+}
+async function refreshReplies(){
+  for(const base of DATA_URLS){
+    try{
+      const r = await fetch(base + "replies.json?ts=" + Date.now(), {cache:"no-store"});
+      if(!r.ok) continue;
+      const d = await r.json();
+      CHAT.replies = d || {};
+      localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
+      renderChat();
+      return;
+    }catch(e){}
+  }
+}
+function sendChat(){
+  const inp = $("#chatInput"); if(!inp) return;
+  const text = (inp.value||"").trim(); if(!text) return;
+  CHAT.sent.push({text: text, t: new Date().toTimeString().slice(0,8)});
+  CHAT.sent = CHAT.sent.slice(-50);
+  localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
+  renderChat(); inp.value = "";
+  if(typeof tg !== "undefined" && tg){
+    tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID}));
+  } else {
+    toast("Открой мини-ап через /app, чтобы отправить агенту");
+  }
+}
+const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", sendChat);
+const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown", e => {
+  if(e.key === "Enter"){ e.preventDefault(); sendChat(); }
+});
+refreshEconomy();
+refreshReplies();
+setInterval(refreshReplies, 5000);
+setInterval(refreshEconomy, 60000);
+
 /* ---------- init ---------- */
-renderCard(); renderTree(); renderDecisions(); renderSessions();
+renderTree(); renderDecisions(); renderSessions(); renderChat(); setTab("economy");
 </script>
 </body>
 </html>
