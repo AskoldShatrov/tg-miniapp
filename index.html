@@ -598,8 +598,10 @@ function nodeHTML(n){
     ${has?`<div class="children">${n.children.map(nodeHTML).join("")}</div>`:""}
   </div>`;
 }
+let LIVE={tree:null,decisions:null};
 function renderTree(){
-  $("#tree").innerHTML=DEMO.tree.map(nodeHTML).join("");
+  const nodes=(LIVE.tree&&LIVE.tree.length)?LIVE.tree:DEMO.tree;
+  $("#tree").innerHTML=nodes.map(nodeHTML).join("");
   const c=statusCounts(DEMO.tree);
   $("#cntPass").textContent=c.PASS; $("#cntFail").textContent=c.FAIL; $("#cntOpen").textContent=c.OPEN;
   $$("#tree .trow[data-toggle='1']").forEach(row=>{
@@ -613,7 +615,8 @@ function renderTree(){
 
 /* ---------- decisions ---------- */
 function renderDecisions(){
-  $("#dlist").innerHTML=DEMO.decisions.map(d=>`
+  const rows=(LIVE.decisions&&LIVE.decisions.length)?LIVE.decisions:DEMO.decisions;
+  $("#dlist").innerHTML=rows.map(d=>`
     <div class="dec">
       <div>
         <h4>${esc(d.h)} · ${esc(d.title)}</h4>
@@ -1047,8 +1050,28 @@ setInterval(refreshReplies, 5000);
   });
   refreshPrompts();
 
+/* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
+async function fetchLiveData(){
+  const bases=["https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",""];
+  for(const base of bases){
+    try{
+      const [t,d]=await Promise.all([
+        fetch(base+"tree.json?ts="+Date.now(),{cache:"no-store"}),
+        fetch(base+"decisions.json?ts="+Date.now(),{cache:"no-store"})
+      ]);
+      if(!t.ok||!d.ok) continue;
+      const tj=await t.json(), dj=await d.json();
+      if(Array.isArray(tj)&&tj.length) LIVE.tree=tj;
+      if(Array.isArray(dj)&&dj.length) LIVE.decisions=dj;
+      if(LIVE.tree||LIVE.decisions){ renderTree(); renderDecisions(); }
+      return;
+    }catch(e){ /* фолбэк — захардкоженные DEMO-данные уже показаны */ }
+  }
+}
+
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
+fetchLiveData();
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
