@@ -590,7 +590,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1316";
+const BUILD = "20261120-1340";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -825,12 +825,12 @@ $("#hsub").innerHTML = '🤖 <b id="hsAgents">…</b> в работе · ⚙ <b 
 const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
-  GitHub Pages кеширует на 10 мин и игнорирует ?ts, поэтому основной
-  источник — raw.githubusercontent.com (CORS *, query обходит кеш).
-  Фолбэк — status.json на том же домене, если raw режется сетью. */
+  PRIMARY — свой домен: ?ts здесь обходит кеш. raw.githubusercontent.com
+  держит CDN-кэш и игнорирует query (20.11 13:3x отдавал 3 сессии, когда
+  на Pages уже было 12), поэтому он только фолбэк, если Pages недоступен. */
 const STATUS_URLS = [
-  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/status.json",
-  "status.json"
+  "status.json",
+  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/status.json"
 ];
 async function refreshAgentStatus(){
   for(const base of STATUS_URLS){
@@ -886,11 +886,12 @@ const hdr=$("#hdr"); if(hdr) hdr.addEventListener("click",()=>{
 });
 
 /* ---------- живые активные сессии ----------
-   Источник тот же, что и у status.json: raw.githubusercontent (CORS + обход кеша
-   Pages через ?ts), фолбэк — sessions.json на домене Pages. */
+   Сначала свой домен (?ts работает), raw — только фолбэк: его CDN кэширует
+   ответ и игнорирует query, из-за чего в мини-апе появлялись старые и
+   пустые («Нет свежих сессий») списки. */
 const SESSIONS_URLS = [
-  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/sessions.json",
-  "sessions.json"
+  "sessions.json",
+  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/sessions.json"
 ];
 async function refreshSessions(){
   for(const base of SESSIONS_URLS){
@@ -934,8 +935,8 @@ const sendBtn = $("#sendAgent");
 if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
 
 const DATA_URLS = [
-  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",
-  ""
+  "",
+  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"
 ];
 const CHAT_KEY = "miniapp_chat_v1";
 const userID = String((((typeof tg !== "undefined" && tg && tg.initDataUnsafe || {}).user || {}).id) || "0");
@@ -1007,8 +1008,8 @@ setInterval(refreshReplies, 5000);
      поверх данных и не перезаписываются при обновлении выгрузки.
      ======================================================== */
   const PROMPT_URLS = [
-    "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/prompts.json",
-    "prompts.json"
+    "prompts.json",
+    "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/prompts.json"
   ];
   const PM_KEY = "miniapp_prompts_manual_v1";
   let PROMPTS = { meta:{}, groups:[] };
@@ -1241,7 +1242,7 @@ function renderLive(){
 
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
 async function fetchLiveData(){
-  const bases=["https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",""];
+  const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
   for(const base of bases){
     try{
       const [t,d,a,l]=await Promise.all([
