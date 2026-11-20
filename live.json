@@ -592,144 +592,123 @@
       "task": "PT",
       "id": "PT.1",
       "title": "Старт: трекинг в progress.json и прогресс в мини-аппе",
-      "status": "running",
-      "note": "Возобновление плана после AU1125: патч miniapp_answer уже в рантайме (бот рестартован 15:11:57), этап 3 закрыт, этап 4 п"
+      "status": "done",
+      "note": "Трекинг заведён; progress.json → miniapp live.json/tree.json; проверено на GitHub Pages (PT и PT.1 в live/tree.json)"
     },
     {
       "task": "PT",
       "id": "PT.2",
       "title": "Этап 5: ответы мини-апа в OpenCode + уведомление всем + советчик 15 мин",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "process_questions.py + timer: рассылка вопроса всем (3 получателя), советчик через 15 мин, event=advice, claim гонки, ин"
     },
     {
       "task": "PT",
       "id": "PT.3",
       "title": "Этап 6: исполнитель действий interrupt/pause/resume/retry, STOP, каскад, actor",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "process_api.do_action + can_for: stop/pause/resume/retry/answer, каскад с visited, action_failed с actor, pc_task stop т"
     },
     {
       "task": "PT",
       "id": "PT.4",
       "title": "Этап 7: REST API (/projects,/nodes, действия) с HMAC и кнопками в мини-аппе",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "REST API /projects /nodes /questions + POST действия, HMAC+whitelist, туннель https://7f953ebf9da208.app.lhr.life в stat"
     },
     {
       "task": "PT",
       "id": "PT.5",
       "title": "Финальная проверка: прогресс и дерево в аппе, отчёт",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "Финальная проверка: Pages CDN подхватил index.html и live/tree, отчёт по плану"
     }
   ],
   "active": [
+    {
+      "id": "AU947",
+      "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU793: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU638: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU",
+      "source": "ноут",
+      "claimed_human": "15:36:10",
+      "age_min": 0
+    },
     {
       "id": "AU936",
       "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU877: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU661: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU",
       "source": "ноут",
       "claimed_human": "15:35:14",
-      "age_min": 0
+      "age_min": 1
     },
     {
       "id": "AU932",
       "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU768: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU543: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU",
       "source": "ноут",
       "claimed_human": "15:33:44",
-      "age_min": 1
+      "age_min": 2
     },
     {
       "id": "AU1129",
       "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ H231: `websearch` (встроенный)",
       "source": "ноут",
       "claimed_human": "14:44:39",
-      "age_min": 50
+      "age_min": 51
     },
     {
       "id": "AU1130",
       "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ H244: Довгаль В.А., Довгаль Д.В. «Анализ перспективных методов поведенческой биометрии для а",
       "source": "ноут",
       "claimed_human": "14:44:39",
-      "age_min": 50
-    },
-    {
-      "id": "AU1122",
-      "title": "ПЕРЕПРОВЕРИТЬ G09: G9 факт до интерпретации: mtime кадра, свежесть GSI, monitor_id/DXGI проверяются перед выводом",
-      "source": "ноут",
-      "claimed_human": "14:35:55",
-      "age_min": 59
-    },
-    {
-      "id": "AU1121",
-      "title": "ПЕРЕПРОВЕРИТЬ M-NAIVE: Наивный entity-level WR является мерой «мува»",
-      "source": "ноут",
-      "claimed_human": "14:35:46",
-      "age_min": 59
-    },
-    {
-      "id": "AU1119",
-      "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU1067: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU1001: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ ",
-      "source": "ноут",
-      "claimed_human": "14:35:45",
-      "age_min": 59
-    },
-    {
-      "id": "AU1120",
-      "title": "ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU1069: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU1003: ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ ",
-      "source": "ноут",
-      "claimed_human": "14:35:45",
-      "age_min": 59
+      "age_min": 51
     },
     {
       "id": "H644",
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Общая связь с победой раунда.**",
       "source": "ПК",
       "claimed_human": "13:09:52",
-      "age_min": 145
+      "age_min": 146
     },
     {
       "id": "H643",
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Динамика действительно внутриигровая.**",
       "source": "ПК",
       "claimed_human": "13:06:48",
-      "age_min": 148
+      "age_min": 149
     },
     {
       "id": "H642",
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Статичная роль vs динамическая изоляция.** Средний `iso` по доминантной оси: aggression 0.415 CI [0.3",
       "source": "ПК",
       "claimed_human": "13:01:26",
-      "age_min": 153
+      "age_min": 154
     },
     {
       "id": "H641",
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **База.** 7 396 дуэлей с валидной изоляцией, 94 матча, 65 игроков; `alive_diff<0` у 2 483 (33.6%). Меди",
       "source": "ПК",
       "claimed_human": "13:00:24",
-      "age_min": 154
+      "age_min": 155
     },
     {
       "id": "H637",
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Страты по Δ (полосы окна).**",
       "source": "ПК",
       "claimed_human": "12:45:00",
-      "age_min": 170
+      "age_min": 171
     },
     {
       "id": "H635",
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Страты по `approach.class`.**",
       "source": "ПК",
       "claimed_human": "12:38:35",
-      "age_min": 176
+      "age_min": 177
     }
   ],
   "queues": {
     "ноут": {
       "done": 715,
       "failed": 1101,
-      "doing": 8,
-      "todo": 120
+      "doing": 5,
+      "todo": 123
     },
     "ПК": {
       "done": 34,
@@ -737,6 +716,6 @@
       "todo": 140
     }
   },
-  "fetched_at": 1795178124,
-  "fetched_human": "2026-11-20 15:35:24 +0300"
+  "fetched_at": 1795178184,
+  "fetched_human": "2026-11-20 15:36:24 +0300"
 }
