@@ -377,7 +377,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-0710";
+const BUILD = "20261120-0720";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -692,7 +692,6 @@ function sendToAgent(){
 const sendBtn = $("#sendAgent");
 if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
 
-/* ---------- экономика: калькулятор по калиброванным правилам ---------- */
 const DATA_URLS = [
   "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",
   ""
@@ -745,10 +744,8 @@ const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", se
 const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown", e => {
   if(e.key === "Enter"){ e.preventDefault(); sendChat(); }
 });
-refreshEconomy();
 refreshReplies();
 setInterval(refreshReplies, 5000);
-setInterval(refreshEconomy, 60000);
 
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat();
