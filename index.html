@@ -244,6 +244,80 @@
     border-radius:var(--radius-sm);font:600 11.5px/1.5 var(--ff);color:var(--overlay1);
   }
 
+  /* ---------- prompts (человеческая сортировка) ---------- */
+  .ptoolbar{display:flex;flex-direction:column;gap:9px;margin-bottom:12px}
+  .seg{display:flex;gap:4px;background:var(--mantle);border:1px solid var(--surface1);border-radius:10px;padding:3px}
+  .seg button{
+    flex:1;appearance:none;border:0;background:transparent;color:var(--overlay2);
+    font:700 10.5px/1 var(--ff);padding:7px 4px;border-radius:7px;cursor:pointer;transition:.15s;white-space:nowrap;
+  }
+  .seg button:hover{color:var(--subtext1)}
+  .seg button.on{background:var(--surface1);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .psearch{
+    width:100%;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);
+    border-radius:10px;padding:9px 11px;font:500 12px/1.3 var(--ff);
+  }
+  .psearch:focus{outline:none;border-color:var(--blue)}
+  .pstrip{
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:-2px 0 12px;padding:9px 10px;
+    border-radius:var(--radius-sm);background:rgba(203,166,247,.06);
+    border:1px solid rgba(203,166,247,.2);font:600 10px/1.3 var(--fm);color:var(--subtext0);
+  }
+  .pstrip b{color:var(--lavender)}
+  .pstrip .psrc{color:var(--overlay0)}
+  .p-group{margin-bottom:12px}
+  .p-ghead{
+    display:flex;align-items:center;gap:9px;padding:10px 11px;cursor:pointer;user-select:none;
+    background:var(--surface0);border:1px solid var(--surface1);border-radius:var(--radius-sm);
+    transition:.14s ease;
+  }
+  .p-ghead:hover{border-color:var(--surface2)}
+  .p-ghead .twist{color:var(--overlay1)}
+  .p-gname{font:700 12.5px/1.3 var(--ff);flex:1;color:var(--text)}
+  .p-gcount{font:700 10px/1 var(--fm);color:var(--lavender);background:rgba(203,166,247,.1);border:1px solid rgba(203,166,247,.28);border-radius:999px;padding:4px 8px}
+  .p-gwants{font:600 9px/1 var(--fm);color:var(--peach)}
+  .p-children{display:none;margin:6px 0 0 9px;padding-left:11px;border-left:1px solid var(--surface1)}
+  .p-children.open{display:block;animation:fade .15s ease}
+  .p-item{
+    background:var(--mantle);border:1px solid var(--surface0);border-radius:10px;
+    padding:9px 10px;margin-bottom:6px;cursor:pointer;transition:.14s ease;
+  }
+  .p-item:hover{border-color:var(--surface2);transform:translateX(2px)}
+  .p-item.open{border-color:var(--sapphire);background:rgba(116,199,236,.05)}
+  .p-row{display:flex;align-items:flex-start;gap:8px}
+  .p-time{font:700 9px/1.5 var(--fm);color:var(--overlay1);min-width:42px;text-align:right;flex:none}
+  .p-text{font:500 12px/1.45 var(--ff);color:var(--subtext1);flex:1;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .p-item.open .p-text{-webkit-line-clamp:unset;display:block}
+  .p-status{font:800 8.5px/1 var(--fm);letter-spacing:.4px;padding:4px 6px;border-radius:5px;flex:none;white-space:nowrap}
+  .ps-answered{color:var(--green);background:rgba(166,227,161,.1);border:1px solid rgba(166,227,161,.3)}
+  .ps-open{color:var(--yellow);background:rgba(249,226,175,.1);border:1px solid rgba(249,226,175,.3)}
+  .ps-part{color:var(--sky);background:rgba(137,220,235,.1);border:1px solid rgba(137,220,235,.3)}
+  .p-detail{display:none;margin-top:9px;padding-top:9px;border-top:1px dashed var(--surface1)}
+  .p-item.open .p-detail{display:block}
+  .p-full{font:500 11.5px/1.55 var(--ff);color:var(--subtext0);white-space:pre-wrap;word-break:break-word;max-height:220px;overflow-y:auto}
+  .p-sec{margin-top:9px}
+  .p-label{font:700 9px/1 var(--fm);letter-spacing:.6px;color:var(--overlay1);text-transform:uppercase;margin-bottom:5px}
+  .p-links{display:flex;flex-wrap:wrap;gap:5px}
+  .plink{font:600 10px/1 var(--fm);color:var(--peach);background:rgba(250,179,135,.08);border:1px solid rgba(250,179,135,.3);border-radius:7px;padding:5px 7px}
+  .plink.manual{color:var(--teal);background:rgba(148,226,213,.08);border-color:rgba(148,226,213,.3);cursor:pointer}
+  .plink.manual:hover{background:rgba(148,226,213,.18)}
+  .p-answer{font:600 11px/1.45 var(--ff);color:var(--green);background:rgba(166,227,161,.06);border-left:2px solid var(--green);padding:6px 8px;border-radius:0 6px 6px 0}
+  .p-answer.none{color:var(--overlay1);border-color:var(--surface2);background:transparent;font-style:italic}
+  .p-edit{display:flex;gap:6px;margin-top:8px}
+  .p-edit input{
+    flex:1;min-width:0;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);
+    border-radius:8px;padding:7px 9px;font:500 11px/1.3 var(--ff);
+  }
+  .p-edit input:focus{outline:none;border-color:var(--sapphire)}
+  .p-mini{
+    appearance:none;background:var(--surface1);color:var(--subtext1);border:1px solid var(--surface2);
+    border-radius:8px;padding:7px 10px;font:700 11px/1 var(--ff);cursor:pointer;white-space:nowrap;
+  }
+  .p-mini:hover{background:var(--surface2);color:var(--text)}
+  .p-mini.primary{background:rgba(116,199,236,.15);color:var(--sapphire);border-color:rgba(116,199,236,.4)}
+  .p-day{font:700 10px/1 var(--fm);letter-spacing:.6px;color:var(--overlay0);text-transform:uppercase;margin:14px 2px 8px;border-bottom:1px solid var(--surface0);padding-bottom:6px}
+  .p-empty{padding:22px 12px;text-align:center;border:1px dashed var(--surface1);border-radius:var(--radius-sm);font:600 11.5px/1.5 var(--ff);color:var(--overlay1)}
+
   /* ---------- hotkey bar ---------- */
   .hotbar{
     flex:0 0 auto;display:flex;align-items:center;gap:6px;justify-content:center;
@@ -300,8 +374,9 @@
 
   <nav class="tabs" id="tabs">
     <button class="tab active" data-tab="chat"><span>✉</span> Чат <span class="key">1</span></button>
-    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">2</span></button>
-    <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">3</span></button>
+    <button class="tab" data-tab="prompts"><span>⌘</span> Промпты <span class="key">2</span></button>
+    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">3</span></button>
+    <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
   </nav>
 
   <main id="main">
@@ -314,6 +389,35 @@
         <button id="chatSend" class="btn btn-primary">➤</button>
       </div>
       <div class="hint">Отправка закрывает мини-ап — так устроен Telegram WebApp. Открой его заново через /app: ответ подтянется из replies.json автоматически.</div>
+    </section>
+
+    <section class="screen" id="screen-prompts">
+      <div class="eyebrow">Мои промпты · человеческая сортировка</div>
+      <div class="ptoolbar">
+        <div class="seg" id="pRange">
+          <button data-range="3" class="on">3 дня</button>
+          <button data-range="7">7 дней</button>
+          <button data-range="30">30 дней</button>
+          <button data-range="all">все</button>
+        </div>
+        <input id="pSearch" class="psearch" type="text" placeholder="Найти по тексту, теме, хотелке…">
+        <div class="seg" id="pMode">
+          <button data-mode="group" class="on">по темам</button>
+          <button data-mode="time">по времени</button>
+          <button data-mode="tree">дерево</button>
+        </div>
+      </div>
+      <div class="pstrip" id="pStrip">
+        <span class="dot-live" style="background:var(--lavender);box-shadow:0 0 0 3px rgba(203,166,247,.15)"></span>
+        <span>промптов <b id="pCount">…</b> · тем <b id="pGroups">…</b></span>
+        <span class="psrc" id="pSrc">загрузка…</span>
+        <button id="pReload" class="sreload" style="margin-left:auto" title="Перечитать данные">⟳</button>
+      </div>
+      <div id="pList"></div>
+      <div class="hint">
+        Нажми на промпт, чтобы раскрыть <b>полный текст</b>, связи с хотелками и <b>ответ в пару слов</b>.
+        Связи и ответы, которые ты поставишь сам, сохраняются на этом устройстве и не теряются при обновлении данных.
+      </div>
     </section>
 
     <section class="screen" id="screen-tree">
@@ -364,9 +468,11 @@
   <div class="hotbar">
     <span class="hk"><kbd>1</kbd> Чат</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>2</kbd> Дерево</span>
+    <span class="hk"><kbd>2</kbd> Промпты</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>3</kbd> Сессии</span>
+    <span class="hk"><kbd>3</kbd> Дерево</span>
+    <span class="sep"></span>
+    <span class="hk"><kbd>4</kbd> Сессии</span>
     <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
@@ -377,7 +483,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-0720";
+const BUILD = "20261120-1115";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -438,7 +544,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["chat","tree","sessions"];
+const TAB_IDS=["chat","prompts","tree","sessions"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
@@ -577,12 +683,15 @@ function renderSessions(){
 
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{
+  if(e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
   if(e.key==="1"){setTab("chat"); renderChat();}
-  else if(e.key==="2"){setTab("tree")}
-  else if(e.key==="3"){setTab("sessions")}
+  else if(e.key==="2"){setTab("prompts")}
+  else if(e.key==="3"){setTab("tree")}
+  else if(e.key==="4"){setTab("sessions")}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
+    $$("#pList .p-children").forEach(x=>x.classList.remove("open"));
     setTab("chat"); toast("Сброс вида");
   }
   else return;
@@ -747,8 +856,199 @@ const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown",
 refreshReplies();
 setInterval(refreshReplies, 5000);
 
+  /* ========================================================
+     ПРОМПТЫ · человеческая сортировка
+     Источник: prompts.json — генератор собирает из телеграм-экспорта,
+     индекса сессий OpenCode, расшифровок голоса и wants.json.
+     Ручные правки (ответ, связи, перенос темы) — в localStorage,
+     поверх данных и не перезаписываются при обновлении выгрузки.
+     ======================================================== */
+  const PROMPT_URLS = [
+    "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/prompts.json",
+    "prompts.json"
+  ];
+  const PM_KEY = "miniapp_prompts_manual_v1";
+  let PROMPTS = { meta:{}, groups:[] };
+  let PMAN = { answers:{}, links:{}, moved:{} };
+  try { PMAN = Object.assign(PMAN, JSON.parse(localStorage.getItem(PM_KEY)||"{}")); } catch(e){}
+  let pRange = "3", pMode = "group", pQuery = "";
+
+  const DAY = 86400000;
+  function savePman(){ try{ localStorage.setItem(PM_KEY, JSON.stringify(PMAN)); }catch(e){} }
+  function pAnswer(p,g){ return PMAN.answers[p.id] || p.answer || g.answer || ""; }
+  function pLinks(p,g){
+    const auto = [...(p.wants||[]), ...(g.wants||[])];
+    const manual = PMAN.links[p.id]||[];
+    return [...new Set([...auto, ...manual])];
+  }
+  function pGroupId(p,g){ return PMAN.moved[p.id] || g.id; }
+  function pDate(ts){
+    if(!ts) return "—";
+    const n=Number(ts), d=new Date(n>1e12?n:(n*1000||Date.now()));
+    const q=x=>String(x).padStart(2,"0");
+    return q(d.getDate())+"."+q(d.getMonth()+1)+" "+q(d.getHours())+":"+q(d.getMinutes());
+  }
+  function pDayLabel(ts){
+    const n=Number(ts), d=new Date(n>1e12?n:(n*1000||Date.now())), now=new Date();
+    const dd=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    const pd=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+    const diff=Math.round((dd-pd)/DAY);
+    if(diff===0) return "сегодня"; if(diff===1) return "вчера";
+    const m=["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
+    return d.getDate()+" "+m[d.getMonth()]+(d.getFullYear()!==now.getFullYear()?" "+d.getFullYear():"");
+  }
+  function inRange(ts){
+    if(pRange==="all") return true;
+    if(!ts) return true;
+    const n=Number(ts), t=n>1e12?n:n*1000;
+    return Date.now()-t <= Number(pRange)*DAY;
+  }
+  function collect(){ const out=[]; (PROMPTS.groups||[]).forEach(g=>(g.prompts||[]).forEach(p=>out.push({p,g}))); return out; }
+  function filtered(){
+    const q=pQuery.trim().toLowerCase();
+    return collect().filter(({p,g})=>{
+      if(!inRange(p.ts)) return false;
+      if(!q) return true;
+      const hay=[p.text,g.name,pAnswer(p,g),pLinks(p,g).join(" ")].join(" ").toLowerCase();
+      return hay.includes(q);
+    });
+  }
+  function statusOf(p,g){
+    if(pAnswer(p,g)) return ["ОТВЕЧЕН","ps-answered"];
+    if(pLinks(p,g).length) return ["СВЯЗАН","ps-part"];
+    return ["ОТКРЫТ","ps-open"];
+  }
+  function promptHTML(p,g){
+    const [lab,cls]=statusOf(p,g);
+    const links=pLinks(p,g), ans=pAnswer(p,g);
+    const full=esc(p.text||""), short=esc((p.text||"").slice(0,180));
+    const gopts=(PROMPTS.groups||[]).map(x=>`<option value="${esc(x.id)}" ${x.id===pGroupId(p,g)?"selected":""}>${esc(x.name)}</option>`).join("");
+    return `<div class="p-item" data-pid="${esc(p.id)}">
+      <div class="p-row">
+        <span class="p-time">${esc(pDate(p.ts))}</span>
+        <span class="p-text">${short}</span>
+        <span class="p-status ${cls}">${lab}</span>
+      </div>
+      <div class="p-detail">
+        <div class="p-full">${full}</div>
+        <div class="p-sec">
+          <div class="p-label">Ответ в пару слов</div>
+          <div class="p-answer ${ans?"":"none"}" data-role="ans">${ans?esc(ans):"ещё не сформулирован — поставь сам"}</div>
+        </div>
+        <div class="p-sec">
+          <div class="p-label">Связи · хотелки / требования / оценки</div>
+          <div class="p-links" data-role="links">
+            ${links.length?links.map(l=>`<span class="plink ${(PMAN.links[p.id]||[]).includes(l)?"manual":""}" data-link="${esc(l)}" title="${(PMAN.links[p.id]||[]).includes(l)?"связь вручную — нажми, чтобы убрать":"связь из данных"}">${esc(l)}</span>`).join(""):'<span class="plink" style="opacity:.5">нет связей</span>'}
+          </div>
+        </div>
+        <div class="p-edit">
+          <input data-role="ansIn" placeholder="ответ парой слов…">
+          <button class="p-mini primary" data-act="saveAns">OK</button>
+        </div>
+        <div class="p-edit">
+          <input data-role="linkIn" placeholder="+ связь (H358 / W-12)…">
+          <button class="p-mini" data-act="addLink">+</button>
+        </div>
+        <div class="p-edit">
+          <select data-role="moveSel" style="flex:1;min-width:0;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);border-radius:8px;padding:7px 9px;font:500 11px var(--ff)">${gopts}</select>
+          <button class="p-mini" data-act="move">перенести</button>
+        </div>
+      </div>
+    </div>`;
+  }
+  function groupHTML(g,items){
+    const wants=(g.wants||[]).length;
+    return `<div class="p-group" data-gid="${esc(g.id)}">
+      <div class="p-ghead">
+        <span class="twist">▶</span>
+        <span class="p-gname">${esc(g.name)}</span>
+        ${wants?`<span class="p-gwants">${wants} связей</span>`:""}
+        <span class="p-gcount">${items.length}</span>
+      </div>
+      <div class="p-children">${items.map(r=>promptHTML(r.p,r.g)).join("")}</div>
+    </div>`;
+  }
+  function renderPrompts(){
+    const list=$("#pList"); if(!list) return;
+    const rows=filtered(), m=PROMPTS.meta||{};
+    $("#pCount").textContent=rows.length;
+    $("#pGroups").textContent=new Set(rows.map(r=>pGroupId(r.p,r.g))).size+" / "+(PROMPTS.groups||[]).length;
+    $("#pSrc").textContent=(m.generated_human||m.generated||"нет данных")+(m.note?" · "+m.note:"");
+    if(!rows.length){ list.innerHTML='<div class="p-empty">Ничего не нашлось. Другой диапазон, поиск или обнови данные ⟳.</div>'; return; }
+    if(pMode==="group"){
+      const byG={};
+      rows.forEach(r=>{ const id=pGroupId(r.p,r.g); (byG[id]=byG[id]||{g:(PROMPTS.groups||[]).find(x=>x.id===id)||r.g, items:[]}).items.push(r); });
+      list.innerHTML=Object.values(byG).map(o=>groupHTML(o.g,o.items)).join("");
+      $$("#pList .p-ghead").forEach(h=>h.addEventListener("click",()=>{
+        const kids=h.nextElementSibling; kids.classList.toggle("open"); h.querySelector(".twist").classList.toggle("open");
+      }));
+    } else if(pMode==="time"){
+      const sorted=rows.slice().sort((a,b)=>(Number(b.p.ts)||0)-(Number(a.p.ts)||0));
+      let last="", html="";
+      sorted.forEach(r=>{ const day=pDayLabel(r.p.ts); if(day!==last){last=day;html+=`<div class="p-day">${esc(day)}</div>`;} html+=promptHTML(r.p,r.g); });
+      list.innerHTML=html;
+    } else {
+      const byG={};
+      rows.forEach(r=>{ const id=pGroupId(r.p,r.g); (byG[id]=byG[id]||{g:(PROMPTS.groups||[]).find(x=>x.id===id)||r.g, items:[]}).items.push(r); });
+      list.innerHTML=Object.values(byG).map(o=>{
+        const byL={};
+        o.items.forEach(r=>{ const ls=pLinks(r.p,r.g); const k=ls.length?ls[0]:"без связи"; (byL[k]=byL[k]||[]).push(r); });
+        const branches=Object.entries(byL).map(([k,arr])=>`<div class="tnode">
+          <div class="trow parent" data-toggle="1"><span class="twist">▶</span><span class="tname">↳ ${esc(k)}</span><span class="p-gcount">${arr.length}</span></div>
+          <div class="children">${arr.map(r=>promptHTML(r.p,r.g)).join("")}</div></div>`).join("");
+        return `<div class="p-group" data-gid="${esc(o.g.id)}">
+          <div class="p-ghead"><span class="twist open">▶</span><span class="p-gname">${esc(o.g.name)}</span><span class="p-gcount">${o.items.length}</span></div>
+          <div class="p-children open">${branches}</div></div>`;
+      }).join("");
+      $$("#pList .trow[data-toggle='1']").forEach(h=>h.addEventListener("click",()=>{
+        const kids=h.nextElementSibling; kids.classList.toggle("open"); h.querySelector(".twist").classList.toggle("open");
+      }));
+    }
+    bindP();
+  }
+  function bindP(){
+    $$("#pList .p-item").forEach(item=>{
+      const pid=item.dataset.pid;
+      const row=item.querySelector(":scope > .p-row");
+      if(row) row.addEventListener("click",()=>item.classList.toggle("open"));
+      $$(".plink.manual",item).forEach(l=>l.addEventListener("click",e=>{
+        e.stopPropagation(); const v=l.dataset.link;
+        PMAN.links[pid]=(PMAN.links[pid]||[]).filter(x=>x!==v); savePman(); renderPrompts(); toast("Связь убрана");
+      }));
+      const act=(name,fn)=>{ const b=item.querySelector(`[data-act='${name}']`); if(b) b.addEventListener("click",e=>{e.stopPropagation();fn();}); };
+      act("saveAns",()=>{ const v=item.querySelector("[data-role='ansIn']").value.trim(); if(!v) return; PMAN.answers[pid]=v; savePman(); renderPrompts(); toast("Ответ сохранён"); });
+      act("addLink",()=>{ const inp=item.querySelector("[data-role='linkIn']"), v=inp.value.trim(); if(!v) return; PMAN.links[pid]=[...new Set([...(PMAN.links[pid]||[]),v])]; savePman(); renderPrompts(); toast("Связь добавлена"); });
+      act("move",()=>{ const v=item.querySelector("[data-role='moveSel']").value; PMAN.moved[pid]=v; savePman(); renderPrompts(); toast("Промпт перенесён"); });
+    });
+  }
+  async function refreshPrompts(){
+    for(const base of PROMPT_URLS){
+      try{
+        const r=await fetch(base+"?ts="+Date.now(),{cache:"no-store"});
+        if(!r.ok) continue;
+        const d=await r.json();
+        if(!d || !Array.isArray(d.groups)) continue;
+        PROMPTS=d; renderPrompts(); return;
+      }catch(e){}
+    }
+    const list=$("#pList");
+    if(list && !list.innerHTML) list.innerHTML='<div class="p-empty">Источник prompts.json недоступен — данные не загружены.</div>';
+    $("#pSrc").textContent="источник недоступен";
+  }
+  $$("#pRange button").forEach(b=>b.addEventListener("click",()=>{
+    pRange=b.dataset.range; $$("#pRange button").forEach(x=>x.classList.toggle("on",x===b)); renderPrompts();
+  }));
+  $$("#pMode button").forEach(b=>b.addEventListener("click",()=>{
+    pMode=b.dataset.mode; $$("#pMode button").forEach(x=>x.classList.toggle("on",x===b)); renderPrompts();
+  }));
+  const pSearch=$("#pSearch"); if(pSearch) pSearch.addEventListener("input",()=>{pQuery=pSearch.value;renderPrompts()});
+  const pReload=$("#pReload"); if(pReload) pReload.addEventListener("click",()=>{
+    pReload.classList.add("spin"); refreshPrompts().then(()=>pReload.classList.remove("spin"));
+  });
+  refreshPrompts();
+
 /* ---------- init ---------- */
-renderTree(); renderDecisions(); renderSessions(); renderChat();
+renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
