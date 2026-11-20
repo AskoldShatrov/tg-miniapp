@@ -1,7 +1,7 @@
 {
-  "agents": 33,
-  "agents_live": 31,
-  "agents_running": 31,
+  "agents": 34,
+  "agents_live": 34,
+  "agents_running": 34,
   "sessions_active": 7,
   "sessions_shown": 7,
   "subagents": 2,
@@ -12,11 +12,13 @@
   "game_reason": "• фоновые воркеры снова запущены — игровой режим закончился (авто-детект снял его в ~04:4x).",
   "note": "",
   "metrics": {
+    "agents": "max(живые opencode run, воркеры) — стабильный сигнал ёмкости",
+    "agents_live": "мгновенное число процессов opencode run (шумит между запусками)",
     "agents_running": "процессы opencode run — реально считающие агенты",
     "sessions_active": "вкладки OpenCode, обновлявшиеся за 24 ч (включая простаивающие)",
     "subagents": "дочерние сессии с parentID внутри вкладок",
     "workers": "активные systemd-воркеры (cloud/backlog/open)"
   },
-  "ts": 1795164894,
-  "ts_human": "2026-11-20 11:54:59 +0300"
+  "ts": 1795164954,
+  "ts_human": "2026-11-20 11:56:14 +0300"
 }
