@@ -452,6 +452,30 @@
     .actions .btn{padding:9px 4px}
   }
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  /* ===== этап 7: живой API процесса (дерево, детали узла, вопросы) ===== */
+  .api-badge{font:700 9px/1 var(--fm);padding:4px 7px;border-radius:6px;border:1px solid var(--surface1);color:var(--overlay0);background:var(--mantle);margin-left:6px;white-space:nowrap}
+  .api-badge.on{color:var(--green);border-color:rgba(166,227,161,.4);background:rgba(166,227,161,.1)}
+  .api-chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+  .api-chip{font:600 11px/1 var(--ff);padding:7px 10px;border-radius:8px;border:1px solid var(--surface1);background:var(--surface0);color:var(--text);cursor:pointer}
+  .api-chip.active{border-color:var(--blue);background:rgba(137,180,250,.12);color:var(--blue)}
+  .api-chip .cnt{font:700 9px/1 var(--fm);color:var(--overlay1);margin-left:6px}
+  .api-tree{margin-top:4px}
+  .api-node{display:flex;flex-wrap:wrap;align-items:center;gap:8px;cursor:pointer}
+  .api-node:hover{background:var(--surface0)}
+  .api-node.selected{background:rgba(137,180,250,.1)}
+  .api-node .tname{flex:1 1 auto;min-width:120px}
+  .node-detail{margin-top:12px;border-top:1px solid var(--surface0);padding-top:10px}
+  .node-detail .nd-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+  .node-detail .nd-title{font-size:15px;font-weight:700}
+  .node-detail .nd-meta{font:600 10px/1.4 var(--fm);color:var(--overlay1);margin-bottom:8px}
+  .ev-row{display:flex;gap:8px;font:600 10px/1.5 var(--fm);color:var(--subtext1);padding:3px 0;border-bottom:1px solid var(--mantle)}
+  .ev-row .ev-ts{color:var(--overlay0);white-space:nowrap}
+  .ev-row .ev-name{color:var(--sky);white-space:nowrap}
+  .nd-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .nd-answer{display:flex;gap:6px;margin-top:8px}
+  .nd-input{flex:1 1 auto;min-width:0;background:var(--mantle);border:1px solid var(--surface1);border-radius:7px;color:var(--text);padding:7px 9px;font:600 12px/1 var(--ff)}
+  .src-api{font:700 9px/1 var(--fm);color:var(--green);margin-left:6px}
 </style>
 </head>
 <body>
@@ -534,7 +558,7 @@
     </section>
 
     <section class="screen" id="screen-tree">
-      <div class="eyebrow">Дерево задач · T1—T11</div>
+      <div class="eyebrow">Дерево задач · T1—T11 <span class="api-badge" id="treeApiBadge">API · нет</span></div>
       <div class="live-strip" id="liveStrip">
         <span class="dot-live"></span>
         <span title="агенты = max(живые opencode run, воркеры) — стабильный сигнал; в работе — мгновенные run; сессии — вкладки OpenCode за сутки; сабагенты — дочерние сессии; воркеры — systemd-сервисы">агентов <b id="stripAgents">…</b> · в работе <b id="stripLive">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
@@ -551,6 +575,11 @@
         <span><i class="lg-fail"></i>FAIL — не прошло проверку</span>
         <span><i class="lg-open"></i>OPEN — в разработке / ждёт решения</span>
         <span><i class="lg-quest"></i>QUESTION — нужно уточнение</span>
+      </div>
+      <div id="apiTreeWrap" style="display:none">
+        <div class="api-chips" id="apiProjectChips"></div>
+        <div class="api-tree" id="apiTree"></div>
+        <div class="node-detail" id="nodeDetail"></div>
       </div>
       <div class="tree" id="tree"></div>
       <div class="tree-foot">нажми на строку, чтобы раскрыть / свернуть</div>
@@ -586,7 +615,7 @@
     </section>
 
     <section class="screen" id="screen-questions">
-      <div class="eyebrow">Вопросы · ждут ответа</div>
+      <div class="eyebrow">Вопросы · ждут ответа <span class="api-badge" id="questionsApiBadge">API · нет</span></div>
       <div class="live-strip"><span id="questionsStamp">…</span></div>
       <div id="questionCards"></div>
     </section>
@@ -626,7 +655,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1523";
+const BUILD = "20261120-1540";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -748,6 +777,103 @@ function renderTree(){
   });
 }
 
+/* ---------- этап 7: дерево процессов из API (/projects → /projects/{id}/tree) ----------
+   Статический фолбэк выше не трогаем: если API недоступен, остаётся DEMO/tree.json. */
+let API_TREE_ON=false, API_PROJECTS=null, API_TREE_NODES=null, API_CURRENT_PROJECT=null, API_SELECTED_NODE=null;
+function normalizeCan(can){
+  if(!Array.isArray(can)) return [];
+  return can.map(c=>typeof c==="string"?c:(c&&(c.action||c.type||c.name)||"")).filter(Boolean);
+}
+function projectCount(p){
+  if(p.counts && typeof p.counts==="object")
+    return Object.keys(p.counts).reduce((a,k)=>a+(Number(p.counts[k])||0),0);
+  if(p.total!=null) return p.total;
+  if(Array.isArray(p.nodes)) return p.nodes.length;
+  if(Array.isArray(p.tasks)) return p.tasks.length;
+  return "";
+}
+function projectId(p){
+  return p.id!=null?p.id:(p.project_id!=null?p.project_id:p.key);
+}
+function renderProjectChips(){
+  const box=$("#apiProjectChips"); if(!box||!API_PROJECTS) return;
+  box.innerHTML=API_PROJECTS.map(p=>{
+    const id=projectId(p);
+    const name=p.name||p.title||p.label||String(id);
+    const cnt=projectCount(p);
+    return `<button class="api-chip ${String(id)===String(API_CURRENT_PROJECT)?"active":""}" data-pid="${esc(id)}">${esc(name)}${cnt!==""?`<span class="cnt">${esc(cnt)}</span>`:""}</button>`;
+  }).join("");
+  $$("#apiProjectChips .api-chip").forEach(b=>b.addEventListener("click",()=>loadProjectTree(b.dataset.pid)));
+}
+function openApiWrap(on){
+  const wrap=$("#apiTreeWrap"), staticTree=$("#tree"), foot=$(".tree-foot");
+  if(wrap) wrap.style.display = on?"":"none";
+  if(staticTree) staticTree.style.display = on?"none":"";
+  if(foot) foot.style.display = on?"none":"";
+  setApiBadge($("#treeApiBadge"), on);
+}
+function updateSummary(nodes){
+  const c={PASS:0,FAIL:0,OPEN:0,QUESTION:0};
+  nodes.forEach(n=>{ const k=String(n.status||"OPEN").toUpperCase(); c[k]=(c[k]||0)+1; });
+  const pass=$("#cntPass"), fail=$("#cntFail"), open=$("#cntOpen");
+  if(pass) pass.textContent=c.PASS||0;
+  if(fail) fail.textContent=c.FAIL||0;
+  if(open) open.textContent=(c.OPEN||0)+(c.QUESTION||0);
+}
+function renderApiTree(nodes){
+  const box=$("#apiTree"); if(!box) return;
+  const byParent={};
+  nodes.forEach(n=>{
+    const k=(n.parent_id!=null?n.parent_id:(n.parent!=null?n.parent:""));
+    (byParent[String(k)]=byParent[String(k)]||[]).push(n);
+  });
+  const seen=new Set(); let html="";
+  function row(n, depth){
+    if(seen.has(n.id)) return; seen.add(n.id);
+    const can=normalizeCan(n.can);
+    html+=`<div class="trow api-node ${String(n.id)===String(API_SELECTED_NODE)?"selected":""}" data-node="${esc(n.id)}" style="padding-left:${10+depth*16}px">
+      <span class="twist leaf">·</span>
+      <span class="tid">${esc(n.id)}</span>
+      <span class="tname">${esc(n.title||n.name||n.id)}</span>
+      ${n.step!=null?`<span class="qid">шаг ${esc(n.step)}</span>`:""}
+      ${can.length?`<span class="qid">[${esc(can.join(","))}]</span>`:""}
+      <span class="status st-${esc(String(n.status||"OPEN").toUpperCase())}">${esc(n.status||"OPEN")}</span>
+    </div>`;
+    walk(n.id, depth+1);
+  }
+  function walk(parent, depth){ (byParent[String(parent)]||[]).slice().forEach(n=>row(n,depth)); }
+  walk("",0);
+  nodes.slice().forEach(n=>row(n,0));   // узлы, чьи родители не попали в список
+  box.innerHTML = html || '<div class="hint">В проекте пока нет узлов.</div>';
+  $$("#apiTree .api-node").forEach(el=>el.addEventListener("click",()=>openNode(el.dataset.node)));
+}
+async function loadProjectTree(pid){
+  API_CURRENT_PROJECT = pid;
+  renderProjectChips();
+  const data = await api("/projects/"+encodeURIComponent(pid)+"/tree");
+  if(data==null) return false;
+  const nodes = Array.isArray(data)?data:(data.nodes||data.tree||data.items||[]);
+  API_TREE_NODES = nodes;
+  renderApiTree(nodes);
+  updateSummary(nodes);
+  return true;
+}
+async function loadProcessTree(){
+  let projects = await api("/projects");
+  if(projects && !Array.isArray(projects) && Array.isArray(projects.projects)) projects=projects.projects;
+  if(!projects || !Array.isArray(projects) || !projects.length){ openApiWrap(false); return false; }
+  API_PROJECTS = projects;
+  API_TREE_ON = true;
+  openApiWrap(true);
+  renderProjectChips();
+  let pid = API_CURRENT_PROJECT;
+  if(pid==null || !projects.some(p=>String(projectId(p))===String(pid)))
+    pid = projectId(projects[0]);
+  if(pid!=null) await loadProjectTree(pid);
+  setApiBadge($("#treeApiBadge"), true, "живое дерево процессов из process_api");
+  return true;
+}
+
 /* ---------- decisions ---------- */
 function renderDecisions(){
   const rows=(LIVE.decisions&&LIVE.decisions.length)?LIVE.decisions:DEMO.decisions;
@@ -760,6 +886,86 @@ function renderDecisions(){
       </div>
       <span class="v v-${esc(d.verdict)}">${esc(d.verdict)}</span>
     </div>`).join("");
+}
+
+/* ---------- этап 7: детали узла и действия (answer/stop/pause/resume/retry) ---------- */
+function actionLabel(a){
+  return ({answer:"Ответить",stop:"Стоп",pause:"Пауза",resume:"Продолжить",retry:"Повторить"}[a]||a);
+}
+function confirmStop(btn, exec){
+  if(btn.dataset.confirmed==="1"){
+    btn.dataset.confirmed=""; btn.textContent=actionLabel("stop");
+    clearTimeout(btn._stopTimer); exec(); return;
+  }
+  btn.dataset.confirmed="1"; btn.textContent="Точно стоп?";
+  clearTimeout(btn._stopTimer);
+  btn._stopTimer=setTimeout(()=>{ btn.dataset.confirmed=""; btn.textContent=actionLabel("stop"); },5000);
+}
+async function postNodeAction(id, action, text){
+  const body=(action==="answer"||action==="resume"||action==="retry")?{text:String(text||"")}:{};
+  const res=await api("/nodes/"+encodeURIComponent(id)+"/"+encodeURIComponent(action), body);
+  if(res===null){ toast("Ошибка: "+apiErr()); return; }
+  toast("Готово · "+actionLabel(action));
+  openNode(id);                                   // обновить панель после действия
+  if(typeof fetchQuestions==="function") fetchQuestions();
+  if(typeof loadProcessTree==="function") loadProcessTree();
+}
+function renderNodeDetail(id, d){
+  const box=$("#nodeDetail"); if(!box) return;
+  const can=normalizeCan(d.can);
+  const status=String(d.status||"OPEN").toUpperCase();
+  let events=(d.events||d.last_events||d.history||[]);
+  if(!Array.isArray(events)) events=[];
+  events=events.slice(-20);                        // только последние 20 событий
+  const evRows=events.length?events.map(e=>{
+    const ts=e.ts||e.time||e.at||"";
+    const name=e.event||e.type||e.kind||"";
+    const title=e.title||e.text||e.message||"";
+    return `<div class="ev-row"><span class="ev-ts">${esc(ts)}</span><span class="ev-name">${esc(name)}</span><span>${esc(title)}</span></div>`;
+  }).join(""):'<div class="hint">Событий пока нет.</div>';
+  const meta=[];
+  if(d.model) meta.push("модель: "+esc(d.model));
+  if(d.step!=null) meta.push("шаг: "+esc(d.step));
+  if(d.parent_id!=null) meta.push("родитель: "+esc(d.parent_id));
+  box.innerHTML=`
+    <div class="nd-head">
+      <span class="nd-title">${esc(d.title||d.name||id)}</span>
+      <span class="status st-${esc(status)}">${esc(d.status||"OPEN")}</span>
+      <span class="qid">${esc(id)}</span>
+    </div>
+    <div class="nd-meta">${meta.join(" · ")||"—"}</div>
+    <div class="ev-list">${evRows}</div>
+    <div class="nd-actions" id="ndActions"></div>
+    <div id="ndAnswerBox"></div>`;
+  const acts=$("#ndActions");
+  can.forEach(a=>{
+    const action=String(a).trim().toLowerCase();
+    if(!action) return;
+    if(action==="answer"){
+      const wrap=document.createElement("div"); wrap.className="nd-answer";
+      wrap.innerHTML='<input class="nd-input" id="ndAnswerInput" placeholder="Ответ…"><button class="btn btn-primary" data-act="answer">Ответить</button>';
+      $("#ndAnswerBox").appendChild(wrap);
+      wrap.querySelector("button").addEventListener("click",()=>postNodeAction(id,"answer",($("#ndAnswerInput")||{}).value||""));
+      return;
+    }
+    const b=document.createElement("button");
+    b.className="btn "+(action==="stop"?"btn-warn":"btn-ghost");
+    b.dataset.act=action; b.textContent=actionLabel(action);
+    b.addEventListener("click",()=>{
+      if(action==="stop"){ confirmStop(b,()=>postNodeAction(id,"stop","")); return; }
+      postNodeAction(id, action, "");
+    });
+    acts.appendChild(b);
+  });
+}
+async function openNode(id){
+  const box=$("#nodeDetail"); if(!box) return;
+  API_SELECTED_NODE=id;
+  $$("#apiTree .api-node").forEach(el=>el.classList.toggle("selected",String(el.dataset.node)===String(id)));
+  box.innerHTML='<div class="hint">Загрузка узла…</div>';
+  const d=await api("/nodes/"+encodeURIComponent(id));
+  if(d==null){ box.innerHTML='<div class="hint">Не удалось загрузить узел: '+esc(apiErr())+'</div>'; return; }
+  renderNodeDetail(id, d);
 }
 
 /* ---------- active sessions ---------- */
@@ -849,6 +1055,48 @@ if (tg) {
   const badge = document.querySelector(".hbadge");
   if (badge) { badge.textContent = "TG · LIVE"; badge.title = "Подключено к боту"; }
 } 
+/* ---------- этап 7: живой API процесса ----------
+   Единая обёртка над process_api.py. URL берётся из последнего загруженного
+   status.json (поле process_api_url, публикует бэкенд). Если URL пуст —
+   возвращаем null, и вызывающий код остаётся на статическом JSON-фолбэке. */
+let LATEST_STATUS = null;      // последний успешно прочитанный status.json
+let API_LAST_ERROR = "";       // текст последней ошибки — для тостов
+const apiWarned = {};          // логируем сбой каждого эндпоинта только раз
+async function api(path, body){
+  const raw = (LATEST_STATUS && LATEST_STATUS.process_api_url) ? LATEST_STATUS.process_api_url : "";
+  const base = raw ? String(raw).replace(/\/+$/,"") : "";
+  if(!base) return null;
+  const wa = (typeof window!=="undefined" && window.Telegram && window.Telegram.WebApp) ? window.Telegram.WebApp : null;
+  const initData = (wa && wa.initData) ? wa.initData : "";
+  const ctl = new AbortController();
+  const timer = setTimeout(()=>ctl.abort(), 6000);
+  API_LAST_ERROR = "";
+  try{
+    const opt = {method: body===undefined?"GET":"POST", headers:{}, signal:ctl.signal, cache:"no-store"};
+    if(initData) opt.headers["X-Telegram-Init-Data"] = initData;
+    if(body!==undefined){ opt.headers["Content-Type"]="application/json"; opt.body=JSON.stringify(body); }
+    const r = await fetch(base+path, opt);
+    if(!r.ok){
+      let detail=""; try{ detail=(await r.text()).slice(0,200); }catch(e){}
+      throw new Error("HTTP "+r.status+(detail?" · "+detail:""));
+    }
+    let data=null;
+    try{ data=await r.json(); }catch(e){ data={}; }   // пустое тело успешного POST — не ошибка
+    return data;
+  }catch(e){
+    API_LAST_ERROR = (e && e.message) ? e.message : String(e);
+    if(!apiWarned[path]){ console.warn("[process-api] "+path+": "+API_LAST_ERROR); apiWarned[path]=true; }
+    return null;
+  }finally{ clearTimeout(timer); }
+}
+function apiErr(){ return API_LAST_ERROR || "неизвестная ошибка API"; }
+function setApiBadge(el, on, label){
+  if(!el) return;
+  el.textContent = on ? "API · live" : "API · нет";
+  el.classList.toggle("on", !!on);
+  if(label && on) el.title = label;
+}
+
 /* Шапка — живой сигнал, а не декоративная надпись. Заполняется из status.json. */
 $("#hsub").innerHTML = '🤖 <b id="hsAgents">…</b> в работе · ⚙ <b id="hsWorkers">…</b> воркеров';
 const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
@@ -867,6 +1115,7 @@ async function refreshAgentStatus(){
     const r = await fetch(base + "?ts=" + Date.now(), {cache:"no-store"});
     if(!r.ok) continue;
     const s = await r.json();
+    LATEST_STATUS = s;   // этап 7: отсюда api() берёт process_api_url
     const n = Number(s.agents)||0;
     const word = n===1 ? "агент" : (n>=2 && n<=4 ? "агента" : "агентов");
     const badge = $("#agentBadge");
@@ -1350,22 +1599,26 @@ function renderLive(){
 }
 
 /* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
-let QUESTIONS=null;
+let QUESTIONS=null, QUESTIONS_FROM_API=false;
 function renderQuestions(){
   const box=$("#questionCards"); if(!box) return;
   const list=(QUESTIONS&&QUESTIONS.questions)||[];
   const stamp=$("#questionsStamp");
   if(stamp) stamp.textContent=list.length?`${list.length} ждут ответа`:"Все вопросы закрыты";
-  box.innerHTML=list.length?list.map(q=>`
+  box.innerHTML=list.length?list.map(q=>{
+    const extra=normalizeCan(q.can).filter(a=>a!=="answer");   // ответ идёт через sendData — не трогаем
+    return `
     <div class="qcard" style="margin-bottom:10px">
-      <div class="qtop"><span class="chip question">ОЖИДАЕТ</span><span class="qid">${esc(q.id)}</span></div>
+      <div class="qtop"><span class="chip question">ОЖИДАЕТ</span><span class="qid">${esc(q.id)}</span>${QUESTIONS_FROM_API?'<span class="src-api">(source API)</span>':''}</div>
       <div class="qtitle">${esc(q.title)}</div>
       <div class="qbody">${esc(q.text)}</div>
       ${q.why?`<div class="qmeta"><span class="tag">${esc(q.why)}</span></div>`:""}
       <div class="actions">${(q.options&&q.options.length?q.options:["Ответить"]).map(o=>
         `<button class="btn btn-primary qanswer" data-qid="${esc(q.id)}" data-node="${esc(q.node)}" data-answer="${esc(o)}">${esc(o)}</button>`
-      ).join("")}</div>
-    </div>`).join(""):'<div class="p-empty">Ожидающих вопросов нет.</div>';
+      ).join("")}
+      ${extra.map(a=>`<button class="btn btn-ghost qaction" data-node="${esc(q.node)}" data-act="${esc(a)}">${esc(actionLabel(a))}</button>`).join("")}</div>
+    </div>`;
+  }).join(""):'<div class="p-empty">Ожидающих вопросов нет.</div>';
   box.querySelectorAll(".qanswer").forEach(b=>b.addEventListener("click",()=>{
     if(!tg||typeof tg.sendData!=="function"){toast("Открой мини-ап через бота");return;}
     tg.sendData(JSON.stringify({source:"miniapp_answer",id:b.dataset.qid,node:b.dataset.node,
@@ -1374,17 +1627,40 @@ function renderQuestions(){
     toast("Ответ отправлен");
     if(typeof tg.close==="function") tg.close();
   }));
+  // Дополнительные действия из поля can — тот же POST-хелпер, что и у деталей узла.
+  box.querySelectorAll(".qaction").forEach(b=>b.addEventListener("click",()=>{
+    const a=b.dataset.act, node=b.dataset.node;
+    const body=(a==="answer"||a==="resume"||a==="retry")?{text:""}:{};
+    api("/nodes/"+encodeURIComponent(node)+"/"+encodeURIComponent(a), body).then(res=>{
+      if(res===null){ toast("Ошибка: "+apiErr()); return; }
+      toast("Готово · "+actionLabel(a));
+      fetchQuestions();
+      if(typeof loadProcessTree==="function") loadProcessTree();
+    });
+  }));
 }
 async function fetchQuestions(){
+  // этап 7: сначала живой /questions через process_api_url из status.json
+  const live=await api("/questions");
+  if(live && Array.isArray(live.questions)){
+    QUESTIONS=live; QUESTIONS_FROM_API=true; renderQuestions();
+    setApiBadge($("#questionsApiBadge"), true);
+    return;
+  }
   const apiBase=new URLSearchParams(location.search).get("api");
   if(apiBase){
     try{
       const init=(typeof tg!=="undefined"&&tg.initData)?tg.initData:"";
       const r=await fetch(apiBase.replace(/\/$/,"")+"/questions",
         {headers:init?{"X-Telegram-Init-Data":init}:{},cache:"no-store"});
-      if(r.ok){ QUESTIONS=await r.json(); renderQuestions(); return; }
+      if(r.ok){
+        QUESTIONS=await r.json(); QUESTIONS_FROM_API=true; renderQuestions();
+        setApiBadge($("#questionsApiBadge"), true);
+        return;
+      }
     }catch(e){ /* фолбэк на статический questions.json */ }
   }
+  QUESTIONS_FROM_API=false; setApiBadge($("#questionsApiBadge"), false);
   const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
   for(const base of bases){
     try{
@@ -1422,8 +1698,12 @@ async function fetchLiveData(){
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
 renderAtlas(); renderLive(); fetchLiveData(); fetchQuestions();
-setInterval(fetchLiveData, 60000);
-setInterval(fetchQuestions, 5000);
+loadProcessTree();                    // этап 7: пробуем живой API; без URL остаётся статический фолбэк
+setInterval(fetchLiveData, 60000);    // статический фолбэк: decisions/atlas/live
+setInterval(fetchQuestions, 5000);    // вопросы: /questions при API, иначе questions.json
+setInterval(()=>{                     // этап 7: только API-дерево (5с), без дублирования статических запросов
+  if(API_TREE_ON || (LATEST_STATUS && LATEST_STATUS.process_api_url)) loadProcessTree();
+}, 5000);
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
