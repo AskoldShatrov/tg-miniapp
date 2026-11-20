@@ -238,6 +238,21 @@
   .st-PASS{color:var(--green);background:rgba(166,227,161,.1);border:1px solid rgba(166,227,161,.3)}
   .st-FAIL{color:var(--maroon);background:rgba(243,139,168,.1);border:1px solid rgba(243,139,168,.3)}
   .st-OPEN{color:var(--yellow);background:rgba(249,226,175,.1);border:1px solid rgba(249,226,175,.3)}
+  .st-running,.st-RUNNING{color:var(--sky);background:rgba(137,180,250,.12);border:1px solid rgba(137,180,250,.35)}
+  .st-blocked,.st-BLOCKED{color:var(--peach);background:rgba(250,179,136,.1);border:1px solid rgba(250,179,136,.3)}
+  .grid-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+  .grid-tab{font:700 10px/1 var(--fm);padding:7px 9px;border-radius:8px;border:1px solid var(--surface1);background:var(--surface0);color:var(--subtext0);cursor:pointer}
+  .grid-tab.active{border-color:var(--blue);color:var(--text);background:rgba(137,180,250,.12)}
+  .acard{padding:9px 11px;border:1px solid var(--surface1);border-radius:9px;background:var(--surface0);margin-bottom:6px}
+  .acard .atitle{font:600 12px/1.35 var(--ff);color:var(--text)}
+  .acard .ameta{font:600 10px/1.4 var(--fm);color:var(--overlay1);margin-top:4px}
+  .acard .aanswer{font:500 11px/1.4 var(--ff);color:var(--subtext1);margin-top:5px}
+  .live-row{display:flex;gap:8px;align-items:baseline;padding:7px 9px;border-bottom:1px solid var(--surface1);font:500 11px/1.4 var(--ff)}
+  .live-row .lid{font:700 10px/1 var(--fm);color:var(--sky);min-width:56px}
+  .live-row .ltitle{flex:1;color:var(--text)}
+  .live-row .lsrc{font:700 9px/1 var(--fm);color:var(--green)}
+  .live-row .lage{font:600 9px/1 var(--fm);color:var(--overlay1)}
+  .qbox{display:flex;gap:14px;flex-wrap:wrap;font:600 10px/1.4 var(--fm);color:var(--subtext0);margin:8px 0}
   .children{margin-left:18px;padding-left:10px;border-left:1px solid var(--surface1);display:none}
   .children.open{display:block;animation:fade .15s ease}
   .tree-foot{margin-top:12px;font:600 10px/1.5 var(--fm);color:var(--overlay0);text-align:center}
@@ -419,6 +434,8 @@
     <button class="tab" data-tab="prompts"><span>⌘</span> Промпты <span class="key">2</span></button>
     <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">3</span></button>
     <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
+    <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">5</span></button>
+    <button class="tab" data-tab="live"><span>◉</span> Ход <span class="key">6</span></button>
   </nav>
 
   <main id="main">
@@ -507,6 +524,24 @@
         Данные обновляются раз в 30 секунд и по кнопке <b>⟳</b> из <b>sessions.json</b>.
       </div>
     </section>
+
+    <section class="screen" id="screen-atlas">
+      <div class="eyebrow">Атлас · конструктор карточек</div>
+      <div class="hint" style="margin:8px 0 4px">Один граф — несколько сеток: авторы, видео, идеи, метод→алгоритм→математика, сигнал/шум.</div>
+      <div class="grid-tabs" id="atlasGrids"></div>
+      <div class="live-strip"><span>узлов <b id="atlasCount">…</b></span><span id="atlasTime" style="margin-left:auto;color:var(--overlay0)">…</span></div>
+      <div id="atlasCards"></div>
+    </section>
+
+    <section class="screen" id="screen-live">
+      <div class="eyebrow">Ход работы · что делается прямо сейчас</div>
+      <div class="live-strip"><span class="dot-live"></span><span id="liveStamp">…</span></div>
+      <div class="qbox" id="liveQueues"></div>
+      <div class="eyebrow" style="margin-top:12px">Активные шаги progress.json</div>
+      <div id="liveSteps"></div>
+      <div class="eyebrow" style="margin-top:12px">Задачи в работе (claim'ы очередей)</div>
+      <div id="liveJobs"></div>
+    </section>
   </main>
 
   <div class="hotbar">
@@ -518,6 +553,10 @@
     <span class="sep"></span>
     <span class="hk"><kbd>4</kbd> Сессии</span>
     <span class="sep"></span>
+    <span class="hk"><kbd>5</kbd> Атлас</span>
+    <span class="sep"></span>
+    <span class="hk"><kbd>6</kbd> Ход</span>
+    <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
 
@@ -527,7 +566,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1158";
+const BUILD = "20261120-1225";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -588,7 +627,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["chat","prompts","tree","sessions"];
+const TAB_IDS=["chat","prompts","tree","sessions","atlas","live"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
@@ -735,6 +774,8 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="2"){setTab("prompts")}
   else if(e.key==="3"){setTab("tree")}
   else if(e.key==="4"){setTab("sessions")}
+  else if(e.key==="5"){setTab("atlas"); renderAtlas()}
+  else if(e.key==="6"){setTab("live"); renderLive()}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
@@ -1115,20 +1156,73 @@ setInterval(refreshReplies, 5000);
   });
   refreshPrompts();
 
+/* ---------- атлас: сетки одного графа ---------- */
+let ATLAS=null, ATLAS_GRID=null;
+function renderAtlas(){
+  if(!ATLAS) return;
+  const tabs=$("#atlasGrids"), cards=$("#atlasCards");
+  if(!tabs||!cards) return;
+  const grids=Array.isArray(ATLAS.grids)?ATLAS.grids:[];
+  if(!ATLAS_GRID&&grids.length) ATLAS_GRID=grids[0].id;
+  tabs.innerHTML=grids.map(g=>`<button class="grid-tab ${g.id===ATLAS_GRID?'active':''}" data-grid="${esc(g.id)}">${esc(g.title||g.id)}</button>`).join("");
+  $$("#atlasGrids .grid-tab").forEach(b=>b.addEventListener("click",()=>{ATLAS_GRID=b.dataset.grid;renderAtlas();}));
+  const grid=grids.find(g=>g.id===ATLAS_GRID)||grids[0]||{};
+  const kinds=((grid.filter||{}).kind)||[];
+  const nodes=(ATLAS.nodes||[]).filter(n=>!kinds.length||kinds.includes(n.kind));
+  $("#atlasCount").textContent=nodes.length;
+  $("#atlasTime").textContent=(ATLAS.updatedAt||"").slice(11,16)||"—";
+  cards.innerHTML=nodes.slice(0,120).map(n=>`
+    <div class="acard">
+      <div class="atitle">${esc(n.text||n.id)}</div>
+      <div class="ameta">${esc(n.kind)} · ${esc(n.status)} · ${esc(n.id)}</div>
+      ${n.answer_short?`<div class="aanswer">${esc(n.answer_short)}</div>`:""}
+    </div>`).join("");
+}
+
+/* ---------- ход работы: активные шаги и задачи ---------- */
+let LIVE_JOBS=null;
+function renderLive(){
+  const d=LIVE_JOBS; if(!d) return;
+  const st=$("#liveStamp"); if(st) st.textContent="обновлено "+(d.fetched_human||"—");
+  const q=$("#liveQueues");
+  if(q) q.innerHTML=Object.entries(d.queues||{}).map(([name,c])=>
+    `<span>${esc(name)}: <b>${Number(c.todo)||0}</b> ждут · <b>${Number(c.doing)||0}</b> в работе · <b>${Number(c.done)||0}</b> готово</span>`).join("");
+  const steps=$("#liveSteps");
+  if(steps){
+    const active=(d.tasks||[]).filter(s=>s.status!=="done");
+    steps.innerHTML=active.length?active.map(s=>`
+      <div class="live-row"><span class="lid">${esc(s.id)}</span>
+        <span class="ltitle">${esc(s.title)}${s.note?' — '+esc(s.note):''}</span>
+        <span class="status st-${esc(s.status)}">${esc(s.status)}</span></div>`).join(""):
+      '<div class="hint">Все шаги закрыты.</div>';
+  }
+  const jobs=$("#liveJobs");
+  if(jobs) jobs.innerHTML=(d.active||[]).length?(d.active||[]).map(j=>`
+    <div class="live-row"><span class="lid">${esc(j.id)}</span>
+      <span class="ltitle">${esc(j.title)}</span>
+      <span class="lsrc">${esc(j.source)}</span>
+      <span class="lage">${esc(j.claimed_human)} · ${Number(j.age_min)||0} мин</span></div>`).join(""):
+    '<div class="hint">Сейчас активных задач в очередях нет.</div>';
+}
+
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
 async function fetchLiveData(){
   const bases=["https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",""];
   for(const base of bases){
     try{
-      const [t,d]=await Promise.all([
+      const [t,d,a,l]=await Promise.all([
         fetch(base+"tree.json?ts="+Date.now(),{cache:"no-store"}),
-        fetch(base+"decisions.json?ts="+Date.now(),{cache:"no-store"})
+        fetch(base+"decisions.json?ts="+Date.now(),{cache:"no-store"}),
+        fetch(base+"atlas.json?ts="+Date.now(),{cache:"no-store"}),
+        fetch(base+"live.json?ts="+Date.now(),{cache:"no-store"})
       ]);
       if(!t.ok||!d.ok) continue;
       const tj=await t.json(), dj=await d.json();
       if(Array.isArray(tj)&&tj.length) LIVE.tree=tj;
       if(Array.isArray(dj)&&dj.length) LIVE.decisions=dj;
       if(LIVE.tree||LIVE.decisions){ renderTree(); renderDecisions(); }
+      if(a.ok){ ATLAS=await a.json(); renderAtlas(); }
+      if(l.ok){ LIVE_JOBS=await l.json(); renderLive(); }
       return;
     }catch(e){ /* фолбэк — захардкоженные DEMO-данные уже показаны */ }
   }
@@ -1136,7 +1230,8 @@ async function fetchLiveData(){
 
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
-fetchLiveData();
+renderAtlas(); renderLive(); fetchLiveData();
+setInterval(fetchLiveData, 60000);
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
