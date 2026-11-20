@@ -1,0 +1,840 @@
+{
+  "tasks": [
+    {
+      "task": "T1",
+      "id": "T1.1",
+      "title": "Собрать held-out сет ≥30 матчей",
+      "status": "done",
+      "note": "8 матчей → расширяем"
+    },
+    {
+      "task": "T1",
+      "id": "T1.2",
+      "title": "Прогон wp_v2 + economy (v5)",
+      "status": "done",
+      "note": "AUC 0.558, n=292"
+    },
+    {
+      "task": "T1",
+      "id": "T1.3",
+      "title": "Признаки contact/LOS",
+      "status": "done",
+      "note": "только contested, held-out"
+    },
+    {
+      "task": "T1",
+      "id": "T1.4",
+      "title": "Калибровка ECE < 0.05",
+      "status": "done",
+      "note": "reliability-диаграмма"
+    },
+    {
+      "task": "T1",
+      "id": "T1.5",
+      "title": "Гейт G6: не трогать тестовые матчи",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T1",
+      "id": "T1.6",
+      "title": "Вердикт было→стало→порог",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T2",
+      "id": "T2.1",
+      "title": "behavior_v2 + mouse_fingerprint_proxy",
+      "status": "done",
+      "note": "признаки готовы"
+    },
+    {
+      "task": "T2",
+      "id": "T2.2",
+      "title": "player residual модель",
+      "status": "done",
+      "note": "ICC 0.013–0.081"
+    },
+    {
+      "task": "T2",
+      "id": "T2.3",
+      "title": "Out-of-sample прирост лог-лосса",
+      "status": "done",
+      "note": "сравнить с baseline"
+    },
+    {
+      "task": "T2",
+      "id": "T2.4",
+      "title": "Стабильность ранжирования на holdout",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T2",
+      "id": "T2.5",
+      "title": "Гейт: без тавтологии (survival/isolation)",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T3",
+      "id": "T3.1",
+      "title": "economy_level_model",
+      "status": "done",
+      "note": "уровни экономики готовы"
+    },
+    {
+      "task": "T3",
+      "id": "T3.2",
+      "title": "Калибровка AWP-приора 12.38%",
+      "status": "done",
+      "note": "сырая частота → калиброванная"
+    },
+    {
+      "task": "T3",
+      "id": "T3.3",
+      "title": "Reliability-диаграмма P(full buy)",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T3",
+      "id": "T3.4",
+      "title": "Гейт G5: ECE < 0.05, покрытие > 60%",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T4",
+      "id": "T4.1",
+      "title": "Выгрузить события демки (килы, баи, equip, выстрелы)",
+      "status": "done",
+      "note": "120/120 килов совпали по round/tick/killer/victim; все поля v5 заполнены; pickup 1322, fire 2119 вне kill feed"
+    },
+    {
+      "task": "T4",
+      "id": "T4.2",
+      "title": "Сверить kill-feed и 'два калаша' с фактом",
+      "status": "done",
+      "note": "эвристика двух AK: TP4 FP0 FN3 TN9, precision 1.0 recall 0.571, accuracy 0.8125"
+    },
+    {
+      "task": "T4",
+      "id": "T4.3",
+      "title": "Бай/угрозы/AWP: предсказание vs факт следующего раунда",
+      "status": "done",
+      "note": "n=31 переходов: бай persistence 0.613 vs baseline 0.774; AWP rule 0.645 vs baseline 0.516; топ-оружие 0.355 vs 0.290"
+    },
+    {
+      "task": "T4",
+      "id": "T4.4",
+      "title": "Метрики, baseline, вердикт и отчёт",
+      "status": "done",
+      "note": "отчёты ~/turngame/overnight/donk-scanfeed-benchmark.md + ~/overnight/73-t4-donk-benchmark.md; вердикт: две AK и AWP дают"
+    },
+    {
+      "task": "T5",
+      "id": "T5.1",
+      "title": "Зафиксировать prereg T1c с тем же порогом и причиной переоткрытия до прогона",
+      "status": "done",
+      "note": "prereg T1c зафиксирован до прогона (восстановлено после ошибочного running)"
+    },
+    {
+      "task": "T5",
+      "id": "T5.2",
+      "title": "Потоково собрать признаки из allplayers_positions batch1+batch2 (портфель 1.9 ГБ, RAM ~3 ГБ)",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T5",
+      "id": "T5.3",
+      "title": "Прогнать wp_t1c с воспроизведённым сплитом 256/64, посчитать contested AUC/CI/ECE",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T5",
+      "id": "T5.4",
+      "title": "Сверить вердикт с claims.json и записать в MASTERPLAN-v2 §9 и progress T5",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T6",
+      "id": "T6.1",
+      "title": "HLTV: 245/245 ссылок → 374 демо",
+      "status": "done",
+      "note": "18.11 22:16, остаток 0 · download.log: 245/245 ссылок, total 374 демо"
+    },
+    {
+      "task": "T6",
+      "id": "T6.2",
+      "title": "FACEIT kings batch: 43/43",
+      "status": "done",
+      "note": "faceit_kings_pc_download.py, задача :8898 c0b3ec90b8ee"
+    },
+    {
+      "task": "T6",
+      "id": "T6.3",
+      "title": "FACEIT-мост: прирост новых демо",
+      "status": "done",
+      "note": "62 цикла за 5.36 ч · faceit_bridge: ГОТОВО 0/0 демо · нет новых (rc=2)"
+    },
+    {
+      "task": "T6",
+      "id": "T6.4",
+      "title": "Распарсить 32 .dem.zst",
+      "status": "done",
+      "note": "31/32 распаковано, 31/31 распарсено"
+    },
+    {
+      "task": "T6",
+      "id": "T6.5",
+      "title": "Синхронизация PC→laptop",
+      "status": "done",
+      "note": "8 файлов, ZIP 55 КБ"
+    },
+    {
+      "task": "T6",
+      "id": "T6.6",
+      "title": "Live: активная закачка прямо сейчас",
+      "status": "done",
+      "note": "опрос pc-bridge :8898 каждые 2 мин"
+    },
+    {
+      "task": "T6",
+      "id": "T6.7",
+      "title": "FACEIT: batch remaining 125 демо",
+      "status": "running",
+      "note": "закачка идёт на ПК: C:\\faceit_demos, лимит 25 ГБ"
+    },
+    {
+      "task": "T7",
+      "id": "T7.1",
+      "title": "Изучить аналоги: DemoLab, cs2-demo-live-2d, cs2d, awpy",
+      "status": "done",
+      "note": "death review, 2D replay, радарная калибровка"
+    },
+    {
+      "task": "T7",
+      "id": "T7.2",
+      "title": "Настоящий радар и калибровка de_dust2",
+      "status": "done",
+      "note": "MurkyYT/cs2-map-icons: pos_x=-2476, pos_y=3239, scale=4.4"
+    },
+    {
+      "task": "T7",
+      "id": "T7.3",
+      "title": "Иерархия: B/MID/A/SPAWN → тайлы 64px → дуэль",
+      "status": "done",
+      "note": "переиспользовали kings_patterns.py: place→A/B/long/short/mid/spawn; 16 837 дуэлей"
+    },
+    {
+      "task": "T7",
+      "id": "T7.4",
+      "title": "Анимация дуэлей по тикам на радаре",
+      "status": "done",
+      "note": "GIF, один матч/раунд, 40 дуэлей"
+    },
+    {
+      "task": "T7",
+      "id": "T7.5",
+      "title": "Death-review теги (died alone / not traded / caught off guard)",
+      "status": "done",
+      "note": "Реализация death-review тегов в новом tools/death_review_tags.py"
+    },
+    {
+      "task": "T7",
+      "id": "T7.6",
+      "title": "Линковка с HLTV и общий пул без двойного счёта",
+      "status": "blocked",
+      "note": "Попытка 5 (отчёт ~/overnight/t76_identity_probe_2045.md): новый источник faceit_data.db (467 матчей, UUID+date_str+demo_"
+    },
+    {
+      "task": "T7",
+      "id": "T7.7",
+      "title": "Сверить со старым скрином и готовыми аналогами",
+      "status": "done",
+      "note": "fine_zones_dust2.png: ∝√n, ΔWR, min n=30"
+    },
+    {
+      "task": "T8",
+      "id": "T8.1",
+      "title": "Зафиксировать требование: контур вне домашнего VPN и Telegram",
+      "status": "done",
+      "note": "пользователь: ВК-бот — контур вне домашнего VPN, через него чинится VPN и вся инфраструктура"
+    },
+    {
+      "task": "T8",
+      "id": "T8.2",
+      "title": "Создать сообщество PCBridgeControl и включить бот",
+      "status": "done",
+      "note": "сообщество PCBridgeControl создано через UI телефона (VK-приложение)"
+    },
+    {
+      "task": "T8",
+      "id": "T8.3",
+      "title": "Получить токен доступа сообщества, положить в файл с правами 600",
+      "status": "done",
+      "note": "Токен сообщества PCBridgeControl требует действия пользователя в VK UI на телефоне"
+    },
+    {
+      "task": "T8",
+      "id": "T8.4",
+      "title": "Деплой демона бота на ПК: ping / bundle / fix / status",
+      "status": "done",
+      "note": ""
+    },
+    {
+      "task": "T8",
+      "id": "T8.5",
+      "title": "Проверить 3 команды с мобилы без VPN, задержка <=60 с",
+      "status": "done",
+      "note": "Доказательство в note и отчёте /tmp/opencode/t08_vk_latency.md; порог 3/3 ≤60 с превышен (6/6, 0 с). Блок снят по доказа"
+    },
+    {
+      "task": "T8",
+      "id": "T8.6",
+      "title": "Демон VK-бота ping/status/bundle/fix готов к токену",
+      "status": "done",
+      "note": "Подготовка демона через pc-bridge :8898"
+    },
+    {
+      "task": "T9",
+      "id": "T9.1",
+      "title": "Авторежим: WiFi -> выборочный прокси 7900, мобильная -> системный :0",
+      "status": "done",
+      "note": "smartnet-phone-watch, таймер 20 с: WiFi → 7900, мобильная → :0"
+    },
+    {
+      "task": "T9",
+      "id": "T9.2",
+      "title": "Выбрать узел, доступный с мобильного (Румыния/Израиль/Канада)",
+      "status": "done",
+      "note": "eof-ноды Germany/Польша/Нидерланды привязаны к домашнему IP"
+    },
+    {
+      "task": "T9",
+      "id": "T9.3",
+      "title": "v2rayNG: профиль TG-Helmuth + правила DNS/Bank/Gosuslugi/RF-direct",
+      "status": "done",
+      "note": "профиль TG-Helmuth = Румыния 89.35.236.203:50100"
+    },
+    {
+      "task": "T9",
+      "id": "T9.4",
+      "title": "Убрать конфликт: сторож не убивает v2rayNG, внутренний прокси Telegram выключен",
+      "status": "done",
+      "note": "сторож не убивает v2rayNG, приложение в исключениях батареи"
+    },
+    {
+      "task": "T9",
+      "id": "T9.5",
+      "title": "Проверка с мобилы: TG API 302 / Web 200, YouTube 200, Сбер 200",
+      "status": "done",
+      "note": "TG API 302 / Web 200, YouTube 200, Rutracker 301"
+    },
+    {
+      "task": "T9",
+      "id": "T9.6",
+      "title": "Удержание туннеля >=30 мин: автоподключение и закрепление приложения",
+      "status": "done",
+      "note": "always-on VPN включён (com.v2ray.ang), tun0 UP; мониторинг удержания 36 мин запущен"
+    },
+    {
+      "task": "P0-1",
+      "id": "P0-1.1",
+      "title": "Зафиксировать конъюнктивный гейт G1–G6 до прогона",
+      "status": "done",
+      "note": "hw4-flash-free, отчёт O01 10:27–10:37"
+    },
+    {
+      "task": "P0-1",
+      "id": "P0-1.2",
+      "title": "Получить allplayers>0 через spectator/GOTV",
+      "status": "done",
+      "note": "21:13–21:14: после деплоя gsi_service_v4 и подъёма :3000 в живом GSI получено allplayers=10, phase=live, map=de_dust2 (t"
+    },
+    {
+      "task": "P0-1",
+      "id": "P0-1.3",
+      "title": "Проверить G4/G5/G6 на кадре с allplayers>0",
+      "status": "done",
+      "note": "На кадре P0_allplayers_20261119_211401.png (allplayers=10, phase=live) оф. гейт: G4/G5 PASS (ровно одна панель, netgraph"
+    },
+    {
+      "task": "S4H",
+      "id": "O1",
+      "title": "O1",
+      "status": "done",
+      "note": "sprint4h"
+    },
+    {
+      "task": "S4H",
+      "id": "O2",
+      "title": "O2",
+      "status": "fail",
+      "note": "sprint4h"
+    },
+    {
+      "task": "T10",
+      "id": "T10.1",
+      "title": "Карта сложности + 50 идей (research-slowdown)",
+      "status": "done",
+      "note": "Карта сложности + I001-I050 (subagent), полный реестр в T10-economic-hud.md"
+    },
+    {
+      "task": "T10",
+      "id": "T10.2",
+      "title": "Предрегистрация 4 гипотез до прогона",
+      "status": "done",
+      "note": "H10-A/B/C/D зафиксированы до прогона: источник, устаревание, UI, динамика"
+    },
+    {
+      "task": "T10",
+      "id": "T10.3",
+      "title": "Проверка на локальных дампах GSI/overlay",
+      "status": "done",
+      "note": "H10-A: gsi_last_raw без allplayers, но gsi_live_now с 10 игроками и разными money. H10-C: enemies=0 во всех overlay. H10"
+    },
+    {
+      "task": "T10",
+      "id": "T10.4",
+      "title": "Патч gsi_service/HUD и верификация",
+      "status": "done",
+      "note": "21:00: патч gsi_service_v4 задеплоен на ПК (fetch через :8898), приёмник слушает :3000 pid 10868, таймстемпы свежие. Вер"
+    },
+    {
+      "task": "T11",
+      "id": "T11.1",
+      "title": "Разобрать новые источники и расхождение R2",
+      "status": "done",
+      "note": "6 демо de_dust2: 97 раундов с AK, 302 кила. Наивная эвристика 70/97 = 0.7216; переоценка 26, недооценка 1; 75/302 кила и"
+    },
+    {
+      "task": "T11",
+      "id": "T11.2",
+      "title": "Предрегистрировать гейт T1b",
+      "status": "done",
+      "note": "гейт заморожен, T1b/T1c FAIL; шаг закрыт повторно после фонового рестата"
+    },
+    {
+      "task": "T12",
+      "id": "T12.1",
+      "title": "Посчитать частоты и CI по duels_all_v5",
+      "status": "done",
+      "note": "duels_all_v5 n=47248, buy-классы и CI посчитаны"
+    },
+    {
+      "task": "T12",
+      "id": "T12.2",
+      "title": "Заменить эвристические пороги",
+      "status": "done",
+      "note": "порог 1700 занижен, 4750 завышен; отчёт O7-economy-calibration.md"
+    },
+    {
+      "task": "T13",
+      "id": "T13.1",
+      "title": "Найти REAL-кадры с fp>0 в готовых данных",
+      "status": "done",
+      "note": "Найдены REAL-кадры с ненулевым FP: захват realgt_06, 90 пар, live GSI allplayers=10, SIFT 90/90, FP=98. Попытка realgt_0"
+    },
+    {
+      "task": "T13",
+      "id": "T13.2",
+      "title": "Пересчитать ECE или зафиксировать блокер",
+      "status": "done",
+      "note": "Пересчёт ECE/reliability по REAL: ECE(5 bin)=0.2232, confidence идентифицируем но не откалиброван. Порог ECE<0.05 НЕ дос"
+    },
+    {
+      "task": "T14",
+      "id": "T14.1",
+      "title": "Сверить 28 OPEN с отчётами",
+      "status": "done",
+      "note": "Отчёт ~/overnight/claims_open_triage_2045.md: 28 OPEN проверены по источникам; 10 закрываемых (3 pass/7 fail), 18 остают"
+    },
+    {
+      "task": "T14",
+      "id": "T14.2",
+      "title": "Проставить вердикты и следующие шаги",
+      "status": "done",
+      "note": "Вердикты применены к ~/claims.json атомарно: O2/O6/P1-5→pass; R-SMALL/N89-04/N95-03/P0-1/P1-4/SYN-01/SYN-02→fail;evidenc"
+    },
+    {
+      "task": "T15",
+      "id": "T15.1",
+      "title": "Обработать оставшиеся чанки",
+      "status": "done",
+      "note": "реальное состояние done=20/36, FILES=73; хвост 16 чанков"
+    },
+    {
+      "task": "T15",
+      "id": "T15.2",
+      "title": "Свести итоговый дайджест",
+      "status": "done",
+      "note": "digest_v2_final.md; 7 TIMEOUT - опрос /result, не потеря; FINISHER не дошел, zip не забран"
+    },
+    {
+      "task": "T16",
+      "id": "T16.1",
+      "title": "Проверить H109+ по готовым данным",
+      "status": "done",
+      "note": "H112/H113 проверены: оба недостаточно данных, 0 пар FACEIT↔демо"
+    },
+    {
+      "task": "T16",
+      "id": "T16.2",
+      "title": "Зафиксировать отрицательные результаты",
+      "status": "done",
+      "note": "H112.md/H113.md + prereg, check OK/PASS; KAST-прокси 0.635 против API mean 63.19"
+    },
+    {
+      "task": "T17",
+      "id": "T17.1",
+      "title": "Собрать кандидатов категорий из voice/turngame",
+      "status": "done",
+      "note": "10 категорий, 190 подкатегорий, 1000 листьев уже в action_types.json"
+    },
+    {
+      "task": "T17",
+      "id": "T17.2",
+      "title": "Сформулировать критерии и gating",
+      "status": "done",
+      "note": "критерии n>=100/BH q=0.05, 15 опровергнутых тем; файл moves-ontology-v0.md записан"
+    },
+    {
+      "task": "T18",
+      "id": "T18.1",
+      "title": "Подтвердить фикс 12/12 по отчёту 93",
+      "status": "done",
+      "note": "12/12 по отчёту 93 подтверждено построчно: 6 флипов + 1 smoke-оверрайд"
+    },
+    {
+      "task": "T18",
+      "id": "T18.2",
+      "title": "Посчитать долю расхождений на 320 демо или блокер",
+      "status": "done",
+      "note": "системность НЕ подтверждена: v2 на 1 демо, вердикты на 67/320; v3/v4 дают 27.4%; R2-systematics.md"
+    },
+    {
+      "task": "C11-379",
+      "id": "C11-379.1",
+      "title": " Выбрать 7 новых демо, disjoint со всеми 84 кандидатами прошлых репликаций",
+      "status": "done",
+      "note": "3/map, 0 overlap with all 84 prior candidate demos (63+21)"
+    },
+    {
+      "task": "C11-379",
+      "id": "C11-379.2",
+      "title": "Собрать парсер C11-379-parser.py (адаптация v4 + новое измерение)",
+      "status": "done",
+      "note": "C11-379-parser.py built from v4 baseline + half-width sweep; compiled OK"
+    },
+    {
+      "task": "C11-379",
+      "id": "C11-379.3",
+      "title": "Зафиксировать prereg C11-379 ДО прогона (пороги + SHA защищённых)",
+      "status": "done",
+      "note": "prereg/C11-379.json fixed before run: 11 gates, 4 SHA256, check=PASS"
+    },
+    {
+      "task": "C11-379",
+      "id": "C11-379.4",
+      "title": "Прогнать парсер в turngame/.venv, проверить гейт",
+      "status": "done",
+      "note": "1093/1093 coverage, gate 9/9 machine PASS, prereg PASS, protected intact; 38.7s"
+    },
+    {
+      "task": "C11-379",
+      "id": "C11-379.5",
+      "title": "Написать отчёт C11-379.md с реальными цифрами",
+      "status": "done",
+      "note": "C11-379.md written (310 lines), all figures cross-checked against manifest"
+    },
+    {
+      "task": "C06-422",
+      "id": "C06-422.1",
+      "title": "Изучить prereg и скрипты C06-406, выбрать фазу S10",
+      "status": "done",
+      "note": "chosen k=128, val 7 vs 1..6; 140 matches, min 6370 death rows > 128"
+    },
+    {
+      "task": "C06-422",
+      "id": "C06-422.2",
+      "title": "Создать lib/build, зафиксировать prereg C06-422C",
+      "status": "done",
+      "note": "C06_422_lib.py, C06-422-build.py, C06-422-enemy-model.py, C06-422-chains.py created; all compile"
+    },
+    {
+      "task": "C06-422",
+      "id": "C06-422.3",
+      "title": "Собрать corpus S10 (17920 кадров), проверить disjointness",
+      "status": "done",
+      "note": "S10 built: n=17920, tp=9432 fp=8276 fn=8488, disjoint=True, gate=PASS; 0 new/removed in data/"
+    },
+    {
+      "task": "C06-422",
+      "id": "C06-422.4",
+      "title": "Prereg C06-422, прогон enemy_model + 3-frame + chains",
+      "status": "done",
+      "note": "12/12 gates PASS; FDR 8276/17708=0.4674 [0.4600,0.4747]; enemy_model 5/3/0; ghost 17917-17919; chains 1059 (101 all-FP)"
+    },
+    {
+      "task": "C06-422",
+      "id": "C06-422.5",
+      "title": "Отчёт C06-422.md, гейт,证明 no writes to data",
+      "status": "done",
+      "note": "C06-422.md written with prereg-verified numbers; data/ unchanged (262188 files, 0 new/removed)"
+    }
+  ],
+  "active": [
+    {
+      "id": "H742",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Динамика действительно внутриигровая.**",
+      "source": "ноут",
+      "claimed_human": "12:27:48",
+      "age_min": 0
+    },
+    {
+      "id": "H741",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Статичная роль vs динамическая изоляция.** Средний `iso` по доминантной оси: aggression 0.415 CI ",
+      "source": "ноут",
+      "claimed_human": "12:27:44",
+      "age_min": 0
+    },
+    {
+      "id": "H739",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **C. Латентность первой ротации после контакта.**",
+      "source": "ноут",
+      "claimed_human": "12:26:59",
+      "age_min": 1
+    },
+    {
+      "id": "H740",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **База.** 7 396 дуэлей с валидной изоляцией, 94 матча, 65 игроков; `alive_diff<0` у 2 483 (33.6%). ",
+      "source": "ноут",
+      "claimed_human": "12:26:59",
+      "age_min": 1
+    },
+    {
+      "id": "H738",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **B. Только post-частота: вьюер − не-вьюер.**",
+      "source": "ноут",
+      "claimed_human": "12:26:19",
+      "age_min": 2
+    },
+    {
+      "id": "H737",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **B. DiD по частоте ротаций до/после контакта (paths_v5, Δ∈[32,96]).**",
+      "source": "ноут",
+      "claimed_human": "12:25:39",
+      "age_min": 2
+    },
+    {
+      "id": "H736",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Страты по Δ (полосы окна).**",
+      "source": "ноут",
+      "claimed_human": "12:25:15",
+      "age_min": 3
+    },
+    {
+      "id": "H735",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Страты по стороне вьюера (matched по карте — вся выборка dust2).**",
+      "source": "ноут",
+      "claimed_human": "12:24:57",
+      "age_min": 3
+    },
+    {
+      "id": "H734",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Страты по `approach.class`.**",
+      "source": "ноут",
+      "claimed_human": "12:24:54",
+      "age_min": 3
+    },
+    {
+      "id": "H733",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **A. Число ротаций: вьюер − не-вьюер.**",
+      "source": "ноут",
+      "claimed_human": "12:24:52",
+      "age_min": 3
+    },
+    {
+      "id": "H630",
+      "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Freeze-срез «t_rel/place» и прокси буста.** Контакт в первые 15 с после freeze: n=652. Время freeze→f",
+      "source": "ПК",
+      "claimed_human": "12:24:45",
+      "age_min": 3
+    },
+    {
+      "id": "H732",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **A. Первая ротация до контакта: вьюер − не-вьюер.**",
+      "source": "ноут",
+      "claimed_human": "12:24:25",
+      "age_min": 4
+    },
+    {
+      "id": "H731",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **A. Первая ротация после контакта: вьюер − не-вьюер (главный тест).**",
+      "source": "ноут",
+      "claimed_human": "12:24:02",
+      "age_min": 4
+    },
+    {
+      "id": "H730",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **База.** 1 327 дуэлей с raycast `first_viewer` (killer 811 / victim 516), 11 матчей, все dust2; 1 ",
+      "source": "ноут",
+      "claimed_human": "12:23:33",
+      "age_min": 4
+    },
+    {
+      "id": "H729",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Freeze-срез «t_rel/place» и прокси буста.** Контакт в первые 15 с после freeze: n=652. Время free",
+      "source": "ноут",
+      "claimed_human": "12:23:29",
+      "age_min": 4
+    },
+    {
+      "id": "H728",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Матч-пары aggression vs trading / isolation vs trading / sniper vs survival.**",
+      "source": "ноут",
+      "claimed_human": "12:22:03",
+      "age_min": 6
+    },
+    {
+      "id": "H727",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Матч-пара sniper vs isolation.**",
+      "source": "ноут",
+      "claimed_human": "12:21:59",
+      "age_min": 6
+    },
+    {
+      "id": "H726",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Матч-пара aggression vs survival — единственный ненулевой сигнал.**",
+      "source": "ноут",
+      "claimed_human": "12:21:02",
+      "age_min": 7
+    },
+    {
+      "id": "H725",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **Матч-пара ролей: aggression vs isolation.** Обе роли в одной дуэли, внутридуэльное сравнение (кон",
+      "source": "ноут",
+      "claimed_human": "12:20:54",
+      "age_min": 7
+    },
+    {
+      "id": "H724",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: **База и измеримость тайминга.** Из 47 248 дуэлей обе роли известны у 8 628 (67 матчей); у 4 399 (5",
+      "source": "ноут",
+      "claimed_human": "12:20:51",
+      "age_min": 7
+    },
+    {
+      "id": "H715",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: Роль как предсказатель WR",
+      "source": "ноут",
+      "claimed_human": "12:18:11",
+      "age_min": 10
+    },
+    {
+      "id": "H713",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: topo_key @ +5…+15 → winner, **простая проверка**",
+      "source": "ноут",
+      "claimed_human": "12:17:48",
+      "age_min": 10
+    },
+    {
+      "id": "H629",
+      "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Матч-пары aggression vs trading / isolation vs trading / sniper vs survival.**",
+      "source": "ПК",
+      "claimed_human": "12:17:23",
+      "age_min": 11
+    },
+    {
+      "id": "H628",
+      "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Матч-пара sniper vs isolation.**",
+      "source": "ПК",
+      "claimed_human": "12:17:03",
+      "age_min": 11
+    },
+    {
+      "id": "H627",
+      "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Матч-пара aggression vs survival — единственный ненулевой сигнал.**",
+      "source": "ПК",
+      "claimed_human": "12:16:23",
+      "age_min": 12
+    },
+    {
+      "id": "H626",
+      "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: **Матч-пара ролей: aggression vs isolation.** Обе роли в одной дуэли, внутридуэльное сравнение (контрол",
+      "source": "ПК",
+      "claimed_human": "12:15:42",
+      "age_min": 12
+    },
+    {
+      "id": "H624",
+      "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Причинный/стратегический смысл «одной ротации»",
+      "source": "ПК",
+      "claimed_human": "12:13:02",
+      "age_min": 15
+    },
+    {
+      "id": "H698",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: Стратификация по терцилям peek (дескриптивно)",
+      "source": "ноут",
+      "claimed_human": "12:12:24",
+      "age_min": 16
+    },
+    {
+      "id": "H696",
+      "title": "НЕЗАВИСИМАЯ LAPTOP-РЕПЛИКАЦИЯ: Главный эффект скорости",
+      "source": "ноут",
+      "claimed_human": "12:12:23",
+      "age_min": 16
+    },
+    {
+      "id": "H567",
+      "title": "НЕЗАВИСИМАЯ РЕПЛИКАЦИЯ: **Статичная роль vs динамическая изоляция.** Средний `iso` по доминантной оси: aggression 0.415 CI [0.387,",
+      "source": "ноут",
+      "claimed_human": "11:34:24",
+      "age_min": 54
+    },
+    {
+      "id": "H564",
+      "title": "НЕЗАВИСИМАЯ РЕПЛИКАЦИЯ: **B. Только post-частота: вьюер − не-вьюер.**",
+      "source": "ноут",
+      "claimed_human": "11:34:04",
+      "age_min": 54
+    },
+    {
+      "id": "H559",
+      "title": "НЕЗАВИСИМАЯ РЕПЛИКАЦИЯ: **A. Число ротаций: вьюер − не-вьюер.**",
+      "source": "ноут",
+      "claimed_human": "11:33:44",
+      "age_min": 54
+    },
+    {
+      "id": "H556",
+      "title": "НЕЗАВИСИМАЯ РЕПЛИКАЦИЯ: **База.** 1 327 дуэлей с raycast `first_viewer` (killer 811 / victim 516), 11 матчей, все dust2; 1 245 из ",
+      "source": "ноут",
+      "claimed_human": "11:33:24",
+      "age_min": 55
+    }
+  ],
+  "queues": {
+    "ноут": {
+      "done": 510,
+      "failed": 125,
+      "doing": 27,
+      "todo": 62
+    },
+    "ПК": {
+      "done": 20,
+      "doing": 6,
+      "todo": 54
+    }
+  },
+  "fetched_at": 1795166908,
+  "fetched_human": "2026-11-20 12:28:28 +0300"
+}
