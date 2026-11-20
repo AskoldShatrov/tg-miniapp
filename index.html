@@ -626,7 +626,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1520";
+const BUILD = "20261120-1523";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -1376,6 +1376,15 @@ function renderQuestions(){
   }));
 }
 async function fetchQuestions(){
+  const apiBase=new URLSearchParams(location.search).get("api");
+  if(apiBase){
+    try{
+      const init=(typeof tg!=="undefined"&&tg.initData)?tg.initData:"";
+      const r=await fetch(apiBase.replace(/\/$/,"")+"/questions",
+        {headers:init?{"X-Telegram-Init-Data":init}:{},cache:"no-store"});
+      if(r.ok){ QUESTIONS=await r.json(); renderQuestions(); return; }
+    }catch(e){ /* фолбэк на статический questions.json */ }
+  }
   const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
   for(const base of bases){
     try{
