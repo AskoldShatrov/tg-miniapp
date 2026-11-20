@@ -52,7 +52,6 @@
     display:grid;place-items:center; color:var(--crust); font-weight:800;font-size:17px;
     box-shadow:0 6px 16px rgba(137,180,250,.25);
   }
-  .htitle{font-size:15px;font-weight:700;letter-spacing:.2px}
   .hsub{font-size:11px;color:var(--overlay2);margin-top:2px;font-family:var(--fm)}
   .hbadges{margin-left:auto;display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
   .hbadge{
@@ -528,7 +527,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1115";
+const BUILD = "20261120-1158";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -794,6 +793,10 @@ async function refreshAgentStatus(){
           sw=$("#stripWorkers"), st=$("#stripTime"), sn=$("#stripNote");
     if(sa) sa.textContent = n;
     if(sl) sl.textContent = Number(s.agents_running)||0;
+    const ha=$("#hsAgents"), hw=$("#hsWorkers"), cs=$("#chatSub");
+    if(ha) ha.textContent = n;
+    if(hw) hw.textContent = (s.workers||0);
+    if(cs) cs.textContent = "агент · "+n+" в работе";
     if(ss) ss.textContent = Number(s.sessions_active)||0;
     if(sb) sb.textContent = Number(s.subagents)||0;
     if(sw) sw.textContent = (s.workers||0);
@@ -805,6 +808,13 @@ async function refreshAgentStatus(){
 }
 refreshAgentStatus();
 setInterval(refreshAgentStatus, 30000);
+/* Шапка кликабельна: полное обновление всех живых данных по нажатию. */
+const hdr=$("#hdr"); if(hdr) hdr.addEventListener("click",()=>{
+  refreshAgentStatus();
+  if(typeof refreshSessions==="function") refreshSessions();
+  if(typeof refreshReplies==="function") refreshReplies();
+  toast("Обновлено");
+});
 
 /* ---------- живые активные сессии ----------
    Источник тот же, что и у status.json: raw.githubusercontent (CORS + обход кеша
@@ -868,12 +878,17 @@ function escHtml(x){
 function renderChat(){
   const log = $("#chatLog"); if(!log) return;
   const reps = (CHAT.replies && CHAT.replies[userID]) || [];
-  const out = [];
-  (CHAT.sent||[]).slice(-25).forEach(m =>
-    out.push('<div class="d"><b>ты:</b> '+escHtml(m.text)+' <small>'+escHtml(m.t||"")+'</small></div>'));
-  reps.slice(-25).forEach(r =>
-    out.push('<div class="d"><b>агент:</b> '+escHtml(r.text)+' <small>'+escHtml(absTime(r))+'</small></div>'));
-  log.innerHTML = out.length ? out.join("") : '<div class="d">Сообщений пока нет. Напиши агенту ниже.</div>';
+  const items = [
+    ...(CHAT.sent||[]).map(m=>({me:true, text:m.text, ts:m.t||""})),
+    ...reps.map(r=>({me:false, text:r.text, ts:absTime(r)}))
+  ].slice(-40);
+  const out = items.map(m => m.me
+    ? '<div class="msg me"><div class="mava">👤</div><div class="bubble">'+escHtml(m.text)+
+      '<span class="mtime">'+escHtml(m.ts)+'</span></div></div>'
+    : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+escHtml(m.text)+
+      '<span class="mtime">'+escHtml(m.ts)+'</span></div></div>');
+  log.innerHTML = out.length ? out.join("")
+    : '<div class="chat-empty"><span>💬</span>Напиши агенту —<br>ответ подтянется сюда сам</div>';
   log.scrollTop = log.scrollHeight;
 }
 async function refreshReplies(){
