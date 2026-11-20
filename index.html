@@ -163,6 +163,12 @@
   .hsub{font-size:11.5px;color:var(--subtext1);margin-top:0;font-family:var(--fm);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .hsub b{color:var(--green);font-weight:700}
+  /* хедер — живая панель, а не декоративный баннер: явное действие + отклик */
+  .hdr-act{flex:none;font:800 10px/1 var(--fm);letter-spacing:.4px;color:var(--blue);
+    border:1px solid rgba(137,180,250,.35);background:rgba(137,180,250,.10);
+    padding:7px 9px;border-radius:9px;white-space:nowrap;transition:.15s}
+  header#hdr:hover .hdr-act{background:rgba(137,180,250,.22);transform:translateX(1px)}
+  header#hdr.refreshing .hdr-act{opacity:.45}
 
   /* ---------- чат: пузыри, аватары, живой статус ---------- */
   .chat-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
@@ -199,6 +205,16 @@
     background:var(--blue);color:var(--crust);font-size:15px;font-weight:700;transition:.15s}
   .composer .send:hover{background:var(--sapphire);transform:translateY(-1px)}
   .composer .send:active{transform:translateY(1px)}
+  /* быстрые действия — делают чат рабочим инструментом, а не болталкой */
+  .quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+  .quick button{font:700 10.5px/1 var(--fm);padding:7px 10px;border-radius:9px;cursor:pointer;
+    border:1px solid var(--surface1);background:rgba(17,17,27,.32);color:var(--subtext1);transition:.15s}
+  .quick button:hover{border-color:var(--blue);color:var(--text);background:rgba(137,180,250,.12)}
+  .typing{display:none;align-items:center;gap:6px;margin:2px 0 0 33px;font:600 10px/1 var(--fm);color:var(--overlay1)}
+  .typing.on{display:flex}
+  .typing i{width:5px;height:5px;border-radius:50%;background:var(--blue);animation:blink 1.1s infinite}
+  .typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+  @keyframes blink{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 
   /* ---------- tree screen ---------- */
   .summary{display:flex;gap:8px;margin-bottom:14px}
@@ -422,6 +438,7 @@
     <div class="hmeta">
       <div class="hsub" id="hsub">подключение…</div>
     </div>
+    <span class="hdr-act" title="Открыть живой ход работ">Ход ›</span>
     <div class="hbadges">
       <div class="agentbadge" id="agentBadge" title="работающих агентов">🤖 …</div>
       <div class="gamebadge" id="gameBadge" style="display:none" title="режим игры">🎮 ИГРА</div>
@@ -445,9 +462,16 @@
         <span class="chat-live" title="живой канал">●</span>
       </div>
       <div class="chatlog" id="chatLog"></div>
+      <div class="typing" id="typing"><i></i><i></i><i></i> агент думает…</div>
       <div class="composer">
         <input id="chatInput" type="text" placeholder="Сообщение агенту…" autocomplete="off">
         <button id="chatSend" class="send" aria-label="Отправить">➤</button>
+      </div>
+      <div class="quick">
+        <button data-q="Статус последних запросов">📊 Статус</button>
+        <button data-q="Что сейчас в работе?">⚙ В работе</button>
+        <button data-q="Покажи дерево задач">⑂ Задачи</button>
+        <button data-q="Помощь">❓ Помощь</button>
       </div>
       <div class="hint">Отправка закрывает мини-ап — так устроен Telegram WebApp. Открой заново через /app: ответ подтянется сам.</div>
     </section>
@@ -566,7 +590,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1225";
+const BUILD = "20261120-1316";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -849,12 +873,16 @@ async function refreshAgentStatus(){
 }
 refreshAgentStatus();
 setInterval(refreshAgentStatus, 30000);
-/* Шапка кликабельна: полное обновление всех живых данных по нажатию. */
+/* Шапка — рабочий элемент: обновляет данные И открывает живой ход работ. */
 const hdr=$("#hdr"); if(hdr) hdr.addEventListener("click",()=>{
+  hdr.classList.add("refreshing");
   refreshAgentStatus();
   if(typeof refreshSessions==="function") refreshSessions();
   if(typeof refreshReplies==="function") refreshReplies();
-  toast("Обновлено");
+  if(typeof setTab==="function") setTab("live");
+  if(typeof renderLive==="function") renderLive();
+  toast("Ход работ обновлён");
+  setTimeout(()=>hdr.classList.remove("refreshing"),450);
 });
 
 /* ---------- живые активные сессии ----------
@@ -952,6 +980,7 @@ function sendChat(){
   CHAT.sent = CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   renderChat(); inp.value = "";
+  const tp = $("#typing"); if(tp){ tp.classList.add("on"); setTimeout(()=>tp.classList.remove("on"),900); }
   if(typeof tg !== "undefined" && tg){
     tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID}));
   } else {
@@ -962,6 +991,11 @@ const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", se
 const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown", e => {
   if(e.key === "Enter"){ e.preventDefault(); sendChat(); }
 });
+/* Быстрые действия: заполняют поле и сразу отправляют — чат как панель задач. */
+$$(".quick button").forEach(b=>b.addEventListener("click",()=>{
+  if(chatInp) chatInp.value = b.dataset.q || "";
+  sendChat();
+}));
 refreshReplies();
 setInterval(refreshReplies, 5000);
 
