@@ -443,8 +443,9 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const order=["card","tree","decisions","sessions"];
+const TAB_IDS=["card","tree","decisions","sessions"];
 function setTab(name){
+  if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
   $("#main").scrollTop=0;
@@ -463,7 +464,7 @@ function renderCard(){
   st.className="chip "+(!chosen && c.status==="QUESTION"?"question":(chosen==="В работу"?"progress":"open"));
   $("#qTitle").textContent=c.title;
   $("#qBody").textContent=c.body;
-  $("#qTags").innerHTML=c.tags.map(t=>`<span class="tag">#${t}</span>`).join("");
+  $("#qTags").innerHTML=c.tags.map(t=>`<span class="tag">#${esc(t)}</span>`).join("");
   $("#cardCount").textContent=`${ci+1} / ${DEMO.cards.length}`;
   $("#counter").textContent=`${ci+1} / ${DEMO.cards.length}`;
   $("#dots").innerHTML=DEMO.cards.map((_,i)=>`<span class="dot ${i===ci?"on":""}"></span>`).join("");
@@ -489,9 +490,9 @@ function nodeHTML(n){
   return `<div class="tnode">
     <div class="trow ${has?"parent":""}" data-toggle="${has?1:0}">
       <span class="twist ${has?"":"leaf"}">${has?"▶":"·"}</span>
-      <span class="tid">${n.id}</span>
-      <span class="tname">${n.name}</span>
-      <span class="status st-${n.status}">${n.status}</span>
+      <span class="tid">${esc(n.id)}</span>
+      <span class="tname">${esc(n.name)}</span>
+      <span class="status st-${esc(n.status)}">${esc(n.status)}</span>
     </div>
     ${has?`<div class="children">${n.children.map(nodeHTML).join("")}</div>`:""}
   </div>`;
@@ -514,11 +515,11 @@ function renderDecisions(){
   $("#dlist").innerHTML=DEMO.decisions.map(d=>`
     <div class="dec">
       <div>
-        <h4>${d.h} · ${d.title}</h4>
-        <p>${d.note}</p>
-        <div class="src">${d.src}</div>
+        <h4>${esc(d.h)} · ${esc(d.title)}</h4>
+        <p>${esc(d.note)}</p>
+        <div class="src">${esc(d.src)}</div>
       </div>
-      <span class="v v-${d.verdict}">${d.verdict}</span>
+      <span class="v v-${esc(d.verdict)}">${esc(d.verdict)}</span>
     </div>`).join("");
 }
 
@@ -537,21 +538,26 @@ function renderSessions(){
   const list=(SESSIONS.sessions||[]).slice().sort((a,b)=>(b.updated||0)-(a.updated||0));
   $("#sessionsCount").textContent=list.length;
   $("#sessionsTime").textContent=SESSIONS.fetched_human||"—";
-  $("#sessionsNote").textContent=SESSIONS.note||"";
+  const fetched=Number(SESSIONS.fetched_at||0)*1000;
+  const stale=fetched && Date.now()-fetched>5*60000;
+  const note=$("#sessionsNote");
+  note.textContent = stale ? "ДАННЫЕ УСТАРЕЛИ — источник недоступен" : (SESSIONS.note||"");
+  note.style.color = stale ? "var(--maroon)" : "var(--yellow)";
   if(!list.length){
     $("#slist").innerHTML='<div class="sempty">Нет свежих сессий — данных пока нет или источник недоступен.</div>';
     return;
   }
+  // В публичный JSON намеренно не пишутся заголовки, реальные id, токены и cost —
+  // в списке только анонимный псевдоним, модель и время активности.
   $("#slist").innerHTML=list.map((s,i)=>{
     const recent=Date.now()-(s.updated||0)<300000;
     const meta=[];
-    if(s.model) meta.push(esc(s.model));
-    if(s.tokens_in||s.tokens_out) meta.push(`↓${s.tokens_in||0} ↑${s.tokens_out||0}`);
+    if(s.model) meta.push(`<b>${esc(s.model)}</b>`);
     if(s.short) meta.push(`#${esc(s.short)}`);
     return `<div class="srow ${recent?"live":""}">
       <span class="snum">${i+1}</span>
       <div class="sbody">
-        <div class="stitle" title="${esc(s.title||"")}">${esc(s.title||"Без темы")}</div>
+        <div class="stitle">сессия #${esc(s.short||"—")}</div>
         <div class="smeta">${meta.join('<span style="color:var(--surface2)">·</span>')}</div>
       </div>
       <span class="sage">${timeAgo(s.updated||0)}</span>
