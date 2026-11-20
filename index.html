@@ -179,20 +179,44 @@
   .chat-peer small{display:block;font:600 10px/1.4 var(--fm);color:var(--overlay1);margin-top:1px}
   .chat-live{font-size:12px;color:var(--green);text-shadow:0 0 9px var(--green);animation:pulse 2s infinite}
   @keyframes pulse{50%{opacity:.3}}
-  .chatlog{display:flex;flex-direction:column;gap:10px;min-height:170px;max-height:46vh;overflow-y:auto;
+  .chatwrap{position:relative}
+  .chatlog{display:flex;flex-direction:column;gap:8px;min-height:170px;max-height:46vh;overflow-y:auto;
     padding:8px;border-radius:var(--radius);background:rgba(17,17,27,.28);
-    scrollbar-width:thin;scrollbar-color:var(--surface1) transparent}
+    scrollbar-width:thin;scrollbar-color:var(--surface1) transparent;overscroll-behavior:contain}
+  /* Прыжок к свежим сообщениям: только когда пользователь ушёл вверх от дна. */
+  .chat-jump{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:4;display:none;
+    font:700 10.5px/1 var(--fm);padding:7px 12px;border-radius:999px;cursor:pointer;
+    color:var(--crust);background:var(--blue);border:0;box-shadow:0 6px 18px rgba(137,180,250,.32)}
+  .chat-jump.on{display:block}
   .msg{display:flex;gap:8px;align-items:flex-end;max-width:93%}
   .msg.me{margin-left:auto;flex-direction:row-reverse}
   .msg .mava{width:25px;height:25px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;
     font-size:12px;background:var(--surface1)}
   .msg.me .mava{background:rgba(137,180,250,.16)}
-  .bubble{padding:9px 12px;border-radius:14px 14px 14px 4px;background:var(--surface0);
+  /* Без fade на пузырях: перерисовка каждые 5 с должна быть невидимой, а не мигать. */
+  .bubble{padding:8px 11px;border-radius:14px 14px 14px 4px;background:var(--surface0);
     border:1px solid var(--surface1);font-size:12.5px;line-height:1.5;color:var(--text);
-    word-break:break-word;box-shadow:0 3px 10px rgba(0,0,0,.14);animation:fade .18s ease}
+    word-break:break-word;box-shadow:0 3px 10px rgba(0,0,0,.14)}
   .msg.me .bubble{background:linear-gradient(145deg,rgba(137,180,250,.20),rgba(137,180,250,.10));
     border-color:rgba(137,180,250,.32);border-radius:14px 14px 4px 14px}
   .bubble .mtime{display:block;margin-top:4px;font:600 9px/1 var(--fm);color:var(--overlay0);text-align:right}
+  /* Запрос и ответ — одна связка: видно, на какой вопрос пришёл ответ. */
+  .pair{position:relative;padding:9px 10px 10px 12px;border-radius:14px;
+    background:linear-gradient(180deg,rgba(49,50,68,.40),rgba(17,17,27,.16));
+    border:1px solid var(--surface0);border-left:2px solid var(--surface1)}
+  .pair.pending{border-left-color:var(--yellow)}
+  .pair.done{border-left-color:var(--green)}
+  .pair.stray{border-left-color:var(--lavender)}
+  .pair-head{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+  .pair-no{font:700 9px/1 var(--fm);color:var(--overlay0)}
+  .pair-state{font:700 9px/1 var(--fm);padding:4px 7px;border-radius:999px;letter-spacing:.3px;
+    color:var(--yellow);background:rgba(249,226,175,.10);border:1px solid rgba(249,226,175,.28)}
+  .pair.done .pair-state{color:var(--green);background:rgba(166,227,161,.09);border-color:rgba(166,227,161,.3)}
+  .pair.stray .pair-state{color:var(--lavender);background:rgba(203,166,247,.10);border-color:rgba(203,166,247,.3)}
+  .pair-time{margin-left:auto;font:600 9px/1 var(--fm);color:var(--overlay0)}
+  .pair-body{display:flex;flex-direction:column;gap:8px;padding-left:2px}
+  .pair .bubble{font-size:12px}
+  .pair-wait{font:600 10px/1.3 var(--fm);color:var(--yellow);opacity:.85;padding:1px 0 0 33px}
   .chat-empty{margin:auto;text-align:center;color:var(--overlay1);font-size:12px;line-height:1.6;padding:20px}
   .chat-empty span{font-size:26px;display:block;margin-bottom:8px;opacity:.7}
   .composer{display:flex;gap:6px;margin-top:10px;padding:5px;border-radius:14px;
@@ -433,12 +457,12 @@
 <body>
 <div class="app" id="app">
 
-  <header id="hdr" title="Нажми, чтобы обновить все данные">
+  <header id="hdr" role="button" tabindex="0" title="Нажми или нажми Enter: обновить данные и открыть живой ход работ">
     <div class="logo">₲</div>
     <div class="hmeta">
       <div class="hsub" id="hsub">подключение…</div>
     </div>
-    <span class="hdr-act" title="Открыть живой ход работ">Ход ›</span>
+    <span class="hdr-act" title="Обновить данные и открыть ход работ">Обновить ⟳</span>
     <div class="hbadges">
       <div class="agentbadge" id="agentBadge" title="работающих агентов">🤖 …</div>
       <div class="gamebadge" id="gameBadge" style="display:none" title="режим игры">🎮 ИГРА</div>
@@ -453,6 +477,7 @@
     <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
     <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">5</span></button>
     <button class="tab" data-tab="live"><span>◉</span> Ход <span class="key">6</span></button>
+    <button class="tab" data-tab="questions"><span>❓</span> Вопросы <span class="key">7</span></button>
   </nav>
 
   <main id="main">
@@ -461,7 +486,10 @@
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
         <span class="chat-live" title="живой канал">●</span>
       </div>
-      <div class="chatlog" id="chatLog"></div>
+      <div class="chatwrap">
+        <div class="chatlog" id="chatLog"></div>
+        <button class="chat-jump" id="chatJump" type="button">↓ новые сообщения</button>
+      </div>
       <div class="typing" id="typing"><i></i><i></i><i></i> агент думает…</div>
       <div class="composer">
         <input id="chatInput" type="text" placeholder="Сообщение агенту…" autocomplete="off">
@@ -557,6 +585,12 @@
       <div id="atlasCards"></div>
     </section>
 
+    <section class="screen" id="screen-questions">
+      <div class="eyebrow">Вопросы · ждут ответа</div>
+      <div class="live-strip"><span id="questionsStamp">…</span></div>
+      <div id="questionCards"></div>
+    </section>
+
     <section class="screen" id="screen-live">
       <div class="eyebrow">Ход работы · что делается прямо сейчас</div>
       <div class="live-strip"><span class="dot-live"></span><span id="liveStamp">…</span></div>
@@ -581,6 +615,8 @@
     <span class="sep"></span>
     <span class="hk"><kbd>6</kbd> Ход</span>
     <span class="sep"></span>
+    <span class="hk"><kbd>7</kbd> Вопросы</span>
+    <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
 
@@ -590,7 +626,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1340";
+const BUILD = "20261120-1500";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -599,17 +635,9 @@ const BUILD = "20261120-1340";
    ========================================================= */
 const DEMO = {
   meta: { demo: true, label: "DEMO · встроенная заглушка", session: "miniapp-demo" },
-  cards: [
-    { id:"Q-001", status:"OPEN", statusLabel:"В РАБОТЕ", title:"Как не потерять вопрос в потоке задач?",
-      body:"Пользователь присылает длинные голосовые и плотные тексты. Нужна короткая карточка с формулировкой, статусом и быстрым действием — вместо простыни сообщений.",
-      tags:["эргономика","входящие","приоритет"] },
-    { id:"Q-002", status:"QUESTION", statusLabel:"УТОЧНИТЬ", title:"Что считается «готовым» шагом?",
-      body:"В дереве задач статусы PASS/FAIL/OPEN, но критерии перехода не всегда видны. Уточнить порог, прежде чем переводить задачу в работу.",
-      tags:["гейты","критерии","progress.json"] },
-    { id:"Q-003", status:"OPEN", statusLabel:"В РАБОТЕ", title:"Показать дерево текущих задач целиком?",
-      body:"Хочется видеть T1..T11 компактно, с вложенными подзадачами и суммарными счётчиками, не открывая отдельный отчёт.",
-      tags:["дерево","дашборд","T1—T11"] }
-  ],
+  // DEMO Q-001…Q-003 удалены (этап 5): карточки строятся из questions.json,
+  // который публикуется из telemetry.nodes со статусом waiting_user.
+  cards: [],
   tree: [
     { id:"T1", name:"Каркас мини-аппа", status:"PASS", children:[
       { id:"T1.1", name:"Три вкладки", status:"PASS" },
@@ -651,7 +679,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["chat","prompts","tree","sessions","atlas","live"];
+const TAB_IDS=["chat","prompts","tree","sessions","atlas","live","questions"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
@@ -800,6 +828,7 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="4"){setTab("sessions")}
   else if(e.key==="5"){setTab("atlas"); renderAtlas()}
   else if(e.key==="6"){setTab("live"); renderLive()}
+  else if(e.key==="7"){setTab("questions"); fetchQuestions()}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
@@ -884,6 +913,10 @@ const hdr=$("#hdr"); if(hdr) hdr.addEventListener("click",()=>{
   toast("Ход работ обновлён");
   setTimeout(()=>hdr.classList.remove("refreshing"),450);
 });
+/* Шапка — настоящий элемент управления: клик и Enter/Пробел делают одно и то же. */
+if(hdr) hdr.addEventListener("keydown",e=>{
+  if(e.key==="Enter"||e.key===" "){ e.preventDefault(); hdr.click(); }
+});
 
 /* ---------- живые активные сессии ----------
    Сначала свой домен (?ts работает), raw — только фолбэк: его CDN кэширует
@@ -945,22 +978,95 @@ try { CHAT = JSON.parse(localStorage.getItem(CHAT_KEY) || JSON.stringify(CHAT));
 function escHtml(x){
   return String(x).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
+/* Связка «запрос → ответ»: бот пока не пишет id запроса в replies.json,
+   поэтому пару определяем по времени — ответ идёт к самому свежему ещё не
+   отвеченному запросу. Ответы из обычного чата не теряем: они становятся
+   отдельными входящими карточками, а не подменяют локальные запросы. */
+function pairChat(sent, replies){
+  const qs=(sent||[]).slice(-40).map((m,i)=>({
+    rid:m.rid||("q"+(m.ts||i)), text:String(m.text||""), ts:Number(m.ts)||0, t:m.t||""
+  }));
+  const rs=(replies||[]).slice(-40).map(r=>({
+    text:String(r.text||""), ts:Number(r.ts||0)*1000, t:absTime(r)
+  }));
+  const out=[]; let ri=0;
+  for(const q of qs){
+    let idx=-1;
+    for(let j=ri;j<rs.length;j++){
+      if(!q.ts || !rs[j].ts || rs[j].ts>=q.ts-1000){ idx=j; break; }
+    }
+    if(idx<0 && ri<rs.length) idx=ri;
+    const rep=idx>=0?rs[idx]:null;
+    if(idx>=0) ri=idx+1;
+    out.push({rid:q.rid,text:q.text,ts:q.ts,t:q.t,rep:rep,pending:!rep});
+  }
+  for(let j=ri;j<rs.length;j++) out.push({rid:"r"+j,stray:true,rep:rs[j],t:rs[j].t});
+  return out.slice(-20);
+}
+let chatSig="", chatPinned=true, chatUnread=0, lastRepCount=0;
+function atBottom(el){ return el.scrollHeight-el.scrollTop-el.clientHeight<56; }
+function updateJump(){
+  const b=$("#chatJump"); if(!b) return;
+  b.classList.toggle("on", !chatPinned && chatUnread>0);
+  b.textContent="↓ "+chatUnread+" новых";
+}
+function updateTyping(pairs){
+  const tp=$("#typing"); if(!tp) return;
+  const waiting=pairs.some(p=>p.pending && p.ts && Date.now()-p.ts<120000);
+  tp.classList.toggle("on", waiting);
+}
 function renderChat(){
   const log = $("#chatLog"); if(!log) return;
   const reps = (CHAT.replies && CHAT.replies[userID]) || [];
-  const items = [
-    ...(CHAT.sent||[]).map(m=>({me:true, text:m.text, ts:m.t||""})),
-    ...reps.map(r=>({me:false, text:r.text, ts:absTime(r)}))
-  ].slice(-40);
-  const out = items.map(m => m.me
-    ? '<div class="msg me"><div class="mava">👤</div><div class="bubble">'+escHtml(m.text)+
-      '<span class="mtime">'+escHtml(m.ts)+'</span></div></div>'
-    : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+escHtml(m.text)+
-      '<span class="mtime">'+escHtml(m.ts)+'</span></div></div>');
-  log.innerHTML = out.length ? out.join("")
-    : '<div class="chat-empty"><span>💬</span>Напиши агенту —<br>ответ подтянется сюда сам</div>';
-  log.scrollTop = log.scrollHeight;
+  const pairs = pairChat(CHAT.sent, reps);
+  const sig = JSON.stringify(pairs.map(p=>[p.rid,p.text,p.t||"",p.rep?p.rep.text:"",p.rep?p.rep.ts:""]));
+  updateTyping(pairs);
+  /* Данные обновляются раз в 5 с. Если содержимое то же — не трогаем DOM:
+     иначе перезапускается layout и скролл «дёргается» на каждом опросе. */
+  if(sig===chatSig) return;
+  chatSig=sig;
+  const repCount=pairs.filter(p=>p.rep).length;
+  const out=[];
+  pairs.forEach((p,i)=>{
+    if(p.stray){
+      out.push('<div class="pair stray"><div class="pair-head"><span class="pair-no">ВХОДЯЩЕЕ</span>'+
+        '<span class="pair-state">из чата</span><span class="pair-time">'+escHtml(p.rep.t)+'</span></div>'+
+        '<div class="pair-body"><div class="msg"><div class="mava">🤖</div><div class="bubble">'+
+        escHtml(p.rep.text)+'<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div></div></div>');
+      return;
+    }
+    const state=p.pending?'<span class="pair-state">ожидание</span>'
+                         :'<span class="pair-state">ответ получен</span>';
+    const req='<div class="msg me"><div class="mava">👤</div><div class="bubble">'+escHtml(p.text)+
+      '<span class="mtime">'+escHtml(p.t)+'</span></div></div>';
+    const rep=p.pending
+      ? '<div class="pair-wait">⏳ запрос агенту · ответ подтянется сам</div>'
+      : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+escHtml(p.rep.text)+
+        '<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div>';
+    out.push('<div class="pair '+(p.pending?'pending':'done')+'">'+
+      '<div class="pair-head"><span class="pair-no">#'+(i+1)+' · ЗАПРОС</span>'+state+
+      '<span class="pair-time">'+escHtml(p.t)+'</span></div>'+
+      '<div class="pair-body">'+req+rep+'</div></div>');
+  });
+  log.innerHTML=out.length?out.join("")
+    :'<div class="chat-empty"><span>💬</span>Напиши агенту —<br>ответ подтянется сюда сам</div>';
+  if(chatPinned){ log.scrollTop=log.scrollHeight; chatUnread=0; }
+  else if(repCount>lastRepCount) chatUnread+=repCount-lastRepCount;
+  lastRepCount=repCount;
+  updateJump();
 }
+const chatLogNode=$("#chatLog");
+if(chatLogNode) chatLogNode.addEventListener("scroll",()=>{
+  const was=chatPinned;
+  chatPinned=atBottom(chatLogNode);
+  if(chatPinned) chatUnread=0;
+  if(was!==chatPinned || chatPinned) updateJump();
+});
+const chatJump=$("#chatJump");
+if(chatJump) chatJump.addEventListener("click",()=>{
+  const log=$("#chatLog"); if(!log) return;
+  chatPinned=true; chatUnread=0; log.scrollTop=log.scrollHeight; updateJump();
+});
 async function refreshReplies(){
   for(const base of DATA_URLS){
     try{
@@ -977,13 +1083,16 @@ async function refreshReplies(){
 function sendChat(){
   const inp = $("#chatInput"); if(!inp) return;
   const text = (inp.value||"").trim(); if(!text) return;
-  CHAT.sent.push({text: text, t: new Date().toTimeString().slice(0,8)});
+  const rid = Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  CHAT.sent.push({text:text, t:new Date().toTimeString().slice(0,8), ts:Date.now(), rid:rid});
   CHAT.sent = CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
+  chatPinned=true; chatUnread=0;
   renderChat(); inp.value = "";
-  const tp = $("#typing"); if(tp){ tp.classList.add("on"); setTimeout(()=>tp.classList.remove("on"),900); }
   if(typeof tg !== "undefined" && tg){
-    tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID}));
+    /* rid пока не используется ботом, но уже уходит в payload: когда
+       replies.json начнёт его возвращать, pairing станет точным без миграции. */
+    tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID, rid:rid}));
   } else {
     toast("Открой мини-ап через /app, чтобы отправить агенту");
   }
@@ -1238,6 +1347,44 @@ function renderLive(){
       <span class="lsrc">${esc(j.source)}</span>
       <span class="lage">${esc(j.claimed_human)} · ${Number(j.age_min)||0} мин</span></div>`).join(""):
     '<div class="hint">Сейчас активных задач в очередях нет.</div>';
+}
+
+/* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
+let QUESTIONS=null;
+function renderQuestions(){
+  const box=$("#questionCards"); if(!box) return;
+  const list=(QUESTIONS&&QUESTIONS.questions)||[];
+  const stamp=$("#questionsStamp");
+  if(stamp) stamp.textContent=list.length?`${list.length} ждут ответа`:"Все вопросы закрыты";
+  box.innerHTML=list.length?list.map(q=>`
+    <div class="qcard" style="margin-bottom:10px">
+      <div class="qtop"><span class="chip question">ОЖИДАЕТ</span><span class="qid">${esc(q.id)}</span></div>
+      <div class="qtitle">${esc(q.title)}</div>
+      <div class="qbody">${esc(q.text)}</div>
+      ${q.why?`<div class="qmeta"><span class="tag">${esc(q.why)}</span></div>`:""}
+      <div class="actions">${(q.options&&q.options.length?q.options:["Ответить"]).map(o=>
+        `<button class="btn btn-primary qanswer" data-qid="${esc(q.id)}" data-node="${esc(q.node)}" data-answer="${esc(o)}">${esc(o)}</button>`
+      ).join("")}</div>
+    </div>`).join(""):'<div class="p-empty">Ожидающих вопросов нет.</div>';
+  box.querySelectorAll(".qanswer").forEach(b=>b.addEventListener("click",()=>{
+    if(!tg||typeof tg.sendData!=="function"){toast("Открой мини-ап через бота");return;}
+    tg.sendData(JSON.stringify({source:"miniapp_answer",id:b.dataset.qid,node:b.dataset.node,
+      answer:b.dataset.answer,
+      user_id:((tg.initDataUnsafe||{}).user||{}).id||null}));
+    toast("Ответ отправлен");
+    if(typeof tg.close==="function") tg.close();
+  }));
+}
+async function fetchQuestions(){
+  const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
+  for(const base of bases){
+    try{
+      const r=await fetch(base+"questions.json?ts="+Date.now(),{cache:"no-store"});
+      if(!r.ok) continue;
+      QUESTIONS=await r.json(); renderQuestions(); return;
+    }catch(e){ /* фолбэк — пустой список */ }
+  }
+  if(!QUESTIONS){QUESTIONS={questions:[]};renderQuestions();}
 }
 
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
