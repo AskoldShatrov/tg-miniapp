@@ -214,6 +214,27 @@
   .v-FAIL{color:var(--maroon);background:rgba(243,139,168,.1);border:1px solid rgba(243,139,168,.3)}
   .v-OPEN{color:var(--yellow);background:rgba(249,226,175,.1);border:1px solid rgba(249,226,175,.3)}
 
+  /* ---------- active sessions ---------- */
+  .slist{display:flex;flex-direction:column;gap:8px}
+  .srow{
+    background:var(--surface0);border:1px solid var(--surface1);border-radius:var(--radius-sm);
+    padding:11px 12px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;
+    transition:.15s ease;
+  }
+  .srow:hover{border-color:var(--surface2);transform:translateX(2px)}
+  .srow.live{border-color:rgba(166,227,161,.45);background:rgba(166,227,161,.05)}
+  .snum{font:700 10px/1 var(--fm);color:var(--overlay0);min-width:18px;text-align:right}
+  .sbody{min-width:0}
+  .stitle{font-size:13px;font-weight:650;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .smeta{font:600 9.5px/1.4 var(--fm);color:var(--overlay1);margin-top:4px;display:flex;gap:6px;flex-wrap:wrap}
+  .smeta b{color:var(--overlay2);font-weight:600}
+  .sage{font:700 10px/1 var(--fm);color:var(--yellow);white-space:nowrap}
+  .srow.live .sage{color:var(--green)}
+  .sempty{
+    padding:18px 12px;text-align:center;border:1px dashed var(--surface1);
+    border-radius:var(--radius-sm);font:600 11.5px/1.5 var(--ff);color:var(--overlay1);
+  }
+
   /* ---------- hotkey bar ---------- */
   .hotbar{
     flex:0 0 auto;display:flex;align-items:center;gap:6px;justify-content:center;
@@ -272,6 +293,7 @@
     <button class="tab active" data-tab="card"><span>▤</span> Вопрос <span class="key">1</span></button>
     <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">2</span></button>
     <button class="tab" data-tab="decisions"><span>◈</span> Вердикты <span class="key">3</span></button>
+    <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
   </nav>
 
   <main id="main">
@@ -296,7 +318,7 @@
         <div class="counter" id="counter">← / →</div>
       </div>
       <div class="hint">
-        Подсказка: <b>1/2/3</b> переключают экраны, <b>Esc</b> сбрасывает вид.
+        Подсказка: <b>1/2/3/4</b> переключают экраны, <b>Esc</b> сбрасывает вид.
         Карточки листаются кликом по точкам или стрелками ← →.
       </div>
     </section>
@@ -306,6 +328,7 @@
       <div class="live-strip" id="liveStrip">
         <span class="dot-live"></span>
         <span>агентов сейчас <b id="stripAgents">…</b> · воркеров <b id="stripWorkers">…</b></span>
+        <span id="stripNote" style="color:var(--yellow)"></span>
         <span id="stripTime" style="margin-left:auto;color:var(--overlay0)">…</span>
       </div>
       <div class="summary">
@@ -327,6 +350,20 @@
       <div class="eyebrow">Последние вердикты</div>
       <div class="dlist" id="dlist"></div>
     </section>
+
+    <section class="screen" id="screen-sessions">
+      <div class="eyebrow">Активные сессии · сначала новые</div>
+      <div class="live-strip">
+        <span class="dot-live"></span>
+        <span>сессий <b id="sessionsCount">…</b> · обновлено <b id="sessionsTime">…</b></span>
+        <span id="sessionsNote" style="margin-left:auto;color:var(--yellow)"></span>
+      </div>
+      <div class="slist" id="slist"></div>
+      <div class="hint">
+        Порядок по времени последней активности: <b>сверху самые свежие</b>.
+        Данные подтягиваются раз в 30 секунд из <b>sessions.json</b>.
+      </div>
+    </section>
   </main>
 
   <div class="hotbar">
@@ -335,6 +372,8 @@
     <span class="hk"><kbd>2</kbd> Дерево</span>
     <span class="sep"></span>
     <span class="hk"><kbd>3</kbd> Вердикты</span>
+    <span class="sep"></span>
+    <span class="hk"><kbd>4</kbd> Сессии</span>
     <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
     <span class="sep"></span>
@@ -404,7 +443,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const order=["card","tree","decisions"];
+const order=["card","tree","decisions","sessions"];
 function setTab(name){
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
@@ -483,11 +522,49 @@ function renderDecisions(){
     </div>`).join("");
 }
 
+/* ---------- active sessions ---------- */
+let SESSIONS = { sessions: [], fetched_human: "", note: "" };
+const esc = (s)=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function timeAgo(ms){
+  const s=Math.max(0,Math.floor((Date.now()-ms)/1000));
+  if(s<60) return s+"с назад";
+  if(s<3600) return Math.floor(s/60)+"мин назад";
+  if(s<86400) return Math.floor(s/3600)+"ч назад";
+  return Math.floor(s/86400)+"д назад";
+}
+function renderSessions(){
+  // Сортируем здесь, а не только на бэкенде: порядок по времени — инвариант вкладки.
+  const list=(SESSIONS.sessions||[]).slice().sort((a,b)=>(b.updated||0)-(a.updated||0));
+  $("#sessionsCount").textContent=list.length;
+  $("#sessionsTime").textContent=SESSIONS.fetched_human||"—";
+  $("#sessionsNote").textContent=SESSIONS.note||"";
+  if(!list.length){
+    $("#slist").innerHTML='<div class="sempty">Нет свежих сессий — данных пока нет или источник недоступен.</div>';
+    return;
+  }
+  $("#slist").innerHTML=list.map((s,i)=>{
+    const recent=Date.now()-(s.updated||0)<300000;
+    const meta=[];
+    if(s.model) meta.push(esc(s.model));
+    if(s.tokens_in||s.tokens_out) meta.push(`↓${s.tokens_in||0} ↑${s.tokens_out||0}`);
+    if(s.short) meta.push(`#${esc(s.short)}`);
+    return `<div class="srow ${recent?"live":""}">
+      <span class="snum">${i+1}</span>
+      <div class="sbody">
+        <div class="stitle" title="${esc(s.title||"")}">${esc(s.title||"Без темы")}</div>
+        <div class="smeta">${meta.join('<span style="color:var(--surface2)">·</span>')}</div>
+      </div>
+      <span class="sage">${timeAgo(s.updated||0)}</span>
+    </div>`;
+  }).join("");
+}
+
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{
   if(e.key==="1"){setTab("card")}
   else if(e.key==="2"){setTab("tree")}
   else if(e.key==="3"){setTab("decisions")}
+  else if(e.key==="4"){setTab("sessions")}
   else if(e.key==="Escape"){
     // Сброс: закрыть все узлы дерева, вернуть первую карточку и первый экран
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
@@ -540,9 +617,10 @@ async function refreshAgentStatus(){
     }
     const gb = $("#gameBadge");
     if(gb){ gb.style.display = s.game_mode ? "" : "none"; gb.title = s.game_reason||"режим игры"; }
-    const sa=$("#stripAgents"), sw=$("#stripWorkers"), st=$("#stripTime");
+    const sa=$("#stripAgents"), sw=$("#stripWorkers"), st=$("#stripTime"), sn=$("#stripNote");
     if(sa) sa.textContent = n;
     if(sw) sw.textContent = (s.workers||0);
+    if(sn) sn.textContent = s.note || "";
     if(st) st.textContent = ((s.ts_human||"").slice(11,16) || "—");
       return;
    }catch(e){ /* следующий источник, офлайн — оставляем последнее значение */ }
@@ -550,6 +628,29 @@ async function refreshAgentStatus(){
 }
 refreshAgentStatus();
 setInterval(refreshAgentStatus, 30000);
+
+/* ---------- живые активные сессии ----------
+   Источник тот же, что и у status.json: raw.githubusercontent (CORS + обход кеша
+   Pages через ?ts), фолбэк — sessions.json на домене Pages. */
+const SESSIONS_URLS = [
+  "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/sessions.json",
+  "sessions.json"
+];
+async function refreshSessions(){
+  for(const base of SESSIONS_URLS){
+   try{
+    const r = await fetch(base + "?ts=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) continue;
+    const d = await r.json();
+    if(!d || !Array.isArray(d.sessions)) continue;
+    SESSIONS = d;
+    renderSessions();
+    return;
+   }catch(e){ /* следующий источник, офлайн — оставляем последнее значение */ }
+  }
+}
+refreshSessions();
+setInterval(refreshSessions, 30000);
 
 function sendToAgent(){
   const payload = {
@@ -565,7 +666,7 @@ const sendBtn = $("#sendAgent");
 if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
 
 /* ---------- init ---------- */
-renderCard(); renderTree(); renderDecisions();
+renderCard(); renderTree(); renderDecisions(); renderSessions();
 </script>
 </body>
 </html>
