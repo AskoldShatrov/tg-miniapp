@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1e1e2e">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<title>Mini App · Карточки и дерево задач</title>
+<title>Mini App · OpenCode</title>
 <style>
   :root{
     /* Catppuccin Mocha */
@@ -288,7 +288,7 @@
   <header>
     <div class="logo">₲</div>
     <div>
-      <div class="htitle">Экономика · OpenCode</div>
+      <div class="htitle">OpenCode ·Mini App</div>
       <div class="hsub" id="hsub">загрузка…</div>
     </div>
     <div class="hbadges">
@@ -299,35 +299,13 @@
   </header>
 
   <nav class="tabs" id="tabs">
-    <button class="tab active" data-tab="economy"><span>₲</span> Экономика <span class="key">1</span></button>
-    <button class="tab" data-tab="chat"><span>✉</span> Чат <span class="key">2</span></button>
-    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">3</span></button>
-    <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
+    <button class="tab active" data-tab="chat"><span>✉</span> Чат <span class="key">1</span></button>
+    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">2</span></button>
+    <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">3</span></button>
   </nav>
 
   <main id="main">
-    <section class="screen active" id="screen-economy">
-      <div class="eyebrow">OpenCode · экономика моделей · локальная оценка</div>
-      <div class="qcard">
-        <div class="qtop"><span class="qid">OPENCODE</span><span class="chip open">ЖИВОЕ</span></div>
-        <h1 class="qtitle">Сколько стоит работа моделей</h1>
-        <p class="qbody">Месяц, окно 5 ч, неделя и серверные лимиты из <code>oc-usage</code>. Источник истины — <code>/usage</code> в TUI.</p>
-        <div class="summary" id="ecoLimits" style="margin-top:12px"></div>
-      </div>
-      <div class="qcard" style="margin-top:12px">
-        <div class="eyebrow">Калькулятор allowance</div>
-        <div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap">
-          <input id="ecoInput" type="number" value="1" min="0" step="0.5"
-                 style="flex:1;min-width:140px;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);border-radius:9px;padding:9px 11px;font:inherit">
-          <button id="ecoCalc" class="btn btn-primary">Посчитать</button>
-        </div>
-        <div class="qbody" id="ecoResult">Введи сумму в долларах — покажу, какую долю месячного лимита она съедает.</div>
-      </div>
-      <div class="summary" id="ecoTiers" style="margin-top:12px"></div>
-      <div class="hint" id="ecoNote" style="margin-top:10px"></div>
-    </section>
-
-    <section class="screen" id="screen-chat">
+    <section class="screen active" id="screen-chat">
       <div class="eyebrow">Переписка с агентом</div>
       <div class="dlist" id="chatLog" style="min-height:180px"></div>
       <div style="display:flex;gap:8px;margin-top:10px">
@@ -384,13 +362,11 @@
   </main>
 
   <div class="hotbar">
-    <span class="hk"><kbd>1</kbd> Экономика</span>
+    <span class="hk"><kbd>1</kbd> Чат</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>2</kbd> Чат</span>
+    <span class="hk"><kbd>2</kbd> Дерево</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>3</kbd> Дерево</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>4</kbd> Сессии</span>
+    <span class="hk"><kbd>3</kbd> Сессии</span>
     <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
@@ -401,7 +377,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-0650";
+const BUILD = "20261120-0710";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -462,7 +438,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["economy","chat","tree","sessions"];
+const TAB_IDS=["chat","tree","sessions"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
@@ -558,6 +534,10 @@ function absTime(s){
   // Источник уже несёт время с таймзоной — берём его, чтобы не зависеть от TZ браузера.
   if(s && typeof s.updated_human==="string" && s.updated_human.length>=19)
     return s.updated_human.slice(11,19);
+  if(s && s.ts){
+    const t=new Date(Number(s.ts)*1000), q=n=>String(n).padStart(2,"0");
+    return q(t.getHours())+":"+q(t.getMinutes())+":"+q(t.getSeconds());
+  }
   const d=new Date((s&&s.updated)||0);
   const p=n=>String(n).padStart(2,"0");
   return p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds());
@@ -597,14 +577,13 @@ function renderSessions(){
 
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{
-  if(e.key==="1"){setTab("economy")}
-  else if(e.key==="2"){setTab("chat"); renderChat();}
-  else if(e.key==="3"){setTab("tree")}
-  else if(e.key==="4"){setTab("sessions")}
+  if(e.key==="1"){setTab("chat"); renderChat();}
+  else if(e.key==="2"){setTab("tree")}
+  else if(e.key==="3"){setTab("sessions")}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
-    setTab("economy"); toast("Сброс вида");
+    setTab("chat"); toast("Сброс вида");
   }
   else return;
   e.preventDefault();
@@ -718,70 +697,6 @@ const DATA_URLS = [
   "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",
   ""
 ];
-let ECONOMY = null;
-const ALLOWANCE = [
-  {name:"deepseek-v4.1-flash / glm-5.3", usd:100, share:"1% за $1"},
-  {name:"minimax-m3 / kimi-k2.7-code", usd:60, share:"1.7% за $1"},
-  {name:"gemini-4-argon", usd:30, share:"3.3% за $1"},
-  {name:"minimax-m3.1-flash", usd:20, share:"5% за $1"},
-  {name:"gpt-6-luna / claude-haiku-5.5 / deepseek-v4-pro", usd:15, share:"6.7% за $1"}
-];
-async function refreshEconomy(){
-  for(const base of DATA_URLS){
-    try{
-      const r = await fetch(base + "economy.json?ts=" + Date.now(), {cache:"no-store"});
-      if(!r.ok) continue;
-      ECONOMY = await r.json();
-      renderEconomy();
-      return;
-    }catch(e){}
-  }
-  const box = $("#ecoResult");
-  if(box) box.textContent = "Не удалось загрузить economy.json.";
-}
-function pct(v){ return (Number(v)||0).toFixed(1) + "%"; }
-function usd(v){ return "$" + (Number(v)||0).toFixed(2); }
-function renderEconomy(){
-  if(!ECONOMY || ECONOMY.error){ return; }
-  const lim = $("#ecoLimits");
-  if(lim){
-    const m = ECONOMY.month || {}, w5 = ECONOMY.window_5h || {}, wk = ECONOMY.week || {};
-    const sv = ECONOMY.server || {};
-    lim.innerHTML =
-      '<div class="stat s-pass"><b>'+pct(m.used_pct)+'</b><span>месяц · '+usd(m.cost)+' · шагов '+(m.steps||0)+'</span></div>'+
-      '<div class="stat s-open"><b>'+pct(w5.used_pct)+'</b><span>окно 5 ч · '+usd(w5.cost)+'</span></div>'+
-      '<div class="stat s-fail"><b>'+pct(wk.used_pct)+'</b><span>неделя · '+usd(wk.cost)+'</span></div>'+
-      '<div class="stat s-open"><b>'+pct(sv.rolling_pct)+'</b><span>сервер rolling · сброс '+(sv.rolling_reset||"—")+'</span></div>'+
-      '<div class="stat s-fail"><b>'+pct(sv.monthly_pct)+'</b><span>сервер месяц · сброс '+(sv.monthly_reset||"—")+'</span></div>'+
-      '<div class="stat s-open"><b>'+pct(sv.weekly_pct)+'</b><span>сервер неделя · '+(sv.weekly_limited?"ЛИМИТ":"ок")+'</span></div>';
-  }
-  const tiers = $("#ecoTiers");
-  if(tiers){
-    const bm = ECONOMY.by_model || [];
-    tiers.innerHTML = bm.length
-      ? bm.map(x => '<div class="stat s-open"><b>'+escHtml(String(x.model||"—"))+'</b><span>'+usd(x.cost)+' · '+(x.steps||0)+' шагов</span></div>').join("")
-      : '<div class="stat s-open"><b>0</b><span>платных шагов нет — все агенты на free-моделях</span></div>';
-  }
-  const note = $("#ecoNote");
-  if(note){
-    note.textContent = "Источник: " + (ECONOMY.source||"—") + ". " + (ECONOMY.truth_source||"") +
-      ". Неизвестных шагов: " + (ECONOMY.unknown_steps||0) + ". Обновлено " + (ECONOMY.fetched_human||"—") + ".";
-  }
-  calcEconomy();
-}
-function calcEconomy(){
-  const box = $("#ecoResult"), inp = $("#ecoInput");
-  if(!box || !inp) return;
-  const v = Number(inp.value);
-  if(!isFinite(v) || v < 0){ box.textContent = "Введи сумму в долларах."; return; }
-  box.innerHTML = ALLOWANCE.map(a => {
-    const share = v / a.usd * 100;
-    return '<div>'+escHtml(a.name)+': <b>'+share.toFixed(2)+'%</b> лимита ('+escHtml(a.share)+')</div>';
-  }).join("");
-}
-const ecoBtn = $("#ecoCalc"); if(ecoBtn) ecoBtn.addEventListener("click", calcEconomy);
-const ecoInp = $("#ecoInput"); if(ecoInp) ecoInp.addEventListener("change", calcEconomy);
-
 const CHAT_KEY = "miniapp_chat_v1";
 const userID = String((((typeof tg !== "undefined" && tg && tg.initDataUnsafe || {}).user || {}).id) || "0");
 let CHAT = {sent:[], replies:{}};
@@ -838,7 +753,7 @@ setInterval(refreshEconomy, 60000);
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat();
 const initTab = new URLSearchParams(location.search).get("tab");
-setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "economy");
+setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
 </body>
 </html>
