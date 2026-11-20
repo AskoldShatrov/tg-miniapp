@@ -230,6 +230,15 @@
   .smeta b{color:var(--overlay2);font-weight:600}
   .sage{font:700 10px/1 var(--fm);color:var(--yellow);white-space:nowrap}
   .srow.live .sage{color:var(--green)}
+  .smeta .sabs{color:var(--sky);font-weight:700}
+  .sreload{
+    appearance:none;background:var(--surface0);color:var(--subtext1);
+    border:1px solid var(--surface1);border-radius:8px;
+    font:700 13px/1 var(--fm);padding:4px 8px;cursor:pointer;transition:.15s;
+  }
+  .sreload:hover{border-color:var(--sapphire);color:var(--blue)}
+  .sreload.spin{animation:spin .6s linear}
+  @keyframes spin{to{transform:rotate(360deg)}}
   .sempty{
     padding:18px 12px;text-align:center;border:1px dashed var(--surface1);
     border-radius:var(--radius-sm);font:600 11.5px/1.5 var(--ff);color:var(--overlay1);
@@ -357,11 +366,13 @@
         <span class="dot-live"></span>
         <span>сессий <b id="sessionsCount">…</b> · обновлено <b id="sessionsTime">…</b></span>
         <span id="sessionsNote" style="margin-left:auto;color:var(--yellow)"></span>
+        <button id="sessionsReload" class="sreload" title="Обновить данные сейчас">⟳</button>
       </div>
       <div class="slist" id="slist"></div>
       <div class="hint">
         Порядок по времени последней активности: <b>сверху самые свежие</b>.
-        Данные подтягиваются раз в 30 секунд из <b>sessions.json</b>.
+        Точное время в каждой строке — <b>ЧЧ:ММ:СС</b>, по нему порядок проверяется глазами.
+        Данные обновляются раз в 30 секунд и по кнопке <b>⟳</b> из <b>sessions.json</b>.
       </div>
     </section>
   </main>
@@ -384,6 +395,10 @@
 </div>
 
 <script>
+/* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
+   позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
+const BUILD = "20261120-0552";
+
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
    Источник концепта: progress.json / wants.json — НЕ читались
@@ -533,6 +548,16 @@ function timeAgo(ms){
   if(s<86400) return Math.floor(s/3600)+"ч назад";
   return Math.floor(s/86400)+"д назад";
 }
+/* Точное локальное время активности — чтобы порядок «сверху свежие» был проверяем,
+   а не только заявлен. relative «0с назад» у нескольких верхних строк неинформативен. */
+function absTime(s){
+  // Источник уже несёт время с таймзоной — берём его, чтобы не зависеть от TZ браузера.
+  if(s && typeof s.updated_human==="string" && s.updated_human.length>=19)
+    return s.updated_human.slice(11,19);
+  const d=new Date((s&&s.updated)||0);
+  const p=n=>String(n).padStart(2,"0");
+  return p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds());
+}
 function renderSessions(){
   // Сортируем здесь, а не только на бэкенде: порядок по времени — инвариант вкладки.
   const list=(SESSIONS.sessions||[]).slice().sort((a,b)=>(b.updated||0)-(a.updated||0));
@@ -554,6 +579,7 @@ function renderSessions(){
     const meta=[];
     if(s.model) meta.push(`<b>${esc(s.model)}</b>`);
     if(s.short) meta.push(`#${esc(s.short)}`);
+    if(s.updated) meta.push(`<span class="sabs" title="точное время активности">${absTime(s)}</span>`);
     return `<div class="srow ${recent?"live":""}">
       <span class="snum">${i+1}</span>
       <div class="sbody">
@@ -597,6 +623,8 @@ if (tg) {
 } else {
   $("#hsub").textContent = "сессия · " + DEMO.meta.session;
 }
+/* Видимая метка сборки: если открыта старая закешированная версия — её видно сразу. */
+$("#hsub").textContent += " · сборка " + BUILD.slice(4,6) + "." + BUILD.slice(6,8) + " " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
   GitHub Pages кеширует на 10 мин и игнорирует ?ts, поэтому основной
@@ -657,6 +685,18 @@ async function refreshSessions(){
 }
 refreshSessions();
 setInterval(refreshSessions, 30000);
+
+/* Ручное обновление: кнопка ⟳ во вкладке «Сессии». Показывает, что данные
+   реально перечитаны, а не закешированы WebView/ Pages. */
+const reloadBtn = $("#sessionsReload");
+if (reloadBtn) reloadBtn.addEventListener("click", () => {
+  if (reloadBtn.classList.contains("spin")) return;
+  reloadBtn.classList.add("spin");
+  Promise.all([refreshSessions(), refreshAgentStatus()]).then(() => {
+    reloadBtn.classList.remove("spin");
+    toast("Данные обновлены · " + absTime({updated:Date.now()}));
+  });
+});
 
 function sendToAgent(){
   const payload = {
