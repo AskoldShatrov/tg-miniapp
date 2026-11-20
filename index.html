@@ -288,7 +288,7 @@
   <header>
     <div class="logo">₲</div>
     <div>
-      <div class="htitle">Экономика · CS2</div>
+      <div class="htitle">Экономика · OpenCode</div>
       <div class="hsub" id="hsub">загрузка…</div>
     </div>
     <div class="hbadges">
@@ -307,17 +307,21 @@
 
   <main id="main">
     <section class="screen active" id="screen-economy">
-      <div class="eyebrow">Калибровка экономики · метка «вывод», не «точность»</div>
+      <div class="eyebrow">OpenCode · экономика моделей · локальная оценка</div>
       <div class="qcard">
-        <div class="qtop"><span class="qid">ЭКОНОМИКА</span><span class="chip open">ВЫВОД</span></div>
-        <h1 class="qtitle">Считаем класс закупа по деньгам</h1>
-        <p class="qbody">Введи equip/деньги игрока — получишь класс закупа, долю класса с CI и медиану по калиброванным правилам (n=92 864).</p>
-        <div style="display:flex;gap:8px;margin:12px 0;flex-wrap:wrap">
-          <input id="ecoInput" type="number" value="2700" min="0" step="50"
+        <div class="qtop"><span class="qid">OPENCODE</span><span class="chip open">ЖИВОЕ</span></div>
+        <h1 class="qtitle">Сколько стоит работа моделей</h1>
+        <p class="qbody">Месяц, окно 5 ч, неделя и серверные лимиты из <code>oc-usage</code>. Источник истины — <code>/usage</code> в TUI.</p>
+        <div class="summary" id="ecoLimits" style="margin-top:12px"></div>
+      </div>
+      <div class="qcard" style="margin-top:12px">
+        <div class="eyebrow">Калькулятор allowance</div>
+        <div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap">
+          <input id="ecoInput" type="number" value="1" min="0" step="0.5"
                  style="flex:1;min-width:140px;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);border-radius:9px;padding:9px 11px;font:inherit">
-          <button id="ecoCalc" class="btn btn-primary">Рассчитать</button>
+          <button id="ecoCalc" class="btn btn-primary">Посчитать</button>
         </div>
-        <div class="qbody" id="ecoResult">Загрузка правил…</div>
+        <div class="qbody" id="ecoResult">Введи сумму в долларах — покажу, какую долю месячного лимита она съедает.</div>
       </div>
       <div class="summary" id="ecoTiers" style="margin-top:12px"></div>
       <div class="hint" id="ecoNote" style="margin-top:10px"></div>
@@ -397,7 +401,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-0625";
+const BUILD = "20261120-0650";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -710,10 +714,17 @@ const sendBtn = $("#sendAgent");
 if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
 
 /* ---------- экономика: калькулятор по калиброванным правилам ---------- */
-let ECONOMY = null;
 const DATA_URLS = [
   "https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/",
   ""
+];
+let ECONOMY = null;
+const ALLOWANCE = [
+  {name:"deepseek-v4.1-flash / glm-5.3", usd:100, share:"1% за $1"},
+  {name:"minimax-m3 / kimi-k2.7-code", usd:60, share:"1.7% за $1"},
+  {name:"gemini-4-argon", usd:30, share:"3.3% за $1"},
+  {name:"minimax-m3.1-flash", usd:20, share:"5% за $1"},
+  {name:"gpt-6-luna / claude-haiku-5.5 / deepseek-v4-pro", usd:15, share:"6.7% за $1"}
 ];
 async function refreshEconomy(){
   for(const base of DATA_URLS){
@@ -723,52 +734,54 @@ async function refreshEconomy(){
       ECONOMY = await r.json();
       renderEconomy();
       return;
-    }catch(e){ /* следующий источник */ }
+    }catch(e){}
   }
   const box = $("#ecoResult");
-  if(box) box.textContent = "Не удалось загрузить economy.json — проверь сеть.";
+  if(box) box.textContent = "Не удалось загрузить economy.json.";
 }
-function ecoClass(v){
-  const t = ECONOMY && ECONOMY.thresholds ? ECONOMY.thresholds : {t1:1975,t2:3475};
-  return v < t.t1 ? "eco" : (v < t.t2 ? "force" : "full");
-}
+function pct(v){ return (Number(v)||0).toFixed(1) + "%"; }
+function usd(v){ return "$" + (Number(v)||0).toFixed(2); }
 function renderEconomy(){
-  if(!ECONOMY) return;
-  const freq = ECONOMY.class_frequencies || {};
+  if(!ECONOMY || ECONOMY.error){ return; }
+  const lim = $("#ecoLimits");
+  if(lim){
+    const m = ECONOMY.month || {}, w5 = ECONOMY.window_5h || {}, wk = ECONOMY.week || {};
+    const sv = ECONOMY.server || {};
+    lim.innerHTML =
+      '<div class="stat s-pass"><b>'+pct(m.used_pct)+'</b><span>месяц · '+usd(m.cost)+' · шагов '+(m.steps||0)+'</span></div>'+
+      '<div class="stat s-open"><b>'+pct(w5.used_pct)+'</b><span>окно 5 ч · '+usd(w5.cost)+'</span></div>'+
+      '<div class="stat s-fail"><b>'+pct(wk.used_pct)+'</b><span>неделя · '+usd(wk.cost)+'</span></div>'+
+      '<div class="stat s-open"><b>'+pct(sv.rolling_pct)+'</b><span>сервер rolling · сброс '+(sv.rolling_reset||"—")+'</span></div>'+
+      '<div class="stat s-fail"><b>'+pct(sv.monthly_pct)+'</b><span>сервер месяц · сброс '+(sv.monthly_reset||"—")+'</span></div>'+
+      '<div class="stat s-open"><b>'+pct(sv.weekly_pct)+'</b><span>сервер неделя · '+(sv.weekly_limited?"ЛИМИТ":"ок")+'</span></div>';
+  }
   const tiers = $("#ecoTiers");
   if(tiers){
-    tiers.innerHTML = ["eco","force","full"].map(k=>{
-      const f = freq[k] || {p:0, ci95:[0,0]};
-      const cls = k === "eco" ? "open" : (k === "force" ? "fail" : "pass");
-      return '<div class="stat s-'+cls+'"><b>'+(f.p*100).toFixed(1)+'%</b><span>'+k.toUpperCase()+
-             ' · '+((f.ci95&&f.ci95[0]||0)*100).toFixed(1)+'–'+((f.ci95&&f.ci95[1]||0)*100).toFixed(1)+
-             '% · n='+(f.n||"—")+'</span></div>';
-    }).join("");
+    const bm = ECONOMY.by_model || [];
+    tiers.innerHTML = bm.length
+      ? bm.map(x => '<div class="stat s-open"><b>'+escHtml(String(x.model||"—"))+'</b><span>'+usd(x.cost)+' · '+(x.steps||0)+' шагов</span></div>').join("")
+      : '<div class="stat s-open"><b>0</b><span>платных шагов нет — все агенты на free-моделях</span></div>';
   }
   const note = $("#ecoNote");
-  if(note) note.textContent = ECONOMY.label_note || "";
+  if(note){
+    note.textContent = "Источник: " + (ECONOMY.source||"—") + ". " + (ECONOMY.truth_source||"") +
+      ". Неизвестных шагов: " + (ECONOMY.unknown_steps||0) + ". Обновлено " + (ECONOMY.fetched_human||"—") + ".";
+  }
   calcEconomy();
 }
 function calcEconomy(){
-  const box = $("#ecoResult");
-  const inp = $("#ecoInput");
-  if(!box || !ECONOMY || !inp) return;
+  const box = $("#ecoResult"), inp = $("#ecoInput");
+  if(!box || !inp) return;
   const v = Number(inp.value);
-  if(!isFinite(v)){ box.textContent = "Введи деньги/equip целым числом."; return; }
-  const k = ecoClass(v);
-  const f = (ECONOMY.class_frequencies||{})[k] || {};
-  const med = (ECONOMY.equip_median_by_class||{})[k] || {};
-  const awp = ECONOMY.awp || {};
-  const t = ECONOMY.thresholds || {t1:1975,t2:3475};
-  box.innerHTML = '<b>'+v+'</b> → класс <b>'+k.toUpperCase()+'</b> (пороги '+t.t1+'/'+t.t2+').'+
-    ' Доля класса '+(f.p*100).toFixed(1)+'% ['+((f.ci95&&f.ci95[0]||0)*100).toFixed(1)+'–'+
-    ((f.ci95&&f.ci95[1]||0)*100).toFixed(1)+'], медиана equip '+(med.median===undefined?"—":med.median)+'.'+
-    ' P(AWP-килл при equip≥4750) '+((awp.p||0)*100).toFixed(1)+'%. Метка: ВЫВОД, не точность.';
+  if(!isFinite(v) || v < 0){ box.textContent = "Введи сумму в долларах."; return; }
+  box.innerHTML = ALLOWANCE.map(a => {
+    const share = v / a.usd * 100;
+    return '<div>'+escHtml(a.name)+': <b>'+share.toFixed(2)+'%</b> лимита ('+escHtml(a.share)+')</div>';
+  }).join("");
 }
 const ecoBtn = $("#ecoCalc"); if(ecoBtn) ecoBtn.addEventListener("click", calcEconomy);
 const ecoInp = $("#ecoInput"); if(ecoInp) ecoInp.addEventListener("change", calcEconomy);
 
-/* ---------- чат: отправка через WebApp.sendData + чтение replies.json ---------- */
 const CHAT_KEY = "miniapp_chat_v1";
 const userID = String((((typeof tg !== "undefined" && tg && tg.initDataUnsafe || {}).user || {}).id) || "0");
 let CHAT = {sent:[], replies:{}};
