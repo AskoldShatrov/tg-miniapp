@@ -519,9 +519,9 @@
   .src-api{font:700 9px/1 var(--fm);color:var(--green);margin-left:6px}
 
   /* ===== студия идей: второй слой + стикер ===== */
-  /* 8 вкладок в одну строку не влезают на телефоне — две строки по 4 */
-  nav.tabs{flex-wrap:wrap;gap:5px}
-  .tab{flex:1 1 calc(25% - 6px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
+  /* @owner:redesign-2026-11-21 @region:tabs-5-css: 5 табов в один ряд */
+  nav.tabs{flex-wrap:nowrap;gap:5px}
+  .tab{flex:1 1 calc(20% - 5px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
   @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
 
   .stoolbar{display:flex;flex-direction:column;gap:8px;margin-bottom:11px}
