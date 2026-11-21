@@ -82,13 +82,12 @@
 
   /* ---------- tabs ---------- */
   nav.tabs{
-    display:flex; gap:6px; padding:10px 12px; flex:0 0 auto;
+    display:flex; flex-wrap:wrap; gap:6px; padding:10px 12px; flex:0 0 auto;
     border-bottom:1px solid var(--surface0);
-    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
   }
   nav.tabs::-webkit-scrollbar{display:none}
   .tab{
-    flex:0 0 auto; min-width:88px; appearance:none; border:1px solid transparent; background:transparent;
+    flex:1 1 18%; min-width:62px; appearance:none; border:1px solid transparent; background:transparent;
     color:var(--overlay2); font:600 12px/1 var(--ff); padding:9px 4px;
     border-radius:11px; cursor:pointer; display:flex; align-items:center;
     justify-content:center; gap:6px; transition:.16s ease; position:relative;
@@ -522,8 +521,8 @@
 
   /* ===== студия идей: второй слой + стикер ===== */
   /* @owner:redesign-2026-11-21 @region:tabs-5-css: 5 табов в один ряд */
-  nav.tabs{flex-wrap:nowrap;gap:5px}
-  .tab{flex:0 0 auto;min-width:84px;font-size:11px;padding:8px 6px;gap:4px}
+  nav.tabs{flex-wrap:wrap;gap:5px}
+  .tab{flex:1 1 18%;min-width:62px;font-size:11px;padding:8px 4px;gap:4px}
   @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
 
   .stoolbar{display:flex;flex-direction:column;gap:8px;margin-bottom:11px}
@@ -1008,6 +1007,8 @@ function setTaskSub(name){
   if(!TASK_SUBS.includes(name)) return;
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
   $$("#taskSubNav button").forEach(b=>b.classList.toggle("active",b.dataset.sub===name));
+  if(name==="scenarios"&&typeof mountScenarios==="function") mountScenarios();
+  if(name==="studio"&&typeof studioEnsure==="function") studioEnsure();
   $("#main").scrollTop=0;
 }
 $$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
