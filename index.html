@@ -583,6 +583,21 @@
   .sedge:hover{border-color:var(--surface2)}
   .sedge .et{color:var(--sky);font-size:9px;text-transform:uppercase;letter-spacing:.4px}
   .sedge .eid{color:var(--overlay1);word-break:break-all}
+  .studio-replies{margin:10px 0;padding:10px 11px;background:var(--mantle);
+    border:1px solid var(--surface1);border-radius:var(--radius-sm)}
+  .sr-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;
+    color:var(--lavender);font:700 11px/1 var(--ff);letter-spacing:.4px;text-transform:uppercase}
+  .sr-item{padding:8px 9px;margin-bottom:6px;background:var(--surface0);
+    border:1px solid var(--surface1);border-left:2px solid var(--green);border-radius:9px}
+  .sr-item.wait{border-left-color:var(--yellow)}
+  .sr-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:4px}
+  .sr-tag{color:var(--green);font:700 9px/1 var(--fm);text-transform:uppercase;letter-spacing:.4px}
+  .sr-item.wait .sr-tag{color:var(--yellow)}
+  .sr-time{color:var(--overlay0);font:500 9px/1 var(--fm)}
+  .sr-req{color:var(--subtext0);font:500 11px/1.35 var(--ff);word-break:break-word}
+  .sr-rep{margin-top:5px;padding-top:5px;border-top:1px solid var(--surface1);
+    color:var(--text);font:600 11px/1.4 var(--ff);word-break:break-word}
+  .sr-empty{color:var(--overlay1);font:500 11px/1.4 var(--ff)}
   /* Честные штампы свежести: старьё не выдаём за текущее. */
   .fresh-ok{color:var(--green)}
   .fresh-stale{color:var(--yellow)}
@@ -639,7 +654,7 @@
         <button data-q="Покажи дерево задач">⑂ Задачи</button>
         <button data-q="Помощь">❓ Помощь</button>
       </div>
-      <div class="hint">Отправка закрывает мини-ап — так устроен Telegram WebApp. Открой заново через /app: ответ подтянется сам.</div>
+      <div class="hint">Ответ придёт в чат; после отправки Mini App может закрыться — открой заново через /app, ответ подтянется здесь.</div>
     </section>
 
     <section class="screen" id="screen-prompts">
@@ -670,6 +685,7 @@
         <span class="dot-live" style="background:var(--lavender);box-shadow:0 0 0 3px rgba(203,166,247,.15)"></span>
         <span>промптов <b id="pCount">…</b> · тем <b id="pGroups">…</b></span>
         <span class="psrc" id="pSrc">загрузка…</span>
+        <span class="chip" id="pScopeChip"></span>
         <button id="pReload" class="sreload" style="margin-left:auto" title="Перечитать данные">⟳</button>
       </div>
       <div class="pstale" id="pStale"></div>
@@ -677,6 +693,7 @@
       <div class="hint">
         Нажми на промпт, чтобы раскрыть <b>полный текст</b>, связи с хотелками и <b>ответ в пару слов</b>.
         Связи и ответы, которые ты поставишь сам, сохраняются на этом устройстве и не теряются при обновлении данных.
+        <b id="pScopeHint"></b>
       </div>
     </section>
 
@@ -780,6 +797,10 @@
         <span class="ssrc" id="sStamp">загрузка…</span>
         <button id="sReload" class="sreload" title="Перечитать prompts.json и atlas.json">⟳</button>
       </div>
+      <div class="studio-replies" id="sReplies">
+        <div class="sr-head"><span>Ответ</span><button id="sRepliesReload" class="sreload" title="Обновить replies.json">⟳</button></div>
+        <div id="sRepliesList"><div class="sr-empty">Ответов пока нет — отправь стикер из Студии.</div></div>
+      </div>
       <div id="sList"></div>
       <button id="sMore" class="sbtn smore" style="display:none">показать ещё</button>
       <div class="hint">
@@ -816,7 +837,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261121-0520";
+const BUILD = "20261121-0610";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -1648,6 +1669,15 @@ setInterval(refreshReplies, 5000);
   // (подпись «Аскольд:» — :848, «просил Иван, прислал мне» — :826), 435824119=Иван
   // («дай доступ Ивану тоже» — :909). Это гипотеза из логов, НЕ факт из конфига:
   // если сопоставление неверно — поменяй местами значения в строке ниже.
+  // Аскольд (1869196044) — владелец OpenCode-сервера: у него есть ноут и ПК.
+  // Иван (435824119) и остальные — подключаемые гости без локальных машин.
+  const OWNER_ID = '1869196044';
+  const IS_OWNER = String(userID||'')===OWNER_ID;
+  const LOCAL_SOURCES = ['session','pc'];
+  function pRoleLabel(uid,label){
+    const base=String(label||"").replace(/\s*·\s*(владелец\/сервер|гость)\s*$/,"");
+    return base ? base+(String(uid)===OWNER_ID?" · владелец/сервер":" · гость") : "";
+  }
   const P_USERS = {'1869196044':'Аскольд','435824119':'Иван'};
   const P_SOURCES = {'telegram':'ТГ бот','session':'ноут','pc':'ПК'};
 
@@ -1687,7 +1717,7 @@ setInterval(refreshReplies, 5000);
   }
   function pUsers(){ return (PROMPTS.meta&&PROMPTS.meta.users)||P_USERS; }
   function pSources(){ return (PROMPTS.meta&&PROMPTS.meta.source_labels)||P_SOURCES; }
-  function pUserName(p){ return p.user || pUsers()[p.user_id] || ""; }
+  function pUserName(p){ return p.user || pRoleLabel(p.user_id, pUsers()[p.user_id]); }
   function pIsStale(p){
     if(p.is_stale!=null) return !!p.is_stale;
     if(p.status) return p.status==="stale";
@@ -1715,7 +1745,16 @@ setInterval(refreshReplies, 5000);
   }
   function inUser(p){ return pUser==="all" || String(p.user_id||"")===pUser; }
   function inSource(p){ return pSource==="all" || pNormSource(p)===pSource; }
-  function collect(){ const out=[]; (PROMPTS.groups||[]).forEach(g=>(g.prompts||[]).forEach(p=>out.push({p,g}))); return out; }
+  function collect(){
+    const out=[];
+    (PROMPTS.groups||[]).forEach(g=>(g.prompts||[]).forEach(p=>{
+      // Локальные источники физически недоступны гостю: скрываем на уровне данных,
+      // а не только в UI — иначе гость увидит чужие промпты через поиск и фильтры.
+      if(!IS_OWNER && LOCAL_SOURCES.includes(pNormSource(p))) return;
+      out.push({p,g});
+    }));
+    return out;
+  }
   function filtered(){
     const q=pQuery.trim().toLowerCase();
     return collect().filter(({p,g})=>{
@@ -1878,8 +1917,36 @@ setInterval(refreshReplies, 5000);
   }
   function pBuildSegs(){
     const m=PROMPTS.meta||{};
-    pBuildSeg($("#pUser"), Object.entries(m.users||P_USERS), "все пользователи", "user", v=>{pUser=v;});
-    pBuildSeg($("#pSource"), Object.entries(m.source_labels||P_SOURCES), "все источники", "source", v=>{pSource=v;});
+    const userEntries=Object.entries(m.users||P_USERS).map(([v,l])=>[v,pRoleLabel(v,l)]);
+    pBuildSeg($("#pUser"), userEntries, "все пользователи", "user", v=>{pUser=v;});
+    const srcEntries=Object.entries(m.source_labels||P_SOURCES);
+    // Гость видит только Telegram: локальных машин у него нет.
+    pBuildSeg($("#pSource"), IS_OWNER ? srcEntries : srcEntries.filter(([v])=>!LOCAL_SOURCES.includes(v)),
+              "все источники", "source", v=>{pSource=v;});
+    if(!IS_OWNER){
+      const src=$("#pSource");
+      if(src) srcEntries.filter(([v])=>LOCAL_SOURCES.includes(v)).forEach(([v,l])=>{
+        const b=document.createElement("button");
+        b.textContent=l; b.disabled=true;
+        b.title="только для владельца сервера";
+        b.style.opacity=".45"; b.style.cursor="not-allowed";
+        src.appendChild(b);
+      });
+      if(LOCAL_SOURCES.includes(pSource)) pSource="all";
+    }
+    // Чип и подсказка: честно кто видит локальные источники.
+    const chip=$("#pScopeChip");
+    if(chip){
+      chip.textContent = IS_OWNER ? "владелец сервера · ноут + ПК" : "гость · только Telegram";
+      chip.title = IS_OWNER ? "Локальные источники (ноут, ПК) у тебя есть" : "Локальные источники видны только владельцу сервера";
+      chip.style.cssText = IS_OWNER
+        ? "color:#a6e3a1;background:rgba(166,227,161,.10);border:1px solid rgba(166,227,161,.30)"
+        : "color:#f9e2af;background:rgba(249,226,175,.10);border:1px solid rgba(249,226,175,.30)";
+    }
+    const hint=$("#pScopeHint");
+    if(hint) hint.textContent = IS_OWNER
+      ? "Источники «ноут» и «ПК» видны только владельцу сервера — у тебя они доступны."
+      : "Локальные источники «ноут» и «ПК» видны только владельцу сервера; гостю доступен только ТГ бот.";
   }
   pBuildSegs();
   $$("#pRange button").forEach(b=>b.addEventListener("click",()=>{
@@ -2265,10 +2332,40 @@ function studioSend(sid){
   const payload={ source:"miniapp_studio", id:sid, kind:c?c.kind:"",
     sticker:c?studioSticker(c):"", rating:SMAN.rating[sid]||0,
     links:(SMAN.links[sid]||[]), user_id:userID, ts:Date.now() };
+  /* Записываем отправку в общий чат: панель «Ответ» в Студии pairing'ит
+     reply из того же replies.json, что и чат (переменная CHAT.replies). */
+  CHAT.sent.push({ text:"◈ "+(c?(c.kind||"идея"):"стикер")+": "+(c?(studioSticker(c).slice(0,40)||c.id):sid),
+    t:new Date().toTimeString().slice(0,8), ts:payload.ts, rid:"st"+payload.ts, source:"miniapp_studio" });
+  CHAT.sent=CHAT.sent.slice(-50);
+  localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   tg.sendData(JSON.stringify(payload));
-  toast("Стикер отправлен в бот");
-  if(typeof tg.close==="function") tg.close();
+  toast("Отправлено — ответ появится здесь же");
 }
+
+/* Панель «Ответ» в Студии: тот же источник replies.json и та же переменная
+   CHAT.replies, что и у чата (refreshReplies раз в 5 с). Нового сервера нет. */
+function renderStudioReplies(){
+  const box=$("#sRepliesList"); if(!box) return;
+  const reps=(CHAT.replies&&CHAT.replies[userID])||[];
+  const sent=(CHAT.sent||[]).filter(m=>m.source==="miniapp_studio");
+  if(!sent.length){
+    box.innerHTML='<div class="sr-empty">Ответов пока нет — отправь стикер из Студии.</div>'; return;
+  }
+  const pairs=pairChat(sent,reps).slice(-5).reverse();
+  box.innerHTML=pairs.map(p=>{
+    const when=escHtml(p.rep?p.rep.t:p.t);
+    const body=p.rep?escHtml(p.rep.text):"⏳ ответ подтянется сам";
+    return '<div class="sr-item '+(p.pending?"wait":"done")+'">'+
+      '<div class="sr-top"><span class="sr-tag">◈ '+(p.pending?"ожидание":"ответ")+'</span>'+
+      '<span class="sr-time">'+when+'</span></div>'+
+      '<div class="sr-req">'+escHtml(p.text)+'</div>'+
+      '<div class="sr-rep">'+body+'</div></div>';
+  }).join("");
+}
+setInterval(renderStudioReplies, 5000);   // тот же 5-с ритм, что и refreshReplies
+const sRepliesReload=$("#sRepliesReload");
+if(sRepliesReload) sRepliesReload.addEventListener("click",()=>{ refreshReplies(); renderStudioReplies(); });
+renderStudioReplies();
 function studioRenderEdges(){
   const list=$("#sList"), edges=STUDIO.edges||[];
   $("#sCount").textContent=edges.length;
@@ -2335,6 +2432,8 @@ setInterval(()=>{                     // этап 7: только API-дерев
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
-<script src="task-tree.js?v=20261121-0520"></script>
+<script src="task-tree.js?v=20261121-0610"></script>
+<script>/* views-render: источник декларативных видов; views.js читает SRC или inline window.MINIAPP_VIEWS */ window.MINIAPP_VIEWS_SRC = "views.json";</script>
+<script src="views.js?v=20261121-0610"></script>
 </body>
 </html>

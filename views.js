@@ -1,0 +1,770 @@
+/* views.js — универсальный рендер декларативных представлений мини-апа.
+   Загружается после index.html. Внешних библиотек нет.
+   Спецификация: window.MINIAPP_VIEWS_SRC (по умолчанию "views.json") либо
+   window.MINIAPP_VIEWS (inline-спецификация, если сборщик её подложил).
+   Нет views.json / нет данных — показываем честное «нет данных» и ничего не выдумываем.
+
+   Поддерживаемые типы: cards | checklist | tree | table.
+   Общие элементы: поиск, фильтры из spec, сортировка, выделить всё/снять,
+   счётчик выбранных, поле решения, комментарий и кнопка действия.
+   Действие собирает payload {source:"miniapp_selection", view, ids, decision,
+   comment, ts}, звонит tg.sendData (если доступен) и показывает toast.
+   tg.close НЕ вызывается намеренно — закрытие решает вызывающая сторона. */
+(function(){
+  "use strict";
+
+  var SRC = (typeof window.MINIAPP_VIEWS_SRC === "string" && window.MINIAPP_VIEWS_SRC.trim())
+    ? window.MINIAPP_VIEWS_SRC.trim() : "views.json";
+  var INLINE = (window.MINIAPP_VIEWS && Array.isArray(window.MINIAPP_VIEWS.views))
+    ? window.MINIAPP_VIEWS : null;
+  var MAXDEPTH = 12;
+
+  var V = {
+    views: [], cur: null, data: {}, specError: null,
+    search: "", sort: {}, desc: {}, filters: {}, selected: {}, collapsed: {},
+    decision: {}, comment: {}, wrapped: [], visible: []
+  };
+
+  /* ---------- helpers ---------- */
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function $(sel, root){ return (root || document).querySelector(sel); }
+  function isObj(x){ return x != null && typeof x === "object" && !Array.isArray(x); }
+  function getPath(o, p){
+    if(!p) return undefined;
+    var parts = String(p).split("."), cur = o;
+    for(var i=0;i<parts.length;i++){
+      if(cur == null || typeof cur !== "object") return undefined;
+      cur = cur[parts[i]];
+    }
+    return cur;
+  }
+  function asText(x){
+    if(x == null) return "";
+    if(Array.isArray(x)) return x.map(asText).filter(Boolean).join(", ");
+    if(isObj(x)){
+      var k = x.name != null ? x.name : (x.title != null ? x.title : (x.label != null ? x.label : x.id));
+      return k != null ? String(k) : JSON.stringify(x);
+    }
+    return String(x);
+  }
+  function tsHuman(v){
+    if(!v) return "";
+    var ms = (typeof v === "number") ? (v < 1e12 ? v*1000 : v) : Date.parse(v);
+    if(!isFinite(ms)) return String(v).slice(11,19) || String(v);
+    var d = new Date(ms);
+    return [d.getHours(), d.getMinutes()].map(function(n){ return String(n).padStart(2,"0"); }).join(":");
+  }
+  function viewId(v){ return String(v && v.id != null ? v.id : (v && v.title) || "view"); }
+  function pickOf(id){ if(!V.selected[id]) V.selected[id] = {}; return V.selected[id]; }
+  function currentView(){
+    for(var i=0;i<V.views.length;i++) if(viewId(V.views[i]) === V.cur) return V.views[i];
+    return null;
+  }
+  function idOf(item, v, i){
+    var val = v && v.value_field ? getPath(item, v.value_field) : undefined;
+    if(val == null && item) val = item.id != null ? item.id : (item._id != null ? item._id :
+      (item.key != null ? item.key : item.node_id));
+    if(val == null) return "#" + (i+1); // позиционный id, явно помечен решёткой
+    return String(val);
+  }
+  function labelOf(item, v){
+    var val = v && v.label_field ? getPath(item, v.label_field) : undefined;
+    if(val == null && item) val = item.title != null ? item.title : (item.name != null ? item.name :
+      (item.label != null ? item.label : (item.id != null ? item.id : item.q)));
+    return asText(val) || "—";
+  }
+  function metaList(item, v){
+    var fs = Array.isArray(v && v.meta_fields) ? v.meta_fields : [];
+    return fs.map(function(f){
+      var val = getPath(item, f);
+      if(Array.isArray(val)) val = val.map(asText).join(", ");
+      else if(isObj(val)) val = asText(val);
+      return {k:f, v:(val == null || val === "") ? "—" : String(val)};
+    });
+  }
+  function normalizeData(raw){
+    if(Array.isArray(raw)) return raw.filter(isObj);
+    if(isObj(raw)){
+      var prefer = ["items","nodes","rows","decisions","cards","questions","tasks","views","data","list","results"];
+      for(var i=0;i<prefer.length;i++) if(Array.isArray(raw[prefer[i]])) return raw[prefer[i]].filter(isObj);
+      var ks = Object.keys(raw);
+      for(var j=0;j<ks.length;j++) if(Array.isArray(raw[ks[j]])) return raw[ks[j]].filter(isObj);
+    }
+    return [];
+  }
+  function sourceURL(v){
+    var s = v && v.source;
+    if(Array.isArray(s) || isObj(s)) return null;
+    s = String(s || "").trim();
+    if(!s) return null;
+    if(!/\.(json|js)($|\?)/.test(s) && s.indexOf("/") < 0) s += ".json";
+    return s;
+  }
+  function inlineSource(v){
+    var s = v && v.source;
+    if(Array.isArray(s)) return normalizeData(s);
+    if(isObj(s)) return normalizeData(s);
+    return null;
+  }
+  function fetchJSON(url, bust){
+    var u = String(url);
+    if(bust) u += (u.indexOf("?") >= 0 ? "&" : "?") + "_=" + Date.now();
+    return fetch(u, {cache:"no-store"}).then(function(r){
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    });
+  }
+
+  /* ---------- фильтрация / сортировка / группировка ---------- */
+  function wrapItems(v, items){
+    return items.map(function(it, i){ return {item:it, id:idOf(it,v,i), label:labelOf(it,v)}; });
+  }
+  function itemMatchesFilters(item, v){
+    var fs = Array.isArray(v && v.filters) ? v.filters : [];
+    for(var i=0;i<fs.length;i++){
+      var field = fs[i] && fs[i].field, sel = V.filters[field];
+      if(!sel) continue;
+      var active = Object.keys(sel).filter(function(k){ return sel[k]; });
+      if(!active.length) continue;
+      var val = getPath(item, field), text = asText(val);
+      var list = Array.isArray(val) ? val.map(asText) : [text];
+      var ok = false;
+      for(var j=0;j<active.length;j++) if(list.indexOf(active[j]) >= 0 || text === active[j]) { ok = true; break; }
+      if(!ok) return false;
+    }
+    return true;
+  }
+  function itemMatchesSearch(item){
+    var q = V.search.trim().toLowerCase();
+    if(!q) return true;
+    try { return JSON.stringify(item).toLowerCase().indexOf(q) >= 0; }
+    catch(e){ return asText(item).toLowerCase().indexOf(q) >= 0; }
+  }
+  function visibleItems(v, wrapped, id){
+    var out = wrapped.filter(function(w){ return itemMatchesSearch(w.item) && itemMatchesFilters(w.item, v); });
+    var field = V.sort[id];
+    if(field){
+      out.sort(function(a,b){
+        var av = getPath(a.item, field), bv = getPath(b.item, field), c;
+        if(typeof av === "number" && typeof bv === "number") c = av - bv;
+        else c = asText(av).localeCompare(asText(bv), "ru");
+        return V.desc[id] ? -c : c;
+      });
+    }
+    return out;
+  }
+  function groupWrapped(wrapped, field){
+    var map = {}, order = [];
+    wrapped.forEach(function(w){
+      var key = asText(field ? getPath(w.item, field) : "—") || "—";
+      if(!(key in map)){ map[key] = []; order.push(key); }
+      map[key].push(w);
+    });
+    return order.map(function(k){ return {key:k, items:map[k]}; });
+  }
+  function columnsOf(v, wrapped){
+    var fs = [];
+    function add(f){ f = String(f || "").replace(/^-/, "").split(":")[0]; if(f && fs.indexOf(f) < 0) fs.push(f); }
+    add(v && v.value_field); add(v && v.label_field);
+    (Array.isArray(v && v.meta_fields) ? v.meta_fields : []).forEach(add);
+    if(v && v.group_by) add(v.group_by);
+    if(v && v.sort_by) add(v.sort_by);
+    (Array.isArray(v && v.filters) ? v.filters : []).forEach(function(f){ add(f && f.field); });
+    wrapped.slice(0,3).forEach(function(w){ Object.keys(w.item).slice(0,8).forEach(add); });
+    return fs.slice(0,12);
+  }
+  function fieldOptions(v, wrapped){
+    var fs = [];
+    function add(f){ f = String(f || "").replace(/^-/, "").split(":")[0]; if(f && fs.indexOf(f) < 0) fs.push(f); }
+    add(v && v.group_by); add(v && v.sort_by); add(v && v.label_field); add(v && v.value_field);
+    (Array.isArray(v && v.meta_fields) ? v.meta_fields : []).forEach(add);
+    (Array.isArray(v && v.filters) ? v.filters : []).forEach(function(f){ add(f && f.field); });
+    wrapped.slice(0,1).forEach(function(w){ Object.keys(w.item).slice(0,10).forEach(add); });
+    return fs;
+  }
+
+  /* ---------- дерево ---------- */
+  function buildTree(v, wrapped){
+    var childField = null, parentField = null;
+    var ck = ["children","items","nodes","subtasks","child","steps"];
+    var pk = ["parent_id","parentId","parent","parent_ref","pid","ref"];
+    var i, j;
+    for(i=0;i<ck.length && !childField;i++){
+      (function(key){ if(wrapped.some(function(w){ return Array.isArray(getPath(w.item,key)); })) childField = key; })(ck[i]);
+    }
+    for(j=0;j<pk.length && !parentField;j++){
+      (function(key){ if(wrapped.some(function(w){ return getPath(w.item,key) != null; })) parentField = key; })(pk[j]);
+    }
+    var byId = {};
+    wrapped.forEach(function(w){ byId[w.id] = w; });
+    function node(w, depth){ return {key:w.id, id:w.id, w:w, label:w.label, depth:depth, children:[]}; }
+    function childWrap(ch){
+      if(isObj(ch)){
+        var cid = ch.id != null ? ch.id : (ch._id != null ? ch._id : ch.key);
+        return (cid != null && byId[String(cid)]) || wrapItems(v, [ch])[0];
+      }
+      return byId[String(ch)];
+    }
+    if(childField){
+      var referenced = {};
+      wrapped.forEach(function(w){
+        (getPath(w.item, childField) || []).forEach(function(ch){
+          var cw = childWrap(ch); if(cw) referenced[cw.id] = true;
+        });
+      });
+      function walk(w, depth, seen){
+        var n = node(w, depth);
+        if(depth >= MAXDEPTH) return n;
+        var seen2 = {}; for(var sk in seen) seen2[sk] = seen[sk]; seen2[w.id] = true;
+        (getPath(w.item, childField) || []).forEach(function(ch){
+          var cw = childWrap(ch);
+          if(cw && !seen2[cw.id]) n.children.push(walk(cw, depth+1, seen2));
+        });
+        return n;
+      }
+      return wrapped.filter(function(w){ return !referenced[w.id]; }).map(function(w){ return walk(w,0,{}); });
+    }
+    if(parentField){
+      var roots = [], map = {};
+      wrapped.forEach(function(w){ map[w.id] = node(w,0); });
+      wrapped.forEach(function(w){
+        var p = getPath(w.item, parentField);
+        var pid = p == null ? "" : (isObj(p) ? asText(p) : String(p));
+        if(pid && map[pid] && map[pid] !== map[w.id]) map[pid].children.push(map[w.id]);
+        else roots.push(map[w.id]);
+      });
+      function setDepth(n,d){ n.depth=d; n.children.forEach(function(c){ setDepth(c,d+1); }); }
+      roots.forEach(function(n){ setDepth(n,0); });
+      return roots;
+    }
+    if(v && v.group_by){
+      return groupWrapped(wrapped, v.group_by).map(function(g){
+        return {key:"g:"+g.key, label:g.key, group:true, depth:0,
+          children:g.items.map(function(w){ return node(w,1); })};
+      });
+    }
+    return wrapped.map(function(w){ return node(w,0); });
+  }
+
+  /* ---------- CSS (Catppuccin Mocha, локальные переменные с фолбэками) ---------- */
+  var CSS = [
+    ".vw-launch{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;",
+      "border:1px solid var(--surface1,#45475a);background:var(--surface0,#313244);color:var(--text,#cdd6f4);",
+      "border-radius:999px;padding:9px 13px;font:700 11.5px/1 var(--ff,sans-serif);box-shadow:0 8px 24px rgba(0,0,0,.4);",
+      "cursor:pointer;display:flex;gap:6px;align-items:center}",
+    ".vw-launch span{color:var(--lavender,#cba6f7)}",
+    ".vw-back{position:fixed;inset:0;background:rgba(17,17,27,.72);z-index:81;opacity:0;pointer-events:none;transition:opacity .2s}",
+    ".vw-back.open{opacity:1;pointer-events:auto}",
+    ".vw-panel{position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);z-index:82;",
+      "background:var(--base,#1e1e2e);color:var(--text,#cdd6f4);border-left:1px solid var(--surface1,#45475a);",
+      "box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.35));display:flex;flex-direction:column;",
+      "transform:translateX(102%);transition:transform .22s ease;padding-top:env(safe-area-inset-top,0px)}",
+    ".vw-panel.open{transform:translateX(0)}",
+    ".vw-head{display:flex;align-items:flex-start;gap:10px;padding:15px 15px 12px;border-bottom:1px solid var(--surface0,#313244);background:var(--crust,#11111b)}",
+    ".vw-headtxt{flex:1;min-width:0}",
+    ".vw-eyebrow{font:700 9.5px/1.2 var(--fm,monospace);letter-spacing:1px;text-transform:uppercase;color:var(--overlay1,#7f849c);margin-bottom:6px;word-break:break-all}",
+    ".vw-htitle{font-size:16px;font-weight:700}",
+    ".vw-hsub{font:600 10px/1.5 var(--fm,monospace);color:var(--overlay2,#9399b2);margin-top:4px}",
+    ".vw-close{flex:none;width:32px;height:32px;border-radius:9px;border:1px solid var(--surface1,#45475a);background:var(--surface0,#313244);color:var(--text,#cdd6f4);font:700 18px/1 var(--ff,sans-serif);cursor:pointer}",
+    ".vw-close:active{background:var(--surface2,#585b70)}",
+    ".vw-select{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--surface0,#313244);flex:0 0 auto}",
+    ".vw-vchip{flex:none;max-width:190px;text-align:left;border:1px solid var(--surface1,#45475a);background:var(--mantle,#181825);",
+      "color:var(--subtext1,#bac2de);border-radius:10px;padding:7px 10px;cursor:pointer;font:600 11px/1.35 var(--ff,sans-serif)}",
+    ".vw-vchip.on{border-color:var(--blue,#89b4fa);background:rgba(137,180,250,.1);color:var(--text,#cdd6f4)}",
+    ".vw-vchip small{display:block;font:600 9px/1.4 var(--fm,monospace);color:var(--overlay1,#7f849c);margin-top:3px}",
+    ".vw-body{overflow-y:auto;overscroll-behavior:contain;padding:12px 14px 28px;-webkit-overflow-scrolling:touch;flex:1 1 auto}",
+    ".vw-bar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:9px}",
+    ".vw-in,.vw-sel{border:1px solid var(--surface1,#45475a);background:var(--mantle,#181825);color:var(--text,#cdd6f4);",
+      "border-radius:9px;padding:8px 10px;font:500 11px/1.3 var(--ff,sans-serif);min-width:0}",
+    ".vw-in::placeholder{color:var(--overlay0,#6c7086)}",
+    ".vw-search{flex:1 1 150px}",
+    ".vw-btn{flex:none;border:1px solid var(--surface1,#45475a);background:var(--surface0,#313244);color:var(--subtext1,#bac2de);",
+      "border-radius:9px;padding:8px 9px;font:700 10px/1 var(--ff,sans-serif);cursor:pointer;white-space:nowrap}",
+    ".vw-btn:active{background:var(--surface2,#585b70)}",
+    ".vw-btn.on{border-color:var(--blue,#89b4fa);color:var(--blue,#89b4fa);background:rgba(137,180,250,.1)}",
+    ".vw-count{font:700 10px/1 var(--fm,monospace);color:var(--teal,#94e2d5);white-space:nowrap}",
+    ".vw-filters{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}",
+    ".vw-fgroup{display:flex;gap:5px;align-items:center;flex-wrap:wrap}",
+    ".vw-flabel{font:700 9.5px/1 var(--fm,monospace);color:var(--overlay1,#7f849c);min-width:58px;word-break:break-all}",
+    ".vw-chip{border:1px solid var(--surface1,#45475a);background:transparent;color:var(--overlay2,#9399b2);",
+      "border-radius:999px;padding:5px 9px;font:700 9.5px/1 var(--fm,monospace);cursor:pointer}",
+    ".vw-chip.on{border-color:var(--lavender,#cba6f7);color:var(--lavender,#cba6f7);background:rgba(203,166,247,.1)}",
+    ".vw-actions{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0 4px}",
+    ".vw-act{flex:1 1 auto;border:1px solid rgba(166,227,161,.4);background:rgba(166,227,161,.1);color:var(--green,#a6e3a1);",
+      "border-radius:10px;padding:10px 11px;font:700 11px/1.2 var(--ff,sans-serif);cursor:pointer;min-width:120px}",
+    ".vw-act:active{background:rgba(166,227,161,.2)}",
+    ".vw-note{font:500 10.5px/1.5 var(--fm,monospace);color:var(--overlay1,#7f849c);margin:6px 0 10px}",
+    ".vw-card{background:var(--mantle,#181825);border:1px solid var(--surface0,#313244);border-radius:var(--radius-sm,11px);",
+      "padding:10px 11px;margin-bottom:7px}",
+    ".vw-card.sel{border-color:rgba(137,180,250,.55);background:rgba(137,180,250,.06)}",
+    ".vw-row{display:flex;gap:8px;align-items:flex-start;padding:8px 4px;border-bottom:1px solid var(--surface0,#313244)}",
+    ".vw-row.sel{background:rgba(137,180,250,.06)}",
+    ".vw-row input[type=checkbox],.vw-card input[type=checkbox],.vw-node input[type=checkbox]{accent-color:var(--blue,#89b4fa);margin-top:2px;flex:none}",
+    ".vw-main{flex:1;min-width:0}",
+    ".vw-title{font-size:12px;font-weight:600;line-height:1.4;word-break:break-word}",
+    ".vw-id{font:600 9px/1.4 var(--fm,monospace);color:var(--overlay0,#6c7086);word-break:break-all}",
+    ".vw-metas{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}",
+    ".vw-meta{font:600 9.5px/1.4 var(--fm,monospace);color:var(--subtext1,#bac2de);background:var(--surface0,#313244);",
+      "border-radius:6px;padding:3px 6px;word-break:break-all}",
+    ".vw-meta b{color:var(--overlay2,#9399b2);font-weight:700;margin-right:4px}",
+    ".vw-group{margin:10px 0}",
+    ".vw-ghead{display:flex;gap:7px;align-items:center;padding:7px 8px;border-radius:9px;background:var(--surface0,#313244);",
+      "font:700 10.5px/1.3 var(--fm,monospace);color:var(--blue,#89b4fa);cursor:pointer}",
+    ".vw-ghead span.n{margin-left:auto;color:var(--overlay1,#7f849c)}",
+    ".vw-group .vw-row{padding-left:12px}",
+    ".vw-node{position:relative;padding:4px 0 4px 6px;border-left:1px solid var(--surface1,#45475a)}",
+    ".vw-kids{margin-left:14px}",
+    ".vw-nhead{display:flex;gap:7px;align-items:flex-start;min-width:0}",
+    ".vw-toggle{flex:none;width:20px;height:20px;border-radius:6px;border:1px solid var(--surface1,#45475a);",
+      "background:var(--surface0,#313244);color:var(--subtext1,#bac2de);font:700 11px/1 var(--fm,monospace);cursor:pointer}",
+    ".vw-toggle.leaf{visibility:hidden}",
+    ".vw-tablewrap{overflow-x:auto;border:1px solid var(--surface0,#313244);border-radius:10px}",
+    ".vw-table{border-collapse:collapse;width:100%;font:500 10.5px/1.45 var(--fm,monospace)}",
+    ".vw-table th,.vw-table td{padding:7px 8px;text-align:left;border-bottom:1px solid var(--surface0,#313244);white-space:nowrap;max-width:240px;overflow:hidden;text-overflow:ellipsis}",
+    ".vw-table th{color:var(--overlay2,#9399b2);font-weight:700;background:var(--crust,#11111b);position:sticky;top:0;z-index:1}",
+    ".vw-table tr.sel td{background:rgba(137,180,250,.06)}",
+    ".vw-empty{border:1px dashed var(--surface1,#45475a);border-radius:10px;padding:14px 12px;",
+      "font:500 11.5px/1.6 var(--ff,sans-serif);color:var(--overlay1,#7f849c);word-break:break-word}",
+    ".vw-empty b{color:var(--yellow,#f9e2af)}",
+    ".vw-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);z-index:99;",
+      "background:var(--surface2,#585b70);color:var(--text,#cdd6f4);border:1px solid var(--overlay0,#6c7086);",
+      "padding:10px 15px;border-radius:999px;font:600 11.5px/1.3 var(--ff,sans-serif);box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.35));",
+      "opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center}",
+    ".vw-toast.show{opacity:1;transform:translate(-50%,0)}"
+  ].join("\n");
+
+  var toastTimer = null;
+  function vtoast(msg){
+    var t = $("#vwToast");
+    if(!t){
+      t = document.createElement("div"); t.id = "vwToast"; t.className = "vw-toast";
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove("show"); }, 2200);
+  }
+
+  /* ---------- оболочка ---------- */
+  function ensureShell(){
+    if($("#vwPanel")) return;
+    var st = document.createElement("style"); st.textContent = CSS; document.head.appendChild(st);
+    var launch = document.createElement("button");
+    launch.id = "vwLaunch"; launch.className = "vw-launch"; launch.type = "button";
+    launch.innerHTML = '<span>◇</span> Виды';
+    document.body.appendChild(launch);
+    var back = document.createElement("div"); back.id = "vwBack"; back.className = "vw-back";
+    var panel = document.createElement("div");
+    panel.id = "vwPanel"; panel.className = "vw-panel";
+    panel.setAttribute("role","dialog");
+    panel.innerHTML =
+      '<div class="vw-head"><div class="vw-headtxt">' +
+        '<div class="vw-eyebrow">ДЕКЛАРАТИВНЫЕ ВИДЫ · ' + esc(SRC) + '</div>' +
+        '<div class="vw-htitle">Виды</div><div class="vw-hsub" id="vwHsub">загрузка…</div></div>' +
+        '<button class="vw-close" type="button" data-role="close" aria-label="Закрыть">×</button></div>' +
+      '<div class="vw-select" id="vwSelect"></div>' +
+      '<div class="vw-body" id="vwBody"></div>';
+    document.body.appendChild(back); document.body.appendChild(panel);
+    launch.addEventListener("click", open);
+    back.addEventListener("click", close);
+    panel.addEventListener("click", onClick);
+    panel.addEventListener("change", onChange);
+    panel.addEventListener("input", onInput);
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape" && panel.classList.contains("open")) close();
+    });
+  }
+  function open(){ ensureShell(); $("#vwBack").classList.add("open"); $("#vwPanel").classList.add("open"); }
+  function close(){ var p=$("#vwPanel"), b=$("#vwBack"); if(p) p.classList.remove("open"); if(b) b.classList.remove("open"); }
+
+  /* ---------- загрузка спецификации и данных ---------- */
+  function loadSpec(){
+    if(INLINE){ applySpec(INLINE); return; }
+    fetchJSON(SRC, false).then(applySpec).catch(function(err){
+      V.specError = (err && err.message) ? err.message : String(err);
+      renderSelector(); renderNoSpec();
+    });
+  }
+  function applySpec(spec){
+    V.views = Array.isArray(spec && spec.views) ? spec.views : [];
+    V.specError = null;
+    renderSelector();
+    var keep = V.cur, target = null;
+    for(var i=0;i<V.views.length;i++) if(viewId(V.views[i]) === keep) target = keep;
+    if(!target && V.views.length) target = viewId(V.views[0]);
+    if(target) selectView(target);
+    else { V.cur = null; renderNoSpec(); }
+  }
+  function loadData(v, force){
+    var id = viewId(v);
+    if(!force && V.data[id]){
+      if(V.data[id].loading) renderLoading(); else renderBody();
+      return;
+    }
+    var inline = inlineSource(v);
+    if(inline){ V.data[id] = {items:inline}; renderBody(); return; }
+    var url = sourceURL(v);
+    if(!url){ V.data[id] = {items:[], error:"в спецификации вида нет source"}; renderBody(); return; }
+    V.data[id] = {loading:true, items:[], url:url};
+    renderLoading();
+    fetchJSON(url, !!force).then(function(raw){
+      V.data[id] = {items:normalizeData(raw), url:url};
+      if(V.cur === id) renderBody();
+    }).catch(function(err){
+      V.data[id] = {items:[], url:url, error:(err && err.message) ? err.message : String(err)};
+      if(V.cur === id) renderBody();
+    });
+  }
+  function selectView(id){
+    var v = null;
+    for(var i=0;i<V.views.length;i++) if(viewId(V.views[i]) === id) v = V.views[i];
+    if(!v) return;
+    V.cur = id;
+    renderSelector();
+    loadData(v, false);
+  }
+
+  /* ---------- рендер ---------- */
+  function renderSelector(){
+    var box = $("#vwSelect"); if(!box) return;
+    if(V.specError){
+      box.innerHTML = '<div class="vw-empty">Нет данных: ' + esc(SRC) + ' недоступен (' + esc(V.specError) + ')</div>';
+      return;
+    }
+    if(!V.views.length){ box.innerHTML = '<div class="vw-empty">Нет данных: в спецификации нет видов</div>'; return; }
+    box.innerHTML = V.views.map(function(v){
+      var id = viewId(v), d = V.data[id];
+      var sub = [v.type || "cards", v.count != null ? ("count " + v.count) : "",
+        v.publish === false ? "черновик" : "", tsHuman(v.built_at)].filter(Boolean).join(" · ");
+      if(d && !d.loading) sub += (sub ? " · " : "") + (d.items ? d.items.length : 0) + " строк";
+      return '<button type="button" class="vw-vchip' + (V.cur === id ? ' on' : '') +
+        '" data-role="view" data-id="' + esc(id) + '">' + esc(v.title || v.id || id) +
+        '<small>' + esc(sub) + '</small></button>';
+    }).join("");
+  }
+  function renderNoSpec(){
+    var body = $("#vwBody"); if(!body) return;
+    var h = $("#vwHsub"); if(h) h.textContent = "нет данных";
+    body.innerHTML = '<div class="vw-empty">Нет данных: specs <b>' + esc(SRC) +
+      '</b> не загружен' + (V.specError ? ' (' + esc(V.specError) + ')' : '') +
+      '. Ни один вид не выдуман — положите views.json рядом с index.html или задайте window.MINIAPP_VIEWS.</div>';
+  }
+  function renderLoading(){
+    var body = $("#vwBody"); if(!body) return;
+    var h = $("#vwHsub"); if(h) h.textContent = "загрузка источника…";
+    body.innerHTML = '<div class="vw-empty">Загрузка источника данных вида…</div>';
+  }
+  function controlsHTML(v, wrapped){
+    var id = viewId(v), fs = fieldOptions(v, wrapped), sel = V.sort[id] || "";
+    var h = ["<div class='vw-bar'>",
+      "<input class='vw-in vw-search' data-role='search' placeholder='Поиск по виду…' value='" + esc(V.search) + "'>",
+      "<button type='button' class='vw-btn' data-role='selectAll' title='по текущему поиску и фильтрам'>Выделить всё</button>",
+      "<button type='button' class='vw-btn' data-role='clearAll' title='снять выделение видимого'>Снять</button>",
+      "<span class='vw-count' id='vwCount'>Выбрано: 0 / " + wrapped.length + "</span>",
+      "<button type='button' class='vw-btn' data-role='refresh' title='перечитать spec и данные'>⟳</button>",
+      "</div>"];
+    var specFilters = Array.isArray(v.filters) ? v.filters : [];
+    if(specFilters.length){
+      h.push("<div class='vw-filters'>");
+      specFilters.forEach(function(f){
+        var field = f && f.field; if(!field) return;
+        var vals = Array.isArray(f.values) ? f.values.map(asText) : [];
+        if(!vals.length){
+          var seen = {};
+          wrapped.forEach(function(w){ var x = getPath(w.item, field); (Array.isArray(x)?x:[x]).forEach(function(y){
+            var t = asText(y); if(t) seen[t] = true; }); });
+          vals = Object.keys(seen).sort();
+        }
+        var active = V.filters[field] || {};
+        h.push("<div class='vw-fgroup'><span class='vw-flabel'>" + esc(field) + "</span>");
+        h.push("<button type='button' class='vw-chip" + (Object.keys(active).every(function(k){return !active[k];}) ? " on" : "") +
+          "' data-role='chip' data-field='" + esc(field) + "' data-value=''>все</button>");
+        vals.slice(0,40).forEach(function(val){
+          h.push("<button type='button' class='vw-chip" + (active[val] ? " on" : "") +
+            "' data-role='chip' data-field='" + esc(field) + "' data-value='" + esc(val) + "'>" + esc(val) + "</button>");
+        });
+        h.push("</div>");
+      });
+      h.push("</div>");
+    }
+    h.push("<div class='vw-bar'>");
+    h.push("<span class='vw-flabel'>сортировка</span><select class='vw-sel' data-role='sort'><option value=''>- по порядку -</option>");
+    fs.forEach(function(f){
+      h.push("<option value='" + esc(f) + "'" + (sel === f ? " selected" : "") + ">" + esc(f) + "</option>");
+    });
+    h.push("</select><button type='button' class='vw-btn" + (V.desc[id] ? " on" : "") +
+      "' data-role='dir' title='направление сортировки'>" + (V.desc[id] ? "↓ убыв" : "↑ возр") + "</button></div>");
+    h.push("<div class='vw-bar'>");
+    h.push("<input class='vw-in' data-role='decision' placeholder='решение (approve / reject / …)' value='" + esc(V.decision[id] || "") + "'>");
+    h.push("<input class='vw-in' data-role='comment' placeholder='комментарий' value='" + esc(V.comment[id] || "") + "'>");
+    h.push("</div>");
+    var acts = Array.isArray(v.actions) ? v.actions.filter(function(a){ return a && a.label; }) : [];
+    if(!acts.length) acts = [{label:"Отправить выбор", source:"miniapp_selection"}];
+    h.push("<div class='vw-actions'>");
+    acts.forEach(function(a){
+      h.push("<button type='button' class='vw-act' data-role='action' data-label='" + esc(a.label) + "'>" + esc(a.label) + "</button>");
+    });
+    h.push("</div>");
+    var specBits = [];
+    if(v.count != null) specBits.push("ожидалось " + v.count + ", фактически " + wrapped.length);
+    if(v.publish === false) specBits.push("черновик");
+    if(v.built_at) specBits.push("построено " + esc(tsHuman(v.built_at)));
+    if(specBits.length) h.push("<div class='vw-note'>" + specBits.join(" · ") + "</div>");
+    return h.join("");
+  }
+  function metasHTML(w, v){
+    var ms = metaList(w.item, v);
+    if(!ms.length) return "";
+    return "<div class='vw-metas'>" + ms.map(function(m){
+      return "<span class='vw-meta'><b>" + esc(m.k) + "</b>" + esc(m.v) + "</span>";
+    }).join("") + "</div>";
+  }
+  function renderCards(v, vis){
+    if(!vis.length) return "<div class='vw-empty'>Нет данных.</div>";
+    return vis.map(function(w){
+      var sel = !!pickOf(V.cur)[w.id];
+      return "<div class='vw-card" + (sel ? " sel" : "") + "'><div class='vw-bar' style='margin:0'>" +
+        "<input type='checkbox' data-role='pick' data-id='" + esc(w.id) + "'" + (sel ? " checked" : "") + ">" +
+        "<div class='vw-main'><div class='vw-title'>" + esc(w.label) + "</div>" +
+        "<div class='vw-id'>" + esc(w.id) + "</div></div></div>" + metasHTML(w, v) + "</div>";
+    }).join("");
+  }
+  function renderChecklist(v, vis){
+    if(!vis.length) return "<div class='vw-empty'>Нет данных.</div>";
+    if(!v.group_by) return vis.map(function(w){
+      var sel = !!pickOf(V.cur)[w.id];
+      return "<div class='vw-row" + (sel ? " sel" : "") + "'><input type='checkbox' data-role='pick' data-id='" +
+        esc(w.id) + "'" + (sel ? " checked" : "") + "><div class='vw-main'><div class='vw-title'>" +
+        esc(w.label) + "</div><div class='vw-id'>" + esc(w.id) + "</div>" + metasHTML(w, v) + "</div></div>";
+    }).join("");
+    return groupWrapped(vis, v.group_by).map(function(g){
+      var allSel = !!g.items.length && g.items.every(function(w){ return !!pickOf(V.cur)[w.id]; });
+      return "<div class='vw-group'><div class='vw-ghead'><input type='checkbox' data-role='groupPick' data-group='" +
+        esc(g.key) + "'" + (allSel ? " checked" : "") + "><span>" + esc(g.key) + "</span><span class='n'>" + g.items.length + "</span></div>" +
+        g.items.map(function(w){
+          var sel = !!pickOf(V.cur)[w.id];
+          return "<div class='vw-row" + (sel ? " sel" : "") + "'><input type='checkbox' data-role='pick' data-id='" +
+            esc(w.id) + "'" + (sel ? " checked" : "") + "><div class='vw-main'><div class='vw-title'>" +
+            esc(w.label) + "</div><div class='vw-id'>" + esc(w.id) + "</div>" + metasHTML(w, v) + "</div></div>";
+        }).join("") + "</div>";
+    }).join("");
+  }
+  function renderTree(v, vis){
+    var roots = buildTree(v, vis);
+    if(!roots.length) return "<div class='vw-empty'>Нет данных.</div>";
+    var collapsed = V.collapsed[V.cur] || {};
+    function walk(n, depth){
+      var key = n.key, isCollapsed = !!collapsed[key], hasKids = n.children.length > 0;
+      var head = "<div class='vw-nhead'>";
+      if(hasKids) head += "<button type='button' class='vw-toggle' data-role='nodeToggle' data-key='" + esc(key) + "'>" +
+        (isCollapsed ? "▸" : "▾") + "</button>";
+      else head += "<button type='button' class='vw-toggle leaf' tabindex='-1'>·</button>";
+      if(n.w){
+        var sel = !!pickOf(V.cur)[n.id];
+        head += "<input type='checkbox' data-role='pick' data-id='" + esc(n.id) + "'" + (sel ? " checked" : "") + ">";
+      }
+      head += "<div class='vw-main'><div class='vw-title'>" + esc(n.label || "—") + "</div>" +
+        (n.w ? "<div class='vw-id'>" + esc(n.id) + "</div>" + metasHTML(n.w, v) : "") + "</div></div>";
+      var kids = (!isCollapsed && hasKids) ? "<div class='vw-kids'>" +
+        n.children.map(function(c){ return walk(c, depth+1); }).join("") + "</div>" : "";
+      return "<div class='vw-node'>" + head + kids + "</div>";
+    }
+    return roots.map(function(n){ return walk(n,0); }).join("");
+  }
+  function renderTable(v, vis){
+    if(!vis.length) return "<div class='vw-empty'>Нет данных.</div>";
+    var cols = columnsOf(v, V.wrapped), pick = pickOf(V.cur);
+    var h = ["<div class='vw-tablewrap'><table class='vw-table'><thead><tr><th>✓</th>"];
+    cols.forEach(function(c){ h.push("<th>" + esc(c) + "</th>"); });
+    h.push("</tr></thead><tbody>");
+    vis.forEach(function(w){
+      h.push("<tr" + (pick[w.id] ? " class='sel'" : "") + "><td><input type='checkbox' data-role='pick' data-id='" +
+        esc(w.id) + "'" + (pick[w.id] ? " checked" : "") + "></td>");
+      cols.forEach(function(c){
+        var val = getPath(w.item, c);
+        if(c === (v && v.label_field)) val = w.label;
+        h.push("<td title='" + esc(asText(val)) + "'>" + esc(asText(val)) + "</td>");
+      });
+      h.push("</tr>");
+    });
+    h.push("</tbody></table></div>");
+    return h.join("");
+  }
+  function renderContent(){
+    var box = $("#vwContent"), v = currentView(); if(!box || !v) return;
+    var d = V.data[V.cur] || {items:[]};
+    if(d.error){
+      box.innerHTML = "<div class='vw-empty'>Нет данных для вида <b>" + esc(V.cur) + "</b>: источник <b>" +
+        esc(d.url || (v.source || "—")) + "</b> недоступен (" + esc(d.error) + "). Данные не выдумываются.</div>";
+      updateCount(); return;
+    }
+    if(!d.items || !d.items.length){
+      box.innerHTML = "<div class='vw-empty'>Нет данных: источник <b>" + esc(d.url || "inline") +
+        "</b> вернул пустой список.</div>";
+      updateCount(); return;
+    }
+    var vis = V.visible;
+    if(!vis.length){
+      box.innerHTML = "<div class='vw-empty'>Нет данных по текущему поиску/фильтрам (всего " +
+        V.wrapped.length + "). Сбросьте фильтры или поиск.</div>";
+      updateCount(); return;
+    }
+    var type = String(v.type || "cards");
+    box.innerHTML = type === "checklist" ? renderChecklist(v, vis) :
+      type === "tree" ? renderTree(v, vis) :
+      type === "table" ? renderTable(v, vis) : renderCards(v, vis);
+    updateCount();
+  }
+  function updateCount(){
+    var el = $("#vwCount"); if(!el) return;
+    var pick = pickOf(V.cur), n = 0;
+    Object.keys(pick).forEach(function(k){ if(pick[k]) n++; });
+    el.textContent = "Выбрано: " + n + " / " + V.wrapped.length;
+  }
+  function renderBody(){
+    var body = $("#vwBody"), v = currentView(); if(!body || !v) return;
+    var h = $("#vwHsub");
+    if(h) h.textContent = v.title || v.id || V.cur;
+    var d = V.data[V.cur] || {items:[]};
+    V.wrapped = wrapItems(v, d.items || []);
+    V.visible = visibleItems(v, V.wrapped, V.cur);
+    body.innerHTML = controlsHTML(v, V.wrapped) + "<div class='vw-content' id='vwContent'></div>";
+    renderContent();
+  }
+
+  /* ---------- события ---------- */
+  function setVisibleSelection(on){
+    var pick = pickOf(V.cur);
+    V.visible.forEach(function(w){ pick[w.id] = on; });
+    renderContent();
+  }
+  function getTG(){
+    try {
+      if(window.Telegram && window.Telegram.WebApp && typeof window.Telegram.WebApp.sendData === "function")
+        return window.Telegram.WebApp;
+    } catch(e){}
+    try {
+      if(typeof tg !== "undefined" && tg && typeof tg.sendData === "function") return tg;
+    } catch(e){}
+    return null;
+  }
+  function sendAction(label){
+    var v = currentView(); if(!v) return;
+    var pick = pickOf(V.cur);
+    var ids = Object.keys(pick).filter(function(k){ return pick[k]; });
+    var decEl = $('[data-role="decision"]'), comEl = $('[data-role="comment"]');
+    var decision = ((decEl && decEl.value) || V.decision[V.cur] || "").trim() || String(label || "");
+    var comment = ((comEl && comEl.value) || V.comment[V.cur] || "").trim();
+    var payload = {
+      source: "miniapp_selection",
+      view: V.cur,
+      ids: ids,
+      decision: decision,
+      comment: comment,
+      ts: new Date().toISOString()
+    };
+    var tgApp = getTG();
+    if(!tgApp){ vtoast("Открой мини-ап через бота: sendData недоступен"); return; }
+    try {
+      tgApp.sendData(JSON.stringify(payload));
+      vtoast("Отправлено · " + ids.length + " из " + V.cur + " · " + label);
+    } catch(e){
+      vtoast("Ошибка отправки: " + ((e && e.message) || String(e)));
+    }
+    /* tg.close намеренно НЕ вызывается */
+  }
+  function onClick(e){
+    var t = e.target, role = t && t.getAttribute && t.getAttribute("data-role");
+    if(!role) return;
+    var v = currentView();
+    if(role === "close"){ close(); return; }
+    if(role === "view"){ selectView(t.getAttribute("data-id")); return; }
+    if(role === "selectAll"){ setVisibleSelection(true); return; }
+    if(role === "clearAll"){ setVisibleSelection(false); return; }
+    if(role === "refresh"){
+      if(v){ loadData(v, true); loadSpec(); }
+      return;
+    }
+    if(role === "dir"){
+      V.desc[V.cur] = !V.desc[V.cur];
+      t.classList.toggle("on", !!V.desc[V.cur]);
+      t.textContent = V.desc[V.cur] ? "↓ убыв" : "↑ возр";
+      V.visible = visibleItems(v, V.wrapped, V.cur); renderContent();
+      return;
+    }
+    if(role === "chip"){
+      var field = t.getAttribute("data-field"), val = t.getAttribute("data-value") || "";
+      if(!V.filters[field]) V.filters[field] = {};
+      if(!val) V.filters[field] = {};
+      else V.filters[field][val] = !V.filters[field][val];
+      var group = t.parentNode;
+      $$(".vw-chip", group).forEach(function(b){
+        var fv = b.getAttribute("data-value") || "";
+        var active = fv ? !!(V.filters[field] && V.filters[field][fv]) :
+          !Object.keys(V.filters[field] || {}).some(function(k){ return V.filters[field][k]; });
+        b.classList.toggle("on", active);
+      });
+      V.visible = visibleItems(v, V.wrapped, V.cur); renderContent();
+      return;
+    }
+    if(role === "nodeToggle"){
+      var key = t.getAttribute("data-key");
+      if(!V.collapsed[V.cur]) V.collapsed[V.cur] = {};
+      V.collapsed[V.cur][key] = !V.collapsed[V.cur][key];
+      renderContent();
+      return;
+    }
+    if(role === "action"){ sendAction(t.getAttribute("data-label")); return; }
+  }
+  function onChange(e){
+    var t = e.target, role = t && t.getAttribute && t.getAttribute("data-role");
+    if(role === "pick"){
+      var pick = pickOf(V.cur);
+      pick[t.getAttribute("data-id")] = !!t.checked;
+      var row = t.closest(".vw-card,.vw-row");
+      if(row) row.classList.toggle("sel", !!t.checked);
+      updateCount();
+      return;
+    }
+    if(role === "groupPick"){
+      var key = t.getAttribute("data-group"), g = null;
+      for(var i=0;i<V.visible.length;i++){
+        if((asText(getPath(V.visible[i].item, currentView().group_by)) || "—") === key){ g = 1; break; }
+      }
+      if(g){
+        var on = !!t.checked;
+        V.visible.forEach(function(w){
+          if((asText(getPath(w.item, currentView().group_by)) || "—") === key) pickOf(V.cur)[w.id] = on;
+        });
+        renderContent();
+      }
+      return;
+    }
+    if(role === "sort"){
+      V.sort[V.cur] = t.value || "";
+      V.visible = visibleItems(currentView(), V.wrapped, V.cur);
+      renderContent();
+    }
+  }
+  function onInput(e){
+    var t = e.target, role = t && t.getAttribute && t.getAttribute("data-role");
+    if(role === "search"){
+      V.search = t.value || "";
+      V.visible = visibleItems(currentView(), V.wrapped, V.cur);
+      renderContent();
+    } else if(role === "decision") V.decision[V.cur] = t.value || "";
+    else if(role === "comment") V.comment[V.cur] = t.value || "";
+  }
+
+  /* ---------- старт ---------- */
+  ensureShell();
+  loadSpec();
+  window.addEventListener("miniapp-views-reload", function(){
+    V.data = {}; loadSpec(); if(V.cur) loadData(currentView(), true);
+  });
+})();

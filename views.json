@@ -1,0 +1,587 @@
+{
+  "version": 1,
+  "built_at": "2026-11-21T02:58:54+00:00",
+  "views": [
+    {
+      "id": "atlas-tree",
+      "title": "Атлас: дерево сущностей по видам",
+      "type": "tree",
+      "source": "shared-repo/bots/miniapp/atlas.json",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 389,
+      "publish": true,
+      "group_by": "kind",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "kind",
+          "values": [
+            "author",
+            "claim",
+            "goal",
+            "hypothesis",
+            "verdict",
+            "video",
+            "want"
+          ]
+        },
+        {
+          "field": "status",
+          "values": [
+            "deferred",
+            "doing",
+            "done",
+            "fail",
+            "measuring",
+            "open",
+            "pass",
+            "refuted",
+            "signal",
+            "verified"
+          ]
+        }
+      ],
+      "label_field": "text",
+      "value_field": "id",
+      "meta_fields": [
+        "kind",
+        "status",
+        "confidence"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/atlas.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/atlas.json",
+        "exists": true,
+        "size_bytes": 216793,
+        "mtime_utc": "2026-11-20T09:39:06+00:00",
+        "sha256": "d9daf97f5cebd1f3fcb84ee191528c7ffda1449266f9441c3c166abbbe0f3da8",
+        "read_at": "2026-11-21T02:58:54+00:00"
+      }
+    },
+    {
+      "id": "atlas-grids",
+      "title": "Атлас: сетки (group_by)",
+      "type": "cards",
+      "source": "shared-repo/bots/miniapp/atlas.json",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 5,
+      "publish": true,
+      "group_by": "group_by",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "group_by",
+          "values": [
+            "author",
+            "chain",
+            "status",
+            "theme",
+            "video"
+          ]
+        }
+      ],
+      "label_field": "title",
+      "value_field": "id",
+      "meta_fields": [
+        "group_by",
+        "filter"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/atlas.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/atlas.json",
+        "exists": true,
+        "size_bytes": 216793,
+        "mtime_utc": "2026-11-20T09:39:06+00:00",
+        "sha256": "d9daf97f5cebd1f3fcb84ee191528c7ffda1449266f9441c3c166abbbe0f3da8",
+        "read_at": "2026-11-21T02:58:54+00:00"
+      }
+    },
+    {
+      "id": "atlas-goals",
+      "title": "Цели атласа: чек-лист по статусам",
+      "type": "checklist",
+      "source": "shared-repo/bots/miniapp/atlas.json",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 119,
+      "publish": true,
+      "group_by": "status",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "status",
+          "values": [
+            "open"
+          ]
+        }
+      ],
+      "label_field": "text",
+      "value_field": "id",
+      "meta_fields": [
+        "status",
+        "kind",
+        "confidence"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/atlas.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/atlas.json",
+        "exists": true,
+        "size_bytes": 216793,
+        "mtime_utc": "2026-11-20T09:39:06+00:00",
+        "sha256": "d9daf97f5cebd1f3fcb84ee191528c7ffda1449266f9441c3c166abbbe0f3da8",
+        "read_at": "2026-11-21T02:58:54+00:00"
+      }
+    },
+    {
+      "id": "prompts-cards",
+      "title": "Промпты: карточки с сортировкой по времени",
+      "type": "cards",
+      "source": "shared-repo/bots/miniapp/prompts.json",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 409,
+      "publish": true,
+      "group_by": "source",
+      "sort_by": "ts",
+      "filters": [
+        {
+          "field": "source",
+          "values": [
+            "session",
+            "telegram"
+          ]
+        },
+        {
+          "field": "is_stale",
+          "values": [
+            false,
+            true
+          ]
+        }
+      ],
+      "label_field": "text",
+      "value_field": "id",
+      "meta_fields": [
+        "user",
+        "source_label",
+        "as_of",
+        "is_stale"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/prompts.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
+        "exists": true,
+        "size_bytes": 543426,
+        "mtime_utc": "2026-11-21T02:58:54+00:00",
+        "sha256": "f2e9991f3ac220fd835dbbc97cb564a9a8cbb8caf9987189f904444b81b39763",
+        "read_at": "2026-11-21T02:58:54+00:00"
+      }
+    },
+    {
+      "id": "cs2-ideas",
+      "title": "CS2: голосовые идеи по темам",
+      "type": "table",
+      "source": "local-llm/work/cs2_voice_ideas.json",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 1438,
+      "publish": true,
+      "group_by": "theme",
+      "sort_by": "voice",
+      "filters": [
+        {
+          "field": "theme",
+          "values": [
+            "Карты и вариативность",
+            "Коммуникация и каллы",
+            "Позиционирование и стрельба",
+            "Психология и тренировки",
+            "Роли и тайминг",
+            "Утилити (смоки/флеши/гранаты)",
+            "Экономика и важные раунды"
+          ]
+        }
+      ],
+      "label_field": "text",
+      "value_field": "voice",
+      "meta_fields": [
+        "theme",
+        "voice"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "local-llm/work/cs2_voice_ideas.json",
+        "abs": "/home/nyaka/local-llm/work/cs2_voice_ideas.json",
+        "exists": true,
+        "size_bytes": 1445264,
+        "mtime_utc": "2026-11-18T14:18:20+00:00",
+        "sha256": "d53ccda71fb5e9e9aa05285c06ea4d20721319bf213c405ef1c61b7b3842ba7d",
+        "read_at": "2026-11-21T02:58:54+00:00"
+      },
+      "provenance_note": {
+        "declared_total": 1621,
+        "themed_rows": 1438,
+        "unique_voices": 794,
+        "note": "count = строк в таблице (запись может входить в несколько тем); declared_total — общее число классифицированных голосовых из файла"
+      }
+    },
+    {
+      "id": "confidential-review",
+      "title": "CONFIDENTIAL: приватный слой и пограничные (текст скрыт)",
+      "type": "checklist",
+      "source": "local-llm/work/voice_ideas/CONFIDENTIAL_REVIEW.md",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 29,
+      "publish": false,
+      "group_by": "section",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "label",
+          "values": [
+            "PERSONAL",
+            "SENSITIVE",
+            "UNCERTAIN",
+            "PUBLIC"
+          ]
+        }
+      ],
+      "label_field": "label",
+      "value_field": "id",
+      "meta_fields": [
+        "label"
+      ],
+      "actions": [],
+      "status": "ok",
+      "provenance": {
+        "file": "local-llm/work/voice_ideas/CONFIDENTIAL_REVIEW.md",
+        "abs": "/home/nyaka/local-llm/work/voice_ideas/CONFIDENTIAL_REVIEW.md",
+        "exists": true,
+        "size_bytes": 14846,
+        "mtime_utc": "2026-11-19T17:58:58+00:00",
+        "sha256": null,
+        "read_at": "2026-11-21T02:58:54+00:00",
+        "note": "redacted: только агрегаты, без текста записей"
+      },
+      "hint": "приватный слой 16 (PERSONAL 9 / SENSITIVE 4 / UNCERTAIN 3); пограничные PUBLIC 13; метки: PERSONAL 9 / SENSITIVE 4 / UNCERTAIN 3 / PUBLIC 13. Тексты, voice-ссылки и оценки не включены.",
+      "provenance_note": {
+        "declared_private": 16,
+        "declared_borderline": 13,
+        "parsed_private": 16,
+        "parsed_borderline": 13
+      }
+    },
+    {
+      "id": "skills",
+      "title": "Обзор скиллов",
+      "type": "cards",
+      "source": "~/.config/opencode/skills/*/SKILL.md",
+      "built_at": "2026-11-21T02:58:54+00:00",
+      "count": 30,
+      "publish": true,
+      "group_by": null,
+      "sort_by": "title",
+      "filters": [],
+      "label_field": "name",
+      "value_field": "id",
+      "meta_fields": [
+        "description",
+        "path"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "~/.config/opencode/skills/*/SKILL.md",
+        "abs": "/home/nyaka/.config/opencode/skills/*/SKILL.md",
+        "exists": true,
+        "size_bytes": 215551,
+        "mtime_utc": "2026-11-21T02:58:47+00:00",
+        "sha256": null,
+        "read_at": "2026-11-21T02:58:54+00:00",
+        "built_at": "2026-11-21T02:58:54+00:00",
+        "count": 30,
+        "note": "только шапки SKILL.md (первые 10 строк): name/description; описание обрезано до 140 символов; токены вырезаны",
+        "files": [
+          ".config/opencode/skills/agent-capacity/SKILL.md",
+          ".config/opencode/skills/blocker-radar/SKILL.md",
+          ".config/opencode/skills/claims-audit/SKILL.md",
+          ".config/opencode/skills/free-agent-threshold/SKILL.md",
+          ".config/opencode/skills/game-mode/SKILL.md",
+          ".config/opencode/skills/greedy-max/SKILL.md",
+          ".config/opencode/skills/html-slides/SKILL.md",
+          ".config/opencode/skills/hypothesis-check/SKILL.md",
+          ".config/opencode/skills/invento-rs/SKILL.md",
+          ".config/opencode/skills/masterplan-intake/SKILL.md",
+          ".config/opencode/skills/method-layer/SKILL.md",
+          ".config/opencode/skills/network-constraints/SKILL.md",
+          ".config/opencode/skills/opencode-selfcheck/SKILL.md",
+          ".config/opencode/skills/progress/SKILL.md",
+          ".config/opencode/skills/quota-radar/SKILL.md",
+          ".config/opencode/skills/research-slowdown/SKILL.md",
+          ".config/opencode/skills/resource-radar/SKILL.md",
+          ".config/opencode/skills/scanfeed/SKILL.md",
+          ".config/opencode/skills/session-handoff/SKILL.md",
+          ".config/opencode/skills/sessions/SKILL.md",
+          ".config/opencode/skills/show-in-answer/SKILL.md",
+          ".config/opencode/skills/split-resources/SKILL.md",
+          ".config/opencode/skills/strange-question/SKILL.md",
+          ".config/opencode/skills/studio-taste/SKILL.md",
+          ".config/opencode/skills/telemetry-lookup/SKILL.md",
+          ".config/opencode/skills/tg-bot-ui/SKILL.md",
+          ".config/opencode/skills/unanswered-radar/SKILL.md",
+          ".config/opencode/skills/ux-time-audit/SKILL.md",
+          ".config/opencode/skills/wants-radar/SKILL.md",
+          ".config/opencode/skills/work-audit/SKILL.md"
+        ]
+      },
+      "items": [
+        {
+          "id": "blocker-radar",
+          "name": "blocker-radar — анализ блоков и пути их снятия",
+          "title": "blocker-radar — анализ блоков и пути их снятия",
+          "description": "Использовать, когда пользователь говорит «блоки», «что заблокировано», «сними блок», «почему встало», «разберись с блоками», а также при по…",
+          "path": ".config/opencode/skills/blocker-radar/SKILL.md"
+        },
+        {
+          "id": "claims-audit",
+          "name": "claims-audit — сверка цифр и утверждений",
+          "title": "claims-audit — сверка цифр и утверждений",
+          "description": "Использовать, когда нужно сверить claims.json с прогрессом и планом, проверить актуальное число утверждений из файла (сейчас 97), найти рас…",
+          "path": ".config/opencode/skills/claims-audit/SKILL.md"
+        },
+        {
+          "id": "free-agent-threshold",
+          "name": "free-agent-threshold — порог лёгких задач и free-агентов",
+          "title": "free-agent-threshold — порог лёгких задач и free-агентов",
+          "description": "Использовать, когда нужно посмотреть или изменить порог complexity, ниже которого Telegram-бот даёт задаче собственного free-агента без оче…",
+          "path": ".config/opencode/skills/free-agent-threshold/SKILL.md"
+        },
+        {
+          "id": "game-mode",
+          "name": "game-mode",
+          "title": "game-mode",
+          "description": "Не мешать пользователю играть в CS2 (и любую игру) — убрать с Windows-ПК фоновую загрузку, скачку, парсинг, GPU/OBS/консоль и захват фокуса…",
+          "path": ".config/opencode/skills/game-mode/SKILL.md"
+        },
+        {
+          "id": "greedy-max",
+          "name": "greedy-max — жадный режим: максимум выгоды из всех ресурсов",
+          "title": "greedy-max — жадный режим: максимум выгоды из всех ресурсов",
+          "description": "Использовать, когда пользователь говорит «жадно», «максимально», «не экономь», «используй все ресурсы», «время и комфорт важнее», «выбери с…",
+          "path": ".config/opencode/skills/greedy-max/SKILL.md"
+        },
+        {
+          "id": "session-handoff",
+          "name": "handoff — компактная передача между сессиями и табами",
+          "title": "handoff — компактная передача между сессиями и табами",
+          "description": "Использовать, когда пользователь говорит «продолжи в другом табе», «подхвати в другой сессии», «передай результат дальше», при продолжении…",
+          "path": ".config/opencode/skills/session-handoff/SKILL.md"
+        },
+        {
+          "id": "hypothesis-check",
+          "name": "hypothesis-check — проверка гипотезы по шаблону",
+          "title": "hypothesis-check — проверка гипотезы по шаблону",
+          "description": "Использовать, когда пользователь говорит «проверь гипотезу Hxxx», «из бэклога», «создай новый отчёт гипотезы», а также при любой серии H001…",
+          "path": ".config/opencode/skills/hypothesis-check/SKILL.md"
+        },
+        {
+          "id": "invento-rs",
+          "name": "INVENTO.RS (EOFAI) — API, подписка и генерация",
+          "title": "INVENTO.RS (EOFAI) — API, подписка и генерация",
+          "description": "Использовать при задачах про INVENTORS / invento.rs / eofai.app / EOF-AI, их API-ключи, тарифы, токены, генерацию текста/картинок/видео/муз…",
+          "path": ".config/opencode/skills/invento-rs/SKILL.md"
+        },
+        {
+          "id": "method-layer",
+          "name": "method-layer — математика, гипотезы, прорывное, сигнал/шум",
+          "title": "method-layer — математика, гипотезы, прорывное, сигнал/шум",
+          "description": "Использовать, когда речь о математике и методах проверки, гипотезах H###, вердиктах, прорывном/непрорывном, сигнале и шуме, калибровках, CI…",
+          "path": ".config/opencode/skills/method-layer/SKILL.md"
+        },
+        {
+          "id": "research-slowdown",
+          "name": "Research slowdown — медленное исследование сложных тем",
+          "title": "Research slowdown — медленное исследование сложных тем",
+          "description": "Использовать, когда тема настолько обширна, что сходу не понять «что / почему / как», нужна комплексная оценка и максимальное количество ид…",
+          "path": ".config/opencode/skills/research-slowdown/SKILL.md"
+        },
+        {
+          "id": "resource-radar",
+          "name": "resource-radar",
+          "title": "resource-radar",
+          "description": "Мониторинг текущих ресурсов ноута и Windows-ПК — сеть, GPU, RAM (оперативка), CPU, диск и доступность pc-bridge. Вызывать при «ресурсы», «м…",
+          "path": ".config/opencode/skills/resource-radar/SKILL.md"
+        },
+        {
+          "id": "scanfeed",
+          "name": "Scanfeed",
+          "title": "Scanfeed",
+          "description": "Проект сканфида CS2 (kill feed, экономика противника по игрокам, радар-коллы, оверлей, бенчмарки, презентация матча). Вызывать при «сканфид…",
+          "path": ".config/opencode/skills/scanfeed/SKILL.md"
+        },
+        {
+          "id": "opencode-selfcheck",
+          "name": "selfcheck — модернизация OpenCode с независимой проверкой",
+          "title": "selfcheck — модернизация OpenCode с независимой проверкой",
+          "description": "Использовать, когда пользователь просит исправить/модернизировать сам OpenCode — opencode.jsonc, cli.json, агентов, скиллы, команды, плагин…",
+          "path": ".config/opencode/skills/opencode-selfcheck/SKILL.md"
+        },
+        {
+          "id": "split-resources",
+          "name": "split-resources",
+          "title": "split-resources",
+          "description": "Раздельные ресурсы ноут↔ПК: скачивание и парсинг демок/тяжёлые задачи — на Windows-ПК, ноут только управляет и анализирует готовые данные.…",
+          "path": ".config/opencode/skills/split-resources/SKILL.md"
+        },
+        {
+          "id": "strange-question",
+          "name": "strange-question — странный вопрос ищет контекст в прошлых сессиях",
+          "title": "strange-question — странный вопрос ищет контекст в прошлых сессиях",
+          "description": "Использовать, когда вопрос пользователя странный, корявый, слишком короткий или неполный — опечатки, оборванная фраза, «что я просил», «пок…",
+          "path": ".config/opencode/skills/strange-question/SKILL.md"
+        },
+        {
+          "id": "telemetry-lookup",
+          "name": "telemetry-lookup",
+          "title": "telemetry-lookup",
+          "description": "Быстрая выдача телеметрии запроса ТГ-бота по correlationId (req-...). Вызывать при «телеметрия по req-...», «выдай данные по correlationId»…",
+          "path": ".config/opencode/skills/telemetry-lookup/SKILL.md"
+        },
+        {
+          "id": "tg-bot-ui",
+          "name": "tg-bot-ui — кастомизация Telegram-бота, Mini App и голосовой поток",
+          "title": "tg-bot-ui — кастомизация Telegram-бота, Mini App и голосовой поток",
+          "description": "Использовать, когда пользователь спрашивает про кастомизацию сообщений Telegram-бота, стили/форматирование текста, «контрастные ответы», ми…",
+          "path": ".config/opencode/skills/tg-bot-ui/SKILL.md"
+        },
+        {
+          "id": "unanswered-radar",
+          "name": "unanswered-radar — радар неотвеченных идей",
+          "title": "unanswered-radar — радар неотвеченных идей",
+          "description": "Использовать, когда пользователь говорит «оцени работу за последний день», «все поднимаемые идеи, которые были не отвечены», «перечитай все…",
+          "path": ".config/opencode/skills/unanswered-radar/SKILL.md"
+        },
+        {
+          "id": "ux-time-audit",
+          "name": "ux-time-audit",
+          "title": "ux-time-audit",
+          "description": "Комплексная сверка «фактическое время ↔ время в ТГ-боте ↔ время в данных мини-апа ↔ эргономика». Вызывать при «свежесть данных», «время в м…",
+          "path": ".config/opencode/skills/ux-time-audit/SKILL.md"
+        },
+        {
+          "id": "work-audit",
+          "name": "work-audit — единая точка входа оценки работы",
+          "title": "work-audit — единая точка входа оценки работы",
+          "description": "Использовать, когда нужно понять «что сделано / что доказано / что открыто / сколько это стоило», оценить прогресс за день-два, сверить cla…",
+          "path": ".config/opencode/skills/work-audit/SKILL.md"
+        },
+        {
+          "id": "studio-taste",
+          "name": "Вкус и эргономика как студия",
+          "title": "Вкус и эргономика как студия",
+          "description": "Слой вкуса и эргономики поверх готовых кирпичей (show-in-answer, html-slides, TUI). Вызывать при «сделать красиво», «полировать», «как в ст…",
+          "path": ".config/opencode/skills/studio-taste/SKILL.md"
+        },
+        {
+          "id": "html-slides",
+          "name": "Красивые HTML-презентации",
+          "title": "Красивые HTML-презентации",
+          "description": "Рендер-слой для show-in-answer: собирает самодостаточный HTML в Catppuccin Mocha и превращает его в PNG. Самостоятельно НЕ вызывается по сл…",
+          "path": ".config/opencode/skills/html-slides/SKILL.md"
+        },
+        {
+          "id": "masterplan-intake",
+          "name": "Мастерплан: приём новых тем из сессий",
+          "title": "Мастерплан: приём новых тем из сессий",
+          "description": "Использовать, когда нужно обновить ~/overnight/MASTERPLAN.md / MASTERPLAN-v2.md новой темой из диалогов, когда пользователь говорит «новая…",
+          "path": ".config/opencode/skills/masterplan-intake/SKILL.md"
+        },
+        {
+          "id": "show-in-answer",
+          "name": "Показ результата прямо в ответе",
+          "title": "Показ результата прямо в ответе",
+          "description": "Использовать ЛЮБОМУ агенту в ЛЮБОМ диалоге, когда нужно красиво показать результат — презентацию, слайды, отчёт, дашборд, схему, диаграмму,…",
+          "path": ".config/opencode/skills/show-in-answer/SKILL.md"
+        },
+        {
+          "id": "progress",
+          "name": "Прогресс больших задач",
+          "title": "Прогресс больших задач",
+          "description": "Использовать, когда задача длинная/многошаговая или пользователь говорит «прогресс», «сколько осталось», «большая задача», «подзадачи», «чт…",
+          "path": ".config/opencode/skills/progress/SKILL.md"
+        },
+        {
+          "id": "quota-radar",
+          "name": "Радар квот Go — акции и множители",
+          "title": "Радар квот Go — акции и множители",
+          "description": "Использовать, когда речь о лимитах и расходе OpenCode Go: «какую модель взять», «что выгоднее», «акции», «множители», «почему списалось бол…",
+          "path": ".config/opencode/skills/quota-radar/SKILL.md"
+        },
+        {
+          "id": "wants-radar",
+          "name": "Радар хотелок — не терять идеи из сообщений",
+          "title": "Радар хотелок — не терять идеи из сообщений",
+          "description": "Использовать, когда пользователь накидал много идей/хотелок, а сделана только одна; когда нужно «что я хотел», «что не сделано», «виджет хо…",
+          "path": ".config/opencode/skills/wants-radar/SKILL.md"
+        },
+        {
+          "id": "sessions",
+          "name": "Сессии — найти дубли и слить",
+          "title": "Сессии — найти дубли и слить",
+          "description": "Использовать, когда пользователь говорит «слишком много сессий», «дубли сессий», «слить/объединить сессии», «несколько сессий делают одно и…",
+          "path": ".config/opencode/skills/sessions/SKILL.md"
+        },
+        {
+          "id": "network-constraints",
+          "name": "Сеть, VPN и обход блокировок",
+          "title": "Сеть, VPN и обход блокировок",
+          "description": "Использовать при задачах про VPN, прокси, обход блокировок/DPI, YouTube, googlevideo, clash/mihomo, zapret, а также про региональные ограни…",
+          "path": ".config/opencode/skills/network-constraints/SKILL.md"
+        },
+        {
+          "id": "agent-capacity",
+          "name": "Сколько агентов нужно",
+          "title": "Сколько агентов нужно",
+          "description": "Использовать, когда пользователь спрашивает «достаточно ли N агентов», «сколько агентов запустить», «параллелить ли», «почему работа встала…",
+          "path": ".config/opencode/skills/agent-capacity/SKILL.md"
+        }
+      ]
+    }
+  ]
+}
