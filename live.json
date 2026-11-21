@@ -627,8 +627,8 @@
       "task": "T19",
       "id": "T19.1",
       "title": "Детектор HUD-бомбы: жёлтая маска + OCR цифр + парсер 0:37",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "vision ROI отдельно от kill-feed; переиспользуем yellow-маску и tesseract-whitelist"
     },
     {
       "task": "T19",
@@ -643,23 +643,55 @@
       "title": "CLI + интеграция в оверлей без конфликта продюсеров",
       "status": "todo",
       "note": ""
+    },
+    {
+      "task": "T19",
+      "id": "T19.4",
+      "title": "Тесты: синтетика + негативы на canon_full + прогон",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "T19",
+      "id": "T19.5",
+      "title": "Критик: ревью диффа, устранение находок",
+      "status": "todo",
+      "note": ""
     }
   ],
-  "active": [],
+  "active": [
+    {
+      "id": "AU11883",
+      "title": "ПРОВЕРИТЬ ГИПОТЕЗУ H454: Из 1539 дуэлей зазор посчитан для 1518; 21 позиция — «no edge in ±30°» (`unknown`). После…",
+      "source": "ноут",
+      "claimed_human": "09:15:15",
+      "age_min": 0,
+      "full": "ПРОВЕРИТЬ ГИПОТЕЗУ H454: Из 1539 дуэлей зазор посчитан для 1518; 21 позиция — «no edge in ±30°» (`unknown`). После…"
+    },
+    {
+      "id": "AU11882",
+      "title": "ПРОВЕРИТЬ ГИПОТЕЗУ H453: P09 — непрерывный `edge_gap_deg` как регрессор",
+      "source": "ноут",
+      "claimed_human": "09:14:30",
+      "age_min": 0,
+      "full": "ПРОВЕРИТЬ ГИПОТЕЗУ H453: P09 — непрерывный `edge_gap_deg` как регрессор"
+    }
+  ],
   "queues": {
     "ноут": {
       "done": 1449,
       "failed": 756,
-      "todo": 40
+      "doing": 2,
+      "todo": 43
     },
     "ПК": {
       "done": 34,
       "todo": 56
     }
   },
-  "updatedAt": "2026-11-21T09:14:17+03:00",
-  "progress_updated_at": "2026-11-21T09:14:17+03:00",
+  "updatedAt": "2026-11-21T09:14:18+03:00",
+  "progress_updated_at": "2026-11-21T09:14:18+03:00",
   "plan_source": "progress.json",
-  "fetched_at": 1795241658,
-  "fetched_human": "2026-11-21 09:14:18 +0300"
+  "fetched_at": 1795241718,
+  "fetched_human": "2026-11-21 09:15:18 +0300"
 }
