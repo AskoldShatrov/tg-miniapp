@@ -296,6 +296,13 @@
   .children{margin-left:18px;padding-left:10px;border-left:1px solid var(--surface1);display:none}
   .children.open{display:block;animation:fade .15s ease}
   .tree-foot{margin-top:12px;font:600 10px/1.5 var(--fm);color:var(--overlay0);text-align:center}
+  .tree-src{margin:2px 0 8px;font:600 9.5px/1.5 var(--fm);color:var(--overlay0)}
+  .tree-src b{color:var(--green);font-weight:700}
+  .tree-arch{margin-top:10px;border-top:1px dashed var(--surface1);padding-top:8px}
+  .tree-arch summary{cursor:pointer;font:700 10px/1.4 var(--fm);color:var(--overlay1);list-style:none}
+  .tree-arch summary::before{content:"▸ ";color:var(--surface2)}
+  .tree-arch[open] summary::before{content:"▾ "}
+  .tree-arch .api-node .tname{color:var(--overlay1)}
 
   /* ---------- decisions ---------- */
   .dlist{display:flex;flex-direction:column;gap:9px}
@@ -356,6 +363,24 @@
     border-radius:10px;padding:9px 11px;font:500 12px/1.3 var(--ff);
   }
   .psearch:focus{outline:none;border-color:var(--blue)}
+  .prange-custom{display:flex;align-items:center;gap:6px}
+  .prange-custom input{
+    flex:1;min-width:0;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);
+    border-radius:8px;padding:7px 9px;font:500 11px/1.3 var(--ff);color-scheme:dark;
+  }
+  .prange-custom input:focus{outline:none;border-color:var(--blue)}
+  .prange-custom span{font:700 10px/1 var(--fm);color:var(--overlay1)}
+  .pstale{
+    display:none;align-items:center;gap:8px;flex-wrap:wrap;margin:-2px 0 12px;padding:9px 10px;
+    border-radius:var(--radius-sm);background:rgba(249,226,175,.07);
+    border:1px solid rgba(249,226,175,.3);font:600 10.5px/1.4 var(--ff);color:var(--yellow);
+  }
+  .pstale.show{display:flex}
+  .pstale .p-mini{margin-left:auto}
+  .p-badge{font:700 8.5px/1 var(--fm);letter-spacing:.3px;padding:4px 6px;border-radius:5px;flex:none;white-space:nowrap;border:1px solid transparent}
+  .p-badge.u{color:var(--sapphire);background:rgba(116,199,236,.1);border-color:rgba(116,199,236,.3)}
+  .p-badge.s{color:var(--teal);background:rgba(148,226,213,.1);border-color:rgba(148,226,213,.3)}
+  .p-badge.stale{color:var(--yellow);background:rgba(249,226,175,.1);border-color:rgba(249,226,175,.3)}
   .pstrip{
     display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:-2px 0 12px;padding:9px 10px;
     border-radius:var(--radius-sm);background:rgba(203,166,247,.06);
@@ -476,6 +501,94 @@
   .nd-answer{display:flex;gap:6px;margin-top:8px}
   .nd-input{flex:1 1 auto;min-width:0;background:var(--mantle);border:1px solid var(--surface1);border-radius:7px;color:var(--text);padding:7px 9px;font:600 12px/1 var(--ff)}
   .src-api{font:700 9px/1 var(--fm);color:var(--green);margin-left:6px}
+
+  /* ===== студия идей: второй слой + стикер ===== */
+  /* 8 вкладок в одну строку не влезают на телефоне — две строки по 4 */
+  nav.tabs{flex-wrap:wrap;gap:5px}
+  .tab{flex:1 1 calc(25% - 6px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
+  @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
+
+  .stoolbar{display:flex;flex-direction:column;gap:8px;margin-bottom:11px}
+  .sstrip{
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:9px 10px;margin-bottom:11px;
+    border-radius:var(--radius-sm);background:rgba(203,166,247,.06);
+    border:1px solid rgba(203,166,247,.2);font:600 10px/1.3 var(--fm);color:var(--subtext0);
+  }
+  .sstrip b{color:var(--lavender)}
+  .sstrip .ssrc{color:var(--overlay0);margin-left:auto}
+  .scard{
+    background:var(--mantle);border:1px solid var(--surface0);border-radius:var(--radius-sm);
+    padding:11px 12px;margin-bottom:9px;transition:.14s ease;
+  }
+  .scard:hover{border-color:var(--surface2)}
+  .scard.open{border-color:var(--sapphire);background:rgba(116,199,236,.045)}
+  .scard.r5{border-left:2px solid var(--green)}
+  .scard.r4{border-left:2px solid var(--teal)}
+  .scard.r3{border-left:2px solid var(--yellow)}
+  .shead{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .skind{font:800 8.5px/1 var(--fm);letter-spacing:.5px;padding:4px 7px;border-radius:5px;white-space:nowrap}
+  .k-prompt{color:var(--blue);background:rgba(137,180,250,.1);border:1px solid rgba(137,180,250,.32)}
+  .k-claim{color:var(--peach);background:rgba(250,179,135,.1);border:1px solid rgba(250,179,135,.32)}
+  .k-want{color:var(--pink);background:rgba(245,194,231,.1);border:1px solid rgba(245,194,231,.32)}
+  .k-goal{color:var(--green);background:rgba(166,227,161,.1);border:1px solid rgba(166,227,161,.32)}
+  .k-video{color:var(--maroon);background:rgba(243,139,168,.1);border:1px solid rgba(243,139,168,.32)}
+  .k-idea{color:var(--lavender);background:rgba(203,166,247,.1);border:1px solid rgba(203,166,247,.32)}
+  .stime{font:700 9px/1 var(--fm);color:var(--overlay1);margin-left:auto}
+  .sstat{font:800 8.5px/1 var(--fm);padding:4px 6px;border-radius:5px;white-space:nowrap}
+  .ss-ok{color:var(--green);background:rgba(166,227,161,.1);border:1px solid rgba(166,227,161,.3)}
+  .ss-no{color:var(--maroon);background:rgba(243,139,168,.1);border:1px solid rgba(243,139,168,.3)}
+  .stext{
+    font:600 12.5px/1.45 var(--ff);color:var(--subtext1);margin:8px 0 0;cursor:pointer;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .scard.open .stext{-webkit-line-clamp:unset;display:block;white-space:pre-wrap;word-break:break-word}
+  .ssticker{
+    margin-top:8px;padding:7px 9px;border-left:2px solid var(--lavender);border-radius:0 7px 7px 0;
+    background:rgba(203,166,247,.07);font:600 11.5px/1.45 var(--ff);color:var(--text);
+  }
+  .ssticker.none{border-color:var(--surface2);background:transparent;color:var(--overlay1);font-style:italic}
+  .ssticker .slab{display:block;font:700 8.5px/1 var(--fm);letter-spacing:.7px;color:var(--overlay1);text-transform:uppercase;margin-bottom:4px}
+  .srate{display:flex;gap:2px;margin-top:7px;align-items:center}
+  .srate button{appearance:none;background:none;border:0;padding:2px;font-size:14px;line-height:1;color:var(--surface2);cursor:pointer}
+  .srate button.on{color:var(--yellow)}
+  .srate .rv{font:700 9px/1 var(--fm);color:var(--overlay1);margin-left:5px}
+  .slinks{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  .slink{font:600 9.5px/1 var(--fm);padding:5px 7px;border-radius:7px;text-decoration:none;
+    color:var(--peach);background:rgba(250,179,135,.08);border:1px solid rgba(250,179,135,.28)}
+  .slink.manual{color:var(--teal);background:rgba(148,226,213,.08);border-color:rgba(148,226,213,.32);cursor:pointer}
+  .slink.manual:hover{background:rgba(148,226,213,.2)}
+  .slink.edge{color:var(--sky);background:rgba(137,220,235,.07);border-color:rgba(137,220,235,.28)}
+  .slink.vid{color:var(--maroon);background:rgba(243,139,168,.08);border-color:rgba(243,139,168,.28)}
+  .sdetail{display:none;margin-top:9px;padding-top:9px;border-top:1px dashed var(--surface1)}
+  .scard.open .sdetail{display:block}
+  .sedit{display:flex;gap:6px;margin-top:7px}
+  .sedit input{
+    flex:1;min-width:0;background:var(--surface0);color:var(--text);border:1px solid var(--surface1);
+    border-radius:8px;padding:7px 9px;font:500 11px/1.3 var(--ff);
+  }
+  .sedit input:focus{outline:none;border-color:var(--sapphire)}
+  .sbtn{
+    appearance:none;background:var(--surface1);color:var(--subtext1);border:1px solid var(--surface2);
+    border-radius:8px;padding:7px 10px;font:700 10.5px/1 var(--ff);cursor:pointer;white-space:nowrap;
+  }
+  .sbtn.primary{background:rgba(137,180,250,.16);border-color:rgba(137,180,250,.45);color:var(--blue)}
+  .sbtn.ghost{background:transparent}
+  .sbtn:hover{border-color:var(--sapphire)}
+  .sbtn.smore{display:block;width:100%;margin:2px 0 10px}
+  .sedge{
+    display:flex;align-items:center;gap:6px;padding:9px 10px;margin-bottom:6px;cursor:pointer;
+    background:var(--mantle);border:1px solid var(--surface0);border-radius:9px;
+    font:600 10.5px/1.35 var(--fm);color:var(--subtext0);
+  }
+  .sedge:hover{border-color:var(--surface2)}
+  .sedge .et{color:var(--sky);font-size:9px;text-transform:uppercase;letter-spacing:.4px}
+  .sedge .eid{color:var(--overlay1);word-break:break-all}
+  /* Честные штампы свежести: старьё не выдаём за текущее. */
+  .fresh-ok{color:var(--green)}
+  .fresh-stale{color:var(--yellow)}
+  .fresh-err{color:var(--maroon)}
+  .demo-note{padding:8px 10px;margin-bottom:8px;border:1px solid rgba(249,226,175,.35);
+    border-radius:8px;background:rgba(249,226,175,.08);color:var(--yellow);font-size:11px}
 </style>
 </head>
 <body>
@@ -502,6 +615,7 @@
     <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">5</span></button>
     <button class="tab" data-tab="live"><span>◉</span> Ход <span class="key">6</span></button>
     <button class="tab" data-tab="questions"><span>❓</span> Вопросы <span class="key">7</span></button>
+    <button class="tab" data-tab="studio"><span>◈</span> Студия <span class="key">8</span></button>
   </nav>
 
   <main id="main">
@@ -536,8 +650,16 @@
           <button data-range="7">7 дней</button>
           <button data-range="30">30 дней</button>
           <button data-range="all">все</button>
+          <button data-range="custom">свои даты</button>
+        </div>
+        <div class="prange-custom" id="pCustomRange">
+          <input id="pFrom" type="date" aria-label="дата от">
+          <span>…</span>
+          <input id="pTo" type="date" aria-label="дата до">
         </div>
         <input id="pSearch" class="psearch" type="text" placeholder="Найти по тексту, теме, хотелке…">
+        <div class="seg" id="pUser"></div>
+        <div class="seg" id="pSource"></div>
         <div class="seg" id="pMode">
           <button data-mode="group" class="on">по темам</button>
           <button data-mode="time">по времени</button>
@@ -550,6 +672,7 @@
         <span class="psrc" id="pSrc">загрузка…</span>
         <button id="pReload" class="sreload" style="margin-left:auto" title="Перечитать данные">⟳</button>
       </div>
+      <div class="pstale" id="pStale"></div>
       <div id="pList"></div>
       <div class="hint">
         Нажми на промпт, чтобы раскрыть <b>полный текст</b>, связи с хотелками и <b>ответ в пару слов</b>.
@@ -558,7 +681,7 @@
     </section>
 
     <section class="screen" id="screen-tree">
-      <div class="eyebrow">Дерево задач · T1—T11 <span class="api-badge" id="treeApiBadge">API · нет</span></div>
+      <div class="eyebrow"><span id="treeEyebrow">Дерево задач · T1—T11</span> <span class="api-badge" id="treeApiBadge">API · нет</span></div>
       <div class="live-strip" id="liveStrip">
         <span class="dot-live"></span>
         <span title="агенты = max(живые opencode run, воркеры) — стабильный сигнал; в работе — мгновенные run; сессии — вкладки OpenCode за сутки; сабагенты — дочерние сессии; воркеры — systemd-сервисы">агентов <b id="stripAgents">…</b> · в работе <b id="stripLive">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
@@ -578,6 +701,7 @@
       </div>
       <div id="apiTreeWrap" style="display:none">
         <div class="api-chips" id="apiProjectChips"></div>
+        <div class="tree-src" id="treeSource">источник: —</div>
         <div class="api-tree" id="apiTree"></div>
         <div class="node-detail" id="nodeDetail"></div>
       </div>
@@ -629,6 +753,41 @@
       <div class="eyebrow" style="margin-top:12px">Задачи в работе (claim'ы очередей)</div>
       <div id="liveJobs"></div>
     </section>
+    <section class="screen" id="screen-studio">
+      <div class="eyebrow">Студия идей · второй слой + стикер</div>
+      <div class="hint" style="margin:0 0 10px">
+        Первый слой — сырой промпт или узел графа. Второй слой — <b>стикер</b>: короткий
+        человеческий ответ, который ставишь ты. Оценка ★, связи и стикеры сохраняются на
+        устройстве; «В бот» отправляет стикер агенту.
+      </div>
+      <div class="stoolbar">
+        <div class="seg" id="sView">
+          <button data-view="cards" class="on">карточки</button>
+          <button data-view="open">неотвеченные</button>
+          <button data-view="edges">связи</button>
+        </div>
+        <div class="seg" id="sKind">
+          <button data-kind="all" class="on">всё</button>
+          <button data-kind="prompt">промпты</button>
+          <button data-kind="idea">идеи</button>
+          <button data-kind="video">видео</button>
+        </div>
+        <input id="sSearch" class="psearch" type="text" placeholder="Найти идею, промпт, связь…">
+      </div>
+      <div class="sstrip">
+        <span class="dot-live" style="background:var(--lavender);box-shadow:0 0 0 3px rgba(203,166,247,.15)"></span>
+        <span>карточек <b id="sCount">…</b> · связей <b id="sLinkCount">…</b> · оценено <b id="sRated">0</b></span>
+        <span class="ssrc" id="sStamp">загрузка…</span>
+        <button id="sReload" class="sreload" title="Перечитать prompts.json и atlas.json">⟳</button>
+      </div>
+      <div id="sList"></div>
+      <button id="sMore" class="sbtn smore" style="display:none">показать ещё</button>
+      <div class="hint">
+        Стикеры, оценки и ручные связи — в <code>localStorage["miniapp_studio_v1"]</code>,
+        переживают обновление данных. Ручная связь — сплошной чип, авто — пунктирный.
+      </div>
+    </section>
+
   </main>
 
   <div class="hotbar">
@@ -646,6 +805,8 @@
     <span class="sep"></span>
     <span class="hk"><kbd>7</kbd> Вопросы</span>
     <span class="sep"></span>
+    <span class="hk"><kbd>8</kbd> Студия</span>
+    <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
 
@@ -655,7 +816,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261120-1550";
+const BUILD = "20261121-0433";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -708,7 +869,7 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["chat","prompts","tree","sessions","atlas","live","questions"];
+const TAB_IDS=["chat","prompts","tree","sessions","atlas","live","questions","studio"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
@@ -764,9 +925,14 @@ function nodeHTML(n){
 }
 let LIVE={tree:null,decisions:null};
 function renderTree(){
-  const nodes=(LIVE.tree&&LIVE.tree.length)?LIVE.tree:DEMO.tree;
-  $("#tree").innerHTML=nodes.map(nodeHTML).join("");
-  const c=statusCounts(DEMO.tree);
+  const isDemo=!(LIVE.tree&&LIVE.tree.length);
+  const nodes=isDemo?DEMO.tree:LIVE.tree;
+  // DEMO-заглушка и старьё раньше выдавались за живые данные — помечаем явно.
+  const ff=paint("tree", $("#tree"));
+  const warn=isDemo ? "DEMO · встроенная заглушка, не живые данные"
+                    : (ff.cls==="ok" ? "" : "ДАННЫЕ УСТАРЕЛИ · "+ff.text);
+  $("#tree").innerHTML=(warn?'<div class="demo-note">'+esc(warn)+'</div>':'')+nodes.map(nodeHTML).join("");
+  const c=statusCounts(nodes);
   $("#cntPass").textContent=c.PASS; $("#cntFail").textContent=c.FAIL; $("#cntOpen").textContent=c.OPEN;
   $$("#tree .trow[data-toggle='1']").forEach(row=>{
     row.addEventListener("click",()=>{
@@ -779,10 +945,37 @@ function renderTree(){
 
 /* ---------- этап 7: дерево процессов из API (/projects → /projects/{id}/tree) ----------
    Статический фолбэк выше не трогаем: если API недоступен, остаётся DEMO/tree.json. */
-let API_TREE_ON=false, API_PROJECTS=null, API_TREE_NODES=null, API_CURRENT_PROJECT=null, API_SELECTED_NODE=null;
+let API_TREE_ON=false, API_PROJECTS=null, API_TREE_NODES=null, API_CURRENT_PROJECT=null, API_SELECTED_NODE=null, API_TREE_TOTAL=null;
 function normalizeCan(can){
   if(!Array.isArray(can)) return [];
   return can.map(c=>typeof c==="string"?c:(c&&(c.action||c.type||c.name)||"")).filter(Boolean);
+}
+/* process_api отдаёт узлы с полем _id, а не id. Без нормализации каждый узел
+   получал id=undefined: Set видел один и тот же ключ, рендерился только первый
+   узел, а клик уходил на /nodes/undefined. statuses API тоже свои (done/error/…). */
+const STALE_DAYS=14;
+function normStatus(s){
+  const k=String(s||"OPEN").toLowerCase();
+  if(k==="done"||k==="pass"||k==="ok") return "PASS";
+  if(k==="error"||k==="fail"||k==="failed") return "FAIL";
+  if(k==="waiting_user"||k==="question") return "QUESTION";
+  return "OPEN";
+}
+function nodeAgeDays(n){
+  const t=n.last_seen||n.finished_at||n.started_at||n.updated||n.ts;
+  if(!t) return null;
+  const ms=(typeof t==="number")?(t<1e12?t*1000:t):Date.parse(t);
+  return Number.isFinite(ms)?(Date.now()-ms)/86400000:null;
+}
+function normalizeApiNodes(raw){
+  return (raw||[]).map(n=>({
+    ...n,
+    id: n.id!=null?n.id:(n._id!=null?n._id:n.node_id),
+    name: n.title||n.name||n._id||"",
+    status: normStatus(n.status),
+    rawStatus: n.status||"OPEN",
+    ageDays: nodeAgeDays(n)
+  })).filter(n=>n.id!=null && String(n.id)!=="undefined");
 }
 function projectCount(p){
   if(p.counts && typeof p.counts==="object")
@@ -793,7 +986,7 @@ function projectCount(p){
   return "";
 }
 function projectId(p){
-  return p.id!=null?p.id:(p.project_id!=null?p.project_id:p.key);
+  return p.id!=null?p.id:(p._id!=null?p._id:(p.project_id!=null?p.project_id:p.key));
 }
 function renderProjectChips(){
   const box=$("#apiProjectChips"); if(!box||!API_PROJECTS) return;
@@ -810,7 +1003,21 @@ function openApiWrap(on){
   if(wrap) wrap.style.display = on?"":"none";
   if(staticTree) staticTree.style.display = on?"none":"";
   if(foot) foot.style.display = on?"none":"";
+  const eb=$("#treeEyebrow");
+  if(eb) eb.textContent = on ? "Дерево процессов · живые узлы" : "Дерево задач · T1—T11";
   setApiBadge($("#treeApiBadge"), on);
+}
+function treeStamp(pid, count){
+  const el=$("#treeSource"); if(!el) return;
+  const src=(LATEST_STATUS&&LATEST_STATUS.process_api_url)
+    ? String(LATEST_STATUS.process_api_url).replace(/\/+$/,"") : "process_api";
+  const t=LATEST_STATUS&&(LATEST_STATUS.ts_human||LATEST_STATUS.ts);
+  // Раньше тут было || Date.now(): пустой статус фабриковал «обновлено сейчас».
+  const human = t ? ((typeof t==="number")
+    ? new Date(t*1000).toLocaleTimeString() : (String(t).slice(11,19)||String(t))) : "время неизвестно";
+  const total=(API_TREE_TOTAL!=null && API_TREE_TOTAL>count)?` (всего ${API_TREE_TOTAL}, показаны свежие)`:"";
+  const fr=paint("api", el);
+  el.innerHTML=`источник: <b>process_api · /projects/${esc(pid)}/tree</b> · ${esc(src)} · обновлено ${esc(human)} · узлов ${count}${total} <span class="fresh-${fr.cls}">${esc(fr.text)}</span>`;
 }
 function updateSummary(nodes){
   const c={PASS:0,FAIL:0,OPEN:0,QUESTION:0};
@@ -822,46 +1029,57 @@ function updateSummary(nodes){
 }
 function renderApiTree(nodes){
   const box=$("#apiTree"); if(!box) return;
+  const active=nodes.filter(n=>n.ageDays==null||n.ageDays<=STALE_DAYS);
+  const archived=nodes.filter(n=>n.ageDays!=null&&n.ageDays>STALE_DAYS);
   const byParent={};
-  nodes.forEach(n=>{
+  active.forEach(n=>{
     const k=(n.parent_id!=null?n.parent_id:(n.parent!=null?n.parent:""));
     (byParent[String(k)]=byParent[String(k)]||[]).push(n);
   });
   const seen=new Set(); let html="";
   function row(n, depth){
-    if(seen.has(n.id)) return; seen.add(n.id);
+    if(seen.has(n.id)) return ""; seen.add(n.id);
     const can=normalizeCan(n.can);
-    html+=`<div class="trow api-node ${String(n.id)===String(API_SELECTED_NODE)?"selected":""}" data-node="${esc(n.id)}" style="padding-left:${10+depth*16}px">
+    const status=n.status||"OPEN";
+    const label=({PASS:"готово",FAIL:"ошибка",QUESTION:"вопрос"})[status]||n.rawStatus||"OPEN";
+    return `<div class="trow api-node ${String(n.id)===String(API_SELECTED_NODE)?"selected":""}" data-node="${esc(n.id)}" style="padding-left:${10+depth*16}px" title="${esc(n.rawStatus||status)}">
       <span class="twist leaf">·</span>
-      <span class="tid">${esc(n.id)}</span>
-      <span class="tname">${esc(n.title||n.name||n.id)}</span>
+      <span class="tid">${esc(String(n.id).slice(0,10))}</span>
+      <span class="tname">${esc(n.name)}</span>
       ${n.step!=null?`<span class="qid">шаг ${esc(n.step)}</span>`:""}
       ${can.length?`<span class="qid">[${esc(can.join(","))}]</span>`:""}
-      <span class="status st-${esc(String(n.status||"OPEN").toUpperCase())}">${esc(n.status||"OPEN")}</span>
-    </div>`;
-    walk(n.id, depth+1);
+      <span class="status st-${esc(status)}">${esc(label)}</span>
+    </div>` + walk(n.id, depth+1);
   }
-  function walk(parent, depth){ (byParent[String(parent)]||[]).slice().forEach(n=>row(n,depth)); }
-  walk("",0);
-  nodes.slice().forEach(n=>row(n,0));   // узлы, чьи родители не попали в список
+  function walk(parent, depth){ return (byParent[String(parent)]||[]).slice().map(n=>row(n,depth)).join(""); }
+  html = walk("",0) + active.map(n=>row(n,0)).join("");
+  if(archived.length){
+    html += `<details class="tree-arch"><summary>архив · неактивных более ${STALE_DAYS} дней: ${archived.length}</summary><div>` +
+      archived.map(n=>row(n,0)).join("") + `</div></details>`;
+  }
   box.innerHTML = html || '<div class="hint">В проекте пока нет узлов.</div>';
   $$("#apiTree .api-node").forEach(el=>el.addEventListener("click",()=>openNode(el.dataset.node)));
 }
 async function loadProjectTree(pid){
   API_CURRENT_PROJECT = pid;
   renderProjectChips();
-  const data = await api("/projects/"+encodeURIComponent(pid)+"/tree");
-  if(data==null) return false;
-  const nodes = Array.isArray(data)?data:(data.nodes||data.tree||data.items||[]);
+  const data = await api("/projects/"+encodeURIComponent(pid)+"/tree?limit=50");
+  if(data==null){ bad("api", "process_api /tree недоступен"); return false; }
+  ok("api");
+  API_TREE_TOTAL = (data && data.total!=null) ? data.total : null;
+  const nodes = normalizeApiNodes(Array.isArray(data)?data:(data.nodes||data.tree||data.items||[]));
   API_TREE_NODES = nodes;
   renderApiTree(nodes);
   updateSummary(nodes);
+  treeStamp(pid, nodes.length);
   return true;
 }
 async function loadProcessTree(){
   let projects = await api("/projects");
   if(projects && !Array.isArray(projects) && Array.isArray(projects.projects)) projects=projects.projects;
-  if(!projects || !Array.isArray(projects) || !projects.length){ openApiWrap(false); return false; }
+  if(!projects || !Array.isArray(projects) || !projects.length){
+    bad("api", "process_api /projects недоступен"); openApiWrap(false); return false;
+  }
   API_PROJECTS = projects;
   API_TREE_ON = true;
   openApiWrap(true);
@@ -876,8 +1094,10 @@ async function loadProcessTree(){
 
 /* ---------- decisions ---------- */
 function renderDecisions(){
-  const rows=(LIVE.decisions&&LIVE.decisions.length)?LIVE.decisions:DEMO.decisions;
-  $("#dlist").innerHTML=rows.map(d=>`
+  const isDemo=!(LIVE.decisions&&LIVE.decisions.length);
+  const rows=isDemo?DEMO.decisions:LIVE.decisions;
+  paint("tree", $("#dlist"));
+  $("#dlist").innerHTML=(isDemo?'<div class="demo-note">DEMO · встроенная заглушка, не живые данные</div>':'')+rows.map(d=>`
     <div class="dec">
       <div>
         <h4>${esc(d.h)} · ${esc(d.title)}</h4>
@@ -978,6 +1198,47 @@ function timeAgo(ms){
   if(s<86400) return Math.floor(s/3600)+"ч назад";
   return Math.floor(s/86400)+"д назад";
 }
+/* ---------- честные штампы свежести ----------
+   as_of = локальное время УСПЕШНОГО ПРИЁМА (Date.now()), а не поле из payload:
+   старый файл, присланный сегодня, остаётся старым. Данные не затираем —
+   накладываем штамп (класс + title + data-fresh) поверх уже показанного. */
+const SRC = {};
+const TTL = { status:15000, sessions:30000, replies:15000, prompts:300000,
+              questions:30000, live:180000, atlas:180000, tree:60000, api:15000 };
+const STAMP = {
+  status:["#stripTime"],
+  sessions:["#sessionsNote"],
+  replies:["#chatSub"],
+  questions:["#questionsStamp"],
+  live:["#liveStamp"],
+  atlas:["#atlasTime"],
+  tree:["#treeSource","#dlist"],
+  api:["#treeApiBadge","#questionsApiBadge"]
+};
+function freshness(key){
+  const s=SRC[key];
+  if(!s || !s.as_of) return {cls:"err", text:"нет данных"};
+  const age=Date.now()-s.as_of;
+  if(s.status==="error" || age>s.ttl) return {cls:"stale", text:"устарело · "+timeAgo(s.as_of)};
+  return {cls:"ok", text:timeAgo(s.as_of)};
+}
+function paint(key, el, base){
+  const f=freshness(key);
+  const nodes = el ? [el] : (STAMP[key]||[]).map(sel=>$(sel));
+  for(const n of nodes){
+    if(!n) continue;
+    n.classList.remove("fresh-ok","fresh-stale","fresh-err");
+    n.classList.add("fresh-"+f.cls);
+    n.dataset.fresh=f.text;
+    const prev = (n.dataset.baseTitle!=null) ? n.dataset.baseTitle : (n.title||"");
+    const src = (base!=null) ? base : prev;
+    n.dataset.baseTitle=src;
+    n.title = src + (src ? " · " : "") + "свежесть: " + f.text;
+  }
+  return f;
+}
+function ok(key, at){ SRC[key]={as_of:at||Date.now(), status:"live", ttl:TTL[key]||60000}; return paint(key); }
+function bad(key, e){ const s=SRC[key]||(SRC[key]={as_of:0, ttl:TTL[key]||60000}); s.status="error"; if(e) console.warn("[src] "+key+": "+(e.message||e)); return paint(key); }
 /* Точное локальное время активности — чтобы порядок «сверху свежие» был проверяем,
    а не только заявлен. relative «0с назад» у нескольких верхних строк неинформативен. */
 function absTime(s){
@@ -1000,8 +1261,9 @@ function renderSessions(){
   const fetched=Number(SESSIONS.fetched_at||0)*1000;
   const stale=fetched && Date.now()-fetched>5*60000;
   const note=$("#sessionsNote");
-  note.textContent = stale ? "ДАННЫЕ УСТАРЕЛИ — источник недоступен" : (SESSIONS.note||"");
-  note.style.color = stale ? "var(--maroon)" : "var(--yellow)";
+  const sf=paint("sessions", note);
+  note.textContent = (stale ? "ДАННЫЕ УСТАРЕЛИ — источник недоступен" : (SESSIONS.note||"")) + " · " + sf.text;
+  note.style.color = (stale||sf.cls!=="ok") ? "var(--maroon)" : "var(--yellow)";
   if(!list.length){
     $("#slist").innerHTML='<div class="sempty">Нет свежих сессий — данных пока нет или источник недоступен.</div>';
     return;
@@ -1035,6 +1297,7 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="5"){setTab("atlas"); renderAtlas()}
   else if(e.key==="6"){setTab("live"); renderLive()}
   else if(e.key==="7"){setTab("questions"); fetchQuestions()}
+  else if(e.key==="8"){setTab("studio"); studioEnsure()}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
@@ -1116,6 +1379,7 @@ async function refreshAgentStatus(){
     if(!r.ok) continue;
     const s = await r.json();
     LATEST_STATUS = s;   // этап 7: отсюда api() берёт process_api_url
+    ok("status");        // as_of = локальное время приёма, а не s.ts из payload
     const n = Number(s.agents)||0;
     const word = n===1 ? "агент" : (n>=2 && n<=4 ? "агента" : "агентов");
     const badge = $("#agentBadge");
@@ -1144,10 +1408,11 @@ async function refreshAgentStatus(){
     if(sb) sb.textContent = Number(s.subagents)||0;
     if(sw) sw.textContent = (s.workers||0);
     if(sn) sn.textContent = (s.note||"") + (Number(s.pc_agents)>0 ? " · ПК-агентов: "+s.pc_agents : "");
-    if(st) st.textContent = ((s.ts_human||"").slice(11,16) || "—");
+    if(st) st.textContent = ((s.ts_human||"").slice(11,16) || "—")+" · "+freshness("status").text;
       return;
    }catch(e){ /* следующий источник, офлайн — оставляем последнее значение */ }
   }
+  bad("status", "status.json недоступен");
 }
 refreshAgentStatus();
 setInterval(refreshAgentStatus, 5000);
@@ -1183,10 +1448,12 @@ async function refreshSessions(){
     const d = await r.json();
     if(!d || !Array.isArray(d.sessions)) continue;
     SESSIONS = d;
+    ok("sessions");      // as_of = локальное время приёма, а не d.fetched_at
     renderSessions();
     return;
    }catch(e){ /* следующий источник, офлайн — оставляем последнее значение */ }
   }
+  bad("sessions", "sessions.json недоступен");
 }
 refreshSessions();
 setInterval(refreshSessions, 5000);
@@ -1324,10 +1591,12 @@ async function refreshReplies(){
       const d = await r.json();
       CHAT.replies = d || {};
       localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
+      ok("replies");       // as_of = локальное время приёма, а не ts ответов
       renderChat();
       return;
     }catch(e){}
   }
+  bad("replies", "replies.json недоступен");
 }
 function sendChat(){
   const inp = $("#chatInput"); if(!inp) return;
@@ -1374,6 +1643,13 @@ setInterval(refreshReplies, 5000);
   let PMAN = { answers:{}, links:{}, moved:{} };
   try { PMAN = Object.assign(PMAN, JSON.parse(localStorage.getItem(PM_KEY)||"{}")); } catch(e){}
   let pRange = "3", pMode = "group", pQuery = "";
+  let pUser = "all", pSource = "all", pFrom = "", pTo = "";
+  // ЕДИНАЯ СТРОКА справочника пользователей. По логам inbox: 1869196044=Аскольд
+  // (подпись «Аскольд:» — :848, «просил Иван, прислал мне» — :826), 435824119=Иван
+  // («дай доступ Ивану тоже» — :909). Это гипотеза из логов, НЕ факт из конфига:
+  // если сопоставление неверно — поменяй местами значения в строке ниже.
+  const P_USERS = {'1869196044':'Аскольд','435824119':'Иван'};
+  const P_SOURCES = {'telegram':'ТГ бот','session':'ноут','pc':'ПК'};
 
   const DAY = 86400000;
   function savePman(){ try{ localStorage.setItem(PM_KEY, JSON.stringify(PMAN)); }catch(e){} }
@@ -1399,17 +1675,53 @@ setInterval(refreshReplies, 5000);
     const m=["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
     return d.getDate()+" "+m[d.getMonth()]+(d.getFullYear()!==now.getFullYear()?" "+d.getFullYear():"");
   }
+  function pPad(x){ return String(x).padStart(2,"0"); }
+  function pDateKey(ts){
+    const n=Number(ts), t=n>1e12?n:n*1000, d=new Date(t);
+    return d.getFullYear()+"-"+pPad(d.getMonth()+1)+"-"+pPad(d.getDate());
+  }
+  function pNormSource(p){
+    if(p.source) return p.source;
+    const id=String(p.id||"");
+    return id.startsWith("tg-")?"telegram":(id.startsWith("ses-")?"session":"");
+  }
+  function pUsers(){ return (PROMPTS.meta&&PROMPTS.meta.users)||P_USERS; }
+  function pSources(){ return (PROMPTS.meta&&PROMPTS.meta.source_labels)||P_SOURCES; }
+  function pUserName(p){ return p.user || pUsers()[p.user_id] || ""; }
+  function pIsStale(p){
+    if(p.is_stale!=null) return !!p.is_stale;
+    if(p.status) return p.status==="stale";
+    if(!p.ts) return false;
+    const n=Number(p.ts), t=n>1e12?n:n*1000;
+    return Date.now()-t > DAY;
+  }
+  function pStamp(v){
+    if(!v) return "";
+    if(typeof v==="number" || /^\d+$/.test(String(v))) return pDate(Number(v));
+    return String(v).slice(0,16).replace("T"," ");
+  }
   function inRange(ts){
     if(pRange==="all") return true;
+    if(pRange==="custom"){
+      if(!ts) return false;                       // бездатированные — только при «все»
+      const key=pDateKey(ts);
+      if(pFrom && key<pFrom) return false;
+      if(pTo && key>pTo) return false;
+      return true;
+    }
     if(!ts) return true;
     const n=Number(ts), t=n>1e12?n:n*1000;
     return Date.now()-t <= Number(pRange)*DAY;
   }
+  function inUser(p){ return pUser==="all" || String(p.user_id||"")===pUser; }
+  function inSource(p){ return pSource==="all" || pNormSource(p)===pSource; }
   function collect(){ const out=[]; (PROMPTS.groups||[]).forEach(g=>(g.prompts||[]).forEach(p=>out.push({p,g}))); return out; }
   function filtered(){
     const q=pQuery.trim().toLowerCase();
     return collect().filter(({p,g})=>{
       if(!inRange(p.ts)) return false;
+      if(!inUser(p)) return false;
+      if(!inSource(p)) return false;
       if(!q) return true;
       const hay=[p.text,g.name,pAnswer(p,g),pLinks(p,g).join(" ")].join(" ").toLowerCase();
       return hay.includes(q);
@@ -1425,10 +1737,16 @@ setInterval(refreshReplies, 5000);
     const links=pLinks(p,g), ans=pAnswer(p,g);
     const full=esc(p.text||""), short=esc((p.text||"").slice(0,180));
     const gopts=(PROMPTS.groups||[]).map(x=>`<option value="${esc(x.id)}" ${x.id===pGroupId(p,g)?"selected":""}>${esc(x.name)}</option>`).join("");
+    const src=pNormSource(p), srcLab=p.source_label||pSources()[src]||src||"";
+    const who=pUserName(p), stale=pIsStale(p);
+    const badges=[who?`<span class="p-badge u">${esc(who)}</span>`:"",
+                  srcLab?`<span class="p-badge s">${esc(srcLab)}</span>`:"",
+                  stale?'<span class="p-badge stale">устарело</span>':""].filter(Boolean).join("");
     return `<div class="p-item" data-pid="${esc(p.id)}">
       <div class="p-row">
         <span class="p-time">${esc(pDate(p.ts))}</span>
         <span class="p-text">${short}</span>
+        ${badges}
         <span class="p-status ${cls}">${lab}</span>
       </div>
       <div class="p-detail">
@@ -1475,8 +1793,19 @@ setInterval(refreshReplies, 5000);
     const rows=filtered(), m=PROMPTS.meta||{};
     $("#pCount").textContent=rows.length;
     $("#pGroups").textContent=new Set(rows.map(r=>pGroupId(r.p,r.g))).size+" / "+(PROMPTS.groups||[]).length;
-    $("#pSrc").textContent=(m.generated_human||m.generated||"нет данных")+(m.note?" · "+m.note:"");
-    if(!rows.length){ list.innerHTML='<div class="p-empty">Ничего не нашлось. Другой диапазон, поиск или обнови данные ⟳.</div>'; return; }
+    const asof=pStamp(m.as_of);
+    $("#pSrc").textContent=(m.generated_human||m.generated||"нет данных")+(asof?" · выгрузка "+asof:"")+(m.note?" · "+m.note:"");
+    const nb=$("#pStale"), staleN=rows.filter(r=>pIsStale(r.p)).length;
+    if(nb){
+      if(staleN>0 || Number(m.stale_days)>0){
+        nb.innerHTML='<span>⚠ Выгрузка устарела'+(staleN?' · '+staleN+' устаревших записей':'')+(Number(m.stale_days)>0?' · '+m.stale_days+' дн':'')+(asof?' · '+asof:'')+'</span><button id="pStaleReload" class="p-mini" title="Перечитать данные">⟳ обновить</button>';
+        nb.classList.add("show");
+        const sb=$("#pStaleReload"); if(sb) sb.addEventListener("click",()=>{
+          const b=$("#pReload"); if(b){b.classList.add("spin"); refreshPrompts().then(()=>b.classList.remove("spin"));}
+        });
+      } else { nb.innerHTML=""; nb.classList.remove("show"); }
+    }
+    if(!rows.length){ list.innerHTML='<div class="p-empty">Ничего не нашлось. Другой период, пользователь, источник или поиск — либо обнови данные ⟳.</div>'; return; }
     if(pMode==="group"){
       const byG={};
       rows.forEach(r=>{ const id=pGroupId(r.p,r.g); (byG[id]=byG[id]||{g:(PROMPTS.groups||[]).find(x=>x.id===id)||r.g, items:[]}).items.push(r); });
@@ -1530,16 +1859,43 @@ setInterval(refreshReplies, 5000);
         if(!r.ok) continue;
         const d=await r.json();
         if(!d || !Array.isArray(d.groups)) continue;
-        PROMPTS=d; renderPrompts(); return;
+        ok("prompts"); PROMPTS=d; pBuildSegs(); renderPrompts(); return;
       }catch(e){}
     }
+    bad("prompts", "все источники prompts.json недоступны");
     const list=$("#pList");
     if(list && !list.innerHTML) list.innerHTML='<div class="p-empty">Источник prompts.json недоступен — данные не загружены.</div>';
     $("#pSrc").textContent="источник недоступен";
   }
+  function pBuildSeg(el, entries, allLabel, attr, set){
+    if(!el) return;
+    const cur=attr==="user"?pUser:pSource, on=v=>(cur===v?"on":"");
+    el.innerHTML=`<button data-${attr}="all" class="${on("all")}">${esc(allLabel)}</button>`+
+      entries.map(([v,l])=>`<button data-${attr}="${esc(v)}" class="${on(v)}">${esc(l)}</button>`).join("");
+    $$(`#${el.id} button`).forEach(b=>b.addEventListener("click",()=>{
+      set(b.dataset[attr]); $$(`#${el.id} button`).forEach(x=>x.classList.toggle("on",x===b)); renderPrompts();
+    }));
+  }
+  function pBuildSegs(){
+    const m=PROMPTS.meta||{};
+    pBuildSeg($("#pUser"), Object.entries(m.users||P_USERS), "все пользователи", "user", v=>{pUser=v;});
+    pBuildSeg($("#pSource"), Object.entries(m.source_labels||P_SOURCES), "все источники", "source", v=>{pSource=v;});
+  }
+  pBuildSegs();
   $$("#pRange button").forEach(b=>b.addEventListener("click",()=>{
-    pRange=b.dataset.range; $$("#pRange button").forEach(x=>x.classList.toggle("on",x===b)); renderPrompts();
+    pRange=b.dataset.range;
+    if(pRange!=="custom"){
+      pFrom=""; pTo="";
+      const f=$("#pFrom"), t=$("#pTo"); if(f) f.value=""; if(t) t.value="";
+    }
+    $$("#pRange button").forEach(x=>x.classList.toggle("on",x===b)); renderPrompts();
   }));
+  const pFromEl=$("#pFrom"), pToEl=$("#pTo");
+  const onCustomRange=()=>{
+    pRange="custom"; $$("#pRange button").forEach(x=>x.classList.toggle("on",x.dataset.range==="custom")); renderPrompts();
+  };
+  if(pFromEl) pFromEl.addEventListener("change",()=>{pFrom=pFromEl.value;onCustomRange();});
+  if(pToEl) pToEl.addEventListener("change",()=>{pTo=pToEl.value;onCustomRange();});
   $$("#pMode button").forEach(b=>b.addEventListener("click",()=>{
     pMode=b.dataset.mode; $$("#pMode button").forEach(x=>x.classList.toggle("on",x===b)); renderPrompts();
   }));
@@ -1563,7 +1919,8 @@ function renderAtlas(){
   const kinds=((grid.filter||{}).kind)||[];
   const nodes=(ATLAS.nodes||[]).filter(n=>!kinds.length||kinds.includes(n.kind));
   $("#atlasCount").textContent=nodes.length;
-  $("#atlasTime").textContent=(ATLAS.updatedAt||"").slice(11,16)||"—";
+  const atEl=$("#atlasTime"), af=paint("atlas", atEl);
+  if(atEl) atEl.textContent=((ATLAS.updatedAt||"").slice(11,16)||"—")+" · "+af.text;
   cards.innerHTML=nodes.slice(0,120).map(n=>`
     <div class="acard">
       <div class="atitle">${esc(n.text||n.id)}</div>
@@ -1576,7 +1933,7 @@ function renderAtlas(){
 let LIVE_JOBS=null;
 function renderLive(){
   const d=LIVE_JOBS; if(!d) return;
-  const st=$("#liveStamp"); if(st) st.textContent="обновлено "+(d.fetched_human||"—");
+  const st=$("#liveStamp"); if(st){ const lf=paint("live", st); st.textContent="обновлено "+(d.fetched_human||"—")+" · "+lf.text; }
   const q=$("#liveQueues");
   if(q) q.innerHTML=Object.entries(d.queues||{}).map(([name,c])=>
     `<span>${esc(name)}: <b>${Number(c.todo)||0}</b> ждут · <b>${Number(c.doing)||0}</b> в работе · <b>${Number(c.done)||0}</b> готово</span>`).join("");
@@ -1604,7 +1961,10 @@ function renderQuestions(){
   const box=$("#questionCards"); if(!box) return;
   const list=(QUESTIONS&&QUESTIONS.questions)||[];
   const stamp=$("#questionsStamp");
-  if(stamp) stamp.textContent=list.length?`${list.length} ждут ответа`:"Все вопросы закрыты";
+  if(stamp){
+    const qf=paint("questions", stamp);
+    stamp.textContent=(list.length?`${list.length} ждут ответа`:"Все вопросы закрыты")+" · "+qf.text;
+  }
   box.innerHTML=list.length?list.map(q=>{
     const extra=normalizeCan(q.can).filter(a=>a!=="answer");   // ответ идёт через sendData — не трогаем
     return `
@@ -1643,7 +2003,7 @@ async function fetchQuestions(){
   // этап 7: сначала живой /questions через process_api_url из status.json
   const live=await api("/questions");
   if(live && Array.isArray(live.questions)){
-    QUESTIONS=live; QUESTIONS_FROM_API=true; renderQuestions();
+    QUESTIONS=live; QUESTIONS_FROM_API=true; ok("questions"); renderQuestions();
     setApiBadge($("#questionsApiBadge"), true);
     return;
   }
@@ -1654,7 +2014,7 @@ async function fetchQuestions(){
       const r=await fetch(apiBase.replace(/\/$/,"")+"/questions",
         {headers:init?{"X-Telegram-Init-Data":init}:{},cache:"no-store"});
       if(r.ok){
-        QUESTIONS=await r.json(); QUESTIONS_FROM_API=true; renderQuestions();
+        QUESTIONS=await r.json(); QUESTIONS_FROM_API=true; ok("questions"); renderQuestions();
         setApiBadge($("#questionsApiBadge"), true);
         return;
       }
@@ -1666,10 +2026,14 @@ async function fetchQuestions(){
     try{
       const r=await fetch(base+"questions.json?ts="+Date.now(),{cache:"no-store"});
       if(!r.ok) continue;
-      QUESTIONS=await r.json(); renderQuestions(); return;
+      QUESTIONS=await r.json(); ok("questions"); renderQuestions(); return;
     }catch(e){ /* фолбэк — пустой список */ }
   }
-  if(!QUESTIONS){QUESTIONS={questions:[]};renderQuestions();}
+  // Провал всех баз: ставим error и перерисовываем, чтобы старый список не
+  // выдавался за текущий (раньше тихо оставался последний удачно прочитанный).
+  bad("questions", "все источники вопросов недоступны");
+  if(!QUESTIONS){QUESTIONS={questions:[]};}
+  renderQuestions();
 }
 
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
@@ -1685,15 +2049,279 @@ async function fetchLiveData(){
       ]);
       if(!t.ok||!d.ok) continue;
       const tj=await t.json(), dj=await d.json();
-      if(Array.isArray(tj)&&tj.length) LIVE.tree=tj;
-      if(Array.isArray(dj)&&dj.length) LIVE.decisions=dj;
+      if(Array.isArray(tj)&&tj.length){ LIVE.tree=tj; ok("tree"); }
+      if(Array.isArray(dj)&&dj.length){ LIVE.decisions=dj; ok("tree"); }
       if(LIVE.tree||LIVE.decisions){ renderTree(); renderDecisions(); }
-      if(a.ok){ ATLAS=await a.json(); renderAtlas(); }
-      if(l.ok){ LIVE_JOBS=await l.json(); renderLive(); }
+      if(a.ok){ ATLAS=await a.json(); ok("atlas"); renderAtlas(); }
+      if(l.ok){ LIVE_JOBS=await l.json(); ok("live"); renderLive(); }
       return;
     }catch(e){ /* фолбэк — захардкоженные DEMO-данные уже показаны */ }
   }
+  bad("tree", "tree.json/decisions.json недоступны");
+  bad("atlas", "atlas.json недоступен");
+  bad("live", "live.json недоступен");
+  // Перерисовываем: без этого старые цифры остаются без штампа «устарело».
+  if(typeof renderTree==="function") renderTree();
+  if(typeof renderDecisions==="function") renderDecisions();
+  if(typeof renderAtlas==="function") renderAtlas();
+  if(typeof renderLive==="function") renderLive();
 }
+
+/* =========================================================
+   СТУДИЯ ИДЕЙ · «второй слой + стикер»
+   Источники: prompts.json (промпты) + atlas.json (узлы и связи).
+   Первый слой — сырой текст, второй — стикер (короткий ответ),
+   оценка ★ и ручные связи. Всё ручное — в localStorage поверх
+   выгрузки. Обратный канал — tg.sendData (source:miniapp_studio).
+   ========================================================= */
+const STUDIO_KEY = "miniapp_studio_v1";
+let STUDIO = { loaded:false, loading:false, nodes:[], edges:[], meta:"" };
+let SMAN = { sticker:{}, rating:{}, links:{} };
+try { SMAN = Object.assign(SMAN, JSON.parse(localStorage.getItem(STUDIO_KEY)||"{}")); } catch(e){}
+["sticker","rating","links"].forEach(k=>{ if(!SMAN[k]||typeof SMAN[k]!=="object") SMAN[k]={}; });
+let SEDGES = {};
+let sView = "cards", sKind = "all", sQuery = "", sLimit = 40;
+
+function saveStudio(){ try{ localStorage.setItem(STUDIO_KEY, JSON.stringify(SMAN)); }catch(e){} }
+function studioWait(getter, ms){
+  return new Promise(res=>{
+    const t0=Date.now();
+    (function tick(){
+      if(getter()) return res(true);
+      if(Date.now()-t0>ms) return res(false);
+      setTimeout(tick,200);
+    })();
+  });
+}
+async function studioEnsure(){
+  if(STUDIO.loaded||STUDIO.loading) return;
+  STUDIO.loading=true;
+  const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
+  const hasP=await studioWait(()=>PROMPTS&&(PROMPTS.groups||[]).length,6000);
+  if(!hasP){
+    for(const base of bases){
+      try{
+        const r=await fetch(base+"prompts.json?ts="+Date.now(),{cache:"no-store"});
+        if(!r.ok) continue;
+        const d=await r.json();
+        if(d&&Array.isArray(d.groups)){ PROMPTS=d; break; }
+      }catch(e){}
+    }
+  }
+  const hasA=await studioWait(()=>ATLAS&&Array.isArray(ATLAS.nodes),6000);
+  if(!hasA){
+    for(const base of bases){
+      try{
+        const r=await fetch(base+"atlas.json?ts="+Date.now(),{cache:"no-store"});
+        if(!r.ok) continue;
+        ATLAS=await r.json(); break;
+      }catch(e){}
+    }
+  }
+  STUDIO.nodes=(ATLAS&&Array.isArray(ATLAS.nodes))?ATLAS.nodes:[];
+  STUDIO.edges=(ATLAS&&Array.isArray(ATLAS.edges))?ATLAS.edges:[];
+  STUDIO.meta=(ATLAS&&ATLAS.updatedAt)||"";
+  STUDIO.loaded=true; STUDIO.loading=false;
+  studioRender();
+}
+function studioCards(){
+  const out=[], seen=new Set();
+  (PROMPTS.groups||[]).forEach(g=>(g.prompts||[]).forEach(p=>{
+    if(!p||!p.id||seen.has(p.id)) return; seen.add(p.id);
+    out.push({ id:"prompt:"+p.id, kind:"prompt", text:p.text||"", ts:Number(p.ts)||0,
+      autoAnswer:p.answer||g.answer||"", autoLinks:[...(p.wants||[]),...(g.wants||[])],
+      group:g.name||"" });
+  }));
+  (STUDIO.nodes||[]).forEach(n=>{
+    if(!n||!n.id||seen.has(n.id)) return; seen.add(n.id);
+    out.push({ id:n.id, kind:n.kind||"idea", text:n.text||n.id, ts:0,
+      autoAnswer:n.answer_short||"",
+      autoLinks:(n.refs||[]).map(r=>(r&&(r.id||r.type))||"").filter(Boolean),
+      group:n.status||"" });
+  });
+  return out;
+}
+function studioEdgeIndex(){
+  const m={};
+  (STUDIO.edges||[]).forEach(e=>{
+    if(!e||!e.from||!e.to) return;
+    (m[e.from]=m[e.from]||[]).push({id:e.to,type:e.type});
+    (m[e.to]=m[e.to]||[]).push({id:e.from,type:e.type});
+  });
+  return m;
+}
+function studioSticker(c){ return (SMAN.sticker[c.id]||"").trim() || c.autoAnswer || ""; }
+function studioIsManual(c){ return !!(SMAN.sticker[c.id]||"").trim(); }
+function studioLinks(c){
+  const auto=[...new Set((c.autoLinks||[]).filter(Boolean))];
+  return { auto, edge:(SEDGES[c.id]||[]), manual:(SMAN.links[c.id]||[]) };
+}
+function studioTime(ts){
+  if(!ts) return "";
+  const n=Number(ts), d=new Date(n>1e12?n:n*1000), q=x=>String(x).padStart(2,"0");
+  return q(d.getDate())+"."+q(d.getMonth()+1)+" "+q(d.getHours())+":"+q(d.getMinutes());
+}
+const SKIND={prompt:"промпт",claim:"claim",want:"хотелка",goal:"цель",hypothesis:"гипотеза",verdict:"вердикт",video:"видео",author:"автор"};
+function studioFiltered(){
+  const q=sQuery.trim().toLowerCase();
+  const rows=studioCards().filter(c=>{
+    if(sKind!=="all"){
+      if(sKind==="prompt"&&c.kind!=="prompt") return false;
+      if(sKind==="idea"&&!["claim","want","goal","hypothesis","verdict"].includes(c.kind)) return false;
+      if(sKind==="video"&&!["video","author"].includes(c.kind)) return false;
+    }
+    if(sView==="open"&&studioSticker(c)) return false;
+    if(!q) return true;
+    const L=studioLinks(c);
+    const hay=[c.text,c.group,c.id,studioSticker(c),L.auto.join(" "),L.manual.join(" "),
+      L.edge.map(e=>e.id).join(" ")].join(" ").toLowerCase();
+    return hay.includes(q);
+  });
+  rows.sort((a,b)=>{
+    const sa=studioSticker(a)?1:0, sb=studioSticker(b)?1:0;
+    if(sa!==sb) return sa-sb;                                  // неотвеченные — сверху
+    const ra=SMAN.rating[a.id]||0, rb=SMAN.rating[b.id]||0;
+    if(ra!==rb) return rb-ra;                                  // выше оценка — выше
+    if(a.ts!==b.ts) return b.ts-a.ts;                          // свежие — выше
+    return String(a.id).localeCompare(String(b.id));
+  });
+  return rows;
+}
+function studioCardHTML(c){
+  const st=studioSticker(c), manual=studioIsManual(c), r=SMAN.rating[c.id]||0;
+  const L=studioLinks(c);
+  const kc=SKIND[c.kind]?"k-"+c.kind:"k-idea";
+  const kindLabel=(SKIND[c.kind]||c.kind||"идея").toUpperCase();
+  const stars=[1,2,3,4,5].map(i=>`<button data-star="${i}" class="${i<=r?"on":""}" title="оценка ${i}">★</button>`).join("");
+  const autoChips=L.auto.map(x=>`<span class="slink" title="связь из данных">${esc(x)}</span>`).join("");
+  const edgeChips=L.edge.map(e=>`<span class="slink edge" title="${esc(e.type||"связь")}">↔ ${esc(e.id)}</span>`).join("");
+  const manChips=L.manual.map(x=>`<span class="slink manual" data-unlink="${esc(x)}" title="ручная связь — нажми, чтобы убрать">✎ ${esc(x)}</span>`).join("");
+  const vid=(c.kind==="video"&&c.id.indexOf("video:")===0)
+    ? `<a class="slink vid" href="https://youtu.be/${esc(c.id.slice(6))}" target="_blank" rel="noopener">▶ открыть видео</a>` : "";
+  const anyLinks=(autoChips+edgeChips+manChips+vid)||'<span class="slink" style="opacity:.45">связей нет</span>';
+  return `<div class="scard ${r>=5?"r5":r===4?"r4":r===3?"r3":""}" data-sid="${esc(c.id)}">
+    <div class="shead">
+      <span class="skind ${kc}">${esc(kindLabel)}</span>
+      ${c.group?`<span class="stime" style="margin-left:0">${esc(c.group)}</span>`:""}
+      <span class="stime">${esc(studioTime(c.ts))}</span>
+      <span class="sstat ${st?"ss-ok":"ss-no"}">${st?"ОТВЕЧЕНО":"НЕ ОТВЕЧЕНО"}</span>
+    </div>
+    <div class="stext">${esc(c.text||c.id)}</div>
+    <div class="ssticker ${st?"":"none"}"><span class="slab">стикер · второй слой${manual?" · мой":""}</span>${st?esc(st):"ещё не сформулирован — поставь сам"}</div>
+    <div class="srate" data-role="rate">${stars}<span class="rv">${r?r+"/5":"—"}</span></div>
+    <div class="slinks">${anyLinks||'<span class="slink" style="opacity:.45">связей нет</span>'}</div>
+    <div class="sdetail">
+      <div class="p-label">полный первый слой</div>
+      <div class="p-full">${esc(c.text||c.id)}</div>
+      <div class="sedit">
+        <input data-role="stickerIn" placeholder="стикер: ответ в пару слов…" value="${esc(st)}">
+        <button class="sbtn primary" data-act="saveSticker">OK</button>
+      </div>
+      <div class="sedit">
+        <input data-role="linkIn" placeholder="+ связь: H358 / video:… / want:…">
+        <button class="sbtn" data-act="addLink">+</button>
+      </div>
+      <div class="sedit">
+        <button class="sbtn primary" data-act="send">В бот</button>
+        ${manual?'<button class="sbtn ghost" data-act="resetSticker">сбросить стикер</button>':""}
+      </div>
+    </div>
+  </div>`;
+}
+function studioBind(){
+  $$("#sList .scard").forEach(card=>{
+    const sid=card.dataset.sid;
+    const txt=card.querySelector(".stext");
+    if(txt) txt.addEventListener("click",()=>card.classList.toggle("open"));
+    $$(".srate button",card).forEach(b=>b.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const v=Number(b.dataset.star)||0, cur=SMAN.rating[sid]||0;
+      SMAN.rating[sid]=(cur===v)?0:v; saveStudio(); studioRender();
+    }));
+    $$(".slink.manual",card).forEach(ch=>ch.addEventListener("click",ev=>{
+      ev.stopPropagation(); const v=ch.dataset.unlink;
+      SMAN.links[sid]=(SMAN.links[sid]||[]).filter(x=>x!==v);
+      saveStudio(); studioRender(); toast("Связь убрана");
+    }));
+    const act=(name,fn)=>{ const b=card.querySelector(`[data-act='${name}']`); if(b) b.addEventListener("click",ev=>{ev.stopPropagation();fn();}); };
+    act("saveSticker",()=>{
+      const inp=card.querySelector("[data-role='stickerIn']"), v=inp.value.trim();
+      if(!v) return;
+      SMAN.sticker[sid]=v; saveStudio(); studioRender(); toast("Стикер сохранён");
+    });
+    act("resetSticker",()=>{ delete SMAN.sticker[sid]; saveStudio(); studioRender(); toast("Стикер сброшен"); });
+    act("addLink",()=>{
+      const inp=card.querySelector("[data-role='linkIn']"), v=inp.value.trim();
+      if(!v) return;
+      SMAN.links[sid]=[...new Set([...(SMAN.links[sid]||[]),v])];
+      saveStudio(); studioRender(); toast("Связь добавлена");
+    });
+    act("send",()=>studioSend(sid));
+  });
+}
+function studioSend(sid){
+  if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+  const c=studioCards().find(x=>x.id===sid);
+  const payload={ source:"miniapp_studio", id:sid, kind:c?c.kind:"",
+    sticker:c?studioSticker(c):"", rating:SMAN.rating[sid]||0,
+    links:(SMAN.links[sid]||[]), user_id:userID, ts:Date.now() };
+  tg.sendData(JSON.stringify(payload));
+  toast("Стикер отправлен в бот");
+  if(typeof tg.close==="function") tg.close();
+}
+function studioRenderEdges(){
+  const list=$("#sList"), edges=STUDIO.edges||[];
+  $("#sCount").textContent=edges.length;
+  $("#sLinkCount").textContent=Object.values(SMAN.links).reduce((n,a)=>n+(a||[]).length,0);
+  $("#sRated").textContent=Object.keys(SMAN.rating||{}).length;
+  $("#sStamp").textContent=STUDIO.loaded?"связи графа":"загрузка…";
+  $("#sMore").style.display="none";
+  if(!edges.length){ list.innerHTML='<div class="p-empty">Связей в atlas.json нет.</div>'; return; }
+  const q=sQuery.trim().toLowerCase();
+  const rows=edges.filter(e=>!q||(e.from+" "+e.to+" "+(e.type||"")).toLowerCase().includes(q));
+  if(!rows.length){ list.innerHTML='<div class="p-empty">Таких связей не нашлось.</div>'; return; }
+  list.innerHTML=rows.map(e=>`<div class="sedge" data-a="${esc(e.from)}" data-b="${esc(e.to)}">
+    <span class="eid">${esc(e.from)}</span><span class="et">${esc(e.type||"связь")}</span><span class="eid">${esc(e.to)}</span></div>`).join("");
+  $$("#sList .sedge").forEach(r=>r.addEventListener("click",()=>{
+    sQuery=r.dataset.b; sView="cards"; sLimit=40;
+    const inp=$("#sSearch"); if(inp) inp.value=sQuery;
+    $$("#sView button").forEach(x=>x.classList.toggle("on",x.dataset.view==="cards"));
+    studioRender();
+  }));
+}
+function studioRender(){
+  const list=$("#sList"); if(!list) return;
+  SEDGES=studioEdgeIndex();
+  if(sView==="edges"){ studioRenderEdges(); return; }
+  const rows=studioFiltered();
+  $("#sCount").textContent=rows.length;
+  $("#sLinkCount").textContent=(STUDIO.edges||[]).length+Object.values(SMAN.links).reduce((n,a)=>n+(a||[]).length,0);
+  $("#sRated").textContent=Object.keys(SMAN.rating||{}).length;
+  $("#sStamp").textContent=STUDIO.loaded?((PROMPTS.meta&&(PROMPTS.meta.generated_human||PROMPTS.meta.generated))||"данные"):"загрузка…";
+  if(!rows.length){ list.innerHTML='<div class="p-empty">Ничего не нашлось. Другой фильтр, поиск или ⟳.</div>'; $("#sMore").style.display="none"; return; }
+  list.innerHTML=rows.slice(0,sLimit).map(studioCardHTML).join("");
+  $("#sMore").style.display=rows.length>sLimit?"block":"none";
+  $("#sMore").textContent="показать ещё ("+(rows.length-sLimit)+")";
+  studioBind();
+}
+$$("#sView button").forEach(b=>b.addEventListener("click",()=>{
+  sView=b.dataset.view; sLimit=40;
+  $$("#sView button").forEach(x=>x.classList.toggle("on",x===b));
+  studioRender();
+}));
+$$("#sKind button").forEach(b=>b.addEventListener("click",()=>{
+  sKind=b.dataset.kind; sLimit=40;
+  $$("#sKind button").forEach(x=>x.classList.toggle("on",x===b));
+  studioRender();
+}));
+const sSearch=$("#sSearch"); if(sSearch) sSearch.addEventListener("input",()=>{ sQuery=sSearch.value; sLimit=40; studioRender(); });
+const sReload=$("#sReload"); if(sReload) sReload.addEventListener("click",()=>{
+  sReload.classList.add("spin"); STUDIO.loaded=false;
+  studioEnsure().then(()=>sReload.classList.remove("spin"));
+});
+const sMore=$("#sMore"); if(sMore) sMore.addEventListener("click",()=>{ sLimit+=40; studioRender(); });
+$$(".tab[data-tab='studio']").forEach(b=>b.addEventListener("click",()=>{ studioEnsure(); studioRender(); }));
+studioEnsure();
 
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
@@ -1707,5 +2335,6 @@ setInterval(()=>{                     // этап 7: только API-дерев
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
+<script src="task-tree.js"></script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nyaka.local/miniapp/prompts.schema.json",
+  "title": "prompts.json — контракт данных мини-апа",
+  "description": "Промпты пользователей: кто (user_id/user), откуда (source/source_label), когда (as_of) и устарело ли (is_stale). Проверяется build_prompts.py перед записью; без внешних библиотек поддержано только подмножество: $ref (#/...), type, required, properties, items, enum, const, minimum, additionalProperties.",
+  "type": "object",
+  "required": ["meta", "groups"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["generated", "as_of", "stale_days", "count", "groups", "users", "source_labels", "sources"],
+      "additionalProperties": false,
+      "properties": {
+        "generated": { "type": "string", "description": "ISO-8601 UTC, момент генерации" },
+        "generated_human": { "type": "string" },
+        "as_of": { "type": "integer", "description": "момент генерации, epoch ms" },
+        "stale_days": { "type": "integer", "minimum": 0, "description": "порог устаревания записи в днях" },
+        "count": { "type": "integer", "minimum": 0, "description": "равен сумме len(groups[].prompts)" },
+        "groups": { "type": "integer", "minimum": 0 },
+        "users": {
+          "type": "object",
+          "description": "логин Telegram -> человеческое имя (меняется одной строкой USERS в build_prompts.py)",
+          "additionalProperties": { "type": "string" }
+        },
+        "source_labels": {
+          "type": "object",
+          "description": "source -> подпись для UI",
+          "additionalProperties": { "type": "string" }
+        },
+        "sources": { "type": "array", "items": { "type": "string" } },
+        "sources_skipped": { "type": "array", "items": { "type": "string" }, "description": "необязательные источники, которых не было (например pc_user_msgs.json)" },
+        "note": { "type": "string" }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "prompts"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "wants": { "type": "array", "items": { "type": "string" } },
+          "prompts": { "type": "array", "items": { "$ref": "#/$defs/prompt" } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "prompt": {
+      "type": "object",
+      "required": ["id", "text", "ts", "as_of", "is_stale", "source", "source_label", "user_id", "user", "wants"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "description": "уникален во всём файле (tg-*, ses-*, pc-*)" },
+        "text": { "type": "string" },
+        "ts": { "type": ["integer", "null"], "description": "когда сказано, epoch ms; null — дата не разобрана" },
+        "as_of": { "type": ["integer", "null"], "description": "тот же момент, что ts; null — неизвестно" },
+        "is_stale": { "type": "boolean", "description": "as_of неизвестен или старше stale_days" },
+        "source": { "type": "string", "enum": ["telegram", "session", "pc"] },
+        "source_label": { "type": "string", "enum": ["ТГ бот", "ноут", "ПК"] },
+        "user_id": { "type": ["string", "null"] },
+        "user": { "type": "string" },
+        "title": { "type": "string" },
+        "answer": { "type": "string" },
+        "wants": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
