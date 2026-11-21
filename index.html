@@ -92,6 +92,17 @@
     justify-content:center; gap:6px; transition:.16s ease; position:relative;
   }
   .tab:hover{color:var(--subtext1);background:var(--surface0)}
+  /* @owner:parallel-edit @region:focus-visible (эргономика Fitts) */
+  .tab:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,
+  [tabindex]:focus-visible{
+    outline:2px solid var(--blue); outline-offset:2px; border-radius:11px;
+  }
+  /* @owner:parallel-edit @region:focus-visible end */
+  /* @owner:parallel-edit @region:hick-tabs-css */
+  .tab-more{flex:0 0 auto}
+  .tabs-more{display:flex;gap:6px}
+  .tabs-more[hidden]{display:none}
+  /* @owner:parallel-edit @region:hick-tabs-css end */
   .tab .key{
     font:700 9px/1 var(--fm); color:var(--overlay0);
     border:1px solid var(--surface1); border-radius:5px; padding:2px 4px;
@@ -679,8 +690,13 @@
     <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
     <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">5</span></button>
     <button class="tab" data-tab="live"><span>◉</span> Ход <span class="key">6</span></button>
-    <button class="tab" data-tab="questions"><span>❓</span> Вопросы <span class="key">7</span></button>
-    <button class="tab" data-tab="studio"><span>◈</span> Студия <span class="key">8</span></button>
+    <!-- @owner:parallel-edit @region:hick-tabs (эргономика Hick: 6 видно + «Ещё») -->
+    <button class="tab tab-more" id="tabMore" aria-expanded="false" aria-controls="moreTabs"><span>⋯</span> Ещё</button>
+    <span class="tabs-more" id="moreTabs" hidden>
+      <button class="tab" data-tab="questions"><span>❓</span> Вопросы <span class="key">7</span></button>
+      <button class="tab" data-tab="studio"><span>◈</span> Студия <span class="key">8</span></button>
+    </span>
+    <!-- @owner:parallel-edit @region:hick-tabs end -->
   </nav>
 
   <main id="main">
@@ -958,13 +974,28 @@ function toast(msg){
 
 /* ---------- tabs ---------- */
 const TAB_IDS=["chat","prompts","tree","sessions","atlas","live","questions","studio"];
+/* @owner:parallel-edit @region:hick-tabs-js */
+const MORE_TABS=["questions","studio"];
+function setMoreOpen(open){
+  const m=$("#moreTabs"), btn=$("#tabMore");
+  if(!m||!btn) return;
+  m.hidden=!open; btn.setAttribute("aria-expanded",String(open));
+}
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
-  $$(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
+  $$(".tab[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
+  // раскрыть «Ещё», если выбрана скрытая вкладка (в т.ч. hotkey 7/8)
+  if(MORE_TABS.includes(name)) setMoreOpen(true);
+  const btn=$("#tabMore");
+  if(btn) btn.classList.toggle("active", MORE_TABS.includes(name));
   $("#main").scrollTop=0;
 }
-$$(".tab").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+$$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+$$("#tabMore").forEach(b=>b.addEventListener("click",()=>{
+  const m=$("#moreTabs"); if(m) setMoreOpen(m.hidden);
+}));
+/* @owner:parallel-edit @region:hick-tabs-js end */
 
 /* ---------- cards ---------- */
 let ci=0;
