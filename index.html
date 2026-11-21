@@ -675,7 +675,6 @@
     <div class="hmeta">
       <div class="hsub" id="hsub">подключение…</div>
     </div>
-    <span class="hdr-act" title="Обновить данные и открыть ход работ">Обновить ⟳</span>
     <div class="hbadges">
       <div class="agentbadge" id="agentBadge" title="работающих агентов">🤖 …</div>
       <div class="gamebadge" id="gameBadge" style="display:none" title="режим игры">🎮 ИГРА</div>
@@ -731,7 +730,6 @@
         <button data-q="Какие решения приняты?">✅ Решения</button>
         <button data-q="Подожди, уточняю детали">⏳ Подожди, уточняю</button>
       </div>
-      <div class="hint">Ответ появится здесь автоматически. Если Mini App закрылся — открой заново через /app.</div>
     </section>
 
     <section class="screen" id="screen-prompts">
@@ -1491,7 +1489,7 @@ function setApiBadge(el, on, label){
 }
 
 /* Шапка — живой сигнал, а не декоративная надпись. Заполняется из status.json. */
-$("#hsub").innerHTML = '🤖 <b id="hsAgents">…</b> в работе · ⚙ <b id="hsWorkers">…</b> воркеров';
+$("#hsub").innerHTML = '<span class="muted">живой канал · данные мини-апа</span>';  /* @owner:redesign-2026-11-21 @region:no-agent-dup */
 const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
@@ -1531,10 +1529,8 @@ async function refreshAgentStatus(){
           sw=$("#stripWorkers"), st=$("#stripTime"), sn=$("#stripNote");
     if(sa) sa.textContent = n;
     if(sl) sl.textContent = Number(s.agents_running)||0;
-    const ha=$("#hsAgents"), hw=$("#hsWorkers"), cs=$("#chatSub");
-    if(ha) ha.textContent = n;
-    if(hw) hw.textContent = (s.workers||0);
-    if(cs) cs.textContent = "агент · "+n+" в работе";
+    const cs=$("#chatSub");
+    if(cs) cs.textContent = "агент · онлайн";  /* @owner:redesign-2026-11-21 @region:no-agent-dup */
     if(ss) ss.textContent = Number(s.sessions_active)||0;
     if(sb) sb.textContent = Number(s.subagents)||0;
     if(sw) sw.textContent = (s.workers||0);
