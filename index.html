@@ -705,10 +705,10 @@
       <button data-sub="scenarios">Сценарии</button>
     </nav>
     <style>
-      .task-subnav{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}
-      .task-subnav::-webkit-scrollbar{display:none}
+      .task-subnav{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0)}
+      .task-subnav button{flex:1 1 30%;min-width:88px}
       .task-subnav[hidden]{display:none}
-      .task-subnav button{flex:0 0 auto;min-width:96px;appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
+      .task-subnav button{appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
       .task-subnav button.active{background:var(--surface0);color:var(--text);border-color:var(--surface1)}
       .task-subnav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
     </style>
