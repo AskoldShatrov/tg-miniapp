@@ -766,6 +766,7 @@
       <div class="live-strip"><span class="dot-live"></span><span id="liveStamp">…</span></div>
       <div class="qbox" id="liveQueues"></div>
       <div class="eyebrow" style="margin-top:12px">Активные шаги progress.json</div>
+      <div class="live-strip" id="livePlanStamp">…</div>
       <div id="liveSteps"></div>
       <div class="eyebrow" style="margin-top:12px">Задачи в работе (claim'ы очередей)</div>
       <div id="liveJobs"></div>
@@ -837,7 +838,7 @@
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261121-0610";
+const BUILD = "20261121-0620";
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -2000,25 +2001,84 @@ function renderAtlas(){
 let LIVE_JOBS=null;
 function renderLive(){
   const d=LIVE_JOBS; if(!d) return;
-  const st=$("#liveStamp"); if(st){ const lf=paint("live", st); st.textContent="обновлено "+(d.fetched_human||"—")+" · "+lf.text; }
+  const now=Date.now();
+  // Дата плана — из данных (updatedAt в live.json / progress.json), а не из «прямо сейчас».
+  const parseTs=(raw)=>{
+    if(raw==null||raw==="") return 0;
+    if(typeof raw==="number") return raw<1e12?raw*1000:raw;
+    if(typeof raw==="string"&&/^\d+$/.test(raw)){const n=Number(raw);return n<1e12?n*1000:n;}
+    const t=Date.parse(raw); return isNaN(t)?0:t;
+  };
+  const planRaw=d.updatedAt||d.progress_updated_at||d.progressUpdatedAt||
+    (d.progress&&d.progress.updatedAt)||d.snapshot_at||d.fetched_at||0;
+  const planMs=parseTs(planRaw);
+  const planAgeH=planMs?(now-planMs)/3600000:0;
+  const planStale=!!planMs&&planAgeH>1;
+  const fmtPlan=(ms)=>{
+    if(!ms) return "—";
+    // ISO-строка несёт таймзону источника — не зависём от TZ браузера (как renderAtlas).
+    if(typeof planRaw==="string"&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(planRaw))
+      return planRaw.slice(8,10)+"."+planRaw.slice(5,7)+" "+planRaw.slice(11,16);
+    const dt=new Date(ms),p=n=>String(n).padStart(2,"0");
+    return p(dt.getDate())+"."+p(dt.getMonth()+1)+" "+p(dt.getHours())+":"+p(dt.getMinutes());
+  };
+  const ageHuman=(ms)=>{
+    const sec=Math.max(0,Math.floor((now-ms)/1000));
+    if(sec<60) return sec+" с назад";
+    if(sec<3600) return Math.floor(sec/60)+" мин назад";
+    if(sec<86400) return Math.floor(sec/3600)+" ч назад";
+    return Math.floor(sec/86400)+" д назад";
+  };
+  const planStamp="снимок от "+fmtPlan(planMs)+(planMs?" ("+ageHuman(planMs)+")":"");
+
+  const st=$("#liveStamp");
+  if(st){
+    const lf=paint("live", st);
+    const source=d.source||d.plan_source||(d.progress&&d.progress.source)||"live.json";
+    st.textContent=planStamp+" · источник: "+source+" · "+lf.text;
+    if(planStale) st.classList.add("fresh-stale");
+  }
+  const ps=$("#livePlanStamp");
+  if(ps){
+    ps.classList.toggle("p-badge",planStale);
+    ps.classList.toggle("stale",planStale);
+    ps.textContent="План · "+planStamp+(planStale?" — это снимок плана, а не живой статус":"");
+  }
+
   const q=$("#liveQueues");
   if(q) q.innerHTML=Object.entries(d.queues||{}).map(([name,c])=>
     `<span>${esc(name)}: <b>${Number(c.todo)||0}</b> ждут · <b>${Number(c.doing)||0}</b> в работе · <b>${Number(c.done)||0}</b> готово</span>`).join("");
+
   const steps=$("#liveSteps");
   if(steps){
+    // Per-step даты нет — agesм шаг от даты снимка; данные из progress.json не трогаем.
+    const stepIsArchived=(s)=>{
+      if(["running","blocked","fail"].indexOf(s.status)<0) return false;
+      const raw=s.updatedAt||s.ts||s.updated||s.updated_human;
+      const ms=raw!=null?parseTs(raw):planMs;
+      return !!ms&&(now-ms)/3600000>24;
+    };
     const active=(d.tasks||[]).filter(s=>s.status!=="done");
-    steps.innerHTML=active.length?active.map(s=>`
-      <div class="live-row"><span class="lid">${esc(s.id)}</span>
+    steps.innerHTML=active.length?active.map(s=>{
+      const archived=stepIsArchived(s);
+      return `<div class="live-row"${archived?' style="opacity:.6"':''}><span class="lid">${esc(s.id)}</span>
         <span class="ltitle">${esc(s.title)}${s.note?' — '+esc(s.note):''}</span>
-        <span class="status st-${esc(s.status)}">${esc(s.status)}</span></div>`).join(""):
+        <span class="status st-${esc(s.status)}">${esc(s.status)}</span>
+        ${archived?'<span class="p-badge stale">завис/архив</span>':''}</div>`;
+    }).join(""):
       '<div class="hint">Все шаги закрыты.</div>';
   }
   const jobs=$("#liveJobs");
-  if(jobs) jobs.innerHTML=(d.active||[]).length?(d.active||[]).map(j=>`
-    <div class="live-row"><span class="lid">${esc(j.id)}</span>
+  if(jobs) jobs.innerHTML=(d.active||[]).length?(d.active||[]).map(j=>{
+    const min=Number(j.age_min)||0;
+    const stuck=min>=30;
+    return `<div class="live-row"><span class="lid">${esc(j.id)}</span>
       <span class="ltitle">${esc(j.title)}</span>
       <span class="lsrc">${esc(j.source)}</span>
-      <span class="lage">${esc(j.claimed_human)} · ${Number(j.age_min)||0} мин</span></div>`).join(""):
+      ${stuck
+        ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
+        :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
+  }).join(""):
     '<div class="hint">Сейчас активных задач в очередях нет.</div>';
 }
 
@@ -2432,8 +2492,8 @@ setInterval(()=>{                     // этап 7: только API-дерев
 const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
-<script src="task-tree.js?v=20261121-0610"></script>
+<script src="task-tree.js?v=20261121-0620"></script>
 <script>/* views-render: источник декларативных видов; views.js читает SRC или inline window.MINIAPP_VIEWS */ window.MINIAPP_VIEWS_SRC = "views.json";</script>
-<script src="views.js?v=20261121-0610"></script>
+<script src="views.js?v=20261121-0620"></script>
 </body>
 </html>

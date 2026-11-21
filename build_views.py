@@ -42,6 +42,8 @@ SOURCES = {
     'cs2': 'local-llm/work/cs2_voice_ideas.json',
     'confidential': 'local-llm/work/voice_ideas/CONFIDENTIAL_REVIEW.md',
     'skills': '~/.config/opencode/skills/*/SKILL.md',
+    'elements': 'shared-repo/bots/miniapp/elements.json',
+    'yesno': 'shared-repo/bots/miniapp/yesno-questions.json',
 }
 SKILLS_DIR = pathlib.Path.home() / '.config/opencode/skills'
 SKILLS_SOURCE = '~/.config/opencode/skills/*/SKILL.md'
@@ -74,7 +76,14 @@ WORK_ACTION = [{'label': 'В работу', 'source': 'miniapp_selection'}]
 REQUIRED = ('id', 'title', 'type', 'source', 'built_at', 'count', 'publish',
             'group_by', 'sort_by', 'filters', 'label_field', 'value_field',
             'meta_fields', 'actions')
-TYPES = {'cards', 'checklist', 'tree', 'table'}
+TYPES = {'cards', 'checklist', 'tree', 'table', 'decision'}
+
+# Кнопки ответа для сужающих вопросов да/нет/не знаю — из ТЗ, не из данных.
+YESNO_ACTIONS = [
+    {'label': 'Да', 'source': 'miniapp_yesno', 'answer': 'yes', 'hotkey': 'y'},
+    {'label': 'Нет', 'source': 'miniapp_yesno', 'answer': 'no', 'hotkey': 'n'},
+    {'label': 'Не знаю', 'source': 'miniapp_yesno', 'answer': 'unknown', 'hotkey': 'u'},
+]
 
 # Маркеры внутренней структуры приватного файла. Если хоть один попал в вывод —
 # это утечка текста/ссылок в публичный views.json, сборщик обязан упасть.
@@ -345,6 +354,55 @@ def build_skills(rel, read_at):
         extra={'items': items, 'provenance': prov})
 
 
+def build_elements(rel, read_at):
+    """Единая таблица элементов: реальный массив items (его и берёт normalizeData)."""
+    d = read_json(rel)
+    items = d.get('items') or []
+    statuses = sorted({i.get('status') for i in items if i.get('status')})
+    groups = sorted({i.get('group') for i in items if i.get('group')})
+    return view(
+        {'id': 'elements-table', 'title': 'Единая таблица элементов', 'type': 'table',
+         'publish': True, 'group_by': 'group', 'sort_by': 'status',
+         'label_field': 'label', 'value_field': 'id',
+         'meta_fields': ['source', 'displayed', 'actual', 'age_sec', 'status'],
+         'actions': WORK_ACTION},
+        rel, read_at, len(items),
+        [{'field': 'status', 'values': statuses}, {'field': 'group', 'values': groups}],
+        extra={'provenance_note': {
+            'groups': len(d.get('groups') or []),
+            'subtables': len(d.get('subtables') or []),
+            'declared_total': (d.get('summary') or {}).get('total'),
+            'note': 'count = len(items); normalizeData в views.js тоже берёт массив items',
+        }})
+
+
+def build_yesno(rel, read_at):
+    """Сужающие вопросы: spec вида готов заранее, данные остаются в source."""
+    d = read_json(rel)
+    questions = d.get('questions') or []
+    declared = d.get('count')
+    max_questions = declared if isinstance(declared, int) else len(questions)
+    statuses = sorted({q.get('status') for q in questions if q.get('status')})
+    consistent = (declared is None or declared == len(questions)) and len(questions) <= max_questions
+    return view(
+        {'id': 'yesno-decisions', 'title': 'Сужающие вопросы (да/нет)', 'type': 'decision',
+         'publish': True, 'group_by': 'status', 'sort_by': 'priority',
+         'label_field': 'text', 'value_field': 'id',
+         'meta_fields': ['priority', 'status'], 'actions': YESNO_ACTIONS},
+        rel, read_at, len(questions),
+        [{'field': 'status', 'values': statuses}],
+        status='ok' if consistent else 'parse_error',
+        extra={
+            'max_questions': max_questions,
+            'provenance_note': {
+                'declared_count': declared,
+                'questions': len(questions),
+                'max_questions': max_questions,
+                'answer_policy': (d.get('answer_policy') or {}).get('values'),
+            },
+        })
+
+
 SPECS = [
     ('atlas-tree', 'atlas', build_atlas_tree),
     ('atlas-grids', 'atlas', build_atlas_grids),
@@ -353,6 +411,8 @@ SPECS = [
     ('cs2-ideas', 'cs2', build_cs2),
     ('confidential-review', 'confidential', build_confidential),
     ('skills', 'skills', build_skills),
+    ('elements-table', 'elements', build_elements),
+    ('yesno-decisions', 'yesno', build_yesno),
 ]
 
 MISSING_META = {
@@ -364,6 +424,10 @@ MISSING_META = {
     'confidential-review': ('CONFIDENTIAL: приватный слой и пограничные (текст скрыт)',
                             'checklist', 'section', 'id', ['label']),
     'skills': ('Обзор скиллов', 'cards', None, 'title', ['description', 'path']),
+    'elements-table': ('Единая таблица элементов', 'table', 'group', 'status',
+                       ['source', 'displayed', 'actual', 'age_sec', 'status']),
+    'yesno-decisions': ('Сужающие вопросы (да/нет)', 'decision', 'status', 'priority',
+                        ['priority', 'status']),
 }
 
 
@@ -373,6 +437,13 @@ def missing_view(vid, rel, read_at):
     extra = {}
     if vid == 'confidential-review':
         extra['hint'] = 'источник отсутствует; приватные данные не включены'
+    # Статическая часть spec сохраняется даже без источника: рендер должен знать,
+    # как показать вид, когда данные появятся.
+    if vid == 'elements-table':
+        extra.update({'label_field': 'label', 'value_field': 'id', 'actions': WORK_ACTION})
+    if vid == 'yesno-decisions':
+        extra.update({'label_field': 'text', 'value_field': 'id',
+                      'actions': YESNO_ACTIONS, 'max_questions': 0})
     if vid == 'skills':
         extra['items'] = []
         extra['provenance'] = {
@@ -429,6 +500,27 @@ def validate(doc):
         for it in items:
             if len(it.get('description') or '') > DESC_LIMIT:
                 problems.append(f'skills: description длиннее {DESC_LIMIT}: {it.get("id")}')
+    el = next((v for v in doc['views'] if v['id'] == 'elements-table'), None)
+    if el is not None:
+        if el.get('source') != SOURCES.get('elements'):
+            problems.append('elements-table: неверный source')
+        if el.get('status') == 'ok' and el.get('count', 0) <= 0:
+            problems.append('elements-table: items пуст, а статус ok')
+        if el.get('label_field') != 'label' or el.get('value_field') != 'id':
+            problems.append('elements-table: label/value поля не из spec')
+    yn = next((v for v in doc['views'] if v['id'] == 'yesno-decisions'), None)
+    if yn is not None:
+        if yn.get('type') != 'decision':
+            problems.append('yesno-decisions: type должен быть decision')
+        if not isinstance(yn.get('max_questions'), int):
+            problems.append('yesno-decisions: нет max_questions')
+        expect = [('Да', 'yes', 'y'), ('Нет', 'no', 'n'), ('Не знаю', 'unknown', 'u')]
+        acts = yn.get('actions') or []
+        if len(acts) != len(expect) or any(
+                a.get('label') != e[0] or a.get('answer') != e[1] or a.get('hotkey') != e[2]
+                or a.get('source') != 'miniapp_yesno'
+                for a, e in zip(acts, expect)):
+            problems.append('yesno-decisions: действия Да/Нет/Не знаю не из spec')
     conf = next((v for v in doc['views'] if v['id'] == 'confidential-review'), None)
     if conf is not None:
         if conf.get('publish') is not False:

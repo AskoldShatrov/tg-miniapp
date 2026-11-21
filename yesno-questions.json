@@ -1,0 +1,408 @@
+{
+  "built_at": "2026-11-21T06:12:03+03:00",
+  "spec": "/tmp/opencode/yes-no-app-spec.md",
+  "count": 5,
+  "answer_policy": {
+    "values": [
+      "yes",
+      "no",
+      "unknown"
+    ],
+    "unknown": "эффекты НЕ запускаются, вопрос остаётся status=open"
+  },
+  "audit_context": "ux-time-audit.md прочитан (6741 симв.)",
+  "questions": [
+    {
+      "id": "yn-261121-001",
+      "text": "Хвост из 15 открытых want'ов (source=message|unanswered, без evolution и detail) — это мусор, а не отложенные задачи?",
+      "text_yes": "Архивировать как мусор",
+      "text_no": "Оставить и запросить уточнение",
+      "scope": {
+        "kind": "ids",
+        "ids": [
+          "w261119190741c254",
+          "w26111919074113f0",
+          "w26111920475426f6",
+          "w26111920475496aa",
+          "w2611201108503c24",
+          "w261120110850a5ed",
+          "w261120110850a80e",
+          "w2611210553399849",
+          "w26112105533994ff",
+          "w2611210553397340",
+          "w2611210553390ac7",
+          "w261121055339bfc8",
+          "w261121060313778a",
+          "w2611210603133b24",
+          "w2611210603136204"
+        ],
+        "view": "wants-triage",
+        "source_file": ".config/opencode/wants.json"
+      },
+      "expires": "2026-11-23T06:12:03+03:00",
+      "source": {
+        "file": ".config/opencode/wants.json",
+        "selector": "status=open & source in {message,unanswered} & !evolution & !detail",
+        "evidence": "15 items match selector of 111 total; open=71, message=64, unanswered=32",
+        "built_at": "2026-11-21T06:12:03+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "archive",
+          "target": "scope.ids",
+          "reason": "мусорный хвост: подтверждено пользователем",
+          "status_to": "archived"
+        },
+        {
+          "when": "yes",
+          "op": "supersede",
+          "target": "scope.ids",
+          "by": "yn-261121-001",
+          "reason": "дубли/шум без деталей и гейтов",
+          "status_to": "superseded"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "scope.ids",
+          "reason": "пользователь не подтвердил мусор",
+          "assign": "session",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "clear_stale",
+          "target": "scope.ids",
+          "value": false,
+          "reason": "вопрос снят, данные актуальны",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 15,
+      "created_at": "2026-11-21T06:12:03+03:00"
+    },
+    {
+      "id": "yn-261121-002",
+      "text": "Снимок progress.json говорит «1 агент» (сессия 8899), но в логе работают cheap-k0, cheap-k1, cheap-k2, cheap-k3, pc, main, executor, progress-sync — считать снимок устаревшим и заменить его реальным списком агентов через supersede?",
+      "text_yes": "Supersede — реальный список агентов",
+      "text_no": "Оставить и уточнить, какой агент",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "cheap-k0",
+          "cheap-k1",
+          "cheap-k2",
+          "cheap-k3",
+          "pc",
+          "main",
+          "executor",
+          "progress-sync"
+        ],
+        "view": "progress-claims",
+        "source_file": ".config/opencode/progress.json"
+      },
+      "expires": "2026-11-23T06:12:03+03:00",
+      "source": {
+        "file": ".config/opencode/progress.json",
+        "selector": "tasks[id=P0-1].history[*].text ~ '1 агент'; agent names from tasks[*].steps[*].agent",
+        "evidence": "claim '1 агент' in tasks[id=P0-1].history[*].text ~ '1 агент' (OPEN/BLOCKED, n>=9: сессия-1 агент 8899 (focus=true, но echo); 8 real agents: cheap-k0, cheap-k1, cheap-k2, cheap-k3, pc, main, executor, progress-sync",
+        "built_at": "2026-11-21T06:12:03+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "supersede",
+          "target": "scope.ids",
+          "by": "yn-261121-002",
+          "reason": "снимок '1 агент' устарел, заменяем реальным перечнем агентов",
+          "status_to": "superseded"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "scope.ids",
+          "reason": "связать claim с реальным перечнем агентов progress.json",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "scope.ids",
+          "reason": "какой именно агент имелся в виду под '1 агент'?",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 8,
+      "created_at": "2026-11-21T06:12:03+03:00"
+    },
+    {
+      "id": "yn-261121-003",
+      "text": "GATE-T4 в decisions.json значится OPEN, хотя отчёт overnight/73-t4-donk-benchmark.md содержит n и baseline — перевести его в «измерено, вердикт ожидает» и связать с отчётом?",
+      "text_yes": "Link отчёт + Measuring",
+      "text_no": "Оставить OPEN, уточнить порог",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "GATE-T4"
+        ],
+        "view": "decisions-list",
+        "source_file": "shared-repo/bots/miniapp/decisions.json"
+      },
+      "expires": "2026-11-23T06:12:03+03:00",
+      "source": {
+        "file": "shared-repo/bots/miniapp/decisions.json",
+        "selector": "h=GATE-T4 & verdict=OPEN; src contains 'overnight/73-t4-donk-benchmark.md'",
+        "evidence": "GATE-T4 verdict=OPEN; report=overnight/73-t4-donk-benchmark.md (exists=True); note contains n/baseline (0.6129 < 0.7742, AWP-rule 0.6452 > 0.5161)",
+        "built_at": "2026-11-21T06:12:03+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "overnight/73-t4-donk-benchmark.md",
+          "reason": "связать OPEN-гейт с готовым отчётом с n и baseline",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "GATE-T4",
+          "reason": "измерение проведено, вердикт ожидает",
+          "status_to": "measuring"
+        },
+        {
+          "when": "yes",
+          "op": "supersede",
+          "target": "GATE-T4",
+          "by": "yn-261121-003",
+          "reason": "OPEN заменён на measuring по факту готового отчёта",
+          "status_to": "superseded"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "GATE-T4",
+          "reason": "какого порога не хватает для вердикта?",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P1",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:12:03+03:00"
+    },
+    {
+      "id": "yn-261121-004",
+      "text": "В атласе 389 узлов и 63 рёбер; 8 рёбер типа refutes указывают на refuted-вердикты (archived/done-целей нет) — снять эти связи и пересобрать граф?",
+      "text_yes": "Unlink рёбер + Clear stale",
+      "text_no": "Сохранить рёбра, уточнить живые связи",
+      "scope": {
+        "kind": "ids",
+        "ids": [
+          "claim:C17->verdict:C17",
+          "claim:C19->verdict:C19",
+          "claim:C21->verdict:C21",
+          "claim:C31->verdict:C31",
+          "claim:C5->verdict:C5",
+          "claim:C7->verdict:C7",
+          "claim:C1->verdict:C1",
+          "claim:C14->verdict:C14"
+        ],
+        "view": "atlas-graph",
+        "source_file": "shared-repo/bots/miniapp/atlas.json"
+      },
+      "expires": "2026-11-23T06:12:03+03:00",
+      "source": {
+        "file": "shared-repo/bots/miniapp/atlas.json",
+        "selector": "edges[type=refutes & to.status=refuted] -> 'from->to'",
+        "evidence": "389 nodes / 63 edges; edges to done/archived=0; refutes edges to refuted verdicts=8",
+        "built_at": "2026-11-21T06:12:03+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "unlink",
+          "target": "scope.ids",
+          "reason": "цель/refuted-вердикт не несёт активной связи",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "clear_stale",
+          "target": "scope.ids",
+          "value": false,
+          "reason": "связи пересобраны, stale-флаги сняты",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "scope.ids",
+          "reason": "указать живые связи, которые следует сохранить",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P1",
+      "status": "open",
+      "count": 8,
+      "created_at": "2026-11-21T06:12:03+03:00"
+    },
+    {
+      "id": "yn-261121-005",
+      "text": "В view prompts-cards 87 карточек помечены is_stale, но исходники prompts.json свежие (generated 2026-11-21T03:11:50+00:00) — снять stale-флаги и пересобрать view?",
+      "text_yes": "Clear stale + Link свежий source",
+      "text_no": "Оставить флаги, уточнить промпт",
+      "scope": {
+        "kind": "view",
+        "ids": [
+          "tg-20261120052626",
+          "tg-20261119163957",
+          "tg-20261119165925",
+          "tg-20261118233533",
+          "tg-20261118182834",
+          "tg-20261120051345",
+          "tg-20261120031221",
+          "tg-20261120023326",
+          "tg-20261120023130",
+          "tg-20261120022727",
+          "tg-20261120022238",
+          "tg-20261120021814",
+          "tg-20261120021131",
+          "tg-20261120020456",
+          "tg-20261120012847",
+          "tg-20261120011434",
+          "tg-20261120010924",
+          "tg-20261120010211",
+          "tg-20261120004245",
+          "tg-20261120004035",
+          "tg-20261119193415",
+          "tg-20261119192914",
+          "tg-20261119192603",
+          "tg-20261119190530",
+          "tg-20261119164616",
+          "tg-20261119162559",
+          "tg-20261119162138",
+          "tg-20261119161522",
+          "tg-20261119161026",
+          "tg-20261119113030",
+          "tg-20261118185825",
+          "tg-20261120055241",
+          "tg-20261120053845",
+          "tg-20261120051613",
+          "tg-20261120051051",
+          "tg-20261120050018",
+          "tg-20261120044908",
+          "tg-20261120042151",
+          "tg-20261120033539",
+          "tg-20261120032122",
+          "tg-20261120030112",
+          "tg-20261120025825",
+          "tg-20261120025611",
+          "tg-20261120025359",
+          "tg-20261120024924",
+          "tg-20261120024551",
+          "tg-20261120023705",
+          "tg-20261120022435",
+          "tg-20261120022005",
+          "tg-20261120021442",
+          "tg-20261120014220",
+          "tg-20261120005945",
+          "tg-20261119191844",
+          "tg-20261119170800",
+          "tg-20261119161842",
+          "tg-20261119160730",
+          "tg-20261119070653",
+          "tg-20261119070510",
+          "tg-20261118223610",
+          "tg-20261118201135",
+          "tg-20261118194701",
+          "tg-20261118193838",
+          "tg-20261118193347",
+          "tg-20261118185545",
+          "tg-20261118184943",
+          "tg-20261118183439",
+          "tg-20261118182530",
+          "tg-20261118170753",
+          "tg-20261118170220",
+          "tg-20261118165920",
+          "tg-20261118164817",
+          "tg-20261118164107",
+          "tg-20261120004912",
+          "tg-20261118192827",
+          "tg-20261120013834",
+          "tg-20261120011650",
+          "tg-20261119203806",
+          "tg-20261119165105",
+          "tg-20261120023948",
+          "tg-20261119113632",
+          "tg-20261118200239",
+          "tg-20261118195249",
+          "tg-20261120013254",
+          "tg-20261120011153",
+          "tg-20261119204616",
+          "tg-20261119064656",
+          "tg-20261119053353"
+        ],
+        "view": "prompts-cards",
+        "source_file": "shared-repo/bots/miniapp/prompts.json"
+      },
+      "expires": "2026-11-23T06:12:03+03:00",
+      "source": {
+        "file": "shared-repo/bots/miniapp/prompts.json",
+        "selector": "groups[*].prompts[*] where is_stale == true -> id",
+        "evidence": "87 of 409 prompts have is_stale=true; meta.generated=2026-11-21T03:11:50+00:00, stale_days=1",
+        "built_at": "2026-11-21T06:12:03+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "clear_stale",
+          "target": "scope.ids",
+          "value": false,
+          "reason": "исходники fresh, stale-флаги снимаем",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "scope.ids",
+          "reason": "связать карточки со свежим source",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "supersede",
+          "target": "scope.ids",
+          "by": "yn-261121-005",
+          "reason": "старая метка is_stale заменена",
+          "status_to": "superseded"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "scope.ids",
+          "reason": "указать конкретный промпт для ручной проверки",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P2",
+      "status": "open",
+      "count": 87,
+      "created_at": "2026-11-21T06:12:03+03:00"
+    }
+  ]
+}

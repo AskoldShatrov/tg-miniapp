@@ -4,11 +4,14 @@
    window.MINIAPP_VIEWS (inline-спецификация, если сборщик её подложил).
    Нет views.json / нет данных — показываем честное «нет данных» и ничего не выдумываем.
 
-   Поддерживаемые типы: cards | checklist | tree | table.
+   Поддерживаемые типы: cards | checklist | tree | table | decision.
    Общие элементы: поиск, фильтры из spec, сортировка, выделить всё/снять,
    счётчик выбранных, поле решения, комментарий и кнопка действия.
    Действие собирает payload {source:"miniapp_selection", view, ids, decision,
    comment, ts}, звонит tg.sendData (если доступен) и показывает toast.
+   Тип decision — карточки да/нет/не знаю (не более 5): sendYesNo шлёт отдельный
+   payload {source:"miniapp_yesno", question_id, answer, scope, ts}; мини-ап
+   miniapp_selection не перегружается. Горячие клавиши: y / n / u.
    tg.close НЕ вызывается намеренно — закрытие решает вызывающая сторона. */
 (function(){
   "use strict";
@@ -22,7 +25,7 @@
   var V = {
     views: [], cur: null, data: {}, specError: null,
     search: "", sort: {}, desc: {}, filters: {}, selected: {}, collapsed: {},
-    decision: {}, comment: {}, wrapped: [], visible: []
+    decision: {}, comment: {}, wrapped: [], visible: [], ynAnswered: {}
   };
 
   /* ---------- helpers ---------- */
@@ -330,6 +333,25 @@
     ".vw-empty{border:1px dashed var(--surface1,#45475a);border-radius:10px;padding:14px 12px;",
       "font:500 11.5px/1.6 var(--ff,sans-serif);color:var(--overlay1,#7f849c);word-break:break-word}",
     ".vw-empty b{color:var(--yellow,#f9e2af)}",
+    ".vw-yn-card{background:var(--mantle,#181825);border:1px solid var(--surface0,#313244);border-radius:var(--radius-sm,11px);padding:11px 12px;margin-bottom:8px}",
+    ".vw-yn-card.overdue{border-color:rgba(249,226,175,.4)}",
+    ".vw-yn-card.answered{opacity:.62}",
+    ".vw-yn-top{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:7px}",
+    ".vw-yn-badge{font:700 9px/1.3 var(--fm,monospace);padding:2px 6px;border-radius:6px;background:var(--surface0,#313244);color:var(--subtext1,#bac2de)}",
+    ".vw-yn-badge.pri{color:var(--yellow,#f9e2af);background:rgba(249,226,175,.1)}",
+    ".vw-yn-badge.overdue{color:var(--red,#f38ba8);background:rgba(243,139,168,.12)}",
+    ".vw-yn-badge.done{color:var(--green,#a6e3a1);background:rgba(166,227,161,.12)}",
+    ".vw-yn-text{font-size:12.5px;font-weight:600;line-height:1.45;word-break:break-word;color:var(--text,#cdd6f4)}",
+    ".vw-yn-scope{font:500 10px/1.5 var(--fm,monospace);color:var(--overlay1,#7f849c);margin-top:5px;word-break:break-all}",
+    ".vw-yn-dl{font:500 10px/1.5 var(--fm,monospace);color:var(--overlay2,#9399b2);margin-top:3px}",
+    ".vw-yn-btns{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap}",
+    ".vw-yn-btn{flex:1;min-width:76px;border:1px solid var(--surface1,#45475a);border-radius:8px;background:var(--surface0,#313244);color:var(--subtext1,#bac2de);font:700 11.5px/1.3 var(--ff,sans-serif);padding:8px 6px;cursor:pointer;transition:.15s}",
+    ".vw-yn-btn:hover:not(:disabled){background:var(--surface1,#45475a);color:var(--text,#cdd6f4)}",
+    ".vw-yn-btn.yes:hover:not(:disabled){border-color:var(--green,#a6e3a1);color:var(--green,#a6e3a1)}",
+    ".vw-yn-btn.no:hover:not(:disabled){border-color:var(--red,#f38ba8);color:var(--red,#f38ba8)}",
+    ".vw-yn-btn.unknown:hover:not(:disabled){border-color:var(--overlay2,#9399b2);color:var(--overlay2,#9399b2)}",
+    ".vw-yn-btn:disabled{opacity:.45;cursor:default}",
+    ".vw-yn-hint{font:500 9.5px/1.4 var(--fm,monospace);color:var(--overlay0,#6c7086);margin-top:8px}",
     ".vw-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);z-index:99;",
       "background:var(--surface2,#585b70);color:var(--text,#cdd6f4);border:1px solid var(--overlay0,#6c7086);",
       "padding:10px 15px;border-radius:999px;font:600 11.5px/1.3 var(--ff,sans-serif);box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.35));",
@@ -376,7 +398,22 @@
     panel.addEventListener("change", onChange);
     panel.addEventListener("input", onInput);
     document.addEventListener("keydown", function(e){
-      if(e.key === "Escape" && panel.classList.contains("open")) close();
+      if(!panel.classList.contains("open")) return;
+      if(e.key === "Escape"){ close(); return; }
+      var v = currentView();
+      if(!v || String(v.type || "") !== "decision") return;
+      var tag = e.target && (e.target.tagName || "").toLowerCase();
+      if(tag === "input" || tag === "textarea" || tag === "select") return;
+      var k = String(e.key || "").toLowerCase(), map = {y:"yes", n:"no", u:"unknown"};
+      if(!map[k]) return;
+      var answered = V.ynAnswered[V.cur] || {}, target = null;
+      for(var i=0;i<V.visible.length && i<5;i++){
+        var w = V.visible[i], qid = ynIdOf(w, i);
+        if(!answered[qid] && !(w.item && w.item.status === "answered")){ target = qid; break; }
+      }
+      if(!target){ vtoast("Все вопросы отвечены"); return; }
+      e.preventDefault();
+      sendYesNo(target, map[k]);
     });
   }
   function open(){ ensureShell(); $("#vwBack").classList.add("open"); $("#vwPanel").classList.add("open"); }
@@ -499,17 +536,19 @@
     });
     h.push("</select><button type='button' class='vw-btn" + (V.desc[id] ? " on" : "") +
       "' data-role='dir' title='направление сортировки'>" + (V.desc[id] ? "↓ убыв" : "↑ возр") + "</button></div>");
-    h.push("<div class='vw-bar'>");
-    h.push("<input class='vw-in' data-role='decision' placeholder='решение (approve / reject / …)' value='" + esc(V.decision[id] || "") + "'>");
-    h.push("<input class='vw-in' data-role='comment' placeholder='комментарий' value='" + esc(V.comment[id] || "") + "'>");
-    h.push("</div>");
-    var acts = Array.isArray(v.actions) ? v.actions.filter(function(a){ return a && a.label; }) : [];
-    if(!acts.length) acts = [{label:"Отправить выбор", source:"miniapp_selection"}];
-    h.push("<div class='vw-actions'>");
-    acts.forEach(function(a){
-      h.push("<button type='button' class='vw-act' data-role='action' data-label='" + esc(a.label) + "'>" + esc(a.label) + "</button>");
-    });
-    h.push("</div>");
+    if(v.type !== "decision"){
+      h.push("<div class='vw-bar'>");
+      h.push("<input class='vw-in' data-role='decision' placeholder='решение (approve / reject / …)' value='" + esc(V.decision[id] || "") + "'>");
+      h.push("<input class='vw-in' data-role='comment' placeholder='комментарий' value='" + esc(V.comment[id] || "") + "'>");
+      h.push("</div>");
+      var acts = Array.isArray(v.actions) ? v.actions.filter(function(a){ return a && a.label; }) : [];
+      if(!acts.length) acts = [{label:"Отправить выбор", source:"miniapp_selection"}];
+      h.push("<div class='vw-actions'>");
+      acts.forEach(function(a){
+        h.push("<button type='button' class='vw-act' data-role='action' data-label='" + esc(a.label) + "'>" + esc(a.label) + "</button>");
+      });
+      h.push("</div>");
+    }
     var specBits = [];
     if(v.count != null) specBits.push("ожидалось " + v.count + ", фактически " + wrapped.length);
     if(v.publish === false) specBits.push("черновик");
@@ -595,9 +634,91 @@
     h.push("</tbody></table></div>");
     return h.join("");
   }
+  /* ---------- decision (да / нет / не знаю) ---------- */
+  function ynAnswers(){
+    return [
+      {answer:"yes", label:"Да", cls:"yes", key:"y"},
+      {answer:"no", label:"Нет", cls:"no", key:"n"},
+      {answer:"unknown", label:"Не знаю", cls:"unknown", key:"u"}
+    ];
+  }
+  function ynScopeObj(q){
+    var s = q && q.scope;
+    if(isObj(s)) return s;
+    return {kind: s == null ? "unknown" : String(s)};
+  }
+  function ynScopeText(q){
+    var s = q && q.scope, bits = [];
+    if(!s) return "scope · —";
+    bits.push(asText(s.kind || "—"));
+    if(Array.isArray(s.ids) && s.ids.length) bits.push(s.ids.length + " ID");
+    if(s.view) bits.push(asText(s.view));
+    if(s.source_file) bits.push(asText(s.source_file));
+    return "scope · " + bits.join(" · ");
+  }
+  function ynExpired(q){
+    if(!q || !q.expires) return false;
+    var ms = (typeof q.expires === "number") ? (q.expires < 1e12 ? q.expires*1000 : q.expires) : Date.parse(q.expires);
+    return isFinite(ms) && ms < Date.now();
+  }
+  function ynDeadline(q){
+    if(!q || !q.expires) return "дедлайн: —";
+    var txt = (typeof q.expires === "string") ? q.expires.slice(0,16).replace("T"," ") : tsHuman(q.expires);
+    return "дедлайн: " + txt + (ynExpired(q) ? " · просрочено" : "");
+  }
+  function ynIdOf(w, i){
+    var q = w && w.item;
+    return String(q && q.id != null ? q.id : ((q && q.q) != null ? q.q : w.id || ("#"+(i+1))));
+  }
+  function renderDecision(v, vis){
+    var answered = V.ynAnswered[V.cur] || {};
+    var h = [];
+    vis.slice(0,5).forEach(function(w, i){
+      var q = w.item || {}, id = ynIdOf(w, i);
+      var done = answered[id] || (q.status === "answered" ? "принято" : "");
+      var overdue = ynExpired(q) && !done;
+      var pri = (q.priority != null && String(q.priority)) ? String(q.priority).toUpperCase() : "";
+      h.push("<div class='vw-yn-card" + (overdue ? " overdue" : "") + (done ? " answered" : "") + "'>");
+      h.push("<div class='vw-yn-top'>");
+      if(pri) h.push("<span class='vw-yn-badge pri'>" + esc(pri) + "</span>");
+      if(overdue) h.push("<span class='vw-yn-badge overdue'>просрочено</span>");
+      if(done) h.push("<span class='vw-yn-badge done'>ответ отправлен · " + esc(done) + "</span>");
+      h.push("</div>");
+      h.push("<div class='vw-yn-text'>" + esc(asText(q.text != null ? q.text : (q.title != null ? q.title : w.label))) + "</div>");
+      h.push("<div class='vw-yn-scope'>" + esc(ynScopeText(q)) + "</div>");
+      h.push("<div class='vw-yn-dl'>" + esc(ynDeadline(q)) + "</div>");
+      h.push("<div class='vw-yn-btns'>");
+      ynAnswers().forEach(function(a){
+        var label = a.answer === "yes" ? (q.text_yes ? asText(q.text_yes) : a.label)
+          : a.answer === "no" ? (q.text_no ? asText(q.text_no) : a.label) : a.label;
+        h.push("<button type='button' class='vw-yn-btn " + a.cls + "' data-role='yn' data-id='" + esc(id) +
+          "' data-answer='" + a.answer + "'" + (done ? " disabled" : "") + ">" + esc(label) + "</button>");
+      });
+      h.push("</div>");
+      h.push("<div class='vw-yn-hint'>горячие клавиши: y — да · n — нет · u — не знаю</div>");
+      h.push("</div>");
+    });
+    return h.join("");
+  }
   function renderContent(){
     var box = $("#vwContent"), v = currentView(); if(!box || !v) return;
     var d = V.data[V.cur] || {items:[]};
+    if(String(v.type || "") === "decision"){
+      if(d.error){
+        box.innerHTML = "<div class='vw-empty'>Вопросов нет: источник <b>" + esc(d.url || (v.source || "—")) +
+          "</b> недоступен (" + esc(d.error) + ").</div>"; updateCount(); return;
+      }
+      var qitems = (d.items || []).filter(function(x){ return isObj(x) && (x.text != null || x.id != null); });
+      if(!qitems.length){
+        box.innerHTML = "<div class='vw-empty'>Вопросов нет: источник <b>" + esc(d.url || (v.source || "inline")) +
+          "</b> вернул пустой список вопросов.</div>"; updateCount(); return;
+      }
+      if(!V.visible.length){
+        box.innerHTML = "<div class='vw-empty'>Вопросов нет по текущему поиску/фильтрам (всего " +
+          qitems.length + "). Сбросьте фильтры или поиск.</div>"; updateCount(); return;
+      }
+      box.innerHTML = renderDecision(v, V.visible); updateCount(); return;
+    }
     if(d.error){
       box.innerHTML = "<div class='vw-empty'>Нет данных для вида <b>" + esc(V.cur) + "</b>: источник <b>" +
         esc(d.url || (v.source || "—")) + "</b> недоступен (" + esc(d.error) + "). Данные не выдумываются.</div>";
@@ -615,7 +736,8 @@
       updateCount(); return;
     }
     var type = String(v.type || "cards");
-    box.innerHTML = type === "checklist" ? renderChecklist(v, vis) :
+    box.innerHTML = type === "decision" ? renderDecision(v, vis) :
+      type === "checklist" ? renderChecklist(v, vis) :
       type === "tree" ? renderTree(v, vis) :
       type === "table" ? renderTable(v, vis) : renderCards(v, vis);
     updateCount();
@@ -652,6 +774,42 @@
       if(typeof tg !== "undefined" && tg && typeof tg.sendData === "function") return tg;
     } catch(e){}
     return null;
+  }
+  function ynFindQuestion(id){
+    for(var i=0;i<V.visible.length;i++){
+      var w = V.visible[i];
+      if(isObj(w.item) && ynIdOf(w, i) === String(id)) return w.item;
+    }
+    return null;
+  }
+  function sendYesNo(id, answer){
+    if(!id || !answer) return;
+    var answered = V.ynAnswered[V.cur] || (V.ynAnswered[V.cur] = {});
+    if(answered[id]){ vtoast("На этот вопрос уже отвечено"); return; }
+    var q = ynFindQuestion(id);
+    if(q && q.status === "answered"){
+      answered[id] = "принято"; vtoast("На этот вопрос уже отвечено"); renderContent(); return;
+    }
+    var payload = {
+      source: "miniapp_yesno",
+      question_id: id,
+      answer: answer,
+      scope: ynScopeObj(q),
+      ts: new Date().toISOString()
+    };
+    var tgApp = getTG();
+    if(!tgApp){ vtoast("Открой мини-ап через бота: sendData недоступен"); return; }
+    try {
+      tgApp.sendData(JSON.stringify(payload));
+      var a = ynAnswers(), label = a[0].label;
+      for(var i=0;i<a.length;i++) if(a[i].answer === answer) label = a[i].label;
+      answered[id] = label;
+      vtoast("Ответ «" + label + "» отправлен · " + id);
+      renderContent(); renderSelector();
+    } catch(e){
+      vtoast("Ошибка отправки: " + ((e && e.message) || String(e)));
+    }
+    /* tg.close намеренно НЕ вызывается; miniapp_selection не трогаем */
   }
   function sendAction(label){
     var v = currentView(); if(!v) return;
@@ -719,6 +877,11 @@
       renderContent();
       return;
     }
+    if(role === "yn"){
+      if(t.disabled) return;
+      sendYesNo(t.getAttribute("data-id"), t.getAttribute("data-answer"));
+      return;
+    }
     if(role === "action"){ sendAction(t.getAttribute("data-label")); return; }
   }
   function onChange(e){
@@ -765,6 +928,6 @@
   ensureShell();
   loadSpec();
   window.addEventListener("miniapp-views-reload", function(){
-    V.data = {}; loadSpec(); if(V.cur) loadData(currentView(), true);
+    V.data = {}; V.ynAnswered = {}; loadSpec(); if(V.cur) loadData(currentView(), true);
   });
 })();
