@@ -690,10 +690,6 @@
     <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">4</span></button>
     <button class="tab" data-tab="chat"><span>✉</span> Чат <span class="key">5</span></button>
     <!-- @owner:redesign-2026-11-21 @region:nav-5tabs end -->
-    <button class="tab tab-more" id="tabMore" aria-expanded="false" aria-controls="moreTabs"><span>⋯</span> Ещё</button>
-    <span class="tabs-more" id="moreTabs" hidden>
-      <button class="tab" data-tab="scenarios"><span>🎬</span> Сценарии <span class="key">9</span></button>
-    </span>
       </nav>
 
   <main id="main">
@@ -988,12 +984,6 @@ function toast(msg){
 /* ---------- tabs ---------- */
 /* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
 const TAB_IDS=S=["live","tasks","prompts","atlas","chat"],"scenarios"];
-const MORE_TABS=["scenarios"];
-function setMoreOpen(open){
-  const m=$("#moreTabs"), btn=$("#tabMore");
-  if(!m||!btn) return;
-  m.hidden=!open; btn.setAttribute("aria-expanded",String(open));
-}
 
 const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function setTab(name){
@@ -1008,7 +998,6 @@ function setTab(name){
     const tn=$("#taskSubNav"); if(tn) tn.hidden=true;
   }
   if(name==="scenarios"&&typeof mountScenarios==="function") mountScenarios();
-  setMoreOpen(MORE_TABS.includes(name));
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
