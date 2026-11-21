@@ -722,6 +722,7 @@
       <div class="typing" id="typing"><i></i><i></i><i></i> агент думает…</div>
       <div class="composer">
         <input id="chatInput" type="text" placeholder="Сообщение агенту…" autocomplete="off">
+        <button id="chatVoice" class="send" aria-label="Голосовой ввод" title="Голосовой ввод">🎤</button>
         <button id="chatSend" class="send" aria-label="Отправить">➤</button>
       </div>
       <div class="quick">
@@ -1004,8 +1005,6 @@ function setTaskSub(name){
   if(!TASK_SUBS.includes(name)) return;
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
   $$("#taskSubNav button").forEach(b=>b.classList.toggle("active",b.dataset.sub===name));
-  if(name==="scenarios" && typeof mountScenarios==="function") mountScenarios();
-  if(name==="studio" && typeof studioEnsure==="function") studioEnsure();
   $("#main").scrollTop=0;
 }
 $$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
@@ -2613,7 +2612,8 @@ function studioAskWithContext(){
   renderStudioReplies();
   /* @owner:redesign-2026-11-21 @region:source-unique: Студия шлёт свой source,
      не miniapp_chat (G1: 5 уникальных source). Бот-хендлер читает source как тип задачи. */
-  tg.sendData(JSON.stringify({source:"miniapp_studio", text:text, user_id:userID, rid:rid}));
+  tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID, rid:rid,
+    surface:"studio"}));  /* @owner:fix-2026-11-21: бот понимает miniapp_chat; surface — семантика, не source */
   inp.value=""; updateStudioAskMeta();
   toast("Отправлено — ответ появится здесь же");
 }
@@ -2720,7 +2720,11 @@ async function voiceFinish(){
   const rid="v"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
   const ext=type.indexOf("ogg")>=0 ? "ogg" : "webm";
   const entry={ text:"🎤 Голос "+dur+" с · отправляю…", t:new Date().toTimeString().slice(0,8),
-    ts:Date.now(), rid:rid, source:"miniapp_studio" };
+    ts:Date.now(), rid:rid, source:"miniapp_chat", surface:"voice" };  /* @owner:fix-2026-11-21 */
+  if(typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
+    tg.sendData(JSON.stringify({source:"miniapp_chat", surface:"voice",
+      text:"🎤 Голосовое сообщение ("+dur+" с) — расшифруй и ответь", user_id:userID, rid:rid}));
+  }
   CHAT.sent.push(entry); CHAT.sent=CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   renderStudioReplies();
@@ -2755,6 +2759,11 @@ async function voiceFinish(){
 }
 const sVoiceBtn=$("#sVoiceBtn");
 if(sVoiceBtn) sVoiceBtn.addEventListener("click", ()=>{
+  if(VOICE.rec) voiceStop(false); else voiceStart();
+});
+/* @owner:fix-2026-11-21 @region:chat-voice: голос в чате через тот жеvoice-код */
+const chatVoiceBtn=$("#chatVoice");
+if(chatVoiceBtn) chatVoiceBtn.addEventListener("click", ()=>{
   if(VOICE.rec) voiceStop(false); else voiceStart();
 });
 /* VOICE:END */
