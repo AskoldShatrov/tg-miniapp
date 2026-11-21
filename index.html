@@ -1004,6 +1004,8 @@ function setTaskSub(name){
   if(!TASK_SUBS.includes(name)) return;
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
   $$("#taskSubNav button").forEach(b=>b.classList.toggle("active",b.dataset.sub===name));
+  if(name==="scenarios" && typeof mountScenarios==="function") mountScenarios();
+  if(name==="studio" && typeof studioEnsure==="function") studioEnsure();
   $("#main").scrollTop=0;
 }
 $$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
