@@ -1,17 +1,17 @@
 {
-  "generated": "2026-11-21T08:17:58+03:00",
+  "generated": "2026-11-21T08:48:02+03:00",
   "counts": {
-    "runners": 8,
+    "runners": 4,
     "api_sessions": 0,
     "systemd_workers": 10,
     "wants_open": 75,
-    "goals_active": 73
+    "goals_active": 25
   },
   "by_topic": [],
   "verdict": {
     "agents_needed": 1,
     "N": 1,
-    "reason": "Сейчас достаточно 1 агента, потому что реально доставляемых задач 9 (1 CLOSED + 8 PARTIAL), шаг ~300 c, горизонт 60 мин → ceil(9*300/3600)=1; создано же 1167 goals/75 open want'ов — это реестр, а не артефакты; запущено 8 агентов; больше не нужно, пока 3 OPEN и 8 PARTIAL не доставлены в интерфейс.",
+    "reason": "Сейчас достаточно 1 агента, потому что реально доставляемых задач 9 (1 CLOSED + 8 PARTIAL), шаг ~300 c, горизонт 60 мин → ceil(9*300/3600)=1; создано же 1126 goals/75 open want'ов — это реестр, а не артефакты; запущено 4 агента; больше не нужно, пока 3 OPEN и 8 PARTIAL не доставлены в интерфейс.",
     "formula": {
       "deployable_tasks": 9,
       "median_step_sec": 300.0,
@@ -19,15 +19,15 @@
       "raw_n_need": 1,
       "capped_by_free_idle": false
     },
-    "observed_runners": 8
+    "observed_runners": 4
   },
   "warnings": [
     "qmap/report.md отсутствует — метрики шума неизвестны",
     "qmap-backfill.md отсутствует — используем эталон 1/8/3",
     "FREE-IDLE-* отсутствуют — данные о простое free-моделей недоступны",
     "бэкфилл 12 запросов: 1 CLOSED / 8 PARTIAL / 3 OPEN; создание goal/want НЕ считается доставкой артефакта",
-    "создано за 24ч 1167 goals + 25 want'ов; реестр растёт быстрее доставки",
-    "ux-critic: fail=5 / open=2 — данные интерфейса не верифицированы",
+    "создано за 24ч 1126 goals + 25 want'ов; реестр растёт быстрее доставки",
+    "ux-critic: fail=7 / open=3 — данные интерфейса не верифицированы",
     "нет данных FREE-IDLE"
   ],
   "extras": {
@@ -44,11 +44,11 @@
       "voice-relay.service"
     ],
     "goals": {
-      "active": 73,
-      "done": 1712,
-      "created_24h": 1167,
-      "done_24h": 1122,
-      "total": 1836
+      "active": 25,
+      "done": 1752,
+      "created_24h": 1126,
+      "done_24h": 1124,
+      "total": 1848
     },
     "wants": {
       "open": 75,
@@ -72,13 +72,13 @@
       }
     },
     "ux_critic": {
-      "reads": 6,
-      "fail": 5,
-      "open": 2,
-      "emitted": 10,
-      "seen": 10
+      "reads": 7,
+      "fail": 7,
+      "open": 3,
+      "emitted": 11,
+      "seen": 11
     },
-    "patch_map": "активные claims: /home/nyaka/scripts/background/private_local_server.py :: HTML_PAGE :: ses_e04929a55ffeTQ64A5RELeB5B3 :: private-actions",
+    "patch_map": "anchor 'def main():' в build_views.py свободен",
     "free_idle": "нет данных FREE-IDLE"
   }
 }
