@@ -1,102 +1,17 @@
 {
-  "generated": "2026-11-21T07:22:23+03:00",
+  "generated": "2026-11-21T08:17:58+03:00",
   "counts": {
-    "runners": 2,
+    "runners": 8,
     "api_sessions": 0,
     "systemd_workers": 10,
     "wants_open": 75,
-    "goals_active": 72
+    "goals_active": 73
   },
-  "by_topic": [
-    {
-      "topic": "Q1 Реши проблемы из прошлых сессий",
-      "tasks": 1,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "~30 отчётов автопетли `~/overnight/hypothesis/AU11628…AU11675_run17952*.md` (03:07–04:20) и goal с результатом «Проверено: гипотеза *все todo — мусор* опровергнута». Сам путь/скилл"
-    },
-    {
-      "topic": "Q2 Сколько реквестов за все прошлые дни?",
-      "tasks": 3,
-      "verdict": "OPEN",
-      "rationale": "следа ответа нет",
-      "evidence": "в подготовленных источниках отчёта со счётчиком нет. Ближайшие следы — скрипты, считающие todo/гипотезы, и goal про websearch-403; они не отвечают на вопрос про реквесты. - **Связи"
-    },
-    {
-      "topic": "Q3 UX переписки Ивана и Аскольда + резервный канал",
-      "tasks": 4,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "два диагноза остались `active`, один — `idea`; позже появился аудит (Q9). Ответа в чате нет. - **Связи:** goals `gmwpnx7ltjmba` (03:21, active) «Резервный канал управления: бот на"
-    },
-    {
-      "topic": "Q4 Найди сам API-ключ invento и продолжай",
-      "tasks": 3,
-      "verdict": "OPEN",
-      "rationale": "следа ответа нет",
-      "evidence": "серия попыток вытащить `sult_access` из куки — `/tmp/opencode/invento/{ff.sqlite, ff_now.sqlite, ck2.sqlite, app.html, chrome_Default.sqlite, chrome_Profile_*.sqlite}`. Ключа нет;"
-    },
-    {
-      "topic": "Q5 Фильтры промптов и единая таблица элементов",
-      "tasks": 3,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "единая таблица на 63 строки / 9 подтаблиц; план фильтров. 3 mismatch и 31 stale остались. - **Связи:** goal `gmwpu1gbacgun` (06:12, done) «Единая таблица обновляемых элементов мини"
-    },
-    {
-      "topic": "Q6 Число агентов и непересекающиеся зоны",
-      "tasks": 6,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "замер 12/14, карта точечных правок, карта зон v2, режим «много агентов». В 06:28 пользователь видит «всего 2 агента». - **Связи:** goals `gmwpotj0cz798` (03:46, done, 12/14), `gmwp"
-    },
-    {
-      "topic": "Q7 Дерево по клику + humanization + Студия/Атлас",
-      "tasks": 4,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "аудит зафиксировал 2/2 machine-like, 4/8 заголовков обрезаны по `[:95]`, цепочки 13 звеньев → H553 и 18 → H428; идея «Единая модель групп». Кликабельного перехода в UI нет. - **Свя"
-    },
-    {
-      "topic": "Q8 Бот не кликабельный",
-      "tasks": 6,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "синтетические проверки и handler `miniapp_selection`; сервис перезапущен в 06:20. Реального подтверждения кликом с телефона нет — пользователь повторил жалобу 6 раз. - **Связи:** g"
-    },
-    {
-      "topic": "Q9 Голос, «отправка закрывает мини-апп», «1 агент», критик",
-      "tasks": 5,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "скилл `ux-time-audit` зарегистрирован, аудит написан (11 PASS / 3 FAIL), таймер критика включён (создан только после 06:33). «1 агент» в `progress.json` не исправлен, обзор скиллов"
-    },
-    {
-      "topic": "Q10 Методология и контур yes/no",
-      "tasks": 1,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "исследование и spec, генератор, `yesno_effects.py`, 5 вопросов в **деплой-копии** и view `yesno-decisions`. Но источник истины `shared-repo/bots/miniapp/questions.json` — **пуст**"
-    },
-    {
-      "topic": "Q11 Ревизия «что хотели / что получили» за 7 часов",
-      "tasks": 5,
-      "verdict": "PARTIAL",
-      "rationale": "код/цель есть, но не доставлено в интерфейс",
-      "evidence": "радар (42 сообщения, 111 хотелок, 5 «в работе», 37 «отвечено, но не доставлено»), 10 уточняющих вопросов критика, включённый таймер критика. Всё — в файлах/TUI, не в чате. - **Связ"
-    },
-    {
-      "topic": "Q12 Карта «вопрос → решение",
-      "tasks": 1,
-      "verdict": "CLOSED",
-      "rationale": "артефакт и путь есть",
-      "evidence": "настоящий отчёт `/tmp/opencode/qmap-backfill.md` (создан в ответ на запрос, 12 карт, путь указан). - **Связи:** file `/tmp/opencode/qmap-backfill.md`; источники: 47 user-сообщений"
-    }
-  ],
+  "by_topic": [],
   "verdict": {
     "agents_needed": 1,
     "N": 1,
-    "reason": "Сейчас достаточно 1 агента, потому что реально доставляемых задач 9 (1 CLOSED + 8 PARTIAL), шаг ~300 c, горизонт 60 мин → ceil(9*300/3600)=1; создано же 1192 goals/75 open want'ов — это реестр, а не артефакты; запущено 2 агента; больше не нужно, пока 3 OPEN и 8 PARTIAL не доставлены в интерфейс.",
+    "reason": "Сейчас достаточно 1 агента, потому что реально доставляемых задач 9 (1 CLOSED + 8 PARTIAL), шаг ~300 c, горизонт 60 мин → ceil(9*300/3600)=1; создано же 1167 goals/75 open want'ов — это реестр, а не артефакты; запущено 8 агентов; больше не нужно, пока 3 OPEN и 8 PARTIAL не доставлены в интерфейс.",
     "formula": {
       "deployable_tasks": 9,
       "median_step_sec": 300.0,
@@ -104,15 +19,15 @@
       "raw_n_need": 1,
       "capped_by_free_idle": false
     },
-    "observed_runners": 2
+    "observed_runners": 8
   },
   "warnings": [
-    "бэкфилл: сводка 1/8/3 != детальные вердикты 1/9/2 — расхождение в источнике",
+    "qmap/report.md отсутствует — метрики шума неизвестны",
+    "qmap-backfill.md отсутствует — используем эталон 1/8/3",
     "FREE-IDLE-* отсутствуют — данные о простое free-моделей недоступны",
-    "qmap: 1466/2981 промптов (49%) unknown — шум, а не задачи",
     "бэкфилл 12 запросов: 1 CLOSED / 8 PARTIAL / 3 OPEN; создание goal/want НЕ считается доставкой артефакта",
-    "создано за 24ч 1192 goals + 25 want'ов; реестр растёт быстрее доставки",
-    "ux-critic: fail=6 / open=2 — данные интерфейса не верифицированы",
+    "создано за 24ч 1167 goals + 25 want'ов; реестр растёт быстрее доставки",
+    "ux-critic: fail=5 / open=2 — данные интерфейса не верифицированы",
     "нет данных FREE-IDLE"
   ],
   "extras": {
@@ -129,11 +44,11 @@
       "voice-relay.service"
     ],
     "goals": {
-      "active": 72,
-      "done": 1704,
-      "created_24h": 1192,
-      "done_24h": 1147,
-      "total": 1827
+      "active": 73,
+      "done": 1712,
+      "created_24h": 1167,
+      "done_24h": 1122,
+      "total": 1836
     },
     "wants": {
       "open": 75,
@@ -142,28 +57,28 @@
       "total": 115
     },
     "qmap": {
-      "prompts": 2981,
-      "unknown": 1466,
-      "closed": 1327
+      "prompts": 0,
+      "unknown": 0,
+      "closed": 0
     },
     "backfill": {
       "closed": 1,
       "partial": 8,
       "open": 3,
       "detailed_verdicts": {
-        "CLOSED": 1,
-        "PARTIAL": 9,
-        "OPEN": 2
+        "CLOSED": 0,
+        "PARTIAL": 0,
+        "OPEN": 0
       }
     },
     "ux_critic": {
-      "reads": 4,
-      "fail": 6,
+      "reads": 6,
+      "fail": 5,
       "open": 2,
-      "emitted": 9,
-      "seen": 9
+      "emitted": 10,
+      "seen": 10
     },
-    "patch_map": "активные claims: /home/nyaka/shared-repo/bots/process_api.py :: def _voice_upload :: ses_e04929a55ffeTQ64A5RELeB5B3 :: voice-rid-link :: ",
+    "patch_map": "активные claims: /home/nyaka/scripts/background/private_local_server.py :: HTML_PAGE :: ses_e04929a55ffeTQ64A5RELeB5B3 :: private-actions",
     "free_idle": "нет данных FREE-IDLE"
   }
 }

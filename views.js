@@ -25,7 +25,8 @@
   var V = {
     views: [], cur: null, data: {}, specError: null,
     search: "", sort: {}, desc: {}, filters: {}, selected: {}, collapsed: {},
-    decision: {}, comment: {}, wrapped: [], visible: [], ynAnswered: {}
+    decision: {}, comment: {}, wrapped: [], visible: [], ynAnswered: {},
+    lastLoadAt: 0
   };
 
   /* ---------- helpers ---------- */
@@ -366,7 +367,20 @@
       "background:var(--surface2,#585b70);color:var(--text,#cdd6f4);border:1px solid var(--overlay0,#6c7086);",
       "padding:10px 15px;border-radius:999px;font:600 11.5px/1.3 var(--ff,sans-serif);box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.35));",
       "opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center}",
-    ".vw-toast.show{opacity:1;transform:translate(-50%,0)}"
+    ".vw-toast.show{opacity:1;transform:translate(-50%,0)}",
+    /* Индикатор открытия: виден в кадре клика, не ловит тапы, живёт до render. */
+    "@keyframes vwOpenShimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}",
+    ".vw-opening{position:absolute;left:14px;right:14px;top:calc(env(safe-area-inset-top,0px) + 78px);z-index:10;",
+      "display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;pointer-events:none;",
+      "background:rgba(30,30,46,.96);border:1px solid var(--surface1,#45475a);",
+      "box-shadow:0 8px 24px rgba(0,0,0,.4);font:600 11px/1.3 var(--ff,sans-serif);color:var(--blue,#89b4fa)}",
+    ".vw-opening[hidden]{display:none}",
+    ".vw-opening .vw-op-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}",
+    ".vw-opening .vw-op-bar{flex:1 1 24px;height:3px;border-radius:3px;",
+      "background:linear-gradient(90deg,var(--surface0,#313244),var(--blue,#89b4fa),var(--surface0,#313244));",
+      "background-size:200% 100%;animation:vwOpenShimmer 1.1s linear infinite}",
+    ".vw-opening .vw-op-ms{flex:none;font:700 10px/1 var(--fm,monospace);color:var(--overlay2,#9399b2)}",
+    "@media (prefers-reduced-motion:reduce){.vw-opening .vw-op-bar{animation:none}}"
   ].join("\n");
 
   var toastTimer = null;
@@ -380,6 +394,63 @@
     t.classList.add("show");
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function(){ t.classList.remove("show"); }, 2200);
+  }
+
+  /* ---------- видимое состояние: источник, время, индикатор открытия ---------- */
+  function nowMs(){ return (window.performance && performance.now) ? performance.now() : Date.now(); }
+  function clockHMS(v){
+    var ms = (typeof v === "number") ? v : Date.parse(v);
+    if(!ms || !isFinite(ms)) return "--:--:--";
+    var d = new Date(ms);
+    return [d.getHours(), d.getMinutes(), d.getSeconds()].map(function(n){
+      return String(n).padStart(2,"0");
+    }).join(":");
+  }
+  function hostSubtitle(){
+    return "HOST: " + SRC + " · " + V.views.length + " видов · последняя загрузка " +
+      clockHMS(V.lastLoadAt) + " · скрытый приватный доступ только локально";
+  }
+  function setHostSub(){
+    var h = $("#vwHsub");
+    if(h){ h.textContent = hostSubtitle(); h._vwSkel = false; }
+  }
+  function markLoaded(){ V.lastLoadAt = Date.now(); setHostSub(); }
+
+  var openState = null;
+  function ensureOpenCSS(){
+    if($("#vwOpenCSS")) return;
+    var st = document.createElement("style"); st.id = "vwOpenCSS";
+    /* Стили индикатора уже лежат в основном CSS (ensureShell) — здесь только
+       страховка для случая, когда open-индикатор вызван до создания оболочки. */
+    st.textContent = ".vw-opening{position:absolute;left:14px;right:14px;top:calc(env(safe-area-inset-top,0px) + 78px);z-index:10;" +
+      "display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;pointer-events:none;" +
+      "background:#1e1e2e;border:1px solid #45475a;color:#89b4fa;font:600 11px/1.3 sans-serif}";
+    document.head.appendChild(st);
+  }
+  function showOpen(title){
+    var panel = $("#vwPanel"); if(!panel) return;
+    stopOpen();
+    ensureOpenCSS();
+    var el = $("#vwOpening");
+    if(!el){
+      el = document.createElement("div"); el.id = "vwOpening"; el.className = "vw-opening";
+      panel.appendChild(el);
+    }
+    el.innerHTML = '<span class="vw-op-label">Открываю ' + esc(title || "вид") + '…</span>' +
+      '<span class="vw-op-bar"></span><span class="vw-op-ms">0 мс</span>';
+    el.hidden = false;
+    var msEl = el.querySelector(".vw-op-ms");
+    openState = { t0: nowMs(), el: el, ms: msEl, timer: null };
+    openState.timer = setInterval(function(){
+      if(!openState || !openState.ms) return;
+      openState.ms.textContent = Math.round(nowMs() - openState.t0) + " мс";
+    }, 100);
+  }
+  function stopOpen(){
+    if(!openState) return;
+    var s = openState; openState = null;
+    if(s.timer) clearInterval(s.timer);
+    if(s.el) s.el.hidden = true;
   }
 
   /* ---------- оболочка ---------- */
@@ -440,6 +511,7 @@
   function applySpec(spec){
     V.views = Array.isArray(spec && spec.views) ? spec.views : [];
     V.specError = null;
+    markLoaded();
     prefetchAll();
     renderSelector();
     var keep = V.cur, target = null;
@@ -468,17 +540,18 @@
     scheduleSkeleton();
     fetchSource(v, force, false);
   }
-  /* ---- предзагрузка всех источников + TTL-кэш + скелетон (Catppuccin Mocha) ---- */
+  /* ---- точечная предзагрузка источников + TTL-кэш + скелетон (Catppuccin Mocha) ---- */
   var CACHE_TTL = 60000;
-  var PREFETCH_LIMIT = 5;
+  var PREFETCH_LIMIT = 3;       // не более трёх параллельных fetch на телефоне
+  var PREFETCH_DEFER_MS = 300;  // остальные виды — в простой, после idle/300 мс
+  var pfQueue = [], pfActive = 0;
   var skelTimer = null;
   function clearSkeleton(){
     if(skelTimer){ clearTimeout(skelTimer); skelTimer = null; }
     var s = $("#vwSkel"); if(s && s.parentNode) s.parentNode.removeChild(s);
     var h = $("#vwHsub");
     if(h && h._vwSkel){
-      var cv = currentView();
-      h.textContent = cv ? (cv.title || cv.id || V.cur) : "нет данных";
+      h.textContent = hostSubtitle();
       h._vwSkel = false;
     }
   }
@@ -505,7 +578,7 @@
       skelTimer = null;
       var body = $("#vwBody"); if(!body) return;
       ensureSkelCSS();
-      var h = $("#vwHsub"); if(h){ h.textContent = "загрузка…"; h._vwSkel = true; }
+      var h = $("#vwHsub"); if(h){ h.textContent = hostSubtitle(); h._vwSkel = true; }
       body.innerHTML = "<div class='vw-skel' id='vwSkel'><div class='vw-skel-bar'></div>" +
         "<div class='vw-skel-line'></div><div class='vw-skel-line'></div>" +
         "<div class='vw-skel-line'></div><div class='vw-skel-line'></div></div>";
@@ -523,36 +596,69 @@
     V.data[id] = {loading:true, items:(d && d.items) || [], url:url, prefetch:!!prefetch};
     var p = fetchJSON(url, !!force).then(function(raw){
       V.data[id] = {items:normalizeData(raw), url:url, loadedAt:Date.now(), prefetch:!!prefetch, ttl:CACHE_TTL};
+      markLoaded();
       if(V.cur === id){ clearSkeleton(); renderBody(); }
       return V.data[id];
     }).catch(function(err){
       V.data[id] = {items:[], url:url, loadedAt:Date.now(), prefetch:!!prefetch,
         error:(err && err.message) ? err.message : String(err)};
+      markLoaded();
       if(V.cur === id){ clearSkeleton(); renderBody(); }
       return V.data[id];
     });
     V.data[id].inflight = p;
     return p;
   }
+  /* Планировщик предзагрузки: глобальный лимит 3, очередь без блокировки клика.
+     Отложенные задачи помечаются ready=false и не запускаются до idle/300 мс. */
+  function pfPump(){
+    while(pfActive < PREFETCH_LIMIT){
+      var at = -1;
+      for(var i=0;i<pfQueue.length;i++){ if(pfQueue[i].ready){ at = i; break; } }
+      if(at < 0) break;
+      var job = pfQueue.splice(at, 1)[0];
+      pfActive++;
+      fetchSource(job.v, false, true).then(pfDone, pfDone);
+    }
+  }
+  function pfDone(){ pfActive--; pfPump(); }
+  function pfSubmit(tasks, deferred){
+    if(!tasks || !tasks.length) return;
+    tasks.forEach(function(v){ pfQueue.push({v:v, ready:!deferred}); });
+    pfPump();
+    if(deferred){
+      var kick = function(){
+        for(var i=0;i<pfQueue.length;i++) pfQueue[i].ready = true;
+        pfPump();
+      };
+      if(typeof window.requestIdleCallback === "function")
+        window.requestIdleCallback(kick, {timeout: PREFETCH_DEFER_MS});
+      else setTimeout(kick, PREFETCH_DEFER_MS);
+    }
+  }
+  function pfTarget(v){
+    // publish=false (confidential) и inline-виды не предзагружаем никогда
+    return !!v && v.publish !== false && !inlineSource(v) && !!sourceURL(v);
+  }
+  function pfNeighbours(center){
+    var list = V.views.filter(pfTarget), out = [], i = 0, j;
+    if(!list.length) return out;
+    for(var k=0;k<list.length;k++) if(viewId(list[k]) === center){ i = k; break; }
+    for(j=Math.max(0, i-1); j<=Math.min(list.length-1, i+1); j++) out.push(list[j]);
+    return out;
+  }
   function prefetchAll(){
     if(V.prefetchStarted && V.prefetchAt && Date.now() - V.prefetchAt < CACHE_TTL &&
        V.views.some(function(v){ return !!V.data[viewId(v)]; })) return V.prefetchDone;
     V.prefetchStarted = true; V.prefetchAt = Date.now();
-    var targets = V.views.filter(function(v){
-      return v.publish !== false && !inlineSource(v) && !!sourceURL(v);
-    });
-    var active = 0, pending = [];
-    targets.forEach(function(v){
-      pending.push(new Promise(function(resolve){
-        (function attempt(){
-          if(active >= PREFETCH_LIMIT){ setTimeout(attempt, 8); return; }
-          active++;
-          fetchSource(v, false, true).then(function(){ active--; resolve(true); },
-                                           function(){ active--; resolve(false); });
-        })();
-      }));
-    });
-    V.prefetchDone = Promise.allSettled(pending);
+    var list = V.views.filter(pfTarget);
+    if(!list.length){ V.prefetchDone = Promise.resolve(); return V.prefetchDone; }
+    var near = pfNeighbours(V.cur), nearIds = {};
+    near.forEach(function(v){ nearIds[viewId(v)] = true; });
+    var far = list.filter(function(v){ return !nearIds[viewId(v)]; });
+    pfSubmit(near, false);  // активный + 2 соседа — сразу, клик не ждёт
+    pfSubmit(far, true);    // остальные 7 — отложенно (idle или 300 мс)
+    V.prefetchDone = Promise.resolve();
     return V.prefetchDone;
   }
   function selectView(id){
@@ -560,8 +666,10 @@
     for(var i=0;i<V.views.length;i++) if(viewId(V.views[i]) === id) v = V.views[i];
     if(!v) return;
     V.cur = id;
+    showOpen(v.title || v.id || id);
     renderSelector();
     loadData(v, false);
+    pfSubmit(pfNeighbours(id), false);  // греем выбранный вид и его соседей
   }
 
   /* ---------- рендер ---------- */
@@ -584,14 +692,14 @@
   }
   function renderNoSpec(){
     var body = $("#vwBody"); if(!body) return;
-    var h = $("#vwHsub"); if(h) h.textContent = "нет данных";
+    stopOpen(); setHostSub();
     body.innerHTML = '<div class="vw-empty">Нет данных: specs <b>' + esc(SRC) +
       '</b> не загружен' + (V.specError ? ' (' + esc(V.specError) + ')' : '') +
       '. Ни один вид не выдуман — положите views.json рядом с index.html или задайте window.MINIAPP_VIEWS.</div>';
   }
   function renderLoading(){
     var body = $("#vwBody"); if(!body) return;
-    var h = $("#vwHsub"); if(h) h.textContent = "загрузка источника…";
+    setHostSub();
     body.innerHTML = '<div class="vw-empty">Загрузка источника данных вида…</div>';
   }
   function controlsHTML(v, wrapped){
@@ -801,6 +909,12 @@
   function renderContent(){
     var box = $("#vwContent"), v = currentView(); if(!box || !v) return;
     var d = V.data[V.cur] || {items:[]};
+    /* pdf-hub: снимаем старый контроллер до любой перерисовки, иначе повторный
+       клик/фильтр оставлял бы слушатели beforeprint и дубли контейнера.
+       Храним ссылку на #vwBody (он не пересоздаётся), а не на #vwContent —
+       тот renderBody() заменяет через innerHTML при каждом открытии вида. */
+    var hubHost = $("#vwBody");
+    if(hubHost && hubHost.__pdfHub){ try{ hubHost.__pdfHub.destroy(); }catch(e){} hubHost.__pdfHub = null; }
     if(String(v.type || "") === "decision"){
       if(d.error){
         box.innerHTML = "<div class='vw-empty'>Вопросов нет: источник <b>" + esc(d.url || (v.source || "—")) +
@@ -839,6 +953,41 @@
       type === "tree" ? renderTree(v, vis) :
       type === "table" ? renderTable(v, vis) : renderCards(v, vis);
     updateCount();
+    /* pdf-hub: после обычного рендера карточек подключаем window.PDFHub.render.
+       Контейнер один, пересоздаётся чисто: старый контроллер уже.destroy() выше. */
+    if(viewId(v) === "pdf-hub" || (type === "cards" && String(v.source || "") === "works.json")){
+      var mount = $("#pdfHubMount", box);
+      if(!mount){ mount = document.createElement("div"); mount.id = "pdfHubMount"; box.appendChild(mount); }
+      mount.innerHTML = "";
+      var Hub = window.PDFHub;
+      if(Hub && typeof Hub.render === "function"){
+        try {
+          (hubHost || box).__pdfHub = Hub.render(mount, d.items || [], {
+            title: v.title || "Хаб университетских работ",
+            groupBy: v.group_by || "source",
+            selectable: true,
+            showExport: true,
+            onSelectionChange: function(ids){
+              var pick = pickOf(V.cur);
+              Object.keys(pick).forEach(function(k){ delete pick[k]; });
+              (ids || []).forEach(function(id){ pick[String(id)] = true; });
+              updateCount();
+            }
+          });
+        } catch(err) {
+          mount.innerHTML = "";
+          var fail = document.createElement("div");
+          fail.className = "vw-empty";
+          fail.textContent = "PDF-хаб недоступен: " + ((err && err.message) || String(err));
+          mount.appendChild(fail);
+        }
+      } else {
+        var off = document.createElement("div");
+        off.className = "vw-empty";
+        off.textContent = "PDF-хаб недоступен";
+        mount.appendChild(off);
+      }
+    }
   }
   function updateCount(){
     var el = $("#vwCount"); if(!el) return;
@@ -848,13 +997,13 @@
   }
   function renderBody(){
     var body = $("#vwBody"), v = currentView(); if(!body || !v) return;
-    var h = $("#vwHsub");
-    if(h) h.textContent = v.title || v.id || V.cur;
+    setHostSub();
     var d = V.data[V.cur] || {items:[]};
     V.wrapped = wrapItems(v, d.items || []);
     V.visible = visibleItems(v, V.wrapped, V.cur);
     body.innerHTML = controlsHTML(v, V.wrapped) + "<div class='vw-content' id='vwContent'></div>";
     renderContent();
+    stopOpen();
   }
 
   /* ---------- события ---------- */
