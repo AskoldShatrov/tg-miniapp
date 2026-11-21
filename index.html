@@ -684,23 +684,40 @@
   </header>
 
   <nav class="tabs" id="tabs">
-    <button class="tab active" data-tab="chat"><span>✉</span> Чат <span class="key">1</span></button>
-    <button class="tab" data-tab="prompts"><span>⌘</span> Промпты <span class="key">2</span></button>
-    <button class="tab" data-tab="tree"><span>⑂</span> Дерево <span class="key">3</span></button>
-    <button class="tab" data-tab="sessions"><span>◷</span> Сессии <span class="key">4</span></button>
-    <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">5</span></button>
-    <button class="tab" data-tab="live"><span>◉</span> Ход <span class="key">6</span></button>
-    <!-- @owner:parallel-edit @region:hick-tabs (эргономика Hick: 6 видно + «Ещё») -->
+    <!-- @owner:redesign-2026-11-21 @region:nav-5tabs: 5 табов из ergonomics-matrix (Ход|Задачи|Промпты|Атлас|Чат) -->
+    <button class="tab active" data-tab="live"><span>◉</span> Ход <span class="key">1</span></button>
+    <button class="tab" data-tab="tasks"><span>✓</span> Задачи <span class="key">2</span></button>
+    <button class="tab" data-tab="prompts"><span>⌘</span> Промпты <span class="key">3</span></button>
+    <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">4</span></button>
+    <button class="tab" data-tab="chat"><span>✉</span> Чат <span class="key">5</span></button>
+    <!-- @owner:redesign-2026-11-21 @region:nav-5tabs end -->
+    <!-- @owner:parallel-edit @region:hick-tabs -->
     <button class="tab tab-more" id="tabMore" aria-expanded="false" aria-controls="moreTabs"><span>⋯</span> Ещё</button>
     <span class="tabs-more" id="moreTabs" hidden>
-      <button class="tab" data-tab="questions"><span>❓</span> Вопросы <span class="key">7</span></button>
-      <button class="tab" data-tab="studio"><span>◈</span> Студия <span class="key">8</span></button>
+      <button class="tab" data-tab="scenarios"><span>🎬</span> Сценарии <span class="key">9</span></button>
     </span>
     <!-- @owner:parallel-edit @region:hick-tabs end -->
   </nav>
 
   <main id="main">
-    <section class="screen active" id="screen-chat">
+    <!-- @owner:redesign-2026-11-21 @region:task-subnav -->
+    <nav class="task-subnav" id="taskSubNav" hidden>
+      <button data-sub="tree" class="active">Дерево</button>
+      <button data-sub="questions">Вопросы</button>
+      <button data-sub="decisions">Решения</button>
+      <button data-sub="sessions">Сессии</button>
+      <button data-sub="studio">Студия</button>
+      <button data-sub="scenarios">Сценарии</button>
+    </nav>
+    <style>
+      .task-subnav{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0)}
+      .task-subnav[hidden]{display:none}
+      .task-subnav button{flex:1;appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
+      .task-subnav button.active{background:var(--surface0);color:var(--text);border-color:var(--surface1)}
+      .task-subnav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+    </style>
+    <!-- @owner:redesign-2026-11-21 @region:task-subnav end -->
+    <section class="screen" id="screen-chat">
       <div class="chat-head">
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
         <span class="chat-live" title="живой канал">●</span>
@@ -828,7 +845,7 @@
     </section>
 
     <section class="screen" id="screen-live">
-      <div class="eyebrow">Ход работы · что делается прямо сейчас</div>
+      <div class="eyebrow" id="liveEyebrow">План · снимок (см. возраст ниже)</div>
       <div class="live-strip"><span class="dot-live"></span><span id="liveStamp">…</span></div>
       <div class="qbox" id="liveQueues"></div>
       <div class="eyebrow" style="margin-top:12px">Активные шаги progress.json</div>
@@ -892,24 +909,23 @@
       </div>
     </section>
 
+
+    <section class="screen" id="screen-scenarios">
+      <div id="scenarios-tab"></div>
+    </section>
   </main>
 
   <div class="hotbar">
-    <span class="hk"><kbd>1</kbd> Чат</span>
+    <!-- @owner:redesign-2026-11-21 @region:hotbar-5 -->
+    <span class="hk"><kbd>1</kbd> Ход</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>2</kbd> Промпты</span>
+    <span class="hk"><kbd>2</kbd> Задачи</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>3</kbd> Дерево</span>
+    <span class="hk"><kbd>3</kbd> Промпты</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>4</kbd> Сессии</span>
+    <span class="hk"><kbd>4</kbd> Атлас</span>
     <span class="sep"></span>
-    <span class="hk"><kbd>5</kbd> Атлас</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>6</kbd> Ход</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>7</kbd> Вопросы</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>8</kbd> Студия</span>
+    <span class="hk"><kbd>5</kbd> Чат</span>
     <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
@@ -917,6 +933,7 @@
   <div class="toast" id="toast"></div>
 </div>
 
+<script src="scenarios-tab.js"></script>
 <script>
 /* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
    позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
@@ -973,29 +990,39 @@ function toast(msg){
 }
 
 /* ---------- tabs ---------- */
-const TAB_IDS=["chat","prompts","tree","sessions","atlas","live","questions","studio"];
-/* @owner:parallel-edit @region:hick-tabs-js */
-const MORE_TABS=["questions","studio"];
+/* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
+const TAB_IDS=["live","tasks","prompts","atlas","chat","scenarios"];
+const MORE_TABS=["scenarios"];
 function setMoreOpen(open){
   const m=$("#moreTabs"), btn=$("#tabMore");
   if(!m||!btn) return;
   m.hidden=!open; btn.setAttribute("aria-expanded",String(open));
 }
+const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function setTab(name){
   if(!TAB_IDS.includes(name)) return;
   $$(".tab[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===name));
+  if(name==="tasks"){
+    // показать только под-экран «дерево», остальные подэкраны доступны через task-nav
+    $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-tree"));
+    const tn=$("#taskSubNav"); if(tn) tn.hidden=false;
+  } else {
+    $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
+    const tn=$("#taskSubNav"); if(tn) tn.hidden=true;
+  }
+  if(name==="scenarios" && typeof mountScenarios==="function") mountScenarios();
+  setMoreOpen(MORE_TABS.includes(name));
+  $("#main").scrollTop=0;
+}
+function setTaskSub(name){
+  if(!TASK_SUBS.includes(name)) return;
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
-  // раскрыть «Ещё», если выбрана скрытая вкладка (в т.ч. hotkey 7/8)
-  if(MORE_TABS.includes(name)) setMoreOpen(true);
-  const btn=$("#tabMore");
-  if(btn) btn.classList.toggle("active", MORE_TABS.includes(name));
+  $$("#taskSubNav button").forEach(b=>b.classList.toggle("active",b.dataset.sub===name));
   $("#main").scrollTop=0;
 }
 $$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
-$$("#tabMore").forEach(b=>b.addEventListener("click",()=>{
-  const m=$("#moreTabs"); if(m) setMoreOpen(m.hidden);
-}));
-/* @owner:parallel-edit @region:hick-tabs-js end */
+$$("#taskSubNav button").forEach(b=>b.addEventListener("click",()=>setTaskSub(b.dataset.sub)));
+/* @owner:redesign-2026-11-21 @region:tabs-js end */
 
 /* ---------- cards ---------- */
 let ci=0;
@@ -1409,19 +1436,17 @@ function renderSessions(){
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{
   if(e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
-  if(e.key==="1"){setTab("chat"); renderChat();}
-  else if(e.key==="2"){setTab("prompts")}
-  else if(e.key==="3"){setTab("tree")}
-  else if(e.key==="4"){setTab("sessions")}
-  else if(e.key==="5"){setTab("atlas"); renderAtlas()}
-  else if(e.key==="6"){setTab("live"); renderLive()}
-  else if(e.key==="7"){setTab("questions"); fetchQuestions()}
-  else if(e.key==="8"){setTab("studio"); studioEnsure()}
+  /* @owner:redesign-2026-11-21 @region:hotkeys-5 */
+  if(e.key==="1"){setTab("live"); renderLive();}
+  else if(e.key==="2"){setTab("tasks")}
+  else if(e.key==="3"){setTab("prompts")}
+  else if(e.key==="4"){setTab("atlas"); renderAtlas()}
+  else if(e.key==="5"){setTab("chat"); renderChat()}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
     $$("#pList .p-children").forEach(x=>x.classList.remove("open"));
-    setTab("chat"); toast("Сброс вида");
+    setTab("live"); toast("Сброс вида");
   }
   else return;
   e.preventDefault();
@@ -1597,7 +1622,7 @@ function sendToAgent(){
     actions: actions,
     tab: ((document.querySelector(".tab.active") || {}).dataset || {}).tab || "card"
   };
-  if (tg) { tg.sendData(JSON.stringify(payload)); tg.close(); }
+  if (tg) { tg.sendData(JSON.stringify(payload)); }
   else { toast("Открой приложение через бот /app, чтобы отправить агенту"); }
 }
 const sendBtn = $("#sendAgent");
@@ -2120,7 +2145,7 @@ let LIVE_JOBS=null;
 function renderLive(){
   const d=LIVE_JOBS; if(!d) return;
   const now=Date.now();
-  // Дата плана — из данных (updatedAt в live.json / progress.json), а не из «прямо сейчас».
+  // Дата плана — из данных (updatedAt в live.json / progress.json), а не из локального времени.
   const parseTs=(raw)=>{
     if(raw==null||raw==="") return 0;
     if(typeof raw==="number") return raw<1e12?raw*1000:raw;
@@ -2230,7 +2255,7 @@ function renderQuestions(){
       answer:b.dataset.answer,
       user_id:((tg.initDataUnsafe||{}).user||{}).id||null}));
     toast("Ответ отправлен");
-    if(typeof tg.close==="function") tg.close();
+    /* @owner:redesign-2026-11-21 @region:no-close: ответ остаётся в окне */
   }));
   // Дополнительные действия из поля can — тот же POST-хелпер, что и у деталей узла.
   box.querySelectorAll(".qaction").forEach(b=>b.addEventListener("click",()=>{
@@ -2551,8 +2576,7 @@ function studioSend(sid){
   toast("Отправлено — ответ появится здесь же");
 }
 
-/* Запрос из Студии идёт тем же каналом, что и чат (source:"miniapp_chat"),
-   но в тексте несёт компактный контекст отобранных карточек. Бот не трогаем:
+/* Запрос из Студии несёт свой source и компактный контекст карточек; несёт компактный контекст отобранных карточек. Бот не трогаем:
    его существующий обработчик уже вызовет handle(). Ответ вернётся в
    replies.json и подтянется панелью «Ответ» через renderStudioReplies(). */
 function studioContext(){
@@ -2601,10 +2625,11 @@ function studioAskWithContext(){
   CHAT.sent=CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   renderStudioReplies();
-  /* важен именно miniapp_chat — существующий бот-хендлер вызовет handle() */
-  tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID, rid:rid}));
+  /* @owner:redesign-2026-11-21 @region:source-unique: Студия шлёт свой source,
+     не miniapp_chat (G1: 5 уникальных source). Бот-хендлер читает source как тип задачи. */
+  tg.sendData(JSON.stringify({source:"miniapp_studio", text:text, user_id:userID, rid:rid}));
   inp.value=""; updateStudioAskMeta();
-  toast("Отправлено в Чат — ответ появится в панели «Ответ»");
+  toast("Отправлено — ответ появится здесь же");
 }
 const sAskBtn=$("#sAsk"); if(sAskBtn) sAskBtn.addEventListener("click", studioAskWithContext);
 const sPrompt=$("#sPrompt"); if(sPrompt) sPrompt.addEventListener("keydown", e=>{
@@ -2840,6 +2865,18 @@ const sReload=$("#sReload"); if(sReload) sReload.addEventListener("click",()=>{
 const sMore=$("#sMore"); if(sMore) sMore.addEventListener("click",()=>{ sLimit+=40; studioRender(); });
 $$(".tab[data-tab='studio']").forEach(b=>b.addEventListener("click",()=>{ studioEnsure(); studioRender(); }));
 studioEnsure();
+
+/* ---------- вкладка «Сценарии» ---------- */
+let scenariosMounted=false;
+function mountScenarios(){
+  if(scenariosMounted) return;
+  const el=document.getElementById("scenarios-tab");
+  if(!el || typeof QrunScenarios==="undefined") return;
+  scenariosMounted=true;
+  const init=(typeof tg!=="undefined"&&tg.initData)?tg.initData:"";
+  QrunScenarios.mount(el, {url: '/api/scenarios', addUrl: '/api/qrun/add',
+    headers: init?{"X-Telegram-Init-Data":init}:{}, queue: 'changes'});
+}
 
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
