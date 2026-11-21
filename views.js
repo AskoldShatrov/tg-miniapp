@@ -430,6 +430,7 @@
   function applySpec(spec){
     V.views = Array.isArray(spec && spec.views) ? spec.views : [];
     V.specError = null;
+    prefetchAll();
     renderSelector();
     var keep = V.cur, target = null;
     for(var i=0;i<V.views.length;i++) if(viewId(V.views[i]) === keep) target = keep;
@@ -440,22 +441,109 @@
   function loadData(v, force){
     var id = viewId(v);
     if(!force && V.data[id]){
-      if(V.data[id].loading) renderLoading(); else renderBody();
-      return;
+      var d = V.data[id];
+      if(d.redacted){ clearSkeleton(); renderBody(); renderRedacted(v, d); return; }
+      if(d.loading){ scheduleSkeleton(); return; }
+      if(!d.error && d.loadedAt && Date.now() - d.loadedAt < CACHE_TTL){ clearSkeleton(); renderBody(); return; }
     }
     var inline = inlineSource(v);
-    if(inline){ V.data[id] = {items:inline}; renderBody(); return; }
+    if(inline){ V.data[id] = {items:inline, loadedAt:Date.now(), inline:true}; clearSkeleton(); renderBody(); return; }
     var url = sourceURL(v);
-    if(!url){ V.data[id] = {items:[], error:"в спецификации вида нет source"}; renderBody(); return; }
-    V.data[id] = {loading:true, items:[], url:url};
-    renderLoading();
-    fetchJSON(url, !!force).then(function(raw){
-      V.data[id] = {items:normalizeData(raw), url:url};
-      if(V.cur === id) renderBody();
+    if(!url){ V.data[id] = {items:[], error:"в спецификации вида нет source", loadedAt:Date.now()}; clearSkeleton(); renderBody(); return; }
+    /* publish=false: приватный источник не запрашиваем вообще (req #4) */
+    if(v.publish === false){
+      V.data[id] = {items:[], redacted:true, hint:v.hint || "", loadedAt:Date.now()};
+      clearSkeleton(); renderBody(); renderRedacted(v, V.data[id]); return;
+    }
+    scheduleSkeleton();
+    fetchSource(v, force, false);
+  }
+  /* ---- предзагрузка всех источников + TTL-кэш + скелетон (Catppuccin Mocha) ---- */
+  var CACHE_TTL = 60000;
+  var PREFETCH_LIMIT = 5;
+  var skelTimer = null;
+  function clearSkeleton(){
+    if(skelTimer){ clearTimeout(skelTimer); skelTimer = null; }
+    var s = $("#vwSkel"); if(s && s.parentNode) s.parentNode.removeChild(s);
+    var h = $("#vwHsub");
+    if(h && h._vwSkel){
+      var cv = currentView();
+      h.textContent = cv ? (cv.title || cv.id || V.cur) : "нет данных";
+      h._vwSkel = false;
+    }
+  }
+  function ensureSkelCSS(){
+    if($("#vwSkelCSS")) return;
+    var st = document.createElement("style"); st.id = "vwSkelCSS";
+    st.textContent = [
+      "@keyframes vwShimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}",
+      ".vw-skel{padding:4px 2px}",
+      ".vw-skel-bar,.vw-skel-line{height:12px;border-radius:6px;margin:9px 0;",
+        "background:linear-gradient(90deg,var(--surface0,#313244) 25%,var(--surface1,#45475a) 50%,var(--surface0,#313244) 75%);",
+        "background-size:200% 100%;animation:vwShimmer 1.2s linear infinite}",
+      ".vw-skel-bar{height:36px;border-radius:10px}",
+      ".vw-skel-line:nth-child(3){width:84%}",
+      ".vw-skel-line:nth-child(4){width:62%}",
+      ".vw-skel-line:nth-child(5){width:91%}",
+      "@media (prefers-reduced-motion:reduce){.vw-skel-bar,.vw-skel-line{animation:none}}"
+    ].join("\n");
+    document.head.appendChild(st);
+  }
+  function scheduleSkeleton(){
+    clearSkeleton();
+    skelTimer = setTimeout(function(){
+      skelTimer = null;
+      var body = $("#vwBody"); if(!body) return;
+      ensureSkelCSS();
+      var h = $("#vwHsub"); if(h){ h.textContent = "загрузка…"; h._vwSkel = true; }
+      body.innerHTML = "<div class='vw-skel' id='vwSkel'><div class='vw-skel-bar'></div>" +
+        "<div class='vw-skel-line'></div><div class='vw-skel-line'></div>" +
+        "<div class='vw-skel-line'></div><div class='vw-skel-line'></div></div>";
+    }, 90);
+  }
+  function renderRedacted(v, d){
+    var box = $("#vwContent"); if(!box) return;
+    box.innerHTML = "<div class='vw-empty'>Черновик (publish=false): приватный источник не запрашивается. " +
+      (d.hint ? "<b>" + esc(d.hint) + "</b>" : "Данные не выдумываются.") + "</div>";
+  }
+  function fetchSource(v, force, prefetch){
+    var id = viewId(v), url = sourceURL(v), d = V.data[id];
+    if(!force && d && d.loadedAt && Date.now() - d.loadedAt < CACHE_TTL && !d.loading && !d.error) return Promise.resolve(d);
+    if(d && d.inflight) return d.inflight;
+    V.data[id] = {loading:true, items:(d && d.items) || [], url:url, prefetch:!!prefetch};
+    var p = fetchJSON(url, !!force).then(function(raw){
+      V.data[id] = {items:normalizeData(raw), url:url, loadedAt:Date.now(), prefetch:!!prefetch, ttl:CACHE_TTL};
+      if(V.cur === id){ clearSkeleton(); renderBody(); }
+      return V.data[id];
     }).catch(function(err){
-      V.data[id] = {items:[], url:url, error:(err && err.message) ? err.message : String(err)};
-      if(V.cur === id) renderBody();
+      V.data[id] = {items:[], url:url, loadedAt:Date.now(), prefetch:!!prefetch,
+        error:(err && err.message) ? err.message : String(err)};
+      if(V.cur === id){ clearSkeleton(); renderBody(); }
+      return V.data[id];
     });
+    V.data[id].inflight = p;
+    return p;
+  }
+  function prefetchAll(){
+    if(V.prefetchStarted && V.prefetchAt && Date.now() - V.prefetchAt < CACHE_TTL &&
+       V.views.some(function(v){ return !!V.data[viewId(v)]; })) return V.prefetchDone;
+    V.prefetchStarted = true; V.prefetchAt = Date.now();
+    var targets = V.views.filter(function(v){
+      return v.publish !== false && !inlineSource(v) && !!sourceURL(v);
+    });
+    var active = 0, pending = [];
+    targets.forEach(function(v){
+      pending.push(new Promise(function(resolve){
+        (function attempt(){
+          if(active >= PREFETCH_LIMIT){ setTimeout(attempt, 8); return; }
+          active++;
+          fetchSource(v, false, true).then(function(){ active--; resolve(true); },
+                                           function(){ active--; resolve(false); });
+        })();
+      }));
+    });
+    V.prefetchDone = Promise.allSettled(pending);
+    return V.prefetchDone;
   }
   function selectView(id){
     var v = null;

@@ -1,7 +1,7 @@
 {
-  "built_at": "2026-11-21T06:12:03+03:00",
+  "built_at": "2026-11-21T06:42:39+03:00",
   "spec": "/tmp/opencode/yes-no-app-spec.md",
-  "count": 5,
+  "count": 15,
   "answer_policy": {
     "values": [
       "yes",
@@ -10,18 +10,17 @@
     ],
     "unknown": "эффекты НЕ запускаются, вопрос остаётся status=open"
   },
-  "audit_context": "ux-time-audit.md прочитан (6741 симв.)",
+  "audit_context": "ux-time-audit.md прочитан (6696 симв.)",
+  "provenance_note": "ux-critic: прочитан /tmp/opencode/ux-critic-questions.md — добавлено 10 вопросов (Q01..Q10)",
   "questions": [
     {
       "id": "yn-261121-001",
-      "text": "Хвост из 15 открытых want'ов (source=message|unanswered, без evolution и detail) — это мусор, а не отложенные задачи?",
+      "text": "Хвост из 12 открытых want'ов (source=message|unanswered, без evolution и detail) — это мусор, а не отложенные задачи?",
       "text_yes": "Архивировать как мусор",
       "text_no": "Оставить и запросить уточнение",
       "scope": {
         "kind": "ids",
         "ids": [
-          "w261119190741c254",
-          "w26111919074113f0",
           "w26111920475426f6",
           "w26111920475496aa",
           "w2611201108503c24",
@@ -30,7 +29,6 @@
           "w2611210553399849",
           "w26112105533994ff",
           "w2611210553397340",
-          "w2611210553390ac7",
           "w261121055339bfc8",
           "w261121060313778a",
           "w2611210603133b24",
@@ -39,12 +37,12 @@
         "view": "wants-triage",
         "source_file": ".config/opencode/wants.json"
       },
-      "expires": "2026-11-23T06:12:03+03:00",
+      "expires": "2026-11-23T06:42:39+03:00",
       "source": {
         "file": ".config/opencode/wants.json",
         "selector": "status=open & source in {message,unanswered} & !evolution & !detail",
-        "evidence": "15 items match selector of 111 total; open=71, message=64, unanswered=32",
-        "built_at": "2026-11-21T06:12:03+03:00"
+        "evidence": "12 items match selector of 111 total; open=71, message=64, unanswered=32",
+        "built_at": "2026-11-21T06:42:39+03:00"
       },
       "effects": [
         {
@@ -82,8 +80,8 @@
       "gate_ref": null,
       "priority": "P0",
       "status": "open",
-      "count": 15,
-      "created_at": "2026-11-21T06:12:03+03:00"
+      "count": 12,
+      "created_at": "2026-11-21T06:42:39+03:00"
     },
     {
       "id": "yn-261121-002",
@@ -105,12 +103,12 @@
         "view": "progress-claims",
         "source_file": ".config/opencode/progress.json"
       },
-      "expires": "2026-11-23T06:12:03+03:00",
+      "expires": "2026-11-23T06:42:39+03:00",
       "source": {
         "file": ".config/opencode/progress.json",
         "selector": "tasks[id=P0-1].history[*].text ~ '1 агент'; agent names from tasks[*].steps[*].agent",
         "evidence": "claim '1 агент' in tasks[id=P0-1].history[*].text ~ '1 агент' (OPEN/BLOCKED, n>=9: сессия-1 агент 8899 (focus=true, но echo); 8 real agents: cheap-k0, cheap-k1, cheap-k2, cheap-k3, pc, main, executor, progress-sync",
-        "built_at": "2026-11-21T06:12:03+03:00"
+        "built_at": "2026-11-21T06:42:39+03:00"
       },
       "effects": [
         {
@@ -141,7 +139,7 @@
       "priority": "P0",
       "status": "open",
       "count": 8,
-      "created_at": "2026-11-21T06:12:03+03:00"
+      "created_at": "2026-11-21T06:42:39+03:00"
     },
     {
       "id": "yn-261121-003",
@@ -156,12 +154,12 @@
         "view": "decisions-list",
         "source_file": "shared-repo/bots/miniapp/decisions.json"
       },
-      "expires": "2026-11-23T06:12:03+03:00",
+      "expires": "2026-11-23T06:42:39+03:00",
       "source": {
         "file": "shared-repo/bots/miniapp/decisions.json",
         "selector": "h=GATE-T4 & verdict=OPEN; src contains 'overnight/73-t4-donk-benchmark.md'",
         "evidence": "GATE-T4 verdict=OPEN; report=overnight/73-t4-donk-benchmark.md (exists=True); note contains n/baseline (0.6129 < 0.7742, AWP-rule 0.6452 > 0.5161)",
-        "built_at": "2026-11-21T06:12:03+03:00"
+        "built_at": "2026-11-21T06:42:39+03:00"
       },
       "effects": [
         {
@@ -199,7 +197,7 @@
       "priority": "P1",
       "status": "open",
       "count": 1,
-      "created_at": "2026-11-21T06:12:03+03:00"
+      "created_at": "2026-11-21T06:42:39+03:00"
     },
     {
       "id": "yn-261121-004",
@@ -221,12 +219,12 @@
         "view": "atlas-graph",
         "source_file": "shared-repo/bots/miniapp/atlas.json"
       },
-      "expires": "2026-11-23T06:12:03+03:00",
+      "expires": "2026-11-23T06:42:39+03:00",
       "source": {
         "file": "shared-repo/bots/miniapp/atlas.json",
         "selector": "edges[type=refutes & to.status=refuted] -> 'from->to'",
         "evidence": "389 nodes / 63 edges; edges to done/archived=0; refutes edges to refuted verdicts=8",
-        "built_at": "2026-11-21T06:12:03+03:00"
+        "built_at": "2026-11-21T06:42:39+03:00"
       },
       "effects": [
         {
@@ -257,11 +255,11 @@
       "priority": "P1",
       "status": "open",
       "count": 8,
-      "created_at": "2026-11-21T06:12:03+03:00"
+      "created_at": "2026-11-21T06:42:39+03:00"
     },
     {
       "id": "yn-261121-005",
-      "text": "В view prompts-cards 87 карточек помечены is_stale, но исходники prompts.json свежие (generated 2026-11-21T03:11:50+00:00) — снять stale-флаги и пересобрать view?",
+      "text": "В view prompts-cards 89 карточек помечены is_stale, но исходники prompts.json свежие (generated 2026-11-21T03:41:53+00:00) — снять stale-флаги и пересобрать view?",
       "text_yes": "Clear stale + Link свежий source",
       "text_no": "Оставить флаги, уточнить промпт",
       "scope": {
@@ -272,6 +270,7 @@
           "tg-20261119165925",
           "tg-20261118233533",
           "tg-20261118182834",
+          "tg-20261120063904",
           "tg-20261120051345",
           "tg-20261120031221",
           "tg-20261120023326",
@@ -298,6 +297,7 @@
           "tg-20261119161026",
           "tg-20261119113030",
           "tg-20261118185825",
+          "tg-20261120064100",
           "tg-20261120055241",
           "tg-20261120053845",
           "tg-20261120051613",
@@ -358,12 +358,12 @@
         "view": "prompts-cards",
         "source_file": "shared-repo/bots/miniapp/prompts.json"
       },
-      "expires": "2026-11-23T06:12:03+03:00",
+      "expires": "2026-11-23T06:42:39+03:00",
       "source": {
         "file": "shared-repo/bots/miniapp/prompts.json",
         "selector": "groups[*].prompts[*] where is_stale == true -> id",
-        "evidence": "87 of 409 prompts have is_stale=true; meta.generated=2026-11-21T03:11:50+00:00, stale_days=1",
-        "built_at": "2026-11-21T06:12:03+03:00"
+        "evidence": "89 of 409 prompts have is_stale=true; meta.generated=2026-11-21T03:41:53+00:00, stale_days=1",
+        "built_at": "2026-11-21T06:42:39+03:00"
       },
       "effects": [
         {
@@ -401,8 +401,498 @@
       "gate_ref": null,
       "priority": "P2",
       "status": "open",
-      "count": 87,
-      "created_at": "2026-11-21T06:12:03+03:00"
+      "count": 89,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q01",
+      "text": "Число открытых хотелок: 71, 63 или 94? — В реестре реально 94 открытые + 17 done (=111), но в задачах за 7 ч встречаются «wants.json (71 open)» и «63 открытые хотелки». Это расхождение — следствие того, что часть want'ов была закрыта без доказательства и её надо вернуть в open, или это просто разные срезы/даты одного реестра?",
+      "text_yes": "ДА — переоткрыть эти want'ы через `wants",
+      "text_no": "НЕТ — уточняющий вопрос — «какой срез опорный: 71, 63 или 94, ",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "wants.json:open_count"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q01 / Q01..Q10",
+        "evidence": "Q01: `data.json:73` — «wants.json (71 open, 15 message|unanswered без evolution/detail)»; `data.json:94` и `data.json:234` — «63 открытые хотелки»; `data.json` → `analysis.wants_pending=94`, `wants_done=17`; `report.md:3` — «хотелок в реестре: 111».",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "wants.json:open_count",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "wants.json:open_count",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "wants.json:open_count",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q02",
+      "text": "progress.json — живой статус или честно подписанный снимок? — Вкладка «Ход» подписана «что делается прямо сейчас», но `progress.json` застыл на 20.11 15:40 (14,3 ч), а 3 не-done шага висят 45,3 / 32,1 / 38,1 ч. Это намеренный план-снимок, который нужно только переподписать, или вы ожидаете, что блок реально живой и его пора перестать выдавать за статус?",
+      "text_yes": "ДА — claim «мини-ап показывает живой статус» → FAIL; want «че",
+      "text_no": "НЕТ — уточняющий вопрос — «что сделать источником «сейчас»: `t",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "progress.json:freshness"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q02 / Q01..Q10",
+        "evidence": "Q02: `ux-time-audit.md:22` (14.3 h, «снимок плана, не живой статус»), `:46` (mtime 14.3 h), `:47` (T6.7/T7.6/O2 от 19.11), `:50` (подпись index.html:763/766); `report.md:87`.",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "progress.json:freshness",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "progress.json:freshness",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "progress.json:freshness",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q03",
+      "text": "Почему 2/2 строк в «В работе» machine-like? — 2/2 live-строк — «ПЕРЕПРОВЕРИТЬ ОТРИЦАТЕЛЬНЫЙ РЕЗУЛЬТАТ AU…», 4/8 decisions обрезаны ровно по `[:95]`. Причина в том, что корневая гипотеза реально недоступна (тогда честно «корень не найден»), или корень есть, но humanization просто не применяется к этим двум строкам?",
+      "text_yes": "ДА — зафиксировать claim «корень не найден» для этих ID, want",
+      "text_no": "НЕТ — уточняющий вопрос — «какие именно 2 ID (AU…) и на какой ",
+      "scope": {
+        "kind": "ids",
+        "ids": [
+          "live.json:machine_like_strings"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q03 / Q01..Q10",
+        "evidence": "Q03: `ux-time-audit.md:62` (2/2, 100%), `:63` (4/8 по 95 симв., 7/8 на середине фразы), `:67-:68` (цепочки 13 звеньев → H553 и 18 → H428); `data.json:52`; `report.md:14`.",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "live.json:machine_like_strings",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "live.json:machine_like_strings",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "live.json:machine_like_strings",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P1",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q04",
+      "text": "Атлас 17,5 ч при TTL 3 мин — можно ли на нём строить сужающие вопросы? — `atlas.json` (389 узлов / 63 ребра) обновлён 17,5 ч назад при пороге 3 мин — это допустимо, потому что граф меняется редко, или вопросы yes/no начнут обновлять связи в уже устаревшем атласе и его надо пересобрать раньше?",
+      "text_yes": "ДА — claim «атлас актуален» → FAIL с пояснением, want «обновл",
+      "text_no": "НЕТ — уточняющий вопрос — «кто и когда последний раз пересобир",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "atlas.json:freshness"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q04 / Q01..Q10",
+        "evidence": "Q04: `ux-time-audit.md:18` (17.5 h, FAIL, порог 3.0 min); `data.json:73` («389 узлов/63 ребра»); `data.json:59` (эффект `link/unlink` пишется в `yesno_links.jsonl`, не в atlas напрямую).",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "atlas.json:freshness",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "atlas.json:freshness",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "atlas.json:freshness",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q05",
+      "text": "Три mismatch в таблице из 63 строк — реальное расхождение? — В «Единой таблице элементов» 63 строки, но 3 mismatch / 31 stale / 3 missing / 26 ok, а в топе «агенты 2→8» и «промпты 204→409». Три mismatch — это настоящее расхождение «displayed ↔ actual» (тогда таблица не источник истины), или артефакт сравнения разных моментов времени?",
+      "text_yes": "ДА — claim «единая таблица = источник истины» → FAIL; обновит",
+      "text_no": "НЕТ — уточняющий вопрос — «какие именно 3 mismatch и какие пар",
+      "scope": {
+        "kind": "ids",
+        "ids": [
+          "elements.json:mismatch"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q05 / Q01..Q10",
+        "evidence": "Q05: `report.md:48`; `data.json:343`, `data.json:596` (одинаковый результат в трёх answered-записях); `data.json:31` (`elements.json`, 212 КБ, 63 строки, 9 подтаблиц).",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "elements.json:mismatch",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "elements.json:mismatch",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "elements.json:mismatch",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P1",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q06",
+      "text": "«1 агент» против 8 живых сессий — что считать истинным? — `progress.json` и мини-ап говорят «1 агент», а в данных — «агенты 2→8 живых сессий API» и 12/14 задач на free-моделях. Строку «1 агент» следует считать устаревшей и заменить в UI, или она считает не агентов, а что-то другое (например, одного активного executor)?",
+      "text_yes": "ДА — claim «мини-ап транслирует фактическую работу» → PASS по",
+      "text_no": "НЕТ — уточняющий вопрос — «что именно считает поле: live-сесси",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "progress.json:agent_count"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q06 / Q01..Q10",
+        "evidence": "Q06: `data.json:73` («cheap-k0..k3/pc/main/executor против „1 агент“»), `data.json:94` («'1 агент' не совпадает с реальностью»), `data.json:343` («агенты 2→8 живых сессий API»), `report.md:78` (12/14).",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "progress.json:agent_count",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "progress.json:agent_count",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "progress.json:agent_count",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q07",
+      "text": "Два провала из 14 free-задач — виноваты модели или fallback? — 12/14 real-задач на free-моделях прошли; провалились `nemotron-3.5-lightning-free` (403) и `beam-free` (provider.auth/no-route). Это значит, что две модели надо исключить из цепочки роутинга, или ломается сам механизм fallback (в том числе для гостей без ноута/ПК)?",
+      "text_yes": "ДА — обновить claim «счётчик free-моделей 12/14» и завести wa",
+      "text_no": "НЕТ — уточняющий вопрос — «на каком именно запросе/моменте пол",
+      "scope": {
+        "kind": "ids",
+        "ids": [
+          "routing:free_models"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q07 / Q01..Q10",
+        "evidence": "Q07: `report.md:77-78` (12/14, 9 без 429, 3 с внутренними ретраями; Failed: nemotron 403, beam no-route); `data.json:451`, `data.json:486`; контекст гостей — `data.json:203` (`rodui7KK-0`: «гость · только Telegram», локальные источники гостю недоступны).",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "routing:free_models",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "routing:free_models",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "routing:free_models",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P1",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q08",
+      "text": "37 «отвечено в доске, но не доставлено» — считать ли закрытыми? — Радар рапортует «НЕ ОТВЕЧЕНО — 0», но одновременно 37 записей «ОТВЕЧЕНО В ДОСКЕ ЦЕЛЕЙ, НО НЕ ДОСТАВЛЕНО», а в одном из ответов прямо сказано про 26 ответов в goals, не доставленных в чат. Считать эти запросы закрытыми для пользователя или доставка в чат — обязательный критерий?",
+      "text_yes": "ДА — claim «все живые запросы отвечены» → PASS; want «доставл",
+      "text_no": "НЕТ — уточняющий вопрос — «какие из 37 (и из 26) до сих пор не",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "goals:not_delivered"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q08 / Q01..Q10",
+        "evidence": "Q08: `report.md:7` и `:10` (НЕ ОТВЕЧЕНО — 0, «все живые запросы have matching хотелки/задачи»), `:35` (37 в доске, не доставлено), `:39` («26 ответов в goals не доставлялись в чат»); `data.json` → `analysis.answered=37`, `answered_goals=37`.",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "goals:not_delivered",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "goals:not_delivered",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "goals:not_delivered",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q09",
+      "text": "Три самые дорогие перехода — чинить сейчас или терпеть? — Из 5 путей «промпт → ответ» три самые дорогие: вне бота `sendData` недоступен, «Отправить агенту» сразу вызывает `tg.close()`, а ответ ищется по времени без rid-паринга с опросом до 5 с. Это неприемлемо сейчас (нужны rid и отсутствие `close()`), или вы готовы пока смириться с задержкой ради скорости?",
+      "text_yes": "ДА — обновить want «эргономика мини-апа: rid-pairing и ответ ",
+      "text_no": "НЕТ — уточняющий вопрос — «какой путь сделать основным — чат (",
+      "scope": {
+        "kind": "ids",
+        "ids": [
+          "miniapp:send_path"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q09 / Q01..Q10",
+        "evidence": "Q09: `ux-time-audit.md:30-34` (таблица из 5 путей), `:36-39` («3 самые дорогие перехода»: +3–4 действия, `tg.close()`, «нет rid-паринга… до 5 с опроса»).",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "miniapp:send_path",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "miniapp:send_path",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "miniapp:send_path",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P1",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
+    },
+    {
+      "id": "uxcrit-q10",
+      "text": "Свободное место 2,71 ГБ — блокер или фоновый шум? — В C10-666 трафик 18,98/54 GiB и диск 18,46 GiB прошли, но свободное место C: 3,14 → 2,71 ГБ — FAIL/OPEN, cleanup-лист составлен, `removed=0`. Это блокирует закачку/парсинг демок (тогда гейт C09 надо обновить), или это фоновый дефицит, который не мешает текущим задачам?",
+      "text_yes": "ДА — gate C10-666 → FAIL/OPEN/blocked; want «Инвентарь демо» ",
+      "text_no": "НЕТ — уточняющий вопрос — «какой минимальный запас места счита",
+      "scope": {
+        "kind": "claim",
+        "ids": [
+          "gate:C10-666"
+        ],
+        "source_file": "/tmp/opencode/ux-critic-questions.md"
+      },
+      "expires": "2026-11-23T06:42:39+03:00",
+      "source": {
+        "file": "/tmp/opencode/ux-critic-questions.md",
+        "selector": "Q10 / Q01..Q10",
+        "evidence": "Q10: `report.md:90` (C10-666: PASS по трафику, FAIL/OPEN по месту), `:96` (C07-663: «Диск C: 3,14→2,71 ГБ»); `data.json:185` (гейт: назвать объём в ГБ и пути безопасного cleanup, `removed=0`).",
+        "built_at": "2026-11-21T06:42:39+03:00"
+      },
+      "effects": [
+        {
+          "when": "yes",
+          "op": "set_status",
+          "target": "gate:C10-666",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "yes",
+          "op": "link",
+          "target": "gate:C10-666",
+          "reason": "подтверждено критиком",
+          "status_to": "open"
+        },
+        {
+          "when": "no",
+          "op": "request_clarification",
+          "target": "gate:C10-666",
+          "reason": "критик не подтвердил — запросить уточнение",
+          "assign": "session",
+          "status_to": "open"
+        }
+      ],
+      "gate_ref": null,
+      "priority": "P0",
+      "status": "open",
+      "count": 1,
+      "created_at": "2026-11-21T06:42:39+03:00"
     }
   ]
 }

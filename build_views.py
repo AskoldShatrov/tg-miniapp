@@ -44,9 +44,33 @@ SOURCES = {
     'skills': '~/.config/opencode/skills/*/SKILL.md',
     'elements': 'shared-repo/bots/miniapp/elements.json',
     'yesno': 'shared-repo/bots/miniapp/yesno-questions.json',
+    'works': 'shared-repo/bots/miniapp/works.json',
 }
 SKILLS_DIR = pathlib.Path.home() / '.config/opencode/skills'
 SKILLS_SOURCE = '~/.config/opencode/skills/*/SKILL.md'
+# Приватный текст не едет в публичный views.json: вид ссылается на
+# авторизованный HTTPS-эндпоинт process_api (проверка initData на сервере).
+PRIVATE_API_SOURCE = '/private/review'
+
+# Static GitHub Pages не имеет filesystem: в publish=true вид нельзя положить
+# локальный путь в source — иначе views.js делает fetch и получает HTTP 404.
+# Локальные пути выше остаются только для чтения билдером; в views.json уходят
+# либо голое имя файла из корня miniapp, либо inline-массив (source=items).
+PUB = {
+    'atlas': 'atlas.json',
+    'prompts': 'prompts.json',
+    'cs2': None,            # inline: local-llm/work/cs2_voice_ideas.json
+    'confidential': 'local',  # приватный слой: только локально, через process_api
+    'skills': None,         # inline: ~/.config/opencode/skills/*/SKILL.md
+    'elements': 'elements.json',
+    'yesno': 'yesno-questions.json',
+    'works': 'works.json',
+}
+PUB_BY_REL = {SOURCES[k]: v for k, v in PUB.items()}
+
+INLINE_LIMIT = 2000   # байт (или число элементов) — порог урезания inline
+INLINE_HEAD = 300     # сколько элементов оставляем при превышении порога
+BARE_FILE_RE = re.compile(r'^[^/\\]+\.(?:json|js)(?:\?[^/\\]*)?$')
 
 # Паттерны, похожие на секреты. Проверяем и вырезаем их из шапок скиллов и из
 # готового документа: в публичный views.json не должен попасть ни один токен.
@@ -58,6 +82,27 @@ SECRET_RE = re.compile(
 def scrub(text):
     """Вырезать похожее на секрет из строки шапки."""
     return SECRET_RE.sub('[redacted]', str(text or ''))
+
+
+def inline_items(items):
+    """Inline-данные для publish=true вида.
+
+    views.js берёт данные из v.source, если это массив/объект (inlineSource),
+    поэтому source заменяется тем же массивом; поле items дублируется для
+    контракта сборщика. При превышении лимита остаются первые INLINE_HEAD
+    элементов и честная подпись «показано N из M».
+    """
+    total = len(items)
+    raw = json.dumps(items, ensure_ascii=False).encode('utf-8')
+    truncated = (total > INLINE_LIMIT) or (len(raw) > INLINE_LIMIT)
+    shown = items[:INLINE_HEAD] if truncated else list(items)
+    return {
+        'source': shown,
+        'items': shown,
+        'items_total': total,
+        'truncated': truncated,
+        'items_note': f'показано {len(shown)} из {total}' if truncated else None,
+    }
 
 
 def skill_files():
@@ -134,7 +179,8 @@ def view(spec, rel, read_at, count, filters, status='ok', extra=None, redact=Fal
         'id': spec['id'],
         'title': spec['title'],
         'type': spec['type'],
-        'source': rel,
+        # Pages: publish=true видим только имя файла из корня miniapp (или inline)
+        'source': (PUB_BY_REL.get(rel) if PUB_BY_REL.get(rel) is not None else rel),
         'built_at': read_at,
         'count': int(count),
         'publish': bool(spec['publish']) and status == 'ok',
@@ -216,6 +262,23 @@ def build_cs2(rel, read_at):
     d = read_json(rel)
     themes = d.get('themes') or {}
     rows = [(t, item) for t, items in themes.items() for item in (items or [])]
+    items = []
+    for t, it in rows:
+        row = dict(it or {})
+        # Локальный путь к ogg не публикуем: на Pages файла нет, а маркеры
+        # voice_messages/audio_ запрещены проверкой приватного слоя в validate().
+        voice = str(row.get('voice') or '')
+        row['voice'] = voice.rsplit('/', 1)[-1].replace('audio_', '') or '—'
+        row['theme'] = t
+        items.append(row)
+    extra = inline_items(items)
+    extra['provenance_note'] = {
+        'declared_total': d.get('total'),
+        'themed_rows': len(rows),
+        'unique_voices': len({it.get('voice') for _, it in rows if it.get('voice')}),
+        'note': ('count = строк в таблице (запись может входить в несколько тем); '
+                 'declared_total — общее число классифицированных голосовых из файла'),
+    }
     return view(
         {'id': 'cs2-ideas', 'title': 'CS2: голосовые идеи по темам',
          'type': 'table', 'publish': True, 'group_by': 'theme', 'sort_by': 'voice',
@@ -223,13 +286,7 @@ def build_cs2(rel, read_at):
          'meta_fields': ['theme', 'voice'], 'actions': WORK_ACTION},
         rel, read_at, len(rows),
         [{'field': 'theme', 'values': sorted(themes)}],
-        extra={'provenance_note': {
-            'declared_total': d.get('total'),
-            'themed_rows': len(rows),
-            'unique_voices': len({it.get('voice') for _, it in rows if it.get('voice')}),
-            'note': ('count = строк в таблице (запись может входить в несколько тем); '
-                     'declared_total — общее число классифицированных голосовых из файла'),
-        }})
+        extra=extra)
 
 
 REC_RE = re.compile(r'^\*\*(\d+)\s*[·•\-]\s*(PERSONAL|SENSITIVE|UNCERTAIN|PUBLIC)\b', re.M)
@@ -276,25 +333,37 @@ def build_confidential(rel, read_at):
         f'UNCERTAIN {labels["UNCERTAIN"]} / PUBLIC {labels["PUBLIC"]}. '
         f'Тексты, voice-ссылки и оценки не включены.'
     )
-    return view(
+    # В публичный views.json не попадает ни одна запись: вид указывает на
+    # приватный эндпоинт и требует авторизованный запрос (initData).
+    v = view(
         {'id': 'confidential-review',
          'title': 'CONFIDENTIAL: приватный слой и пограничные (текст скрыт)',
          'type': 'checklist', 'publish': False, 'group_by': 'section', 'sort_by': 'id',
          'label_field': 'label', 'value_field': 'id',
          'meta_fields': ['label'], 'actions': []},
-        rel, read_at, len(priv) + len(border),
+        rel, read_at, 0,
         [{'field': 'label', 'values': ['PERSONAL', 'SENSITIVE', 'UNCERTAIN', 'PUBLIC']}],
-        status=status,
+        status='requires_initdata',
         extra={
-            'hint': hint,
+            'hint': ('приватный слой доступен только локально через process_api. '
+                     + hint + ' Нужен авторизованный запрос (initData).'),
+            'notice': 'Нужен авторизованный запрос: GET/POST /private/review',
             'provenance_note': {
                 'declared_private': declared[0] if declared else None,
                 'declared_borderline': declared[1] if len(declared) > 1 else None,
                 'parsed_private': len(priv),
                 'parsed_borderline': len(border),
+                'available_total': len(priv) + len(border),
+                'parse_ok': status == 'ok',
             },
         },
         redact=True)
+    # source указывает на авторизованный эндпоинт; publish=false не даёт
+    # views.js делать fetch с Pages и уводит рендер в плашку «нужен запрос».
+    v['source'] = PRIVATE_API_SOURCE
+    v['publish'] = False
+    v.pop('items', None)  # в публичном документе приватных записей нет
+    return v
 
 
 SKILL_FIELD_RE = re.compile(r'^(name|description)\s*:\s*(.*)$')
@@ -351,7 +420,7 @@ def build_skills(rel, read_at):
          'value_field': 'id', 'meta_fields': ['description', 'path'],
          'actions': WORK_ACTION},
         rel, read_at, len(items), [],
-        extra={'items': items, 'provenance': prov})
+        extra={**inline_items(items), 'provenance': prov})
 
 
 def build_elements(rel, read_at):
@@ -403,6 +472,30 @@ def build_yesno(rel, read_at):
         })
 
 
+def build_pdf_hub(rel, read_at):
+    """Хаб университетских работ: реальный массив из works.json (список).
+
+    Карточки рендерятся pdf-hub.js (window.PDFHub.render), grouping по source
+    совпадает с настройкой рендера по умолчанию. Данные не выдумываются:
+    count = реальная длина массива, фильтры — реальные значения полей.
+    """
+    d = read_json(rel)
+    works = d if isinstance(d, list) else (d.get('works') or d.get('items') or [])
+    sources = sorted({w.get('source') for w in works if w.get('source')})
+    kinds = sorted({w.get('kind') for w in works if w.get('kind')})
+    statuses = sorted({w.get('status') for w in works if w.get('status')})
+    return view(
+        {'id': 'pdf-hub', 'title': 'Хаб университетских работ', 'type': 'cards',
+         'publish': True, 'group_by': 'source', 'sort_by': 'date',
+         'label_field': 'title', 'value_field': 'id',
+         'meta_fields': ['date', 'status', 'kind', 'source', 'path'],
+         'actions': WORK_ACTION},
+        rel, read_at, len(works),
+        [{'field': 'source', 'values': sources},
+         {'field': 'kind', 'values': kinds},
+         {'field': 'status', 'values': statuses}])
+
+
 SPECS = [
     ('atlas-tree', 'atlas', build_atlas_tree),
     ('atlas-grids', 'atlas', build_atlas_grids),
@@ -413,6 +506,7 @@ SPECS = [
     ('skills', 'skills', build_skills),
     ('elements-table', 'elements', build_elements),
     ('yesno-decisions', 'yesno', build_yesno),
+    ('pdf-hub', 'works', build_pdf_hub),
 ]
 
 MISSING_META = {
@@ -428,6 +522,8 @@ MISSING_META = {
                        ['source', 'displayed', 'actual', 'age_sec', 'status']),
     'yesno-decisions': ('Сужающие вопросы (да/нет)', 'decision', 'status', 'priority',
                         ['priority', 'status']),
+    'pdf-hub': ('Хаб университетских работ', 'cards', 'source', 'date',
+                ['date', 'status', 'kind', 'source', 'path']),
 }
 
 
@@ -444,6 +540,8 @@ def missing_view(vid, rel, read_at):
     if vid == 'yesno-decisions':
         extra.update({'label_field': 'text', 'value_field': 'id',
                       'actions': YESNO_ACTIONS, 'max_questions': 0})
+    if vid == 'pdf-hub':
+        extra.update({'label_field': 'title', 'value_field': 'id', 'actions': WORK_ACTION})
     if vid == 'skills':
         extra['items'] = []
         extra['provenance'] = {
@@ -474,7 +572,8 @@ def validate(doc):
                 problems.append(f'{v["id"]}: нет поля {key}')
         if v.get('type') not in TYPES:
             problems.append(f'{v["id"]}: type={v.get("type")!r} не из {sorted(TYPES)}')
-        if v.get('status') not in {'ok', 'missing', 'parse_error'}:
+        if v.get('status') not in {
+                'ok', 'missing', 'parse_error', 'requires_initdata', 'private_local_only'}:
             problems.append(f'{v["id"]}: status={v.get("status")!r}')
         if not isinstance(v.get('count'), int) or v['count'] < 0:
             problems.append(f'{v["id"]}: count={v.get("count")!r}')
@@ -482,6 +581,15 @@ def validate(doc):
             problems.append(f'{v["id"]}: missing/parse_error обязан иметь count=0, publish=false')
         if not isinstance(v.get('provenance', {}).get('exists'), bool):
             problems.append(f'{v["id"]}: provenance.exists отсутствует')
+        if v.get('publish'):
+            src = v.get('source')
+            inline_ok = (isinstance(src, list) and bool(src)
+                         and isinstance(v.get('items'), list) and bool(v['items']))
+            bare_ok = isinstance(src, str) and bool(BARE_FILE_RE.match(src))
+            if not (inline_ok or bare_ok):
+                problems.append(
+                    f'{v["id"]}: publish=true source={src!r} — нужен inline items '
+                    f'или голое имя файла из корня miniapp')
     # Гарантия от утечки приватных данных в публичный документ.
     blob = json.dumps(doc, ensure_ascii=False)
     for marker in PRIVATE_MARKERS:
@@ -492,18 +600,20 @@ def validate(doc):
     skills = next((v for v in doc['views'] if v['id'] == 'skills'), None)
     if skills is not None:
         expected_source = SOURCES.get('skills', SKILLS_SOURCE)
-        if skills.get('source') != expected_source:
-            problems.append('skills: source должен быть ' + expected_source)
+        src = skills.get('source')
+        if not (isinstance(src, list) and src) and src != expected_source:
+            problems.append('skills: source должен быть inline items или ' + expected_source)
         items = skills.get('items') or []
-        if skills.get('count') != len(items):
-            problems.append(f'skills: count={skills.get("count")} != items={len(items)}')
+        total = skills.get('items_total', len(items))
+        if skills.get('count') != total:
+            problems.append(f'skills: count={skills.get("count")} != items_total={total}')
         for it in items:
             if len(it.get('description') or '') > DESC_LIMIT:
                 problems.append(f'skills: description длиннее {DESC_LIMIT}: {it.get("id")}')
     el = next((v for v in doc['views'] if v['id'] == 'elements-table'), None)
     if el is not None:
-        if el.get('source') != SOURCES.get('elements'):
-            problems.append('elements-table: неверный source')
+        if el.get('source') != PUB['elements']:
+            problems.append('elements-table: неверный source (ожидался ' + PUB['elements'] + ')')
         if el.get('status') == 'ok' and el.get('count', 0) <= 0:
             problems.append('elements-table: items пуст, а статус ok')
         if el.get('label_field') != 'label' or el.get('value_field') != 'id':
@@ -525,8 +635,16 @@ def validate(doc):
     if conf is not None:
         if conf.get('publish') is not False:
             problems.append('confidential-review: publish должен быть false')
-        if conf.get('status') == 'ok' and 'hint' not in conf:
+        if conf.get('status') not in {'private_local_only', 'requires_initdata'}:
+            problems.append('confidential-review: status должен быть private_local_only')
+        if conf.get('source') not in {'local', PRIVATE_API_SOURCE}:
+            problems.append("confidential-review: source должен быть 'local'")
+        if conf.get('items'):
+            problems.append('confidential-review: items не должен встраиваться в views.json')
+        if 'hint' not in conf:
             problems.append('confidential-review: нет подписи-намека')
+        if conf.get('provenance_note', {}).get('parse_ok') is not True:
+            problems.append('confidential-review: не пройдена сверка числа записей (16+13)')
     return problems
 
 

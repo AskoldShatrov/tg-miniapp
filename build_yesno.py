@@ -12,6 +12,7 @@ yesno-questions.json. Никаких выдуманных ID: все scope.ids �
 """
 import json
 import os
+import re
 import sys
 import tempfile
 from datetime import datetime, timedelta, timezone
@@ -26,6 +27,7 @@ PATHS = {
     "atlas": os.path.join(HOME, "shared-repo/bots/miniapp/atlas.json"),
     "prompts": os.path.join(HOME, "shared-repo/bots/miniapp/prompts.json"),
     "ux_audit": "/tmp/opencode/ux-time-audit.md",
+    "ux_critic": "/tmp/opencode/ux-critic-questions.md",
 }
 OUT = os.path.join(HOME, "shared-repo/bots/miniapp/yesno-questions.json")
 
@@ -330,6 +332,121 @@ def q5():
     }
 
 
+# ---------------------------------------------------------------------------
+# ux-critic · 10 уточняющих вопросов критика эргономики из /tmp
+# ---------------------------------------------------------------------------
+UX_CRITIC_SELECTOR_RANGE = "Q01..Q10"
+
+# Приоритет, вид scope и якорь выведены из смысла самого вопроса критика.
+UX_CRITIC_META = {
+    1: ("claim", "P0", "wants.json:open_count"),
+    2: ("claim", "P0", "progress.json:freshness"),
+    3: ("ids", "P1", "live.json:machine_like_strings"),
+    4: ("claim", "P0", "atlas.json:freshness"),
+    5: ("ids", "P1", "elements.json:mismatch"),
+    6: ("claim", "P0", "progress.json:agent_count"),
+    7: ("ids", "P1", "routing:free_models"),
+    8: ("claim", "P0", "goals:not_delivered"),
+    9: ("ids", "P1", "miniapp:send_path"),
+    10: ("claim", "P0", "gate:C10-666"),
+}
+
+
+def parse_ux_critic(path):
+    """Разобрать 10 строк Q01..Q10 markdown-критика в список словарей."""
+    rows = []
+    current = None
+    with open(path, encoding="utf-8") as fh:
+        lines = fh.read().splitlines()
+    for line in lines:
+        stripped = line.strip()
+        head = re.match(r"^###\s+(Q(\d{2}))\.\s*(.+)$", stripped)
+        if head:
+            current = {
+                "code": head.group(1),
+                "num": int(head.group(2)),
+                "title": head.group(3).strip(),
+                "question": "",
+                "evidence": "",
+                "yes": "",
+                "no": "",
+            }
+            rows.append(current)
+            continue
+        if current is None:
+            continue
+        if stripped.startswith("**Вопрос:**"):
+            current["question"] = stripped.split("**Вопрос:**", 1)[1].strip()
+        elif stripped.startswith("**Evidence:**"):
+            current["evidence"] = stripped.split("**Evidence:**", 1)[1].strip()
+        elif stripped.startswith("- **ДА"):
+            current["yes"] = stripped
+        elif stripped.startswith("- **НЕТ"):
+            current["no"] = stripped
+    return [r for r in rows if r["question"]]
+
+
+def ux_critic_label(raw, answer):
+    """Короткая подпись кнопки ДА/НЕТ из строки эффекта критика."""
+    if not raw:
+        return f"{answer} — подтвердить критиком"
+    parts = raw.split(":**", 1)
+    action = parts[1].strip() if len(parts) == 2 else raw.lstrip("- ").strip()
+    short = action.split(".")[0].strip()[:56]
+    return f"{answer} — {short}" if short else f"{answer} — подтвердить критиком"
+
+
+def ux_critic_questions(built_at, expires):
+    """Вернуть (вопросы, provenance_note). Исчезновение файла — не ошибка."""
+    path = PATHS["ux_critic"]
+    if not os.path.exists(path):
+        note = (
+            "ux-critic: исходник " + path + " отсутствует — "
+            + UX_CRITIC_SELECTOR_RANGE + " не добавлены, сохранены 5 исходных вопросов"
+        )
+        return [], note
+
+    rows = parse_ux_critic(path)
+    questions = []
+    for row in rows:
+        num = row["num"]
+        kind, priority, anchor = UX_CRITIC_META.get(
+            num, ("claim", "P1", f"uxcritic:Q{num:02d}")
+        )
+        question = {
+            "id": f"uxcrit-q{num:02d}",
+            "text": f"{row['title']} — {row['question']}",
+            "text_yes": ux_critic_label(row["yes"], "ДА"),
+            "text_no": ux_critic_label(row["no"], "НЕТ"),
+            "scope": {
+                "kind": kind,
+                "ids": [anchor],
+                "source_file": path,
+            },
+            "_evidence": f"Q{num:02d}: {row['evidence'] or row['title']}",
+            "_selector": f"Q{num:02d} / {UX_CRITIC_SELECTOR_RANGE}",
+            "_file": path,
+            "effects": [
+                {"when": "yes", "op": "set_status", "target": anchor,
+                 "reason": "подтверждено критиком", "status_to": "open"},
+                {"when": "yes", "op": "link", "target": anchor,
+                 "reason": "подтверждено критиком", "status_to": "open"},
+                {"when": "no", "op": "request_clarification", "target": anchor,
+                 "reason": "критик не подтвердил — запросить уточнение",
+                 "assign": "session", "status_to": "open"},
+            ],
+            "gate_ref": None,
+            "priority": priority,
+        }
+        questions.append(finalize(question, built_at, expires))
+
+    note = (
+        "ux-critic: прочитан " + path + " — добавлено " + str(len(questions))
+        + " вопросов (" + UX_CRITIC_SELECTOR_RANGE + ")"
+    )
+    return questions, note
+
+
 def finalize(question, built_at, expires):
     """Собрать вопрос ровно по формату §2.1 + count, убрав служебные _поля."""
     return {
@@ -369,6 +486,10 @@ def main():
     raw = [q1(), q2(), q3(), q4(), q5()]
     questions = [finalize(q, built_at, expires) for q in raw]
 
+    # Источник ux-critic: 10 вопросов из /tmp. Файл мог исчезнуть — не ошибка.
+    critic_questions, provenance_note = ux_critic_questions(built_at, expires)
+    questions.extend(critic_questions)
+
     payload = {
         "built_at": built_at,
         "spec": "/tmp/opencode/yes-no-app-spec.md",
@@ -378,6 +499,7 @@ def main():
             "unknown": "эффекты НЕ запускаются, вопрос остаётся status=open",
         },
         "audit_context": audit_note,
+        "provenance_note": provenance_note,
         "questions": questions,
     }
 
