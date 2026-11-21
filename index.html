@@ -84,9 +84,11 @@
   nav.tabs{
     display:flex; gap:6px; padding:10px 12px; flex:0 0 auto;
     border-bottom:1px solid var(--surface0);
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none;
   }
+  nav.tabs::-webkit-scrollbar{display:none}
   .tab{
-    flex:1; appearance:none; border:1px solid transparent; background:transparent;
+    flex:0 0 auto; min-width:88px; appearance:none; border:1px solid transparent; background:transparent;
     color:var(--overlay2); font:600 12px/1 var(--ff); padding:9px 4px;
     border-radius:11px; cursor:pointer; display:flex; align-items:center;
     justify-content:center; gap:6px; transition:.16s ease; position:relative;
@@ -521,7 +523,7 @@
   /* ===== студия идей: второй слой + стикер ===== */
   /* @owner:redesign-2026-11-21 @region:tabs-5-css: 5 табов в один ряд */
   nav.tabs{flex-wrap:nowrap;gap:5px}
-  .tab{flex:1 1 calc(20% - 5px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
+  .tab{flex:0 0 auto;min-width:84px;font-size:11px;padding:8px 6px;gap:4px}
   @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
 
   .stoolbar{display:flex;flex-direction:column;gap:8px;margin-bottom:11px}
@@ -703,9 +705,10 @@
       <button data-sub="scenarios">Сценарии</button>
     </nav>
     <style>
-      .task-subnav{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0)}
+      .task-subnav{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-wrap:nowrap}
+      .task-subnav::-webkit-scrollbar{display:none}
       .task-subnav[hidden]{display:none}
-      .task-subnav button{flex:1;appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
+      .task-subnav button{flex:0 0 auto;min-width:96px;appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
       .task-subnav button.active{background:var(--surface0);color:var(--text);border-color:var(--surface1)}
       .task-subnav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
     </style>
@@ -2869,7 +2872,7 @@ function mountScenarios(){
   if(!el || typeof QrunScenarios==="undefined") return;
   scenariosMounted=true;
   const init=(typeof tg!=="undefined"&&tg.initData)?tg.initData:"";
-  QrunScenarios.mount(el, {url: '/api/scenarios', addUrl: '/api/qrun/add',
+  QrunScenarios.mount(el, {url: 'scenarios.json',
     headers: init?{"X-Telegram-Init-Data":init}:{}, queue: 'changes'});
 }
 

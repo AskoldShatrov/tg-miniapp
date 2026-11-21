@@ -1,0 +1,1275 @@
+{
+ "generated": "2026-11-21 19:30",
+ "window": {
+  "start": "2026-11-21T08:35",
+  "end": "2026-11-21T16:28",
+  "sessions": 193,
+  "roots": 150
+ },
+ "summary": {
+  "skills": 24,
+  "skills_used": 18,
+  "agents": 4,
+  "agents_used": 3,
+  "autofeed": 0,
+  "roots": 150
+ },
+ "scenarios": [
+  {
+   "id": "tg",
+   "group": "typ",
+   "title": "Задача из Telegram",
+   "when": "Любое ваше сообщение боту",
+   "status": "warn",
+   "status_text": "Расходится с задуманным",
+   "runs": 150,
+   "median_s": 217,
+   "max_s": 13583,
+   "last": "2026-11-21T16:23:12.210000+00:00",
+   "outcomes": {
+    "waiting_user": 1,
+    "done": 145,
+    "cancelled": 4
+   },
+   "example": [
+    "Bt9FMP1b",
+    "rhWNMt9V"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 150"
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 42 из 150",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "wants-radar",
+     "t": "в 64 из 150",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 52 из 150",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 147 из 150, ≈23 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 121 из 150, ≈9 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 121 из 150, ≈6 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "реже: agent-capacity, game-mode, invento-rs, method-layer, network-constraints, opencode-selfcheck, parallel-edit, scanfeed, s",
+     "t": "меньше 30 из 150",
+     "d": 1
+    }
+   ],
+   "declared": [
+    {
+     "k": "rule",
+     "n": "AGENT-INDEX.md",
+     "t": "карта «где искать» перед поиском"
+    },
+    {
+     "k": "skill",
+     "n": "strange-question",
+     "t": "если вопрос короткий или неполный",
+     "u": false
+    },
+    {
+     "k": "agent",
+     "n": "build"
+    },
+    {
+     "k": "skill",
+     "n": "скил по теме",
+     "t": "по description из available_skills",
+     "d": 1
+    },
+    {
+     "k": "rule",
+     "n": "conflict_guard.py check",
+     "t": "перед каждой правкой",
+     "d": 1,
+     "f": "C11"
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "d": 1
+    },
+    {
+     "k": "rule",
+     "n": "oc-usage",
+     "t": "отчёт о расходе после задачи",
+     "d": 1,
+     "f": "C14"
+    },
+    {
+     "k": "out",
+     "n": "Ответ в Telegram"
+    }
+   ],
+   "empty": "Запусков за окно не было.",
+   "issues": [
+    {
+     "id": "C2",
+     "text": "Устаревшая память чата идёт первой в каждой задаче",
+     "fixed": false
+    },
+    {
+     "id": "C13",
+     "text": "Модель: в конфиге одна, в цепочке failover другая, по факту третья",
+     "fixed": false
+    },
+    {
+     "id": "C14",
+     "text": "Обязательные шаги, бесполезные на free-моделях",
+     "fixed": true
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Память чата в каждом промпте",
+      "alt": "короткая память ≤ 40 строк, записи не старше суток",
+      "f": "C2"
+     },
+     {
+      "n": "strange-question для неполных вопросов"
+     },
+     {
+      "n": "conflict_guard check перед правкой",
+      "alt": "оставить, но сначала починить карту конфликтов",
+      "f": "C11"
+     },
+     {
+      "n": "oc-usage после задачи",
+      "alt": "только если сессия шла на платной модели",
+      "f": "C14"
+     }
+    ],
+    "adds": [
+     "reviewer — ревью диффа перед ответом",
+     "session-handoff — итог задачи в память чата",
+     "Задачи дольше 25 мин — резать на шаги очереди qrun"
+    ],
+    "when": [
+     "На каждое сообщение — как сейчас",
+     "Вопросы без правок — без цепочки скилов"
+    ]
+   }
+  },
+  {
+   "id": "hyp",
+   "group": "typ",
+   "title": "Проверка гипотезы",
+   "when": "Фон: автофид из hypothesis_backlog.jsonl",
+   "status": "idle",
+   "status_text": "Нет запусков за окно",
+   "runs": 0,
+   "median_s": null,
+   "max_s": null,
+   "last": "",
+   "outcomes": {},
+   "example": [],
+   "actual": [],
+   "declared": [
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "u": false
+    },
+    {
+     "k": "script",
+     "n": "hypothesis_report.py init",
+     "d": 1
+    },
+    {
+     "k": "script",
+     "n": "prereg.py init",
+     "t": "порог фиксируется до прогона",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "прогон",
+     "d": 1
+    },
+    {
+     "k": "script",
+     "n": "prereg.py check",
+     "d": 1
+    },
+    {
+     "k": "out",
+     "n": "Отчёт",
+     "t": "отрицательный результат — такой же итог, как успех"
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "для глубоких тем",
+     "u": false
+    }
+   ],
+   "empty": "Запусков за окно не было.",
+   "issues": [
+    {
+     "id": "C1",
+     "text": "Отрицательный результат порождает новую гипотезу «перепроверить»",
+     "fixed": false
+    },
+    {
+     "id": "C3",
+     "text": "В каждый прогон подмешивается автосводка work-audit",
+     "fixed": true
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Отрицательный результат → снова в бэклог",
+      "alt": "закрыть; перепроверка один раз и только при новых данных",
+      "f": "C1",
+      "default": "replace"
+     },
+     {
+      "n": "Вложенные «ПЕРЕПРОВЕРИТЬ…» в формулировке",
+      "alt": "дедуп по исходной H###, глубина ≤ 1",
+      "f": "C1",
+      "default": "replace"
+     },
+     {
+      "n": "hypothesis-check"
+     }
+    ],
+    "adds": [
+     "prereg.py — фиксировать порог до прогона",
+     "Сводка автофида раз в сутки в Telegram"
+    ],
+    "when": [
+     "Непрерывно — как сейчас",
+     "Пауза до разбора петли",
+     "Не больше 3 прогонов одновременно",
+     "Только ночью"
+    ]
+   }
+  },
+  {
+   "id": "find",
+   "group": "typ",
+   "title": "Найти код и разобраться",
+   "when": "«где лежит X», «как устроено X»",
+   "status": "warn",
+   "status_text": "Работает в обход",
+   "runs": 2,
+   "median_s": 637,
+   "max_s": 651,
+   "last": "2026-11-21T09:57:48.840000+00:00",
+   "outcomes": {
+    "done": 2
+   },
+   "example": [
+    "c7mArYbJ",
+    "vL3Ro0s2"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 2"
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 2 из 2",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 2 из 2",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 2 из 2",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 2 из 2, ≈4 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 2 из 2, ≈40 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "в 2 из 2",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "conflict-keeper",
+     "t": "в 2 из 2",
+     "d": 2
+    },
+    {
+     "k": "sub",
+     "n": "explore",
+     "t": "в 2 из 2",
+     "d": 2
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 2 из 2, ≈2 вызовов за раз",
+     "d": 1
+    }
+   ],
+   "declared": [
+    {
+     "k": "rule",
+     "n": "AGENT-INDEX.md",
+     "t": "взять путь из карты"
+    },
+    {
+     "k": "agent",
+     "n": "housekeeper",
+     "t": "спросить «где лежит X»",
+     "f": "C11",
+     "u": true
+    },
+    {
+     "k": "rule",
+     "n": "поиск только внутри пути",
+     "t": "без grep -r от ~ и /"
+    },
+    {
+     "k": "sub",
+     "n": "explore",
+     "d": 1
+    }
+   ],
+   "empty": "Запусков за окно не было.",
+   "issues": [
+    {
+     "id": "C11",
+     "text": "housekeeper не зовут: путь агенты получают прямо в задаче",
+     "fixed": false
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Поиск без AGENT-INDEX.md",
+      "alt": "сначала путь из индекса",
+      "f": "C11"
+     },
+     {
+      "n": "housekeeper в правилах, но его не зовут",
+      "alt": "убрать из правил — индекс обновляет скрипт",
+      "f": "C11"
+     },
+     {
+      "n": "explore-подагенты параллельно"
+     }
+    ],
+    "adds": [
+     "Найденный путь записывать в индекс через housekeeper"
+    ],
+    "when": [
+     "По запросу — как сейчас"
+    ]
+   }
+  },
+  {
+   "id": "oc",
+   "group": "typ",
+   "title": "Правка самого OpenCode",
+   "when": "Конфиг, скилы, плагины, агенты",
+   "status": "ok",
+   "status_text": "Как задумано",
+   "runs": 1,
+   "median_s": 13583,
+   "max_s": 13583,
+   "last": "2026-11-21T12:43:17.357000+00:00",
+   "outcomes": {
+    "done": 1
+   },
+   "example": [
+    "Jf2fb7q6"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 1"
+    },
+    {
+     "k": "skill",
+     "n": "strange-question-gate",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "≈268 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "strange-question",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "≈55 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "tg-bot-ui",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "ux-time-audit",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "agent-capacity",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "≈43 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "unblocker",
+     "t": "",
+     "d": 2
+    },
+    {
+     "k": "sub",
+     "n": "cheap",
+     "t": "",
+     "d": 2
+    },
+    {
+     "k": "skill",
+     "n": "opencode-selfcheck",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "general",
+     "t": "",
+     "d": 2
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "unanswered-radar",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "studio-taste",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "show-in-answer",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "slow-deliberation",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scientific-ergonomics",
+     "t": "",
+     "d": 1
+    }
+   ],
+   "declared": [
+    {
+     "k": "skill",
+     "n": "opencode",
+     "u": true
+    },
+    {
+     "k": "skill",
+     "n": "opencode-selfcheck",
+     "t": "чек-лист до правки",
+     "u": false
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "d": 1
+    },
+    {
+     "k": "out",
+     "n": "N PASS / M FAIL / K OPEN"
+    }
+   ],
+   "empty": "Запусков за окно не было.",
+   "issues": [
+    {
+     "id": "C19",
+     "text": "Скил opencode не лежит в ~/.config/opencode/skills",
+     "fixed": false
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Скил opencode не лежит в skills/",
+      "alt": "найти источник и внести в индекс",
+      "f": "C19"
+     },
+     {
+      "n": "opencode-selfcheck после правки"
+     }
+    ],
+    "adds": [
+     "Запись решения через kb note"
+    ],
+    "when": [
+     "По запросу — как сейчас"
+    ]
+   }
+  },
+  {
+   "id": "status",
+   "group": "typ",
+   "title": "Что сделано / статус",
+   "when": "«статус», «что я просил», «что сделано»",
+   "status": "warn",
+   "status_text": "Мимо единого входа",
+   "runs": 65,
+   "median_s": 159,
+   "max_s": 13583,
+   "last": "2026-11-21T14:31:40.804000+00:00",
+   "outcomes": {
+    "done": 65
+   },
+   "example": [
+    "Jf2fb7q6",
+    "T4H4Zo8i"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 65"
+    },
+    {
+     "k": "skill",
+     "n": "wants-radar",
+     "t": "в 64 из 65",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 13 из 65",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 65 из 65, ≈18 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 55 из 65, ≈8 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 63 из 65, ≈5 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "реже: agent-capacity, hypothesis-check, network-constraints, opencode-selfcheck, scanfeed, scientific-ergonomics, show-in-answ",
+     "t": "меньше 13 из 65",
+     "d": 1
+    }
+   ],
+   "declared": [
+    {
+     "k": "script",
+     "n": "work-audit-auto",
+     "t": "сводка в контексте каждые 5 мин",
+     "f": "C3"
+    },
+    {
+     "k": "skill",
+     "n": "work-audit",
+     "t": "единая точка входа /work",
+     "f": "C6",
+     "u": false
+    },
+    {
+     "k": "skill",
+     "n": "wants-radar",
+     "t": "хотелки и вопросы без ответа",
+     "d": 1,
+     "u": false
+    }
+   ],
+   "empty": "Запусков за окно не было.",
+   "issues": [
+    {
+     "id": "C6",
+     "text": "Пять входов оценки работы",
+     "fixed": true
+    },
+    {
+     "id": "C5",
+     "text": "unanswered-radar дублирует wants-radar",
+     "fixed": true
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Каждый раз свой набор радаров",
+      "alt": "один вход: work-audit",
+      "f": "C6"
+     },
+     {
+      "n": "work-audit-auto каждые 5 мин",
+      "alt": "без сжатия моделью, только в корневые сессии",
+      "f": "C3"
+     }
+    ],
+    "adds": [
+     "Ответ картинкой в Telegram, а не TUI-панелью (C8)"
+    ],
+    "when": [
+     "По запросу — как сейчас",
+     "Утренняя сводка в Telegram"
+    ]
+   }
+  },
+  {
+   "id": "plan",
+   "group": "big",
+   "title": "Большая задача по этапам",
+   "when": "«продолжи план по этапам», process-plan.md",
+   "status": "idle",
+   "status_text": "Нет запусков за окно",
+   "runs": 0,
+   "median_s": null,
+   "max_s": null,
+   "last": "",
+   "outcomes": {},
+   "example": [],
+   "actual": [],
+   "declared": [
+    {
+     "k": "skill",
+     "n": "progress",
+     "u": true
+    },
+    {
+     "k": "agent",
+     "n": "plan",
+     "t": "план этапа",
+     "f": "C12",
+     "u": true
+    },
+    {
+     "k": "agent",
+     "n": "advisor",
+     "t": "если два раза не вышло",
+     "u": false
+    },
+    {
+     "k": "sub",
+     "n": "explore → general",
+     "d": 1
+    },
+    {
+     "k": "agent",
+     "n": "reviewer",
+     "t": "ревью диффа",
+     "u": true
+    },
+    {
+     "k": "out",
+     "n": "Следующий этап"
+    }
+   ],
+   "empty": "Запусков за окно не было.",
+   "issues": [
+    {
+     "id": "C21",
+     "text": "Этап идёт почти 30 мин — следующий обрежет лимит; лучше очередь qrun",
+     "fixed": false
+    },
+    {
+     "id": "C12",
+     "text": "Эскалации plan / advisor / reviewer не используются",
+     "fixed": false
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Весь план в одном прогоне",
+      "alt": "по этапу на шаг очереди qrun",
+      "f": "C21"
+     },
+     {
+      "n": "План этапа пишет сам исполнитель",
+      "alt": "план этапа — агент plan",
+      "f": "C12"
+     }
+    ],
+    "adds": [
+     "reviewer — ревью диффа этапа",
+     "progress.py step после каждого этапа"
+    ],
+    "when": [
+     "По вашей команде — как сейчас",
+     "Сам подхватывает следующий этап"
+    ]
+   }
+  },
+  {
+   "id": "keepers",
+   "group": "big",
+   "title": "Хаускиперы: индекс и конфликты",
+   "when": "Не искать по всему дому, не править один файл вдвоём",
+   "status": "warn",
+   "status_text": "Не ловит",
+   "runs": 15,
+   "median_s": 552,
+   "max_s": 906,
+   "last": "2026-11-21T15:51:51.946000+00:00",
+   "outcomes": {
+    "done": 15
+   },
+   "example": [
+    "9wNTHf5j",
+    "AQFCUAJc"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 15"
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 10 из 15",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 9 из 15",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 9 из 15",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "в 5 из 15",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 15 из 15, ≈9 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 15 из 15, ≈28 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "conflict-keeper",
+     "t": "в 15 из 15",
+     "d": 2
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 14 из 15, ≈5 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "реже: parallel-edit, show-in-answer, wants-radar",
+     "t": "меньше 3 из 15",
+     "d": 1
+    }
+   ],
+   "declared": [
+    {
+     "k": "rule",
+     "n": "AGENT-INDEX.md",
+     "t": "пишет только housekeeper"
+    },
+    {
+     "k": "agent",
+     "n": "housekeeper",
+     "t": "«где лежит X»",
+     "d": 1,
+     "u": true
+    },
+    {
+     "k": "rule",
+     "n": "conflict_guard.py check",
+     "t": "перед правкой, ЗАНЯТО = стоп"
+    },
+    {
+     "k": "agent",
+     "n": "conflict-keeper",
+     "t": "«кто правит файл»",
+     "d": 1,
+     "u": false
+    }
+   ],
+   "empty": "Агентов-хаускиперов за окно не вызывали — индекс пересобирает скрипт по таймеру.",
+   "issues": [
+    {
+     "id": "C11",
+     "text": "Карта конфликтов пустая — проверка всегда «СВОБОДНО»",
+     "fixed": false
+    }
+   ],
+   "edit": {
+    "steps": [
+     {
+      "n": "Карта конфликтов без файлов",
+      "alt": "брать файлы из событий edit/write",
+      "f": "C11"
+     }
+    ],
+    "adds": [],
+    "when": [
+     "Как сейчас"
+    ]
+   }
+  },
+  {
+   "id": "cs2",
+   "group": "big",
+   "title": "Экономика CS2-оверлея",
+   "when": "Открытая тема из памяти чата",
+   "status": "idle",
+   "status_text": "Блок",
+   "runs": 59,
+   "median_s": 550,
+   "max_s": 13583,
+   "last": "2026-11-21T16:23:12.210000+00:00",
+   "outcomes": {
+    "waiting_user": 1,
+    "done": 57,
+    "cancelled": 1
+   },
+   "example": [
+    "Bt9FMP1b",
+    "rhWNMt9V"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 59"
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 36 из 59",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "wants-radar",
+     "t": "в 14 из 59",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 52 из 59",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 22 из 59",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 58 из 59, ≈12 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 59 из 59, ≈33 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "conflict-keeper",
+     "t": "в 12 из 59",
+     "d": 2
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 58 из 59, ≈8 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "реже: agent-capacity, method-layer, network-constraints, opencode-selfcheck, scientific-ergonomics, show-in-answer, slow-delib",
+     "t": "меньше 12 из 59",
+     "d": 1
+    }
+   ],
+   "declared": [
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "сложная тема: что / почему / как",
+     "u": false
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "каждая идея — гипотеза с порогом",
+     "d": 1,
+     "u": false
+    },
+    {
+     "k": "skill",
+     "n": "resources",
+     "t": "тяжёлое — на Windows-ПК",
+     "d": 1,
+     "u": false
+    },
+    {
+     "k": "skill",
+     "n": "show-in-answer",
+     "t": "итог картинкой",
+     "u": false
+    }
+   ],
+   "empty": "За окно трасс отдельных сессий по теме не было.",
+   "issues": [],
+   "edit": {
+    "steps": [
+     {
+      "n": "Тема заблокирована: нет allplayers в GSI"
+     }
+    ],
+    "adds": [],
+    "when": [
+     "Как сейчас"
+    ]
+   }
+  }
+ ],
+ "services": [
+  {
+   "name": "Автофид гипотез",
+   "when": "Непрерывно",
+   "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
+   "state": "Прогонов сейчас: 1",
+   "level": "ok",
+   "f": "C1"
+  },
+  {
+   "name": "work-audit-auto",
+   "when": "Каждые 5 мин в каждом процессе opencode",
+   "what": "work_audit.py → сжатие моделью → вставка сводки в system каждой сессии.",
+   "state": "Отключён (клинап C3)",
+   "level": "ok",
+   "f": "C3"
+  },
+  {
+   "name": "failover-plugin",
+   "when": "Каждый запрос; проба free раз в 12 мин",
+   "what": "Цепочка моделей из opencode.jsonc.",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/hy4-flash-free ×122, opencode/hy4-flash-free ×28",
+   "level": "ok",
+   "f": "C13"
+  },
+  {
+   "name": "Ротация сессий бота",
+   "when": "По возрасту сессии",
+   "what": "Переносит «память чата» в новую сессию и подмешивает в каждый промпт.",
+   "state": "Записи старше суток подмешиваются в промпт",
+   "level": "warn",
+   "f": "C2"
+  },
+  {
+   "name": "agent-index",
+   "when": "Каждые 30 мин",
+   "what": "agent_index_build.py пересобирает AGENT-INDEX.md.",
+   "state": "AGENT-INDEX.md обновлён 0.2 ч назад",
+   "level": "ok",
+   "f": "C11"
+  },
+  {
+   "name": "conflict-keeper",
+   "when": "По таймеру или вызову",
+   "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
+   "state": "Владельцев 11, с файлами 10",
+   "level": "ok",
+   "f": "C11"
+  },
+  {
+   "name": "Очереди qrun",
+   "when": "Cron-сторож раз в 5 мин",
+   "what": "Шаги по очереди, вопросы — в Telegram.",
+   "state": "hello: FINISHED; cleanup: WAITING_TIME",
+   "level": "ok",
+   "f": ""
+  }
+ ],
+ "dups": [
+  {
+   "title": "Реестры идей",
+   "frm": 4,
+   "to": 1,
+   "now": 3,
+   "items": [
+    {
+     "n": "wants-radar",
+     "used": true,
+     "merged": false
+    },
+    {
+     "n": "unanswered-radar",
+     "used": true,
+     "merged": true
+    },
+    {
+     "n": "goals",
+     "used": false,
+     "merged": false
+    },
+    {
+     "n": "masterplan-intake",
+     "used": false,
+     "merged": false
+    }
+   ],
+   "plan": "Один реестр wants.json; unanswered — режим radar.",
+   "c": "C5",
+   "done": false
+  },
+  {
+   "title": "Оценка работы",
+   "frm": 5,
+   "to": 1,
+   "now": 3,
+   "items": [
+    {
+     "n": "work-audit",
+     "used": true,
+     "merged": false
+    },
+    {
+     "n": "claims-audit",
+     "used": false,
+     "merged": true
+    },
+    {
+     "n": "blocker-radar",
+     "used": true,
+     "merged": true
+    },
+    {
+     "n": "progress",
+     "used": false,
+     "merged": false
+    },
+    {
+     "n": "work-audit-auto",
+     "used": false,
+     "merged": false
+    }
+   ],
+   "plan": "Один вход /work с флагами --audit и --blocks.",
+   "c": "C6",
+   "done": false
+  },
+  {
+   "title": "Ресурсы и квоты",
+   "frm": 7,
+   "to": 2,
+   "now": 0,
+   "items": [
+    {
+     "n": "quota-radar",
+     "used": false,
+     "merged": true
+    },
+    {
+     "n": "greedy-max",
+     "used": false,
+     "merged": true
+    },
+    {
+     "n": "free-agent-threshold",
+     "used": false,
+     "merged": true
+    },
+    {
+     "n": "agent-capacity",
+     "used": true,
+     "merged": true
+    },
+    {
+     "n": "resource-radar",
+     "used": false,
+     "merged": true
+    },
+    {
+     "n": "split-resources",
+     "used": true,
+     "merged": true
+    },
+    {
+     "n": "game-mode",
+     "used": true,
+     "merged": true
+    }
+   ],
+   "plan": "Два скила: quota и resources.",
+   "c": "C7",
+   "done": true
+  },
+  {
+   "title": "Показ результата",
+   "frm": 3,
+   "to": 1,
+   "now": 1,
+   "items": [
+    {
+     "n": "show-in-answer",
+     "used": true,
+     "merged": false
+    },
+    {
+     "n": "html-slides",
+     "used": false,
+     "merged": true
+    },
+    {
+     "n": "studio-taste",
+     "used": true,
+     "merged": true
+    }
+   ],
+   "plan": "Один скил по каналу: TUI — панель, Telegram — фото.",
+   "c": "C8",
+   "done": true
+  },
+  {
+   "title": "Методы гипотез",
+   "frm": 2,
+   "to": 1,
+   "now": 1,
+   "items": [
+    {
+     "n": "hypothesis-check",
+     "used": true,
+     "merged": false
+    },
+    {
+     "n": "method-layer",
+     "used": true,
+     "merged": true
+    }
+   ],
+   "plan": "method-layer — раздел внутри hypothesis-check.",
+   "c": "C10",
+   "done": true
+  }
+ ]
+}
