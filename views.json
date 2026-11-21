@@ -4,7 +4,7 @@
   "views": [
     {
       "id": "atlas-tree",
-      "title": "Атлас: дерево сущностей по видам",
+      "title": "Атлас: сущности по видам (63 связей не визуализируются)",
       "type": "tree",
       "source": "atlas.json",
       "built_at": "2026-11-21T23:10:26+00:00",
@@ -205,7 +205,7 @@
     },
     {
       "id": "cs2-ideas",
-      "title": "CS2: голосовые идеи по темам",
+      "title": "CS2: голосовые идеи по темам — 300/1438 строк, уникальных голосовых 794",
       "type": "table",
       "source": "cs2-ideas.json",
       "built_at": "2026-11-21T23:10:26+00:00",
@@ -811,6 +811,50 @@
         "sha256": "f52f4d0e23aa4c38064f11acc8e29b4300a20fc0e810c4eda8c705adeb8d723e",
         "read_at": "2026-11-21T23:10:26+00:00"
       }
+    },
+    {
+      "id": "task-tree",
+      "title": "Дерево задач: 24 корней / 118 узлов",
+      "type": "tree",
+      "source": "tree.json",
+      "built_at": "2026-11-21T23:42:00+00:00",
+      "count": 118,
+      "publish": true,
+      "group_by": "status",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "status",
+          "values": [
+            "FAIL",
+            "PASS"
+          ]
+        }
+      ],
+      "label_field": "name",
+      "value_field": "id",
+      "meta_fields": [
+        "status"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "tree.json",
+        "abs": "/home/nyaka/runtime/tmp-checkpoint/tg-miniapp-pages/tree.json",
+        "exists": true,
+        "size_bytes": 18204,
+        "mtime_utc": "2026-11-21T23:41:39+00:00",
+        "sha256": "a247d0942aec81f15275f5b6cb0a544b9c35d0cc0d64d90cb832d1352b23d39a",
+        "read_at": "2026-11-21T23:42:00+00:00"
+      },
+      "root_count": 24,
+      "node_count": 118,
+      "note": "источник tree.json; task-tree.js читает LIVE.tree напрямую, реестр views нужен для единого входа и аудита"
     }
   ]
 }
