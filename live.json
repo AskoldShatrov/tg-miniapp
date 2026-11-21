@@ -627,45 +627,53 @@
       "task": "T19",
       "id": "T19.1",
       "title": "Детектор HUD-бомбы: жёлтая маска + OCR цифр + парсер 0:37",
-      "status": "running",
-      "note": "vision ROI отдельно от kill-feed; переиспользуем yellow-маску и tesseract-whitelist"
+      "status": "done",
+      "note": "tesseract+template, m:ss гейт, парсер 0..40с"
     },
     {
       "task": "T19",
       "id": "T19.2",
       "title": "Stateful-тракер с абсолютным дедлайном и событийным логом",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "BombTracker: подтверждение 2 кадра, абс. deadline, состояния idle/planted/lost/exploded"
     },
     {
       "task": "T19",
       "id": "T19.3",
       "title": "CLI + интеграция в оверлей без конфликта продюсеров",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "CLI image/frames/live/validate; отдельный bomb_overlay.json без конфликта продюсеров"
     },
     {
       "task": "T19",
       "id": "T19.4",
       "title": "Тесты: синтетика + негативы на canon_full + прогон",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "14/14 unittest; 188/188 реальных кадров без FP"
     },
     {
       "task": "T19",
       "id": "T19.5",
       "title": "Критик: ревью диффа, устранение находок",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "ревью новых файлов критиком, устранение finding-ов"
     }
   ],
   "active": [
+    {
+      "id": "AU11901",
+      "title": "ПРОВЕРИТЬ ГИПОТЕЗУ H567: НЕЗАВИСИМАЯ РЕПЛИКАЦИЯ: Статичная роль vs динамическая изоляция. Средний `iso` по доминантной…",
+      "source": "ноут",
+      "claimed_human": "09:23:20",
+      "age_min": 0,
+      "full": "ПРОВЕРИТЬ ГИПОТЕЗУ H567: НЕЗАВИСИМАЯ РЕПЛИКАЦИЯ: Статичная роль vs динамическая изоляция. Средний `iso` по доминантной…"
+    },
     {
       "id": "AU11885",
       "title": "ПРОВЕРИТЬ ГИПОТЕЗУ H456: Прямой контраст narrow−wide",
       "source": "ноут",
       "claimed_human": "09:18:55",
-      "age_min": 4,
+      "age_min": 5,
       "full": "ПРОВЕРИТЬ ГИПОТЕЗУ H456: Прямой контраст narrow−wide"
     }
   ],
@@ -673,17 +681,17 @@
     "ноут": {
       "done": 1452,
       "failed": 756,
-      "doing": 1,
-      "todo": 41
+      "doing": 2,
+      "todo": 40
     },
     "ПК": {
       "done": 34,
       "todo": 56
     }
   },
-  "updatedAt": "2026-11-21T09:14:18+03:00",
-  "progress_updated_at": "2026-11-21T09:14:18+03:00",
+  "updatedAt": "2026-11-21T09:23:01+03:00",
+  "progress_updated_at": "2026-11-21T09:23:01+03:00",
   "plan_source": "progress.json",
-  "fetched_at": 1795242178,
-  "fetched_human": "2026-11-21 09:22:58 +0300"
+  "fetched_at": 1795242247,
+  "fetched_human": "2026-11-21 09:24:07 +0300"
 }
