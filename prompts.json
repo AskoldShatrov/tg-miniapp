@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-22T10:31:30+00:00",
-  "generated_human": "22.11 10:31 UTC",
-  "as_of": 1795343490403,
+  "generated": "2026-11-22T10:32:30+00:00",
+  "generated_human": "22.11 10:32 UTC",
+  "as_of": 1795343550918,
   "stale_days": 1,
-  "count": 876,
+  "count": 877,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -39,22 +39,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-McOd7sq8yo",
-     "text": "Проверь df -B1 / : если доступно <15 ГиБ — НЕ запускай сборку, напиши OPEN с выводом df и готовой командой timeout 1200 python3 /home/nyaka/overnight/cloud_tracks/C06-422-build.py > /tmp/opencode/aud4-build.log 2>&1 &; порог не снижай. Если >=15 ГиБ — запусти сборку с таймаутом, проверь n кадров=17920 и манифест, посчитай ECE/Brier на holdout по match_id (n и Wilson), запиши путь, SHA256, mtime и команды в артефакт. Не трогай data/, GUI, чужие каталоги и исходные скрипты.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/AUD4-DISKGATE-c15.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795343443000,
-     "source": "session",
-     "title": "lree-AUD4-DISKGATE-c15",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795343443000,
-     "is_stale": false
-    },
-    {
      "id": "ses-GG9C47cnFi",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795343421000,
+     "ts": 1795343549000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -73,7 +60,58 @@
      "answer_text_id": "688674ea5878938b",
      "answer_source": "replies.json",
      "delivered_ts": 1795343408233,
-     "as_of": 1795343421000,
+     "as_of": 1795343549000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-scJf3GNWcD",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0087. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0087_run2309.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795343549000,
+     "source": "session",
+     "title": "QH0087: перекалибровка dot_quality под cyan",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0"
+     ],
+     "answer": "[w261119190741dca0] 🟩 **Готово: в хабе убрал фразу подтверждения** — удаление теперь одним нажатием «🗑 Удалить с устройства». Проверено: `POST /api/delete` без `force` вернул `ok:true`, тестовая пустышка ушла в `.trash` ",
+     "answer_short": "w261119190741dca0: 🟩 **Готово: в хабе убрал фразу подтверждения** — удаление те",
+     "answer_full": "🟩 **Готово: в хабе убрал фразу подтверждения** — удаление теперь одним нажатием «🗑 Удалить с устройства». Проверено: `POST /api/delete` без `force` вернул `ok:true`, тестовая пустышка ушла в `.trash` и мной убрана; реальные 4 видео не трогал. Видео открываются: `HEAD` 200, `Range` 206. Ссылка та же: `http://192.168.31.250:8137/`\n\nАРТЕФАКТ: /home/nyaka/video-transfer-pc/hub_server.py 379e711dd3c9c058f3770e8c9c365772d6e00205d657d29a81210d2e5882ea38 mtime 2026-11-22 13:24:43 +0300 — проверка HEAD+RANGE+ONE-CLICK DELETE\n\n🟦 **Почему `.md` одноцветный:** Telegram вырезает CSS `style=` из разметки — цвет нельзя запечь в `.md`. С 12:36 цвет живёт в PNG-постере 1280×720; прошлый ответ ушёл без постера, поэтому и выглядел плоским. Постер приложен к этому ответу.\n\n🟨 **ADB:** второго экрана на этом телефоне нет — только `mDisplayId=0`, нет root, `cmd display` не умеет virtual display, `scrcpy` не стоит, а скачивать не стал: диск в нуле. Вместо этого хаб вообще не требует тапов, а для неизбежных кликов сделал сторож — сейчас, когда у вас на экране Telegram, он корректно отказал (exit 2).\n\nАРТЕФАКТ: /home/nyaka/scripts/adb_safe_tap.sh 6bd70775e44114ff31c6e2748e1c62b76364583a15075716b0217ae1f3f24972 mtime 2026-11-22 13:26:47 +0300 — проверка check/tap, отказ в Telegram\n\n🟩 **Курсы:** 38 уроков C++ eground.org, 11,26 ГБ — вы правы; «DF» в именах нет, ближе Dlib и DDD. 🟨 **Память:** ноут на 100%, точные дубли ~1,88 ГБ, 56 ГБ `tmp-checkpoint`. Решение по дублям не принимал за вас: ничего не удалено.\n\nПолный разбор — в файле.",
+     "answer_digest": {
+      "length": 1531,
+      "sha256": "688674ea5878938b74f7956839cfebb011be5fdefe0c235e023137817ff306f5"
+     },
+     "answer_text_id": "688674ea5878938b",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795343408233,
+     "as_of": 1795343549000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-lf9dPidl8N",
+     "text": "Проверь df -B1 / : если доступно <15 ГиБ — НЕ запускай сборку, напиши OPEN с выводом df и готовой командой timeout 1200 python3 /home/nyaka/overnight/cloud_tracks/C06-422-build.py > /tmp/opencode/aud4-build.log 2>&1 &; порог не снижай. Если >=15 ГиБ — запусти сборку с таймаутом, проверь n кадров=17920 и манифест, посчитай ECE/Brier на holdout по match_id (n и Wilson), запиши путь, SHA256, mtime и команды в артефакт. Не трогай data/, GUI, чужие каталоги и исходные скрипты.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/AUD4-DISKGATE-c16.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795343547000,
+     "source": "session",
+     "title": "lree-AUD4-DISKGATE-c16",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795343547000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-McOd7sq8yo",
+     "text": "Проверь df -B1 / : если доступно <15 ГиБ — НЕ запускай сборку, напиши OPEN с выводом df и готовой командой timeout 1200 python3 /home/nyaka/overnight/cloud_tracks/C06-422-build.py > /tmp/opencode/aud4-build.log 2>&1 &; порог не снижай. Если >=15 ГиБ — запусти сборку с таймаутом, проверь n кадров=17920 и манифест, посчитай ECE/Brier на holdout по match_id (n и Wilson), запиши путь, SHA256, mtime и команды в артефакт. Не трогай data/, GUI, чужие каталоги и исходные скрипты.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/AUD4-DISKGATE-c15.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795343443000,
+     "source": "session",
+     "title": "lree-AUD4-DISKGATE-c15",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795343443000,
      "is_stale": false
     },
     {
@@ -3901,31 +3939,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795332003063,
      "as_of": 1795309104000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-1ze57hTtgQ",
-     "text": "РАДАР. Новый источник: 307 dust2-матчей из 78-top1000-dust2-ingest.md. Построить НОВЫЙ набор кадров (не старые 20/92) и проверить cyan-детектор врагов с GT по spectator-GSI allplayers. Гейт до прогона: recall > 0.50 при FP < 0.10 на n >= 100. Не переоткрывать «красный = враг» и малый радар (64, 89, MASTERPLAN-v2 §2.1). Новый отчёт ~/overnight/cloud_tracks/C01-1842.md: факт/расчёт/интерпретация/неизвестно, n, Wilson CI; отрицательный результат фиксировать так же. Не трогать data/ и чужие отчёты. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795308910000,
-     "source": "session",
-     "title": "C01-1842: cyan-детектор по spectator-GSI allplayers",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611200241438cdc"
-     ],
-     "answer": "[w2611200241438cdc] Видео нашёл и опознал: «The Simple Guide to Economy in CS2» от austincs (того самого Остина), премьера 29 мая 2026, 92 тысячи просмотров, около 31 минуты. Главы: Intro 0:00, Basic Economy 1:01, Advanc",
-     "answer_short": "w2611200241438cdc: Видео нашёл и опознал: «The Simple Guide to Economy in CS2» ",
-     "answer_full": "Видео нашёл и опознал: «The Simple Guide to Economy in CS2» от austincs (того самого Остина), премьера 29 мая 2026, 92 тысячи просмотров, около 31 минуты. Главы: Intro 0:00, Basic Economy 1:01, Advanced Economy 8:14, In-game examples 17:22.\n\nНо содержимое «скормить» не вышло: YouTube закрыл доступ бот-защитой. У видео нет субтитров; все шесть нод прокси получают только сториборд вместо аудио; восемь публичных зеркал и сервис расшифровки уперлись в «Sign in to confirm you are not a bot» и `RequestBlocked`; резервный ПК через мост вообще не резолвит адрес YouTube. Сториборд я скачал и разобрал — там игровой кадр, текста нет.\n\nПредлагаю: открой видео в Firefox на ноуте, где обход работает, и пришли расшифровку или сохранённое аудио — сделаю конспект и сразу примерю его к панели экономики в scanfeed. Либо дай доступ с домашнего адреса, повторю забор сам. Каналы elmapuddy и mahone возьму тем же конвейером следующими.\n\nПодробный отчёт с доказательствами во вложении.",
-     "answer_digest": {
-      "length": 974,
-      "sha256": "e600ac891931541ec274d3e97890e8f212905725d1d38038e2c91c45bc90df87"
-     },
-     "answer_text_id": "e600ac891931541e",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795332003063,
-     "as_of": 1795308910000,
      "is_stale": false
     },
     {
