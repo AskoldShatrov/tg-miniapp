@@ -2331,9 +2331,7 @@ function renderLive(){
         ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
         :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
   }).join(""):
-    '<div class="hint">Сейчас активных задач в очередях нет.</div>';
-  }).join(""):
-    '<div class="hint">Сейчас активных задач в очереди нет.</div>');
+    '<div class="hint">Сейчас активных задач в очередях нет.</div>');
   if(hidden) jobs.insertAdjacentHTML('beforeend','<div class=\'hint\'>Автоген воркеров: '+hidden+' (скрыто)</div>');
 }
 
