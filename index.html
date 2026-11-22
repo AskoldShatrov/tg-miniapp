@@ -2347,7 +2347,7 @@ function renderLive(){
   if(ps){
     ps.classList.toggle("p-badge",planStale);
     ps.classList.toggle("stale",planStale);
-    ps.textContent=planStamp+(planStale?" — план давно не менялся, данные собраны свежими":"");
+    ps.textContent=planStamp+(planStale?" — план давно не менялся (это не ошибка)":"");
   }
 
   const q=$("#liveQueues");
