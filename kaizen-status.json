@@ -1,0 +1,68 @@
+{
+  "status": "RUNNING",
+  "cycles": 11,
+  "heartbeat_age_s": 20,
+  "stop_reason": null,
+  "queue": [
+    {
+      "id": "META-NO-STOP",
+      "title": "Системная проверка: гейты против повторных ошибок",
+      "done": 1,
+      "limit": 3
+    },
+    {
+      "id": "LEDGER-DEDUP",
+      "title": "Дедупликация журнала движка после двух процессов",
+      "done": 0,
+      "limit": 2
+    },
+    {
+      "id": "AUD4-DISKGATE",
+      "title": "AUD-4: диск-гейт и регенерация S10",
+      "done": 0,
+      "limit": 6
+    },
+    {
+      "id": "AUD-REPORT",
+      "title": "Проверка целостности ночного отчёта",
+      "done": 0,
+      "limit": 3
+    },
+    {
+      "id": "CLAIMS21-VERIFY",
+      "title": " Верификация заморозки и результатов 21 claim",
+      "done": 0,
+      "limit": 3
+    },
+    {
+      "id": "DELIVERY-REGRESSION",
+      "title": "Функциональный регресс-тест доставки declarative-файлов",
+      "done": 0,
+      "limit": 3
+    },
+    {
+      "id": "DRAFTGATE-OPEN",
+      "title": "Закрыть OPEN: OPEN-as-stop в draft-gate",
+      "done": 0,
+      "limit": 4
+    },
+    {
+      "id": "ENG-SELFTEST",
+      "title": "Прогон self-test движка эволюции",
+      "done": 0,
+      "limit": 2
+    }
+  ],
+  "fixed": [
+    "диск-гейт 5.0 → 1.5 ГБ: мандат больше не умирает на 2.6 ГБ",
+    "счётчики задач и скаута сохраняются при рестарте watchdog",
+    "регресс-тест test_12; прогон движка 12 PASS / 0 FAIL"
+  ],
+  "open": [
+    "кайзен-механизм в мини-апе — ставим этой сборкой",
+    "чистка диска 2.6 ГБ — нужно решение, что удалять"
+  ],
+  "built_at": "2026-11-22T13:10:54+03:00",
+  "kind": "kaizen-declarative-status",
+  "deployed_from": "/home/nyaka/miniapp/build_kartochki.py"
+}
