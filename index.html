@@ -170,6 +170,8 @@
 
   /* ---------- живая шапка вместо декоративного заголовка ---------- */
   header#hdr{cursor:pointer;user-select:none}
+  /* @owner:header-clean @region:no-decor: хедер скрыт — вкладки первыми, без бейджей */
+  header#hdr{display:none !important}
   header#hdr:active{opacity:.72}
   .hmeta{min-width:0;flex:1}
   .hsub{font-size:11.5px;color:var(--subtext1);margin-top:0;font-family:var(--fm);
@@ -1496,7 +1498,7 @@ function setApiBadge(el, on, label){
 }
 
 /* Шапка — живой сигнал, а не декоративная надпись. Заполняется из status.json. */
-$("#hsub").innerHTML = '<span class="muted">живой канал · данные мини-апа</span>';  /* @owner:redesign-2026-11-21 @region:no-agent-dup */
+const _hs=$("#hsub"); if(_hs) _hs.textContent="";  /* @owner:header-clean @region:no-decor */
 const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
