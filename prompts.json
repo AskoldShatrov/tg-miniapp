@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T05:19:48+00:00",
-  "generated_human": "22.11 05:19 UTC",
-  "as_of": 1795324788930,
+  "generated": "2026-11-22T05:20:58+00:00",
+  "generated_human": "22.11 05:20 UTC",
+  "as_of": 1795324858924,
   "stale_days": 1,
   "count": 836,
   "groups": 9,
@@ -41,9 +41,9 @@
     {
      "id": "ses-QvcQdsf5I3",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795324788000,
+     "ts": 1795324858000,
      "source": "session",
-     "title": "",
+     "title": "cyan-калибровка dot_quality на R01/S01",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
@@ -60,7 +60,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795324788000,
+     "as_of": 1795324858000,
      "is_stale": false
     },
     {
@@ -4807,7 +4807,7 @@
     {
      "id": "ses-NVirmnXfxh",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0022. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0022_run1918.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795324782000,
+     "ts": 1795324853000,
      "source": "session",
      "title": "Проверка гипотезы QH0022",
      "source_label": "ноут",
@@ -4826,7 +4826,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795324782000,
+     "as_of": 1795324853000,
      "is_stale": false
     },
     {
