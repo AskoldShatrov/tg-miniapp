@@ -2133,7 +2133,10 @@ let LIVE_JOBS=null;
 function renderLive(){
   const d=LIVE_JOBS; if(!d) return;
   const now=Date.now();
-  // Дата плана — из данных (updatedAt в live.json / progress.json), а не из локального времени.
+  // Две честные даты: когда менялся ПЛАН (updatedAt из progress.json через
+  // live.json) и когда собраны ДАННЫЕ (fetched_at live.json). Раньше в «Ходе»
+  // была только дата плана с подписью «снимок» — пользователь решал, что
+  // устарели данные. Не подделываем updatedAt: показываем обе даты явно.
   const parseTs=(raw)=>{
     if(raw==null||raw==="") return 0;
     if(typeof raw==="number") return raw<1e12?raw*1000:raw;
@@ -2143,7 +2146,9 @@ function renderLive(){
   const planRaw=d.updatedAt||d.progress_updated_at||d.progressUpdatedAt||
     (d.progress&&d.progress.updatedAt)||d.snapshot_at||d.fetched_at||0;
   const planMs=parseTs(planRaw);
-  const planAgeH=planMs?(now-planMs)/3600000:0;
+  // Возраст плана: сначала берём честное поле бэкенда plan_age_hours, затем считаем сами.
+  const planAgeH=(typeof d.plan_age_hours==="number" && isFinite(d.plan_age_hours))
+    ? d.plan_age_hours : (planMs?(now-planMs)/3600000:0);
   const planStale=!!planMs&&planAgeH>1;
   const fmtPlan=(ms)=>{
     if(!ms) return "—";
@@ -2153,6 +2158,11 @@ function renderLive(){
     const dt=new Date(ms),p=n=>String(n).padStart(2,"0");
     return p(dt.getDate())+"."+p(dt.getMonth()+1)+" "+p(dt.getHours())+":"+p(dt.getMinutes());
   };
+  const fmtClock=(ms)=>{
+    if(!ms) return "—";
+    const dt=new Date(ms),p=n=>String(n).padStart(2,"0");
+    return p(dt.getHours())+":"+p(dt.getMinutes());
+  };
   const ageHuman=(ms)=>{
     const sec=Math.max(0,Math.floor((now-ms)/1000));
     if(sec<60) return sec+" с назад";
@@ -2160,7 +2170,10 @@ function renderLive(){
     if(sec<86400) return Math.floor(sec/3600)+" ч назад";
     return Math.floor(sec/86400)+" д назад";
   };
-  const planStamp="снимок от "+fmtPlan(planMs)+(planMs?" ("+ageHuman(planMs)+")":"");
+  const dataMs=parseTs(d.fetched_at||d.fetched_human||d.ts||0);
+  // «план 22.11 00:55 (4 ч назад) · данные 04:38» — две даты, без подмены одной другой.
+  const planStamp="план "+fmtPlan(planMs)+(planMs?" ("+ageHuman(planMs)+")":"")+
+    " · данные "+fmtClock(dataMs);
 
   const st=$("#liveStamp");
   if(st){
@@ -2173,7 +2186,7 @@ function renderLive(){
   if(ps){
     ps.classList.toggle("p-badge",planStale);
     ps.classList.toggle("stale",planStale);
-    ps.textContent="План · "+planStamp+(planStale?" — это снимок плана, а не живой статус":"");
+    ps.textContent="План · "+planStamp+(planStale?" — план давно не менялся, данные собраны свежими":"");
   }
 
   const q=$("#liveQueues");
