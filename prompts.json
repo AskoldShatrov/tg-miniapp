@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T04:25:09+00:00",
-  "generated_human": "22.11 04:25 UTC",
-  "as_of": 1795321509227,
+  "generated": "2026-11-22T04:26:09+00:00",
+  "generated_human": "22.11 04:26 UTC",
+  "as_of": 1795321569493,
   "stale_days": 1,
   "count": 835,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-ikrSzWNqQ4",
      "text": "ТЫ — менеджер 20-часового мандата (роль надзирателя, не исполнителя чужих задач).\nОбязательно загрузи через tool skill: progress и ready-to-deliver.\n\nПрочитай (не целиком огромные файлы, а точечно):\n1. ~/overnight/manager_status.json — здоровье экосистемы;\n2. `python3 ~/.config/opencode/scripts/progress.py --no-color --ascii` — сводка;\n3. свежие отчёты ~/overnight/cloud_tracks/*.md (только шапки и хвосты, самые новые 5–8);\n4. ~/overnight/manager_cycle_digest.md если есть — предыдущий цикл.\n\nСДЕЛАЙ:\n- Найди running-шаги старше 30 мин и все blocked. Для каждого живого, но тихого\n  шага сделай `python3 ~/.config/opencode/scripts/progress.py step work <T> <step> --note \"менеджер: проверка < что >\"`;\n  для блокера — `event <T> --text \"…\"` с причиной и владельцем. Не выдумывай гейты.\n- Проверь, работают ли все агенты/диалоги из статуса; если агент мёртв, а сервис\n  жив — зафиксируй причину в лог цикла, не перезапускай вручную (это делает watchdog).\n- Если нашёл дефект в доступной зоне — попытайся исправить; если нельзя — честный\n  OPEN с владельцем и готовым путём, не сваливай на пользователя.\n- Напиши КОРОТКИЙ отчёт ~/overnight/manager_cycle_digest.md (вердикт HEALTHY /\n  NEEDS_ATTENTION, найденное, действия, OPEN). Не перезаписывай чужие отчёты.\n\nЗАПРЕТ: data/, защищённые отчёты 64/71/103, платные модели, правка progress.json\nнапрямую (только CLI), вопросы пользователю, остановка шин/воркеров.\nНе спрашивай — действуй в доступной зоне и честно фиксируй OPEN.",
-     "ts": 1795321505000,
+     "ts": 1795321566000,
      "source": "session",
      "title": "Менеджерский цикл 20-часового мандата",
      "source_label": "ноут",
@@ -60,7 +60,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795321505000,
+     "as_of": 1795321566000,
      "is_stale": false
     },
     {
@@ -2195,7 +2195,7 @@
     {
      "id": "ses-2UdRNuUoip",
      "text": "ПРОРАБОТКА РАДАРА, новый источник. Источник: 78-top1000-dust2-ingest.md (307 dust2 матчей) и свежие FACEIT-демо. Задача: собрать НОВЫЙ набор кадров (не старые 20/92) с признаком cyan как_CT и проверить детектор радара на нём. ОБЯЗАТЕЛЬНО: записать новый отчёт ~/overnight/open_tracks/R01-radar-cyan-newcorpus.md — факт/расчёт/интерпретация/неизвестно, n, Wilson CI, отрицательный результат фиксировать так же. Гейт ДО проверки: recall > 0.50 при FP < 0.10 на n >= 100 кадрах. НЕ переоткрывать опровергнутое «красный = враг» и малый радар (см. 64, 89, MASTERPLAN-v2 §2.1). Не перезаписывать ~/turngame/data/ и существующие отчёты. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795321503000,
+     "ts": 1795321557000,
      "source": "session",
      "title": "Детектор радара на новом cyan-корпусе",
      "source_label": "ноут",
@@ -2214,13 +2214,13 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795321503000,
+     "as_of": 1795321557000,
      "is_stale": false
     },
     {
      "id": "ses-OCBlhy6tNF",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0062. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0062_run1795320920.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795321503000,
+     "ts": 1795321546000,
      "source": "session",
      "title": "QH0062 калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -2239,7 +2239,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795321503000,
+     "as_of": 1795321546000,
      "is_stale": false
     },
     {
