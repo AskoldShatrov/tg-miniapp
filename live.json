@@ -991,24 +991,29 @@
       "task": "T22",
       "id": "T22.1",
       "title": "Починить isFreeLimit: вложенный FreeUsageLimitError",
-      "status": "running",
-      "note": "general-агент чинит isFreeLimit + paidSessions TTL в failover-plugin/index.js",
+      "status": "done",
+      "note": "RED на старой логике → GREEN: node --check exit=0, selftest 10 assertions OK. Вложенный FreeUsageLimitError теперь даёт ",
       "startedAt": "2026-11-22T04:32:17+03:00",
-      "updatedAt": "2026-11-22T04:32:17+03:00"
+      "updatedAt": "2026-11-22T04:40:12+03:00",
+      "completedAt": "2026-11-22T04:40:12+03:00"
     },
     {
       "task": "T22",
       "id": "T22.2",
       "title": "Очистка stale paidSessions с TTL",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "TTL paidSessionTtlMinutes=1440, 0=отключить; бэкап /tmp/opencode/router-sprint/kv-state-backup.json (1489310 B); формат ",
+      "updatedAt": "2026-11-22T04:40:12+03:00",
+      "completedAt": "2026-11-22T04:40:12+03:00"
     },
     {
       "task": "T22",
       "id": "T22.3",
       "title": "Selfcheck правок роутера",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "Независимый oc_selfcheck.sh на hy4-flash-free по чек-листу от 01:33 UTC",
+      "startedAt": "2026-11-22T04:40:13+03:00",
+      "updatedAt": "2026-11-22T04:40:13+03:00"
     },
     {
       "task": "T22",
@@ -1107,7 +1112,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 68,
+      "age_min": 69,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "autogen": true
     },
@@ -1116,7 +1121,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "source": "ПК",
       "claimed_human": "03:31:00",
-      "age_min": 68,
+      "age_min": 69,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "autogen": true
     },
@@ -1125,7 +1130,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "source": "ПК",
       "claimed_human": "03:28:59",
-      "age_min": 70,
+      "age_min": 71,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "autogen": true
     },
@@ -1134,7 +1139,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "source": "ПК",
       "claimed_human": "03:26:59",
-      "age_min": 72,
+      "age_min": 73,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "autogen": true
     },
@@ -1143,7 +1148,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 74,
+      "age_min": 75,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "autogen": true
     },
@@ -1152,7 +1157,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "source": "ПК",
       "claimed_human": "03:19:58",
-      "age_min": 79,
+      "age_min": 80,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "autogen": true
     }
@@ -1170,9 +1175,9 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T04:38:44+03:00",
-  "progress_updated_at": "2026-11-22T04:38:44+03:00",
+  "updatedAt": "2026-11-22T04:40:13+03:00",
+  "progress_updated_at": "2026-11-22T04:40:13+03:00",
   "plan_source": "progress.json",
-  "fetched_at": 1795311578,
-  "fetched_human": "2026-11-22 04:39:38 +0300"
+  "fetched_at": 1795311639,
+  "fetched_human": "2026-11-22 04:40:39 +0300"
 }
