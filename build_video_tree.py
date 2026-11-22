@@ -150,9 +150,16 @@ def main():
         "labeling": {
             "kind": "author_manual_clusters",
             "note": "8 кластеров — авторская разметка из N2, не независимо проверенная таксономия",
-            "verification": 19,
+            "verification_rows": 19,
+            "decisive_verdicts": 12,
+            "verification_unverifiable": 7,
             "n2_status_only": 21,
-            "verdict_gate": "19/40 реальных вердиктов; гейт 40/40 НЕ взят",
+            "verdict_gate": "12/40 решающих вердиктов; гейт 40/40 НЕ взят",
+            "delivery_evidence": {
+                "field": "prompts.json:delivered_ts + user_id",
+                "n": 471,
+                "user_id": {"1869196044": 466, "435824119": 5},
+            },
         },
         "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "built_by": "build_video_tree.py",
