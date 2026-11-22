@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T03:45:28+00:00",
-  "generated_human": "22.11 03:45 UTC",
-  "as_of": 1795319128542,
+  "generated": "2026-11-22T03:46:38+00:00",
+  "generated_human": "22.11 03:46 UTC",
+  "as_of": 1795319198507,
   "stale_days": 1,
   "count": 838,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-xmlVkG9f12",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0060. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0060_run1795319114.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795319125000,
+     "ts": 1795319195000,
      "source": "session",
      "title": "QH0060: SCANFEED-SPRINT T20.3",
      "source_label": "ноут",
@@ -60,13 +60,13 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795319125000,
+     "as_of": 1795319195000,
      "is_stale": false
     },
     {
      "id": "ses-O1kEKeiZCa",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0029. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0029_run1918.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795319122000,
+     "ts": 1795319185000,
      "source": "session",
      "title": "QH0029 SCANFEED-SPRINT T20.1 в CS2",
      "source_label": "ноут",
@@ -85,7 +85,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795319122000,
+     "as_of": 1795319185000,
      "is_stale": false
     },
     {
