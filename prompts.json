@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T16:35:50+00:00",
-  "generated_human": "22.11 16:35 UTC",
-  "as_of": 1795365350817,
+  "generated": "2026-11-22T16:36:55+00:00",
+  "generated_human": "22.11 16:36 UTC",
+  "as_of": 1795365415676,
   "stale_days": 1,
   "count": 1076,
   "groups": 10,
@@ -41,7 +41,7 @@
     {
      "id": "ses-NSy4LXVy2i",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0111. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0111_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795365349000,
+     "ts": 1795365412000,
      "source": "session",
      "title": "QH0111 калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -60,20 +60,20 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795365349000,
+     "as_of": 1795365412000,
      "is_stale": false
     },
     {
      "id": "ses-fedLDNtQ8a",
      "text": "Шаг S5 плана /home/nyaka/overnight/SCANFEED-24H-PLAN.md. Задеплоить turngame/core в gsi_service_v4.py (сейчас FRAMEWORK_AVAILABLE=false), подключить survivor_vision_v2.py дополнительным источником не подменяя GSI, провести smoke-тест. В артефакт: framework_status до/после, пути, SHA, таймстемп, VERDICT с порогом available=true.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S5-INTEGRATE-c37.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795365346000,
+     "ts": 1795365349000,
      "source": "session",
      "title": "lree-SF-S5-INTEGRATE-c37",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795365346000,
+     "as_of": 1795365349000,
      "is_stale": false
     },
     {
@@ -5022,14 +5022,14 @@
     {
      "id": "ses-Lxs354eavi",
      "text": "у тебя снова всего 4 агента количество задач не уменьшилось я просил обновлять их системное решение",
-     "ts": 1795365345000,
+     "ts": 1795365407000,
      "source": "session",
      "title": "",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795365345000,
+     "as_of": 1795365407000,
      "is_stale": false
     },
     {
@@ -6682,27 +6682,27 @@
     {
      "id": "ses-yl6WT5fuRL",
      "text": "[Image 1] [Image 2]",
-     "ts": 1795365344000,
+     "ts": 1795365388000,
      "source": "session",
      "title": "Редактирование фото через investors ai",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795365344000,
+     "as_of": 1795365388000,
      "is_stale": false
     },
     {
      "id": "ses-yl6WT5fuRL-2",
      "text": "если я тебя попрошу ты сможешь отредактировать мое фото может через какую то ии обработка может через investors ai",
-     "ts": 1795365344000,
+     "ts": 1795365388000,
      "source": "session",
      "title": "Редактирование фото через investors ai",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795365344000,
+     "as_of": 1795365388000,
      "is_stale": false
     },
     {
