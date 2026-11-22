@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T03:56:19+00:00",
-  "generated_human": "22.11 03:56 UTC",
-  "as_of": 1795319779458,
+  "generated": "2026-11-22T03:57:19+00:00",
+  "generated_human": "22.11 03:57 UTC",
+  "as_of": 1795319839687,
   "stale_days": 1,
   "count": 835,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-pP9sekraiO",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795319771000,
+     "ts": 1795319836000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -60,13 +60,13 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795319771000,
+     "as_of": 1795319836000,
      "is_stale": false
     },
     {
      "id": "ses-xmlVkG9f12",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0060. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0060_run1795319114.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795319770000,
+     "ts": 1795319834000,
      "source": "session",
      "title": "QH0060: SCANFEED-SPRINT T20.3",
      "source_label": "ноут",
@@ -85,7 +85,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795319770000,
+     "as_of": 1795319834000,
      "is_stale": false
     },
     {
@@ -4757,7 +4757,7 @@
     {
      "id": "ses-7i8WtijC8P",
      "text": "ТЫ — менеджер 20-часового мандата (роль надзирателя, не исполнителя чужих задач).\nОбязательно загрузи через tool skill: progress и ready-to-deliver.\n\nПрочитай (не целиком огромные файлы, а точечно):\n1. ~/overnight/manager_status.json — здоровье экосистемы;\n2. `python3 ~/.config/opencode/scripts/progress.py --no-color --ascii` — сводка;\n3. свежие отчёты ~/overnight/cloud_tracks/*.md (только шапки и хвосты, самые новые 5–8);\n4. ~/overnight/manager_cycle_digest.md если есть — предыдущий цикл.\n\nСДЕЛАЙ:\n- Найди running-шаги старше 30 мин и все blocked. Для каждого живого, но тихого\n  шага сделай `python3 ~/.config/opencode/scripts/progress.py step work <T> <step> --note \"менеджер: проверка < что >\"`;\n  для блокера — `event <T> --text \"…\"` с причиной и владельцем. Не выдумывай гейты.\n- Проверь, работают ли все агенты/диалоги из статуса; если агент мёртв, а сервис\n  жив — зафиксируй причину в лог цикла, не перезапускай вручную (это делает watchdog).\n- Если нашёл дефект в доступной зоне — попытайся исправить; если нельзя — честный\n  OPEN с владельцем и готовым путём, не сваливай на пользователя.\n- Напиши КОРОТКИЙ отчёт ~/overnight/manager_cycle_digest.md (вердикт HEALTHY /\n  NEEDS_ATTENTION, найденное, действия, OPEN). Не перезаписывай чужие отчёты.\n\nЗАПРЕТ: data/, защищённые отчёты 64/71/103, платные модели, правка progress.json\nнапрямую (только CLI), вопросы пользователю, остановка шин/воркеров.\nНе спрашивай — действуй в доступной зоне и честно фиксируй OPEN.",
-     "ts": 1795319770000,
+     "ts": 1795319832000,
      "source": "session",
      "title": "Ночной цикл 20-часового мандата",
      "source_label": "ноут",
@@ -4776,7 +4776,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795319770000,
+     "as_of": 1795319832000,
      "is_stale": false
     },
     {
