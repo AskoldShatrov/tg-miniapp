@@ -1370,23 +1370,75 @@
       "startedAt": "2026-11-22T05:26:37+03:00",
       "updatedAt": "2026-11-22T05:33:56+03:00",
       "completedAt": "2026-11-22T05:33:56+03:00"
+    },
+    {
+      "task": "T27",
+      "id": "T27.1",
+      "title": "Разобрать причину преждевременного останова",
+      "status": "running",
+      "note": "advisor + unblocker: почему я счёл работу законченной",
+      "startedAt": "2026-11-22T09:22:42+03:00",
+      "updatedAt": "2026-11-22T09:22:42+03:00"
+    },
+    {
+      "task": "T27",
+      "id": "T27.2",
+      "title": "Найти следующий task через агентов и активные шаги",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "T27",
+      "id": "T27.3",
+      "title": "Выполнить выбранный task с гейтом",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-2",
+      "id": "AUD-2.1",
+      "title": "Заморозить SHA256/mtime и зафиксировать чек-лист",
+      "status": "running",
+      "note": "2026-11-22T09:22:34+03:00 SHA256=222a81567889237ba0463f5c977fdad39c7cda5670e7b0a5fbe100463c03ea48 SIZE=6498 MTIME_NS=179",
+      "startedAt": "2026-11-22T09:22:34+03:00",
+      "updatedAt": "2026-11-22T09:22:34+03:00"
+    },
+    {
+      "task": "AUD-2",
+      "id": "AUD-2.2",
+      "title": "Написать RED-тест на ложный PASS в ratio",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-2",
+      "id": "AUD-2.3",
+      "title": "Исправить ratio и прогнать GREEN",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-2",
+      "id": "AUD-2.4",
+      "title": "Свежий верификатор после финального mtime",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-2",
+      "id": "AUD-2.5",
+      "title": "Обновить APPLIED/HANDOFF и найти следующий дефект",
+      "status": "todo",
+      "note": ""
     }
   ],
   "active": [
-    {
-      "id": "QH0070",
-      "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
-      "source": "ноут",
-      "claimed_human": "09:15:18",
-      "age_min": 6,
-      "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
-    },
     {
       "id": "QH0022",
       "title": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.",
       "source": "ноут",
       "claimed_human": "09:14:49",
-      "age_min": 6,
+      "age_min": 8,
       "full": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех."
     },
     {
@@ -1394,7 +1446,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 186,
+      "age_min": 187,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1403,7 +1455,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 186,
+      "age_min": 187,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1412,16 +1464,16 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 186,
+      "age_min": 187,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
   ],
   "queues": {
     "ноут": {
-      "done": 918,
+      "done": 920,
       "failed": 407,
-      "doing": 2
+      "doing": 1
     },
     "ПК": {
       "done": 51,
@@ -1430,10 +1482,10 @@
       "todo": 35
     }
   },
-  "updatedAt": "2026-11-22T09:17:03+03:00",
-  "progress_updated_at": "2026-11-22T09:17:03+03:00",
-  "plan_age_hours": 0.1,
+  "updatedAt": "2026-11-22T09:22:42+03:00",
+  "progress_updated_at": "2026-11-22T09:22:42+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795328508,
-  "fetched_human": "2026-11-22 09:21:48 +0300"
+  "fetched_at": 1795328575,
+  "fetched_human": "2026-11-22 09:22:55 +0300"
 }

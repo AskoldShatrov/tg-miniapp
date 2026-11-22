@@ -985,5 +985,59 @@
         "status": "PASS"
       }
     ]
+  },
+  {
+    "id": "T27",
+    "name": "Не сдаваться: разбор останова и продолжение",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "T27.1",
+        "name": "Разобрать причину преждевременного останова",
+        "status": "OPEN"
+      },
+      {
+        "id": "T27.2",
+        "name": "Найти следующий task через агентов и активные шаги",
+        "status": "OPEN"
+      },
+      {
+        "id": "T27.3",
+        "name": "Выполнить выбранный task с гейтом",
+        "status": "OPEN"
+      }
+    ]
+  },
+  {
+    "id": "AUD-2",
+    "name": "RED→GREEN: честные статусы метрик honesty",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "AUD-2.1",
+        "name": "Заморозить SHA256/mtime и зафиксировать чек-лист",
+        "status": "OPEN"
+      },
+      {
+        "id": "AUD-2.2",
+        "name": "Написать RED-тест на ложный PASS в ratio",
+        "status": "OPEN"
+      },
+      {
+        "id": "AUD-2.3",
+        "name": "Исправить ratio и прогнать GREEN",
+        "status": "OPEN"
+      },
+      {
+        "id": "AUD-2.4",
+        "name": "Свежий верификатор после финального mtime",
+        "status": "OPEN"
+      },
+      {
+        "id": "AUD-2.5",
+        "name": "Обновить APPLIED/HANDOFF и найти следующий дефект",
+        "status": "OPEN"
+      }
+    ]
   }
 ]
