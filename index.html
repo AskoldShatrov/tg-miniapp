@@ -1812,20 +1812,49 @@ setInterval(refreshReplies, 5000);
   try { PMAN = Object.assign(PMAN, JSON.parse(localStorage.getItem(PM_KEY)||"{}")); } catch(e){}
   let pRange = "3", pMode = "group", pQuery = "";
   let pUser = "all", pSource = "all", pFrom = "", pTo = "";
-  // ЕДИНАЯ СТРОКА справочника пользователей. По логам inbox: 1869196044=Аскольд
-  // (подпись «Аскольд:» — :848, «просил Иван, прислал мне» — :826), 435824119=Иван
-  // («дай доступ Ивану тоже» — :909). Это гипотеза из логов, НЕ факт из конфига:
-  // если сопоставление неверно — поменяй местами значения в строке ниже.
-  // Аскольд (1869196044) — владелец OpenCode-сервера: у него есть ноут и ПК.
-  // Иван (435824119) и остальные — подключаемые гости без локальных машин.
-  const OWNER_ID = '1869196044';
-  const IS_OWNER = String(userID||'')===OWNER_ID;
+  // Роль НЕ вычисляется на клиенте из неподписанных tg.initDataUnsafe/userID.
+  // Источник истины — GET /whoami на process_api.py: там initData проверен HMAC.
+  // Пока ответ не получен — fail-closed: гость. Имён/токенов в разметке нет (R12).
+  const OWNER_ID = '1869196044';   // запасной служебный ID, НЕ источник роли
+  let IS_OWNER = false;
+  function roleApiBase(){
+    const q = new URLSearchParams(location.search).get("api");
+    if(q) return String(q).replace(/\/+$/, "");
+    return (LATEST_STATUS && LATEST_STATUS.process_api_url)
+      ? String(LATEST_STATUS.process_api_url).replace(/\/+$/, "") : "";
+  }
+  async function fetchServerRole(){
+    const base = roleApiBase();
+    const init = (typeof tg!=="undefined" && tg && tg.initData) ? tg.initData : "";
+    if(!base || !init) return;   // нет подписанных данных — остаёмся гостем
+    try{
+      const ctl=new AbortController();
+      const timer=setTimeout(()=>ctl.abort(),6000);
+      let data=null;
+      try{
+        const r=await fetch(base+"/whoami",{
+          method:"GET", headers:{"X-Telegram-Init-Data":init},
+          signal:ctl.signal, cache:"no-store"
+        });
+        if(r.ok) data=await r.json();
+      } finally { clearTimeout(timer); }
+      const owner = !!(data && data.role === "owner");
+      const changed = owner !== IS_OWNER;
+      IS_OWNER = owner;
+      if(changed){
+        if(typeof pBuildSegs === "function") pBuildSegs();
+        if(typeof renderPrompts === "function" && $("#pList")) renderPrompts();
+      }
+    }catch(e){ /* сеть/таймаут — fail-closed: гость */ }
+  }
+  fetchServerRole();
+  setInterval(fetchServerRole, 5000);
   const LOCAL_SOURCES = ['session','pc'];
   function pRoleLabel(uid,label){
     const base=String(label||"").replace(/\s*·\s*(владелец\/сервер|гость)\s*$/,"");
     return base ? base+(String(uid)===OWNER_ID?" · владелец/сервер":" · гость") : "";
   }
-  const P_USERS = {'1869196044':'Аскольд','435824119':'Иван'};
+  const P_USERS = {'1869196044':'владелец','435824119':'гость'};
   const P_SOURCES = {'telegram':'ТГ бот','session':'ноут','pc':'ПК'};
 
   const DAY = 86400000;
@@ -2295,6 +2324,7 @@ function renderLive(){
         :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
   }).join(""):
     '<div class="hint">Сейчас активных задач в очередях нет.</div>';
+  if(hidden) jobs.insertAdjacentHTML('beforeend','<div class=\"hint\">Автоген воркеров: '+hidden+' (скрыто)</div>');
 }
 
 /* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
