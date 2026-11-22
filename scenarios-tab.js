@@ -138,7 +138,11 @@
 
     function load() {
       S.loading = true; render();
-      var urls = [opts.url, opts.fallbackUrl || '/scenarios.json', './scenarios.json', '/tg-miniapp/scenarios.json']
+      var staticHost = /github\.io$/.test(location.hostname);
+      var ordered = staticHost
+        ? ['./scenarios.json', opts.fallbackUrl || '/scenarios.json', opts.url]
+        : [opts.url, './scenarios.json', opts.fallbackUrl || '/scenarios.json'];
+      var urls = ordered.concat(['/tg-miniapp/scenarios.json'])
         .filter(function (v, i, a) { return v && a.indexOf(v) === i; });
       var i = 0, lastErr = '';
       function step() {
