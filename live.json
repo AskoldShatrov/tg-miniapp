@@ -1570,29 +1570,29 @@
       "task": "SYS-1",
       "id": "SYS-1.1",
       "title": "Написать scout_next.py (3 источника, action queue)",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "scout_next.py: 3 источника, очередь 22 действий, exit 0"
     },
     {
       "task": "SYS-1",
       "id": "SYS-1.2",
       "title": "RED→GREEN тест скаута",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "RED manager-only=0 FAIL -> GREEN scout=2 PASS; SCOUT_EMPTY exit=2"
     },
     {
       "task": "SYS-1",
       "id": "SYS-1.3",
       "title": "Таймер + команда /next",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "scout-next.timer active 10 мин; команда /next; бот-команда OPEN (human-override + 7 активных run)"
     },
     {
       "task": "SYS-1",
       "id": "SYS-1.4",
       "title": "Свежий верификатор с SHA/mtime",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "свежий верификатор с SHA256/mtime после финального изменения артефактов"
     },
     {
       "task": "SYS-1",
@@ -1608,7 +1608,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "09:45:03",
-      "age_min": 5,
+      "age_min": 6,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1616,7 +1616,7 @@
       "title": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.",
       "source": "ноут",
       "claimed_human": "09:14:49",
-      "age_min": 36,
+      "age_min": 37,
       "full": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех."
     },
     {
@@ -1624,7 +1624,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 215,
+      "age_min": 216,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1633,7 +1633,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 215,
+      "age_min": 216,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1642,7 +1642,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 215,
+      "age_min": 216,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
@@ -1664,6 +1664,6 @@
   "progress_updated_at": "2026-11-22T09:49:13+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795330258,
-  "fetched_human": "2026-11-22 09:50:58 +0300"
+  "fetched_at": 1795330318,
+  "fetched_human": "2026-11-22 09:51:58 +0300"
 }
