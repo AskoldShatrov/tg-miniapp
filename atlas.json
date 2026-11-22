@@ -7,7 +7,7 @@
     "goals.json"
   ],
   "counts": {
-    "nodes": 514,
+    "nodes": 523,
     "edges": 63,
     "by_kind": {
       "author": 2,
@@ -16,7 +16,7 @@
       "verdict": 14,
       "hypothesis": 4,
       "want": 122,
-      "goal": 197
+      "goal": 206
     }
   },
   "grids": [
@@ -5627,7 +5627,7 @@
       "id": "goal:gmwr6a08un1bz",
       "kind": "goal",
       "text": "МАНДАТ 20ч: непрерывный менеджмент агентов и диалогов",
-      "answer_short": "22.11 09:32–17:32 MSK — 8-часовой АКТИВНЫЙ спринт поверх автономного 20-ч контура. Исправлено: вердикт надзирателя больше не HEALTHY при необработанных blocked (RED→GREEN 5/5, свежий верификатор 5 PASS); CFG-1.4 закрыт отрицательным результатом; агенты unblocker/advisor дали разбор и приоритет. В работе: P0-3 гейт-артефакт по замороженным REAL zip (p0_3_gate_20261122_092938). STOP по команде пользователя или MANAGER_STOP.",
+      "answer_short": "10:05–10:45 MSK: закрыты критические прокси-дыры — compute_verdict требует структурированный resolution с evidence_path (RED→GREEN 3/3); draft_gate проверяет существование/sha/mtime артефакта (self-test 8/8, RED воспроизведён); check_declarative_delivery и check_critic_honesty больше не используют пустой git-вывод и захардкоженный счётчик (10/10 и 5/5). hidden_audit_gate selftest PASS. P0-3 артефакт OPEN/FAIL (ECE 0.3177 >= 0.05). Корневой движок перезапущен PID 2331452. OPEN: engine.py занят живым владельцем, патч одного инстанса номинирован до 10:45; находка про work_until_done_loop.py неподтверждена.",
       "status": "open",
       "confidence": "auto",
       "refs": [
@@ -6403,6 +6403,105 @@
       "refs": [
         "goals.json"
       ]
+    },
+    {
+      "id": "goal:gmwrip14fg3n0",
+      "kind": "goal",
+      "text": "H-R2 отрицательные контроли: confidence сканфида неидентифицируем",
+      "answer_short": "22.11 10:28. Предрегистрация до прогона, 4 контроля (label shuffle 3 сида, decoy, placebo, side-leak OPEN); sub-0.05 ECE воспроизводится на перемешанных метках в 1000/1000 реплик при AUC≈0.5. PASS по P0-3 не ставится, порог ECE<0.05 не двигался. Отчёт ~/overnight/hypothesis/H-R2-negctrl-20261122.md. Дальше: H-R4 — новый GT уровня 2 из живой записи демо.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrjek39j9fy",
+      "kind": "goal",
+      "text": "Скрытый аудит: 7 дефектов движка эволюции (D1–D7)",
+      "answer_short": "Владелец файла engine.py — сессия ses_dfe112e47ffetqWPt36mFFHi7e (wait_for_lock STALL после 3 поллов). D1 ложный STOP по квоте — уже исправлено: free-модели пропускают проверку, таймаут=quota_open, RED→GREEN exit 0. Осталось: D2 устаревший RUNNING без процесса/heartbeat; D3 потеря task_cycles/fail_streak/scout_history из-за мутаций вне transact; D4 STOP-файл по exists без владельца; D5 коллизия STOP-HOOK 0007.json; D6 битый state обнуляет дедлайн; D7 verify_cmd через shell=True из tasks.jsonl. Готовый патч/описание: /tmp/opencode/audit/recheck.md и отчёт слепого аудита. Следующий шаг: после снятия лока внести исправления D2–D7 владельцу или подписка через wait_for_lock.py, пороги не двигать.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrk540d7kto",
+      "kind": "goal",
+      "text": "C04-2196 — T4 REAL60: гейт ECE<0.15 честно не закрыт",
+      "answer_short": "Отчёт ~/overnight/cloud_tracks/C04-2196.md. Замороженные локальные артефакты: n=769 REAL кадров, fp=854, precision 0.4385 [0.4138,0.4636], recall 0.2217 [0.2073,0.2369] Wilson95. ECE dot_quality: raw 0.3479, structural 0.3177, Platt 0.5899 — FAIL; isotonic 0.0128 вырожден и проигрывает constant baseline 0.0038, AUC≈0.50. Вердикт FAIL/OPEN. Зонд pc-bridge 6c3ff817db82 TIMEOUT (240с, queued). data/ и 52/73/103 не тронуты.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrk5bgw4hbe",
+      "kind": "goal",
+      "text": "C04-2132 — T4 REAL n=769/FP=854, честная калибровка FAIL 0.3177",
+      "answer_short": "Отчёт ~/overnight/cloud_tracks/C04-2132.md. Пороги n>=60/FP>0 PASS (REAL-агрегат 769 кадров, tp=667 fp=854). Wilson precision 0.4385 [0.4138,0.4636], recall 0.2217 [0.2073,0.2369]. ECE holdout: raw 0.3479, structural 0.3177, Platt 0.5899, isotonic 0.0128 вырожден (constant 0.0038 лучше) — гейт ECE<0.15 честно НЕ взят, FAIL. Зонд pc-bridge 2e3e1a9f2d8e завис в queued 300 с — OPEN. Канонические 0.05/0.15, data/ и 52/73/103 не менялись.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrklkfr1ejc",
+      "kind": "goal",
+      "text": "C04-2100: T4 OPEN — числовой гейт PASS 3/3, H1 FAIL, зонд OPEN",
+      "answer_short": "Отчёт ~/overnight/cloud_tracks/C04-2100.md; prereg 14 порогов/8 SHA PASS до и после; n=2460 FP=1115 ECE raw 0.1565→cal 0.0001; H1 дельта -0.0001 CI [-0.0001,+0.0001] p=0.241 BH 0.454 FAIL; H2 AUC 0.5014 CI [0.4982,0.5046] PASS; pc-bridge bdb0859de188 300с queued → OPEN; защищённые 52/73/103 и data/ не тронуты.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrkqurdp38n",
+      "kind": "goal",
+      "text": "Ложные тревоги ⚠️: гонка tool.error → success в process_questions",
+      "answer_short": "22.11 11:2x: две тревоги (ses_dfdd6552… H-R4, ses_dfdb8483… NO-STOP-c3) пришли, хотя обе сессии по API outcome=succeeded. Воркер шлёт alert в момент tool.error, проверки process_questions.py:430–452 смотрят только текущее состояние. Лечение: отложенная перепроверка ~2 мин (grace) перед отправкой. Файл занят ses_dfdf3a4f8ffe9nUXpU4ykqvy2v — не трогал.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrkqvd672sv",
+      "kind": "goal",
+      "text": "C04-2116: СКАНФИД T4 OPEN — n=60 как граница гейта, числовой гейт 3/3, полный closure OPEN",
+      "answer_short": "22.11.2026 ~11:01–11:27 MSK, hy4-flash-free (0% allowance). Prereg C04-2116 ДО прогона: 11 порогов/7 SHA, createdAt 08:01:07Z, сид 486331648, check PASS 7/7. Гейт 3/3 на локальных REAL-корпусах: C06-422 n=17920 FP=8276 (ECE OPEN — нет score), S01I∪S01P n=2460 FP=1115 ECE_cal 0.0001, QH0075/76 n=769 FP=854 ECE isotonic 0.0128. НОВОЕ: 60 подвыборок n=60 — H1 Wilson полуширина precision 0.1212 >= 0.08, p=0, BH q=0 — выжила; H2 59/60=0.9833 проходят, но 1 подвыборка ECE 0.1759 > 0.15 (отказ гейта); H3 IQR 0.0507 >= 0.05 FAIL по точке, q=0.9795 не доказано. Зонд pc-bridge e5287acccc9f TIMEOUT_WAITING new_runs=[], очередь 28→30, 3 чужих task ~1620 с — живой OBS-REAL OPEN. 52/73/103 SHA совпали, data/ 3135→3135 неизменна. Отчёт ~/overnight/cloud_tracks/C04-2116.md, скрипт C04-2116-build.py. Статус намеренно active: в доске нет поля user_id — done по R01 не выставляется.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrkxxt3ve8m",
+      "kind": "goal",
+      "text": "Казино-медиа и сканфид-автопилот — доделать интеграцию",
+      "answer_short": "Созданы casino-media.js (node -c PASS), quotes.json (30), tracks.json (9), install_tracks.py, INTEGRATION-casino-media.md; scanfeed_autopilot pid 2604087 4/4 PASS. Следующий шаг: вклеить сниппет в index.html (владение у ses_dfdb3bcf3) и положить mp3 в media/tracks/",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
+    },
+    {
+      "id": "goal:gmwrlk3bmajlj",
+      "kind": "goal",
+      "text": "Комплексный анализ канала «Студия Игор» и перенос идей в казино",
+      "answer_short": "27 видео за полгода + полная база 57; субтитры через yt-dlp+cookies (youtube-transcript-api заблокирован); 21 GitHub-репозиторий; иерархия идей; карта переноса в мини-ап казино без правки файлов под локом чужих сессий.",
+      "status": "open",
+      "confidence": "auto",
+      "refs": [
+        "goals.json"
+      ]
     }
   ],
   "edges": [
@@ -6785,7 +6884,7 @@
       "note": "47 248 / 207"
     }
   ],
-  "updatedAt": "2026-11-22T10:24:59+0300",
+  "updatedAt": "2026-11-22T12:01:42+0300",
   "trees": [
     {
       "id": "authors",
@@ -6793,20 +6892,20 @@
       "roots": [
         {
           "id": "author:teamo",
-          "title": "Автор: teamo",
+          "title": "Автор: Кирюха Тяма",
           "kind": "author",
           "status": "open",
           "answer": "",
-          "full": "teamo\n",
+          "full": "Кирюха Тяма (ID: teamo)\nteamo\n",
           "ref": "author:teamo",
           "children": [
             {
               "id": "video:92bP6FYpbYM",
-              "title": "Видео: 92bP6FYpbYM",
+              "title": "Видео: Весь Dust 2 в одном ролике — гайд от 4500 эло",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "92bP6FYpbYM\n",
+              "full": "Весь Dust 2 в одном ролике — гайд от 4500 эло (ID: 92bP6FYpbYM)\n92bP6FYpbYM\n",
               "ref": "video:92bP6FYpbYM",
               "children": [
                 {
@@ -6883,11 +6982,11 @@
             },
             {
               "id": "video:4XNSl3Iw0YA",
-              "title": "Видео: 4XNSl3Iw0YA",
+              "title": "Видео: 3 уровня Ancient — гайд от 4500 ELO",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "4XNSl3Iw0YA\n",
+              "full": "3 уровня Ancient — гайд от 4500 ELO (ID: 4XNSl3Iw0YA)\n4XNSl3Iw0YA\n",
               "ref": "video:4XNSl3Iw0YA",
               "children": [
                 {
@@ -6934,11 +7033,11 @@
             },
             {
               "id": "video:3nyLNEMoZHE",
-              "title": "Видео: 3nyLNEMoZHE",
+              "title": "Видео: Советы по поднятию эло — гайд от 4500 эло",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "3nyLNEMoZHE\n",
+              "full": "Советы по поднятию эло — гайд от 4500 эло (ID: 3nyLNEMoZHE)\n3nyLNEMoZHE\n",
               "ref": "video:3nyLNEMoZHE",
               "children": [
                 {
@@ -6985,11 +7084,11 @@
             },
             {
               "id": "video:oUne9WN4YrM",
-              "title": "Видео: oUne9WN4YrM",
+              "title": "Видео: Всё про стрельбу и мувмент в КС2",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "oUne9WN4YrM\n",
+              "full": "Всё про стрельбу и мувмент в КС2 (ID: oUne9WN4YrM)\noUne9WN4YrM\n",
               "ref": "video:oUne9WN4YrM",
               "children": [
                 {
@@ -7066,11 +7165,11 @@
             },
             {
               "id": "video:56Lmai3Juvo",
-              "title": "Видео: 56Lmai3Juvo",
+              "title": "Видео: Как стать лучшим аимером в КС2?",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "56Lmai3Juvo\n",
+              "full": "Как стать лучшим аимером в КС2? (ID: 56Lmai3Juvo)\n56Lmai3Juvo\n",
               "ref": "video:56Lmai3Juvo",
               "children": [
                 {
@@ -7129,20 +7228,20 @@
         },
         {
           "id": "author:143_Aim_Club",
-          "title": "Автор: 143 Aim Club",
+          "title": "Автор: 143 аим клаб",
           "kind": "author",
           "status": "open",
           "answer": "",
-          "full": "143 Aim Club\n",
+          "full": "143 аим клаб (ID: 143_Aim_Club)\n143 Aim Club\n",
           "ref": "author:143_Aim_Club",
           "children": [
             {
               "id": "video:KN76VmZSWAY",
-              "title": "Видео: KN76VmZSWAY",
+              "title": "Видео: Не нужен быстрый реакшн-тайм",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "KN76VmZSWAY\n",
+              "full": "Не нужен быстрый реакшн-тайм (ID: KN76VmZSWAY)\nKN76VmZSWAY\n",
               "ref": "video:KN76VmZSWAY",
               "children": [
                 {
@@ -7199,11 +7298,11 @@
             },
             {
               "id": "video:RJ5j0_54zHY",
-              "title": "Видео: RJ5j0_54zHY",
+              "title": "Видео: Полезен ли Ковак и аимлаб?",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "RJ5j0_54zHY\n",
+              "full": "Полезен ли Ковак и аимлаб? (ID: RJ5j0_54zHY)\nRJ5j0_54zHY\n",
               "ref": "video:RJ5j0_54zHY",
               "children": [
                 {
@@ -7260,11 +7359,11 @@
             },
             {
               "id": "video:35AhYJHC9DU",
-              "title": "Видео: 35AhYJHC9DU",
+              "title": "Видео: Какой аимтренер лучший в 2026 году?",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "35AhYJHC9DU\n",
+              "full": "Какой аимтренер лучший в 2026 году? (ID: 35AhYJHC9DU)\n35AhYJHC9DU\n",
               "ref": "video:35AhYJHC9DU",
               "children": [
                 {
@@ -7281,11 +7380,11 @@
             },
             {
               "id": "video:OLL0zIxi1Uw",
-              "title": "Видео: OLL0zIxi1Uw",
+              "title": "Видео: Руководство по настройке Aimbeast",
               "kind": "video",
               "status": "open",
               "answer": "",
-              "full": "OLL0zIxi1Uw\n",
+              "full": "Руководство по настройке Aimbeast (ID: OLL0zIxi1Uw)\nOLL0zIxi1Uw\n",
               "ref": "video:OLL0zIxi1Uw",
               "children": [
                 {
@@ -7320,11 +7419,11 @@
       "roots": [
         {
           "id": "video:92bP6FYpbYM:part1",
-          "title": "Видео: 92bP6FYpbYM · часть 1",
+          "title": "Видео: Весь Dust 2 в одном ролике — гайд от 4500 эло · часть 1",
           "kind": "video",
           "status": "open",
           "answer": "",
-          "full": "92bP6FYpbYM\n\nЧасть 1 из 2.",
+          "full": "Весь Dust 2 в одном ролике — гайд от 4500 эло (ID: 92bP6FYpbYM)\n92bP6FYpbYM\n\nЧасть 1 из 2.",
           "ref": "video:92bP6FYpbYM",
           "children": [
             {
@@ -7445,59 +7544,59 @@
         },
         {
           "id": "video:92bP6FYpbYM:part2",
-          "title": "Видео: 92bP6FYpbYM · часть 2",
+          "title": "Видео: Весь Dust 2 в одном ролике — гайд от 4500 эло · часть 2",
           "kind": "video",
           "status": "open",
           "answer": "",
-          "full": "92bP6FYpbYM\n\nЧасть 2 из 2.",
+          "full": "Весь Dust 2 в одном ролике — гайд от 4500 эло (ID: 92bP6FYpbYM)\n92bP6FYpbYM\n\nЧасть 2 из 2.",
           "ref": "video:92bP6FYpbYM",
           "children": [
             {
               "id": "author:teamo",
-              "title": "Автор: teamo",
+              "title": "Автор: Кирюха Тяма",
               "kind": "author",
               "status": "open",
               "answer": "",
-              "full": "teamo\n",
+              "full": "Кирюха Тяма (ID: teamo)\nteamo\n",
               "ref": "author:teamo",
               "children": [
                 {
                   "id": "video:4XNSl3Iw0YA",
-                  "title": "Видео: 4XNSl3Iw0YA",
+                  "title": "Видео: 3 уровня Ancient — гайд от 4500 ELO",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "4XNSl3Iw0YA\n",
+                  "full": "3 уровня Ancient — гайд от 4500 ELO (ID: 4XNSl3Iw0YA)\n4XNSl3Iw0YA\n",
                   "ref": "video:4XNSl3Iw0YA",
                   "children": []
                 },
                 {
                   "id": "video:3nyLNEMoZHE",
-                  "title": "Видео: 3nyLNEMoZHE",
+                  "title": "Видео: Советы по поднятию эло — гайд от 4500 эло",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "3nyLNEMoZHE\n",
+                  "full": "Советы по поднятию эло — гайд от 4500 эло (ID: 3nyLNEMoZHE)\n3nyLNEMoZHE\n",
                   "ref": "video:3nyLNEMoZHE",
                   "children": []
                 },
                 {
                   "id": "video:oUne9WN4YrM",
-                  "title": "Видео: oUne9WN4YrM",
+                  "title": "Видео: Всё про стрельбу и мувмент в КС2",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "oUne9WN4YrM\n",
+                  "full": "Всё про стрельбу и мувмент в КС2 (ID: oUne9WN4YrM)\noUne9WN4YrM\n",
                   "ref": "video:oUne9WN4YrM",
                   "children": []
                 },
                 {
                   "id": "video:56Lmai3Juvo",
-                  "title": "Видео: 56Lmai3Juvo",
+                  "title": "Видео: Как стать лучшим аимером в КС2?",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "56Lmai3Juvo\n",
+                  "full": "Как стать лучшим аимером в КС2? (ID: 56Lmai3Juvo)\n56Lmai3Juvo\n",
                   "ref": "video:56Lmai3Juvo",
                   "children": []
                 }
@@ -7507,11 +7606,11 @@
         },
         {
           "id": "video:KN76VmZSWAY",
-          "title": "Видео: KN76VmZSWAY",
+          "title": "Видео: Не нужен быстрый реакшн-тайм",
           "kind": "video",
           "status": "open",
           "answer": "",
-          "full": "KN76VmZSWAY\n",
+          "full": "Не нужен быстрый реакшн-тайм (ID: KN76VmZSWAY)\nKN76VmZSWAY\n",
           "ref": "video:KN76VmZSWAY",
           "children": [
             {
@@ -7577,40 +7676,40 @@
             },
             {
               "id": "author:143_Aim_Club",
-              "title": "Автор: 143 Aim Club",
+              "title": "Автор: 143 аим клаб",
               "kind": "author",
               "status": "open",
               "answer": "",
-              "full": "143 Aim Club\n",
+              "full": "143 аим клаб (ID: 143_Aim_Club)\n143 Aim Club\n",
               "ref": "author:143_Aim_Club",
               "children": [
                 {
                   "id": "video:RJ5j0_54zHY",
-                  "title": "Видео: RJ5j0_54zHY",
+                  "title": "Видео: Полезен ли Ковак и аимлаб?",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "RJ5j0_54zHY\n",
+                  "full": "Полезен ли Ковак и аимлаб? (ID: RJ5j0_54zHY)\nRJ5j0_54zHY\n",
                   "ref": "video:RJ5j0_54zHY",
                   "children": []
                 },
                 {
                   "id": "video:35AhYJHC9DU",
-                  "title": "Видео: 35AhYJHC9DU",
+                  "title": "Видео: Какой аимтренер лучший в 2026 году?",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "35AhYJHC9DU\n",
+                  "full": "Какой аимтренер лучший в 2026 году? (ID: 35AhYJHC9DU)\n35AhYJHC9DU\n",
                   "ref": "video:35AhYJHC9DU",
                   "children": []
                 },
                 {
                   "id": "video:OLL0zIxi1Uw",
-                  "title": "Видео: OLL0zIxi1Uw",
+                  "title": "Видео: Руководство по настройке Aimbeast",
                   "kind": "video",
                   "status": "open",
                   "answer": "",
-                  "full": "OLL0zIxi1Uw\n",
+                  "full": "Руководство по настройке Aimbeast (ID: OLL0zIxi1Uw)\nOLL0zIxi1Uw\n",
                   "ref": "video:OLL0zIxi1Uw",
                   "children": []
                 }
@@ -9101,7 +9200,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 1 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 1 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9182,7 +9281,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 2 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 2 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9263,7 +9362,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 3 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 3 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9344,7 +9443,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 4 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 4 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9425,7 +9524,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 5 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 5 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9506,7 +9605,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 6 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 6 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9587,7 +9686,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 7 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 7 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9679,7 +9778,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 8 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 8 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9760,7 +9859,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 9 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 9 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9841,7 +9940,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 10 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 10 из 30.",
               "ref": "",
               "children": [
                 {
@@ -9922,7 +10021,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 11 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 11 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10003,7 +10102,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 12 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 12 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10084,7 +10183,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 13 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 13 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10165,7 +10264,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 14 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 14 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10257,7 +10356,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 15 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 15 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10338,7 +10437,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 16 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 16 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10419,7 +10518,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 17 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 17 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10500,7 +10599,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 18 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 18 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10581,7 +10680,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 19 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 19 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10662,7 +10761,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 20 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 20 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10743,7 +10842,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 21 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 21 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10835,7 +10934,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 22 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 22 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10916,7 +11015,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 23 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 23 из 30.",
               "ref": "",
               "children": [
                 {
@@ -10924,8 +11023,8 @@
                   "title": "Цель: МАНДАТ 20ч: непрерывный менеджмент агентов и диалогов",
                   "kind": "goal",
                   "status": "open",
-                  "answer": "22.11 09:32–17:32 MSK — 8-часовой АКТИВНЫЙ спринт поверх автономного 20-ч контура. Исправлено: вердикт надзирателя больше не HEALTHY при необработанных blocked (RED→GREEN 5/5, свежий верификатор 5 PASS); CFG-1.4 закрыт отрицательным результатом; агенты unblocker/advisor дали разбор и приоритет. В работе: P0-3 гейт-артефакт по замороженным REAL zip (p0_3_gate_20261122_092938). STOP по команде пользователя или MANAGER_STOP.",
-                  "full": "МАНДАТ 20ч: непрерывный менеджмент агентов и диалогов\n22.11 09:32–17:32 MSK — 8-часовой АКТИВНЫЙ спринт поверх автономного 20-ч контура. Исправлено: вердикт надзирателя больше не HEALTHY при необработанных blocked (RED→GREEN 5/5, свежий верификатор 5 PASS); CFG-1.4 закрыт отрицательным результатом; агенты unblocker/advisor дали разбор и приоритет. В работе: P0-3 гейт-артефакт по замороженным REAL zip (p0_3_gate_20261122_092938). STOP по команде пользователя или MANAGER_STOP.",
+                  "answer": "10:05–10:45 MSK: закрыты критические прокси-дыры — compute_verdict требует структурированный resolution с evidence_path (RED→GREEN 3/3); draft_gate проверяет существование/sha/mtime артефакта (self-test 8/8, RED воспроизведён); check_declarative_delivery и check_critic_honesty больше не используют пустой git-вывод и захардкоженный счётчик (10/10 и 5/5). hidden_audit_gate selftest PASS. P0-3 артефакт OPEN/FAIL (ECE 0.3177 >= 0.05). Корневой движок перезапущен PID 2331452. OPEN: engine.py занят живым владельцем, патч одного инстанса номинирован до 10:45; находка про work_until_done_loop.py неподтверждена.",
+                  "full": "МАНДАТ 20ч: непрерывный менеджмент агентов и диалогов\n10:05–10:45 MSK: закрыты критические прокси-дыры — compute_verdict требует структурированный resolution с evidence_path (RED→GREEN 3/3); draft_gate проверяет существование/sha/mtime артефакта (self-test 8/8, RED воспроизведён); check_declarative_delivery и check_critic_honesty больше не используют пустой git-вывод и захардкоженный счётчик (10/10 и 5/5). hidden_audit_gate selftest PASS. P0-3 артефакт OPEN/FAIL (ECE 0.3177 >= 0.05). Корневой движок перезапущен PID 2331452. OPEN: engine.py занят живым владельцем, патч одного инстанса номинирован до 10:45; находка про work_until_done_loop.py неподтверждена.",
                   "ref": "goal:gmwr6a08un1bz",
                   "children": []
                 },
@@ -10997,7 +11096,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 24 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 24 из 30.",
               "ref": "",
               "children": [
                 {
@@ -11078,7 +11177,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 25 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 25 из 30.",
               "ref": "",
               "children": [
                 {
@@ -11159,7 +11258,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 26 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 26 из 30.",
               "ref": "",
               "children": [
                 {
@@ -11240,7 +11339,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 27 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 27 из 30.",
               "ref": "",
               "children": [
                 {
@@ -11321,7 +11420,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 28 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 28 из 30.",
               "ref": "",
               "children": [
                 {
@@ -11413,7 +11512,7 @@
               "kind": "group",
               "status": "open",
               "answer": "",
-              "full": "Статус: open\nВетка из 197 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 29 из 29.",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 29 из 30.",
               "ref": "",
               "children": [
                 {
@@ -11424,6 +11523,107 @@
                   "answer": "Прогон 22.11 06:53Z: n=15667 (R01ap 14399 + S01AR 162), вложенная 5-fold CV по match_id, NO_LEAKAGE, prereg 10/10 SHA до/после. ECE raw 0.2905 → balanced 0.4858, Brier 0.098558 → 0.249981, AUC 0.5016 → 0.4216. Формальный гейт ECE<0.15 при n>=60 PASS только коллапсом к base rate; научная трактовка FAIL. Отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md, прежний S02ap архивирован. Оговорки: fp=0 по построению в R01ap, observer_side-конфаунд в S01AR, нет живого OBS. Статус active: в доске нет поля user_id — done по R01 не выставляется.",
                   "full": "S02aq — dot_quality под cyan на новых кадрах R01ap + S01AR\nПрогон 22.11 06:53Z: n=15667 (R01ap 14399 + S01AR 162), вложенная 5-fold CV по match_id, NO_LEAKAGE, prereg 10/10 SHA до/после. ECE raw 0.2905 → balanced 0.4858, Brier 0.098558 → 0.249981, AUC 0.5016 → 0.4216. Формальный гейт ECE<0.15 при n>=60 PASS только коллапсом к base rate; научная трактовка FAIL. Отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md, прежний S02ap архивирован. Оговорки: fp=0 по построению в R01ap, observer_side-конфаунд в S01AR, нет живого OBS. Статус active: в доске нет поля user_id — done по R01 не выставляется.",
                   "ref": "goal:gmwrhnv7jnpc3",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrip14fg3n0",
+                  "title": "Цель: H-R2 отрицательные контроли: confidence сканфида неидентифицируем",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "22.11 10:28. Предрегистрация до прогона, 4 контроля (label shuffle 3 сида, decoy, placebo, side-leak OPEN); sub-0.05 ECE воспроизводится на перемешанных метках в 1000/1000 реплик при AUC≈0.5. PASS по P0-3 не ставится, порог ECE<0.05 не двигался. Отчёт ~/overnight/hypothesis/H-R2-negctrl-20261122.md. Дальше: H-R4 — новый GT уровня 2 из живой записи демо.",
+                  "full": "H-R2 отрицательные контроли: confidence сканфида неидентифицируем\n22.11 10:28. Предрегистрация до прогона, 4 контроля (label shuffle 3 сида, decoy, placebo, side-leak OPEN); sub-0.05 ECE воспроизводится на перемешанных метках в 1000/1000 реплик при AUC≈0.5. PASS по P0-3 не ставится, порог ECE<0.05 не двигался. Отчёт ~/overnight/hypothesis/H-R2-negctrl-20261122.md. Дальше: H-R4 — новый GT уровня 2 из живой записи демо.",
+                  "ref": "goal:gmwrip14fg3n0",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrjek39j9fy",
+                  "title": "Цель: Скрытый аудит: 7 дефектов движка эволюции (D1–D7)",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "Владелец файла engine.py — сессия ses_dfe112e47ffetqWPt36mFFHi7e (wait_for_lock STALL после 3 поллов). D1 ложный STOP по квоте — уже исправлено: free-модели пропускают проверку, таймаут=quota_open, RED→GREEN exit 0. Осталось: D2 устаревший RUNNING без процесса/heartbeat; D3 потеря task_cycles/fail_streak/scout_history из-за мутаций вне transact; D4 STOP-файл по exists без владельца; D5 коллизия STOP-HOOK 0007.json; D6 битый state обнуляет дедлайн; D7 verify_cmd через shell=True из tasks.jsonl. Готовый патч/описание: /tmp/opencode/audit/recheck.md и отчёт слепого аудита. Следующий шаг: после снятия лока внести исправления D2–D7 владельцу или подписка через wait_for_lock.py, пороги не двигать.",
+                  "full": "Скрытый аудит: 7 дефектов движка эволюции (D1–D7)\nВладелец файла engine.py — сессия ses_dfe112e47ffetqWPt36mFFHi7e (wait_for_lock STALL после 3 поллов). D1 ложный STOP по квоте — уже исправлено: free-модели пропускают проверку, таймаут=quota_open, RED→GREEN exit 0. Осталось: D2 устаревший RUNNING без процесса/heartbeat; D3 потеря task_cycles/fail_streak/scout_history из-за мутаций вне transact; D4 STOP-файл по exists без владельца; D5 коллизия STOP-HOOK 0007.json; D6 битый state обнуляет дедлайн; D7 verify_cmd через shell=True из tasks.jsonl. Готовый патч/описание: /tmp/opencode/audit/recheck.md и отчёт слепого аудита. Следующий шаг: после снятия лока внести исправления D2–D7 владельцу или подписка через wait_for_lock.py, пороги не двигать.",
+                  "ref": "goal:gmwrjek39j9fy",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrk540d7kto",
+                  "title": "Цель: C04-2196 — T4 REAL60: гейт ECE<0.15 честно не закрыт",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "Отчёт ~/overnight/cloud_tracks/C04-2196.md. Замороженные локальные артефакты: n=769 REAL кадров, fp=854, precision 0.4385 [0.4138,0.4636], recall 0.2217 [0.2073,0.2369] Wilson95. ECE dot_quality: raw 0.3479, structural 0.3177, Platt 0.5899 — FAIL; isotonic 0.0128 вырожден и проигрывает constant baseline 0.0038, AUC≈0.50. Вердикт FAIL/OPEN. Зонд pc-bridge 6c3ff817db82 TIMEOUT (240с, queued). data/ и 52/73/103 не тронуты.",
+                  "full": "C04-2196 — T4 REAL60: гейт ECE<0.15 честно не закрыт\nОтчёт ~/overnight/cloud_tracks/C04-2196.md. Замороженные локальные артефакты: n=769 REAL кадров, fp=854, precision 0.4385 [0.4138,0.4636], recall 0.2217 [0.2073,0.2369] Wilson95. ECE dot_quality: raw 0.3479, structural 0.3177, Platt 0.5899 — FAIL; isotonic 0.0128 вырожден и проигрывает constant baseline 0.0038, AUC≈0.50. Вердикт FAIL/OPEN. Зонд pc-bridge 6c3ff817db82 TIMEOUT (240с, queued). data/ и 52/73/103 не тронуты.",
+                  "ref": "goal:gmwrk540d7kto",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrk5bgw4hbe",
+                  "title": "Цель: C04-2132 — T4 REAL n=769/FP=854, честная калибровка FAIL 0.3177",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "Отчёт ~/overnight/cloud_tracks/C04-2132.md. Пороги n>=60/FP>0 PASS (REAL-агрегат 769 кадров, tp=667 fp=854). Wilson precision 0.4385 [0.4138,0.4636], recall 0.2217 [0.2073,0.2369]. ECE holdout: raw 0.3479, structural 0.3177, Platt 0.5899, isotonic 0.0128 вырожден (constant 0.0038 лучше) — гейт ECE<0.15 честно НЕ взят, FAIL. Зонд pc-bridge 2e3e1a9f2d8e завис в queued 300 с — OPEN. Канонические 0.05/0.15, data/ и 52/73/103 не менялись.",
+                  "full": "C04-2132 — T4 REAL n=769/FP=854, честная калибровка FAIL 0.3177\nОтчёт ~/overnight/cloud_tracks/C04-2132.md. Пороги n>=60/FP>0 PASS (REAL-агрегат 769 кадров, tp=667 fp=854). Wilson precision 0.4385 [0.4138,0.4636], recall 0.2217 [0.2073,0.2369]. ECE holdout: raw 0.3479, structural 0.3177, Platt 0.5899, isotonic 0.0128 вырожден (constant 0.0038 лучше) — гейт ECE<0.15 честно НЕ взят, FAIL. Зонд pc-bridge 2e3e1a9f2d8e завис в queued 300 с — OPEN. Канонические 0.05/0.15, data/ и 52/73/103 не менялись.",
+                  "ref": "goal:gmwrk5bgw4hbe",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrklkfr1ejc",
+                  "title": "Цель: C04-2100: T4 OPEN — числовой гейт PASS 3/3, H1 FAIL, зонд OPEN",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "Отчёт ~/overnight/cloud_tracks/C04-2100.md; prereg 14 порогов/8 SHA PASS до и после; n=2460 FP=1115 ECE raw 0.1565→cal 0.0001; H1 дельта -0.0001 CI [-0.0001,+0.0001] p=0.241 BH 0.454 FAIL; H2 AUC 0.5014 CI [0.4982,0.5046] PASS; pc-bridge bdb0859de188 300с queued → OPEN; защищённые 52/73/103 и data/ не тронуты.",
+                  "full": "C04-2100: T4 OPEN — числовой гейт PASS 3/3, H1 FAIL, зонд OPEN\nОтчёт ~/overnight/cloud_tracks/C04-2100.md; prereg 14 порогов/8 SHA PASS до и после; n=2460 FP=1115 ECE raw 0.1565→cal 0.0001; H1 дельта -0.0001 CI [-0.0001,+0.0001] p=0.241 BH 0.454 FAIL; H2 AUC 0.5014 CI [0.4982,0.5046] PASS; pc-bridge bdb0859de188 300с queued → OPEN; защищённые 52/73/103 и data/ не тронуты.",
+                  "ref": "goal:gmwrklkfr1ejc",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrkqurdp38n",
+                  "title": "Цель: Ложные тревоги ⚠️: гонка tool.error → success в process_questions",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "22.11 11:2x: две тревоги (ses_dfdd6552… H-R4, ses_dfdb8483… NO-STOP-c3) пришли, хотя обе сессии по API outcome=succeeded. Воркер шлёт alert в момент tool.error, проверки process_questions.py:430–452 смотрят только текущее состояние. Лечение: отложенная перепроверка ~2 мин (grace) перед отправкой. Файл занят ses_dfdf3a4f8ffe9nUXpU4ykqvy2v — не трогал.",
+                  "full": "Ложные тревоги ⚠️: гонка tool.error → success в process_questions\n22.11 11:2x: две тревоги (ses_dfdd6552… H-R4, ses_dfdb8483… NO-STOP-c3) пришли, хотя обе сессии по API outcome=succeeded. Воркер шлёт alert в момент tool.error, проверки process_questions.py:430–452 смотрят только текущее состояние. Лечение: отложенная перепроверка ~2 мин (grace) перед отправкой. Файл занят ses_dfdf3a4f8ffe9nUXpU4ykqvy2v — не трогал.",
+                  "ref": "goal:gmwrkqurdp38n",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "kind:goal:status:open:part30",
+              "title": "Статус: open · часть 30",
+              "kind": "group",
+              "status": "open",
+              "answer": "",
+              "full": "Статус: open\nВетка из 206 узлов. Раскройте её и нажмите «?» на нужном узле, чтобы прочитать полный текст и написать запрос.\nЧасть 30 из 30.",
+              "ref": "",
+              "children": [
+                {
+                  "id": "goal:gmwrkqvd672sv",
+                  "title": "Цель: C04-2116: СКАНФИД T4 OPEN — n=60 как граница гейта, числовой гейт 3/3, полный closure OPEN",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "22.11.2026 ~11:01–11:27 MSK, hy4-flash-free (0% allowance). Prereg C04-2116 ДО прогона: 11 порогов/7 SHA, createdAt 08:01:07Z, сид 486331648, check PASS 7/7. Гейт 3/3 на локальных REAL-корпусах: C06-422 n=17920 FP=8276 (ECE OPEN — нет score), S01I∪S01P n=2460 FP=1115 ECE_cal 0.0001, QH0075/76 n=769 FP=854 ECE isotonic 0.0128. НОВОЕ: 60 подвыборок n=60 — H1 Wilson полуширина precision 0.1212 >= 0.08, p=0, BH q=0 — выжила; H2 59/60=0.9833 проходят, но 1 подвыборка ECE 0.1759 > 0.15 (отказ гейта); H3 IQR 0.0507 >= 0.05 FAIL по точке, q=0.9795 не доказано. Зонд pc-bridge e5287acccc9f TIMEOUT_WAITING new_runs=[], очередь 28→30, 3 чужих task ~1620 с — живой OBS-REAL OPEN. 52/73/103 SHA совпали, data/ 3135→3135 неизменна. Отчёт ~/overnight/cloud_tracks/C04-2116.md, скрипт C04-2116-build.py. Статус намеренно active: в доске нет поля user_id — done по R01 не выставляется.",
+                  "full": "C04-2116: СКАНФИД T4 OPEN — n=60 как граница гейта, числовой гейт 3/3, полный closure OPEN\n22.11.2026 ~11:01–11:27 MSK, hy4-flash-free (0% allowance). Prereg C04-2116 ДО прогона: 11 порогов/7 SHA, createdAt 08:01:07Z, сид 486331648, check PASS 7/7. Гейт 3/3 на локальных REAL-корпусах: C06-422 n=17920 FP=8276 (ECE OPEN — нет score), S01I∪S01P n=2460 FP=1115 ECE_cal 0.0001, QH0075/76 n=769 FP=854 ECE isotonic 0.0128. НОВОЕ: 60 подвыборок n=60 — H1 Wilson полуширина precision 0.1212 >= 0.08, p=0, BH q=0 — выжила; H2 59/60=0.9833 проходят, но 1 подвыборка ECE 0.1759 > 0.15 (отказ гейта); H3 IQR 0.0507 >= 0.05 FAIL по точке, q=0.9795 не доказано. Зонд pc-bridge e5287acccc9f TIMEOUT_WAITING new_runs=[], очередь 28→30, 3 чужих task ~1620 с — живой OBS-REAL OPEN. 52/73/103 SHA совпали, data/ 3135→3135 неизменна. Отчёт ~/overnight/cloud_tracks/C04-2116.md, скрипт C04-2116-build.py. Статус намеренно active: в доске нет поля user_id — done по R01 не выставляется.",
+                  "ref": "goal:gmwrkqvd672sv",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrkxxt3ve8m",
+                  "title": "Цель: Казино-медиа и сканфид-автопилот — доделать интеграцию",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "Созданы casino-media.js (node -c PASS), quotes.json (30), tracks.json (9), install_tracks.py, INTEGRATION-casino-media.md; scanfeed_autopilot pid 2604087 4/4 PASS. Следующий шаг: вклеить сниппет в index.html (владение у ses_dfdb3bcf3) и положить mp3 в media/tracks/",
+                  "full": "Казино-медиа и сканфид-автопилот — доделать интеграцию\nСозданы casino-media.js (node -c PASS), quotes.json (30), tracks.json (9), install_tracks.py, INTEGRATION-casino-media.md; scanfeed_autopilot pid 2604087 4/4 PASS. Следующий шаг: вклеить сниппет в index.html (владение у ses_dfdb3bcf3) и положить mp3 в media/tracks/",
+                  "ref": "goal:gmwrkxxt3ve8m",
+                  "children": []
+                },
+                {
+                  "id": "goal:gmwrlk3bmajlj",
+                  "title": "Цель: Комплексный анализ канала «Студия Игор» и перенос идей в казино",
+                  "kind": "goal",
+                  "status": "open",
+                  "answer": "27 видео за полгода + полная база 57; субтитры через yt-dlp+cookies (youtube-transcript-api заблокирован); 21 GitHub-репозиторий; иерархия идей; карта переноса в мини-ап казино без правки файлов под локом чужих сессий.",
+                  "full": "Комплексный анализ канала «Студия Игор» и перенос идей в казино\n27 видео за полгода + полная база 57; субтитры через yt-dlp+cookies (youtube-transcript-api заблокирован); 21 GitHub-репозиторий; иерархия идей; карта переноса в мини-ап казино без правки файлов под локом чужих сессий.",
+                  "ref": "goal:gmwrlk3bmajlj",
                   "children": []
                 }
               ]
