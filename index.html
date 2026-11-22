@@ -2103,6 +2103,16 @@ setInterval(refreshReplies, 5000);
     pReload.classList.add("spin"); refreshPrompts().then(()=>pReload.classList.remove("spin"));
   });
   refreshPrompts();
+  // Данные обновляются раз в минуту на сервере — подтягиваем их и в открытой
+  // апе, но только на вкладке «Промпты» и не во время ввода текста.
+  setInterval(()=>{
+    if(document.hidden) return;
+    const ae=document.activeElement;
+    if(ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) return;
+    const tab=$(".tab.active");
+    if(!tab || tab.dataset.tab!=="prompts") return;
+    refreshPrompts();
+  }, 60000);
 
 /* ---------- атлас: деревья одного графа ---------- */
 let ATLAS=null, ATLAS_TREE=null;
