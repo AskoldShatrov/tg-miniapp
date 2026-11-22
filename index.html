@@ -2360,8 +2360,7 @@ function renderLive(){
       return !!ms&&(now-ms)/3600000>24;
     };
     const active=(d.tasks||[]).filter(s=>s.status!=="done");
-    const shownJobs=(d.active||[]).filter(j=>!j.autogen);
-    steps.innerHTML=shownJobs.length?shownJobs.map(s=>{
+    steps.innerHTML=active.length?active.map(s=>{
       const archived=stepIsArchived(s);
       return `<div class="live-row"${archived?' style="opacity:.6"':''}><span class="lid">${esc(s.id)}</span>
         <span class="ltitle">${esc(s.title)}${s.note?' — '+esc(s.note):''}</span>
