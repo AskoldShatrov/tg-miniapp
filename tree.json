@@ -1039,5 +1039,32 @@
         "status": "OPEN"
       }
     ]
+  },
+  {
+    "id": "CFG-5",
+    "name": "Перепроверка CFG-2/3 по протоколу work-until-done",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "CFG-5.1",
+        "name": "Заморозить источники и зафиксировать SHA256",
+        "status": "OPEN"
+      },
+      {
+        "id": "CFG-5.2",
+        "name": "RED: старый код падает на freestyle-paid и на счётчике todo",
+        "status": "OPEN"
+      },
+      {
+        "id": "CFG-5.3",
+        "name": "GREEN: новый код проходит те же тесты",
+        "status": "OPEN"
+      },
+      {
+        "id": "CFG-5.4",
+        "name": "Свежий верификатор с SHA/mtime в шапке",
+        "status": "OPEN"
+      }
+    ]
   }
 ]
