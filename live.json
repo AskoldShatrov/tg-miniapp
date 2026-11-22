@@ -1715,9 +1715,9 @@
       "id": "T29.1",
       "title": "S1 Данные: 9 -> >=60 кадров, >3 карты, SHA заморожены",
       "status": "running",
-      "note": "движок longrun-evolution запущен, задача SF-S1-DATA, PID 2247221",
+      "note": "артефакт верифицирован, VERDICT=OPEN, работа продолжается в движке",
       "startedAt": "2026-11-22T10:24:42+03:00",
-      "updatedAt": "2026-11-22T10:24:42+03:00"
+      "updatedAt": "2026-11-22T10:54:03+03:00"
     },
     {
       "task": "T29",
@@ -1768,24 +1768,30 @@
       "task": "SYS-3",
       "id": "SYS-3.2",
       "title": "Слепой проход с канарейкой",
-      "status": "running",
-      "note": "",
+      "status": "done",
+      "note": "слепой ревизор без легенды: 2 PASS / 8 FAIL / 4 OPEN; канарейка CANARY-AFDB0D замечена через PREREG_P0-2/P0-3; отчёт /tm",
       "startedAt": "2026-11-22T10:38:27+03:00",
-      "updatedAt": "2026-11-22T10:38:27+03:00"
+      "updatedAt": "2026-11-22T10:54:11+03:00",
+      "completedAt": "2026-11-22T10:54:11+03:00"
     },
     {
       "task": "SYS-3",
       "id": "SYS-3.3",
       "title": "Гейт отчёта и исправление дефектов",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "HIDDEN-AUDIT-GATE VALID; 8 дефектов исправлены в декларативном файле: изменчивые числа → ссылки, дубли и repr убраны, gr",
+      "startedAt": "2026-11-22T10:54:11+03:00",
+      "updatedAt": "2026-11-22T10:54:11+03:00",
+      "completedAt": "2026-11-22T10:54:11+03:00"
     },
     {
       "task": "SYS-3",
       "id": "SYS-3.4",
       "title": "Повторная проверка после исправления",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "",
+      "startedAt": "2026-11-22T10:54:11+03:00",
+      "updatedAt": "2026-11-22T10:54:11+03:00"
     }
   ],
   "active": [
@@ -1794,7 +1800,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "10:45:24",
-      "age_min": 7,
+      "age_min": 8,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1802,7 +1808,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 277,
+      "age_min": 278,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1811,7 +1817,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 277,
+      "age_min": 278,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1820,7 +1826,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 277,
+      "age_min": 278,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
@@ -1838,10 +1844,10 @@
       "todo": 35
     }
   },
-  "updatedAt": "2026-11-22T10:44:26+03:00",
-  "progress_updated_at": "2026-11-22T10:44:26+03:00",
-  "plan_age_hours": 0.1,
+  "updatedAt": "2026-11-22T10:54:11+03:00",
+  "progress_updated_at": "2026-11-22T10:54:11+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795334003,
-  "fetched_human": "2026-11-22 10:53:23 +0300"
+  "fetched_at": 1795334062,
+  "fetched_human": "2026-11-22 10:54:22 +0300"
 }
