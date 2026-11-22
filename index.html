@@ -301,6 +301,13 @@
   .grid-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
   .grid-tab{font:700 10px/1 var(--fm);padding:7px 9px;border-radius:8px;border:1px solid var(--surface1);background:var(--surface0);color:var(--subtext0);cursor:pointer}
   .grid-tab.active{border-color:var(--blue);color:var(--text);background:rgba(137,180,250,.12)}
+  .a-detail{margin-top:10px;border:1px solid var(--surface1);border-radius:9px;background:var(--surface0);padding:10px}
+  .a-detail[hidden]{display:none}
+  .a-meta{font:600 9.5px/1.4 var(--fm);color:var(--overlay1);margin-bottom:6px}
+  .a-full{white-space:pre-wrap;word-break:break-word;font:500 11px/1.55 var(--ff);color:var(--text);max-height:46vh;overflow:auto}
+  .a-query{display:flex;gap:6px;margin-top:10px}
+  .a-query input{flex:1;min-width:0;border:1px solid var(--surface1);border-radius:8px;background:var(--surface1);color:var(--text);padding:9px;font:500 12px/1.3 var(--ff)}
+  .a-query button{border:0;border-radius:8px;padding:9px 12px;cursor:pointer;background:var(--blue);color:var(--crust);font:700 11px/1 var(--fm)}
   .acard{padding:9px 11px;border:1px solid var(--surface1);border-radius:9px;background:var(--surface0);margin-bottom:6px}
   .acard .atitle{font:600 12px/1.35 var(--ff);color:var(--text)}
   .acard .ameta{font:600 10px/1.4 var(--fm);color:var(--overlay1);margin-top:4px}
@@ -831,6 +838,7 @@
       <div class="grid-tabs" id="atlasGrids"></div>
       <div class="live-strip"><span>узлов <b id="atlasCount">…</b></span><span id="atlasTime" style="margin-left:auto;color:var(--overlay0)">…</span></div>
       <div id="atlasCards"></div>
+      <div id="atlasDetail" class="a-detail" hidden></div>
     </section>
 
     <section class="screen" id="screen-questions">
@@ -2324,6 +2332,8 @@ function renderLive(){
         :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
   }).join(""):
     '<div class="hint">Сейчас активных задач в очередях нет.</div>';
+  }).join(""):
+    '<div class="hint">Сейчас активных задач в очереди нет.</div>');
   if(hidden) jobs.insertAdjacentHTML('beforeend','<div class=\'hint\'>Автоген воркеров: '+hidden+' (скрыто)</div>');
 }
 
