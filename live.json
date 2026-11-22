@@ -1659,6 +1659,55 @@
       "note": "ECE/Brier OPEN: scores исчезли с corpus; отчёт записан",
       "updatedAt": "2026-11-22T10:03:36+03:00",
       "completedAt": "2026-11-22T10:03:36+03:00"
+    },
+    {
+      "task": "SYS-2",
+      "id": "SYS-2.1",
+      "title": "Движок: 7/7 тестов и живой цикл",
+      "status": "done",
+      "note": "PID 2192670 жив, cycles=3, state mtime age 1с; python3 -m unittest discover -s tests → 7/7 OK",
+      "startedAt": "2026-11-22T10:16:20+03:00",
+      "updatedAt": "2026-11-22T10:16:20+03:00",
+      "completedAt": "2026-11-22T10:16:20+03:00"
+    },
+    {
+      "task": "SYS-2",
+      "id": "SYS-2.2",
+      "title": "Критик: защита от «всё хорошо» exit 1/0",
+      "status": "done",
+      "note": "BAD exit=1, GOOD exit=0, GOOD+«всё хорошо» → INVALID с запрещённой фразой",
+      "startedAt": "2026-11-22T10:16:20+03:00",
+      "updatedAt": "2026-11-22T10:16:21+03:00",
+      "completedAt": "2026-11-22T10:16:21+03:00"
+    },
+    {
+      "task": "SYS-2",
+      "id": "SYS-2.3",
+      "title": "OPEN ≠ STOP: тест 03 и код 2 скаута",
+      "status": "done",
+      "note": "test_03_scout_open_does_not_stop_engine: SCOUT OPEN → запрос later; whistle empty queue code 2",
+      "startedAt": "2026-11-22T10:16:20+03:00",
+      "updatedAt": "2026-11-22T10:16:21+03:00",
+      "completedAt": "2026-11-22T10:16:21+03:00"
+    },
+    {
+      "task": "SYS-2",
+      "id": "SYS-2.4",
+      "title": "Доставка декларативного файла в Pages 404→200",
+      "status": "done",
+      "note": "404 до публикации → commit 0da9db9/023e40a → live https://askoldshatrov.github.io/tg-miniapp/antistop-status.json HTTP 2",
+      "startedAt": "2026-11-22T10:16:20+03:00",
+      "updatedAt": "2026-11-22T10:16:21+03:00",
+      "completedAt": "2026-11-22T10:16:21+03:00"
+    },
+    {
+      "task": "SYS-2",
+      "id": "SYS-2.5",
+      "title": "Свежий верификатор",
+      "status": "running",
+      "note": "",
+      "startedAt": "2026-11-22T10:16:21+03:00",
+      "updatedAt": "2026-11-22T10:16:21+03:00"
     }
   ],
   "active": [
@@ -1667,7 +1716,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "10:15:02",
-      "age_min": 0,
+      "age_min": 1,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1675,7 +1724,7 @@
       "title": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.",
       "source": "ноут",
       "claimed_human": "10:14:59",
-      "age_min": 0,
+      "age_min": 1,
       "full": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех."
     },
     {
@@ -1683,7 +1732,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 239,
+      "age_min": 240,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1692,7 +1741,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 239,
+      "age_min": 240,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1701,7 +1750,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 239,
+      "age_min": 240,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
@@ -1719,10 +1768,10 @@
       "todo": 35
     }
   },
-  "updatedAt": "2026-11-22T10:07:16+03:00",
-  "progress_updated_at": "2026-11-22T10:07:16+03:00",
-  "plan_age_hours": 0.1,
+  "updatedAt": "2026-11-22T10:16:21+03:00",
+  "progress_updated_at": "2026-11-22T10:16:21+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795331729,
-  "fetched_human": "2026-11-22 10:15:29 +0300"
+  "fetched_at": 1795331789,
+  "fetched_human": "2026-11-22 10:16:29 +0300"
 }
