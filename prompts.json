@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T13:09:46+00:00",
-  "generated_human": "22.11 13:09 UTC",
-  "as_of": 1795352986595,
+  "generated": "2026-11-22T13:10:44+00:00",
+  "generated_human": "22.11 13:10 UTC",
+  "as_of": 1795353044539,
   "stale_days": 1,
   "count": 959,
   "groups": 9,
@@ -39,9 +39,35 @@
    ],
    "prompts": [
     {
+     "id": "ses-WrtjrVL14J",
+     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S2-NAMES-c16.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795353041000,
+     "source": "session",
+     "title": "lree-SF-S2-NAMES-c16",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795353041000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-Splw5DsCZD",
+     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c42.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795353039000,
+     "source": "session",
+     "title": "lree-SF-S2-NAMES-c42",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795353039000,
+     "is_stale": false
+    },
+    {
      "id": "ses-rQYwGXqt6R",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0097. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0097_run1795352408.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795352984000,
+     "ts": 1795353035000,
      "source": "session",
      "title": "QH0097: калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -60,26 +86,13 @@
      "answer_text_id": "a3094f3fa4e306ec",
      "answer_source": "replies.json",
      "delivered_ts": 1795346608724,
-     "as_of": 1795352984000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-Splw5DsCZD",
-     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c42.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795352983000,
-     "source": "session",
-     "title": "lree-SF-S2-NAMES-c42",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795352983000,
+     "as_of": 1795353035000,
      "is_stale": false
     },
     {
      "id": "ses-2weXK2Y8DN",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795352982000,
+     "ts": 1795353035000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -98,20 +111,7 @@
      "answer_text_id": "a3094f3fa4e306ec",
      "answer_source": "replies.json",
      "delivered_ts": 1795346608724,
-     "as_of": 1795352982000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-WrtjrVL14J",
-     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S2-NAMES-c16.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795352977000,
-     "source": "session",
-     "title": "lree-SF-S2-NAMES-c16",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795352977000,
+     "as_of": 1795353035000,
      "is_stale": false
     },
     {
