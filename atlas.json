@@ -6752,7 +6752,7 @@
       "note": "47 248 / 207"
     }
   ],
-  "updatedAt": "2026-11-22T09:30:04+0300",
+  "updatedAt": "2026-11-22T09:31:04+0300",
   "trees": [
     {
       "id": "authors",
@@ -12783,6 +12783,128 @@
       "id": "signals",
       "title": "Гипотезы: сигнал / шум / прорыв",
       "roots": [
+        {
+          "id": "sig:signal",
+          "title": "сигнал · подтверждено",
+          "kind": "group",
+          "status": "open",
+          "answer": "",
+          "ref": "",
+          "children": [
+            {
+              "id": "verdict:C18",
+              "title": "Вердикт: подтверждено (прокси)",
+              "kind": "verdict",
+              "status": "signal",
+              "answer": "подтверждено (прокси)",
+              "ref": "verdict:C18",
+              "children": [
+                {
+                  "id": "ref:verdict:C18:0",
+                  "title": "n: 47 248 дуэли / 6 676 выстрелов",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                },
+                {
+                  "id": "ref:verdict:C18:1",
+                  "title": "ci: β=−0.177 [−0.196, −0.157]",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "verdict:C16",
+              "title": "Вердикт: подтверждено (часть «движение вредит»)",
+              "kind": "verdict",
+              "status": "signal",
+              "answer": "подтверждено (часть «движение вредит»)",
+              "ref": "verdict:C16",
+              "children": [
+                {
+                  "id": "ref:verdict:C16:0",
+                  "title": "n: 5 852 дуэли / 6 676 выстрелов",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                },
+                {
+                  "id": "ref:verdict:C16:1",
+                  "title": "ci: β(peek)=−0.00526 [−0.00627, −0.00425]",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "verdict:C27",
+              "title": "Вердикт: подтверждено направление (не ранг 1)",
+              "kind": "verdict",
+              "status": "signal",
+              "answer": "подтверждено направление (не ранг 1)",
+              "ref": "verdict:C27",
+              "children": [
+                {
+                  "id": "ref:verdict:C27:0",
+                  "title": "n: 207 дуэлей donk; 125 игроков с n≥120",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                },
+                {
+                  "id": "ref:verdict:C27:1",
+                  "title": "ci: WR [0.686, 0.803]; HS [0.531, 0.663]",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "verdict:C2",
+              "title": "Вердикт: подтверждено (как привычка)",
+              "kind": "verdict",
+              "status": "signal",
+              "answer": "подтверждено (как привычка)",
+              "ref": "verdict:C2",
+              "children": [
+                {
+                  "id": "ref:verdict:C2:0",
+                  "title": "n: 937 раундов × 3 момента",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                },
+                {
+                  "id": "ref:verdict:C2:1",
+                  "title": "ci: +10 с [0.0029, 0.0139]",
+                  "kind": "ref",
+                  "status": "",
+                  "answer": "",
+                  "ref": "",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
         {
           "id": "sig:noise",
           "title": "шум · опровергнуто",
