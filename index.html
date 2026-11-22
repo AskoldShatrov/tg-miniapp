@@ -2207,17 +2207,24 @@ function renderLive(){
       '<div class="hint">Все шаги закрыты.</div>';
   }
   const jobs=$("#liveJobs");
-  if(jobs) jobs.innerHTML=(d.active||[]).length?(d.active||[]).map(j=>{
-    const min=Number(j.age_min)||0;
-    const stuck=min>=30;
-    return `<div class="live-row"><span class="lid">${esc(j.id)}</span>
-      <span class="ltitle">${esc(j.title)}</span>
-      <span class="lsrc">${esc(j.source)}</span>
-      ${stuck
-        ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
-        :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
-  }).join(""):
-    '<div class="hint">Сейчас активных задач в очередях нет.</div>';
+  if(jobs){
+    // Автоген-репликации воркеров ("НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ", "ДОВЕСТИ ЦЕЛЬ")
+    // — не задачи пользователя: скрываем из «Хода», но показываем счётчик.
+    const allJobs=d.active||[];
+    const shownJobs=allJobs.filter(j=>!j.autogen);
+    const hidden=allJobs.length-shownJobs.length;
+    jobs.innerHTML=(shownJobs.length?shownJobs.map(j=>{
+      const min=Number(j.age_min)||0;
+      const stuck=min>=30;
+      return `<div class="live-row"><span class="lid">${esc(j.id)}</span>
+        <span class="ltitle">${esc(j.title)}</span>
+        <span class="lsrc">${esc(j.source)}</span>
+        ${stuck
+          ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
+          :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
+    }).join(""):'<div class="hint">Сейчас активных задач в очередях нет.</div>')
+      +(hidden?`<div class="hint">Автоген воркеров: ${hidden} (скрыто)</div>`:"");
+  }
 }
 
 /* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
