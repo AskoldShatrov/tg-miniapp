@@ -1527,35 +1527,40 @@
       "task": "AUD-3",
       "id": "AUD-3.2",
       "title": "diff_gate F-01..F-04",
-      "status": "running",
-      "note": "F-01..F-04 RED→GREEN",
+      "status": "done",
+      "note": "F-01..F-04 RED 4 fail -> GREEN 36/36",
       "startedAt": "2026-11-22T09:31:10+03:00",
-      "updatedAt": "2026-11-22T09:31:10+03:00"
+      "updatedAt": "2026-11-22T09:36:17+03:00",
+      "completedAt": "2026-11-22T09:36:17+03:00"
     },
     {
       "task": "AUD-3",
       "id": "AUD-3.3",
       "title": "morning F-05/F-06 + trace_writer/cluster F-07..F-09",
-      "status": "running",
-      "note": "F-05..F-09 RED→GREEN",
+      "status": "done",
+      "note": "F-05/F-06 morning 6/6; F-07..F-09 cluster 16/16",
       "startedAt": "2026-11-22T09:31:10+03:00",
-      "updatedAt": "2026-11-22T09:31:10+03:00"
+      "updatedAt": "2026-11-22T09:36:17+03:00",
+      "completedAt": "2026-11-22T09:36:17+03:00"
     },
     {
       "task": "AUD-3",
       "id": "AUD-3.4",
       "title": "referee_journal F-10/F-11",
-      "status": "running",
-      "note": "F-10/F-11 RED→GREEN",
+      "status": "done",
+      "note": "F-10/F-11 referee RED 2 fail+3 error -> GREEN 17/17",
       "startedAt": "2026-11-22T09:31:10+03:00",
-      "updatedAt": "2026-11-22T09:31:10+03:00"
+      "updatedAt": "2026-11-22T09:36:17+03:00",
+      "completedAt": "2026-11-22T09:36:17+03:00"
     },
     {
       "task": "AUD-3",
       "id": "AUD-3.5",
       "title": "Свежий верификатор и доставка",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "свежий верификатор с SHA256/mtime",
+      "startedAt": "2026-11-22T09:36:18+03:00",
+      "updatedAt": "2026-11-22T09:36:18+03:00"
     }
   ],
   "active": [
@@ -1564,7 +1569,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "09:30:00",
-      "age_min": 5,
+      "age_min": 6,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1572,7 +1577,7 @@
       "title": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.",
       "source": "ноут",
       "claimed_human": "09:14:49",
-      "age_min": 20,
+      "age_min": 21,
       "full": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех."
     },
     {
@@ -1580,7 +1585,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 199,
+      "age_min": 200,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1589,7 +1594,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 199,
+      "age_min": 200,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1598,7 +1603,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 199,
+      "age_min": 200,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
@@ -1616,10 +1621,10 @@
       "todo": 35
     }
   },
-  "updatedAt": "2026-11-22T09:34:15+03:00",
-  "progress_updated_at": "2026-11-22T09:34:15+03:00",
+  "updatedAt": "2026-11-22T09:36:18+03:00",
+  "progress_updated_at": "2026-11-22T09:36:18+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795329321,
-  "fetched_human": "2026-11-22 09:35:21 +0300"
+  "fetched_at": 1795329388,
+  "fetched_human": "2026-11-22 09:36:28 +0300"
 }
