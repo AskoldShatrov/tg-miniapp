@@ -2471,21 +2471,25 @@ function renderQuestions(){
     const extra=normalizeCan(q.can).filter(a=>a!=="answer");   // ответ идёт через sendData — не трогаем
     const opts=(q.options&&q.options.length?q.options
       :(String(q.id||"").startsWith("per_")?["yes","no"]:["Ответить"]));
+    const scope=(q.resources&&q.resources.length)?q.resources:[];
     return `
     <div class="qcard" style="margin-bottom:10px">
-      <div class="qtop"><span class="chip question" title="ID: ${esc(q.id)}">${esc(questionKind(q))}</span>${QUESTIONS_FROM_API?'<span class="src-api">(живой API)</span>':''}</div>
+      <div class="qtop"><span class="chip question" title="ID: ${esc(q.id)}">${esc(questionKind(q))}</span>${QUESTIONS_FROM_API?'<span class="src-api">живой API</span>':''}</div>
       <div class="qtitle">${esc(q.title)}</div>
+      ${q.node_title?`<div class="qctx">${esc(q.node_title)}</div>`:""}
       <div class="qbody">${esc(q.text)}</div>
-      ${q.why?`<div class="qmeta"><span class="tag">${esc(q.why)}</span></div>`:""}
+      ${scope.length?`<div class="qscope">${scope.map(r=>`<span title="${esc(r)}">${esc(r)}</span>`).join("")}</div>`
+        :(q.detail?`<div class="qscope"><span>${esc(q.detail)}</span></div>`:"")}
+      ${q.why?`<div class="qwhy"><b>Почему ждём.</b> ${esc(q.why)}</div>`:""}
       <div class="actions">${opts.map(o=>
         `<button class="btn btn-primary qanswer" data-qid="${esc(q.id)}" data-node="${esc(q.node)}" data-answer="${esc(o)}">${esc(humanOption(o))}</button>`
       ).join("")}
       ${extra.map(a=>`<button class="btn btn-ghost qaction" data-node="${esc(q.node)}" data-act="${esc(a)}">${esc(actionLabel(a))}</button>`).join("")}</div>
       <div class="qfree-row">
         <input class="qfree" type="text" data-qid="${esc(q.id)}" data-node="${esc(q.node)}"
-          placeholder="Напиши ответ или уточнение агенту…" value="${esc(QDRAFTS[q.id]||"")}">
+          placeholder="Свой ответ агенту…" value="${esc(QDRAFTS[q.id]||"")}">
         <button class="btn btn-primary qsend" data-qid="${esc(q.id)}" data-node="${esc(q.node)}">Ответить</button>
-        <button class="btn btn-ghost qask" data-qid="${esc(q.id)}" data-node="${esc(q.node)}">Спросить агенту</button>
+        <button class="btn btn-ghost qask" data-qid="${esc(q.id)}" data-node="${esc(q.node)}">Уточнить</button>
       </div>
     </div>`;
   }).join(""):'<div class="p-empty">Ожидающих вопросов нет.</div>';
