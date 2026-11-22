@@ -459,8 +459,8 @@
       "id": "P0-1.2",
       "title": "Получить allplayers>0 через spectator/GOTV",
       "status": "todo",
-      "note": "КАННИЧЕСКАЯ ЗАДАЧА allplayers>0 (объединены T20.1/T20.2/T21.8). Блок: нет локального матча. GSI activity=menu, ALLPLAYER",
-      "updatedAt": "2026-11-22T04:57:00+03:00",
+      "note": "Оставлено todo: QH0001 (22.11 04:50) — гейт G1 FAIL, 0/72 опроса в двух прогонах, best_ap=0, в G1_gsi.json нет allplayer",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-19T21:17:12+03:00"
     },
     {
@@ -571,11 +571,11 @@
       "task": "T13",
       "id": "T13.1",
       "title": "Найти REAL-кадры с fp>0 в готовых данных",
-      "status": "todo",
-      "note": "Открыто повторно 22.11: REAL-кадры с fp>0 в готовых данных не найдены, n=20 fp=0",
+      "status": "done",
+      "note": "Закрыто по свежему отчёту: QH0008 (22.11 04:19) на готовом захвате realgt_06 из runtime/tmp-checkpoint (gsi.jsonl есть н",
       "startedAt": "2026-11-19T20:37:27+03:00",
-      "updatedAt": "2026-11-22T03:32:26+03:00",
-      "completedAt": "2026-11-19T21:46:22+03:00"
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T13",
@@ -896,21 +896,25 @@
       "id": "T20.3",
       "title": "G2: REAL-набор n>=60 с FP>0, честная калибровка ECE<0.15",
       "status": "todo",
-      "note": ""
+      "note": "Числовой гейт n>=60/FP>0/ECE<0.15 численно пройден (S01AN 22.11 00:29; QH0008 04:19: n=90, FP=98, ECE 0.1312), но 'честн",
+      "updatedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T20",
       "id": "T20.4",
       "title": "G3: один рабочий HUD (деньги/бай/AWP) без Concurrent-окон",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "QH0004 (22.11 04:27) — G3 PASS 6/6: FINAL_ELECTRON_MAIN=1, BROWSER_OVERLAYS=0, ровно 1 HUD, OCR 6/6; свежие артефакты ~/",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T20",
       "id": "T20.5",
       "title": "G4: end-to-end сканфид на живом кадре с источником оценок",
       "status": "todo",
-      "note": ""
+      "note": "QH0005 (22.11 04:05) — гейт G4 FAIL: SCANFEED-G4-result.json и скриншот отсутствуют, gate_checks()=false, кадр G1/G1b не",
+      "updatedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T20",
@@ -925,50 +929,63 @@
       "task": "T21",
       "id": "T21.1",
       "title": "scanfeed: cyan-детектор C01 (recall>0.50, FP<0.10)",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "C01-1889 (22.11 04:51) — гейт recall>0.50 при FP<0.10, n>=100: recall 0.7858 [0.7564,0.8126], FP 0/210 [0,0.0180], prere",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.2",
       "title": "scanfeed: confidence C02 (n>=60, FP>0, ECE<0.15)",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "QH0008 (22.11 04:19) — гейт манифеста n>=60/FP>0/ECE<0.15 PASS: REAL n=90, FP=98, ECE 0.1312, SYNTHETIC отдельно, честны",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.3",
       "title": "scanfeed: один HUD O2 (ELECTRON_MAIN=1)",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "QH0004 (22.11 04:27): FINAL_ELECTRON_MAIN=1, FINAL_BROWSER_OVERLAYS=0, ровно одна панель, свежий G3_hud.png + G3_proof.j",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.4",
       "title": "turngame: зоны T1c/FDR q=0.05",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "QH0009 (22.11 04:14) — предрегистрированный гейт PASS: 7 карт/320 демо, нижняя граница CI>0 на 23 ячейках, BH FDR q=0.05",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.5",
       "title": "zone-hierarchy: тепловые карты 7 карт",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "QH0010 (22.11 04:15) — 4/4 гейта: покрытие 7/7 карт, дедуп 673 уникальных / 0 дублей, n указано, 7 PNG + manifest (gener",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.6",
       "title": "cs2-transcribe: map pool 2026 + инвентарь",
       "status": "todo",
-      "note": ""
+      "note": "Инвентарь и покрытие есть (N17-pc-demo-corpus.md 19.11: 57 демо/15.34 ГБ; C08-1288 22.11 00:53: 219 демо/65.77 ГБ, 7/7, ",
+      "updatedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.7",
       "title": "cs2-voice-ideas: признаки с n и CI",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "Дубль закрытого направления: N13-voice-ideas-consolidated.md — сводная таблица 88 гипотез/28 паттернов с n и CI по 2641 ",
+      "updatedAt": "2026-11-22T04:58:37+03:00",
+      "completedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
@@ -984,14 +1001,16 @@
       "id": "T21.9",
       "title": "windows-pc: cleanup-план D: без удаления",
       "status": "todo",
-      "note": ""
+      "note": "disk-free-D-2026-11-21.md: обследование D: (22 037 файлов), кандидаты и пути названы, удалений 0; но вердикт самого отчё",
+      "updatedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T21",
       "id": "T21.10",
       "title": "end-to-end: сканфид на живом кадре",
       "status": "todo",
-      "note": ""
+      "note": "QH0005 (22.11 04:05) — G4 FAIL: SCANFEED-G4-result.json отсутствует, валидация на живом кадре не проведена (N10: GT с др",
+      "updatedAt": "2026-11-22T04:58:37+03:00"
     },
     {
       "task": "T22",
@@ -1264,7 +1283,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 93,
+      "age_min": 94,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "autogen": true
     },
@@ -1291,10 +1310,10 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T04:57:54+03:00",
-  "progress_updated_at": "2026-11-22T04:57:54+03:00",
+  "updatedAt": "2026-11-22T04:58:37+03:00",
+  "progress_updated_at": "2026-11-22T04:58:37+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795312715,
-  "fetched_human": "2026-11-22 04:58:35 +0300"
+  "fetched_at": 1795312728,
+  "fetched_human": "2026-11-22 04:58:48 +0300"
 }
