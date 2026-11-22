@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "built_at": "2026-11-21T23:10:26+00:00",
+  "built_at": "2026-11-22T01:30:55+00:00",
   "views": [
     {
       "id": "atlas-tree",
       "title": "Атлас: сущности по видам (63 связей не визуализируются)",
       "type": "tree",
       "source": "atlas.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 389,
       "publish": true,
       "group_by": "kind",
@@ -62,7 +62,7 @@
         "size_bytes": 216793,
         "mtime_utc": "2026-11-20T09:39:06+00:00",
         "sha256": "d9daf97f5cebd1f3fcb84ee191528c7ffda1449266f9441c3c166abbbe0f3da8",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
@@ -70,7 +70,7 @@
       "title": "Атлас: сетки (group_by)",
       "type": "cards",
       "source": "atlas.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 5,
       "publish": true,
       "group_by": "group_by",
@@ -107,7 +107,7 @@
         "size_bytes": 216793,
         "mtime_utc": "2026-11-20T09:39:06+00:00",
         "sha256": "d9daf97f5cebd1f3fcb84ee191528c7ffda1449266f9441c3c166abbbe0f3da8",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
@@ -115,7 +115,7 @@
       "title": "Цели атласа: чек-лист по статусам",
       "type": "checklist",
       "source": "atlas.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 119,
       "publish": true,
       "group_by": "status",
@@ -149,16 +149,61 @@
         "size_bytes": 216793,
         "mtime_utc": "2026-11-20T09:39:06+00:00",
         "sha256": "d9daf97f5cebd1f3fcb84ee191528c7ffda1449266f9441c3c166abbbe0f3da8",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
+    },
+    {
+      "id": "task-tree",
+      "title": "Дерево задач: 26 корней / 136 узлов",
+      "type": "tree",
+      "source": "tree.json",
+      "built_at": "2026-11-22T01:30:55+00:00",
+      "count": 136,
+      "publish": true,
+      "group_by": "status",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "status",
+          "values": [
+            "FAIL",
+            "OPEN",
+            "PASS"
+          ]
+        }
+      ],
+      "label_field": "name",
+      "value_field": "id",
+      "meta_fields": [
+        "status"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/tree.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/tree.json",
+        "exists": true,
+        "size_bytes": 20870,
+        "mtime_utc": "2026-11-22T01:29:59+00:00",
+        "sha256": "b69cabf05bf3ab1e4d734520254cfb4827fb4b24243ab8e803fba37ea83f69ff",
+        "read_at": "2026-11-22T01:30:55+00:00"
+      },
+      "root_count": 26,
+      "node_count": 136,
+      "note": "источник tree.json; task-tree.js читает LIVE.tree напрямую, реестр views нужен для единого входа и аудита"
     },
     {
       "id": "prompts-cards",
       "title": "Промпты: карточки с сортировкой по времени",
       "type": "cards",
       "source": "prompts.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
-      "count": 458,
+      "built_at": "2026-11-22T01:30:55+00:00",
+      "count": 461,
       "publish": true,
       "group_by": "source",
       "sort_by": "ts",
@@ -197,10 +242,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 1745386,
-        "mtime_utc": "2026-11-21T23:09:48+00:00",
-        "sha256": "fe9fd47a8bba5404f6b0c5c292c18636c7a19ef292e8c96827742986e205460d",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "size_bytes": 1752225,
+        "mtime_utc": "2026-11-22T01:29:59+00:00",
+        "sha256": "6ba7c00e46881c71f40cfa15d8b4e261cb07f4ba62e77ad68cc967aa9ea3ffb2",
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
@@ -208,7 +253,7 @@
       "title": "CS2: голосовые идеи по темам — 300/1438 строк, уникальных голосовых 794",
       "type": "table",
       "source": "cs2-ideas.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 1438,
       "publish": true,
       "group_by": "theme",
@@ -247,16 +292,17 @@
         "size_bytes": 1445264,
         "mtime_utc": "2026-11-18T14:18:20+00:00",
         "sha256": "d53ccda71fb5e9e9aa05285c06ea4d20721319bf213c405ef1c61b7b3842ba7d",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       },
       "items_total": 1438,
       "truncated": true,
-      "items_note": "показано 300 из 1438",
+      "items_note": "показано 300 из 1438 строк тем (уникальных голосовых 794, классифицировано 1621); строка ≠ голосовое: запись может входить в несколько тем",
+      "count_note": "count=1438 — строки тем, не голосовые; уникальных голосовых 794 из 1621 классифицированных",
       "provenance_note": {
         "declared_total": 1621,
         "themed_rows": 1438,
         "unique_voices": 794,
-        "note": "count = строк в таблице (запись может входить в несколько тем); declared_total — общее число классифицированных голосовых из файла"
+        "note": "count = число строк theme-item (запись может входить в несколько тем), НЕ число голосовых; shown_rows = загружено строк; declared_total — классифицировано голосовых в исходном файле; unique_voices — уникальных голосовых среди строк тем"
       }
     },
     {
@@ -264,7 +310,7 @@
       "title": "CONFIDENTIAL: приватный слой и пограничные (текст скрыт)",
       "type": "checklist",
       "source": "/private/review",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 0,
       "publish": false,
       "group_by": "section",
@@ -294,8 +340,8 @@
       "title": "Обзор скиллов",
       "type": "cards",
       "source": "skills.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
-      "count": 26,
+      "built_at": "2026-11-22T01:30:55+00:00",
+      "count": 27,
       "publish": true,
       "group_by": null,
       "sort_by": "title",
@@ -317,12 +363,12 @@
         "file": "~/.config/opencode/skills/*/SKILL.md",
         "abs": "/home/nyaka/.config/opencode/skills/*/SKILL.md",
         "exists": true,
-        "size_bytes": 272097,
-        "mtime_utc": "2026-11-21T19:58:18+00:00",
+        "size_bytes": 284034,
+        "mtime_utc": "2026-11-22T00:24:35+00:00",
         "sha256": null,
-        "read_at": "2026-11-21T23:10:26+00:00",
-        "built_at": "2026-11-21T23:10:26+00:00",
-        "count": 26,
+        "read_at": "2026-11-22T01:30:55+00:00",
+        "built_at": "2026-11-22T01:30:55+00:00",
+        "count": 27,
         "note": "только шапки SKILL.md (первые 10 строк): name/description; описание обрезано до 140 символов; токены вырезаны",
         "files": [
           ".config/opencode/skills/hypothesis-check/SKILL.md",
@@ -346,6 +392,7 @@
           ".config/opencode/skills/slow-deliberation/SKILL.md",
           ".config/opencode/skills/strange-question/SKILL.md",
           ".config/opencode/skills/strange-question-gate/SKILL.md",
+          ".config/opencode/skills/suspicion-gate/SKILL.md",
           ".config/opencode/skills/telemetry-lookup/SKILL.md",
           ".config/opencode/skills/tg-bot-ui/SKILL.md",
           ".config/opencode/skills/ux-time-audit/SKILL.md",
@@ -353,16 +400,16 @@
           ".config/opencode/skills/work-audit/SKILL.md"
         ]
       },
-      "items_total": 26,
+      "items_total": 27,
       "truncated": true,
-      "items_note": "показано 26 из 26"
+      "items_note": "показано 27 из 27"
     },
     {
       "id": "elements-table",
       "title": "Единая таблица элементов",
       "type": "table",
       "source": "elements.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 63,
       "publish": true,
       "group_by": "group",
@@ -415,7 +462,7 @@
         "size_bytes": 212182,
         "mtime_utc": "2026-11-21T03:11:50+00:00",
         "sha256": "864524abfa835d0e220c9e2e810f1a82ce180bc07a405bd1f14b381e4cf29f84",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       },
       "provenance_note": {
         "groups": 9,
@@ -429,7 +476,7 @@
       "title": "Сужающие вопросы (да/нет)",
       "type": "decision",
       "source": "yesno-questions.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 15,
       "publish": true,
       "group_by": "status",
@@ -476,7 +523,7 @@
         "size_bytes": 38861,
         "mtime_utc": "2026-11-21T03:42:39+00:00",
         "sha256": "6ab216566ab4a31e5007d7665b1196b99d7eccde5f7d369db5c7b40412656d73",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       },
       "max_questions": 15,
       "provenance_note": {
@@ -495,7 +542,7 @@
       "title": "Хаб университетских работ",
       "type": "cards",
       "source": "works.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 9,
       "publish": true,
       "group_by": "source",
@@ -550,7 +597,7 @@
         "size_bytes": 4955,
         "mtime_utc": "2026-11-21T02:53:00+00:00",
         "sha256": "0c70b023e1b7b18c67936ac0befcbe149323ba7f8fb3f54ffb96848f9567a7dc",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
@@ -558,9 +605,9 @@
       "title": "Разборы видео: сетка авторов (2) · вердикты по 40 claim",
       "type": "cards",
       "source": "grids.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 40,
-      "publish": true,
+      "publish": false,
       "group_by": "author",
       "sort_by": "id",
       "filters": [
@@ -625,7 +672,7 @@
         "size_bytes": 96168,
         "mtime_utc": "2026-11-21T22:57:31+00:00",
         "sha256": "f52f4d0e23aa4c38064f11acc8e29b4300a20fc0e810c4eda8c705adeb8d723e",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
@@ -633,9 +680,9 @@
       "title": "Разборы видео: сетка видео (10) · вердикты по 40 claim",
       "type": "cards",
       "source": "grids.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 40,
-      "publish": true,
+      "publish": false,
       "group_by": "video",
       "sort_by": "id",
       "filters": [
@@ -715,7 +762,7 @@
         "size_bytes": 96168,
         "mtime_utc": "2026-11-21T22:57:31+00:00",
         "sha256": "f52f4d0e23aa4c38064f11acc8e29b4300a20fc0e810c4eda8c705adeb8d723e",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
@@ -723,9 +770,9 @@
       "title": "Разборы видео: сетка идей (8 кластеров, гейт G3)",
       "type": "cards",
       "source": "grids.json",
-      "built_at": "2026-11-21T23:10:26+00:00",
+      "built_at": "2026-11-22T01:30:55+00:00",
       "count": 40,
-      "publish": true,
+      "publish": false,
       "group_by": "cluster",
       "sort_by": "id",
       "filters": [
@@ -790,32 +837,37 @@
         "size_bytes": 96168,
         "mtime_utc": "2026-11-21T22:57:31+00:00",
         "sha256": "f52f4d0e23aa4c38064f11acc8e29b4300a20fc0e810c4eda8c705adeb8d723e",
-        "read_at": "2026-11-21T23:10:26+00:00"
+        "read_at": "2026-11-22T01:30:55+00:00"
       }
     },
     {
-      "id": "task-tree",
-      "title": "Дерево задач: 24 корня (118 узлов с детьми)",
+      "id": "video-ideas-tree",
+      "title": "Разборы видео: дерево смыслов (40 claim, ветвление ≤7)",
       "type": "tree",
-      "source": "tree.json",
-      "built_at": "2026-11-21T23:42:00+00:00",
-      "count": 24,
+      "source": "video-tree.json",
+      "built_at": "2026-11-22T01:30:55+00:00",
+      "count": 1,
       "publish": true,
-      "group_by": "status",
+      "group_by": null,
       "sort_by": "id",
       "filters": [
         {
           "field": "status",
           "values": [
             "FAIL",
-            "PASS"
+            "OPEN"
           ]
         }
       ],
       "label_field": "name",
       "value_field": "id",
       "meta_fields": [
-        "status"
+        "status",
+        "source",
+        "author",
+        "video",
+        "cluster",
+        "as_of"
       ],
       "actions": [
         {
@@ -825,18 +877,14 @@
       ],
       "status": "ok",
       "provenance": {
-        "file": "tree.json",
-        "abs": "/home/nyaka/runtime/tmp-checkpoint/tg-miniapp-pages/tree.json",
+        "file": "shared-repo/bots/miniapp/video-tree.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/video-tree.json",
         "exists": true,
-        "size_bytes": 18204,
-        "mtime_utc": "2026-11-21T23:41:39+00:00",
-        "sha256": "a247d0942aec81f15275f5b6cb0a544b9c35d0cc0d64d90cb832d1352b23d39a",
-        "read_at": "2026-11-21T23:42:00+00:00"
-      },
-      "root_count": 24,
-      "node_count": 118,
-      "note": "источник tree.json; task-tree.js читает LIVE.tree напрямую, реестр views нужен для единого входа и аудита",
-      "count_note": "в панели рендерятся 24 корня; всего 118 узлов с детьми — см. node_count"
+        "size_bytes": 30323,
+        "mtime_utc": "2026-11-22T01:17:15+00:00",
+        "sha256": "2cab3018948c1ddc8d8089efcda4075f2bf746f00530c22a2aa734902c59cb13",
+        "read_at": "2026-11-22T01:30:55+00:00"
+      }
     }
   ]
 }

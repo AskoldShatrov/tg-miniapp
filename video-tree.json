@@ -1,0 +1,552 @@
+{
+  "version": 1,
+  "built_at": "2026-11-22T01:17:15.070485+00:00",
+  "built_by": "build_video_tree.py",
+  "source": "grids.json",
+  "as_of": "2026-11-19",
+  "thresholds": {
+    "max_branching": 7,
+    "min_depth": 3,
+    "max_screen": 7,
+    "expected_claims": 40
+  },
+  "counts": {
+    "claims": 40,
+    "clusters": 8,
+    "branches": 4,
+    "verification": 19
+  },
+  "nodes": [
+    {
+      "id": "video-ideas",
+      "name": "Разборы видео — дерево смыслов (40 claim)",
+      "status": "FAIL",
+      "children": [
+        {
+          "id": "B1",
+          "name": "Командная структура и тайминг · 8 claim",
+          "status": "FAIL",
+          "children": [
+            {
+              "id": "roles",
+              "name": "Роли и freeze-топология · 5 claim",
+              "status": "FAIL",
+              "children": [
+                {
+                  "id": "C1",
+                  "name": "C1 · На Dust2 жёсткая структура из 5 ролей: лонг-опорник, ротейтор, авик, б-ротейтор, б-опорник · отрицательно",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "roles",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`freeze_topology_v5.players/topo_key/t_rel_s` (кто где на +5…+15 с) + `duels_v5.killer_place`. Явных меток ролей нет — role как доля по матчу в `behavior_v2`"
+                },
+                {
+                  "id": "C15",
+                  "name": "C15 · Tips: отданный смок = противник ждёт и укрепляет точку · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "3nyLNEMoZHE",
+                  "cluster": "roles",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`freeze_topology_v5.players/topo_key` на +5…+15 с + `duels_v5.killer_place/won`; смок как триггер отсутствует"
+                },
+                {
+                  "id": "C2",
+                  "name": "C2 · Главный закон D2: нельзя одновременно остаться и без лонга, и без шорта · подтверждено (как привычка)",
+                  "status": "PASS",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "roles",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`freeze_topology_v5.players` (множество place на t_rel_s=+5/+10/+15) vs `freeze_topology_v5.winner`; `duels_v5.killer_place/victim_place`"
+                },
+                {
+                  "id": "C6",
+                  "name": "C6 · Яму нельзя брать в соло — рядом всегда должен быть мейт · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "roles",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`paths_v5.attacker.points` / `victim.points` (`[tick,X,Y,yaw,place,equip,health]`) — изоляция по X/Y и place за 8 с; `duels_v5.victim_place`; `freeze_topology_v5.players` на +5 с"
+                },
+                {
+                  "id": "C7",
+                  "name": "C7 · «Двойной запик» используется в абсолютно каждой катке · отрицательно (не 100%)",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "roles",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`freeze_topology_v5.topo_key` (два игрока в одной зоне) + `duels_v5.killer_place/victim_place` в одном раунде"
+                }
+              ]
+            },
+            {
+              "id": "timing",
+              "name": "Тайминги и ротации · 3 claim",
+              "status": "FAIL",
+              "children": [
+                {
+                  "id": "C12",
+                  "name": "C12 · Tips: вся игра делится на 3 тайминга · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "3nyLNEMoZHE",
+                  "cluster": "timing",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`timings_v5`: `time_to_first_view_ms`, `time_view_to_fire_ms`, `time_fire_to_hurt_ms`, `time_hurt_to_death_ms` — 4 дельты, прямой разметки на 3 фазы нет"
+                },
+                {
+                  "id": "C14",
+                  "name": "C14 · Tips: видя 2 смока, игрок окна стягивается под Б · отрицательно",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "3nyLNEMoZHE",
+                  "cluster": "timing",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`contact_los_v4.rotation.rotations` / `time_to_first_rotation_s` + `paths_v5.attacker.points`; сам факт «2 смока» недоступен — проверяется только ротация"
+                },
+                {
+                  "id": "C31",
+                  "name": "C31 · Реагировать на то, что произошло, а не на предсказание (не prefire) · отрицательно (знак наоборот)",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "143 Aim Club",
+                  "video": "KN76VmZSWAY",
+                  "cluster": "timing",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`timings_v5.time_view_to_fire_ms` (отрицательные значения = выстрел раньше first_view) × `shot_hit_model` hit-proxy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B2",
+          "name": "Огонь и пространство · 12 claim",
+          "status": "FAIL",
+          "children": [
+            {
+              "id": "grenades",
+              "name": "Гранаты и смоки · 7 claim",
+              "status": "OPEN",
+              "children": [
+                {
+                  "id": "C10",
+                  "name": "C10 · Ancient: выигрывает тот, кто применил больше гранат и лучше стрелял · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "4XNSl3Iw0YA",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "«Лучше стрелял» — `shot_metrics` (`aim_offset_view_deg`, hit-proxy) + `duels_v5.headshot/won`; «больше гранат» — нет поля"
+                },
+                {
+                  "id": "C11",
+                  "name": "C11 · Ancient: слышишь гранаты на миду → уходи и принимай раш · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "4XNSl3Iw0YA",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Звук/гранаты в демо нет; ближайшее — `contact_los_v4.approach.class` (closing/retreating/stable) + `paths_v5`"
+                },
+                {
+                  "id": "C13",
+                  "name": "C13 · Tips: на exec нужно 2 смока и 2 молика · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "3nyLNEMoZHE",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нет `grenade_thrown`/`*detonate`; косвенно `duels_v5.bomb_site` иисходы, но состав гранат не восстановить"
+                },
+                {
+                  "id": "C3",
+                  "name": "C3 · По числу прилетевших гранат считать число людей на лонге · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нужны `grenade_thrown` / `*grenade_detonate` с тиком и игроком — их нет ни в одном из 6 наборов; ближайшее `freeze_topology_v5` + `duels_v5` даёт только число людей, не число гранат"
+                },
+                {
+                  "id": "C4",
+                  "name": "C4 · Смок на парик раньше минуты 40 — грубая ошибка · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нужен `smokegrenade_detonate.tick` минус `rounds_v5.freeze_tick`; в 6 наборах нет событий гранат, есть только `timings_v5` дельты"
+                },
+                {
+                  "id": "C8",
+                  "name": "C8 · Ancient: зона держится, пока есть смок/сетап; смок кончился — зону отдай · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "4XNSl3Iw0YA",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Триггер «конец смока» требует `smokegrenade_expired.tick` — отсутствует; доступен только исход `duels_v5.won` + `paths_v5` отступление"
+                },
+                {
+                  "id": "C9",
+                  "name": "C9 · Ancient: если на банан летит много гранат — лучше отдать зону, иначе смерть · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "4XNSl3Iw0YA",
+                  "cluster": "grenades",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Счёт гранат недоступен; проверяемая часть — `paths_v5.attacker.points` (откат по X/Y) → `duels_v5.won/death`"
+                }
+              ]
+            },
+            {
+              "id": "peek",
+              "name": "Пики и углы · 5 claim",
+              "status": "FAIL",
+              "children": [
+                {
+                  "id": "C21",
+                  "name": "C21 · В рандомной ситуации пикать всегда широко · отрицательно",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "peek",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`duels_v5.distance/killer_place` + `contact_los_v4.approach.class`; «широко/узко» как `edge_gap_deg()` из `tools/aim_pixel.py` — инструмент есть, но не входит в 6 наборов"
+                },
+                {
+                  "id": "C22",
+                  "name": "C22 · Короткий пик — только для распика позиций / байта AWP · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "peek",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`duels_v5.weapon` (AWP) × `killer_place/victim_place` × `contact_los_v4.occupancy.place_hist/distinct_places`, `first_view_killer_angle`"
+                },
+                {
+                  "id": "C28",
+                  "name": "C28 · Реакция убыстреется, когда знаешь **точные пиксели появления** врага (exact pixels) · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "KN76VmZSWAY",
+                  "cluster": "peek",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`aim_pixel.py` мапит yaw/pitch→пиксель цели, но кадра и GT прицела нет; «пиксель» здесь — место появления, не screen coordinate из демо"
+                },
+                {
+                  "id": "C30",
+                  "name": "C30 · Jiggle-peek вместо статичного холда: hide→swing→hide · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "KN76VmZSWAY",
+                  "cluster": "peek",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`paths_v5.attacker.points` — осцилляции X/Y и yaw за 8 с; `timings_v5.time_view_to_fire_ms`"
+                },
+                {
+                  "id": "C5",
+                  "name": "C5 · На лонге «никогда не пикать, если вас могут смотреть» · отрицательно",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "92bP6FYpbYM",
+                  "cluster": "peek",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`contact_los_v4.first_viewer/lead_ticks/first_view_mutual` + `duels_v5.won/headshot`; проверено в `08/B1/B2`: raycast меняет вердикт у ~37% дуэлей, «увидел первым→победил» значимого эффекта не дал"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B3",
+          "name": "Движение и прицел · 8 claim",
+          "status": "FAIL",
+          "children": [
+            {
+              "id": "movement",
+              "name": "Движение и контрстрейф · 3 claim",
+              "status": "FAIL",
+              "children": [
+                {
+                  "id": "C16",
+                  "name": "C16 · Контрстрейф ускоряет остановку и не даёт стрелять на ходу · подтверждено (часть «движение вредит»)",
+                  "status": "PASS",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "movement",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_metrics`: `peek_speed_250ms`, `pre_shot_displacement_250ms`, `aim_offset_view_deg`; проверено в `C1.md`: counterstrafe 25.1%, WR по ему нет"
+                },
+                {
+                  "id": "C17",
+                  "name": "C17 · При широком стрейфе ранний ЛКМ → пуля летит не туда · отрицательно",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "movement",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_metrics.peek_speed_250ms` × `aim_offset_view_deg` / hit-proxy; `shot_hit_model_v2` бинны offset→hit"
+                },
+                {
+                  "id": "C19",
+                  "name": "C19 · ~20% килов делаются одной клавиатурой, без движения мышкой · отрицательно как число",
+                  "status": "FAIL",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "movement",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`paths_v5.attacker.points`: displacement по X/Y при почти неизменном yaw + `duels_v5.death_id/weapon/killer`; доля таких дуэлей"
+                }
+              ]
+            },
+            {
+              "id": "aim_hit",
+              "name": "Наведение и hit · 5 claim",
+              "status": "OPEN",
+              "children": [
+                {
+                  "id": "C18",
+                  "name": "C18 · Держать прицел на уровне головы · подтверждено (прокси)",
+                  "status": "PASS",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "aim_hit",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_hit_model_v2` (`aim_offset_view_deg`, β=−0.1766°/OR 0.838) + `duels_v5.hitgroup/headshot`; hit — прокси ±2 тика"
+                },
+                {
+                  "id": "C20",
+                  "name": "C20 · Donk «не отпускает человека со своего прицела» · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "oUne9WN4YrM",
+                  "cluster": "aim_hit",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_metrics.aim_offset_view_deg` по `shooter_steamid`, `aim_offset_view_by_distance`; проверено в `13-shot-hit-model.md` (подтверждено, но hit — прокси, нет `bullet_impact`)"
+                },
+                {
+                  "id": "C27",
+                  "name": "C27 · Donk — лучший стрелок, но не лучший аимер · подтверждено направление (не ранг 1)",
+                  "status": "PASS",
+                  "source": "verification",
+                  "author": "teamo",
+                  "video": "56Lmai3Juvo",
+                  "cluster": "aim_hit",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_hit_model_v2` hit-proxy + `duels_v5.headshot/weapon/distance` по `killer_steamid`; ранг «лучший» требует выборки"
+                },
+                {
+                  "id": "C33",
+                  "name": "C33 · Чем лучше пассивный аим, тем меньше роль активного · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "RJ5j0_54zHY",
+                  "cluster": "aim_hit",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_hit_model_v2` (offset→hit, подтверждено) + `duels_v5.distance`; проверено в `13-shot-hit-model.md`: hit — прокси, LOS/геометрия не моделируются"
+                },
+                {
+                  "id": "C34",
+                  "name": "C34 · Простой выстрел: 80/100 у хорошего, 95/100 у Donk · непроверяемо",
+                  "status": "OPEN",
+                  "source": "verification",
+                  "author": "143 Aim Club",
+                  "video": "RJ5j0_54zHY",
+                  "cluster": "aim_hit",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`shot_metrics` hit_victim_proxy + `shooter_steamid`, `distance_to_victim_at_shot`; `shot_hit_model_v2` по кластерам match×round"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B4",
+          "name": "Когниция и инструменты · 12 claim",
+          "status": "OPEN",
+          "children": [
+            {
+              "id": "cognition",
+              "name": "Аим-когниция · 6 claim",
+              "status": "OPEN",
+              "children": [
+                {
+                  "id": "C23",
+                  "name": "C23 · «Мышечной памяти не существует» · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "56Lmai3Juvo",
+                  "cluster": "cognition",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нужны sens/mouse-trace и повторы одного упражнения — в демо нет ни sens, ни мыши, ни метки «одно упражнение»"
+                },
+                {
+                  "id": "C24",
+                  "name": "C24 · То, что называют мышечной памятью — моторная программа · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "56Lmai3Juvo",
+                  "cluster": "cognition",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нет поля моторной программы; ближайшее — стабильность `aim_offset_view_deg` между раундами, но это прокси"
+                },
+                {
+                  "id": "C25",
+                  "name": "C25 · Частая смена sens ускоряет пересчёт формулы; скилл не теряется · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "56Lmai3Juvo",
+                  "cluster": "cognition",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "`sens` отсутствует в `fire_bullets` и во всех 6 наборах"
+                },
+                {
+                  "id": "C26",
+                  "name": "C26 · Во время саккады человек ничего не видит · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "teamo",
+                  "video": "56Lmai3Juvo",
+                  "cluster": "cognition",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Eye-tracking / record-прицела нет; `timings_v5.first_view_*` — прокси по геометрии, не взгляд"
+                },
+                {
+                  "id": "C29",
+                  "name": "C29 · Долгий фиксинг одного пикселя замедляет реакцию · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "KN76VmZSWAY",
+                  "cluster": "cognition",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Прокси длительности холда: `freeze_topology_v5.freeze_tick` → `timings_v5.time_to_first_view_ms`, `first_view_side` + `duels_v5.won`"
+                },
+                {
+                  "id": "C32",
+                  "name": "C32 · Тесты реакции (170 мс у Astralis, 113 мс автора) определяют игру · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "KN76VmZSWAY",
+                  "cluster": "cognition",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Reaction-test недоступен; автор сам опровергает: «that was complete, nasty bullshit. I normally get around 140 milliseconds»"
+                }
+              ]
+            },
+            {
+              "id": "settings",
+              "name": "Настройки и тренажёры · 6 claim",
+              "status": "OPEN",
+              "children": [
+                {
+                  "id": "C35",
+                  "name": "C35 · «Пиксель монитора ↔ положение мыши» — не объект тренировки · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "RJ5j0_54zHY",
+                  "cluster": "settings",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "sens/мышь/разрешение игрока в демо отсутствуют; ещё одно значение «пикселя», отличное от screen coordinate демо"
+                },
+                {
+                  "id": "C36",
+                  "name": "C36 · Закон убывающей полезности: тренировка аима до ~7 уровня быстра, дальше пропасти · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "RJ5j0_54zHY",
+                  "cluster": "settings",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нет временных рядов skill по игроку в демо; ближайшее — `shot_hit_model_v2` batch-уровень, не trajectory"
+                },
+                {
+                  "id": "C37",
+                  "name": "C37 · FOV из CS/Valorant не влияет на импрув; стандарт 103° · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "QgctP-0JpYM",
+                  "cluster": "settings",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "FOV-конфиг игрока в демо отсутствует; `aim_pixel.py` использует фиксированный VFOV 73.74° как допущение"
+                },
+                {
+                  "id": "C38",
+                  "name": "C38 · Задержка 1 с перед сценарием лечит привычку тыкать рестарт · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "OLL0zIxi1Uw",
+                  "cluster": "settings",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Настройки аимтренера в демо не фиксируются"
+                },
+                {
+                  "id": "C39",
+                  "name": "C39 · Sens считать в см на 360° · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "QgctP-0JpYM",
+                  "cluster": "settings",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "sens и DPI в демо отсутствуют"
+                },
+                {
+                  "id": "C40",
+                  "name": "C40 · Тренажёры (Kovaak/Aimbeast) дают изолированный активный аим; комьюнити и bench — главная ценность · проверка не проводилась",
+                  "status": "OPEN",
+                  "source": "n2_status_only",
+                  "author": "143 Aim Club",
+                  "video": "35AhYJHC9DU",
+                  "cluster": "settings",
+                  "as_of": "2026-11-19",
+                  "how_to_check": "Нет логов аимтренеров и связей с демо"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
