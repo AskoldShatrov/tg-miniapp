@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T04:57:22+00:00",
-  "generated_human": "22.11 04:57 UTC",
-  "as_of": 1795323442585,
+  "generated": "2026-11-22T04:58:22+00:00",
+  "generated_human": "22.11 04:58 UTC",
+  "as_of": 1795323502667,
   "stale_days": 1,
   "count": 835,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-zlNnsQwAy1",
      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795323441000,
+     "ts": 1795323500000,
      "source": "session",
      "title": "Радар в spectator/overview нового FACEIT-корпуса",
      "source_label": "ноут",
@@ -60,7 +60,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795323441000,
+     "as_of": 1795323500000,
      "is_stale": false
     },
     {
@@ -4732,7 +4732,7 @@
     {
      "id": "ses-SWaDUkUD0I",
      "text": "ТЫ — менеджер 20-часового мандата (роль надзирателя, не исполнителя чужих задач).\nОбязательно загрузи через tool skill: progress и ready-to-deliver.\n\nПрочитай (не целиком огромные файлы, а точечно):\n1. ~/overnight/manager_status.json — здоровье экосистемы;\n2. `python3 ~/.config/opencode/scripts/progress.py --no-color --ascii` — сводка;\n3. свежие отчёты ~/overnight/cloud_tracks/*.md (только шапки и хвосты, самые новые 5–8);\n4. ~/overnight/manager_cycle_digest.md если есть — предыдущий цикл.\n\nСДЕЛАЙ:\n- Найди running-шаги старше 30 мин и все blocked. Для каждого живого, но тихого\n  шага сделай `python3 ~/.config/opencode/scripts/progress.py step work <T> <step> --note \"менеджер: проверка < что >\"`;\n  для блокера — `event <T> --text \"…\"` с причиной и владельцем. Не выдумывай гейты.\n- Проверь, работают ли все агенты/диалоги из статуса; если агент мёртв, а сервис\n  жив — зафиксируй причину в лог цикла, не перезапускай вручную (это делает watchdog).\n- Если нашёл дефект в доступной зоне — попытайся исправить; если нельзя — честный\n  OPEN с владельцем и готовым путём, не сваливай на пользователя.\n- Напиши КОРОТКИЙ отчёт ~/overnight/manager_cycle_digest.md (вердикт HEALTHY /\n  NEEDS_ATTENTION, найденное, действия, OPEN). Не перезаписывай чужие отчёты.\n\nЗАПРЕТ: data/, защищённые отчёты 64/71/103, платные модели, правка progress.json\nнапрямую (только CLI), вопросы пользователю, остановка шин/воркеров.\nНе спрашивай — действуй в доступной зоне и честно фиксируй OPEN.",
-     "ts": 1795323435000,
+     "ts": 1795323456000,
      "source": "session",
      "title": "Мандат менеджера на 20 часов",
      "source_label": "ноут",
@@ -4751,7 +4751,7 @@
      "answer_text_id": "252c451d0b62f70b",
      "answer_source": "replies.json",
      "delivered_ts": 1795307850600,
-     "as_of": 1795323435000,
+     "as_of": 1795323456000,
      "is_stale": false
     },
     {
