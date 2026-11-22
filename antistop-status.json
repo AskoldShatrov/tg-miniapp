@@ -1,14 +1,14 @@
 {
   "kind": "antistop-declarative-status",
-  "generated_at": "2026-11-22T07:45:20.273010+00:00",
+  "generated_at": "2026-11-22T07:58:59.564398+00:00",
   "source_sha256": {
-    "engine": "16c0b2c464054541f212f00ba33d0b9cd3134d54b664a9c21a3c4536adc341fe",
+    "engine": "77eb2e7654defa39d7843102490da3b39151e396be0092aef5dccb326af0aabc",
     "scout": "8cf9562cb9b4cf35397eeaaa3f9a8cf5f896e44fec88fe9a4adb62499df55b19",
-    "critic_gate": "29d56b070e0114daaa1129ade565b77d5eb639d556df46e023c9b13befa0b09d",
+    "critic_gate": "e40092b44fe364930c0ae534e9853e9fe79c810b2c5dca6c1776ccf11f64e533",
     "wrapper": "2bd955c04aef39974985e36a03df75c97f9183f3d633908d2fc25429f90f8cec"
   },
   "mechanism": {
-    "engine_status": "RUNNING",
+    "engine_status": "см. live: /home/nyaka/evolution-work/state.json",
     "engine_cycles": "см. live: /home/nyaka/evolution-work/state.json",
     "engine_updated_at": "см. live: /home/nyaka/evolution-work/state.json",
     "engine_state_age_s": "см. live: /home/nyaka/evolution-work/state.json",
@@ -27,7 +27,7 @@
       "game-mode",
       "лимит витков"
     ],
-    "engine_pid_note": "PID волатилен, источник: /home/nyaka/evolution-work/engine.pid; на момент аудита найдены два процесса — владелец мандата",
+    "engine_pid_note": "число процессов волатильно; источник — pgrep -fc \"[e]volution_engine/engine.py\"",
     "engine_state_source": "/home/nyaka/evolution-work/state.json"
   },
   "scout": {
@@ -61,7 +61,7 @@
       "source": "manager",
       "id": "T20.3",
       "priority": 1,
-      "why": "age=264 мин; REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299",
+      "why": "age в live: manager_status.json; REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299",
       "owner": "T20/studio + W2",
       "next_action": "новый REAL-захват + prereg до прогона; порог 0.05 не двигать"
     },
@@ -112,6 +112,17 @@
       "дубли open_items удалены, python repr убран",
       "green size перестал быть фиксированным числом"
     ],
-    "source_of_truth": "живые файлы по путям выше, а не копия значений в этом JSON"
-  }
+    "source_of_truth": "живые файлы по путям выше, а не копия значений в этом JSON",
+    "closure": {
+      "second_blind_verdict": "канарейка найдена + 4 FAIL (engine_status, source hashes, age=264, pid count)",
+      "verdict": "HIDDEN-AUDIT-GATE: VALID (CANARY-72848C)",
+      "fixed": [
+        "status и хэши заменены на снимок с путями-источниками",
+        "age убран из застывших полей",
+        "pid count заменён командой-источником"
+      ],
+      "report": "/tmp/opencode/audit/antistop-recheck.md"
+    }
+  },
+  "source_sha256_note": "снимок на момент публикации; источник истины — sha256sum по указанным путям"
 }
