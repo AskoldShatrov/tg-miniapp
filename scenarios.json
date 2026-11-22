@@ -1,16 +1,16 @@
 {
- "generated": "2026-11-21 19:30",
+ "generated": "2026-11-22 10:00",
  "window": {
-  "start": "2026-11-21T08:35",
-  "end": "2026-11-21T16:28",
-  "sessions": 193,
+  "start": "2026-11-22T02:14",
+  "end": "2026-11-22T06:59",
+  "sessions": 162,
   "roots": 150
  },
  "summary": {
-  "skills": 24,
-  "skills_used": 18,
-  "agents": 4,
-  "agents_used": 3,
+  "skills": 30,
+  "skills_used": 16,
+  "agents": 5,
+  "agents_used": 2,
   "autofeed": 0,
   "roots": 150
  },
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 217,
-   "max_s": 13583,
-   "last": "2026-11-21T16:23:12.210000+00:00",
+   "median_s": 400,
+   "max_s": 2213,
+   "last": "2026-11-22T06:59:11.548000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "done": 145,
-    "cancelled": 4
+    "waiting_user": 16,
+    "done": 132,
+    "cancelled": 2
    },
    "example": [
-    "Bt9FMP1b",
-    "rhWNMt9V"
+    "TYJxHKhX",
+    "N1kHq0ty"
    ],
    "actual": [
     {
@@ -44,42 +44,30 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 42 из 150",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "wants-radar",
-     "t": "в 64 из 150",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 52 из 150",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 147 из 150, ≈23 вызовов за раз",
+     "t": "в 80 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 121 из 150, ≈9 вызовов за раз",
+     "t": "в 125 из 150, ≈9 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 140 из 150, ≈24 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 121 из 150, ≈6 вызовов за раз",
+     "t": "в 119 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: agent-capacity, game-mode, invento-rs, method-layer, network-constraints, opencode-selfcheck, parallel-edit, scanfeed, s",
+     "n": "реже: draft-gate, network-constraints, openai-whisper, opencode, parallel-edit, progress, ready-to-deliver, research-slowdown,",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -283,75 +271,56 @@
    "when": "«где лежит X», «как устроено X»",
    "status": "warn",
    "status_text": "Работает в обход",
-   "runs": 2,
-   "median_s": 637,
-   "max_s": 651,
-   "last": "2026-11-21T09:57:48.840000+00:00",
+   "runs": 1,
+   "median_s": 1083,
+   "max_s": 1083,
+   "last": "2026-11-22T05:54:38.443000+00:00",
    "outcomes": {
-    "done": 2
+    "done": 1
    },
    "example": [
-    "c7mArYbJ",
-    "vL3Ro0s2"
+    "b963mpQb"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 2"
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 2 из 2",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 2 из 2",
-     "d": 1
+     "t": "запусков: 1"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 2 из 2",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 2 из 2, ≈4 вызовов за раз",
+     "t": "≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 2 из 2, ≈40 вызовов за раз",
+     "t": "≈28 вызовов за раз",
      "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "в 2 из 2",
-     "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "conflict-keeper",
-     "t": "в 2 из 2",
-     "d": 2
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 2 из 2",
+     "t": "",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 2 из 2, ≈2 вызовов за раз",
+     "t": "≈5 вызовов за раз",
      "d": 1
     }
    ],
@@ -419,14 +388,14 @@
    "status": "ok",
    "status_text": "Как задумано",
    "runs": 1,
-   "median_s": 13583,
-   "max_s": 13583,
-   "last": "2026-11-21T12:43:17.357000+00:00",
+   "median_s": 82,
+   "max_s": 82,
+   "last": "2026-11-22T06:58:13.898000+00:00",
    "outcomes": {
-    "done": 1
+    "waiting_user": 1
    },
    "example": [
-    "Jf2fb7q6"
+    "4ykqvy2v"
    ],
    "actual": [
     {
@@ -436,115 +405,25 @@
     },
     {
      "k": "skill",
-     "n": "strange-question-gate",
+     "n": "opencode",
      "t": "",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "≈268 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "strange-question",
-     "t": "",
+     "t": "≈11 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "≈55 вызовов за раз",
+     "t": "≈2 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "tg-bot-ui",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "ux-time-audit",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "agent-capacity",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "правки",
-     "t": "≈43 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "unblocker",
-     "t": "",
-     "d": 2
-    },
-    {
-     "k": "sub",
-     "n": "cheap",
-     "t": "",
-     "d": 2
-    },
-    {
-     "k": "skill",
-     "n": "opencode-selfcheck",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "general",
-     "t": "",
-     "d": 2
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "unanswered-radar",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "studio-taste",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "show-in-answer",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "slow-deliberation",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scientific-ergonomics",
+     "n": "strange-question",
      "t": "",
      "d": 1
     }
@@ -553,13 +432,13 @@
     {
      "k": "skill",
      "n": "opencode",
-     "u": true
+     "u": false
     },
     {
      "k": "skill",
      "n": "opencode-selfcheck",
      "t": "чек-лист до правки",
-     "u": false
+     "u": true
     },
     {
      "k": "tool",
@@ -605,57 +484,45 @@
    "when": "«статус», «что я просил», «что сделано»",
    "status": "warn",
    "status_text": "Мимо единого входа",
-   "runs": 65,
-   "median_s": 159,
-   "max_s": 13583,
-   "last": "2026-11-21T14:31:40.804000+00:00",
+   "runs": 4,
+   "median_s": 156,
+   "max_s": 281,
+   "last": "2026-11-22T02:52:08.143000+00:00",
    "outcomes": {
-    "done": 65
+    "done": 4
    },
    "example": [
-    "Jf2fb7q6",
-    "T4H4Zo8i"
+    "JhVH0iIT",
+    "b798J99C"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 65"
+     "t": "запусков: 4"
     },
     {
      "k": "skill",
      "n": "wants-radar",
-     "t": "в 64 из 65",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 13 из 65",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 65 из 65, ≈18 вызовов за раз",
+     "t": "в 4 из 4",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 55 из 65, ≈8 вызовов за раз",
+     "t": "в 1 из 4, ≈2 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 4 из 4, ≈18 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 63 из 65, ≈5 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "реже: agent-capacity, hypothesis-check, network-constraints, opencode-selfcheck, scanfeed, scientific-ergonomics, show-in-answ",
-     "t": "меньше 13 из 65",
+     "t": "в 4 из 4, ≈3 вызовов за раз",
      "d": 1
     }
    ],
@@ -721,20 +588,79 @@
    "group": "big",
    "title": "Большая задача по этапам",
    "when": "«продолжи план по этапам», process-plan.md",
-   "status": "idle",
-   "status_text": "Нет запусков за окно",
-   "runs": 0,
-   "median_s": null,
-   "max_s": null,
-   "last": "",
-   "outcomes": {},
-   "example": [],
-   "actual": [],
+   "status": "warn",
+   "status_text": "На грани лимита",
+   "runs": 10,
+   "median_s": 207,
+   "max_s": 520,
+   "last": "2026-11-22T06:54:08.182000+00:00",
+   "outcomes": {
+    "done": 10
+   },
+   "example": [
+    "ReOthhYt",
+    "a5v8Okaz"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 10"
+    },
+    {
+     "k": "skill",
+     "n": "progress",
+     "t": "в 10 из 10",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "ready-to-deliver",
+     "t": "в 10 из 10",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 10 из 10, ≈4 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 10 из 10, ≈22 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "conflict-keeper",
+     "t": "в 3 из 10",
+     "d": 2
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 10 из 10, ≈4 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "unblocker",
+     "t": "в 2 из 10",
+     "d": 2
+    },
+    {
+     "k": "skill",
+     "n": "реже: draft-gate, parallel-edit",
+     "t": "меньше 2 из 10",
+     "d": 1
+    }
+   ],
    "declared": [
     {
      "k": "skill",
      "n": "progress",
-     "u": true
+     "u": false
     },
     {
      "k": "agent",
@@ -747,7 +673,7 @@
      "k": "agent",
      "n": "advisor",
      "t": "если два раза не вышло",
-     "u": false
+     "u": true
     },
     {
      "k": "sub",
@@ -808,75 +734,69 @@
    "when": "Не искать по всему дому, не править один файл вдвоём",
    "status": "warn",
    "status_text": "Не ловит",
-   "runs": 15,
-   "median_s": 552,
-   "max_s": 906,
-   "last": "2026-11-21T15:51:51.946000+00:00",
+   "runs": 3,
+   "median_s": 392,
+   "max_s": 424,
+   "last": "2026-11-22T05:54:01.635000+00:00",
    "outcomes": {
-    "done": 15
+    "done": 3
    },
    "example": [
-    "9wNTHf5j",
-    "AQFCUAJc"
+    "8WtijC8P",
+    "ZkeSU9HJ"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 15"
+     "t": "запусков: 3"
     },
     {
      "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 10 из 15",
+     "n": "progress",
+     "t": "в 3 из 3",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "hypothesis-check",
-     "t": "в 9 из 15",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 9 из 15",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "в 5 из 15",
+     "n": "ready-to-deliver",
+     "t": "в 3 из 3",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 15 из 15, ≈9 вызовов за раз",
+     "t": "в 3 из 3, ≈4 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 15 из 15, ≈28 вызовов за раз",
+     "t": "в 3 из 3, ≈25 вызовов за раз",
      "d": 1
     },
     {
      "k": "sub",
      "n": "conflict-keeper",
-     "t": "в 15 из 15",
+     "t": "в 3 из 3",
+     "d": 2
+    },
+    {
+     "k": "skill",
+     "n": "parallel-edit",
+     "t": "в 1 из 3",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "unblocker",
+     "t": "в 2 из 3",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 14 из 15, ≈5 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "реже: parallel-edit, show-in-answer, wants-radar",
-     "t": "меньше 3 из 15",
+     "t": "в 3 из 3, ≈5 вызовов за раз",
      "d": 1
     }
    ],
@@ -935,77 +855,70 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 59,
-   "median_s": 550,
-   "max_s": 13583,
-   "last": "2026-11-21T16:23:12.210000+00:00",
+   "runs": 40,
+   "median_s": 806,
+   "max_s": 2035,
+   "last": "2026-11-22T06:40:58.876000+00:00",
    "outcomes": {
     "waiting_user": 1,
-    "done": 57,
-    "cancelled": 1
+    "done": 39
    },
    "example": [
-    "Bt9FMP1b",
-    "rhWNMt9V"
+    "AONeuOOx",
+    "Eo7y3rXz"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 59"
+     "t": "запусков: 40"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 36 из 59",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "wants-radar",
-     "t": "в 14 из 59",
+     "t": "в 35 из 40",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 52 из 59",
+     "t": "в 28 из 40",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 22 из 59",
+     "t": "в 21 из 40",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 58 из 59, ≈12 вызовов за раз",
+     "t": "в 38 из 40, ≈14 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 59 из 59, ≈33 вызовов за раз",
+     "t": "в 40 из 40, ≈34 вызовов за раз",
      "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "conflict-keeper",
-     "t": "в 12 из 59",
-     "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 58 из 59, ≈8 вызовов за раз",
+     "t": "в 40 из 40, ≈11 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: agent-capacity, method-layer, network-constraints, opencode-selfcheck, scientific-ergonomics, show-in-answer, slow-delib",
-     "t": "меньше 12 из 59",
+     "n": "show-in-answer",
+     "t": "в 10 из 40",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "реже: draft-gate, network-constraints, ready-to-deliver, resources, strange-question, strange-question-gate, suspicion-gate, w",
+     "t": "меньше 8 из 40",
      "d": 1
     }
    ],
@@ -1057,7 +970,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 1",
+   "state": "Прогонов сейчас: 3",
    "level": "ok",
    "f": "C1"
   },
@@ -1073,7 +986,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/hy4-flash-free ×122, opencode/hy4-flash-free ×28",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/hy4-flash-free ×128, opencode/hy4-flash-free ×22",
    "level": "ok",
    "f": "C13"
   },
@@ -1089,7 +1002,7 @@
    "name": "agent-index",
    "when": "Каждые 30 мин",
    "what": "agent_index_build.py пересобирает AGENT-INDEX.md.",
-   "state": "AGENT-INDEX.md обновлён 0.2 ч назад",
+   "state": "AGENT-INDEX.md обновлён 0.1 ч назад",
    "level": "ok",
    "f": "C11"
   },
@@ -1097,7 +1010,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 11, с файлами 10",
+   "state": "Владельцев 82, с файлами 29",
    "level": "ok",
    "f": "C11"
   },
@@ -1105,7 +1018,7 @@
    "name": "Очереди qrun",
    "when": "Cron-сторож раз в 5 мин",
    "what": "Шаги по очереди, вопросы — в Telegram.",
-   "state": "hello: FINISHED; cleanup: WAITING_TIME",
+   "state": "hello: FINISHED; cleanup: FINISHED",
    "level": "ok",
    "f": ""
   }
@@ -1124,7 +1037,7 @@
     },
     {
      "n": "unanswered-radar",
-     "used": true,
+     "used": false,
      "merged": true
     },
     {
@@ -1160,12 +1073,12 @@
     },
     {
      "n": "blocker-radar",
-     "used": true,
+     "used": false,
      "merged": true
     },
     {
      "n": "progress",
-     "used": false,
+     "used": true,
      "merged": false
     },
     {
@@ -1201,7 +1114,7 @@
     },
     {
      "n": "agent-capacity",
-     "used": true,
+     "used": false,
      "merged": true
     },
     {
@@ -1211,12 +1124,12 @@
     },
     {
      "n": "split-resources",
-     "used": true,
+     "used": false,
      "merged": true
     },
     {
      "n": "game-mode",
-     "used": true,
+     "used": false,
      "merged": true
     }
    ],
@@ -1242,7 +1155,7 @@
     },
     {
      "n": "studio-taste",
-     "used": true,
+     "used": false,
      "merged": true
     }
    ],
@@ -1263,7 +1176,7 @@
     },
     {
      "n": "method-layer",
-     "used": true,
+     "used": false,
      "merged": true
     }
    ],

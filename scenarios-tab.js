@@ -2,7 +2,8 @@
    Подключение: <script src="scenarios-tab.js"></script>
    QrunScenarios.mount(element, {
      url: '/api/scenarios',          // откуда брать scenarios.json (или data: {...} — сразу данные)
-     addUrl: '/api/qrun/add',        // POST {queue, text} → шаг в очередь qrun (без него — копирование команды)
+     fallbackUrl: '/scenarios.json', // статика Pages: /api/scenarios там нет, берём свежий файл
+     addUrl: '/api/qrun/add',        // POST {queue, text} → шаг в очередь qrun (при 404 — копирование команды)
      headers: {...},                 // заголовки авторизации для url/addUrl (например initData Telegram)
      queue: 'changes'                // очередь, куда падают правки сценариев
    }) */
@@ -136,12 +137,20 @@
     var queue = opts.queue || 'changes';
 
     function load() {
-      if (!opts.url) return;
       S.loading = true; render();
-      fetch(opts.url, { headers: opts.headers || {}, cache: 'no-store' }).then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status); return r.json();
-      }).then(function (d) { S.data = d; S.err = ''; }).catch(function (e) { S.err = 'Не загрузилось: ' + e.message; })
-        .then(function () { S.loading = false; render(); });
+      var urls = [opts.url, opts.fallbackUrl || '/scenarios.json'].filter(Boolean);
+      var i = 0, lastErr = '';
+      function step() {
+        if (i >= urls.length) { S.err = 'Не загрузилось: ' + lastErr; S.loading = false; render(); return; }
+        var url = urls[i++];
+        fetch(url, { headers: opts.headers || {}, cache: 'no-store' }).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status + ' (' + url + ')'); return r.json();
+        }).then(function (d) {
+          if (!d || !Array.isArray(d.scenarios) || !d.scenarios.length) throw new Error('пустой scenarios в ' + url);
+          S.data = d; S.source = url; S.err = ''; S.loading = false; render();
+        }).catch(function (e) { lastErr = e.message; step(); });
+      }
+      step();
     }
     function scen() { return (S.data && S.data.scenarios) || []; }
     function find(id) { return scen().filter(function (x) { return x.id === id; })[0]; }
@@ -193,7 +202,8 @@
       var hint = { typ: 'Цепочки, которые повторяются. Нажмите на сценарий — откроется дерево: кто кого зовёт и в каком порядке.',
         big: 'Открытые большие задачи: как они идут сейчас и как должны идти по конфигу.',
         svc: 'Хаускиперы и фоновые процессы: когда срабатывают и в каком они состоянии.' }[S.seg];
-      var h = '<div class="qs-snap"><span>Окно трасс ' + esc((w.start || '').replace('T', ' ')) + ' — ' + esc((w.end || '').slice(11)) + ' · ' + w.sessions + ' сессий · собрано ' + esc(d.generated) + '</span>' +
+      var h = '<div class="qs-snap"><span>Окно трасс ' + esc((w.start || '').replace('T', ' ')) + ' — ' + esc((w.end || '').slice(11)) + ' · ' + w.sessions + ' сессий · собрано ' + esc(d.generated) +
+        (S.source ? ' · источник ' + esc(S.source) : '') + '</span>' +
         (opts.url ? '<button class="qs-ghost" data-a="reload">' + (S.loading ? '…' : 'Обновить') + '</button>' : '') + '</div>';
       h += '<section class="qs-tiles" aria-label="Коротко">' +
         '<button class="qs-tile" data-a="dups" style="background:rgba(182,156,255,.12);border:1px solid rgba(182,156,255,.35)"><b>' + sm.skills_used + '<small> из ' + sm.skills + '</small></b><span>скилов вызывались. Дубли →</span></button>' +
@@ -324,7 +334,13 @@
         fetch(opts.addUrl, { method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, opts.headers || {}), body: JSON.stringify({ queue: queue, text: p.text }) })
           .then(function (r) { return r.text().then(function (t) { if (!r.ok) throw new Error(t || 'HTTP ' + r.status); return t; }); })
           .then(function (t) { say('Добавлено в очередь «' + queue + '». ' + (S.ed.dry ? 'План и вопросы придут в Telegram.' : 'Ход — в «Сейчас».') + (t ? '\n' + t.slice(0, 300) : '')); })
-          .catch(function (e) { say('Не ушло: ' + e.message.slice(0, 300), 'err'); });
+          .catch(function (e) {
+            // Статика GitHub Pages не умеет /api/qrun/add: не оставляем мёртвую кнопку,
+            // а выдаём ту же команду, что и без API — пользователь отправляет её боту.
+            copy('Выполни: ~/qrun/q add ' + queue + ' ' + shq(p.text)).then(function () {
+              say('API недоступен (' + e.message.slice(0, 120) + ') — команда скопирована, отправьте её боту одним сообщением.', 'err');
+            });
+          });
         return;
       }
       render();
