@@ -892,5 +892,27 @@
         "status": "PASS"
       }
     ]
+  },
+  {
+    "id": "CFG-3",
+    "name": "Исправить счётчик бэклога менеджера",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "CFG-3.1",
+        "name": "Заменить sum(lines) на подсчёт status=todo",
+        "status": "PASS"
+      },
+      {
+        "id": "CFG-3.2",
+        "name": "End-to-end: статус менеджера показывает todo",
+        "status": "PASS"
+      },
+      {
+        "id": "CFG-3.3",
+        "name": "Независимый selfcheck",
+        "status": "OPEN"
+      }
+    ]
   }
 ]

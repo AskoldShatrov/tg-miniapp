@@ -1240,6 +1240,35 @@
       "startedAt": "2026-11-22T04:55:24+03:00",
       "updatedAt": "2026-11-22T04:57:18+03:00",
       "completedAt": "2026-11-22T04:57:18+03:00"
+    },
+    {
+      "task": "CFG-3",
+      "id": "CFG-3.1",
+      "title": "Заменить sum(lines) на подсчёт status=todo",
+      "status": "done",
+      "note": "manager_watchdog.py:151 — парсим JSONL, считаем status==todo; бэкап /tmp/opencode/manager_watchdog.py.bak-CFG3-179531281",
+      "startedAt": "2026-11-22T05:01:42+03:00",
+      "updatedAt": "2026-11-22T05:01:42+03:00",
+      "completedAt": "2026-11-22T05:01:42+03:00"
+    },
+    {
+      "task": "CFG-3",
+      "id": "CFG-3.2",
+      "title": "End-to-end: статус менеджера показывает todo",
+      "status": "done",
+      "note": "systemctl --user start manager-watchdog.service → manager_status.json now=05:01:25 backlog_remaining=41 verdict=HEALTHY",
+      "startedAt": "2026-11-22T05:01:42+03:00",
+      "updatedAt": "2026-11-22T05:01:42+03:00",
+      "completedAt": "2026-11-22T05:01:42+03:00"
+    },
+    {
+      "task": "CFG-3",
+      "id": "CFG-3.3",
+      "title": "Независимый selfcheck",
+      "status": "running",
+      "note": "",
+      "startedAt": "2026-11-22T05:01:42+03:00",
+      "updatedAt": "2026-11-22T05:01:42+03:00"
     }
   ],
   "active": [
@@ -1248,7 +1277,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 90,
+      "age_min": 91,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "autogen": true
     },
@@ -1257,7 +1286,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "source": "ПК",
       "claimed_human": "03:31:00",
-      "age_min": 90,
+      "age_min": 91,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "autogen": true
     },
@@ -1266,7 +1295,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "source": "ПК",
       "claimed_human": "03:28:59",
-      "age_min": 92,
+      "age_min": 93,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "autogen": true
     },
@@ -1275,7 +1304,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "source": "ПК",
       "claimed_human": "03:26:59",
-      "age_min": 94,
+      "age_min": 95,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "autogen": true
     },
@@ -1284,7 +1313,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 96,
+      "age_min": 97,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "autogen": true
     },
@@ -1293,7 +1322,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "source": "ПК",
       "claimed_human": "03:19:58",
-      "age_min": 101,
+      "age_min": 102,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "autogen": true
     }
@@ -1311,10 +1340,10 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T05:01:33+03:00",
-  "progress_updated_at": "2026-11-22T05:01:33+03:00",
+  "updatedAt": "2026-11-22T05:01:42+03:00",
+  "progress_updated_at": "2026-11-22T05:01:42+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795312898,
-  "fetched_human": "2026-11-22 05:01:38 +0300"
+  "fetched_at": 1795312958,
+  "fetched_human": "2026-11-22 05:02:38 +0300"
 }
