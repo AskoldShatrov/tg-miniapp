@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T08:47:25+00:00",
+  "generated": "2026-11-22T08:47:32+00:00",
   "generated_human": "22.11 08:47 UTC",
-  "as_of": 1795337245718,
+  "as_of": 1795337252742,
   "stale_days": 1,
   "count": 884,
   "groups": 9,
@@ -38,35 +38,48 @@
    ],
    "prompts": [
     {
-     "id": "ses-uzEl3gP9L0",
-     "text": "Только чтение + один артефакт. Проверь, что контракт движка и протоколы предотвращают три мои ошибки: (1) доверие чужим сводкам без команды, (2) останов при зелёных гейтах, (3) отсутствие заморозки SHA256 и RED→GREEN. Для каждого пункта укажи конкретный файл/поле движка и COMMAND-гейт; если гейта нет — предложи унифицированный патч, НЕ применяя его. В артефакте обязательны строки SHA256 и mtime проверяемых файлов.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-main/artifacts/META-NO-STOP-c10.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795337244000,
-     "source": "session",
-     "title": "lree-META-NO-STOP-c10",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795337244000,
-     "is_stale": false
-    },
-    {
      "id": "ses-KqJ9J3rfnW",
      "text": "Только чтение. ПроверьSHA256 файлов /home/nyaka/overnight/REPORT-night-2026-11-21-22.md и /tmp/opencode/night_report/data.json командой sha256sum, сверь с ожидаемыми 130c277d0e46357b7b38ab57ab98a90ab56402f80144bf9281d86c45807102d8 и df14c2c6ba4e2dacc97057f4fbd7e711bb8ca671451b1a68c30773da0b005157.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/longrun-8h/artifacts/AUD-REPORT-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795337241000,
+     "ts": 1795337250000,
      "source": "session",
      "title": "lree-AUD-REPORT-c3",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795337241000,
+     "as_of": 1795337250000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-fCaLyDNcI2",
+     "text": "Только чтение + один артефакт. Проверь, что контракт движка и протоколы предотвращают три мои ошибки: (1) доверие чужим сводкам без команды, (2) останов при зелёных гейтах, (3) отсутствие заморозки SHA256 и RED→GREEN. Для каждого пункта укажи конкретный файл/поле движка и COMMAND-гейт; если гейта нет — предложи унифицированный патч, НЕ применяя его. В артефакте обязательны строки SHA256 и mtime проверяемых файлов.\n\nЗапиши артефакт ровно по пути: /tmp/opencode/wud-main2/artifacts/META-NO-STOP-c8.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795337248000,
+     "source": "session",
+     "title": "lree-META-NO-STOP-c8",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795337248000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-LSd2qLZmay",
+     "text": "В новой сессии: разбери OPEN-запись ледгера: - 2026-11-22 06:29 UTC — сверка claims после правки владельца: 27/27 негативных H-ID теперь в реестр. Подготовь артефакт /tmp/opencode/studio-8h/autopilot/artifact_evo7.md с доказательствами и Ruling. Не меняй конфиги, бот, progress/claims/goals. В конце выведи ровно PROMISE: DONE.",
+     "ts": 1795337247000,
+     "source": "session",
+     "title": "autopilot-evo7",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795337247000,
      "is_stale": false
     },
     {
      "id": "ses-1VOeJSa8Oh",
      "text": "Ты — независимый свежий верификатор. Прочитай /home/nyaka/evolution-work/VERIFY-V7-CHECKLIST.md и проверь все 7 гейтов реальными командами (sha256sum, stat, grep, python3, ps, cat). Не меняй проверяемые файлы. Гейты 1 и 7 требуют честности. Запиши результат в /home/nyaka/evolution-work/VERIFIER-V7-RESULT.md с таймстемпом, по строке на гейт с командами и выводом. Итог N PASS / M FAIL / K OPEN. Только русский язык.",
-     "ts": 1795337241000,
+     "ts": 1795337246000,
      "source": "session",
      "title": "verifier-v7",
      "source_label": "ноут",
@@ -85,33 +98,20 @@
      "answer_text_id": "5a574d3bc9e5286c",
      "answer_source": "replies.json",
      "delivered_ts": 1795337220757,
-     "as_of": 1795337241000,
+     "as_of": 1795337246000,
      "is_stale": false
     },
     {
-     "id": "ses-fCaLyDNcI2",
-     "text": "Только чтение + один артефакт. Проверь, что контракт движка и протоколы предотвращают три мои ошибки: (1) доверие чужим сводкам без команды, (2) останов при зелёных гейтах, (3) отсутствие заморозки SHA256 и RED→GREEN. Для каждого пункта укажи конкретный файл/поле движка и COMMAND-гейт; если гейта нет — предложи унифицированный патч, НЕ применяя его. В артефакте обязательны строки SHA256 и mtime проверяемых файлов.\n\nЗапиши артефакт ровно по пути: /tmp/opencode/wud-main2/artifacts/META-NO-STOP-c8.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795337239000,
+     "id": "ses-uzEl3gP9L0",
+     "text": "Только чтение + один артефакт. Проверь, что контракт движка и протоколы предотвращают три мои ошибки: (1) доверие чужим сводкам без команды, (2) останов при зелёных гейтах, (3) отсутствие заморозки SHA256 и RED→GREEN. Для каждого пункта укажи конкретный файл/поле движка и COMMAND-гейт; если гейта нет — предложи унифицированный патч, НЕ применяя его. В артефакте обязательны строки SHA256 и mtime проверяемых файлов.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-main/artifacts/META-NO-STOP-c10.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795337245000,
      "source": "session",
-     "title": "lree-META-NO-STOP-c8",
+     "title": "lree-META-NO-STOP-c10",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795337239000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-LSd2qLZmay",
-     "text": "В новой сессии: разбери OPEN-запись ледгера: - 2026-11-22 06:29 UTC — сверка claims после правки владельца: 27/27 негативных H-ID теперь в реестр. Подготовь артефакт /tmp/opencode/studio-8h/autopilot/artifact_evo7.md с доказательствами и Ruling. Не меняй конфиги, бот, progress/claims/goals. В конце выведи ровно PROMISE: DONE.",
-     "ts": 1795337239000,
-     "source": "session",
-     "title": "autopilot-evo7",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795337239000,
+     "as_of": 1795337245000,
      "is_stale": false
     },
     {
@@ -3696,9 +3696,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-WkapPh4Vvj",
+     "text": "Работа по плану /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md, шаг S1. Починить захват (ретрай mss, ожидание окна), снять кадры F1-F8 демо Spirit-Furia Dust2 и ещё две карты, получить n>=60 кадров с GSI-truth по 10 игрокам. Заморозить SHA256 входов. Ничего не удалять и не перезаписывать чужие файлы. В артефакт: команды, путь к truth, SHA, n, число карт, VERDICT с порогом n>=60.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S1-DATA-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795337249000,
+     "source": "session",
+     "title": "lree-SF-S1-DATA-c3",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795337249000,
+     "is_stale": false
+    },
+    {
      "id": "ses-l4J50c4F5D",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0080. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0080_run2227.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795337242000,
+     "ts": 1795337248000,
      "source": "session",
      "title": "QH0080: калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -3717,7 +3730,7 @@
      "answer_text_id": "5a574d3bc9e5286c",
      "answer_source": "replies.json",
      "delivered_ts": 1795337220757,
-     "as_of": 1795337242000,
+     "as_of": 1795337248000,
      "is_stale": false
     },
     {
@@ -3768,19 +3781,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795337220757,
      "as_of": 1795337215000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-WkapPh4Vvj",
-     "text": "Работа по плану /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md, шаг S1. Починить захват (ретрай mss, ожидание окна), снять кадры F1-F8 демо Spirit-Furia Dust2 и ещё две карты, получить n>=60 кадров с GSI-truth по 10 игрокам. Заморозить SHA256 входов. Ничего не удалять и не перезаписывать чужие файлы. В артефакт: команды, путь к truth, SHA, n, число карт, VERDICT с порогом n>=60.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S1-DATA-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795337210000,
-     "source": "session",
-     "title": "lree-SF-S1-DATA-c3",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795337210000,
      "is_stale": false
     },
     {
