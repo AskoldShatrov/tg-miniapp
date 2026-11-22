@@ -818,7 +818,7 @@
       {
         "id": "AUD-1.4",
         "name": "Применить безопасные config-правки после карты конфликтов",
-        "status": "OPEN"
+        "status": "PASS"
       },
       {
         "id": "AUD-1.5",
@@ -867,6 +867,28 @@
       {
         "id": "T24.4",
         "name": "Найти и закрыть следующий дефект того же контура",
+        "status": "OPEN"
+      }
+    ]
+  },
+  {
+    "id": "CFG-2",
+    "name": "Стража freeCount в free-router",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "CFG-2.1",
+        "name": "Добавить warning при не-free модели в свободном срезе",
+        "status": "PASS"
+      },
+      {
+        "id": "CFG-2.2",
+        "name": "Тест: ложных срабатываний нет, на плохом конфиге warning火",
+        "status": "PASS"
+      },
+      {
+        "id": "CFG-2.3",
+        "name": "Независимый selfcheck",
         "status": "OPEN"
       }
     ]

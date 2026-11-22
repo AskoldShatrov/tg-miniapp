@@ -1116,15 +1116,19 @@
       "task": "AUD-1",
       "id": "AUD-1.4",
       "title": "Применить безопасные config-правки после карты конфликтов",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "webfetch ask + allowlist opencode.ai/github в opencode.jsonc; бэкап; selfcheck 7 PASS/0 FAIL/0 OPEN",
+      "updatedAt": "2026-11-22T04:54:45+03:00",
+      "completedAt": "2026-11-22T04:54:45+03:00"
     },
     {
       "task": "AUD-1",
       "id": "AUD-1.5",
       "title": "Независимая проверка, доставка и фиксация OPEN",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "сводка применений, финальные тесты, доставка",
+      "startedAt": "2026-11-22T04:54:45+03:00",
+      "updatedAt": "2026-11-22T04:54:45+03:00"
     },
     {
       "task": "T23",
@@ -1177,6 +1181,35 @@
       "note": "parallel recon: outstanding FAIL/OPEN + next defect",
       "startedAt": "2026-11-22T04:51:42+03:00",
       "updatedAt": "2026-11-22T04:51:42+03:00"
+    },
+    {
+      "task": "CFG-2",
+      "id": "CFG-2.1",
+      "title": "Добавить warning при не-free модели в свободном срезе",
+      "status": "done",
+      "note": "index.js: после freeModels добавлен фильтр /free|pickle/i + warn; бэкап /tmp/opencode/failover-index.js.bak-CFG2-1795312",
+      "startedAt": "2026-11-22T04:55:23+03:00",
+      "updatedAt": "2026-11-22T04:55:23+03:00",
+      "completedAt": "2026-11-22T04:55:23+03:00"
+    },
+    {
+      "task": "CFG-2",
+      "id": "CFG-2.2",
+      "title": "Тест: ложных срабатываний нет, на плохом конфиге warning火",
+      "status": "done",
+      "note": "текущая цепочка: free slice 13, suspicious 0; тестовый конфиг с bad-paid#high → WARN_FIRED true (/tmp/opencode/cfg2_guar",
+      "startedAt": "2026-11-22T04:55:24+03:00",
+      "updatedAt": "2026-11-22T04:55:24+03:00",
+      "completedAt": "2026-11-22T04:55:24+03:00"
+    },
+    {
+      "task": "CFG-2",
+      "id": "CFG-2.3",
+      "title": "Независимый selfcheck",
+      "status": "running",
+      "note": "oc_selfcheck",
+      "startedAt": "2026-11-22T04:55:24+03:00",
+      "updatedAt": "2026-11-22T04:55:24+03:00"
     }
   ],
   "active": [
@@ -1185,7 +1218,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 83,
+      "age_min": 84,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "autogen": true
     },
@@ -1194,7 +1227,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "source": "ПК",
       "claimed_human": "03:31:00",
-      "age_min": 83,
+      "age_min": 84,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "autogen": true
     },
@@ -1203,7 +1236,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "source": "ПК",
       "claimed_human": "03:28:59",
-      "age_min": 85,
+      "age_min": 86,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "autogen": true
     },
@@ -1212,7 +1245,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "source": "ПК",
       "claimed_human": "03:26:59",
-      "age_min": 87,
+      "age_min": 88,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "autogen": true
     },
@@ -1221,7 +1254,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 89,
+      "age_min": 90,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "autogen": true
     },
@@ -1230,7 +1263,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "source": "ПК",
       "claimed_human": "03:19:58",
-      "age_min": 94,
+      "age_min": 95,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "autogen": true
     }
@@ -1248,9 +1281,9 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T04:54:23+03:00",
-  "progress_updated_at": "2026-11-22T04:54:23+03:00",
+  "updatedAt": "2026-11-22T04:55:24+03:00",
+  "progress_updated_at": "2026-11-22T04:55:24+03:00",
   "plan_source": "progress.json",
-  "fetched_at": 1795312475,
-  "fetched_human": "2026-11-22 04:54:35 +0300"
+  "fetched_at": 1795312535,
+  "fetched_human": "2026-11-22 04:55:35 +0300"
 }
