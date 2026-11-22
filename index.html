@@ -136,8 +136,21 @@
   .chip.open{color:var(--yellow);background:rgba(249,226,175,.10);border:1px solid rgba(249,226,175,.30)}
   .chip.progress{color:var(--sky);background:rgba(137,220,235,.10);border:1px solid rgba(137,220,235,.30)}
   .chip.question{color:var(--lavender);background:rgba(203,166,247,.10);border:1px solid rgba(203,166,247,.30)}
-  .qtitle{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 10px}
+  .qtitle{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
+  .qctx{font:600 10px/1.3 var(--fm);color:var(--overlay1);margin:0 0 10px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .qbody{font-size:13px;line-height:1.55;color:var(--subtext1);margin:0}
+  /* Действие и ресурс — главная опора карточки: крупнее и контрастнее тегов. */
+  .qscope{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+  .qscope span{font:600 11px/1.3 var(--fm);color:var(--lavender);
+    background:rgba(203,166,247,.10);border:1px solid rgba(203,166,247,.30);
+    border-radius:7px;padding:5px 8px;max-width:100%;overflow:hidden;
+    text-overflow:ellipsis;white-space:nowrap}
+  /* Почему ждём — обычный абзац с акцентом, а не мелкий тег-«плейсхолдер». */
+  .qwhy{margin-top:12px;padding:10px 11px;border-radius:var(--radius-sm);
+    background:rgba(137,180,250,.06);border-left:2px solid var(--blue);
+    font-size:12px;line-height:1.5;color:var(--subtext1)}
+  .qwhy b{color:var(--blue);font-weight:700}
   .qmeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
   .tag{font:600 10px/1 var(--fm);color:var(--overlay1);background:var(--mantle);border:1px solid var(--surface1);border-radius:7px;padding:5px 7px}
   /* Свой текст в карточке вопроса: ответ агенту или уточняющий вопрос. */
@@ -148,7 +161,9 @@
   .qfree::placeholder{color:var(--overlay0)}
   .qfree:focus{outline:none;border-color:var(--lavender)}
   .qfree-row .btn{flex:0 0 auto;padding:9px 10px}
-  .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+  /* Две кнопки занимают всю ширину, три — делят её поровну, без пустой колонки. */
+  .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .actions .btn{flex:1 1 120px;min-width:110px}
   .btn{
     appearance:none;border-radius:var(--radius-sm);padding:11px 6px;cursor:pointer;
     font:700 12px/1.1 var(--ff);transition:.15s ease;border:1px solid transparent;
