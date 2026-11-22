@@ -2200,12 +2200,15 @@ function atlasNodeHtml(n){
   return `<div class="tnode">${row}${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
 }
 function atlasIndex(rs){
-  (rs||[]).forEach(n=>{ ATLAS_LOOKUP[n.id]=n; atlasIndex(n.children); });
+  (rs||[]).forEach(n=>{
+    const k="k"+Object.keys(ATLAS_LOOKUP).length;
+    n.__k=k; ATLAS_LOOKUP[k]=n; atlasIndex(n.children);
+  });
 }
 function atlasDetail(n){
   const box=$("#atlasDetail"); if(!box) return;
   box.hidden=false;
-  box.innerHTML=`<div class="a-meta">${esc(n.title||n.id||"")} · ${esc(n.kind||"")} · ${esc(n.status||"")} · ${esc(n.id||"")}</div>
+  box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
     <div class="a-full" id="atlasFull">${esc(n.full||n.answer||n.title||"")}</div>
     <div class="a-query"><input id="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
   const send=()=>{
@@ -2246,14 +2249,18 @@ function renderAtlas(){
   if(atEl) atEl.textContent=((ATLAS.updatedAt||"").slice(11,16)||"—")+" · "+af.text;
   ATLAS_LOOKUP={}; atlasIndex(tree.roots);
   cards.innerHTML=`<div class="tree">${(tree.roots||[]).map(atlasNodeHtml).join("")}</div>`;
+  $$("#atlasCards .a-ask").forEach(b=>b.addEventListener("click",ev=>{
+    ev.stopPropagation();
+    const n=ATLAS_LOOKUP[b.dataset.key];
+    if(n) atlasDetail(n);
+  }));
   $$("#atlasCards .trow").forEach(row=>row.addEventListener("click",()=>{
     const box=row.nextElementSibling, tw=row.querySelector(".twist");
     if(box&&box.classList.contains("children")){
       box.classList.toggle("open");
       if(tw) tw.classList.toggle("open");
-      return;
     }
-    const n=ATLAS_LOOKUP[row.dataset.node];
+    const n=ATLAS_LOOKUP[row.dataset.key];
     if(n) atlasDetail(n);
   }));
   // первый уровень раскрыт сразу: нужная ветка доступна за ≤2 тапа
