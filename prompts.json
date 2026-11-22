@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T10:39:37+00:00",
-  "generated_human": "22.11 10:39 UTC",
-  "as_of": 1795343977695,
+  "generated": "2026-11-22T10:40:41+00:00",
+  "generated_human": "22.11 10:40 UTC",
+  "as_of": 1795344041974,
   "stale_days": 1,
   "count": 879,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-scJf3GNWcD",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0087. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0087_run2309.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795343975000,
+     "ts": 1795344031000,
      "source": "session",
      "title": "QH0087: перекалибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -60,13 +60,13 @@
      "answer_text_id": "1c887170fdc653f6",
      "answer_source": "replies.json",
      "delivered_ts": 1795343949213,
-     "as_of": 1795343975000,
+     "as_of": 1795344031000,
      "is_stale": false
     },
     {
      "id": "ses-GG9C47cnFi",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795343932000,
+     "ts": 1795344024000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -85,7 +85,20 @@
      "answer_text_id": "1c887170fdc653f6",
      "answer_source": "replies.json",
      "delivered_ts": 1795343949213,
-     "as_of": 1795343932000,
+     "as_of": 1795344024000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-Jf9bGtAsyH",
+     "text": "Проверь df -B1 / : если доступно <15 ГиБ — НЕ запускай сборку, напиши OPEN с выводом df и готовой командой timeout 1200 python3 /home/nyaka/overnight/cloud_tracks/C06-422-build.py > /tmp/opencode/aud4-build.log 2>&1 &; порог не снижай. Если >=15 ГиБ — запусти сборку с таймаутом, проверь n кадров=17920 и манифест, посчитай ECE/Brier на holdout по match_id (n и Wilson), запиши путь, SHA256, mtime и команды в артефакт. Не трогай data/, GUI, чужие каталоги и исходные скрипты.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/AUD4-DISKGATE-c19.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795344022000,
+     "source": "session",
+     "title": "lree-AUD4-DISKGATE-c19",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795344022000,
      "is_stale": false
     },
     {
@@ -14675,31 +14688,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795333568221,
      "as_of": 1795309377000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-PbK7Sm4CVb",
-     "text": "ФИД. Сверить состояние HLTV/FACEIT-фида: 374/374 ссылок, 658 parse done / 2 retry, 100 новых демо на ПК, бюджет 25 ГБ. Проверить через pc-bridge :8898 и логи. Гейт: все счётчики согласованы либо расхождение явно названо с источником. Новый отчёт ~/overnight/cloud_tracks/C07-1847.md. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795309252000,
-     "source": "session",
-     "title": "Сверка HLTV/FACEIT-фида C07-1847",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611200241438cdc"
-     ],
-     "answer": "[w2611200241438cdc] SUSPICION: yes — проверяю не «работает ли голосовой бот в мини-апе», а конкретный физический факт: доходит ли расшифровка голоса до `replies.json` задеплоенного мини-апа.\nПОЧЕМУ СЕЙЧАС: в предыдущем о",
-     "answer_short": "w2611200241438cdc: SUSPICION: yes — проверяю не «работает ли голосовой бот в ми",
-     "answer_full": "SUSPICION: yes — проверяю не «работает ли голосовой бот в мини-апе», а конкретный физический факт: доходит ли расшифровка голоса до `replies.json` задеплоенного мини-апа.\nПОЧЕМУ СЕЙЧАС: в предыдущем отчёте я перечислил голос как риск и опёрся на `tg-bot-ui`, где записано «голоса в мини-апе нет, не тестировалось». Ты видишь симптом в приложении, а я проверял только статусы сервисов — разрыв между «сервис active» и «результат в ответе приложения».\nГЕЙТ (предрегистрирован до проверки): доказательство — свежий (≤180 с) `rid` в `replies.json` на GitHub `main` и на Pages плюс ответ `POST /voice/upload` с текстом расшифровки. Не доказательство — `systemctl is-active`, «process-api запущен», лог запуска ASR.\nПРОВЕРКА:\n- 10:34:49, `~/shared-repo/bots/miniapp/status.json`: `process_api_url=https://b19e37186c8a29.app.lhr.life`; журнал туннеля: 10:37:54 и 10:38:24 → `502` дважды, «туннель упал», файл `~/.local/state/bundle/process-api-url` пуст. Значит мини-ап брал мёртвый адрес.\n- 10:34, `~/local-llm/work/tg_voice/vmwriu9l1cmlu.ogg` (1542 байт, 5.28 с) и локальный `replies.json`: расшифровка «Редактор субтитров А.Семкин Корректор А.Егорова» с `rid=vmwriu9l1cmlu` есть; на Pages в 10:35 её не было.\n- 10:34:49, `process-api.service`: `MINIAPP REPLY PULL FAIL: cannot pull with rebase: You have unstaged changes` и `MINIAPP REPLY COMMIT FAIL: ... index.lock: File exists`.\n- 10:38:31 туннель переподнят, новый адрес `https://3d4188626c4333.app.lhr.life`; 10:39:26 `status.json` обновлён; `GET /health` → 200 в 10:42.\n- 10:40:52 живой тест: подписанный initData, реальный OGG, `POST /voice/upload` через публичный HTTPS → HTTP 200, `ok:true`, текст расшифровки получен; `rid=e2eae022363`.\n- 10:42: после теста `e2eae022363` нет ни в локальном, ни в GitHub `main`, ни на Pages. Зато `vmwriu9l1cmlu` после моего ручного коммита `d45008b` теперь есть и в `main`, и на Pages.\nВЕРДИКТ: ПОДТВЕРЖДЕНО. Загрузка и расшифровка работают, доставка ответа в мини-ап — нет. Я был неправ, называя это «открытым пунктом без кода»: код есть, но сквозного теста не было.\n\nКоротко по существу.\n\nПричины, почему в приложении тихо:\n1. Туннель `localhost.run` живёт около 20 минут и ротирует домен. `status.json` публиковал старый адрес; мини-ап слал голос в никуда (`502 no tunnel`). Сервис при этом был `active` — классическая ловушка зелёного статуса.\n2. Зеркало ответа в `~/runtime/tmp-checkpoint/tg-miniapp-pages`: `miniapp_status.py` и `mirror_miniapp_reply` пишут и пушат один репо из разных процессов. `git pull --rebase` падает на чужих некоммиченных файлах, затем ловится `index.lock`. Расшифровка остаётся на диске, но до `replies.json` не доходит. Повторилось и на моём тесте 10:40.\n3. Теста не было: в `tg-bot-ui` до сих пор записано, что голоса в мини-апе нет. Документация отстала от кода, поэтому я поверил ей вместо живого прогона.\n\nЧто сделано сейчас: перезапущен `process-api-tunnel.service`, свежий URL записан в `status.json`, `health` 200; пропавший ответ 10:34 коммитом `d45008b` доставлен в `m",
-     "answer_digest": {
-      "length": 3000,
-      "sha256": "a614cd11e9c679ca7cc54479acc03f5221ff86e65f3144d896f38ee82dda9c11"
-     },
-     "answer_text_id": "a614cd11e9c679ca",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795333568221,
-     "as_of": 1795309252000,
      "is_stale": false
     },
     {
