@@ -1968,8 +1968,8 @@ setInterval(refreshReplies, 5000);
     $("#pSrc").textContent=(m.generated_human||m.generated||"нет данных")+(asof?" · выгрузка "+asof:"")+(m.note?" · "+m.note:"");
     const nb=$("#pStale"), staleN=rows.filter(r=>pIsStale(r.p)).length;
     if(nb){
-      if(staleN>0 || Number(m.stale_days)>0){
-        nb.innerHTML='<span>⚠ Выгрузка устарела'+(staleN?' · '+staleN+' устаревших записей':'')+(Number(m.stale_days)>0?' · '+m.stale_days+' дн':'')+(asof?' · '+asof:'')+'</span><button id="pStaleReload" class="p-mini" title="Перечитать данные">⟳ обновить</button>';
+      if(staleN>0){
+        nb.innerHTML='<span>⚠ Старые вопросы в выборке: '+staleN+(asof?' · выгрузка '+asof:'')+'</span><button id="pStaleReload" class="p-mini" title="Перечитать данные">⟳ обновить</button>';
         nb.classList.add("show");
         const sb=$("#pStaleReload"); if(sb) sb.addEventListener("click",()=>{
           const b=$("#pReload"); if(b){b.classList.add("spin"); refreshPrompts().then(()=>b.classList.remove("spin"));}
@@ -2103,16 +2103,31 @@ setInterval(refreshReplies, 5000);
     pReload.classList.add("spin"); refreshPrompts().then(()=>pReload.classList.remove("spin"));
   });
   refreshPrompts();
+  /* @auto:poll-prompts:start */
   // Данные обновляются раз в минуту на сервере — подтягиваем их и в открытой
-  // апе, но только на вкладке «Промпты» и не во время ввода текста.
+  // апе, но только на вкладке «Промпты», не во время ввода и без сброса
+  // раскрытых карточек/скролла (их пересоздаёт renderPrompts()).
+  function refreshPromptsPreserve(){
+    const list=$("#pList"); if(!list) return;
+    const opened=$$("#pList .p-item.open").map(x=>x.dataset.pid);
+    const groups=$$("#pList .p-children.open")
+      .map(x=>x.closest(".p-group")?.dataset.gid).filter(Boolean);
+    const sc=($("#main")||{}).scrollTop||0;
+    return refreshPrompts().then(()=>{
+      opened.forEach(pid=>{ const el=$(`#pList .p-item[data-pid="${pid}"]`); if(el) el.classList.add("open"); });
+      groups.forEach(gid=>{ const el=$(`#pList .p-group[data-gid="${gid}"] .p-children`); if(el) el.classList.add("open"); });
+      if($("#main")) $("#main").scrollTop=sc;
+    });
+  }
   setInterval(()=>{
     if(document.hidden) return;
     const ae=document.activeElement;
     if(ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName)) return;
     const tab=$(".tab.active");
     if(!tab || tab.dataset.tab!=="prompts") return;
-    refreshPrompts();
+    refreshPromptsPreserve();
   }, 60000);
+  /* @auto:poll-prompts:end */
 
 /* ---------- атлас: деревья одного графа ---------- */
 let ATLAS=null, ATLAS_TREE=null;
@@ -2221,7 +2236,7 @@ function renderLive(){
   if(ps){
     ps.classList.toggle("p-badge",planStale);
     ps.classList.toggle("stale",planStale);
-    ps.textContent="План · "+planStamp+(planStale?" — план давно не менялся, данные собраны свежими":"");
+    ps.textContent=planStamp+(planStale?" — план давно не менялся, данные собраны свежими":"");
   }
 
   const q=$("#liveQueues");
