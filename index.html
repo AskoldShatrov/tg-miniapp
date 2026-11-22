@@ -829,7 +829,7 @@
 
     <section class="screen" id="screen-atlas">
       <div class="eyebrow">Атлас · конструктор карточек</div>
-      <div class="hint" style="margin:8px 0 4px">Один граф — несколько сеток: авторы, видео, идеи, метод→алгоритм→математика, сигнал/шум.</div>
+      <div class="hint" style="margin:8px 0 4px">Один граф — несколько деревьев: авторы, видео, идеи, метод→алгоритм→математика, сигнал/шум. Нажми на строку, чтобы раскрыть ветку.</div>
       <div class="grid-tabs" id="atlasGrids"></div>
       <div class="live-strip"><span>узлов <b id="atlasCount">…</b></span><span id="atlasTime" style="margin-left:auto;color:var(--overlay0)">…</span></div>
       <div id="atlasCards"></div>
@@ -2104,28 +2104,53 @@ setInterval(refreshReplies, 5000);
   });
   refreshPrompts();
 
-/* ---------- атлас: сетки одного графа ---------- */
-let ATLAS=null, ATLAS_GRID=null;
+/* ---------- атлас: деревья одного графа ---------- */
+let ATLAS=null, ATLAS_TREE=null;
+const ATLAS_KIND={author:"авт",video:"вид",claim:"утв",verdict:"вер",hypothesis:"гип",want:"хоч",goal:"цел",group:"grp"};
+function atlasBadge(raw){
+  const s=String(raw||"open");
+  const k=(s==="pass"||s==="verified"||s==="done")?"PASS":((s==="fail"||s==="refuted")?"FAIL":"OPEN");
+  return `<span class="status st-${k}">${esc(s.slice(0,6).toUpperCase())}</span>`;
+}
+function atlasNodeHtml(n){
+  const kids=Array.isArray(n.children)?n.children:[];
+  const twist=kids.length?'<span class="twist">▶</span>':'<span class="twist leaf">·</span>';
+  const kind=`<span class="tid">${esc(ATLAS_KIND[n.kind]||"·")}</span>`;
+  const title=esc(n.title||n.id||"");
+  const row=`<div class="trow ${kids.length?"parent":""}" data-nid="${esc(n.ref||n.id||"")}">${twist}${kind}<span class="tname" title="${esc(n.answer||"")}">${title}</span>${atlasBadge(n.status)}</div>`;
+  return `<div class="tnode">${row}${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
+}
 function renderAtlas(){
   if(!ATLAS) return;
   const tabs=$("#atlasGrids"), cards=$("#atlasCards");
   if(!tabs||!cards) return;
-  const grids=Array.isArray(ATLAS.grids)?ATLAS.grids:[];
-  if(!ATLAS_GRID&&grids.length) ATLAS_GRID=grids[0].id;
-  tabs.innerHTML=grids.map(g=>`<button class="grid-tab ${g.id===ATLAS_GRID?'active':''}" data-grid="${esc(g.id)}">${esc(g.title||g.id)}</button>`).join("");
-  $$("#atlasGrids .grid-tab").forEach(b=>b.addEventListener("click",()=>{ATLAS_GRID=b.dataset.grid;renderAtlas();}));
-  const grid=grids.find(g=>g.id===ATLAS_GRID)||grids[0]||{};
-  const kinds=((grid.filter||{}).kind)||[];
-  const nodes=(ATLAS.nodes||[]).filter(n=>!kinds.length||kinds.includes(n.kind));
-  $("#atlasCount").textContent=nodes.length;
+  const trees=Array.isArray(ATLAS.trees)?ATLAS.trees:[];
+  if(!trees.length){
+    cards.innerHTML='<div class="p-empty">В atlas.json нет деревьев — запусти atlas_build.py</div>';
+    return;
+  }
+  if(!ATLAS_TREE||!trees.some(t=>t.id===ATLAS_TREE)) ATLAS_TREE=trees[0].id;
+  tabs.innerHTML=trees.map(t=>`<button class="grid-tab ${t.id===ATLAS_TREE?"active":""}" data-grid="${esc(t.id)}">${esc(t.title)}</button>`).join("");
+  $$("#atlasGrids .grid-tab").forEach(b=>b.addEventListener("click",()=>{ATLAS_TREE=b.dataset.grid;renderAtlas();}));
+  const tree=trees.find(t=>t.id===ATLAS_TREE)||trees[0];
+  const count=(rs)=>rs.reduce((a,n)=>a+1+count(n.children||[]),0);
+  $("#atlasCount").textContent=count(tree.roots||[]);
   const atEl=$("#atlasTime"), af=paint("atlas", atEl);
   if(atEl) atEl.textContent=((ATLAS.updatedAt||"").slice(11,16)||"—")+" · "+af.text;
-  cards.innerHTML=nodes.slice(0,120).map(n=>`
-    <div class="acard">
-      <div class="atitle">${esc(n.text||n.id)}</div>
-      <div class="ameta">${esc(n.kind)} · ${esc(n.status)} · ${esc(n.id)}</div>
-      ${n.answer_short?`<div class="aanswer">${esc(n.answer_short)}</div>`:""}
-    </div>`).join("");
+  cards.innerHTML=`<div class="tree">${(tree.roots||[]).map(atlasNodeHtml).join("")}</div>`;
+  $$("#atlasCards .trow").forEach(row=>row.addEventListener("click",()=>{
+    const box=row.nextElementSibling, tw=row.querySelector(".twist");
+    if(!box||!box.classList.contains("children")) return;
+    box.classList.toggle("open");
+    if(tw) tw.classList.toggle("open");
+  }));
+  // первый уровень раскрыт сразу: нужная ветка доступна за ≤2 тапа
+  $$("#atlasCards > .tree > .tnode > .children").forEach(box=>{
+    box.classList.add("open");
+    const row=box.previousElementSibling;
+    const tw=row?row.querySelector(".twist"):null;
+    if(tw) tw.classList.add("open");
+  });
 }
 
 /* ---------- ход работы: активные шаги и задачи ---------- */
