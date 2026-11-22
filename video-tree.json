@@ -3,11 +3,21 @@
   "labeling": {
     "kind": "author_manual_clusters",
     "note": "8 кластеров — авторская разметка из N2, не независимо проверенная таксономия",
-    "verification": 19,
+    "verification_rows": 19,
+    "decisive_verdicts": 12,
+    "verification_unverifiable": 7,
     "n2_status_only": 21,
-    "verdict_gate": "19/40 реальных вердиктов; гейт 40/40 НЕ взят"
+    "verdict_gate": "12/40 решающих вердиктов; гейт 40/40 НЕ взят",
+    "delivery_evidence": {
+      "field": "prompts.json:delivered_ts + user_id",
+      "n": 471,
+      "user_id": {
+        "1869196044": 466,
+        "435824119": 5
+      }
+    }
   },
-  "built_at": "2026-11-22T01:56:22.156185+00:00",
+  "built_at": "2026-11-22T02:18:11.148096+00:00",
   "built_by": "build_video_tree.py",
   "source": "grids.json",
   "as_of": "2026-11-19",
