@@ -1,6 +1,6 @@
 {
   "kind": "antistop-declarative-status",
-  "generated_at": "2026-11-22T07:14:55.427707+00:00",
+  "generated_at": "2026-11-22T07:20:15.578464+00:00",
   "source_sha256": {
     "engine": "16c0b2c464054541f212f00ba33d0b9cd3134d54b664a9c21a3c4536adc341fe",
     "scout": "8cf9562cb9b4cf35397eeaaa3f9a8cf5f896e44fec88fe9a4adb62499df55b19",
@@ -8,7 +8,6 @@
     "wrapper": "2bd955c04aef39974985e36a03df75c97f9183f3d633908d2fc25429f90f8cec"
   },
   "mechanism": {
-    "engine_pid": 2192670,
     "engine_status": "RUNNING",
     "engine_cycles": 3,
     "engine_updated_at": "2026-11-22T07:07:02Z",
@@ -27,7 +26,9 @@
       "квота ≥95%",
       "game-mode",
       "лимит витков"
-    ]
+    ],
+    "engine_pid_note": "PID волатилен при рестарте движка; источник истины — ~/evolution-work/engine.pid",
+    "engine_state_source": "/home/nyaka/evolution-work/state.json"
   },
   "scout": {
     "queue_generated": "2026-11-22T07:03:37+00:00",
@@ -105,6 +106,7 @@
       "stub_exit": 1,
       "real_exit": 0,
       "verdict": "PASS"
-    }
+    },
+    "verifier_note": "Gate свежести проверяется по замороженному снимку /tmp/opencode/sys2_state_frozen.json"
   }
 }
