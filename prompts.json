@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T15:17:35+00:00",
-  "generated_human": "22.11 15:17 UTC",
-  "as_of": 1795360655963,
+  "generated": "2026-11-22T15:18:36+00:00",
+  "generated_human": "22.11 15:18 UTC",
+  "as_of": 1795360716859,
   "stale_days": 1,
   "count": 1026,
   "groups": 9,
@@ -39,72 +39,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-aqtdivh5VB",
-     "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795360652000,
-     "source": "session",
-     "title": "Переобучение dot_quality под cyan-сигнал",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
-     "answer_short": "w261119190741dca0: Раскрытие карточек работает: по нажатию видны полное утвержд",
-     "answer_full": "Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
-     "answer_digest": {
-      "length": 164,
-      "sha256": "11a08c8fe17a6f340f5f17afc372b31a0d88c33aa8779d9a57b2f90338dd9578"
-     },
-     "answer_text_id": "11a08c8fe17a6f34",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795360623520,
-     "as_of": 1795360652000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-kI3yWNeokh",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c29.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795360651000,
-     "source": "session",
-     "title": "lree-SF-S4-ECE-c29",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795360651000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-Uup4sx02a2",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU243. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112000524601f4: Типа кол в чат тестом на раунд?. Где: wants.json · не отвечено · 18.11.2026 04:07:45 · telegram. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU243_run1795360430.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795360649000,
-     "source": "session",
-     "title": "AU243: тест раунда в чате",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
-     "answer_short": "w261119190741dca0: Раскрытие карточек работает: по нажатию видны полное утвержд",
-     "answer_full": "Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
-     "answer_digest": {
-      "length": 164,
-      "sha256": "11a08c8fe17a6f340f5f17afc372b31a0d88c33aa8779d9a57b2f90338dd9578"
-     },
-     "answer_text_id": "11a08c8fe17a6f34",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795360623520,
-     "as_of": 1795360649000,
-     "is_stale": false
-    },
-    {
      "id": "ses-WpQdGalbll",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0106. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0106_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795360638000,
+     "ts": 1795360714000,
      "source": "session",
      "title": "QH0106: dot_quality под cyan",
      "source_label": "ноут",
@@ -123,7 +60,83 @@
      "answer_text_id": "11a08c8fe17a6f34",
      "answer_source": "replies.json",
      "delivered_ts": 1795360623520,
-     "as_of": 1795360638000,
+     "as_of": 1795360714000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-aqtdivh5VB",
+     "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
+     "ts": 1795360712000,
+     "source": "session",
+     "title": "Переобучение dot_quality под cyan-сигнал",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0"
+     ],
+     "answer": "[w261119190741dca0] Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
+     "answer_short": "w261119190741dca0: Раскрытие карточек работает: по нажатию видны полное утвержд",
+     "answer_full": "Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
+     "answer_digest": {
+      "length": 164,
+      "sha256": "11a08c8fe17a6f340f5f17afc372b31a0d88c33aa8779d9a57b2f90338dd9578"
+     },
+     "answer_text_id": "11a08c8fe17a6f34",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795360623520,
+     "as_of": 1795360712000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-ktYy5UYCEx",
+     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S4-ECE-c53.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795360710000,
+     "source": "session",
+     "title": "lree-SF-S4-ECE-c53",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795360710000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-kI3yWNeokh",
+     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c29.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795360701000,
+     "source": "session",
+     "title": "lree-SF-S4-ECE-c29",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795360701000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-Uup4sx02a2",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU243. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112000524601f4: Типа кол в чат тестом на раунд?. Где: wants.json · не отвечено · 18.11.2026 04:07:45 · telegram. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU243_run1795360430.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
+     "ts": 1795360688000,
+     "source": "session",
+     "title": "AU243: тест раунда в чате",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0"
+     ],
+     "answer": "[w261119190741dca0] Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
+     "answer_short": "w261119190741dca0: Раскрытие карточек работает: по нажатию видны полное утвержд",
+     "answer_full": "Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
+     "answer_digest": {
+      "length": 164,
+      "sha256": "11a08c8fe17a6f340f5f17afc372b31a0d88c33aa8779d9a57b2f90338dd9578"
+     },
+     "answer_text_id": "11a08c8fe17a6f34",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795360623520,
+     "as_of": 1795360688000,
      "is_stale": false
     },
     {
@@ -251,19 +264,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795360623520,
      "as_of": 1795360504000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-ktYy5UYCEx",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S4-ECE-c53.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795360415000,
-     "source": "session",
-     "title": "lree-SF-S4-ECE-c53",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795360415000,
      "is_stale": false
     },
     {
@@ -4168,14 +4168,14 @@
     {
      "id": "ses-q5pBgaezKt",
      "text": "В новой сессии: разбери OPEN-запись ледгера: проверить целостность автопилота. Подготовь артефакт /tmp/opencode/studio-8h/autopilot/artifact_evo2.md с доказательствами и Ruling. Не меняй конфиги, бот, progress/claims/goals. В конце выведи ровно PROMISE: DONE.",
-     "ts": 1795360650000,
+     "ts": 1795360706000,
      "source": "session",
      "title": "autopilot-evo2",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795360650000,
+     "as_of": 1795360706000,
      "is_stale": false
     },
     {
