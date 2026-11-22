@@ -941,6 +941,14 @@
 <script src="casino-tab.js?v=20261122-casino1"></script>
 <!-- @owner:casino-gacha @region:gacha-loader: вертикальный срез «Гача» по скиллу studioigor -->
 <script src="casino-gacha.js?v=20261122-gacha1"></script>
+<!-- @owner:casino-media @region:casino-media-loader: трек-контейнер + цитатник (AU12073) -->
+<script src="casino-media.js?v=20261122-media1"></script>
+<script>
+if (window.CasinoMedia) {
+  CasinoMedia.init();
+  CasinoMedia.hookWins();
+}
+</script>
 <script>
 /* BUILD: дата берётся из заголовка страницы, который отдаёт сервер, а не из
    хардкода. Старая константа 06:50 отставала от реального деплоя 19:30 и не
