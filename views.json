@@ -814,11 +814,11 @@
     },
     {
       "id": "task-tree",
-      "title": "Дерево задач: 24 корней / 118 узлов",
+      "title": "Дерево задач: 24 корня (118 узлов с детьми)",
       "type": "tree",
       "source": "tree.json",
       "built_at": "2026-11-21T23:42:00+00:00",
-      "count": 118,
+      "count": 24,
       "publish": true,
       "group_by": "status",
       "sort_by": "id",
@@ -854,7 +854,8 @@
       },
       "root_count": 24,
       "node_count": 118,
-      "note": "источник tree.json; task-tree.js читает LIVE.tree напрямую, реестр views нужен для единого входа и аудита"
+      "note": "источник tree.json; task-tree.js читает LIVE.tree напрямую, реестр views нужен для единого входа и аудита",
+      "count_note": "в панели рендерятся 24 корня; всего 118 узлов с детьми — см. node_count"
     }
   ]
 }
