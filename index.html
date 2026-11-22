@@ -2195,10 +2195,17 @@ function renderLive(){
     const active=(d.tasks||[]).filter(s=>s.status!=="done");
     steps.innerHTML=active.length?active.map(s=>{
       const archived=stepIsArchived(s);
+      // Возраст шага — по его own updatedAt (у T7.6/O2 он есть), а не по дате снимка плана.
+      const rawStep=s.updatedAt||s.ts||s.updated||s.updated_human;
+      const msStep=rawStep!=null?parseTs(rawStep):planMs;
+      const h=msStep?(now-msStep)/3600000:0;
+      const age=msStep?(h<24?Math.round(h)+' ч':Math.round(h/24)+' д'):'нет даты';
+      const why=s.note?String(s.note).replace(/^Попытка \d+\s*/,'').slice(0,120):'';
       return `<div class="live-row"${archived?' style="opacity:.6"':''}><span class="lid">${esc(s.id)}</span>
-        <span class="ltitle">${esc(s.title)}${s.note?' — '+esc(s.note):''}</span>
+        <span class="ltitle">${esc(s.title)}${why?' — '+esc(why):''}</span>
+        <span class="p-badge stale">${esc(age)} в статусе ${esc(s.status)}</span>
         <span class="status st-${esc(s.status)}">${esc(s.status)}</span>
-        ${archived?'<span class="p-badge stale">завис/архив</span>':''}</div>`;
+        ${archived?'<span class="p-badge stale">архив</span>':''}</div>`;
     }).join(""):
       '<div class="hint">Все шаги закрыты.</div>';
   }
