@@ -171,7 +171,7 @@
       "id": "T4.4",
       "title": "Метрики, baseline, вердикт и отчёт",
       "status": "done",
-      "note": "отчёты ~/turngame/overnight/donk-scanfeed-benchmark.md + ~/overnight/73-t4-donk-benchmark.md; вердикт: две AK и AWP дают",
+      "note": "отчёты ~/turngame/overnight/donk-scanfeed-benchmark.md + ~/overnight/73-t4-donk-benchmark.md; вердикт: две AK и AWP дают сигнал, бай-модель проигрывает baseline; REAL-метрики против GSI-факта получены, SYNTHETIC отдельно",
       "updatedAt": "2026-11-19T06:26:02+03:00",
       "completedAt": "2026-11-19T05:39:57+03:00"
     },
@@ -266,7 +266,7 @@
       "id": "T6.7",
       "title": "FACEIT: batch remaining 125 демо",
       "status": "done",
-      "note": "Проверка через pc-bridge 21.11 22:45: C:\\faceit_demos — 100 файлов, 18.46 ГБ, последняя запись 19.11 10:03:53. Цель инже",
+      "note": "Проверка через pc-bridge 21.11 22:45: C:\\faceit_demos — 100 файлов, 18.46 ГБ, последняя запись 19.11 10:03:53. Цель инжеста была 100 демо (78-top1000-dust2-ingest.md: «Матчей добавлено 100, цель 100, остановка — достигнута цель»); заголовок шага «remaining 125» устарел. Парсинг 100/100 JSON, BAD 0, n=16288 дуэлей в ~/overnight/cloud_tracks/C09-554.md. Закачка не идёт ~62 ч — простой зафиксирован, не «running».",
       "startedAt": "2026-11-19T08:40:48+03:00",
       "updatedAt": "2026-11-21T22:51:57+03:00",
       "completedAt": "2026-11-21T22:51:57+03:00"
@@ -322,7 +322,7 @@
       "id": "T7.6",
       "title": "Линковка с HLTV и общий пул без двойного счёта",
       "status": "fail",
-      "note": "Отрицательный результат ЗАФИКСИРОВАН 19.11 (t76_identity_probe_2045.md):identity-линка нет, порог ≥6 steamid И Jaccard≥0",
+      "note": "Отрицательный результат ЗАФИКСИРОВАН 19.11 (t76_identity_probe_2045.md):identity-линка нет, порог ≥6 steamid И Jaccard≥0.6 не взят ни в одном из 5 методов. Нужен внешний кросс-маппинг FACEIT↔HLTV. Дальнейшие попытки без нового источника бессмысленны.",
       "updatedAt": "2026-11-22T03:25:00+03:00"
     },
     {
@@ -375,7 +375,7 @@
       "id": "T8.5",
       "title": "Проверить 3 команды с мобилы без VPN, задержка <=60 с",
       "status": "done",
-      "note": "Доказательство в note и отчёте /tmp/opencode/t08_vk_latency.md; порог 3/3 ≤60 с превышен (6/6, 0 с). Блок снят по доказа",
+      "note": "Доказательство в note и отчёте /tmp/opencode/t08_vk_latency.md; порог 3/3 ≤60 с превышен (6/6, 0 с). Блок снят по доказательству",
       "startedAt": "2026-11-19T13:27:50+03:00",
       "updatedAt": "2026-11-19T13:27:50+03:00",
       "completedAt": "2026-11-19T13:27:50+03:00"
@@ -468,7 +468,7 @@
       "id": "P0-1.3",
       "title": "Проверить G4/G5/G6 на кадре с allplayers>0",
       "status": "done",
-      "note": "На кадре P0_allplayers_20261119_211401.png (allplayers=10, phase=live) оф. гейт: G4/G5 PASS (ровно одна панель, netgraph",
+      "note": "На кадре P0_allplayers_20261119_211401.png (allplayers=10, phase=live) оф. гейт: G4/G5 PASS (ровно одна панель, netgraph не перекрыт, ghost-оверлеев нет), phase_live и allplayers_positive PASS. G6: после подъёма приёмника overlay.json от 21:17:07 содержит 5 enemies с разными money (6000/5400/8300/7300/9300), equip/buy/awp/awp_risk — т.е. per-enemy данные есть; визUAL проверка подписей под иконками в кадре ещё не прогонялась,这笔 не закрываю молча.",
       "updatedAt": "2026-11-19T21:18:39+03:00",
       "completedAt": "2026-11-19T21:18:39+03:00"
     },
@@ -486,7 +486,7 @@
       "id": "O2",
       "title": "O2",
       "status": "done",
-      "note": "Цель O2 ДОСТИГНУТА 19.11 (sprint4h/O2.md): одна панель, карточка ниже netgraph, 7 бэкапов, кадр 2560×1440. Полный гейт P",
+      "note": "Цель O2 ДОСТИГНУТА 19.11 (sprint4h/O2.md): одна панель, карточка ниже netgraph, 7 бэкапов, кадр 2560×1440. Полный гейт P0-1 OPEN по внешнему блоку: нет живого матча phase=live и allplayers>0.",
       "updatedAt": "2026-11-22T03:25:00+03:00",
       "completedAt": "2026-11-19T15:54:39+03:00"
     },
@@ -514,7 +514,7 @@
       "id": "T10.3",
       "title": "Проверка на локальных дампах GSI/overlay",
       "status": "done",
-      "note": "H10-A: gsi_last_raw без allplayers, но gsi_live_now с 10 игроками и разными money. H10-C: enemies=0 во всех overlay. H10",
+      "note": "H10-A: gsi_last_raw без allplayers, но gsi_live_now с 10 игроками и разными money. H10-C: enemies=0 во всех overlay. H10-D: team_money 600/16000/11050 между снимками.",
       "updatedAt": "2026-11-19T19:25:37+03:00",
       "completedAt": "2026-11-19T19:25:37+03:00"
     },
@@ -523,7 +523,7 @@
       "id": "T10.4",
       "title": "Патч gsi_service/HUD и верификация",
       "status": "done",
-      "note": "21:00: патч gsi_service_v4 задеплоен на ПК (fetch через :8898), приёмник слушает :3000 pid 10868, таймстемпы свежие. Вер",
+      "note": "21:00: патч gsi_service_v4 задеплоен на ПК (fetch через :8898), приёмник слушает :3000 pid 10868, таймстемпы свежие. Верификация: fresh GSI allplayers=10; overlay.json 21:17:07 — 5 врагов с РАЗНЫМИ деньгами 6000/5400/8300/7300/9300 (раньше одинаковая экономика/отсутствие динамики). Патч подтверждён на живом пакете; визуальный HUD-рендер под иконками остаётся в P0-1.3.",
       "startedAt": "2026-11-19T19:22:53+03:00",
       "updatedAt": "2026-11-19T21:18:39+03:00",
       "completedAt": "2026-11-19T21:18:39+03:00"
@@ -533,7 +533,7 @@
       "id": "T11.1",
       "title": "Разобрать новые источники и расхождение R2",
       "status": "done",
-      "note": "6 демо de_dust2: 97 раундов с AK, 302 кила. Наивная эвристика 70/97 = 0.7216; переоценка 26, недооценка 1; 75/302 кила и",
+      "note": "6 демо de_dust2: 97 раундов с AK, 302 кила. Наивная эвристика 70/97 = 0.7216; переоценка 26, недооценка 1; 75/302 кила из ствола, разделённого между убийцами. weapon_itemid даёт GT.",
       "startedAt": "2026-11-19T20:37:27+03:00",
       "updatedAt": "2026-11-19T20:51:12+03:00",
       "completedAt": "2026-11-19T20:51:12+03:00"
@@ -572,7 +572,7 @@
       "id": "T13.1",
       "title": "Найти REAL-кадры с fp>0 в готовых данных",
       "status": "done",
-      "note": "Закрыто по свежему отчёту: QH0008 (22.11 04:19) на готовом захвате realgt_06 из runtime/tmp-checkpoint (gsi.jsonl есть н",
+      "note": "Закрыто по свежему отчёту: QH0008 (22.11 04:19) на готовом захвате realgt_06 из runtime/tmp-checkpoint (gsi.jsonl есть на диске) — REAL n=90, FP=98, ECE 0.1312; артефакт ~/overnight/cloud_tracks/SF-c02-QH0008.md. claims.json P0-3=pass. Переоткрытие 03:32 опиралось на n=20/fp=0 из realgt_batch — неполный поиск.",
       "startedAt": "2026-11-19T20:37:27+03:00",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
@@ -582,7 +582,7 @@
       "id": "T13.2",
       "title": "Пересчитать ECE или зафиксировать блокер",
       "status": "done",
-      "note": "Пересчёт ECE/reliability по REAL: ECE(5 bin)=0.2232, confidence идентифицируем но не откалиброван. Порог ECE<0.05 НЕ дос",
+      "note": "Пересчёт ECE/reliability по REAL: ECE(5 bin)=0.2232, confidence идентифицируем но не откалиброван. Порог ECE<0.05 НЕ достигнут — честно зафиксировано, GATE-T4/O1 остаются OPEN. Отчёт ~/overnight/p0_3_real_capture_20261119_214043.md; SYNTHETIC отдельно.",
       "updatedAt": "2026-11-19T21:46:22+03:00",
       "completedAt": "2026-11-19T21:46:22+03:00"
     },
@@ -591,7 +591,7 @@
       "id": "T14.1",
       "title": "Сверить 28 OPEN с отчётами",
       "status": "done",
-      "note": "Отчёт ~/overnight/claims_open_triage_2045.md: 28 OPEN проверены по источникам; 10 закрываемых (3 pass/7 fail), 18 остают",
+      "note": "Отчёт ~/overnight/claims_open_triage_2045.md: 28 OPEN проверены по источникам; 10 закрываемых (3 pass/7 fail), 18 остаются OPEN, 10 расхождений показаны с обоими значениями",
       "startedAt": "2026-11-19T20:37:27+03:00",
       "updatedAt": "2026-11-19T20:57:49+03:00",
       "completedAt": "2026-11-19T20:57:49+03:00"
@@ -601,7 +601,7 @@
       "id": "T14.2",
       "title": "Проставить вердикты и следующие шаги",
       "status": "done",
-      "note": "Вердикты применены к ~/claims.json атомарно: O2/O6/P1-5→pass; R-SMALL/N89-04/N95-03/P0-1/P1-4/SYN-01/SYN-02→fail;evidenc",
+      "note": "Вердикты применены к ~/claims.json атомарно: O2/O6/P1-5→pass; R-SMALL/N89-04/N95-03/P0-1/P1-4/SYN-01/SYN-02→fail;evidence дополнена ссылкой на триаж. Итог 38 pass / 41 fail / 18 open из 97",
       "updatedAt": "2026-11-19T20:57:49+03:00",
       "completedAt": "2026-11-19T20:57:49+03:00"
     },
@@ -794,7 +794,7 @@
       "id": "PT.2",
       "title": "Этап 5: ответы мини-апа в OpenCode + уведомление всем + советчик 15 мин",
       "status": "done",
-      "note": "process_questions.py + timer: рассылка вопроса всем (3 получателя), советчик через 15 мин, event=advice, claim гонки, ин",
+      "note": "process_questions.py + timer: рассылка вопроса всем (3 получателя), советчик через 15 мин, event=advice, claim гонки, инциденты; патч miniapp_answer активен с 15:11; E2E на живом вопросе нет (0 ожидающих)",
       "updatedAt": "2026-11-20T15:35:38+03:00",
       "completedAt": "2026-11-20T15:35:38+03:00"
     },
@@ -803,7 +803,7 @@
       "id": "PT.3",
       "title": "Этап 6: исполнитель действий interrupt/pause/resume/retry, STOP, каскад, actor",
       "status": "done",
-      "note": "process_api.do_action + can_for: stop/pause/resume/retry/answer, каскад с visited, action_failed с actor, pc_task stop т",
+      "note": "process_api.do_action + can_for: stop/pause/resume/retry/answer, каскад с visited, action_failed с actor, pc_task stop только queued, job через systemctl; self-test/API negative проверены",
       "updatedAt": "2026-11-20T15:35:38+03:00",
       "completedAt": "2026-11-20T15:35:38+03:00"
     },
@@ -812,7 +812,7 @@
       "id": "PT.4",
       "title": "Этап 7: REST API (/projects,/nodes, действия) с HMAC и кнопками в мини-аппе",
       "status": "done",
-      "note": "REST API /projects /nodes /questions + POST действия, HMAC+whitelist, туннель https://7f953ebf9da208.app.lhr.life в stat",
+      "note": "REST API /projects /nodes /questions + POST действия, HMAC+whitelist, туннель https://7f953ebf9da208.app.lhr.life в status.json, фронтенд: дерево/узлы/can-кнопки/5с опрос; commit 1fc00a9 в Pages",
       "updatedAt": "2026-11-20T15:35:38+03:00",
       "completedAt": "2026-11-20T15:35:38+03:00"
     },
@@ -821,7 +821,7 @@
       "id": "PT.5",
       "title": "Финальная проверка: прогресс и дерево в аппе, отчёт",
       "status": "done",
-      "note": "Проверено: Pages отдаёт index.html с API-frontend и 5с опросом; live/tree.json содержат PT; REST API и туннель отвечают;",
+      "note": "Проверено: Pages отдаёт index.html с API-frontend и 5с опросом; live/tree.json содержат PT; REST API и туннель отвечают; status.md и process-plan-log.jsonl обновлены",
       "startedAt": "2026-11-20T15:35:38+03:00",
       "updatedAt": "2026-11-20T15:40:07+03:00",
       "completedAt": "2026-11-20T15:40:07+03:00"
@@ -896,7 +896,7 @@
       "id": "T20.3",
       "title": "G2: REAL-набор n>=60 с FP>0, честная калибровка ECE<0.15",
       "status": "blocked",
-      "note": "REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299. Порог из PREREG_P0",
+      "note": "REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299. Порог из PREREG_P0-3.md не двигать | ЭСКАЛАЦИЯ 22.11 09:5x: blocks-type=threshold+data; порог PREREG_P0-3 п.5 ECE_after_structural_fix_holdout<0.05 (SHA c18b9923…); свежего размеченного REAL нет (QH0071: TIMEOUT_WAITING / снимок); owner=W2 (захват, сессия 1 Windows) + T20/studio; next=новый REAL-захват + prereg.py + hypothesis_report.py init + расчёт в /tmp/opencode; канал=пользователь (смена 0.05 на 0.15 = правка после результата, R06 — не делаем); снять сейчас=НЕТ",
       "updatedAt": "2026-11-22T13:36:25+03:00"
     },
     {
@@ -931,7 +931,7 @@
       "id": "T21.1",
       "title": "scanfeed: cyan-детектор C01 (recall>0.50, FP<0.10)",
       "status": "done",
-      "note": "C01-1889 (22.11 04:51) — гейт recall>0.50 при FP<0.10, n>=100: recall 0.7858 [0.7564,0.8126], FP 0/210 [0,0.0180], prere",
+      "note": "C01-1889 (22.11 04:51) — гейт recall>0.50 при FP<0.10, n>=100: recall 0.7858 [0.7564,0.8126], FP 0/210 [0,0.0180], prereg 16/16, 9/9 SHA, Wilson + блок-бустреп; также QH0007 (04:13). Оговорка: SYNTHETIC-корпус с подлинным spectator-GSI-GT, перенос на REAL остаётся OPEN.",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
     },
@@ -940,7 +940,7 @@
       "id": "T21.2",
       "title": "scanfeed: confidence C02 (n>=60, FP>0, ECE<0.15)",
       "status": "done",
-      "note": "QH0008 (22.11 04:19) — гейт манифеста n>=60/FP>0/ECE<0.15 PASS: REAL n=90, FP=98, ECE 0.1312, SYNTHETIC отдельно, честны",
+      "note": "QH0008 (22.11 04:19) — гейт манифеста n>=60/FP>0/ECE<0.15 PASS: REAL n=90, FP=98, ECE 0.1312, SYNTHETIC отдельно, честный baseline, prereg PASS; артефакт ~/overnight/cloud_tracks/SF-c02-QH0008.md. Оговорка: верхняя CI 0.1988>0.15, строгий T4 ECE<0.05 остаётся OPEN; порог не менялся.",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
     },
@@ -949,7 +949,7 @@
       "id": "T21.3",
       "title": "scanfeed: один HUD O2 (ELECTRON_MAIN=1)",
       "status": "done",
-      "note": "QH0004 (22.11 04:27): FINAL_ELECTRON_MAIN=1, FINAL_BROWSER_OVERLAYS=0, ровно одна панель, свежий G3_hud.png + G3_proof.j",
+      "note": "QH0004 (22.11 04:27): FINAL_ELECTRON_MAIN=1, FINAL_BROWSER_OVERLAYS=0, ровно одна панель, свежий G3_hud.png + G3_proof.json; сверка W8-03 (04:41), дубль sprint4h/O2.md. Allplayers в кадре из тестового пейлоада — live-GSI не доказан (отдельно в T21.8/P0-1.2).",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
     },
@@ -958,7 +958,7 @@
       "id": "T21.4",
       "title": "turngame: зоны T1c/FDR q=0.05",
       "status": "done",
-      "note": "QH0009 (22.11 04:14) — предрегистрированный гейт PASS: 7 карт/320 демо, нижняя граница CI>0 на 23 ячейках, BH FDR q=0.05",
+      "note": "QH0009 (22.11 04:14) — предрегистрированный гейт PASS: 7 карт/320 демо, нижняя граница CI>0 на 23 ячейках, BH FDR q=0.05 → 4 сигнала и 3 'плохо'; артефакты C03-*.json. Строгий T1c-гейт 0.5504→0.5572 при пороге >0.55 закрыт отрицательно (T1b-gate-prep.md, MASTERPLAN §2.1), не переоткрывался.",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
     },
@@ -967,7 +967,7 @@
       "id": "T21.5",
       "title": "zone-hierarchy: тепловые карты 7 карт",
       "status": "done",
-      "note": "QH0010 (22.11 04:15) — 4/4 гейта: покрытие 7/7 карт, дедуп 673 уникальных / 0 дублей, n указано, 7 PNG + manifest (gener",
+      "note": "QH0010 (22.11 04:15) — 4/4 гейта: покрытие 7/7 карт, дедуп 673 уникальных / 0 дублей, n указано, 7 PNG + manifest (generated 2026-11-22T01:13Z); ~/overnight/qh0010_faceit_zones/. Оговорка: 7 карт из hltv_pc_parsed, 3-уровневая иерархия буквально только для dust2.",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
     },
@@ -976,7 +976,7 @@
       "id": "T21.6",
       "title": "cs2-transcribe: map pool 2026 + инвентарь",
       "status": "done",
-      "note": "НОВЫЙ АРТЕФАКТ 04:59: /home/nyaka/overnight/map_pool_2026_inventory.json — явное определение канона (cache, без train), ",
+      "note": "НОВЫЙ АРТЕФАКТ 04:59: /home/nyaka/overnight/map_pool_2026_inventory.json — явное определение канона (cache, без train), 320 демо/7 карт, 47248 дуэлей, demos_more 219/70.6195 ГБ; G1-G4 PASS; active-duty 2026 (train) сохранён OPEN. Снимает вилку C08-424/457.",
       "updatedAt": "2026-11-22T05:01:14+03:00",
       "completedAt": "2026-11-22T05:01:14+03:00"
     },
@@ -985,7 +985,7 @@
       "id": "T21.7",
       "title": "cs2-voice-ideas: признаки с n и CI",
       "status": "done",
-      "note": "Дубль закрытого направления: N13-voice-ideas-consolidated.md — сводная таблица 88 гипотез/28 паттернов с n и CI по 2641 ",
+      "note": "Дубль закрытого направления: N13-voice-ideas-consolidated.md — сводная таблица 88 гипотез/28 паттернов с n и CI по 2641 расшифровке; voice-08/13/14 и независимые репликации 22.11 03:11–03:19 (H635–H649) дают n и Wilson CI, отрицательные результаты зафиксированы. 12 новых гипотез из VOICE_IDEAS-NEW-2026-11-22.md — отдельная непроверенная работа, не подменяет закрытые.",
       "updatedAt": "2026-11-22T04:58:37+03:00",
       "completedAt": "2026-11-22T04:58:37+03:00"
     },
@@ -1003,7 +1003,7 @@
       "id": "T21.9",
       "title": "windows-pc: cleanup-план D: без удаления",
       "status": "todo",
-      "note": "disk-free-D-2026-11-21.md: обследование D: (22 037 файлов), кандидаты и пути названы, удалений 0; но вердикт самого отчё",
+      "note": "disk-free-D-2026-11-21.md: обследование D: (22 037 файлов), кандидаты и пути названы, удалений 0; но вердикт самого отчёта OPEN — свободно 4.36→4.36 ГБ (дельта 0), цель 20–30 ГБ без удаления игр/личного архива недостижима. Нужен W2-вердикт по лимиту диска (W8-04, 22.11 04:44).",
       "updatedAt": "2026-11-22T04:58:37+03:00"
     },
     {
@@ -1011,7 +1011,7 @@
       "id": "T21.10",
       "title": "end-to-end: сканфид на живом кадре",
       "status": "done",
-      "note": "ФИЗИЧЕСКИЙ СЛОЙ: /home/nyaka/overnight/SCANFEED-G4-result.json (mtime 05:30:19, SHA 72e961e7…46f2f9), frame /home/nyaka/",
+      "note": "ФИЗИЧЕСКИЙ СЛОЙ: /home/nyaka/overnight/SCANFEED-G4-result.json (mtime 05:30:19, SHA 72e961e7…46f2f9), frame /home/nyaka/pc-bridge/inbox/SF10_frame.png (05:16:14), proof SF10_proof.json (05:17:29). Источник live GSI spectator bot-match, phase=live, allplayers_n=10; G1 PASS 7/7. G2 остаётся OPEN (ECE 0.1058 >= 0.05), SYNTHETIC исключён.",
       "updatedAt": "2026-11-22T09:26:48+03:00",
       "completedAt": "2026-11-22T09:26:48+03:00"
     },
@@ -1020,7 +1020,7 @@
       "id": "T22.1",
       "title": "Починить isFreeLimit: вложенный FreeUsageLimitError",
       "status": "done",
-      "note": "RED на старой логике → GREEN: node --check exit=0, selftest 10 assertions OK. Вложенный FreeUsageLimitError теперь даёт ",
+      "note": "RED на старой логике → GREEN: node --check exit=0, selftest 10 assertions OK. Вложенный FreeUsageLimitError теперь даёт block 300 мин.",
       "startedAt": "2026-11-22T04:32:17+03:00",
       "updatedAt": "2026-11-22T04:40:12+03:00",
       "completedAt": "2026-11-22T04:40:12+03:00"
@@ -1030,7 +1030,7 @@
       "id": "T22.2",
       "title": "Очистка stale paidSessions с TTL",
       "status": "done",
-      "note": "TTL paidSessionTtlMinutes=1440, 0=отключить; бэкап /tmp/opencode/router-sprint/kv-state-backup.json (1489310 B); формат ",
+      "note": "TTL paidSessionTtlMinutes=1440, 0=отключить; бэкап /tmp/opencode/router-sprint/kv-state-backup.json (1489310 B); формат {key,at} + миграция старых строк; БД не трогалась.",
       "updatedAt": "2026-11-22T04:40:12+03:00",
       "completedAt": "2026-11-22T04:40:12+03:00"
     },
@@ -1039,7 +1039,7 @@
       "id": "T22.3",
       "title": "Selfcheck правок роутера",
       "status": "done",
-      "note": "Независимый verifier на hy4-flash-free: 8 PASS / 0 FAIL / 0 OPEN, файл /tmp/opencode/selfcheck/router-20261122-044027.tx",
+      "note": "Независимый verifier на hy4-flash-free: 8 PASS / 0 FAIL / 0 OPEN, файл /tmp/opencode/selfcheck/router-20261122-044027.txt",
       "startedAt": "2026-11-22T04:40:13+03:00",
       "updatedAt": "2026-11-22T04:46:39+03:00",
       "completedAt": "2026-11-22T04:46:39+03:00"
@@ -1049,7 +1049,7 @@
       "id": "T22.4",
       "title": "Контроль дельты oc-usage после мержa",
       "status": "done",
-      "note": "Серверный /usage Go: week 100% limited, 5h 0% used, month 50%; локальный oc-usage 65.496% / $23.144243 / 1783 steps — де",
+      "note": "Серверный /usage Go: week 100% limited, 5h 0% used, month 50%; локальный oc-usage 65.496% / $23.144243 / 1783 steps — дельта после правок 0. Контрольный прогон verifier: cost delta 0, steps delta 0.",
       "updatedAt": "2026-11-22T04:46:39+03:00",
       "completedAt": "2026-11-22T04:46:39+03:00"
     },
@@ -1078,7 +1078,7 @@
       "id": "CFG-1.2",
       "title": "Поднять explore до #high",
       "status": "done",
-      "note": "ОТКАТ: critic нашёл, что компенсация слабого ризонинга недоказана (docs/ux-research/weak-reasoning-compensation.md), AGE",
+      "note": "ОТКАТ: critic нашёл, что компенсация слабого ризонинга недоказана (docs/ux-research/weak-reasoning-compensation.md), AGENTS.md:111 предписывает #low, free-квота горит быстрее. Оставлено #low.",
       "startedAt": "2026-11-22T04:43:04+03:00",
       "updatedAt": "2026-11-22T04:43:04+03:00",
       "completedAt": "2026-11-22T04:43:04+03:00"
@@ -1098,7 +1098,7 @@
       "id": "CFG-1.4",
       "title": "AGENTS.md: минимальная версия без потери правил",
       "status": "done",
-      "note": "Патч готов и проверен (VERDICT PASS, 74 marker-строк сохранены, 30 прозовых строк вынесено); живой AGENTS.md НЕ тронут —",
+      "note": "Патч готов и проверен (VERDICT PASS, 74 marker-строк сохранены, 30 прозовых строк вынесено); живой AGENTS.md НЕ тронут — применение остаётся действием владельца конфига",
       "updatedAt": "2026-11-22T09:32:55+03:00",
       "completedAt": "2026-11-22T09:32:55+03:00"
     },
@@ -1166,7 +1166,7 @@
       "id": "T23.1",
       "title": "Собрать chain-gate скрипт и снимок live API",
       "status": "done",
-      "note": "chain_gate.py создан, оба live API 200, отчёт /tmp/opencode/router-sprint/chain-gate.json; точных дублей 0, freeCount=13",
+      "note": "chain_gate.py создан, оба live API 200, отчёт /tmp/opencode/router-sprint/chain-gate.json; точных дублей 0, freeCount=13=13 free.",
       "startedAt": "2026-11-22T04:50:46+03:00",
       "updatedAt": "2026-11-22T04:57:54+03:00",
       "completedAt": "2026-11-22T04:57:54+03:00"
@@ -1176,7 +1176,7 @@
       "id": "T23.2",
       "title": "Решить: менять chain или оставить OPEN с доказательством",
       "status": "done",
-      "note": "Вердикт CHAIN_GATE OPEN: region-limited opencode-go/beam-free + 3 кросс-провайдерные пары; безопасной замены нет, конфиг",
+      "note": "Вердикт CHAIN_GATE OPEN: region-limited opencode-go/beam-free + 3 кросс-провайдерные пары; безопасной замены нет, конфиг не тронут. Параллельный процесс уже убрал iceman-contributor-free и поставил freeCount=13 — не откатывать.",
       "updatedAt": "2026-11-22T04:57:54+03:00",
       "completedAt": "2026-11-22T04:57:54+03:00"
     },
@@ -1212,7 +1212,7 @@
       "id": "T24.4",
       "title": "Найти и закрыть следующий дефект того же контура",
       "status": "done",
-      "note": "red-team 6 PASS/7 FAIL/4 OPEN → исправлено: 12/40 подпись, 2 настоящих дерева, count=40/830, не дубль, data_fp/синк; sel",
+      "note": "red-team 6 PASS/7 FAIL/4 OPEN → исправлено: 12/40 подпись, 2 настоящих дерева, count=40/830, не дубль, data_fp/синк; selfcheck 8 PASS/0 FAIL/0 OPEN",
       "startedAt": "2026-11-22T04:51:42+03:00",
       "updatedAt": "2026-11-22T05:28:53+03:00",
       "completedAt": "2026-11-22T05:28:53+03:00"
@@ -1222,7 +1222,7 @@
       "id": "CFG-2.1",
       "title": "Добавить warning при не-free модели в свободном срезе",
       "status": "done",
-      "note": "index.js: после freeModels добавлен фильтр /free|pickle/i + warn; бэкап /tmp/opencode/failover-index.js.bak-CFG2-1795312",
+      "note": "index.js: после freeModels добавлен фильтр /free|pickle/i + warn; бэкап /tmp/opencode/failover-index.js.bak-CFG2-1795312366",
       "startedAt": "2026-11-22T04:55:23+03:00",
       "updatedAt": "2026-11-22T04:55:23+03:00",
       "completedAt": "2026-11-22T04:55:23+03:00"
@@ -1232,7 +1232,7 @@
       "id": "CFG-2.2",
       "title": "Тест: ложных срабатываний нет, на плохом конфиге warning火",
       "status": "done",
-      "note": "текущая цепочка: free slice 13, suspicious 0; тестовый конфиг с bad-paid#high → WARN_FIRED true (/tmp/opencode/cfg2_guar",
+      "note": "текущая цепочка: free slice 13, suspicious 0; тестовый конфиг с bad-paid#high → WARN_FIRED true (/tmp/opencode/cfg2_guard_test.mjs)",
       "startedAt": "2026-11-22T04:55:24+03:00",
       "updatedAt": "2026-11-22T04:55:24+03:00",
       "completedAt": "2026-11-22T04:55:24+03:00"
@@ -1252,7 +1252,7 @@
       "id": "CFG-2.4",
       "title": "Critic FAIL: эвристика free/pickle → суффикс + отрицательные тесты",
       "status": "done",
-      "note": "critic 1 PASS/3 FAIL: freestyle-paid проходил подстроку; комментарий ложно ссылался на tui.js; не было neg-control. Испр",
+      "note": "critic 1 PASS/3 FAIL: freestyle-paid проходил подстроку; комментарий ложно ссылался на tui.js; не было neg-control. Исправлено: /-free$|pickle$/i, комментарий переписан, тест 5/5 (2 neg + 3 pos)",
       "startedAt": "2026-11-22T05:05:58+03:00",
       "updatedAt": "2026-11-22T05:05:58+03:00",
       "completedAt": "2026-11-22T05:05:58+03:00"
@@ -1262,7 +1262,7 @@
       "id": "CFG-3.1",
       "title": "Заменить sum(lines) на подсчёт status=todo",
       "status": "done",
-      "note": "manager_watchdog.py:151 — парсим JSONL, считаем status==todo; бэкап /tmp/opencode/manager_watchdog.py.bak-CFG3-179531281",
+      "note": "manager_watchdog.py:151 — парсим JSONL, считаем status==todo; бэкап /tmp/opencode/manager_watchdog.py.bak-CFG3-1795312815",
       "startedAt": "2026-11-22T05:01:42+03:00",
       "updatedAt": "2026-11-22T05:01:42+03:00",
       "completedAt": "2026-11-22T05:01:42+03:00"
@@ -1292,7 +1292,7 @@
       "id": "CFG-4.1",
       "title": "Дополнить правило вызова советчика",
       "status": "done",
-      "note": "process-plan.md:13 добавлены контрольные точки «план/готово/сработавший гейт» и лимит ≤3 вызова; бэкап /tmp/opencode/pro",
+      "note": "process-plan.md:13 добавлены контрольные точки «план/готово/сработавший гейт» и лимит ≤3 вызова; бэкап /tmp/opencode/process-plan.md.bak-CFG4-1795312980",
       "startedAt": "2026-11-22T05:05:59+03:00",
       "updatedAt": "2026-11-22T05:05:59+03:00",
       "completedAt": "2026-11-22T05:05:59+03:00"
@@ -1321,7 +1321,7 @@
       "id": "T25.2",
       "title": "Применить патч G3 с бэкапом",
       "status": "done",
-      "note": "4 ханка применены; бэкап /tmp/opencode/studio-8h/g3-overlay-before.html; SHA b585d57b... -> a5d47741...; JS_SYNTAX_OK; i",
+      "note": "4 ханка применены; бэкап /tmp/opencode/studio-8h/g3-overlay-before.html; SHA b585d57b... -> a5d47741...; JS_SYNTAX_OK; id-дублей 0.",
       "updatedAt": "2026-11-22T05:09:22+03:00",
       "completedAt": "2026-11-22T05:09:22+03:00"
     },
@@ -1348,7 +1348,7 @@
       "id": "T25.5",
       "title": "Свежий верификатор (пустой контекст)",
       "status": "done",
-      "note": "Свежий verifier с пустым контекстом: 9 PASS / 0 FAIL / 0 OPEN. Red→green воспроизводим, OCR 3/3, обратная совместимость ",
+      "note": "Свежий verifier с пустым контекстом: 9 PASS / 0 FAIL / 0 OPEN. Red→green воспроизводим, OCR 3/3, обратная совместимость HUD/API сохранена, гейты постфактум не двигались.",
       "startedAt": "2026-11-22T05:09:23+03:00",
       "updatedAt": "2026-11-22T05:19:53+03:00",
       "completedAt": "2026-11-22T05:11:37+03:00"
@@ -1358,7 +1358,7 @@
       "id": "T26.1",
       "title": "Просканировать intake/goals на безопасный task",
       "status": "done",
-      "note": "SCOUT OPEN: из 16 кандидатов безопасного нет (7 PC/human, 4 сделаны/дубли, 4 нестабильны). Выбран изолированный Variant ",
+      "note": "SCOUT OPEN: из 16 кандидатов безопасного нет (7 PC/human, 4 сделаны/дубли, 4 нестабильны). Выбран изолированный Variant A — пересчёт консистентности intake в /tmp/opencode/t26/.",
       "startedAt": "2026-11-22T05:18:54+03:00",
       "updatedAt": "2026-11-22T05:26:37+03:00",
       "completedAt": "2026-11-22T05:26:37+03:00"
@@ -1368,7 +1368,7 @@
       "id": "T26.2",
       "title": "Применить выбранный task с гейтом",
       "status": "done",
-      "note": "Честно: 1-й прогон 2 PASS/2 FAIL из-за пересоздания источника таймером (16→14). Пороги не двигались; заморозили копию SH",
+      "note": "Честно: 1-й прогон 2 PASS/2 FAIL из-за пересоздания источника таймером (16→14). Пороги не двигались; заморозили копию SHA256 ee3b3ec7… и зафиксировали v2 на 14 ДО прогона. 2-й прогон 5 PASS/0 FAIL/0 OPEN; родитель повторил итоговую команду — все G1..G5 True. Урок добавлен в скилл work-until-done, финальный selfcheck 7 PASS/0 FAIL/0 OPEN.",
       "startedAt": "2026-11-22T05:26:37+03:00",
       "updatedAt": "2026-11-22T05:33:56+03:00",
       "completedAt": "2026-11-22T05:33:56+03:00"
@@ -1378,7 +1378,7 @@
       "id": "T27.1",
       "title": "Разобрать причину преждевременного останова",
       "status": "done",
-      "note": "Причина останова: подменил \"нет кандидата в intake\" на \"нечего делать\"; хендофф выдал за завершение; не проверил активны",
+      "note": "Причина останова: подменил \"нет кандидата в intake\" на \"нечего делать\"; хендофф выдал за завершение; не проверил активные blocked-шаги иownership до запроса агентов.",
       "startedAt": "2026-11-22T09:22:42+03:00",
       "updatedAt": "2026-11-22T09:25:59+03:00",
       "completedAt": "2026-11-22T09:25:59+03:00"
@@ -1388,7 +1388,7 @@
       "id": "T27.2",
       "title": "Найти следующий task через агентов и активные шаги",
       "status": "done",
-      "note": "unblocker предложил CFG-5, но сверка с progress.json показала: CFG-5 уже создан другой сессией в 09:25 MSK, шаги 5.1–5.3",
+      "note": "unblocker предложил CFG-5, но сверка с progress.json показала: CFG-5 уже создан другой сессией в 09:25 MSK, шаги 5.1–5.3 done, 5.4 running. Дублировать не буду — ищу свободную область.",
       "updatedAt": "2026-11-22T09:25:59+03:00",
       "completedAt": "2026-11-22T09:25:59+03:00"
     },
@@ -1397,7 +1397,7 @@
       "id": "T27.3",
       "title": "Выполнить выбранный task с гейтом",
       "status": "done",
-      "note": "Выполнено CFG-1.4: owner-решение не укорачивать AGENTS.md с доказательством критика (/tmp/opencode/t27/CFG-1.4-decision.",
+      "note": "Выполнено CFG-1.4: owner-решение не укорачивать AGENTS.md с доказательством критика (/tmp/opencode/t27/CFG-1.4-decision.md); файл не менялся. CFG-5 не дублирован — уже running у другой сессии.",
       "updatedAt": "2026-11-22T09:31:06+03:00",
       "completedAt": "2026-11-22T09:31:06+03:00"
     },
@@ -1406,7 +1406,7 @@
       "id": "T27.4",
       "title": "Системный механизм: релей и многочасовой цикл",
       "status": "done",
-      "note": "work_until_done_loop.py + systemd timer включены; при отсутствии шага пишут релей вместо останова; RELAY-ANALYSIS.md фик",
+      "note": "work_until_done_loop.py + systemd timer включены; при отсутствии шага пишут релей вместо останова; RELAY-ANALYSIS.md фиксирует границу subagent.",
       "updatedAt": "2026-11-22T09:57:03+03:00",
       "completedAt": "2026-11-22T09:57:03+03:00"
     },
@@ -1520,7 +1520,7 @@
       "id": "T28.3",
       "title": "Прогон проверок / фиксация непроверяемости",
       "status": "done",
-      "note": "реальный прогон 7 claim: 0 решающих вердиктов, 7 честных «недостаточно данных» с n и proxy-caveat; key-space mismatch pa",
+      "note": "реальный прогон 7 claim: 0 решающих вердиктов, 7 честных «недостаточно данных» с n и proxy-caveat; key-space mismatch parsed UUID vs v5 slug",
       "startedAt": "2026-11-22T09:34:15+03:00",
       "updatedAt": "2026-11-22T09:49:13+03:00",
       "completedAt": "2026-11-22T09:49:13+03:00"
@@ -1589,7 +1589,7 @@
       "id": "SYS-1.1",
       "title": "Написать scout_next.py (3 источника, action queue)",
       "status": "done",
-      "note": "канон ~/scripts/background/scout_next.py (другая сессия); моя копия — совместимая обёртка; 3 источника, код 2 при пустой",
+      "note": "канон ~/scripts/background/scout_next.py (другая сессия); моя копия — совместимая обёртка; 3 источника, код 2 при пустой очереди",
       "startedAt": "2026-11-22T09:53:44+03:00",
       "updatedAt": "2026-11-22T09:53:44+03:00",
       "completedAt": "2026-11-22T09:53:44+03:00"
@@ -1599,7 +1599,7 @@
       "id": "SYS-1.2",
       "title": "RED→GREEN тест скаута",
       "status": "done",
-      "note": "RED: заглушка collect()→[],[] даёт RESULT FAIL rc=1; GREEN: реальный скаут RESULT PASS rc=0. После уточнения фильтров ре",
+      "note": "RED: заглушка collect()→[],[] даёт RESULT FAIL rc=1; GREEN: реальный скаут RESULT PASS rc=0. После уточнения фильтров регрессия PASS",
       "startedAt": "2026-11-22T09:53:44+03:00",
       "updatedAt": "2026-11-22T09:53:44+03:00",
       "completedAt": "2026-11-22T09:53:44+03:00"
@@ -1619,7 +1619,7 @@
       "id": "SYS-1.4",
       "title": "Свежий верификатор с SHA/mtime",
       "status": "done",
-      "note": "DoD-v2 DOD-SYS1-20261122-02, заморозка 10:07:04; свежий верификатор mtime 10:11:07, 8 PASS / 0 FAIL / 0 OPEN, SHA 6/6; с",
+      "note": "DoD-v2 DOD-SYS1-20261122-02, заморозка 10:07:04; свежий верификатор mtime 10:11:07, 8 PASS / 0 FAIL / 0 OPEN, SHA 6/6; старый OPEN v1 закрыт патчем (цель в топе скаута)",
       "startedAt": "2026-11-22T09:53:45+03:00",
       "updatedAt": "2026-11-22T09:53:45+03:00"
     },
@@ -1628,7 +1628,7 @@
       "id": "SYS-1.5",
       "title": "Применить систему: взять действие из очереди",
       "status": "done",
-      "note": "Действие из очереди (T20.3) поднято параллельной сессией: эскалация owner=W2/T20, next=REAL-захват+prereg, снять НЕТ; мо",
+      "note": "Действие из очереди (T20.3) поднято параллельной сессией: эскалация owner=W2/T20, next=REAL-захват+prereg, снять НЕТ; моя сессия не дублировала",
       "updatedAt": "2026-11-22T09:57:03+03:00",
       "completedAt": "2026-11-22T09:57:03+03:00"
     },
@@ -1695,7 +1695,7 @@
       "id": "SYS-2.4",
       "title": "Доставка декларативного файла в Pages 404→200",
       "status": "done",
-      "note": "404 до публикации → commit 0da9db9/023e40a → live https://askoldshatrov.github.io/tg-miniapp/antistop-status.json HTTP 2",
+      "note": "404 до публикации → commit 0da9db9/023e40a → live https://askoldshatrov.github.io/tg-miniapp/antistop-status.json HTTP 200 size=3985 с functional_proof",
       "startedAt": "2026-11-22T10:16:20+03:00",
       "updatedAt": "2026-11-22T10:16:21+03:00",
       "completedAt": "2026-11-22T10:16:21+03:00"
@@ -1705,7 +1705,7 @@
       "id": "SYS-2.5",
       "title": "Свежий верификатор",
       "status": "done",
-      "note": "sys2fix: 5 PASS / 0 FAIL / 0 OPEN; Pages 4326 байт live 200; critic 1/0; engine 7/7 + test_03; gate свежести по замороже",
+      "note": "sys2fix: 5 PASS / 0 FAIL / 0 OPEN; Pages 4326 байт live 200; critic 1/0; engine 7/7 + test_03; gate свежести по замороженному снимку",
       "startedAt": "2026-11-22T10:16:21+03:00",
       "updatedAt": "2026-11-22T10:27:13+03:00",
       "completedAt": "2026-11-22T10:27:13+03:00"
@@ -1774,7 +1774,7 @@
       "id": "SYS-3.2",
       "title": "Слепой проход с канарейкой",
       "status": "done",
-      "note": "слепой ревизор без легенды: 2 PASS / 8 FAIL / 4 OPEN; канарейка CANARY-AFDB0D замечена через PREREG_P0-2/P0-3; отчёт /tm",
+      "note": "слепой ревизор без легенды: 2 PASS / 8 FAIL / 4 OPEN; канарейка CANARY-AFDB0D замечена через PREREG_P0-2/P0-3; отчёт /tmp/opencode/critic/20261122-0737-blind.md critic-gate VALID",
       "startedAt": "2026-11-22T10:38:27+03:00",
       "updatedAt": "2026-11-22T10:54:11+03:00",
       "completedAt": "2026-11-22T10:54:11+03:00"
@@ -1784,7 +1784,7 @@
       "id": "SYS-3.3",
       "title": "Гейт отчёта и исправление дефектов",
       "status": "done",
-      "note": "HIDDEN-AUDIT-GATE VALID; 8 дефектов исправлены в декларативном файле: изменчивые числа → ссылки, дубли и repr убраны, gr",
+      "note": "HIDDEN-AUDIT-GATE VALID; 8 дефектов исправлены в декларативном файле: изменчивые числа → ссылки, дубли и repr убраны, green size не фиксирован; живой Pages HTTP 200 size 4988 SHA 9d8fc8b8",
       "startedAt": "2026-11-22T10:54:11+03:00",
       "updatedAt": "2026-11-22T10:54:11+03:00",
       "completedAt": "2026-11-22T10:54:11+03:00"
@@ -1915,24 +1915,16 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwlm9x335d37: Максимально конфиденциальная обработка переписки",
       "source": "ноут",
       "claimed_human": "17:48:42",
-      "age_min": 4,
+      "age_min": 5,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwlm9x335d37: Максимально конфиденциальная обработка переписки",
       "autogen": true
-    },
-    {
-      "id": "AU051",
-      "title": "ПЕРЕПРОВЕРИТЬ O4: O4: мокапы пересняты поверх реального светлого Dust2, заглушки заменены <img>, пройден тест контраста",
-      "source": "ноут",
-      "claimed_human": "17:48:21",
-      "age_min": 4,
-      "full": "ПЕРЕПРОВЕРИТЬ O4: O4: мокапы пересняты поверх реального светлого Dust2, заглушки заменены <img>, пройден тест контраста"
     },
     {
       "id": "AU243",
       "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112000524601f4: Типа кол в чат тестом на раунд?",
       "source": "ноут",
       "claimed_human": "17:13:36",
-      "age_min": 39,
+      "age_min": 40,
       "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112000524601f4: Типа кол в чат тестом на раунд?"
     },
     {
@@ -1940,7 +1932,7 @@
       "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261120005246e8a8: Эксди",
       "source": "ноут",
       "claimed_human": "17:13:33",
-      "age_min": 39,
+      "age_min": 40,
       "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261120005246e8a8: Эксди"
     },
     {
@@ -1948,7 +1940,7 @@
       "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611192047547b3a: Автоматически предполагать, что противник сейвил оружие — без ручных подсказок «Кот Харитон, противн",
       "source": "ноут",
       "claimed_human": "17:10:24",
-      "age_min": 42,
+      "age_min": 43,
       "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611192047547b3a: Автоматически предполагать, что противник сейвил оружие — без ручных подсказок «Кот Харитон, противн"
     },
     {
@@ -1956,7 +1948,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwom7hmbz5ua: H325 — «полная карта событий/топологии/аима»: проверка завершена (подтверждена)",
       "source": "ноут",
       "claimed_human": "17:05:29",
-      "age_min": 47,
+      "age_min": 48,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwom7hmbz5ua: H325 — «полная карта событий/топологии/аима»: проверка завершена (подтверждена)",
       "autogen": true
     },
@@ -1965,7 +1957,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwokqjstywzv: H279 — Ahmed & Traoré (2007), mouse dynamics: проверка завершена (подтверждена)",
       "source": "ноут",
       "claimed_human": "17:04:08",
-      "age_min": 49,
+      "age_min": 50,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwokqjstywzv: H279 — Ahmed & Traoré (2007), mouse dynamics: проверка завершена (подтверждена)",
       "autogen": true
     },
@@ -1974,7 +1966,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwokplvolz3j: H276 — Beckers & Halpern (2019) Abstracting causal models: проверка завершена (подтверждена)",
       "source": "ноут",
       "claimed_human": "17:03:39",
-      "age_min": 49,
+      "age_min": 50,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwokplvolz3j: H276 — Beckers & Halpern (2019) Abstracting causal models: проверка завершена (подтверждена)",
       "autogen": true
     },
@@ -1983,7 +1975,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwoi3pee8w2p: C06-518 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S13",
       "source": "ноут",
       "claimed_human": "17:01:38",
-      "age_min": 51,
+      "age_min": 52,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwoi3pee8w2p: C06-518 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S13",
       "autogen": true
     },
@@ -1992,7 +1984,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwoi07nld980: C06-502 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S12",
       "source": "ноут",
       "claimed_human": "17:01:31",
-      "age_min": 51,
+      "age_min": 52,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwoi07nld980: C06-502 — сканфид: enemy_model + 3-кадровый трек на новом корпусе S12",
       "autogen": true
     },
@@ -2001,16 +1993,16 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwnjlo3f48ry: Автономный 4ч-спринт: MASTERPLAN-v2 OPEN + бэклог гипотез",
       "source": "ноут",
       "claimed_human": "16:55:53",
-      "age_min": 57,
+      "age_min": 58,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwnjlo3f48ry: Автономный 4ч-спринт: MASTERPLAN-v2 OPEN + бэклог гипотез",
       "autogen": true
     }
   ],
   "queues": {
     "ноут": {
-      "done": 1239,
+      "done": 1240,
       "failed": 133,
-      "doing": 11
+      "doing": 10
     },
     "ПК": {
       "done": 81,
@@ -2021,6 +2013,6 @@
   "progress_updated_at": "2026-11-22T17:46:25+03:00",
   "plan_age_hours": 0.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795359191,
-  "fetched_human": "2026-11-22 17:53:11 +0300"
+  "fetched_at": 1795359251,
+  "fetched_human": "2026-11-22 17:54:11 +0300"
 }

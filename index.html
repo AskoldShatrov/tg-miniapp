@@ -2333,9 +2333,11 @@ function renderLive(){
 
   const st=$("#liveStamp");
   if(st){
-    /* Штамп свежести должен считать возраст от даты плана, а не от момента
-       приёма файла: иначе рядом с «13 ч назад» получалось «0с назад». */
-    ok("live", planMs||undefined);
+    /* Возраст снимка считаем от fetched_at, а не от даты плана: план может
+       не меняться часами, пока данные обновляются каждую минуту. Раньше здесь
+       было planMs — из-за этого «устарело · 35 мин» висело при свежих данных.
+       @owner:agent @region:live-freshness */
+    ok("live", dataMs||planMs||undefined);
     const lf=paint("live", st);
     const source=d.source||d.plan_source||(d.progress&&d.progress.source)||"live.json";
     st.textContent=planStamp+" · источник: "+source+" · "+lf.text;
