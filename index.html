@@ -2215,10 +2215,11 @@ function atlasDetail(n){
     const inp=$("#atlasQuery"), text=((inp&&inp.value)||"").trim();
     if(!text){ toast("Введите запрос"); return; }
     if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+    if(!userID||userID==="0"){ toast("Открой мини-ап через бота — запрос адресуется получателю"); return; }
     const ts=Date.now();
-    tg.sendData(JSON.stringify({source:"miniapp_atlas_query", id:n.ref||n.id, node_id:n.id,
+    tg.sendData(JSON.stringify({source:"miniapp_atlas_query", id:"карточка атласа", node:n.__k||"",
       title:n.title||"", full:n.full||"", text:text, user_id:userID, ts:ts}));
-    CHAT.sent.push({text:"◈ "+String(n.title||"карточка").slice(0,40)+": "+text,
+    CHAT.sent.push({text:"◈ "+(n.title||"карточка атласа")+": "+text,
       t:new Date().toTimeString().slice(0,8), ts:ts, rid:"at"+ts, source:"miniapp_atlas_query"});
     CHAT.sent=CHAT.sent.slice(-50);
     localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
