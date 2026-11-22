@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-22T16:40:01+00:00",
-  "generated_human": "22.11 16:40 UTC",
-  "as_of": 1795365601359,
+  "generated": "2026-11-22T16:41:11+00:00",
+  "generated_human": "22.11 16:41 UTC",
+  "as_of": 1795365671158,
   "stale_days": 1,
-  "count": 1078,
+  "count": 1079,
   "groups": 10,
   "users": {
    "1869196044": "Аскольд",
@@ -40,14 +40,14 @@
     {
      "id": "ses-tcYwO3SZxv",
      "text": "Только чтение + один артефакт. Проверь, что declarative view из /home/nyaka/shared-repo/bots/miniapp/views.json реально рендерится в мини-апе на https://askoldshatrov.github.io/tg-miniapp/ . Используй доступные локальные инструменты (curl для index.html/views.js/views.json, при возможности headless-браузер). Докажи или опровергни рендер конкретного view id, приложи команды, SHA256 файлов, mtime и вывод. Если рендер проверить объективно нельзя — честно OPEN с причиной и готовой командой.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/PAGES-RENDER-c71.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795365598000,
+     "ts": 1795365669000,
      "source": "session",
      "title": "lree-PAGES-RENDER-c71",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795365598000,
+     "as_of": 1795365669000,
      "is_stale": false
     },
     {
@@ -1249,9 +1249,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-fedLDNtQ8a",
+     "text": "Шаг S5 плана /home/nyaka/overnight/SCANFEED-24H-PLAN.md. Задеплоить turngame/core в gsi_service_v4.py (сейчас FRAMEWORK_AVAILABLE=false), подключить survivor_vision_v2.py дополнительным источником не подменяя GSI, провести smoke-тест. В артефакт: framework_status до/после, пути, SHA, таймстемп, VERDICT с порогом available=true.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S5-INTEGRATE-c37.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795365667000,
+     "source": "session",
+     "title": "lree-SF-S5-INTEGRATE-c37",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795365667000,
+     "is_stale": false
+    },
+    {
      "id": "ses-tyGaTBxREV",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12011. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwr50wl1s1hk: C02-1858: калибровка confidence на REAL-кадрах (19-я реплика). Где: goals.json · 22.11 ~04:07+03 MSK. Prereg C02-1858 до прогона (6 порогов, 17 SHA, createdAt 2026-11-22T01:07:16Z). Гейт: n>=60, FP>0, ECE<0.15; ECE/Brier до/после.  В конце вызови tools.goals.track({action:'done', id:'gmwr50wl1s1hk', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12011_run1795365575.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795365597000,
+     "ts": 1795365658000,
      "source": "session",
      "title": "AU12011: калибровка confidence на REAL-кадрах",
      "source_label": "ноут",
@@ -1270,20 +1283,7 @@
      "answer_text_id": "eaa8bfe503c7b61c",
      "answer_source": "replies.json",
      "delivered_ts": 1795365430710,
-     "as_of": 1795365597000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-fedLDNtQ8a",
-     "text": "Шаг S5 плана /home/nyaka/overnight/SCANFEED-24H-PLAN.md. Задеплоить turngame/core в gsi_service_v4.py (сейчас FRAMEWORK_AVAILABLE=false), подключить survivor_vision_v2.py дополнительным источником не подменяя GSI, провести smoke-тест. В артефакт: framework_status до/после, пути, SHA, таймстемп, VERDICT с порогом available=true.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S5-INTEGRATE-c37.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795365592000,
-     "source": "session",
-     "title": "lree-SF-S5-INTEGRATE-c37",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795365592000,
+     "as_of": 1795365658000,
      "is_stale": false
     },
     {
@@ -6254,6 +6254,31 @@
     "w261121215151ef72"
    ],
    "prompts": [
+    {
+     "id": "ses-RLzhZtZxpR",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12017. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwr5eb5cbndx: C03-1859: RADAR adjusted winrate — гейт PASS (3 сигнала, 3 «плохо», 5 пограничных «нет сигнала»). Где: goals.json · 22.11 ~01:04–01:17 UTC, hy4-flash-free (0% allowance). Prereg C03-1859 ДО прогона (11 порогов/4 SHA, check PASS до и после). Новый первичный сид 20261 В конце вызови tools.goals.track({action:'done', id:'gmwr5eb5cbndx', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12017_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795365666000,
+     "source": "session",
+     "title": "AU12017: RADAR adjusted winrate",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] Нет, я не делал всё: физическая проверка показала, что демка на ПК не открыта, а GSI был пустым; попытка захвата сорвалась по таймауту.",
+     "answer_short": "w261119090518006d: Нет, я не делал всё: физическая проверка показала, что демка",
+     "answer_full": "Нет, я не делал всё: физическая проверка показала, что демка на ПК не открыта, а GSI был пустым; попытка захвата сорвалась по таймауту.",
+     "answer_digest": {
+      "length": 135,
+      "sha256": "eaa8bfe503c7b61ced5dd189ba193ae6256124e6fbd6a94ec0fb4910a90aa0f8"
+     },
+     "answer_text_id": "eaa8bfe503c7b61c",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795365430710,
+     "as_of": 1795365666000,
+     "is_stale": false
+    },
     {
      "id": "ses-Lxs354eavi",
      "text": "у тебя снова всего 4 агента количество задач не уменьшилось я просил обновлять их системное решение",
