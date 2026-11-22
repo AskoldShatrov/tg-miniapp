@@ -1,6 +1,6 @@
 {
   "kind": "antistop-declarative-status",
-  "generated_at": "2026-11-22T07:08:08.888906+00:00",
+  "generated_at": "2026-11-22T07:14:55.427707+00:00",
   "source_sha256": {
     "engine": "16c0b2c464054541f212f00ba33d0b9cd3134d54b664a9c21a3c4536adc341fe",
     "scout": "8cf9562cb9b4cf35397eeaaa3f9a8cf5f896e44fec88fe9a4adb62499df55b19",
@@ -81,5 +81,30 @@
       "next_action": "новый REAL-захват + prereg до прогона; порог 0.05 не двигать"
     }
   ],
-  "verdict": "DECLARATIVE_PUBLISHED"
+  "verdict": "DECLARATIVE_PUBLISHED",
+  "functional_proof": {
+    "pages_delivery": {
+      "command": "curl -x 127.0.0.1:7901 https://askoldshatrov.github.io/tg-miniapp/antistop-status.json",
+      "red": "HTTP 404",
+      "green": "HTTP 200 size=3204",
+      "verdict": "PASS"
+    },
+    "critic_anti_all_good": {
+      "bad_exit": 1,
+      "good_exit": 0,
+      "good_plus_banned_phrase": "INVALID — ВЕРДИТ: запрещённая фраза «всё хорошо»",
+      "verdict": "PASS"
+    },
+    "engine_open_not_stop": {
+      "test": "test_03_scout_open_does_not_stop_engine",
+      "log": "цикл 1: SCOUT OPEN → запрос later",
+      "suite": "7/7 OK",
+      "verdict": "PASS"
+    },
+    "scout_red_green": {
+      "stub_exit": 1,
+      "real_exit": 0,
+      "verdict": "PASS"
+    }
+  }
 }
