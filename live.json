@@ -1242,6 +1242,16 @@
       "completedAt": "2026-11-22T04:57:18+03:00"
     },
     {
+      "task": "CFG-2",
+      "id": "CFG-2.4",
+      "title": "Critic FAIL: эвристика free/pickle → суффикс + отрицательные тесты",
+      "status": "done",
+      "note": "critic 1 PASS/3 FAIL: freestyle-paid проходил подстроку; комментарий ложно ссылался на tui.js; не было neg-control. Испр",
+      "startedAt": "2026-11-22T05:05:58+03:00",
+      "updatedAt": "2026-11-22T05:05:58+03:00",
+      "completedAt": "2026-11-22T05:05:58+03:00"
+    },
+    {
       "task": "CFG-3",
       "id": "CFG-3.1",
       "title": "Заменить sum(lines) на подсчёт status=todo",
@@ -1265,10 +1275,76 @@
       "task": "CFG-3",
       "id": "CFG-3.3",
       "title": "Независимый selfcheck",
-      "status": "running",
-      "note": "",
+      "status": "done",
+      "note": "selfcheck cfg3: 5 PASS; verifier нашёл «39» и опечатку в docstring — исправлено",
       "startedAt": "2026-11-22T05:01:42+03:00",
-      "updatedAt": "2026-11-22T05:01:42+03:00"
+      "updatedAt": "2026-11-22T05:05:58+03:00",
+      "completedAt": "2026-11-22T05:05:58+03:00"
+    },
+    {
+      "task": "CFG-4",
+      "id": "CFG-4.1",
+      "title": "Дополнить правило вызова советчика",
+      "status": "done",
+      "note": "process-plan.md:13 добавлены контрольные точки «план/готово/сработавший гейт» и лимит ≤3 вызова; бэкап /tmp/opencode/pro",
+      "startedAt": "2026-11-22T05:05:59+03:00",
+      "updatedAt": "2026-11-22T05:05:59+03:00",
+      "completedAt": "2026-11-22T05:05:59+03:00"
+    },
+    {
+      "task": "CFG-4",
+      "id": "CFG-4.2",
+      "title": "Проверить сохранность старых триггеров",
+      "status": "done",
+      "note": "diff только 1 ханк; старые триггеры «не уверен / 2 неудачи подряд» сохранены",
+      "startedAt": "2026-11-22T05:05:59+03:00",
+      "updatedAt": "2026-11-22T05:05:59+03:00",
+      "completedAt": "2026-11-22T05:05:59+03:00"
+    },
+    {
+      "task": "T25",
+      "id": "T25.1",
+      "title": "Red: DOM-тест на старом HTML",
+      "status": "done",
+      "note": "Старый HTML b585d57b: RED_RC=1, Error 'offline labels FAIL' — 0/3 подписей.",
+      "updatedAt": "2026-11-22T05:09:21+03:00",
+      "completedAt": "2026-11-22T05:09:21+03:00"
+    },
+    {
+      "task": "T25",
+      "id": "T25.2",
+      "title": "Применить патч G3 с бэкапом",
+      "status": "done",
+      "note": "4 ханка применены; бэкап /tmp/opencode/studio-8h/g3-overlay-before.html; SHA b585d57b... -> a5d47741...; JS_SYNTAX_OK; i",
+      "updatedAt": "2026-11-22T05:09:22+03:00",
+      "completedAt": "2026-11-22T05:09:22+03:00"
+    },
+    {
+      "task": "T25",
+      "id": "T25.3",
+      "title": "Green: DOM 3/3",
+      "status": "done",
+      "note": "Node-харнесс: OFFLINE 3/3 'НЕТ ДАННЫХ'; RENDER capMoney=ДЕНЬГИ, capBuy=БАЙ · FULL, capAwp=AWP · ФАКТ.",
+      "updatedAt": "2026-11-22T05:09:22+03:00",
+      "completedAt": "2026-11-22T05:09:22+03:00"
+    },
+    {
+      "task": "T25",
+      "id": "T25.4",
+      "title": "OCR 3/3 по CTRL-кадру",
+      "status": "done",
+      "note": "Chrome headless -> g3-ocr.png; rus+eng psm6: ДЕНЬГИ, БАЙ; ROI AWP (eng psm7, whitelist): AWP. 3/3.",
+      "updatedAt": "2026-11-22T05:09:23+03:00",
+      "completedAt": "2026-11-22T05:09:23+03:00"
+    },
+    {
+      "task": "T25",
+      "id": "T25.5",
+      "title": "Свежий верификатор (пустой контекст)",
+      "status": "running",
+      "note": "Отправлен независимый verifier с чек-листом, зафиксированным до правки",
+      "startedAt": "2026-11-22T05:09:23+03:00",
+      "updatedAt": "2026-11-22T05:09:23+03:00"
     }
   ],
   "active": [
@@ -1277,7 +1353,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 92,
+      "age_min": 98,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "autogen": true
     },
@@ -1286,7 +1362,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "source": "ПК",
       "claimed_human": "03:31:00",
-      "age_min": 92,
+      "age_min": 99,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "autogen": true
     },
@@ -1295,7 +1371,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "source": "ПК",
       "claimed_human": "03:28:59",
-      "age_min": 94,
+      "age_min": 101,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "autogen": true
     },
@@ -1304,7 +1380,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "source": "ПК",
       "claimed_human": "03:26:59",
-      "age_min": 96,
+      "age_min": 103,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "autogen": true
     },
@@ -1313,7 +1389,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 99,
+      "age_min": 105,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "autogen": true
     },
@@ -1322,14 +1398,14 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "source": "ПК",
       "claimed_human": "03:19:58",
-      "age_min": 103,
+      "age_min": 110,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "autogen": true
     }
   ],
   "queues": {
     "ноут": {
-      "done": 866,
+      "done": 867,
       "failed": 390,
       "todo": 41
     },
@@ -1340,10 +1416,10 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T05:01:42+03:00",
-  "progress_updated_at": "2026-11-22T05:01:42+03:00",
+  "updatedAt": "2026-11-22T05:09:23+03:00",
+  "progress_updated_at": "2026-11-22T05:09:23+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795313028,
-  "fetched_human": "2026-11-22 05:03:48 +0300"
+  "fetched_at": 1795313404,
+  "fetched_human": "2026-11-22 05:10:04 +0300"
 }

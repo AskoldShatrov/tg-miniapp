@@ -890,13 +890,18 @@
         "id": "CFG-2.3",
         "name": "Независимый selfcheck",
         "status": "PASS"
+      },
+      {
+        "id": "CFG-2.4",
+        "name": "Critic FAIL: эвристика free/pickle → суффикс + отрицательные тесты",
+        "status": "PASS"
       }
     ]
   },
   {
     "id": "CFG-3",
     "name": "Исправить счётчик бэклога менеджера",
-    "status": "OPEN",
+    "status": "PASS",
     "children": [
       {
         "id": "CFG-3.1",
@@ -911,6 +916,55 @@
       {
         "id": "CFG-3.3",
         "name": "Независимый selfcheck",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "CFG-4",
+    "name": "Триггеры advisor в контрольных точках",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "CFG-4.1",
+        "name": "Дополнить правило вызова советчика",
+        "status": "PASS"
+      },
+      {
+        "id": "CFG-4.2",
+        "name": "Проверить сохранность старых триггеров",
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T25",
+    "name": "G3: per-icon подписи money/buy/AWP",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "T25.1",
+        "name": "Red: DOM-тест на старом HTML",
+        "status": "PASS"
+      },
+      {
+        "id": "T25.2",
+        "name": "Применить патч G3 с бэкапом",
+        "status": "PASS"
+      },
+      {
+        "id": "T25.3",
+        "name": "Green: DOM 3/3",
+        "status": "PASS"
+      },
+      {
+        "id": "T25.4",
+        "name": "OCR 3/3 по CTRL-кадру",
+        "status": "PASS"
+      },
+      {
+        "id": "T25.5",
+        "name": "Свежий верификатор (пустой контекст)",
         "status": "OPEN"
       }
     ]
