@@ -988,11 +988,19 @@
   ],
   "active": [
     {
+      "id": "QH0004",
+      "title": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png.",
+      "source": "ноут",
+      "claimed_human": "03:55:07",
+      "age_min": 0,
+      "full": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png."
+    },
+    {
       "id": "QH0003",
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "03:54:35",
-      "age_min": 0,
+      "age_min": 1,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1000,7 +1008,7 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "03:54:28",
-      "age_min": 0,
+      "age_min": 1,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
     },
     {
@@ -1008,7 +1016,7 @@
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "03:54:17",
-      "age_min": 0,
+      "age_min": 1,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1016,7 +1024,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwr3i39g37hm: C02-1826: калибровка confidence на REAL-кадрах (17-я реплика)",
       "source": "ноут",
       "claimed_human": "03:52:47",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwr3i39g37hm: C02-1826: калибровка confidence на REAL-кадрах (17-я реплика)"
     },
     {
@@ -1024,7 +1032,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwr3du74scfw: R02AP: проверить малый радар в новом FACEIT-корпусе (spectator/overview)",
       "source": "ноут",
       "claimed_human": "03:52:13",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwr3du74scfw: R02AP: проверить малый радар в новом FACEIT-корпусе (spectator/overview)"
     },
     {
@@ -1032,7 +1040,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwqxp8gxmdn7: C09-1289: 100 FaceIT dust2 демо — парсинг на ПК, n>0",
       "source": "ноут",
       "claimed_human": "03:45:12",
-      "age_min": 9,
+      "age_min": 10,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwqxp8gxmdn7: C09-1289: 100 FaceIT dust2 демо — парсинг на ПК, n>0"
     },
     {
@@ -1040,7 +1048,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwqu13jzdha3: P0-1: снять кадр при живой игре в spectator/GOTV с allplayers>0 и проверить подписи money/бай/AWP по",
       "source": "ноут",
       "claimed_human": "03:41:24",
-      "age_min": 13,
+      "age_min": 14,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwqu13jzdha3: P0-1: снять кадр при живой игре в spectator/GOTV с allplayers>0 и проверить подписи money/бай/AWP по"
     },
     {
@@ -1048,7 +1056,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 23,
+      "age_min": 24,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу"
     },
     {
@@ -1056,7 +1064,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "source": "ПК",
       "claimed_human": "03:31:00",
-      "age_min": 23,
+      "age_min": 24,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны"
     },
     {
@@ -1064,7 +1072,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "source": "ПК",
       "claimed_human": "03:28:59",
-      "age_min": 25,
+      "age_min": 26,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел"
     },
     {
@@ -1072,7 +1080,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "source": "ПК",
       "claimed_human": "03:26:59",
-      "age_min": 27,
+      "age_min": 28,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом"
     },
     {
@@ -1080,7 +1088,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 30,
+      "age_min": 31,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр"
     },
     {
@@ -1088,16 +1096,16 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "source": "ПК",
       "claimed_human": "03:19:58",
-      "age_min": 34,
+      "age_min": 35,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли"
     }
   ],
   "queues": {
     "ноут": {
-      "done": 843,
+      "done": 844,
       "failed": 387,
-      "doing": 7,
-      "todo": 25
+      "doing": 8,
+      "todo": 24
     },
     "ПК": {
       "done": 45,
@@ -1109,6 +1117,6 @@
   "updatedAt": "2026-11-22T03:44:19+03:00",
   "progress_updated_at": "2026-11-22T03:44:19+03:00",
   "plan_source": "progress.json",
-  "fetched_at": 1795308891,
-  "fetched_human": "2026-11-22 03:54:51 +0300"
+  "fetched_at": 1795308953,
+  "fetched_human": "2026-11-22 03:55:53 +0300"
 }
