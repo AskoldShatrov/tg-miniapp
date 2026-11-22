@@ -49,7 +49,9 @@
     "#liveJobs .live-row:hover,#liveSteps .live-row:hover{background:rgba(137,180,250,.08)}",
     ".tt-backdrop{position:fixed;inset:0;background:rgba(17,17,27,.72);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}",
     ".tt-backdrop.open{opacity:1;pointer-events:auto}",
-    ".tt-panel{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);z-index:61;" +
+    /* Полный экран: боковая щель в 460 px не помещала тезисы по карте/видео.
+       @owner:agent @region:card-fullscreen */
+    ".tt-panel{position:fixed;top:0;right:0;bottom:0;width:100%;z-index:61;" +
       "background:var(--base,#1e1e2e);color:var(--text,#cdd6f4);box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.35));" +
       "border-left:1px solid var(--surface1,#45475a);display:flex;flex-direction:column;" +
       "transform:translateX(102%);transition:transform .22s ease;padding-top:env(safe-area-inset-top)}",
