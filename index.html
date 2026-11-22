@@ -140,6 +140,14 @@
   .qbody{font-size:13px;line-height:1.55;color:var(--subtext1);margin:0}
   .qmeta{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
   .tag{font:600 10px/1 var(--fm);color:var(--overlay1);background:var(--mantle);border:1px solid var(--surface1);border-radius:7px;padding:5px 7px}
+  /* Свой текст в карточке вопроса: ответ агенту или уточняющий вопрос. */
+  .qfree-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .qfree{flex:1 1 200px;min-width:0;padding:9px 10px;font:500 13px/1.3 var(--ff);
+    color:var(--text);background:var(--mantle);border:1px solid var(--surface1);
+    border-radius:var(--radius-sm)}
+  .qfree::placeholder{color:var(--overlay0)}
+  .qfree:focus{outline:none;border-color:var(--lavender)}
+  .qfree-row .btn{flex:0 0 auto;padding:9px 10px}
   .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
   .btn{
     appearance:none;border-radius:var(--radius-sm);padding:11px 6px;cursor:pointer;
@@ -2401,8 +2409,43 @@ function renderLive(){
 
 /* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
 let QUESTIONS=null, QUESTIONS_FROM_API=false;
+/* @owner:main @region:questions-human: человеческие карточки + ввод своего текста */
+const QDRAFTS = {};   // перерисовка раз в 5 с не должна стирать набранное
+function questionKind(q){
+  const id=String(q&&q.id||"");
+  if(id.startsWith("per_")) return "Нужно разрешение";
+  if(id.startsWith("frm_")) return "Агент ждёт ответа";
+  return "Вопрос от агента";
+}
+function humanOption(o){
+  const s=String(o).toLowerCase();
+  return ({yes:"Да, разрешить",y:"Да, разрешить",allow:"Разрешить",approve:"Одобрить",
+    no:"Нет, отклонить",n:"Нет, отклонить",deny:"Отклонить",reject:"Отклонить",
+    always:"Разрешить всегда",once:"Только сейчас",true:"Да",false:"Нет"})[s]||String(o);
+}
+function sendTypedQuestion(btn, mode){
+  const row=btn.closest(".qfree-row"); if(!row) return;
+  const inp=row.querySelector(".qfree");
+  const text=((inp&&inp.value)||"").trim();
+  if(!text){ toast("Напиши текст — потом нажми кнопку"); return; }
+  if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+  if(mode==="ask"){
+    tg.sendData(JSON.stringify({source:"miniapp_chat",
+      text:`Уточнение по вопросу «${btn.dataset.qid}»: ${text}`,
+      user_id:userID, rid:Date.now().toString(36)}));
+    toast("Уточнение отправлено агенту");
+  }else{
+    tg.sendData(JSON.stringify({source:"miniapp_answer", id:btn.dataset.qid,
+      node:btn.dataset.node, answer:text,
+      user_id:((tg.initDataUnsafe||{}).user||{}).id||null}));
+    toast("Ответ отправлен");
+    if(inp) inp.value="";
+    if(btn.dataset.qid) delete QDRAFTS[btn.dataset.qid];
+  }
+}
 function renderQuestions(){
   const box=$("#questionCards"); if(!box) return;
+  box.querySelectorAll(".qfree").forEach(i=>{ if(i.dataset.qid) QDRAFTS[i.dataset.qid]=i.value; });
   const list=(QUESTIONS&&QUESTIONS.questions)||[];
   const stamp=$("#questionsStamp");
   if(stamp){
@@ -2411,16 +2454,24 @@ function renderQuestions(){
   }
   box.innerHTML=list.length?list.map(q=>{
     const extra=normalizeCan(q.can).filter(a=>a!=="answer");   // ответ идёт через sendData — не трогаем
+    const opts=(q.options&&q.options.length?q.options
+      :(String(q.id||"").startsWith("per_")?["yes","no"]:["Ответить"]));
     return `
     <div class="qcard" style="margin-bottom:10px">
-      <div class="qtop"><span class="chip question">ОЖИДАЕТ</span><span class="qid">${esc(q.id)}</span>${QUESTIONS_FROM_API?'<span class="src-api">(source API)</span>':''}</div>
+      <div class="qtop"><span class="chip question" title="ID: ${esc(q.id)}">${esc(questionKind(q))}</span>${QUESTIONS_FROM_API?'<span class="src-api">(живой API)</span>':''}</div>
       <div class="qtitle">${esc(q.title)}</div>
       <div class="qbody">${esc(q.text)}</div>
       ${q.why?`<div class="qmeta"><span class="tag">${esc(q.why)}</span></div>`:""}
-      <div class="actions">${(q.options&&q.options.length?q.options:["Ответить"]).map(o=>
-        `<button class="btn btn-primary qanswer" data-qid="${esc(q.id)}" data-node="${esc(q.node)}" data-answer="${esc(o)}">${esc(o)}</button>`
+      <div class="actions">${opts.map(o=>
+        `<button class="btn btn-primary qanswer" data-qid="${esc(q.id)}" data-node="${esc(q.node)}" data-answer="${esc(o)}">${esc(humanOption(o))}</button>`
       ).join("")}
       ${extra.map(a=>`<button class="btn btn-ghost qaction" data-node="${esc(q.node)}" data-act="${esc(a)}">${esc(actionLabel(a))}</button>`).join("")}</div>
+      <div class="qfree-row">
+        <input class="qfree" type="text" data-qid="${esc(q.id)}" data-node="${esc(q.node)}"
+          placeholder="Напиши ответ или уточнение агенту…" value="${esc(QDRAFTS[q.id]||"")}">
+        <button class="btn btn-primary qsend" data-qid="${esc(q.id)}" data-node="${esc(q.node)}">Ответить</button>
+        <button class="btn btn-ghost qask" data-qid="${esc(q.id)}" data-node="${esc(q.node)}">Спросить агенту</button>
+      </div>
     </div>`;
   }).join(""):'<div class="p-empty">Ожидающих вопросов нет.</div>';
   box.querySelectorAll(".qanswer").forEach(b=>b.addEventListener("click",()=>{
@@ -2429,7 +2480,15 @@ function renderQuestions(){
       answer:b.dataset.answer,
       user_id:((tg.initDataUnsafe||{}).user||{}).id||null}));
     toast("Ответ отправлен");
-    /* @owner:redesign-2026-11-21 @region:no-close: ответ остаётся в окне */
+  }));
+  box.querySelectorAll(".qsend").forEach(b=>b.addEventListener("click",()=>sendTypedQuestion(b,"answer")));
+  box.querySelectorAll(".qask").forEach(b=>b.addEventListener("click",()=>sendTypedQuestion(b,"ask")));
+  box.querySelectorAll(".qfree").forEach(inp=>inp.addEventListener("keydown",e=>{
+    if(e.key==="Enter"){
+      e.preventDefault();
+      const row=inp.closest(".qfree-row"); const b=row&&row.querySelector(".qsend");
+      if(b) b.click();
+    }
   }));
   // Дополнительные действия из поля can — тот же POST-хелпер, что и у деталей узла.
   box.querySelectorAll(".qaction").forEach(b=>b.addEventListener("click",()=>{

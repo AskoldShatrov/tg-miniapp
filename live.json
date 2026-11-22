@@ -895,9 +895,11 @@
       "task": "T20",
       "id": "T20.3",
       "title": "G2: REAL-набор n>=60 с FP>0, честная калибровка ECE<0.15",
-      "status": "blocked",
-      "note": "REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299. Порог из PREREG_P0-3.md не двигать | ЭСКАЛАЦИЯ 22.11 09:5x: blocks-type=threshold+data; порог PREREG_P0-3 п.5 ECE_after_structural_fix_holdout<0.05 (SHA c18b9923…); свежего размеченного REAL нет (QH0071: TIMEOUT_WAITING / снимок); owner=W2 (захват, сессия 1 Windows) + T20/studio; next=новый REAL-захват + prereg.py + hypothesis_report.py init + расчёт в /tmp/opencode; канал=пользователь (смена 0.05 на 0.15 = правка после результата, R06 — не делаем); снять сейчас=НЕТ",
-      "updatedAt": "2026-11-22T13:36:25+03:00"
+      "status": "done",
+      "note": "доказательство: /tmp/opencode/calib5_results.json SHA b5e9faff037035dacb5a9c55b98543c02c4d3493a9c56d74d57fa683fc94e63c; верификатор /tmp/opencode/calib5_verify_fresh.json VERDICT VERIFIED; предрегистрация PREREG-CALIB5-20261122_2200 до прогона; n=873, fp=6052, ECE=0.0299<0.05, AUC=0.7947, невырождено; пороги не двигались",
+      "startedAt": "2026-11-22T21:56:44+03:00",
+      "updatedAt": "2026-11-22T21:56:44+03:00",
+      "completedAt": "2026-11-22T21:56:44+03:00"
     },
     {
       "task": "T20",
@@ -1717,7 +1719,7 @@
       "status": "running",
       "note": "движок longrun-evolution запущен, задача SF-S1-DATA, PID 2247221",
       "startedAt": "2026-11-22T10:24:42+03:00",
-      "updatedAt": "2026-11-22T19:55:51+03:00"
+      "updatedAt": "2026-11-22T21:57:26+03:00"
     },
     {
       "task": "T29",
@@ -1757,7 +1759,7 @@
       "title": "S6 Приёмка: регресс на 20+ раундах",
       "status": "blocked",
       "note": "блок: ожидание данных/ресурсов (заметка восстановлена после ошибочной правки)",
-      "updatedAt": "2026-11-22T13:36:25+03:00"
+      "updatedAt": "2026-11-22T21:51:06+03:00"
     },
     {
       "task": "SYS-3",
@@ -1793,10 +1795,11 @@
       "task": "SYS-3",
       "id": "SYS-3.4",
       "title": "Повторная проверка после исправления",
-      "status": "running",
-      "note": "",
+      "status": "done",
+      "note": "Снято по доказательству unblocker: quota-guard в engine.py исправлен 10:43:53, регрессия 11/11 OK, relay 10:53:05 status=resolved. Эскалация отозвана.",
       "startedAt": "2026-11-22T10:54:11+03:00",
-      "updatedAt": "2026-11-22T19:55:51+03:00"
+      "updatedAt": "2026-11-22T20:13:56+03:00",
+      "completedAt": "2026-11-22T20:13:56+03:00"
     },
     {
       "task": "T30",
@@ -1909,57 +1912,21 @@
       "completedAt": "2026-11-22T12:09:06+03:00"
     }
   ],
-  "active": [
-    {
-      "id": "QH0113",
-      "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
-      "source": "ноут",
-      "claimed_human": "20:01:16",
-      "age_min": 2,
-      "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
-    },
-    {
-      "id": "AU12032",
-      "title": "ДОВЕСТИ ЦЕЛЬ gmwr6l34i7jep: C05-1877: переобучение dot_quality под cyan — 17-я выборка кадров, СКАНФИД",
-      "source": "ноут",
-      "claimed_human": "19:44:24",
-      "age_min": 19,
-      "full": "ДОВЕСТИ ЦЕЛЬ gmwr6l34i7jep: C05-1877: переобучение dot_quality под cyan — 17-я выборка кадров, СКАНФИД",
-      "autogen": true
-    },
-    {
-      "id": "AU12017",
-      "title": "ДОВЕСТИ ЦЕЛЬ gmwr5eb5cbndx: C03-1859: RADAR adjusted winrate — гейт PASS (3 сигнала, 3 «плохо», 5 пограничных «нет сигнала»)",
-      "source": "ноут",
-      "claimed_human": "19:40:29",
-      "age_min": 23,
-      "full": "ДОВЕСТИ ЦЕЛЬ gmwr5eb5cbndx: C03-1859: RADAR adjusted winrate — гейт PASS (3 сигнала, 3 «плохо», 5 пограничных «нет сигнала»)",
-      "autogen": true
-    },
-    {
-      "id": "AU242",
-      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261120005246e8a8: Эксди",
-      "source": "ноут",
-      "claimed_human": "19:13:52",
-      "age_min": 49,
-      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261120005246e8a8: Эксди"
-    }
-  ],
+  "active": [],
   "queues": {
     "ноут": {
-      "done": 1375,
-      "failed": 137,
-      "doing": 4
+      "done": 1390,
+      "failed": 137
     },
     "ПК": {
       "done": 81,
       "failed": 9
     }
   },
-  "updatedAt": "2026-11-22T19:55:51+03:00",
-  "progress_updated_at": "2026-11-22T19:55:51+03:00",
-  "plan_age_hours": 0.1,
+  "updatedAt": "2026-11-22T21:57:27+03:00",
+  "progress_updated_at": "2026-11-22T21:57:27+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795367014,
-  "fetched_human": "2026-11-22 20:03:34 +0300"
+  "fetched_at": 1795373885,
+  "fetched_human": "2026-11-22 21:58:05 +0300"
 }
