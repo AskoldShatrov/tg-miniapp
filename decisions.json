@@ -8,59 +8,59 @@
     "full": "Задача O2 выполнена в автономном 4h-спринте"
   },
   {
-    "h": "GATE-T1",
+    "h": "H020",
     "verdict": "FAIL",
-    "title": "Гейт T1: wp_v3-признаки дают прирост contested AUC > 0.60 при нижней границе cluster 95% CI > 0.55, ECE < 0.05 на ≥30 held-out матчах",
-    "note": "256 train / 64 test по match_id; своя полоса base 0.5772 (n=2329) → 0.5762 (n=2301), cluster CI (0.5631, 0.5919); фикс. полоса 0.5772 → 0.5753, CI (0.5569, 0.5936); ECE 0",
-    "src": "overnight/T1-winrate-v4.md; overnight/72-hypothesis-ledger.md §1.1; overnight/MASTERPLAN-v",
-    "full": "Гейт T1: wp_v3-признаки дают прирост contested AUC > 0.60 при нижней границе cluster 95% CI > 0.55, ECE < 0.05 на ≥30 held-out матчах"
+    "title": "H020: H020 — «ShortStairs CT» / `survived` (строка таблицы §«Пять dust2-сигналов» отчёта `16-mixed-all40.md`)",
+    "note": "Мета: проверка 2026-11-19. Бэклог `~/scripts/background/hypothesis_backlog.jsonl`, запись `id=H020` (строка 20): `source: \"16-mixed-all40.md\"`, `hypothesis: \"ShortStairs ",
+    "src": "overnight/hypothesis/H020.md",
+    "full": "H020: H020 — «ShortStairs CT» / `survived` (строка таблицы §«Пять dust2-сигналов» отчёта `16-mixed-all40.md`)"
   },
   {
-    "h": "GATE-T2",
+    "h": "H298_run17951554",
     "verdict": "FAIL",
-    "title": "Гейт T2: личный остаток игрока даёт out-of-sample прирост с CI > 0 и ICC игрока в исходе > 0.05 при стабильном ранжировании",
-    "note": "3 независимые проверки (N3, v1, v2). v1: ΔAUC −0.0039 [−0.0169, +0.0097], ICC 0.0046, split-half rho 0.064, holdout rho −0.078. v2 (255/64, 18446 наблюдений): reversal-on",
-    "src": "overnight/T2-player.md; overnight/T2-player-v2.md; overnight/72-hypothesis-ledger.md §1.1;",
-    "full": "Гейт T2: личный остаток игрока даёт out-of-sample прирост с CI > 0 и ICC игрока в исходе > 0.05 при стабильном ранжировании"
+    "title": "H298_run1795155472: Предрегистрация H298_run1795155472",
+    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
+    "src": "overnight/prereg/H298_run1795155472.md",
+    "full": "H298_run1795155472: Предрегистрация H298_run1795155472"
   },
   {
-    "h": "GATE-T3",
-    "verdict": "PASS",
-    "title": "Гейт T3: калибровка P(full buy) и P(AWP-килл) проходит ECE < 0.05 и покрытие > 60%",
-    "note": "Вложенный 5-fold CV по match_id + Platt. P(full buy): n=54744, ECE max 0.0073, coverage 90.5%, Brier 0.1122, AUC 0.882. P(AWP-килл, killer): n=46351, ECE 0.0066, coverage",
-    "src": "overnight/T3-buy-awp.md; overnight/72-hypothesis-ledger.md §1.1; .config/opencode/progress",
-    "full": "Гейт T3: калибровка P(full buy) и P(AWP-килл) проходит ECE < 0.05 и покрытие > 60%"
-  },
-  {
-    "h": "GATE-T4",
-    "verdict": "OPEN",
-    "title": "Гейт T4: честные метрики scanfeed против факта с n и baseline; confidence откалиброван по REAL-кадрам",
-    "note": "Демо: 120/120 килов совпали, coverage 1.0; two-AK TP4 FP0 FN3 TN9 → P=1.0 R=0.5714 accuracy 0.8125; бай persistence 0.6129 < baseline 0.7742, AWP-rule 0.6452 > 0.5161 (n=",
-    "src": "overnight/73-t4-donk-benchmark.md; .config/opencode/progress.json (T4.4); overnight/MASTER",
-    "full": "Гейт T4: честные метрики scanfeed против факта с n и baseline; confidence откалиброван по REAL-кадрам"
-  },
-  {
-    "h": "H-T1-01",
+    "h": "H358_RUN17951589",
     "verdict": "FAIL",
-    "title": "Пять признаков wp_v3 (smoke_adv, buy_full_adv, equip_adv_k$, los_adv, los_lead_s) дают прирост contested AUC",
-    "note": "base 0.5772 → 0.5762, cluster CI (0.5631, 0.5919); фикс. полоса 0.5772 → 0.5753, CI (0.5569, 0.5936); 34/64 матчей улучшение; ECE 0.0195 → 0.0181; 41095/10223 состояний |",
-    "src": "overnight/72-hypothesis-ledger.md §1.1",
-    "full": "Пять признаков wp_v3 (smoke_adv, buy_full_adv, equip_adv_k$, los_adv, los_lead_s) дают прирост contested AUC"
+    "title": "H358_RUN1795158983: Предрегистрация H358_run1795158983",
+    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
+    "src": "overnight/prereg/H358_run1795158983.md",
+    "full": "H358_RUN1795158983: Предрегистрация H358_run1795158983"
   },
   {
-    "h": "H-T1-02",
-    "verdict": "OPEN",
-    "title": "Plant/defuse и LOS-признаки несут сигнал на полном корпусе",
-    "note": "plant/defuse только 40 демо с bomb-кэшем; LOS только 40 матчей, на остальных 280 = 0 (без утечки, но со сниженной мощностью)",
-    "src": "overnight/72-hypothesis-ledger.md §1.1",
-    "full": "Plant/defuse и LOS-признаки несут сигнал на полном корпусе"
-  },
-  {
-    "h": "H-T2-01",
+    "h": "H358_run17951589",
     "verdict": "FAIL",
-    "title": "Надёжный «почерк» мыши переносится в предсказание победы раунда",
-    "note": "ΔAUC reversal-only −0.0043 [−0.0105, +0.0015]; все 5 конфигураций ΔAUC ≤ 0; ICC игрока в исходе 0.0040 против порога 0.05; бутстрепы ΔAUC>0 = 9.5%; 255/64 матчей, 18446 н",
-    "src": "overnight/72-hypothesis-ledger.md §1.1; overnight/T2-player-v2.md",
-    "full": "Надёжный «почерк» мыши переносится в предсказание победы раунда"
+    "title": "H358_run1795158983: Предрегистрация H358_run1795158983",
+    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
+    "src": "overnight/prereg/H358_run1795158983.md",
+    "full": "H358_run1795158983: Предрегистрация H358_run1795158983"
+  },
+  {
+    "h": "H360_run17951591",
+    "verdict": "FAIL",
+    "title": "H360_run1795159119: Предрегистрация H360_run1795159119",
+    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
+    "src": "overnight/prereg/H360_run1795159119.md",
+    "full": "H360_run1795159119: Предрегистрация H360_run1795159119"
+  },
+  {
+    "h": "H375_run17951598",
+    "verdict": "FAIL",
+    "title": "H375_run1795159890: H375 — «Персональная надёжность closure-rate: split-half r=0.1264 (n=561), гейт A9 r≥0.25 не пройден»",
+    "note": "Мета: проверка 2026-11-20, статус ЗАПОЛНЕНО. Вердикт на входе: ГЕЙТ НЕ ПРОЙДЕН (отрицательный результат). || - CI: Fisher z 95% для core r при n=561 → **[0.0441, 0.2070]*",
+    "src": "overnight/hypothesis/H375_run1795159890.md",
+    "full": "H375_run1795159890: H375 — «Персональная надёжность closure-rate: split-half r=0.1264 (n=561), гейт A9 r≥0.25 не пройден»"
+  },
+  {
+    "h": "H389_RUN17951606",
+    "verdict": "FAIL",
+    "title": "H389_RUN1795160631: Предрегистрация H389_run1795160631",
+    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
+    "src": "overnight/prereg/H389_run1795160631.md",
+    "full": "H389_RUN1795160631: Предрегистрация H389_run1795160631"
   }
 ]
