@@ -97,6 +97,7 @@ def main():
             cluster_nodes.append({
                 "id": key,
                 "name": f"{title} · {len(claims)} claim",
+                "labeling": "author_manual",
                 "status": aggregate([n["status"] for n in claim_nodes]),
                 "children": claim_nodes,
             })
@@ -146,6 +147,13 @@ def main():
 
     payload = {
         "version": 1,
+        "labeling": {
+            "kind": "author_manual_clusters",
+            "note": "8 кластеров — авторская разметка из N2, не независимо проверенная таксономия",
+            "verification": 19,
+            "n2_status_only": 21,
+            "verdict_gate": "19/40 реальных вердиктов; гейт 40/40 НЕ взят",
+        },
         "built_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "built_by": "build_video_tree.py",
         "source": "grids.json",
