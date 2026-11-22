@@ -1504,15 +1504,60 @@
       "title": "Свежий верификатор после финального mtime",
       "status": "todo",
       "note": ""
+    },
+    {
+      "task": "AUD-3",
+      "id": "AUD-3.1",
+      "title": "Заморозить SHA256 и чек-лист",
+      "status": "running",
+      "note": "freeze /tmp/opencode/work-until-done/AUD-3-freeze.txt",
+      "startedAt": "2026-11-22T09:29:33+03:00",
+      "updatedAt": "2026-11-22T09:29:33+03:00"
+    },
+    {
+      "task": "AUD-3",
+      "id": "AUD-3.2",
+      "title": "diff_gate F-01..F-04",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-3",
+      "id": "AUD-3.3",
+      "title": "morning F-05/F-06 + trace_writer/cluster F-07..F-09",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-3",
+      "id": "AUD-3.4",
+      "title": "referee_journal F-10/F-11",
+      "status": "todo",
+      "note": ""
+    },
+    {
+      "task": "AUD-3",
+      "id": "AUD-3.5",
+      "title": "Свежий верификатор и доставка",
+      "status": "todo",
+      "note": ""
     }
   ],
   "active": [
+    {
+      "id": "QH0071",
+      "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
+      "source": "ноут",
+      "claimed_human": "09:30:00",
+      "age_min": 0,
+      "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
+    },
     {
       "id": "QH0022",
       "title": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.",
       "source": "ноут",
       "claimed_human": "09:14:49",
-      "age_min": 14,
+      "age_min": 15,
       "full": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех."
     },
     {
@@ -1520,7 +1565,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 193,
+      "age_min": 194,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1529,7 +1574,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 193,
+      "age_min": 194,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1538,7 +1583,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 193,
+      "age_min": 194,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
@@ -1547,7 +1592,7 @@
     "ноут": {
       "done": 920,
       "failed": 407,
-      "doing": 1
+      "doing": 2
     },
     "ПК": {
       "done": 51,
@@ -1556,10 +1601,10 @@
       "todo": 35
     }
   },
-  "updatedAt": "2026-11-22T09:28:04+03:00",
-  "progress_updated_at": "2026-11-22T09:28:04+03:00",
+  "updatedAt": "2026-11-22T09:29:33+03:00",
+  "progress_updated_at": "2026-11-22T09:29:33+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795328940,
-  "fetched_human": "2026-11-22 09:29:00 +0300"
+  "fetched_at": 1795329001,
+  "fetched_human": "2026-11-22 09:30:01 +0300"
 }
