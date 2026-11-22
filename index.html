@@ -169,8 +169,6 @@
 
   /* ---------- живая шапка вместо декоративного заголовка ---------- */
   header#hdr{cursor:pointer;user-select:none}
-  /* @owner:main @region:header-clean */
-  header#hdr{display:none !important}
   header#hdr:active{opacity:.72}
   .hmeta{min-width:0;flex:1}
   .hsub{font-size:11.5px;color:var(--subtext1);margin-top:0;font-family:var(--fm);
@@ -722,7 +720,7 @@
     <section class="screen" id="screen-chat">
       <div class="chat-head">
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
-        <span class="chat-live" title="связь с агентом">●</span>
+        <span class="chat-live" title="живой канал">●</span>
       </div>
       <div class="chatwrap">
         <div class="chatlog" id="chatLog"></div>
@@ -1508,7 +1506,7 @@ function setApiBadge(el, on, label){
 }
 
 /* Шапка — живой сигнал: источник и время приёма берём из status.json.
-   Декоративная надпись в шапке удалена. */
+   Статичная надпись «живой канал · данные мини-апа» удалена как декорация. */
 const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
@@ -2359,8 +2357,7 @@ function renderLive(){
       return !!ms&&(now-ms)/3600000>24;
     };
     const active=(d.tasks||[]).filter(s=>s.status!=="done");
-    const shownJobs=(d.active||[]).filter(j=>!j.autogen);
-    steps.innerHTML=shownJobs.length?shownJobs.map(s=>{
+    steps.innerHTML=active.length?active.map(s=>{
       const archived=stepIsArchived(s);
       return `<div class="live-row"${archived?' style="opacity:.6"':''}><span class="lid">${esc(s.id)}</span>
         <span class="ltitle">${esc(s.title)}${s.note?' — '+esc(s.note):''}</span>
@@ -2370,7 +2367,7 @@ function renderLive(){
       '<div class="hint">Все шаги закрыты.</div>';
   }
   const jobs=$("#liveJobs");
-  if(jobs){const allJobs=d.active||[];const hidden=allJobs.filter(j=>j.autogen).length;const shownJobs=allJobs.filter(j=>!j.autogen);jobs.innerHTML=(shownJobs.length?shownJobs.map(j=>{
+  if(jobs) jobs.innerHTML=(d.active||[]).length?(d.active||[]).map(j=>{
     const min=Number(j.age_min)||0;
     const stuck=min>=30;
     return `<div class="live-row"><span class="lid">${esc(j.id)}</span>
@@ -2380,9 +2377,7 @@ function renderLive(){
         ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
         :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
   }).join(""):
-    '<div class="hint">Сейчас активных задач в очередях нет.</div>');
-  if(hidden) jobs.insertAdjacentHTML('beforeend','<div class=\'hint\'>Автоген воркеров: '+hidden+' (скрыто)</div>');
-}
+    '<div class="hint">Сейчас активных задач в очередях нет.</div>';
 }
 
 /* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
