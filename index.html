@@ -2217,10 +2217,16 @@ function atlasDetail(n){
     if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
     if(!userID||userID==="0"){ toast("Открой мини-ап через бота — запрос адресуется получателю"); return; }
     const ts=Date.now();
-    tg.sendData(JSON.stringify({source:"miniapp_atlas_query", id:"карточка атласа", node:n.__k||"",
-      title:n.title||"", full:n.full||"", text:text, user_id:userID, ts:ts}));
-    CHAT.sent.push({text:"◈ "+(n.title||"карточка атласа")+": "+text,
-      t:new Date().toTimeString().slice(0,8), ts:ts, rid:"at"+ts, source:"miniapp_atlas_query"});
+    const card=String(n.title||"карточка атласа");
+    const full=String(n.full||"");
+    const prompt="По карточке атласа «"+card+"». Запрос: "+text+
+      (full?"\nПолный текст карточки: "+full:"");
+    /* Используем существующий обработчик бота source=miniapp_chat — у него есть
+       реальный handle(); новый source не был бы поддержан. */
+    tg.sendData(JSON.stringify({source:"miniapp_chat", surface:"atlas",
+      text:prompt, user_id:userID, ts:ts}));
+    CHAT.sent.push({text:"◈ "+card+": "+text,
+      t:new Date().toTimeString().slice(0,8), ts:ts, rid:"at"+ts, source:"miniapp_chat"});
     CHAT.sent=CHAT.sent.slice(-50);
     localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
     toast("Отправлено — ответ появится в чате");
