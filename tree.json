@@ -310,7 +310,7 @@
   {
     "id": "P0-1",
     "name": "Оверлей P0-1: кадр с allplayers>0",
-    "status": "PASS",
+    "status": "OPEN",
     "children": [
       {
         "id": "P0-1.1",
@@ -320,7 +320,7 @@
       {
         "id": "P0-1.2",
         "name": "Получить allplayers>0 через spectator/GOTV",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "P0-1.3",
@@ -410,12 +410,12 @@
   {
     "id": "T13",
     "name": "O1/T4: зонд REAL-кадров с ненулевым FP",
-    "status": "PASS",
+    "status": "OPEN",
     "children": [
       {
         "id": "T13.1",
         "name": "Найти REAL-кадры с fp>0 в готовых данных",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "T13.2",
@@ -634,6 +634,43 @@
         "id": "T19.5",
         "name": "Критик: ревью диффа, устранение находок",
         "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T20",
+    "name": "Двухдневный спринт: рабочий сканфид",
+    "status": "OPEN",
+    "children": [
+      {
+        "id": "T20.1",
+        "name": "G1: демка в CS2 + spectator GSI → кадр с allplayers>0",
+        "status": "OPEN"
+      },
+      {
+        "id": "T20.2",
+        "name": "G1b: игра с ботами как управляемый источник GSI (money/equip/allplayers)",
+        "status": "OPEN"
+      },
+      {
+        "id": "T20.3",
+        "name": "G2: REAL-набор n>=60 с FP>0, честная калибровка ECE<0.15",
+        "status": "OPEN"
+      },
+      {
+        "id": "T20.4",
+        "name": "G3: один рабочий HUD (деньги/бай/AWP) без Concurrent-окон",
+        "status": "OPEN"
+      },
+      {
+        "id": "T20.5",
+        "name": "G4: end-to-end сканфид на живом кадре с источником оценок",
+        "status": "OPEN"
+      },
+      {
+        "id": "T20.6",
+        "name": "G5: доставка результата (PNG через show.viewer) и фиксация гейтов",
+        "status": "OPEN"
       }
     ]
   }
