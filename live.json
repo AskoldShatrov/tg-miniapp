@@ -459,8 +459,8 @@
       "id": "P0-1.2",
       "title": "Получить allplayers>0 через spectator/GOTV",
       "status": "todo",
-      "note": "Открыто повторно 22.11: помечено done без артефакта; живой зонд даёт ALLPLAYERS_MAX=0, демка не открыта",
-      "updatedAt": "2026-11-22T03:32:26+03:00",
+      "note": "КАННИЧЕСКАЯ ЗАДАЧА allplayers>0 (объединены T20.1/T20.2/T21.8). Блок: нет локального матча. GSI activity=menu, ALLPLAYER",
+      "updatedAt": "2026-11-22T04:57:00+03:00",
       "completedAt": "2026-11-19T21:17:12+03:00"
     },
     {
@@ -877,15 +877,19 @@
       "task": "T20",
       "id": "T20.1",
       "title": "G1: демка в CS2 + spectator GSI → кадр с allplayers>0",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "ДУБЛЬ канонической P0-1.2 — объединён 22.11.",
+      "updatedAt": "2026-11-22T04:57:00+03:00",
+      "completedAt": "2026-11-22T04:57:00+03:00"
     },
     {
       "task": "T20",
       "id": "T20.2",
       "title": "G1b: игра с ботами как управляемый источник GSI (money/equip/allplayers)",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "ДУБЛЬ канонической P0-1.2 — объединён 22.11.",
+      "updatedAt": "2026-11-22T04:57:00+03:00",
+      "completedAt": "2026-11-22T04:57:00+03:00"
     },
     {
       "task": "T20",
@@ -970,8 +974,10 @@
       "task": "T21",
       "id": "T21.8",
       "title": "gsi-root: allplayers>0 на бот-матче",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "ДУБЛЬ канонической P0-1.2 — объединён 22.11.",
+      "updatedAt": "2026-11-22T04:57:00+03:00",
+      "completedAt": "2026-11-22T04:57:00+03:00"
     },
     {
       "task": "T21",
@@ -1206,10 +1212,11 @@
       "task": "CFG-2",
       "id": "CFG-2.3",
       "title": "Независимый selfcheck",
-      "status": "running",
-      "note": "oc_selfcheck",
+      "status": "done",
+      "note": "selfcheck cfg2: 5 PASS / 0 FAIL / 0 OPEN",
       "startedAt": "2026-11-22T04:55:24+03:00",
-      "updatedAt": "2026-11-22T04:55:24+03:00"
+      "updatedAt": "2026-11-22T04:57:18+03:00",
+      "completedAt": "2026-11-22T04:57:18+03:00"
     }
   ],
   "active": [
@@ -1218,7 +1225,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 85,
+      "age_min": 86,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "autogen": true
     },
@@ -1281,10 +1288,10 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T04:55:24+03:00",
-  "progress_updated_at": "2026-11-22T04:55:24+03:00",
+  "updatedAt": "2026-11-22T04:57:18+03:00",
+  "progress_updated_at": "2026-11-22T04:57:18+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795312637,
-  "fetched_human": "2026-11-22 04:57:17 +0300"
+  "fetched_at": 1795312655,
+  "fetched_human": "2026-11-22 04:57:35 +0300"
 }
