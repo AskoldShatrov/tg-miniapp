@@ -895,9 +895,9 @@
       "task": "T20",
       "id": "T20.3",
       "title": "G2: REAL-набор n>=60 с FP>0, честная калибровка ECE<0.15",
-      "status": "todo",
-      "note": "Числовой гейт n>=60/FP>0/ECE<0.15 численно пройден (S01AN 22.11 00:29; QH0008 04:19: n=90, FP=98, ECE 0.1312), но 'честн",
-      "updatedAt": "2026-11-22T04:58:37+03:00"
+      "status": "blocked",
+      "note": "REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299. Порог из PREREG_P0",
+      "updatedAt": "2026-11-22T05:30:05+03:00"
     },
     {
       "task": "T20",
@@ -912,18 +912,19 @@
       "task": "T20",
       "id": "T20.5",
       "title": "G4: end-to-end сканфид на живом кадре с источником оценок",
-      "status": "todo",
-      "note": "QH0005 (22.11 04:05) — гейт G4 FAIL: SCANFEED-G4-result.json и скриншот отсутствуют, gate_checks()=false, кадр G1/G1b не",
-      "updatedAt": "2026-11-22T04:58:37+03:00"
+      "status": "done",
+      "note": "G4: SCANFEED-G4-result.json — per-enemy экономика 5 врагов с источником, allplayers=10",
+      "updatedAt": "2026-11-22T05:30:19+03:00",
+      "completedAt": "2026-11-22T05:30:19+03:00"
     },
     {
       "task": "T20",
       "id": "T20.6",
       "title": "G5: доставка результата (PNG через show.viewer) и фиксация гейтов",
       "status": "done",
-      "note": "PNG /tmp/opencode/scanfeed-g5/qh0028_slide_01.png → queue.json; VERDICT 2026-11-22T05:19:53+03:00",
-      "completedAt": "2026-11-22T05:19:53+03:00",
-      "updatedAt": "2026-11-22T05:19:53+03:00"
+      "note": "PNG показан через show.viewer queue.json; гейты зафиксированы в progress",
+      "updatedAt": "2026-11-22T05:30:19+03:00",
+      "completedAt": "2026-11-22T05:30:19+03:00"
     },
     {
       "task": "T21",
@@ -1152,10 +1153,11 @@
       "task": "AUD-1",
       "id": "AUD-1.5",
       "title": "Независимая проверка, доставка и фиксация OPEN",
-      "status": "running",
-      "note": "сводка применений, финальные тесты, доставка",
+      "status": "done",
+      "note": "финальный критик PASS 5/0/1; логи свежие; APPLIED/HANDOFF доставлены",
       "startedAt": "2026-11-22T04:54:45+03:00",
-      "updatedAt": "2026-11-22T05:24:35+03:00"
+      "updatedAt": "2026-11-22T05:30:00+03:00",
+      "completedAt": "2026-11-22T05:30:00+03:00"
     },
     {
       "task": "T23",
@@ -1375,7 +1377,7 @@
       "title": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике.",
       "source": "ноут",
       "claimed_human": "05:26:57",
-      "age_min": 2,
+      "age_min": 3,
       "full": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике."
     },
     {
@@ -1383,7 +1385,7 @@
       "title": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике.",
       "source": "ноут",
       "claimed_human": "05:22:53",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике."
     },
     {
@@ -1391,7 +1393,7 @@
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "05:22:52",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1399,7 +1401,7 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "05:22:52",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
     },
     {
@@ -1407,7 +1409,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "05:22:52",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1415,7 +1417,7 @@
       "title": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png.",
       "source": "ноут",
       "claimed_human": "05:22:52",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png."
     },
     {
@@ -1423,7 +1425,7 @@
       "title": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике.",
       "source": "ноут",
       "claimed_human": "05:22:52",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике."
     },
     {
@@ -1431,7 +1433,7 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "05:22:51",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
     },
     {
@@ -1439,7 +1441,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "05:22:51",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1447,7 +1449,7 @@
       "title": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png.",
       "source": "ноут",
       "claimed_human": "05:22:51",
-      "age_min": 6,
+      "age_min": 7,
       "full": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png."
     },
     {
@@ -1455,7 +1457,7 @@
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "05:21:35",
-      "age_min": 7,
+      "age_min": 8,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1463,7 +1465,7 @@
       "title": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png.",
       "source": "ноут",
       "claimed_human": "05:15:45",
-      "age_min": 13,
+      "age_min": 14,
       "full": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png."
     },
     {
@@ -1471,7 +1473,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "05:15:44",
-      "age_min": 13,
+      "age_min": 14,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1479,7 +1481,7 @@
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "05:15:41",
-      "age_min": 13,
+      "age_min": 14,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1487,23 +1489,15 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "05:15:41",
-      "age_min": 13,
+      "age_min": 14,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
-    },
-    {
-      "id": "QH0032",
-      "title": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png.",
-      "source": "ноут",
-      "claimed_human": "05:15:37",
-      "age_min": 13,
-      "full": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png."
     },
     {
       "id": "QH0029",
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "05:14:41",
-      "age_min": 14,
+      "age_min": 15,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1511,7 +1505,7 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "05:14:41",
-      "age_min": 14,
+      "age_min": 15,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
     },
     {
@@ -1519,7 +1513,7 @@
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "05:14:39",
-      "age_min": 14,
+      "age_min": 15,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1527,7 +1521,7 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "05:14:39",
-      "age_min": 14,
+      "age_min": 15,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
     },
     {
@@ -1535,7 +1529,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "05:14:39",
-      "age_min": 14,
+      "age_min": 15,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1543,7 +1537,7 @@
       "title": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png.",
       "source": "ноут",
       "claimed_human": "05:13:56",
-      "age_min": 15,
+      "age_min": 16,
       "full": "СКАНФИД-СПРИНТ G3 [SCANFEED-SPRINT T20.4]. Развернуть ровно ОДИН рабочий HUD с деньгами/баем/AWP и данными allplayers>0. Остановить старые Concurrent-окна, не удаляя чужие данные. Верификация через pc-bridge: список процессов/окон, свежий overlay.json с allplayers_n>0 и mtime<=180 с. Гейт: одна панель, свежий артефакт, скриншот в C:\\scanfeed\\sprint\\G3_hud.png."
     },
     {
@@ -1551,7 +1545,7 @@
       "title": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике.",
       "source": "ноут",
       "claimed_human": "05:13:56",
-      "age_min": 15,
+      "age_min": 16,
       "full": "СКАНФИД-СПРИНТ G4 [SCANFEED-SPRINT T20.5]. End-to-end прогон конвейера сканфида на живом кадре: kill feed -> экономика противника по игрокам -> радар-коллы -> HUD. Каждая оценка помечена источником (факт/вывод) и имеет confidence. Артефакт: ~/overnight/SCANFEED-G4-result.json и скриншот. Гейт: предсказания выданы по кадру из G1/G1b, не по синтетике."
     },
     {
@@ -1559,7 +1553,7 @@
       "title": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех.",
       "source": "ноут",
       "claimed_human": "05:13:56",
-      "age_min": 15,
+      "age_min": 16,
       "full": "СКАНФИД-СПРИНТ G5 [SCANFEED-SPRINT T20.6]. Доставить результат: PNG через show.viewer (queue.json), зафиксировать вердикты гейтов в progress.json и базе знаний. Гейт: артефакт виден получателю, VERDICT с путём и таймстемпом, отрицательные результаты зафиксированы так же, как успех."
     },
     {
@@ -1567,7 +1561,7 @@
       "title": "CS2-СТУДИЯ [CS2-STUDIO endtoend] END-TO-END: после G1/G2 прогнать ~/scanfeed/run_scanfeed.py на кадрах реального матча/бот-матча. Гейт: каждая оценка помечена источником (факт/вывод) и confidence, SYNTHETIC отдельно. Артефакт: SCANFEED-G4-result.json + PNG.",
       "source": "ноут",
       "claimed_human": "05:13:55",
-      "age_min": 15,
+      "age_min": 16,
       "full": "CS2-СТУДИЯ [CS2-STUDIO endtoend] END-TO-END: после G1/G2 прогнать ~/scanfeed/run_scanfeed.py на кадрах реального матча/бот-матча. Гейт: каждая оценка помечена источником (факт/вывод) и confidence, SYNTHETIC отдельно. Артефакт: SCANFEED-G4-result.json + PNG."
     },
     {
@@ -1575,7 +1569,7 @@
       "title": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта.",
       "source": "ноут",
       "claimed_human": "05:13:55",
-      "age_min": 15,
+      "age_min": 16,
       "full": "СКАНФИД-СПРИНТ G1 [SCANFEED-SPRINT T20.1]. Через pc-bridge :8898 открыть реальную .dem в CS2, включить spectator-режим и GSI с allplayers, добиться allplayers>0 и снять кадр 2560x1440. Артефакты (обязательны): C:\\scanfeed\\sprint\\G1_frame.png и C:\\scanfeed\\sprint\\G1_gsi.json со свежим mtime (<=180 с). Гейт до прогона: allplayers>0 + кадр на диске + GSI содержит allplayers. Эталон: C13-381 (SPECTATE_ACHIEVED, ap=10, frame2.png). Отрицательный результат фиксировать с n попыток и конкретной причиной. НЕ писать отчёт вместо артефакта."
     },
     {
@@ -1583,7 +1577,7 @@
       "title": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча.",
       "source": "ноут",
       "claimed_human": "05:13:55",
-      "age_min": 15,
+      "age_min": 16,
       "full": "СКАНФИД-СПРИНТ G1b [SCANFEED-SPRINT T20.2]. Игра с ботами как управляемый источник ground truth: запустить CS2 офлайн с ботами, spectator + GSI, собрать n>=20 кадров с известными money/equip/allplayers. Артефакты: C:\\scanfeed\\sprint\\bots\\*.png и bots_gsi.jsonl, где у каждой записи есть allplayers и money. Гейт: n>=20 и хотя бы 1 запись с allplayers>0. Цель — повторяемая обкатка сканфида без зависимости от живого матча."
     },
     {
@@ -1591,7 +1585,7 @@
       "title": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.",
       "source": "ноут",
       "claimed_human": "05:13:55",
-      "age_min": 15,
+      "age_min": 16,
       "full": "СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум."
     },
     {
@@ -1599,7 +1593,7 @@
       "title": "CS2-СТУДИЯ [CS2-STUDIO transcribe] CS2-TRANSCRIBE: сверить актуальный map pool 2026 с инвентарём демок в ~/turngame/data. Гейт: covering всех карт маппула, дедуп .dem по хешу, названы пропуски. Артефакт: JSON в ~/overnight/cloud_tracks/SF-mappool-*.md.",
       "source": "ноут",
       "claimed_human": "05:13:54",
-      "age_min": 15,
+      "age_min": 16,
       "full": "CS2-СТУДИЯ [CS2-STUDIO transcribe] CS2-TRANSCRIBE: сверить актуальный map pool 2026 с инвентарём демок в ~/turngame/data. Гейт: covering всех карт маппула, дедуп .dem по хешу, названы пропуски. Артефакт: JSON в ~/overnight/cloud_tracks/SF-mappool-*.md."
     },
     {
@@ -1607,7 +1601,7 @@
       "title": "CS2-СТУДИЯ [CS2-STUDIO voice-ideas] ГОЛОСОВЫЕ: превратить голосовые гипотезы в измеримые признаки парсера с n и CI. Гейт: каждый признак имеет n, CI и negative control; сигнал без контроля не считается. Артефакт: table + отчёт ~/overnight/cloud_tracks/SF-voice-*.md.",
       "source": "ноут",
       "claimed_human": "05:13:54",
-      "age_min": 15,
+      "age_min": 16,
       "full": "CS2-СТУДИЯ [CS2-STUDIO voice-ideas] ГОЛОСОВЫЕ: превратить голосовые гипотезы в измеримые признаки парсера с n и CI. Гейт: каждый признак имеет n, CI и negative control; сигнал без контроля не считается. Артефакт: table + отчёт ~/overnight/cloud_tracks/SF-voice-*.md."
     },
     {
@@ -1615,7 +1609,7 @@
       "title": "CS2-СТУДИЯ [CS2-STUDIO gsi-root] GSI ALLPLAYERS: подтвердить рабочий путь spectator-GSI на бот-матче по рецепту windows-pc/C13-381_capture.ps1. Гейт: allplayers>0 + свежий gsi_last_raw.json (mtime<=180с) + proof JSON. Артефакт обязателен, отчёт без proof не принимается.",
       "source": "ноут",
       "claimed_human": "05:13:54",
-      "age_min": 15,
+      "age_min": 16,
       "full": "CS2-СТУДИЯ [CS2-STUDIO gsi-root] GSI ALLPLAYERS: подтвердить рабочий путь spectator-GSI на бот-матче по рецепту windows-pc/C13-381_capture.ps1. Гейт: allplayers>0 + свежий gsi_last_raw.json (mtime<=180с) + proof JSON. Артефакт обязателен, отчёт без proof не принимается."
     },
     {
@@ -1623,7 +1617,7 @@
       "title": "CS2-СТУДИЯ [CS2-STUDIO pc-remote] WINDOWS-ПК: инвентарь демок и свободное место D: (сейчас 4.4 ГБ). Гейт: назван конкретный объём в ГБ и пути файлов, ничего не удаляется без подтверждения. Артефакт: cleanup-план в ~/overnight/cloud_tracks/SF-pc-*.md.",
       "source": "ноут",
       "claimed_human": "05:13:54",
-      "age_min": 15,
+      "age_min": 16,
       "full": "CS2-СТУДИЯ [CS2-STUDIO pc-remote] WINDOWS-ПК: инвентарь демок и свободное место D: (сейчас 4.4 ГБ). Гейт: назван конкретный объём в ГБ и пути файлов, ничего не удаляется без подтверждения. Артефакт: cleanup-план в ~/overnight/cloud_tracks/SF-pc-*.md."
     },
     {
@@ -1631,7 +1625,7 @@
       "title": "CS2-СТУДИЯ [CS2-STUDIO overlay-o2] ОВЕРЛЕЙ O2: развернуть ровно одну панель HUD (деньги/бай/AWP) по ~/shared-repo/bots/overlay_deploy_single.sh, убрав Concurrent-окна. Гейт: ELECTRON_MAIN=1, BROWSER_OVERLAYS=0, overlay age<60с, ap_n>0. Артефакт: скриншот + verify-вывод.",
       "source": "ноут",
       "claimed_human": "05:13:54",
-      "age_min": 15,
+      "age_min": 16,
       "full": "CS2-СТУДИЯ [CS2-STUDIO overlay-o2] ОВЕРЛЕЙ O2: развернуть ровно одну панель HUD (деньги/бай/AWP) по ~/shared-repo/bots/overlay_deploy_single.sh, убрав Concurrent-окна. Гейт: ELECTRON_MAIN=1, BROWSER_OVERLAYS=0, overlay age<60с, ap_n>0. Артефакт: скриншот + verify-вывод."
     },
     {
@@ -1639,7 +1633,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "source": "ПК",
       "claimed_human": "03:31:20",
-      "age_min": 118,
+      "age_min": 119,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Люрк — своя роль, никого не бачу",
       "autogen": true
     },
@@ -1648,7 +1642,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "source": "ПК",
       "claimed_human": "03:31:00",
-      "age_min": 118,
+      "age_min": 119,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Молик как контроль зоны",
       "autogen": true
     },
@@ -1657,7 +1651,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "source": "ПК",
       "claimed_human": "03:28:59",
-      "age_min": 120,
+      "age_min": 121,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Пробитие смоков / прострел",
       "autogen": true
     },
@@ -1666,7 +1660,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "source": "ПК",
       "claimed_human": "03:26:59",
-      "age_min": 122,
+      "age_min": 123,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колить гранаты с тиммейтом",
       "autogen": true
     },
@@ -1675,7 +1669,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "source": "ПК",
       "claimed_human": "03:24:39",
-      "age_min": 124,
+      "age_min": 125,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Смоки на мид как фильтр",
       "autogen": true
     },
@@ -1684,16 +1678,17 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "source": "ПК",
       "claimed_human": "03:19:58",
-      "age_min": 129,
+      "age_min": 130,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Авик: прострел вместо дуэли",
       "autogen": true
     }
   ],
   "queues": {
     "ноут": {
-      "done": 877,
+      "done": 878,
       "failed": 393,
-      "doing": 33
+      "doing": 32,
+      "todo": 2
     },
     "ПК": {
       "done": 45,
@@ -1702,10 +1697,10 @@
       "todo": 38
     }
   },
-  "updatedAt": "2026-11-22T05:28:53+03:00",
-  "progress_updated_at": "2026-11-22T05:28:53+03:00",
+  "updatedAt": "2026-11-22T05:30:19+03:00",
+  "progress_updated_at": "2026-11-22T05:30:19+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795314568,
-  "fetched_human": "2026-11-22 05:29:28 +0300"
+  "fetched_at": 1795314630,
+  "fetched_human": "2026-11-22 05:30:30 +0300"
 }
