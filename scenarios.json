@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-23 00:30",
+ "generated": "2026-11-23 01:00",
  "window": {
-  "start": "2026-11-22T21:25",
-  "end": "2026-11-22T21:29",
+  "start": "2026-11-22T21:55",
+  "end": "2026-11-22T21:59",
   "sessions": 150,
   "roots": 150
  },
@@ -24,14 +24,14 @@
    "status_text": "Расходится с задуманным",
    "runs": 150,
    "median_s": 4,
-   "max_s": 8,
-   "last": "2026-11-22T21:29:56.570000+00:00",
+   "max_s": 9,
+   "last": "2026-11-22T21:59:48.938000+00:00",
    "outcomes": {
     "error": 150
    },
    "example": [
-    "IXXJ1ReI",
-    "IqdiJEsF"
+    "NAn7AeZB",
+    "RQp4EkdJ"
    ],
    "actual": [
     {
@@ -645,7 +645,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 1",
+   "state": "Прогонов сейчас: 0",
    "level": "ok",
    "f": "C1"
   },
@@ -661,8 +661,8 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/deepseek-v4.1-flash ×144, opencode-go/glm-5.3 ×6",
-   "level": "ok",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/deepseek-v4.1-flash ×150",
+   "level": "warn",
    "f": "C13"
   },
   {
@@ -685,7 +685,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 559, с файлами 0",
+   "state": "Владельцев 762, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
