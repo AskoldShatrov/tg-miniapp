@@ -2224,7 +2224,7 @@ function atlasDetail(n){
     /* Используем существующий обработчик бота source=miniapp_chat — у него есть
        реальный handle(); новый source не был бы поддержан. */
     tg.sendData(JSON.stringify({source:"miniapp_chat", surface:"atlas",
-      text:prompt, user_id:userID, ts:ts}));
+      text:prompt, user_id:userID, rid:"at"+ts, ts:ts}));
     CHAT.sent.push({text:"◈ "+card+": "+text,
       t:new Date().toTimeString().slice(0,8), ts:ts, rid:"at"+ts, source:"miniapp_chat"});
     CHAT.sent=CHAT.sent.slice(-50);
