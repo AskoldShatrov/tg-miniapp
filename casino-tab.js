@@ -59,11 +59,18 @@
     fmt: function (n) {
       return String(Math.floor(Number(n) || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     },
-    rand: function (max) { return Math.floor(Math.random() * max); }
+    rand: function (max) { return Math.floor(Math.random() * max); },
+    // Бонус выдаётся один раз: повторные клики не должны печать монеты.
+    claimBonus: function (state) {
+      if (!state || state.bonusClaimed) return { ok: false, delta: 0, reason: 'already' };
+      state.bonusClaimed = true;
+      state.coins = (Number(state.coins) || 0) + 500;
+      return { ok: true, delta: 500, reason: 'granted' };
+    }
   };
 
   /* ---------- состояние ---------- */
-  var S = { coins: 1000, spins: 0, wins: 0, biggest: 0, history: [], game: 'slots', bet: 25 };
+  var S = { coins: 1000, spins: 0, wins: 0, biggest: 0, history: [], game: 'slots', bet: 25, bonusClaimed: false };
   var spinning = false; // защита от гонок: одна анимация в момент времени
   function load() {
     try {
@@ -76,6 +83,7 @@
           S.wins = Math.max(0, Number(p.wins) || 0);
           S.biggest = Math.max(0, Number(p.biggest) || 0);
           S.history = Array.isArray(p.history) ? p.history.slice(0, 8) : [];
+          S.bonusClaimed = p.bonusClaimed === true;
           if (['slots', 'roulette', 'dice'].indexOf(p.game) >= 0) S.game = p.game;
           if ([10, 25, 50, 100].indexOf(Number(p.bet)) >= 0) S.bet = Number(p.bet);
         }
@@ -327,7 +335,9 @@
     });
     var go = $('#csnGo'); if (go) go.addEventListener('click', spin);
     var bonus = $('#csnBonus'); if (bonus) bonus.addEventListener('click', function () {
-      S.coins += 500; save(); renderAll(); say('Бонус +500 монет. Казино тебя подстраховало 😉', '');
+      var res = core.claimBonus(S);
+      if (!res.ok) { say('Бонус уже выдан — больше монет не начислим 😉', ''); return; }
+      save(); renderAll(); say('Бонус +500 монет. Казино тебя подстраховало 😉', '');
     });
     var jp = $('#csnJackpot'); if (jp) jp.addEventListener('click', openJackpot);
     var close = $('#csnClose'); if (close) close.addEventListener('click', closeJackpot);
@@ -341,6 +351,7 @@
   }
 
   function renderAll() {
+    var bonusBtn = $('#csnBonus'); if (bonusBtn) bonusBtn.disabled = !!S.bonusClaimed;
     var bank = $('#csnBank'); if (bank) bank.textContent = core.fmt(S.coins);
     var sp = $('#csnSpins'); if (sp) sp.textContent = core.fmt(S.spins);
     var w = $('#csnWins'); if (w) w.textContent = core.fmt(S.wins);
