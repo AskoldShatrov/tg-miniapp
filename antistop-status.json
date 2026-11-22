@@ -1,0 +1,85 @@
+{
+  "kind": "antistop-declarative-status",
+  "generated_at": "2026-11-22T07:08:08.888906+00:00",
+  "source_sha256": {
+    "engine": "16c0b2c464054541f212f00ba33d0b9cd3134d54b664a9c21a3c4536adc341fe",
+    "scout": "8cf9562cb9b4cf35397eeaaa3f9a8cf5f896e44fec88fe9a4adb62499df55b19",
+    "critic_gate": "29d56b070e0114daaa1129ade565b77d5eb639d556df46e023c9b13befa0b09d",
+    "wrapper": "2bd955c04aef39974985e36a03df75c97f9183f3d633908d2fc25429f90f8cec"
+  },
+  "mechanism": {
+    "engine_pid": 2192670,
+    "engine_status": "RUNNING",
+    "engine_cycles": 3,
+    "engine_updated_at": "2026-11-22T07:07:02Z",
+    "engine_state_age_s": 66.3,
+    "unit_tests": "7/7 OK",
+    "stop_hook_sections": [
+      "testimony",
+      "fact_sheet",
+      "deathnote"
+    ],
+    "kill_switch": "/home/nyaka/.config/opencode/LONG_RUN_STOP",
+    "stop_only_on": [
+      "deadline",
+      "STOP-файл",
+      "диск <5 ГБ",
+      "квота ≥95%",
+      "game-mode",
+      "лимит витков"
+    ]
+  },
+  "scout": {
+    "queue_generated": "2026-11-22T07:03:37+00:00",
+    "actions": 11,
+    "sources": 3,
+    "empty_means": "SCOUT_EMPTY (код 2), STOP запрещён"
+  },
+  "anti_sycophancy": {
+    "gate": "critic_gate.py",
+    "selftest": "PASS",
+    "banned": [
+      "всё хорошо",
+      "на глаз",
+      "0 находок",
+      "ничего не найдено",
+      "наверное ок"
+    ],
+    "rule": "критик обязан привести доказательство или находку; пустой отчёт = RED"
+  },
+  "no_open_stop": {
+    "rule": "OPEN без владельца и следующего действия = FAIL; OPEN не является STOP",
+    "evidence": [
+      "scout: код 2 при пустой очереди",
+      "engine: SCOUT OPEN → mutate + следующий виток",
+      "draft-gate: сдача без артефакта = RED"
+    ]
+  },
+  "open_items": [
+    {
+      "source": "manager",
+      "id": "T20.3",
+      "priority": 1,
+      "why": "age=264 мин; REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299",
+      "owner": "T20/studio + W2",
+      "next_action": "новый REAL-захват + prereg до прогона; порог 0.05 не двигать"
+    },
+    {
+      "source": "manager",
+      "id": "verdict",
+      "priority": 1,
+      "why": "{'liveness_alive': True, 'unhandled_blockers': [{'step': 'T20.3', 'age_min': 264}]}",
+      "owner": "менеджер",
+      "next_action": "unblocker + владелец шага"
+    },
+    {
+      "source": "progress",
+      "id": "T20/T20.3",
+      "priority": 1,
+      "why": "REAL n=355 fp=260 (пороги пройдены), но ECE isotonic=0.1058 >= 0.05; platt=0.5652, structural=0.2299. Порог из PREREG_P0-3.md не двигать | ЭСКАЛАЦИЯ 22.11 09:5x: blocks-type=threshold+data; порог PREREG_P0-3 п.5 ECE_after_structural_fix_hol",
+      "owner": "T20/studio + W2",
+      "next_action": "новый REAL-захват + prereg до прогона; порог 0.05 не двигать"
+    }
+  ],
+  "verdict": "DECLARATIVE_PUBLISHED"
+}
