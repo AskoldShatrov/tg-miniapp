@@ -2723,7 +2723,7 @@ function studioSend(sid){
     links:(SMAN.links[sid]||[]), user_id:userID, ts:Date.now() };
   /* Записываем отправку в общий чат: панель «Ответ» в Студии pairing'ит
      reply из того же replies.json, что и чат (переменная CHAT.replies). */
-  CHAT.sent.push({ text:"◈ "+(c?(c.kind||"идея"):"стикер")+": "+(c?(studioSticker(c).slice(0,40)||c.id):sid),
+  CHAT.sent.push({ text:"◈ "+(c?(c.kind||"идея"):"стикер")+": "+(c?(studioSticker(c)||c.id):sid),
     t:new Date().toTimeString().slice(0,8), ts:payload.ts, rid:"st"+payload.ts, source:"miniapp_studio" });
   CHAT.sent=CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
