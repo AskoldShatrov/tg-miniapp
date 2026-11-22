@@ -1714,56 +1714,50 @@
       "task": "T29",
       "id": "T29.1",
       "title": "S1 Данные: 9 -> >=60 кадров, >3 карты, SHA заморожены",
-      "status": "done",
-      "note": "канал Студия Игор UCoSGgJP-DWLKSuSvhlSE3tQ; YouTube через прокси 7900 + cookies Firefox; 57 видео",
+      "status": "running",
+      "note": "движок longrun-evolution запущен, задача SF-S1-DATA, PID 2247221",
       "startedAt": "2026-11-22T10:24:42+03:00",
-      "updatedAt": "2026-11-22T11:55:04+03:00",
-      "completedAt": "2026-11-22T11:55:04+03:00"
+      "updatedAt": "2026-11-22T11:55:04+03:00"
     },
     {
       "task": "T29",
       "id": "T29.2",
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
-      "status": "done",
-      "note": "docs/research/studio-igor/videos.csv+jsonl+github_links.tsv; дубль: overnight/studio-igor-analysis/VIDEO_DATABASE.md",
-      "updatedAt": "2026-11-22T11:55:04+03:00",
-      "completedAt": "2026-11-22T11:55:04+03:00"
+      "status": "todo",
+      "note": "",
+      "updatedAt": "2026-11-22T11:55:04+03:00"
     },
     {
       "task": "T29",
       "id": "T29.3",
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
-      "status": "done",
-      "note": "yt-dlp + cookies Firefox + --write-auto-subs --sub-langs ru; VTT 74 файла; сравнение с youtube-transcript-api FAIL",
-      "updatedAt": "2026-11-22T11:55:04+03:00",
-      "completedAt": "2026-11-22T11:55:04+03:00"
+      "status": "todo",
+      "note": "",
+      "updatedAt": "2026-11-22T11:55:04+03:00"
     },
     {
       "task": "T29",
       "id": "T29.4",
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
-      "status": "done",
-      "note": "26 репозиториев studioigor;studioigor-skill разобран; 128 идей→иерархия в IDEAS_HIERARCHY.md",
-      "updatedAt": "2026-11-22T11:55:05+03:00",
-      "completedAt": "2026-11-22T11:55:05+03:00"
+      "status": "todo",
+      "note": "",
+      "updatedAt": "2026-11-22T11:55:05+03:00"
     },
     {
       "task": "T29",
       "id": "T29.5",
       "title": "S5 Интеграция: turngame/core + v2-матчер в оверлей",
-      "status": "done",
-      "note": "казино-применение + 3 предрегистрированных пилота P1/P2/P3 в IDEAS_HIERARCHY.md",
-      "updatedAt": "2026-11-22T11:55:05+03:00",
-      "completedAt": "2026-11-22T11:55:05+03:00"
+      "status": "todo",
+      "note": "",
+      "updatedAt": "2026-11-22T11:55:05+03:00"
     },
     {
       "task": "T29",
       "id": "T29.6",
       "title": "S6 Приёмка: регресс на 20+ раундах",
-      "status": "done",
-      "note": "kartochki.html: 15 карточек/8 цветов/казино, гейты OK; плейлисты Паши Техника: 440 карточек, топ-6 + 10 треков; отправка",
-      "updatedAt": "2026-11-22T12:05:32+03:00",
-      "completedAt": "2026-11-22T12:05:32+03:00"
+      "status": "blocked",
+      "note": "блок: ожидание данных/ресурсов (заметка восстановлена после ошибочной правки)",
+      "updatedAt": "2026-11-22T12:05:32+03:00"
     },
     {
       "task": "SYS-3",
@@ -1808,45 +1802,110 @@
       "task": "T30",
       "id": "T30.1",
       "title": "Собрать 57 видео: метаданные и русские субтитры",
-      "status": "running",
-      "note": "фоновый сбор 57 роликов, cookies Firefox, ru-субтитры",
+      "status": "done",
+      "note": "57/57 метаданных, 57/57 русских VTT, 924k символов очищенного текста",
       "startedAt": "2026-11-22T11:44:05+03:00",
-      "updatedAt": "2026-11-22T11:44:05+03:00"
+      "updatedAt": "2026-11-22T12:09:16+03:00",
+      "completedAt": "2026-11-22T12:09:16+03:00"
     },
     {
       "task": "T30",
       "id": "T30.2",
       "title": "Отобрать полгода, вытащить GitHub-ссылки из описаний",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "227 ссылок, 21 GitHub, 11 репозиториев автора; 27 роликов за полгода",
+      "updatedAt": "2026-11-22T12:09:16+03:00",
+      "completedAt": "2026-11-22T12:09:16+03:00"
     },
     {
       "task": "T30",
       "id": "T30.3",
       "title": "Построить иерархию идей по всем видео",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "5 уровней, I001-I040, 5 гипотез, цитаты из расшифровок",
+      "updatedAt": "2026-11-22T12:09:16+03:00",
+      "completedAt": "2026-11-22T12:09:16+03:00"
     },
     {
       "task": "T30",
       "id": "T30.4",
       "title": "Применить иерархию идей к казино",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "проекция на мини-ап по 10 фазам, H-CAS1-3 предрегистрированы",
+      "updatedAt": "2026-11-22T12:09:16+03:00",
+      "completedAt": "2026-11-22T12:09:16+03:00"
     },
     {
       "task": "T30",
       "id": "T30.5",
       "title": "Паша Техник/Бутырка → YtbAudioBot → аудио на ноут",
-      "status": "todo",
-      "note": ""
+      "status": "running",
+      "note": "6 mp3 скачано, догрузка pt-03/at-01/at-02/kid-01; YtbAudioBot OPEN",
+      "startedAt": "2026-11-22T12:09:16+03:00",
+      "updatedAt": "2026-11-22T12:09:16+03:00"
     },
     {
       "task": "T30",
       "id": "T30.6",
       "title": "Переделать дизайн .nd файлов: цвета и структура",
-      "status": "todo",
-      "note": ""
+      "status": "done",
+      "note": "контрастный .md с маркерами и блоками ФАКТ/ВЫВОД/ДЕЙСТВИЕ, draft-gate PASS",
+      "updatedAt": "2026-11-22T12:09:16+03:00",
+      "completedAt": "2026-11-22T12:09:16+03:00"
+    },
+    {
+      "task": "T31",
+      "id": "T31.1",
+      "title": "Разведка: канал, сеть, cookies, полный список видео",
+      "status": "done",
+      "note": "канал UCoSGgJP-DWLKSuSvhlSE3tQ; YouTube через прокси 7900 + cookies Firefox; 57 видео",
+      "updatedAt": "2026-11-22T12:09:05+03:00",
+      "completedAt": "2026-11-22T12:09:05+03:00"
+    },
+    {
+      "task": "T31",
+      "id": "T31.2",
+      "title": "База видео за 6 месяцев (CSV/JSON)",
+      "status": "done",
+      "note": "docs/research/studio-igor/videos.csv+jsonl+github_links.tsv",
+      "updatedAt": "2026-11-22T12:09:05+03:00",
+      "completedAt": "2026-11-22T12:09:05+03:00"
+    },
+    {
+      "task": "T31",
+      "id": "T31.3",
+      "title": "Описания + субтитры: механизм и выгрузка",
+      "status": "done",
+      "note": "yt-dlp + cookies Firefox + --write-auto-subs --sub-langs ru; 111 VTT; youtube-transcript-api FAIL",
+      "updatedAt": "2026-11-22T12:09:05+03:00",
+      "completedAt": "2026-11-22T12:09:05+03:00"
+    },
+    {
+      "task": "T31",
+      "id": "T31.4",
+      "title": "GitHub-скиллы + иерархия 128 идей",
+      "status": "done",
+      "note": "26 репозиториев; studioigor-skill разобран; 128 идей→IDEAS_HIERARCHY.md",
+      "updatedAt": "2026-11-22T12:09:06+03:00",
+      "completedAt": "2026-11-22T12:09:06+03:00"
+    },
+    {
+      "task": "T31",
+      "id": "T31.5",
+      "title": "Применение идей к казино + 3 пилота",
+      "status": "done",
+      "note": "казино-применение + предрегистрация P1/P2/P3",
+      "updatedAt": "2026-11-22T12:09:06+03:00",
+      "completedAt": "2026-11-22T12:09:06+03:00"
+    },
+    {
+      "task": "T31",
+      "id": "T31.6",
+      "title": "Треки + дизайн мини-апа",
+      "status": "done",
+      "note": "kartochki.html: 15 карточек/8 цветов/казино; 440 плейлистов, топ-6 + 10 треков; отправка в @YtbAudioBot OPEN",
+      "updatedAt": "2026-11-22T12:09:06+03:00",
+      "completedAt": "2026-11-22T12:09:06+03:00"
     }
   ],
   "active": [
@@ -1855,7 +1914,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 352,
+      "age_min": 353,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе",
       "autogen": true
     },
@@ -1864,7 +1923,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 352,
+      "age_min": 353,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты",
       "autogen": true
     },
@@ -1873,7 +1932,7 @@
       "title": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "source": "ПК",
       "claimed_human": "06:15:38",
-      "age_min": 352,
+      "age_min": 353,
       "full": "НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга",
       "autogen": true
     }
@@ -1891,10 +1950,10 @@
       "todo": 35
     }
   },
-  "updatedAt": "2026-11-22T12:05:32+03:00",
-  "progress_updated_at": "2026-11-22T12:05:32+03:00",
-  "plan_age_hours": 0.1,
+  "updatedAt": "2026-11-22T12:09:16+03:00",
+  "progress_updated_at": "2026-11-22T12:09:16+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795338517,
-  "fetched_human": "2026-11-22 12:08:37 +0300"
+  "fetched_at": 1795338577,
+  "fetched_human": "2026-11-22 12:09:37 +0300"
 }

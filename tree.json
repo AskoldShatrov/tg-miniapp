@@ -1220,37 +1220,37 @@
   {
     "id": "T29",
     "name": "Сканфид: доведение распознавания до порога",
-    "status": "PASS",
+    "status": "FAIL",
     "children": [
       {
         "id": "T29.1",
         "name": "S1 Данные: 9 -> >=60 кадров, >3 карты, SHA заморожены",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "T29.2",
         "name": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "T29.3",
         "name": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "T29.4",
         "name": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "T29.5",
         "name": "S5 Интеграция: turngame/core + v2-матчер в оверлей",
-        "status": "PASS"
+        "status": "OPEN"
       },
       {
         "id": "T29.6",
         "name": "S6 Приёмка: регресс на 20+ раундах",
-        "status": "PASS"
+        "status": "FAIL"
       }
     ]
   },
@@ -1289,22 +1289,22 @@
       {
         "id": "T30.1",
         "name": "Собрать 57 видео: метаданные и русские субтитры",
-        "status": "OPEN"
+        "status": "PASS"
       },
       {
         "id": "T30.2",
         "name": "Отобрать полгода, вытащить GitHub-ссылки из описаний",
-        "status": "OPEN"
+        "status": "PASS"
       },
       {
         "id": "T30.3",
         "name": "Построить иерархию идей по всем видео",
-        "status": "OPEN"
+        "status": "PASS"
       },
       {
         "id": "T30.4",
         "name": "Применить иерархию идей к казино",
-        "status": "OPEN"
+        "status": "PASS"
       },
       {
         "id": "T30.5",
@@ -1314,7 +1314,44 @@
       {
         "id": "T30.6",
         "name": "Переделать дизайн .nd файлов: цвета и структура",
-        "status": "OPEN"
+        "status": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "T31",
+    "name": "Анализ канала «Студия Игор» и применение идей к казино",
+    "status": "PASS",
+    "children": [
+      {
+        "id": "T31.1",
+        "name": "Разведка: канал, сеть, cookies, полный список видео",
+        "status": "PASS"
+      },
+      {
+        "id": "T31.2",
+        "name": "База видео за 6 месяцев (CSV/JSON)",
+        "status": "PASS"
+      },
+      {
+        "id": "T31.3",
+        "name": "Описания + субтитры: механизм и выгрузка",
+        "status": "PASS"
+      },
+      {
+        "id": "T31.4",
+        "name": "GitHub-скиллы + иерархия 128 идей",
+        "status": "PASS"
+      },
+      {
+        "id": "T31.5",
+        "name": "Применение идей к казино + 3 пилота",
+        "status": "PASS"
+      },
+      {
+        "id": "T31.6",
+        "name": "Треки + дизайн мини-апа",
+        "status": "PASS"
       }
     ]
   }
