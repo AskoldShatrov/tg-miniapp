@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T10:36:33+00:00",
-  "generated_human": "22.11 10:36 UTC",
-  "as_of": 1795343793851,
+  "generated": "2026-11-22T10:37:34+00:00",
+  "generated_human": "22.11 10:37 UTC",
+  "as_of": 1795343854142,
   "stale_days": 1,
   "count": 878,
   "groups": 9,
@@ -40,14 +40,14 @@
     {
      "id": "ses-UPebgO4hxo",
      "text": "Проверь артефакт /tmp/opencode/studio-8h/autopilot/artifact_evo8.md. SHA256=2ebb6288ce2dd34273eb75018319a6e62d0d1cd861bf1d57d8971e404a911d26, mtime_ns=1795343735024146998. Производитель работал в сессии ses_dfd2dfbacffeG7YlVKw7N3Yscs; верификатор независим. Критерий задачи: test -s /tmp/opencode/studio-8h/autopilot/artifact_evo8.md && grep -q Ruling /tmp/opencode/studio-8h/autopilot/artifact_evo8.md. Не верь статусам: выполни реальные команды проверки. Запиши отчёт в /tmp/opencode/studio-8h/autopilot/verify_evo8.md, первой строкой ровно VERDICT: PASS или FAIL или OPEN. PASS только если критерий задачи прошёл и отчёт создан после mtime артефакта. Пиши по-русски, без процента успеха.",
-     "ts": 1795343785000,
+     "ts": 1795343847000,
      "source": "session",
      "title": "verify-evo8",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795343785000,
+     "as_of": 1795343847000,
      "is_stale": false
     },
     {
@@ -3200,31 +3200,6 @@
      "is_stale": false
     },
     {
-     "id": "ses-6X9vfqz1YU",
-     "text": "T5. T1c полное покрытие позиций 320/320: предрегистрировать гейт ДО прогона — contested AUC>0.60, нижняя граница CI>0.55, ECE<0.05; отделить pooled от contested. Новый отчёт ~/overnight/cloud_tracks/C14-1854.md. Не переоткрывать закрытые T1/wp_v3. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795309222000,
-     "source": "session",
-     "title": "Предрегистрация T5 contested AUC",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611200241438cdc"
-     ],
-     "answer": "[w2611200241438cdc] Редактор субтитров А.Семкин Корректор А.Егорова",
-     "answer_short": "w2611200241438cdc: Редактор субтитров А.Семкин Корректор А.Егорова",
-     "answer_full": "Редактор субтитров А.Семкин Корректор А.Егорова",
-     "answer_digest": {
-      "length": 47,
-      "sha256": "f7de5d633ee8bbe57744438547c0f708c6ef1accf19b3461978f37b10e4999fa"
-     },
-     "answer_text_id": "f7de5d633ee8bbe5",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795332889756,
-     "as_of": 1795309222000,
-     "is_stale": false
-    },
-    {
      "id": "tg-20261121151610",
      "text": "Шаг 2. В edit_status замени голый except: pass на:",
      "ts": 1795263370000,
@@ -3289,7 +3264,7 @@
     {
      "id": "ses-GG9C47cnFi",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795343784000,
+     "ts": 1795343841000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -3308,13 +3283,26 @@
      "answer_text_id": "c0fdda3eb6c05d06",
      "answer_source": "replies.json",
      "delivered_ts": 1795343559063,
-     "as_of": 1795343784000,
+     "as_of": 1795343841000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-3M6PugVrFw",
+     "text": "Проверь df -B1 / : если доступно <15 ГиБ — НЕ запускай сборку, напиши OPEN с выводом df и готовой командой timeout 1200 python3 /home/nyaka/overnight/cloud_tracks/C06-422-build.py > /tmp/opencode/aud4-build.log 2>&1 &; порог не снижай. Если >=15 ГиБ — запусти сборку с таймаутом, проверь n кадров=17920 и манифест, посчитай ECE/Brier на holdout по match_id (n и Wilson), запиши путь, SHA256, mtime и команды в артефакт. Не трогай data/, GUI, чужие каталоги и исходные скрипты.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/AUD4-DISKGATE-c18.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795343841000,
+     "source": "session",
+     "title": "lree-AUD4-DISKGATE-c18",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795343841000,
      "is_stale": false
     },
     {
      "id": "ses-scJf3GNWcD",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0087. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0087_run2309.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795343775000,
+     "ts": 1795343833000,
      "source": "session",
      "title": "QH0087: перекалибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -3333,7 +3321,7 @@
      "answer_text_id": "c0fdda3eb6c05d06",
      "answer_source": "replies.json",
      "delivered_ts": 1795343559063,
-     "as_of": 1795343775000,
+     "as_of": 1795343833000,
      "is_stale": false
     },
     {
