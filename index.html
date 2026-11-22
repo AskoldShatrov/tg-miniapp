@@ -82,12 +82,11 @@
 
   /* ---------- tabs ---------- */
   nav.tabs{
-    display:flex; flex-wrap:wrap; gap:6px; padding:10px 12px; flex:0 0 auto;
+    display:flex; gap:6px; padding:10px 12px; flex:0 0 auto;
     border-bottom:1px solid var(--surface0);
   }
-  nav.tabs::-webkit-scrollbar{display:none}
   .tab{
-    flex:1 1 18%; min-width:62px; appearance:none; border:1px solid transparent; background:transparent;
+    flex:1; appearance:none; border:1px solid transparent; background:transparent;
     color:var(--overlay2); font:600 12px/1 var(--ff); padding:9px 4px;
     border-radius:11px; cursor:pointer; display:flex; align-items:center;
     justify-content:center; gap:6px; transition:.16s ease; position:relative;
@@ -170,8 +169,6 @@
 
   /* ---------- живая шапка вместо декоративного заголовка ---------- */
   header#hdr{cursor:pointer;user-select:none}
-  /* @owner:header-clean @region:no-decor: хедер скрыт — вкладки первыми, без бейджей */
-  header#hdr{display:none !important}
   header#hdr:active{opacity:.72}
   .hmeta{min-width:0;flex:1}
   .hsub{font-size:11.5px;color:var(--subtext1);margin-top:0;font-family:var(--fm);
@@ -523,8 +520,8 @@
 
   /* ===== студия идей: второй слой + стикер ===== */
   /* @owner:redesign-2026-11-21 @region:tabs-5-css: 5 табов в один ряд */
-  nav.tabs{flex-wrap:wrap;gap:5px}
-  .tab{flex:1 1 18%;min-width:62px;font-size:11px;padding:8px 4px;gap:4px}
+  nav.tabs{flex-wrap:nowrap;gap:5px}
+  .tab{flex:1 1 calc(20% - 5px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
   @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
 
   .stoolbar{display:flex;flex-direction:column;gap:8px;margin-bottom:11px}
@@ -706,10 +703,9 @@
       <button data-sub="scenarios">Сценарии</button>
     </nav>
     <style>
-      .task-subnav{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0)}
-      .task-subnav button{flex:1 1 30%;min-width:88px}
+      .task-subnav{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--surface0)}
       .task-subnav[hidden]{display:none}
-      .task-subnav button{appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
+      .task-subnav button{flex:1;appearance:none;border:1px solid transparent;background:transparent;color:var(--overlay2);font:600 12px/1 var(--ff);padding:9px 4px;border-radius:11px;cursor:pointer}
       .task-subnav button.active{background:var(--surface0);color:var(--text);border-color:var(--surface1)}
       .task-subnav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
     </style>
@@ -717,7 +713,7 @@
     <section class="screen" id="screen-chat">
       <div class="chat-head">
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
-        <span class="chat-live" title="связь с агентом">●</span>
+        <span class="chat-live" title="живой канал">●</span>
       </div>
       <div class="chatwrap">
         <div class="chatlog" id="chatLog"></div>
@@ -932,9 +928,15 @@
 
 <script src="scenarios-tab.js"></script>
 <script>
-/* BUILD: монотонно обновляется при каждом деплое. Виден в шапке мини-апа —
-   позволяет отличить свежую версию от закешированной старой в Telegram WebView. */
-const BUILD = "20261121-0650";
+/* BUILD: дата берётся из заголовка страницы, который отдаёт сервер, а не из
+   хардкода. Старая константа 06:50 отставала от реального деплоя 19:30 и не
+   позволяла отличить свежую копию от закешированной. */
+const BUILD = (()=>{
+  const d=new Date(document.lastModified||0);
+  if(isNaN(d.getTime())) return "неизв";
+  const p=n=>String(n).padStart(2,"0");
+  return d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+"-"+p(d.getHours())+p(d.getMinutes());
+})();
 
 /* =========================================================
    ДЕМО-ДАННЫЕ (встроенная заглушка, пометка DEMO в шапке).
@@ -1009,8 +1011,6 @@ function setTaskSub(name){
   if(!TASK_SUBS.includes(name)) return;
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
   $$("#taskSubNav button").forEach(b=>b.classList.toggle("active",b.dataset.sub===name));
-  if(name==="scenarios"&&typeof mountScenarios==="function") mountScenarios();
-  if(name==="studio"&&typeof studioEnsure==="function") studioEnsure();
   $("#main").scrollTop=0;
 }
 $$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
@@ -1497,8 +1497,8 @@ function setApiBadge(el, on, label){
   if(label && on) el.title = label;
 }
 
-/* Шапка — живой сигнал, а не декоративная надпись. Заполняется из status.json. */
-const _hs=$("#hsub"); if(_hs) _hs.textContent="";  /* @owner:header-clean @region:no-decor */
+/* Шапка — живой сигнал: источник и время приёма берём из status.json.
+   Статичная надпись «живой канал · данные мини-апа» удалена как декорация. */
 const bb=$("#buildBadge"); if(bb) bb.textContent = "сборка " + BUILD.slice(9,11) + ":" + BUILD.slice(11,13);
 
 /* ---------- живой статус агентов ----------
@@ -1517,6 +1517,9 @@ async function refreshAgentStatus(){
     const s = await r.json();
     LATEST_STATUS = s;   // этап 7: отсюда api() берёт process_api_url
     ok("status");        // as_of = локальное время приёма, а не s.ts из payload
+    const hs=$("#hsub");
+    if(hs) hs.innerHTML='<span class="muted">источник status.json · обновлено '+
+      esc(s.ts_human||"—")+"</span>";  /* @owner:ready-to-deliver @region:header-live */
     const n = Number(s.agents)||0;
     const word = n===1 ? "агент" : (n>=2 && n<=4 ? "агента" : "агентов");
     const badge = $("#agentBadge");
@@ -1531,6 +1534,13 @@ async function refreshAgentStatus(){
         `обновлено ${s.ts_human||"—"}` + (s.game_mode?" · во время игры":"");
       badge.classList.toggle("idle", n===0);
       badge.classList.toggle("game", !!s.game_mode);
+    }
+    if(badge && !badge.dataset.bound){
+      badge.dataset.bound="1";
+      badge.addEventListener("click",()=>{
+        if(typeof setTab==="function") setTab("live");
+        toast(badge.title||"живых агентов нет");
+      });  /* @owner:ready-to-deliver @region:agent-badge-action */
     }
     const gb = $("#gameBadge");
     if(gb){ gb.style.display = s.game_mode ? "" : "none"; gb.title = s.game_reason||"режим игры"; }
@@ -1800,9 +1810,12 @@ setInterval(refreshReplies, 5000);
   try { PMAN = Object.assign(PMAN, JSON.parse(localStorage.getItem(PM_KEY)||"{}")); } catch(e){}
   let pRange = "3", pMode = "group", pQuery = "";
   let pUser = "all", pSource = "all", pFrom = "", pTo = "";
-  // Роли пользователей задаются серверной конфигурацией; гостевой доступ
-  // проверяется на бэкенде по подписанному initData. Идентификаторы и имена
-  // в публичную разметку не попадают (правило R12).
+  // ЕДИНАЯ СТРОКА справочника пользователей. По логам inbox: 1869196044=Аскольд
+  // (подпись «Аскольд:» — :848, «просил Иван, прислал мне» — :826), 435824119=Иван
+  // («дай доступ Ивану тоже» — :909). Это гипотеза из логов, НЕ факт из конфига:
+  // если сопоставление неверно — поменяй местами значения в строке ниже.
+  // Аскольд (1869196044) — владелец OpenCode-сервера: у него есть ноут и ПК.
+  // Иван (435824119) и остальные — подключаемые гости без локальных машин.
   const OWNER_ID = '1869196044';
   const IS_OWNER = String(userID||'')===OWNER_ID;
   const LOCAL_SOURCES = ['session','pc'];
@@ -1810,7 +1823,7 @@ setInterval(refreshReplies, 5000);
     const base=String(label||"").replace(/\s*·\s*(владелец\/сервер|гость)\s*$/,"");
     return base ? base+(String(uid)===OWNER_ID?" · владелец/сервер":" · гость") : "";
   }
-  const P_USERS = {'1869196044':'владелец','435824119':'гость'};
+  const P_USERS = {'1869196044':'Аскольд','435824119':'Иван'};
   const P_SOURCES = {'telegram':'ТГ бот','session':'ноут','pc':'ПК'};
 
   const DAY = 86400000;
@@ -2227,6 +2240,9 @@ function renderLive(){
 
   const st=$("#liveStamp");
   if(st){
+    /* Штамп свежести должен считать возраст от даты плана, а не от момента
+       приёма файла: иначе рядом с «13 ч назад» получалось «0с назад». */
+    ok("live", planMs||undefined);
     const lf=paint("live", st);
     const source=d.source||d.plan_source||(d.progress&&d.progress.source)||"live.json";
     st.textContent=planStamp+" · источник: "+source+" · "+lf.text;
@@ -2241,13 +2257,15 @@ function renderLive(){
 
   const q=$("#liveQueues");
   if(q) q.innerHTML=Object.entries(d.queues||{}).map(([name,c])=>
-    `<span>${esc(name)}: <b>${Number(c.todo)||0}</b> ждут · <b>${Number(c.doing)||0}</b> в работе · <b>${Number(c.done)||0}</b> готово</span>`).join("");
+    `<span>${esc(name)}: <b>${Number(c.todo)||0}</b> ждут · <b>${Number(c.doing)||0}</b> в работе · <b>${Number(c.done)||0}</b> готово · <b>${Number(c.failed)||0}</b> провалено</span>`).join("");  /* @owner:ready-to-deliver @region:queues-failed */
 
   const steps=$("#liveSteps");
   if(steps){
-    // Per-step даты нет — agesм шаг от даты снимка; данные из progress.json не трогаем.
+    // Пер-шаговые даты приходят из progress.json (miniapp_status.py); дата снимка — только фолбэк.
     const stepIsArchived=(s)=>{
-      if(["running","blocked","fail"].indexOf(s.status)<0) return false;
+      /* Предикат архива должен совпадать с фильтром «активных» (status!=done),
+         иначе шаг со статусом open/question никогда не получит пометку. */
+      if(s.status==="done") return false;
       const raw=s.updatedAt||s.ts||s.updated||s.updated_human;
       const ms=raw!=null?parseTs(raw):planMs;
       return !!ms&&(now-ms)/3600000>24;
@@ -2255,39 +2273,25 @@ function renderLive(){
     const active=(d.tasks||[]).filter(s=>s.status!=="done");
     steps.innerHTML=active.length?active.map(s=>{
       const archived=stepIsArchived(s);
-      // Возраст шага — по его own updatedAt (у T7.6/O2 он есть), а не по дате снимка плана.
-      const rawStep=s.updatedAt||s.ts||s.updated||s.updated_human;
-      const msStep=rawStep!=null?parseTs(rawStep):planMs;
-      const h=msStep?(now-msStep)/3600000:0;
-      const age=msStep?(h<24?Math.round(h)+' ч':Math.round(h/24)+' д'):'нет даты';
-      const why=s.note?String(s.note).replace(/^Попытка \d+\s*/,'').slice(0,120):'';
       return `<div class="live-row"${archived?' style="opacity:.6"':''}><span class="lid">${esc(s.id)}</span>
-        <span class="ltitle">${esc(s.title)}${why?' — '+esc(why):''}</span>
-        <span class="p-badge stale">${esc(age)} в статусе ${esc(s.status)}</span>
+        <span class="ltitle">${esc(s.title)}${s.note?' — '+esc(s.note):''}</span>
         <span class="status st-${esc(s.status)}">${esc(s.status)}</span>
-        ${archived?'<span class="p-badge stale">архив</span>':''}</div>`;
+        ${archived?'<span class="p-badge stale">завис/архив</span>':''}</div>`;
     }).join(""):
       '<div class="hint">Все шаги закрыты.</div>';
   }
   const jobs=$("#liveJobs");
-  if(jobs){
-    // Автоген-репликации воркеров ("НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ", "ДОВЕСТИ ЦЕЛЬ")
-    // — не задачи пользователя: скрываем из «Хода», но показываем счётчик.
-    const allJobs=d.active||[];
-    const shownJobs=allJobs.filter(j=>!j.autogen);
-    const hidden=allJobs.length-shownJobs.length;
-    jobs.innerHTML=(shownJobs.length?shownJobs.map(j=>{
-      const min=Number(j.age_min)||0;
-      const stuck=min>=30;
-      return `<div class="live-row"><span class="lid">${esc(j.id)}</span>
-        <span class="ltitle">${esc(j.title)}</span>
-        <span class="lsrc">${esc(j.source)}</span>
-        ${stuck
-          ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
-          :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
-    }).join(""):'<div class="hint">Сейчас активных задач в очередях нет.</div>')
-      +(hidden?`<div class="hint">Автоген воркеров: ${hidden} (скрыто)</div>`:"");
-  }
+  if(jobs) jobs.innerHTML=(d.active||[]).length?(d.active||[]).map(j=>{
+    const min=Number(j.age_min)||0;
+    const stuck=min>=30;
+    return `<div class="live-row"><span class="lid">${esc(j.id)}</span>
+      <span class="ltitle">${esc(j.title)}</span>
+      <span class="lsrc">${esc(j.source)}</span>
+      ${stuck
+        ?`<span class="p-badge stale">зависший claim ${min} мин</span>`
+        :`<span class="lage">${esc(j.claimed_human)} · ${min} мин</span>`}</div>`;
+  }).join(""):
+    '<div class="hint">Сейчас активных задач в очередях нет.</div>';
 }
 
 /* ---------- вопросы из telemetry.nodes (этап 5, вместо DEMO Q-001…Q-003) ---------- */
@@ -2464,7 +2468,7 @@ function studioCards(){
   (PROMPTS.groups||[]).forEach(g=>(g.prompts||[]).forEach(p=>{
     if(!p||!p.id||seen.has(p.id)) return; seen.add(p.id);
     out.push({ id:"prompt:"+p.id, kind:"prompt", text:p.text||"", ts:Number(p.ts)||0,
-      autoAnswer:p.answer||g.answer||"", autoLinks:[...(p.wants||[]),...(g.wants||[])],
+      autoAnswer:p.answer||g.answer||"", answerFull:p.answer_full||"", autoLinks:[...(p.wants||[]),...(g.wants||[])],
       group:g.name||"" });
   }));
   (STUDIO.nodes||[]).forEach(n=>{
@@ -2548,6 +2552,7 @@ function studioCardHTML(c){
     <div class="sdetail">
       <div class="p-label">полный первый слой</div>
       <div class="p-full">${esc(c.text||c.id)}</div>
+      ${c.answerFull?`<div class="p-label">полный ответ из replies.json · ${c.answerFull.length} симв.</div><div class="p-full">${esc(c.answerFull)}</div>`:""}
       <div class="sedit">
         <input data-role="stickerIn" placeholder="стикер: ответ в пару слов…" value="${esc(st)}">
         <button class="sbtn primary" data-act="saveSticker">OK</button>
@@ -2949,7 +2954,7 @@ function mountScenarios(){
   if(!el || typeof QrunScenarios==="undefined") return;
   scenariosMounted=true;
   const init=(typeof tg!=="undefined"&&tg.initData)?tg.initData:"";
-  QrunScenarios.mount(el, {url: 'scenarios.json',
+  QrunScenarios.mount(el, {url: '/api/scenarios', addUrl: '/api/qrun/add',
     headers: init?{"X-Telegram-Init-Data":init}:{}, queue: 'changes'});
 }
 
