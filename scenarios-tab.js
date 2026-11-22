@@ -138,7 +138,8 @@
 
     function load() {
       S.loading = true; render();
-      var urls = [opts.url, opts.fallbackUrl || '/scenarios.json'].filter(Boolean);
+      var urls = [opts.url, opts.fallbackUrl || '/scenarios.json', './scenarios.json', '/tg-miniapp/scenarios.json']
+        .filter(function (v, i, a) { return v && a.indexOf(v) === i; });
       var i = 0, lastErr = '';
       function step() {
         if (i >= urls.length) { S.err = 'Не загрузилось: ' + lastErr; S.loading = false; render(); return; }
