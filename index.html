@@ -2183,19 +2183,20 @@ setInterval(refreshReplies, 5000);
 
 /* ---------- атлас: интерактивные деревья одного графа ---------- */
 let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={};
-const ATLAS_KIND={author:"авт",video:"вид",claim:"утв",verdict:"вер",hypothesis:"гип",want:"хоч",goal:"цел",group:"grp",ref:"ист"};
+const ATLAS_KIND={author:"автор",video:"видео",claim:"утверждение",verdict:"вердикт",hypothesis:"гипотеза",want:"хотелка",goal:"цель",group:"ветка",ref:"проверка"};
+const ATLAS_STATUS={open:"открыто",done:"готово",deferred:"отложено",doing:"в работе",pass:"подтверждено",verified:"проверено",fail:"опровергнуто",refuted:"опровергнуто",measuring:"измеряется",signal:"сигнал",noise:"шум",false:""};
 function atlasBadge(raw){
   const s=String(raw||"open");
   const k=(s==="pass"||s==="verified"||s==="done"||s==="signal")?"PASS":((s==="fail"||s==="refuted"||s==="noise")?"FAIL":"OPEN");
-  return `<span class="status st-${k}">${esc(s.slice(0,6).toUpperCase())}</span>`;
+  return `<span class="status st-${k}">${esc(ATLAS_STATUS[s]||s)}</span>`;
 }
 function atlasNodeHtml(n){
   const kids=Array.isArray(n.children)?n.children:[];
   const twist=kids.length?'<span class="twist">▶</span>':'<span class="twist leaf">·</span>';
-  const kind=`<span class="tid">${esc(ATLAS_KIND[n.kind]||"·")}</span>`;
-  const ask=kids.length?'':'<span class="tid" style="color:var(--blue)" title="Написать запрос по карточке">?</span>';
-  const title=esc(n.title||n.id||"");
-  const row=`<div class="trow ${kids.length?"parent":""}" data-node="${esc(n.id||"")}" data-nid="${esc(n.ref||n.id||"")}">${twist}${kind}<span class="tname" title="${esc(n.answer||"")}">${title}</span>${ask}${atlasBadge(n.status)}</div>`;
+  const kind=`<span class="tid">${esc(ATLAS_KIND[n.kind]||"узел")}</span>`;
+  const ask=`<span class="tid a-ask" data-key="${esc(n.__k)}" style="color:var(--blue)" title="Открыть целиком и написать запрос">?</span>`;
+  const title=esc(n.title||"узел без названия");
+  const row=`<div class="trow ${kids.length?"parent":""}" data-key="${esc(n.__k)}">${twist}${kind}<span class="tname">${title}</span>${ask}${atlasBadge(n.status)}</div>`;
   return `<div class="tnode">${row}${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
 }
 function atlasIndex(rs){
