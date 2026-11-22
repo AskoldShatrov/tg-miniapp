@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T12:56:21+00:00",
-  "generated_human": "22.11 12:56 UTC",
-  "as_of": 1795352181220,
+  "generated": "2026-11-22T12:57:21+00:00",
+  "generated_human": "22.11 12:57 UTC",
+  "as_of": 1795352241147,
   "stale_days": 1,
   "count": 955,
   "groups": 9,
@@ -39,48 +39,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-6s8DCw2kXn",
-     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S2-NAMES-c14.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795352179000,
-     "source": "session",
-     "title": "lree-SF-S2-NAMES-c14",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795352179000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-YwEJ5EOWaX",
-     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c42.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795352170000,
-     "source": "session",
-     "title": "lree-SF-S2-NAMES-c42",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795352170000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-cTNWawfEXv",
-     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c40.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795352159000,
-     "source": "session",
-     "title": "lree-SF-S2-NAMES-c40",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795352159000,
-     "is_stale": false
-    },
-    {
      "id": "ses-2weXK2Y8DN",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795352128000,
+     "ts": 1795352236000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -99,7 +60,59 @@
      "answer_text_id": "a3094f3fa4e306ec",
      "answer_source": "replies.json",
      "delivered_ts": 1795346608724,
-     "as_of": 1795352128000,
+     "as_of": 1795352236000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-YwEJ5EOWaX",
+     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c42.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795352234000,
+     "source": "session",
+     "title": "lree-SF-S2-NAMES-c42",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795352234000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-6s8DCw2kXn",
+     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S2-NAMES-c14.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795352231000,
+     "source": "session",
+     "title": "lree-SF-S2-NAMES-c14",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795352231000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-BrWuh1GVu1",
+     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c43.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795352226000,
+     "source": "session",
+     "title": "lree-SF-S2-NAMES-c43",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795352226000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-cTNWawfEXv",
+     "text": "Шаг S2 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Улучшить распознавание имён в панелях: перебор области OCR/режимов/порогов, несколько вариантов на кадр, один-в-один назначение. Использовать заморозку из S1. train/holdout без утечки. В артефакт: coverage на holdout, conditional accuracy, команды, SHA входов, VERDICT с порогом >=0.92. Порог не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S2-NAMES-c40.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795352186000,
+     "source": "session",
+     "title": "lree-SF-S2-NAMES-c40",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795352186000,
      "is_stale": false
     },
     {
@@ -2974,7 +2987,7 @@
     {
      "id": "ses-zgG8Z31fqF",
      "text": "ТЫ — менеджер 20-часового мандата (роль надзирателя, не исполнителя чужих задач).\nОбязательно загрузи через tool skill: progress и ready-to-deliver.\n\nПрочитай (не целиком огромные файлы, а точечно):\n1. ~/overnight/manager_status.json — здоровье экосистемы;\n2. `python3 ~/.config/opencode/scripts/progress.py --no-color --ascii` — сводка;\n3. свежие отчёты ~/overnight/cloud_tracks/*.md (только шапки и хвосты, самые новые 5–8);\n4. ~/overnight/manager_cycle_digest.md если есть — предыдущий цикл.\n\nСДЕЛАЙ:\n- Найди running-шаги старше 30 мин и все blocked. Для каждого живого, но тихого\n  шага сделай `python3 ~/.config/opencode/scripts/progress.py step work <T> <step> --note \"менеджер: проверка < что >\"`;\n  для блокера — `event <T> --text \"…\"` с причиной и владельцем. Не выдумывай гейты.\n- Проверь, работают ли все агенты/диалоги из статуса; если агент мёртв, а сервис\n  жив — зафиксируй причину в лог цикла, не перезапускай вручную (это делает watchdog).\n- Если нашёл дефект в доступной зоне — попытайся исправить; если нельзя — честный\n  OPEN с владельцем и готовым путём, не сваливай на пользователя.\n- Напиши КОРОТКИЙ отчёт ~/overnight/manager_cycle_digest.md (вердикт HEALTHY /\n  NEEDS_ATTENTION, найденное, действия, OPEN). Не перезаписывай чужие отчёты.\n\nЗАПРЕТ: data/, защищённые отчёты 64/71/103, платные модели, правка progress.json\nнапрямую (только CLI), вопросы пользователю, остановка шин/воркеров.\nНе спрашивай — действуй в доступной зоне и честно фиксируй OPEN.",
-     "ts": 1795352175000,
+     "ts": 1795352235000,
      "source": "session",
      "title": "20-часовой мандат менеджера",
      "source_label": "ноут",
@@ -2993,7 +3006,7 @@
      "answer_text_id": "a3094f3fa4e306ec",
      "answer_source": "replies.json",
      "delivered_ts": 1795346608724,
-     "as_of": 1795352175000,
+     "as_of": 1795352235000,
      "is_stale": false
     },
     {
@@ -4132,19 +4145,6 @@
      "is_stale": false
     },
     {
-     "id": "ses-K20bv9ffmx",
-     "text": "Ты — бесплатный модель-оценщик в OpenCode. Реши, хватает ли бесплатной модели для задачи ниже или стоит подключать платную. Отвечай строго по-русски, 4 строками:\nРЕШЕНИЕ: FREE или PAID\nМОДЕЛЬ: конкретный id модели (только если PAID)\nПРИЧИНА: одно предложение\nОЦЕНКА: сколько % месячного allowance съест задача, число\n\nПравила:\n1. Рутина, чтение, черновики, массовые замены, исследование — FREE, всегда.\n2. PAID только если нужны сложные рассуждения, длинный агентный прогон или бесплатная модель уже отказала/уперлась в лимит.\n3. Из платных бери самый дешёвый адекватный вариант с лимитом ≥$60; модели с лимитом $15 — только при реальной необходимости.\n4. Никогда не предлагай модель с активным множителем и не расширяй контекст без нужды.\n5. Акция GLM-5.3 $500 действует только до 22.11.2026 — после неё не рассчитывай на $500.\n\nЖивые данные квот:\nмесяц: 65.5%\n5ч: 0.0%\nнеделя: 65.5%\nпрогноз месяца: 314%\nрасход deepseek-v4-pro: 52.0% allowance\nрасход deepseek-v4.1-flash: 12.5% allowance\nрасход glm-5.3: 0.5% allowance\nрасход kimi-k2.7-code: 0.5% allowance\nлимиты Go: glm-5.3=$500, deepseek-v4.1-flash=$100, muse-spark-1.2-contributor=$60, muse-spark-1.3-contributor=$60, glm-5.3-flash=$60, hy3=$60, kimi-k2.7-code=$60, mimo-v2.6-flash=$60\nакция gemini-4-argon: до 2026-11-30, осталось 8 дн.\nакция glm-5.3: до 2026-11-22, осталось 0 дн.\nбесплатные модели: beam-free, iceman-contributor-free, longcat-2.5-free, hy4-flash-free\n\nЗадача:\nпродолжить 8-часовой спринт: по ledger выбрать следующий OPEN-шаг, подготовить артефакт в /tmp/opencode/studio-8h/work/ralph-live, без правки конфигов и без рестартов",
-     "ts": 1795328649000,
-     "source": "session",
-     "title": "quota-radar gate",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795328649000,
-     "is_stale": false
-    },
-    {
      "id": "tg-20261122034308",
      "text": "Да хотел другого параноика\nОпиши свою текущую конфигурацию, чтобы её можно было сравнить с другой агентской системой.",
      "ts": 1795308225000,
@@ -4388,14 +4388,14 @@
     {
      "id": "ses-LN0nMOTaSf",
      "text": "В новой сессии: разбери OPEN-запись ледгера: - 2026-11-22 06:29 UTC — сверка claims после правки владельца: 27/27 негативных H-ID теперь в реестр. Подготовь артефакт /tmp/opencode/studio-8h/autopilot/artifact_evo13.md с доказательствами и Ruling. Не меняй конфиги, бот, progress/claims/goals. В конце выведи ровно PROMISE: DONE.",
-     "ts": 1795352172000,
+     "ts": 1795352230000,
      "source": "session",
      "title": "autopilot-evo13",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795352172000,
+     "as_of": 1795352230000,
      "is_stale": false
     },
     {
