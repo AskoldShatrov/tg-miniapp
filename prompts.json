@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T16:15:05+00:00",
-  "generated_human": "22.11 16:15 UTC",
-  "as_of": 1795364105203,
+  "generated": "2026-11-22T16:16:05+00:00",
+  "generated_human": "22.11 16:16 UTC",
+  "as_of": 1795364165464,
   "stale_days": 1,
   "count": 1068,
   "groups": 10,
@@ -38,34 +38,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-UO0gbR2z9S",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12104. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmws0o2zpzqwn: T05/T1c — прогон 22.11 18:45–18:50 MSK: гейт не взят (детерминированная репликация). Где: goals.json · Предрегистрация прогона T05-T1C-COVERAGE-RUN-20261122T1545Z создана 15:45:16Z ДО запуска (5 порогов/13 SHA, check PASS 13/13). Standing-prereg ebf1971 В конце вызови tools.goals.track({action:'done', id:'gmws0o2zpzqwn', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12104_run1795363789.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795364102000,
-     "source": "session",
-     "title": "AU12104: гейт T05/T1c не взят",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
-     "answer_short": "w261119090518006d: Прорыва нет: строгий гейт уверенности не взят, но теперь лож",
-     "answer_full": "Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
-     "answer_digest": {
-      "length": 139,
-      "sha256": "d698cc63856f5f48c38a77fc546c98dc64a7746686879703f44cbd9abd583b4f"
-     },
-     "answer_text_id": "d698cc63856f5f48",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795362980843,
-     "as_of": 1795364102000,
-     "is_stale": false
-    },
-    {
      "id": "ses-LRtLP6iMqa",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12070. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwrklkfr1ejc: C04-2100: T4 OPEN — числовой гейт PASS 3/3, H1 FAIL, зонд OPEN. Где: goals.json · Отчёт ~/overnight/cloud_tracks/C04-2100.md; prereg 14 порогов/8 SHA PASS до и после; n=2460 FP=1115 ECE raw 0.1565→cal 0.0001; H1 дельта -0.0001 CI [- В конце вызови tools.goals.track({action:'done', id:'gmwrklkfr1ejc', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12070_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795364102000,
+     "ts": 1795364161000,
      "source": "session",
      "title": "Гипотеза AU12070: gmwrklkfr1ejc H1 FAIL",
      "source_label": "ноут",
@@ -84,26 +59,13 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795364102000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-CqhkRyXvoM",
-     "text": "Только чтение чужих файлов + один новый артефакт. Файлы build_views.py и miniapp_status.py заняты другими сессиями — НЕ редактируй их. Исследуй гонку записи views.json, подготовь минимальный обратимый патч (идея: atomарная запись .tmp+os.replace и общий lock-файл с lease), укажи точные пути и строки вставки для обоих файлов, владельцев и команду проверки. В артефакт включи SHA256 и mtime обоих исходников, а также готовый unified diff в текстовом виде. Не применяй патч.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/PAGES-RACE-c68.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795364100000,
-     "source": "session",
-     "title": "lree-PAGES-RACE-c68",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795364100000,
+     "as_of": 1795364161000,
      "is_stale": false
     },
     {
      "id": "ses-sKrpdT98fB",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU242. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ w261120005246e8a8: Эксди. Где: wants.json · не отвечено · 18.11.2026 04:07:32 · telegram. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU242_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795364097000,
+     "ts": 1795364159000,
      "source": "session",
      "title": "Гипотеза AU242: Эксди",
      "source_label": "ноут",
@@ -122,7 +84,45 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795364097000,
+     "as_of": 1795364159000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-CqhkRyXvoM",
+     "text": "Только чтение чужих файлов + один новый артефакт. Файлы build_views.py и miniapp_status.py заняты другими сессиями — НЕ редактируй их. Исследуй гонку записи views.json, подготовь минимальный обратимый патч (идея: atomарная запись .tmp+os.replace и общий lock-файл с lease), укажи точные пути и строки вставки для обоих файлов, владельцев и команду проверки. В артефакт включи SHA256 и mtime обоих исходников, а также готовый unified diff в текстовом виде. Не применяй патч.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/PAGES-RACE-c68.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795364157000,
+     "source": "session",
+     "title": "lree-PAGES-RACE-c68",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795364157000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-UO0gbR2z9S",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12104. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmws0o2zpzqwn: T05/T1c — прогон 22.11 18:45–18:50 MSK: гейт не взят (детерминированная репликация). Где: goals.json · Предрегистрация прогона T05-T1C-COVERAGE-RUN-20261122T1545Z создана 15:45:16Z ДО запуска (5 порогов/13 SHA, check PASS 13/13). Standing-prereg ebf1971 В конце вызови tools.goals.track({action:'done', id:'gmws0o2zpzqwn', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12104_run1795363789.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
+     "ts": 1795364157000,
+     "source": "session",
+     "title": "AU12104: гейт T05/T1c не взят",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
+     "answer_short": "w261119090518006d: Прорыва нет: строгий гейт уверенности не взят, но теперь лож",
+     "answer_full": "Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
+     "answer_digest": {
+      "length": 139,
+      "sha256": "d698cc63856f5f48c38a77fc546c98dc64a7746686879703f44cbd9abd583b4f"
+     },
+     "answer_text_id": "d698cc63856f5f48",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795362980843,
+     "as_of": 1795364157000,
      "is_stale": false
     },
     {
@@ -6723,72 +6723,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-ZGXHnsVmnd",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0110. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0110_run1795364102.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795364102000,
-     "source": "session",
-     "title": "",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
-     "answer_short": "w261119190741dca0: Прорыва нет: строгий гейт уверенности не взят, но теперь лож",
-     "answer_full": "Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
-     "answer_digest": {
-      "length": 139,
-      "sha256": "d698cc63856f5f48c38a77fc546c98dc64a7746686879703f44cbd9abd583b4f"
-     },
-     "answer_text_id": "d698cc63856f5f48",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795362980843,
-     "as_of": 1795364102000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-n3WoTnnMgy",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c34.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795364102000,
-     "source": "session",
-     "title": "lree-SF-S4-ECE-c34",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795364102000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-P3vS32Zz1I",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0109. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0109_run1795363798.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795364101000,
-     "source": "session",
-     "title": "QH0109: dot_quality под cyan",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
-     "answer_short": "w261119190741dca0: Прорыва нет: строгий гейт уверенности не взят, но теперь лож",
-     "answer_full": "Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
-     "answer_digest": {
-      "length": 139,
-      "sha256": "d698cc63856f5f48c38a77fc546c98dc64a7746686879703f44cbd9abd583b4f"
-     },
-     "answer_text_id": "d698cc63856f5f48",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795362980843,
-     "as_of": 1795364101000,
-     "is_stale": false
-    },
-    {
      "id": "ses-4OHXlVFbDn",
      "text": "ПРОРАБОТКА РАДАРА, новый источник. Источник: 78-top1000-dust2-ingest.md (307 dust2 матчей) и свежие FACEIT-демо. Задача: собрать НОВЫЙ набор кадров (не старые 20/92) с признаком cyan как_CT и проверить детектор радара на нём. ОБЯЗАТЕЛЬНО: записать новый отчёт ~/overnight/open_tracks/R01-radar-cyan-newcorpus.md — факт/расчёт/интерпретация/неизвестно, n, Wilson CI, отрицательный результат фиксировать так же. Гейт ДО проверки: recall > 0.50 при FP < 0.10 на n >= 100 кадрах. НЕ переоткрывать опровергнутое «красный = враг» и малый радар (см. 64, 89, MASTERPLAN-v2 §2.1). Не перезаписывать ~/turngame/data/ и существующие отчёты. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795364099000,
+     "ts": 1795364160000,
      "source": "session",
      "title": "Новый as_CT-корпус для радара",
      "source_label": "ноут",
@@ -6807,13 +6744,76 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795364099000,
+     "as_of": 1795364160000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-n3WoTnnMgy",
+     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c34.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795364157000,
+     "source": "session",
+     "title": "lree-SF-S4-ECE-c34",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795364157000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-P3vS32Zz1I",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0109. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0109_run1795363798.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
+     "ts": 1795364157000,
+     "source": "session",
+     "title": "QH0109: dot_quality под cyan",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0"
+     ],
+     "answer": "[w261119190741dca0] Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
+     "answer_short": "w261119190741dca0: Прорыва нет: строгий гейт уверенности не взят, но теперь лож",
+     "answer_full": "Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
+     "answer_digest": {
+      "length": 139,
+      "sha256": "d698cc63856f5f48c38a77fc546c98dc64a7746686879703f44cbd9abd583b4f"
+     },
+     "answer_text_id": "d698cc63856f5f48",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795362980843,
+     "as_of": 1795364157000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-ZGXHnsVmnd",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0110. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0110_run1795364102.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
+     "ts": 1795364115000,
+     "source": "session",
+     "title": "QH0110: перекалибровка dot_quality под cyan",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0"
+     ],
+     "answer": "[w261119190741dca0] Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
+     "answer_short": "w261119190741dca0: Прорыва нет: строгий гейт уверенности не взят, но теперь лож",
+     "answer_full": "Прорыва нет: строгий гейт уверенности не взят, но теперь ложные проходы отлавливаются проверкой на шум, и в работе 46 агентов вместо шести.",
+     "answer_digest": {
+      "length": 139,
+      "sha256": "d698cc63856f5f48c38a77fc546c98dc64a7746686879703f44cbd9abd583b4f"
+     },
+     "answer_text_id": "d698cc63856f5f48",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795362980843,
+     "as_of": 1795364115000,
      "is_stale": false
     },
     {
      "id": "ses-zjRA45WRfr",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12075. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwrlyp2mr1en: Снять P0-1: живой allplayers для сканфида. Где: goals.json · 16/16 зондов allplayers=0; нужен живой матч/spectator без инъекций. Активные задачи ПК не трогать. В конце вызови tools.goals.track({action:'done', id:'gmwrlyp2mr1en', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12075_run1795363232.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795364097000,
+     "ts": 1795364112000,
      "source": "session",
      "title": "AU12075: живой allplayers для сканфида",
      "source_label": "ноут",
@@ -6832,7 +6832,7 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795364097000,
+     "as_of": 1795364112000,
      "is_stale": false
     },
     {
@@ -11641,7 +11641,7 @@
     {
      "id": "ses-K4dwjEfPHe",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12103. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ w261122054642905d: Доставить 30 «недоставленных» ответов из доски целей в чат. Где: wants.json · Хвост из unanswered_radar: 30 сообщений имеют ответ в goals-борде, но помечены «не доставлен» (R04: отчёт ≠ доставка). Лёгкий проход: ≤10 доставок, 0 . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12103_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795364101000,
+     "ts": 1795364158000,
      "source": "session",
      "title": "AU12103 run2646: доставка 30 ответов",
      "source_label": "ноут",
@@ -11660,7 +11660,7 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795364101000,
+     "as_of": 1795364158000,
      "is_stale": false
     },
     {
@@ -12826,7 +12826,7 @@
     {
      "id": "ses-cymc3BD8K7",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12096. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwrxk9utly4d: C09-2313: 100 FaceIT dust2 демо — парсинг на ПК, duels, сверка с БД-307. Где: goals.json · Гейт n>0 и отчёт ~/overnight/cloud_tracks/C09-2313.md. Промежуточный вердикт записан до зондов; pc-bridge :8898, 404 демо, C: заполнен, вывод на D:. p В конце вызови tools.goals.track({action:'done', id:'gmwrxk9utly4d', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12096_run2646.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795364094000,
+     "ts": 1795364158000,
      "source": "session",
      "title": "Гипотеза AU12096 по C09-2313",
      "source_label": "ноут",
@@ -12845,7 +12845,7 @@
      "answer_text_id": "d698cc63856f5f48",
      "answer_source": "replies.json",
      "delivered_ts": 1795362980843,
-     "as_of": 1795364094000,
+     "as_of": 1795364158000,
      "is_stale": false
     },
     {
