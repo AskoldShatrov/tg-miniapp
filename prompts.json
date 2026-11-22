@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-22T15:30:43+00:00",
-  "generated_human": "22.11 15:30 UTC",
-  "as_of": 1795361443578,
+  "generated": "2026-11-22T15:31:43+00:00",
+  "generated_human": "22.11 15:31 UTC",
+  "as_of": 1795361503142,
   "stale_days": 1,
   "count": 1028,
   "groups": 9,
@@ -39,60 +39,22 @@
    ],
    "prompts": [
     {
-     "id": "ses-e1tedtDszq",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c28.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795361440000,
+     "id": "ses-kj46phQWnO",
+     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c30.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795361502000,
      "source": "session",
-     "title": "lree-SF-S4-ECE-c28",
+     "title": "lree-SF-S4-ECE-c30",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795361440000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-1tQtSuZv1r",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0107. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0107_run1795361416.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795361440000,
-     "source": "session",
-     "title": "QH0107: калибровка dot_quality под cyan",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
-     "answer_short": "w261119190741dca0: Раскрытие карточек работает: по нажатию видны полное утвержд",
-     "answer_full": "Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
-     "answer_digest": {
-      "length": 164,
-      "sha256": "11a08c8fe17a6f340f5f17afc372b31a0d88c33aa8779d9a57b2f90338dd9578"
-     },
-     "answer_text_id": "11a08c8fe17a6f34",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795360623520,
-     "as_of": 1795361440000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-5On25MUixS",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S4-ECE-c54.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795361438000,
-     "source": "session",
-     "title": "lree-SF-S4-ECE-c54",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795361438000,
+     "as_of": 1795361502000,
      "is_stale": false
     },
     {
      "id": "ses-aqtdivh5VB",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795361434000,
+     "ts": 1795361502000,
      "source": "session",
      "title": "Переобучение dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -111,20 +73,58 @@
      "answer_text_id": "11a08c8fe17a6f34",
      "answer_source": "replies.json",
      "delivered_ts": 1795360623520,
-     "as_of": 1795361434000,
+     "as_of": 1795361502000,
      "is_stale": false
     },
     {
-     "id": "ses-kj46phQWnO",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c30.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795361315000,
+     "id": "ses-1tQtSuZv1r",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ QH0107. Источник: queue-cli. Гипотеза: СКАНФИД-СПРИНТ G2 [SCANFEED-SPRINT T20.3]. Собрать REAL-набор n>=60 кадров с ненулевым FP из демок/ботов, перекалибровать dot_quality под cyan, посчитать precision/recall, ECE, Brier, Wilson CI и честный baseline. Гейт ДО прогона: n>=60, FP>0, ECE<0.15 на holdout. Отчёт ~/overnight/cloud_tracks/SF-G2-*.md с фактом/расчётом/интерпретацией/неизвестно. Порог не двигать постфактум.. Где: . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/QH0107_run1795361416.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
+     "ts": 1795361498000,
      "source": "session",
-     "title": "lree-SF-S4-ECE-c30",
+     "title": "QH0107: калибровка dot_quality под cyan",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0"
+     ],
+     "answer": "[w261119190741dca0] Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
+     "answer_short": "w261119190741dca0: Раскрытие карточек работает: по нажатию видны полное утвержд",
+     "answer_full": "Раскрытие карточек работает: по нажатию видны полное утверждение, тезисы и поле вопроса — слепой аудит нашёл 10 дефектов, канарейку确认 он, гейт VALID, SELFTEST PASS.",
+     "answer_digest": {
+      "length": 164,
+      "sha256": "11a08c8fe17a6f340f5f17afc372b31a0d88c33aa8779d9a57b2f90338dd9578"
+     },
+     "answer_text_id": "11a08c8fe17a6f34",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795360623520,
+     "as_of": 1795361498000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-e1tedtDszq",
+     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed/artifacts/SF-S4-ECE-c28.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795361493000,
+     "source": "session",
+     "title": "lree-SF-S4-ECE-c28",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795361315000,
+     "as_of": 1795361493000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-5On25MUixS",
+     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/SF-S4-ECE-c54.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795361481000,
+     "source": "session",
+     "title": "lree-SF-S4-ECE-c54",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795361481000,
      "is_stale": false
     },
     {
@@ -4219,14 +4219,14 @@
     {
      "id": "ses-KT7QkXD6h7",
      "text": "Только чтение источников. Прочитай ~/cs2-transcribe/YOUTUBE_IDEAS.md и при необходимости ~/cs2-transcribe/subs/*.txt. Построй детерминированный отчёт ~/evolution-work/artifacts/VIDEO-CLAIMS-ALL-<уникальный>.md с таблицей утверждений для каналов jerry, chopper, emsx: не менее 10 строк на канал, поля автор, video_id, цитата<=160 символов, тема, статус «проверка не проводилась». НЕ выдумывай вердикты, НЕ меняй grids.json, views.json, state.db и чужие отчёты. В конце укажи число строк по авторам, SHA256 источников и mtime отчёта.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/artifacts/VIDEO-CLAIMS-ALL-c55.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795361436000,
+     "ts": 1795361452000,
      "source": "session",
      "title": "lree-VIDEO-CLAIMS-ALL-c55",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795361436000,
+     "as_of": 1795361452000,
      "is_stale": false
     },
     {
