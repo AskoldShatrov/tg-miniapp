@@ -813,7 +813,7 @@
       <div class="eyebrow"><span id="treeEyebrow">Дерево задач · T1—T11</span> <span class="api-badge" id="treeApiBadge">API · нет</span></div>
       <div class="live-strip" id="liveStrip">
         <span class="dot-live"></span>
-        <span title="агенты = max(живые dsh headless, сессии DSH); в работе — мгновенные dsh headless; сессии — сессии DeepSeek Harness за сутки; сабагенты — дочерние сессии DSH; воркеры — systemd-сервисы">агентов <b id="stripAgents">…</b> · в работе <b id="stripLive">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
+        <span title="агенты = живые процессы dsh headless; в работе — то же мгновенное число; сессии — сессии DeepSeek Harness за сутки; сабагенты — дочерние сессии DSH; воркеры — systemd-сервисы старого контура">агентов <b id="stripAgents">…</b> · в работе <b id="stripLive">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
         <span id="stripNote" style="color:var(--yellow)"></span>
         <span id="stripTime" style="margin-left:auto;color:var(--overlay0)">…</span>
       </div>
@@ -1703,7 +1703,7 @@ async function refreshAgentStatus(){
       /* E-19: склонение из word (1 агент / 2 агента / 5 агентов), а не «1 агентов». */
       badge.textContent = `🤖 ${n} ${word}`;
       badge.title = `движок: ${s.engine||"DeepSeek Harness"}\n` +
-        `агенты = max(живые dsh headless, сессии DSH) — стабильный сигнал (${n})\n` +
+        `агенты = живые процессы dsh headless (${n})\n` +
         `в работе = мгновенные процессы dsh headless (${Number(s.agents_running)||0})\n` +
         `сессии = сессии DSH за 24 ч (${Number(s.sessions_active)||0})\n` +
         `сабагенты = дочерние сессии (${Number(s.subagents)||0})\n` +
