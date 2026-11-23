@@ -45,6 +45,12 @@ SOURCES = {
     'elements': 'shared-repo/bots/miniapp/elements.json',
     'yesno': 'shared-repo/bots/miniapp/yesno-questions.json',
     'works': 'shared-repo/bots/miniapp/works.json',
+    'grids': 'shared-repo/bots/miniapp/grids.json',
+    'tree': 'shared-repo/bots/miniapp/tree.json',
+    'video-tree': 'shared-repo/bots/miniapp/video-tree.json',
+    'video-authors': 'shared-repo/bots/miniapp/video-authors.json',
+    'voiceideas': 'shared-repo/bots/miniapp/voice-ideas.json',
+    'lifeideas': 'shared-repo/bots/miniapp/life-ideas.json',
 }
 SKILLS_DIR = pathlib.Path.home() / '.config/opencode/skills'
 SKILLS_SOURCE = '~/.config/opencode/skills/*/SKILL.md'
@@ -55,18 +61,44 @@ PRIVATE_API_SOURCE = '/private/review'
 # Static GitHub Pages не имеет filesystem: в publish=true вид нельзя положить
 # локальный путь в source — иначе views.js делает fetch и получает HTTP 404.
 # Локальные пути выше остаются только для чтения билдером; в views.json уходят
-# либо голое имя файла из корня miniapp, либо inline-массив (source=items).
+# только голые имена файлов из корня miniapp. Тяжёлые массивы (cs2-ideas, skills)
+# пишутся отдельными файлами и подгружаются views.js по требованию — инлайнить
+# их в views.json нельзя: он раздувался до ~600 КБ и грузился при каждом открытии.
 PUB = {
     'atlas': 'atlas.json',
     'prompts': 'prompts.json',
-    'cs2': None,            # inline: local-llm/work/cs2_voice_ideas.json
-    'confidential': 'local',  # приватный слой: только локально, через process_api
-    'skills': None,         # inline: ~/.config/opencode/skills/*/SKILL.md
+    'cs2': 'cs2-ideas.json',      # отдельный файл, не inline
+    'confidential': 'local',      # приватный слой: только локально, через process_api
+    'skills': 'skills.json',      # отдельный файл, не inline
     'elements': 'elements.json',
     'yesno': 'yesno-questions.json',
     'works': 'works.json',
+    'grids': 'grids.json',
+    'tree': 'tree.json',        # голое имя: Pages отдаёт файл из корня miniapp
+    'video-tree': 'video-tree.json',
+    'voiceideas': 'voice-ideas.json',
+    'lifeideas': 'life-ideas.json',
 }
 PUB_BY_REL = {SOURCES[k]: v for k, v in PUB.items()}
+
+# Отдельные источники для видов, которые раньше инлайнились в views.json.
+# Ключ — имя файла в корне miniapp, значение — payload с массивом items.
+SIDE_OUTPUTS = {}
+SIDE_NAMES = (PUB['cs2'], PUB['skills'], PUB['voiceideas'], PUB['lifeideas'],
+              'prompts-groups.json', 'prompts-3days.json', 'prompts-branches.json',
+              'prompts-wants.json', 'prompts-verdicts.json', 'prompts-unanswered.json')
+
+
+def side_file(name, items, read_at, total=None, **extra):
+    """Подготовить отдельный файл-источник вместо inline-массива в views.json."""
+    payload = {
+        'items': list(items),
+        'count': len(items),
+        'total': total if total is not None else len(items),
+        'built_at': read_at,
+    }
+    payload.update(extra)
+    SIDE_OUTPUTS[name] = payload
 
 INLINE_LIMIT = 2000   # байт (или число элементов) — порог урезания inline
 INLINE_HEAD = 300     # сколько элементов оставляем при превышении порога
@@ -206,8 +238,10 @@ def build_atlas_tree(rel, read_at):
     nodes = d.get('nodes') or []
     kinds = sorted({n.get('kind') for n in nodes if n.get('kind')})
     statuses = sorted({n.get('status') for n in nodes if n.get('status')})
+    edges = d.get('edges') or []
     return view(
-        {'id': 'atlas-tree', 'title': 'Атлас: дерево сущностей по видам',
+        {'id': 'atlas-tree',
+         'title': f'Атлас: сущности по видам ({len(edges)} связей не визуализируются)',
          'type': 'tree', 'publish': True, 'group_by': 'kind', 'sort_by': 'id',
          'label_field': 'text', 'value_field': 'id',
          'meta_fields': ['kind', 'status', 'confidence'],
@@ -242,6 +276,37 @@ def build_atlas_goals(rel, read_at):
         [{'field': 'status', 'values': statuses}])
 
 
+def build_task_tree(rel, read_at):
+    """Дерево задач из tree.json: 24 корня, 118 узлов, id/name/status/children.
+
+    views.js buildTree сам находит children и строит настоящую вложенность;
+    group_by служит запасной группировкой и фильтром по статусу.
+    """
+    d = read_json(rel)
+    roots = d if isinstance(d, list) else (d.get('roots') or d.get('items') or [])
+    nodes = []
+
+    def walk(n):
+        nodes.append(n)
+        for c in (n.get('children') or []):
+            walk(c)
+
+    for r in roots:
+        walk(r)
+    statuses = sorted({n.get('status') for n in nodes if n.get('status')})
+    return view(
+        {'id': 'task-tree',
+         'title': f'Дерево задач: {len(roots)} корней / {len(nodes)} узлов',
+         'type': 'tree', 'publish': True, 'group_by': 'status', 'sort_by': 'id',
+         'label_field': 'name', 'value_field': 'id',
+         'meta_fields': ['status'], 'actions': WORK_ACTION},
+        rel, read_at, len(nodes),
+        [{'field': 'status', 'values': statuses}],
+        extra={'root_count': len(roots), 'node_count': len(nodes),
+               'note': 'источник tree.json; task-tree.js читает LIVE.tree напрямую, '
+                       'реестр views нужен для единого входа и аудита'})
+
+
 def build_prompts(rel, read_at):
     d = read_json(rel)
     prompts = [p for g in (d.get('groups') or []) for p in (g.get('prompts') or [])]
@@ -258,6 +323,87 @@ def build_prompts(rel, read_at):
          {'field': 'is_stale', 'values': stale}])
 
 
+def _prompt_rows(d):
+    """Плоские строки из 9 именованных групп prompts.json с подписями смыслов."""
+    as_of = (d.get('meta') or {}).get('as_of')
+    rows = []
+    for g in d.get('groups') or []:
+        for p in g.get('prompts') or []:
+            r = dict(p)
+            r['group'] = g.get('name')
+            r['want'] = (p.get('wants') or [None])[0]
+            r['has_answer'] = bool(p.get('answer'))
+            if as_of and p.get('ts'):
+                r['age_days'] = round((as_of - p['ts']) / 86_400_000, 2)
+            rows.append(r)
+    return rows
+
+
+def _prompt_view(vid, title, group_by, side_name, predicate):
+    def build(rel, read_at):
+        d = read_json(rel)
+        rows = [r for r in _prompt_rows(d) if predicate(r)]
+        side_file(side_name, rows, read_at)
+        values = sorted({str(r.get(group_by)) for r in rows
+                         if r.get(group_by) not in (None, '', False)})
+        return view(
+            {'id': vid, 'title': title,
+             'type': 'cards', 'publish': True, 'group_by': group_by, 'sort_by': 'ts',
+             'label_field': 'text', 'value_field': 'id',
+             'meta_fields': ['group', 'source_label', 'user', 'want', 'age_days', 'is_stale'],
+             'actions': WORK_ACTION},
+            rel, read_at, len(rows), [{'field': group_by, 'values': values}],
+            extra={'source': side_name})
+    return build
+
+
+def build_prompts_groups(rel, read_at):
+    """Настоящее дерево: 9 смысловых ветвей → промпты с подписью ответа."""
+    d = read_json(rel)
+    rows = _prompt_rows(d)
+    nodes = []
+    for g in d.get('groups') or []:
+        kids = []
+        for p in g.get('prompts') or []:
+            kids.append({
+                'id': p.get('id'),
+                'name': (p.get('text') or '')[:160],
+                'status': 'PASS' if p.get('answer') else 'OPEN',
+                'user': p.get('user'),
+                'source_label': p.get('source_label'),
+                'is_stale': p.get('is_stale'),
+            })
+        nodes.append({'id': g.get('id'), 'name': g.get('name'),
+                      'status': 'PASS' if kids else 'OPEN', 'children': kids})
+    side_file('prompts-groups.json', nodes, read_at, total=len(rows))
+    groups = sorted({g.get('name') for g in d.get('groups') or [] if g.get('name')})
+    return view(
+        {'id': 'prompts-semantic-groups', 'title': 'Промпты: дерево из 9 смысловых ветвей',
+         'type': 'tree', 'publish': True, 'group_by': None, 'sort_by': 'id',
+         'label_field': 'name', 'value_field': 'id',
+         'meta_fields': ['status', 'user', 'source_label', 'is_stale'],
+         'actions': WORK_ACTION},
+        rel, read_at, len(rows),
+        [{'field': 'group', 'values': groups}],
+        extra={'source': 'prompts-groups.json', 'count': len(rows)})
+build_prompts_3days = _prompt_view(
+    'prompts-lenta-3days', 'Промпты: лента последних 3 дней',
+    'source', 'prompts-3days.json', lambda r: r.get('age_days') is not None and r['age_days'] <= 3)
+build_prompts_branches = _prompt_view(
+    'prompts-opencode-branches', 'Промпты: ветки сессий OpenCode',
+    'title', 'prompts-branches.json', lambda r: r.get('source') == 'session')
+build_prompts_wants = _prompt_view(
+    'prompts-wants-links', 'Промпты: связи с хотелками',
+    'want', 'prompts-wants.json', lambda r: bool(r.get('want')))
+build_prompts_verdicts = _prompt_view(
+    'prompts-verdicts', 'Промпты: свежие короткие ответы (не дубль связей с хотелками)',
+    'user', 'prompts-verdicts.json',
+    lambda r: bool(r.get('answer_short')) and r.get('is_stale') is False)
+build_prompts_unanswered = _prompt_view(
+    'prompts-unanswered', 'Промпты: без ответа',
+    'source', 'prompts-unanswered.json', lambda r: not r.get('has_answer'))
+
+
 def build_cs2(rel, read_at):
     d = read_json(rel)
     themes = d.get('themes') or {}
@@ -271,22 +417,100 @@ def build_cs2(rel, read_at):
         row['voice'] = voice.rsplit('/', 1)[-1].replace('audio_', '') or '—'
         row['theme'] = t
         items.append(row)
-    extra = inline_items(items)
+    meta = inline_items(items)
+    shown = meta.pop('source')
+    meta.pop('items', None)  # сам массив уходит в отдельный файл, не в views.json
+    uniq = len({it.get('voice') for _, it in rows if it.get('voice')})
+    declared = d.get('total')
+    # Единица счёта — строка theme-item, НЕ голосовое: одна запись может
+    # входить в несколько тем. «300 из 1438» без уточнения единицы читается
+    # как 300 голосовых из 1438; называем все три числа явно, данные не трогаем.
+    honest_note = (
+        f"показано {len(shown)} из {meta['items_total']} строк тем "
+        f"(уникальных голосовых {uniq}, классифицировано {declared}); "
+        "строка ≠ голосовое: запись может входить в несколько тем"
+    )
+    side_file(PUB['cs2'], shown, read_at, total=meta['items_total'],
+              shown_rows=len(shown), total_rows=meta['items_total'],
+              unique_voices=uniq, declared_total=declared,
+              note=honest_note)
+    extra = meta
+    extra['items_note'] = honest_note
+    extra['count_note'] = (
+        f'count={len(rows)} — строки тем, не голосовые; '
+        f'уникальных голосовых {uniq} из {declared} классифицированных'
+    )
     extra['provenance_note'] = {
-        'declared_total': d.get('total'),
+        'declared_total': declared,
         'themed_rows': len(rows),
-        'unique_voices': len({it.get('voice') for _, it in rows if it.get('voice')}),
-        'note': ('count = строк в таблице (запись может входить в несколько тем); '
-                 'declared_total — общее число классифицированных голосовых из файла'),
+        'unique_voices': uniq,
+        'note': ('count = число строк theme-item (запись может входить в несколько тем), '
+                 'НЕ число голосовых; shown_rows = загружено строк; '
+                 'declared_total — классифицировано голосовых в исходном файле; '
+                 'unique_voices — уникальных голосовых среди строк тем'),
     }
     return view(
-        {'id': 'cs2-ideas', 'title': 'CS2: голосовые идеи по темам',
+        {'id': 'cs2-ideas',
+         'title': (f'CS2: голосовые идеи по темам — {len(shown)}/{meta["items_total"]} '
+                   f'строк, уникальных голосовых {uniq}'),
          'type': 'table', 'publish': True, 'group_by': 'theme', 'sort_by': 'voice',
          'label_field': 'text', 'value_field': 'voice',
          'meta_fields': ['theme', 'voice'], 'actions': WORK_ACTION},
         rel, read_at, len(rows),
         [{'field': 'theme', 'values': sorted(themes)}],
         extra=extra)
+
+
+def build_voice_ideas(rel, read_at):
+    """115 идей из голосовых: статус/гейт/корпус, без цитат и имён."""
+    d = read_json(rel)
+    items = d.get('items') or []
+    queue = d.get('queue') or []
+    tiers = sorted({x.get('tier') for x in items if x.get('tier')})
+    themes = sorted({x.get('theme') for x in items if x.get('theme')})
+    meta = inline_items(items)
+    shown = meta.pop('source')
+    meta.pop('items', None)
+    side_file(PUB['voiceideas'], shown, read_at, total=meta['items_total'], queue=queue)
+    extra = meta
+    extra['queue_n'] = len(queue)
+    extra['note'] = d.get('note')
+    v = view(
+        {'id': 'voice-ideas',
+         'title': f'Голосовые идеи: {len(items)} гипотез, {len(queue)} готовы к прогону',
+         'type': 'table', 'publish': True, 'group_by': 'tier', 'sort_by': 'id',
+         'label_field': 'title', 'value_field': 'id',
+         'meta_fields': ['tier_label', 'status', 'theme'], 'actions': WORK_ACTION},
+        rel, read_at, len(items),
+        [{'field': 'tier', 'values': tiers},
+         {'field': 'theme', 'values': themes}],
+        extra=extra)
+    v['provenance'].pop('abs', None)
+    return v
+
+
+def build_life_ideas(rel, read_at):
+    """157 не-CS принципов (работа, инструменты, жизнь): без цитат и имён."""
+    d = read_json(rel)
+    items = d.get('items') or []
+    cats = sorted({x.get('cat') for x in items if x.get('cat')})
+    meta = inline_items(items)
+    shown = meta.pop('source')
+    meta.pop('items', None)
+    side_file(PUB['lifeideas'], shown, read_at, total=meta['items_total'])
+    extra = meta
+    extra['note'] = d.get('note')
+    v = view(
+        {'id': 'life-ideas',
+         'title': f'Не-CS идеи из голосовых: {len(items)} принципов',
+         'type': 'cards', 'publish': True, 'group_by': 'cat', 'sort_by': 'id',
+         'label_field': 'idea', 'value_field': 'id',
+         'meta_fields': ['cat'], 'actions': WORK_ACTION},
+        rel, read_at, len(items),
+        [{'field': 'cat', 'values': cats}],
+        extra=extra)
+    v['provenance'].pop('abs', None)
+    return v
 
 
 REC_RE = re.compile(r'^\*\*(\d+)\s*[·•\-]\s*(PERSONAL|SENSITIVE|UNCERTAIN|PUBLIC)\b', re.M)
@@ -345,17 +569,9 @@ def build_confidential(rel, read_at):
         [{'field': 'label', 'values': ['PERSONAL', 'SENSITIVE', 'UNCERTAIN', 'PUBLIC']}],
         status='requires_initdata',
         extra={
-            'hint': ('приватный слой доступен только локально через process_api. '
-                     + hint + ' Нужен авторизованный запрос (initData).'),
+            # R12: в публичный манифест — только идентификатор вида и флаг
+            # publish=false. Агрегаты, абсолютные пути и подсказки не публикуем.
             'notice': 'Нужен авторизованный запрос: GET/POST /private/review',
-            'provenance_note': {
-                'declared_private': declared[0] if declared else None,
-                'declared_borderline': declared[1] if len(declared) > 1 else None,
-                'parsed_private': len(priv),
-                'parsed_borderline': len(border),
-                'available_total': len(priv) + len(border),
-                'parse_ok': status == 'ok',
-            },
         },
         redact=True)
     # source указывает на авторизованный эндпоинт; publish=false не даёт
@@ -363,6 +579,9 @@ def build_confidential(rel, read_at):
     v['source'] = PRIVATE_API_SOURCE
     v['publish'] = False
     v.pop('items', None)  # в публичном документе приватных записей нет
+    # R12: даже redact=True оставляет абсолютный путь в provenance — удаляем
+    # блок целиком. В публичном манифесте остаются id, publish=false и notice.
+    v.pop('provenance', None)
     return v
 
 
@@ -398,6 +617,10 @@ def build_skills(rel, read_at):
             'path': str(p.relative_to(pathlib.Path.home())),
         })
     items.sort(key=lambda it: it['title'].lower())
+    meta = inline_items(items)
+    shown = meta.pop('source')
+    meta.pop('items', None)
+    side_file(PUB['skills'], shown, read_at, total=meta['items_total'])
     newest = max((p.stat().st_mtime for p in files), default=None)
     prov = {
         'file': rel,
@@ -420,7 +643,7 @@ def build_skills(rel, read_at):
          'value_field': 'id', 'meta_fields': ['description', 'path'],
          'actions': WORK_ACTION},
         rel, read_at, len(items), [],
-        extra={**inline_items(items), 'provenance': prov})
+        extra={**meta, 'provenance': prov})
 
 
 def build_elements(rel, read_at):
@@ -496,24 +719,242 @@ def build_pdf_hub(rel, read_at):
          {'field': 'status', 'values': statuses}])
 
 
+def _video_grids_builder(vid, group_by, default_title):
+    """Сетки разборов видео: фильтры и счётчики считаются из grids.json, не хардкодятся."""
+    def _build(rel, read_at, scope=None, title=None):
+        d = read_json(rel)
+        items = d.get('items') or []
+        fields = ('author', 'video', 'cluster', 'verdict_source', 'n2_status')
+        values = {f: sorted({str(x.get(f)) for x in items if x.get(f)}) for f in fields}
+        filters = [{'field': group_by, 'values': values.get(group_by, [])},
+                   {'field': 'verdict_source', 'values': values['verdict_source']}]
+        for f in ('author', 'cluster', 'n2_status'):
+            if f != group_by and values[f]:
+                filters.append({'field': f, 'values': values[f]})
+        extra = {}
+        if scope is not None:
+            extra['scope'] = scope
+        if title is not None:
+            extra['title'] = title
+        return view(
+            {'id': vid, 'title': title or default_title,
+             'type': 'cards', 'publish': False, 'group_by': group_by, 'sort_by': 'id',
+             'label_field': 'claim', 'value_field': 'id',
+             'meta_fields': ['verdict_label', 'verdict_source', 'cluster_title',
+                             'n2_status', 'author', 'video_labels', 'as_of',
+                             'scope_note', 'coverage_authors_pct'],
+             'actions': WORK_ACTION},
+            rel, read_at, len(items), filters, extra=extra or None)
+    return _build
+
+
+def video_scope(corpus, grids):
+    """Покрытие снимка N2/67 относительно полного корпуса расшифровок.
+
+    Никаких «просто 2 автора»: снимок обязан объявить, сколько каналов он
+    покрывает и кого не покрывает. Чистая функция от двух словарей — чтобы
+    гейт можно было проверять отрицательным тестом без правки живых файлов.
+    """
+    items = corpus.get('items') or []
+    by_alias = {str(i.get('grid_id')): i['id'] for i in items if i.get('grid_id')}
+    corpus_ids = {i['id'] for i in items if i['transcripts']}
+    raw = [str(a.get('id') or a.get('title'))
+           for a in (grids.get('authors') or [])]
+    mapped = {by_alias.get(a, a) for a in raw}
+    covered = sorted(mapped & corpus_ids)
+    unknown = sorted(a for a in raw if a not in by_alias and a not in corpus_ids)
+    missing = sorted(corpus_ids - set(covered))
+    corpus_tr = sum(int(i.get('transcripts') or 0) for i in items)
+    covered_tr = sum(int(i.get('transcripts') or 0) for i in items
+                     if i['id'] in covered)
+    try:
+        stale_days = (datetime.datetime.now(datetime.timezone.utc).date()
+                      - datetime.date.fromisoformat(grids['as_of'])).days
+    except Exception:
+        stale_days = -1
+    return {
+        'corpus': {'channels': len(items), 'with_transcripts': len(corpus_ids),
+                   'transcripts': corpus_tr, 'as_of': corpus.get('as_of', '')},
+        'snapshot': {'id': grids.get('corpus_id', ''), 'as_of': grids.get('as_of', ''),
+                     'authors': len(raw), 'claims': int(grids.get('count') or 0),
+                     'videos': int((grids.get('thresholds') or {}).get('videos') or 0)},
+        'covered': covered, 'missing': missing, 'unknown': unknown,
+        'stale_days': stale_days,
+        'covered_transcripts': covered_tr,
+        'coverage_authors_pct': round(100 * len(covered) / len(corpus_ids), 1) if corpus_ids else 0,
+        'coverage_transcripts_pct': round(100 * covered_tr / corpus_tr, 1) if corpus_tr else 0,
+        'scope_note': (f'снимок {grids.get("as_of", "")}: {len(covered)} из '
+                       f'{len(corpus_ids)} каналов с расшифровками, {covered_tr} из '
+                       f'{corpus_tr} расшифровок; без вердиктов: '
+                       f'{", ".join(missing) or "нет"}'),
+    }
+
+
+def full_video_scope(corpus):
+    """Покрытие каталога авторов: он обязан показывать весь корпус целиком."""
+    items = corpus.get('items') or []
+    ids = sorted(i['id'] for i in items if i['transcripts'])
+    tr = sum(int(i.get('transcripts') or 0) for i in items)
+    return {
+        'corpus': {'channels': len(items), 'with_transcripts': len(ids),
+                   'transcripts': tr, 'as_of': corpus.get('as_of', '')},
+        'snapshot': {'id': 'FULL-CORPUS', 'as_of': corpus.get('as_of', ''),
+                     'authors': len(ids), 'claims': 0,
+                     'videos': sum(int(i.get('videos_transcribed') or 0) for i in items)},
+        'covered': ids, 'missing': [], 'unknown': [], 'stale_days': 0,
+        'covered_transcripts': tr,
+        'coverage_authors_pct': 100.0 if ids else 0,
+        'coverage_transcripts_pct': 100.0 if tr else 0,
+        'scope_note': f'полный корпус: {len(ids)} каналов с расшифровками, {tr} расшифровок',
+    }
+
+
+def scope_problems(scope, expected):
+    """Сравнить объявленное покрытие с реальным. Возвращает список нарушений."""
+    if not isinstance(scope, dict):
+        return ['нет scope: снимок не объявляет покрытие корпуса']
+    keys = ('corpus', 'snapshot', 'covered', 'missing', 'unknown', 'stale_days',
+            'covered_transcripts', 'coverage_authors_pct',
+            'coverage_transcripts_pct', 'scope_note')
+    problems = [f'scope без поля {k}' for k in keys if k not in scope]
+    if problems:
+        return problems
+    for k in keys:
+        if scope[k] != expected[k]:
+            problems.append(f'scope.{k}: {scope[k]} != {expected[k]}')
+    if expected['unknown']:
+        problems.append('снимок содержит авторов вне корпуса: ' + ', '.join(expected['unknown']))
+    return problems
+
+
+def _grids_scope(d):
+    return video_scope(read_json(SOURCES['video-authors']), d)
+
+
+def build_video_grids_authors(rel, read_at):
+    d = read_json(rel)
+    scope = _grids_scope(d)
+    title = ('⚠ ' if scope['stale_days'] >= 3 else '') + (
+        f'Разборы видео: сетка авторов {scope["snapshot"]["authors"]} из '
+        f'{scope["corpus"]["with_transcripts"]} · снимок {scope["snapshot"]["as_of"]}')
+    return _video_grids_builder('video-grids-authors', 'author', title)(rel, read_at,
+                                                                        scope=scope, title=title)
+
+
+def build_video_grids_videos(rel, read_at):
+    d = read_json(rel)
+    scope = _grids_scope(d)
+    title = ('⚠ ' if scope['stale_days'] >= 3 else '') + (
+        f'Разборы видео: сетка видео {scope["snapshot"]["videos"]} из '
+        f'{scope["corpus"]["transcripts"]} · снимок {scope["snapshot"]["as_of"]}')
+    return _video_grids_builder('video-grids-videos', 'video', title)(rel, read_at,
+                                                                      scope=scope, title=title)
+
+
+def build_video_grids_clusters(rel, read_at):
+    d = read_json(rel)
+    scope = _grids_scope(d)
+    title = ('⚠ ' if scope['stale_days'] >= 3 else '') + (
+        f'Разборы видео: сетка идей 8 кластеров · снимок {scope["snapshot"]["as_of"]}')
+    return _video_grids_builder('video-grids-clusters', 'cluster', title)(rel, read_at,
+                                                                          scope=scope, title=title)
+
+
+def build_video_authors(rel, read_at):
+    """Каталог всех авторов с расшифровками — из state.db, не из снимка N2/67."""
+    corpus = read_json(rel)
+    rows = corpus.get('items') or []
+    values = {f: sorted({str(x.get(f)) for x in rows if x.get(f)})
+              for f in ('status', 'claim_grid')}
+    scope = full_video_scope(corpus)
+    extra = inline_items(rows)
+    extra['scope'] = scope
+    extra['title'] = (f'Разборы видео: все авторы расшифровок '
+                      f'({scope["corpus"]["with_transcripts"]} + '
+                      f'{scope["corpus"]["channels"] - scope["corpus"]["with_transcripts"]})')
+    return view(
+        {'id': 'video-authors',
+         'title': extra['title'],
+         'type': 'cards', 'publish': True, 'group_by': 'status', 'sort_by': 'id',
+         'label_field': 'title', 'value_field': 'id',
+         'meta_fields': ['alias', 'videos', 'videos_transcribed', 'transcripts',
+                         'status', 'claim_grid', 'note', 'scope_note'],
+         'actions': WORK_ACTION},
+        rel, read_at, len(rows),
+        [{'field': 'status', 'values': values['status']},
+         {'field': 'claim_grid', 'values': values['claim_grid']}],
+        extra=extra)
+
+
+def build_video_ideas_tree_count(rel, read_at):
+    base = build_video_ideas_tree(rel, read_at)
+    base['count'] = int((read_json(rel).get('counts') or {}).get('claims', 0))
+    return base
+
+
+def build_video_ideas_tree(rel, read_at):
+    """Дерево смыслов вместо сеток: корень → 4 ветви → 8 кластеров → 40 claim."""
+    d = read_json(rel)
+    nodes = d.get('nodes') or []
+    counts = d.get('counts') or {}
+    statuses = sorted({n.get('status') for b in nodes for c in b.get('children', [])
+                       for n in c.get('children', []) if n.get('status')})
+    scope = _grids_scope(read_json(SOURCES['grids']))
+    stale = '⚠ ' if scope['stale_days'] >= 3 else ''
+    return view(
+        {'id': 'video-ideas-tree',
+         'title': (f'{stale}Разборы видео: дерево смыслов '
+                   f'({counts.get("claims", 0)} утверждений, '
+                   f'снимок {scope["snapshot"]["as_of"]})'),
+         'type': 'tree', 'publish': True, 'group_by': None, 'sort_by': 'id',
+         'label_field': 'name', 'value_field': 'id',
+         'meta_fields': ['status', 'source', 'author', 'video', 'cluster', 'as_of',
+                         'scope_note', 'coverage_authors_pct'],
+         'actions': WORK_ACTION},
+        rel, read_at, len(nodes),
+        [{'field': 'status', 'values': statuses}],
+        extra={'scope': scope})
+
+
 SPECS = [
     ('atlas-tree', 'atlas', build_atlas_tree),
     ('atlas-grids', 'atlas', build_atlas_grids),
     ('atlas-goals', 'atlas', build_atlas_goals),
+    ('task-tree', 'tree', build_task_tree),
     ('prompts-cards', 'prompts', build_prompts),
+    ('prompts-semantic-groups', 'prompts', build_prompts_groups),
+    ('prompts-lenta-3days', 'prompts', build_prompts_3days),
+    ('prompts-opencode-branches', 'prompts', build_prompts_branches),
+    ('prompts-wants-links', 'prompts', build_prompts_wants),
+    ('prompts-verdicts', 'prompts', build_prompts_verdicts),
+    ('prompts-unanswered', 'prompts', build_prompts_unanswered),
     ('cs2-ideas', 'cs2', build_cs2),
     ('confidential-review', 'confidential', build_confidential),
     ('skills', 'skills', build_skills),
     ('elements-table', 'elements', build_elements),
     ('yesno-decisions', 'yesno', build_yesno),
     ('pdf-hub', 'works', build_pdf_hub),
+    ('video-grids-authors', 'grids', build_video_grids_authors),
+    ('video-grids-videos', 'grids', build_video_grids_videos),
+    ('video-grids-clusters', 'grids', build_video_grids_clusters),
+    ('video-ideas-tree', 'video-tree', build_video_ideas_tree_count),
+    ('video-authors', 'video-authors', build_video_authors),
+    ('voice-ideas', 'voiceideas', build_voice_ideas),
+    ('life-ideas', 'lifeideas', build_life_ideas),
 ]
 
 MISSING_META = {
-    'atlas-tree': ('Атлас: дерево сущностей по видам', 'tree', 'kind', 'id', ['kind', 'status']),
+    'atlas-tree': ('Атлас: сущности по видам (связи не визуализируются)', 'tree', 'kind', 'id', ['kind', 'status']),
     'atlas-grids': ('Атлас: сетки (group_by)', 'cards', 'group_by', 'id', ['group_by']),
     'atlas-goals': ('Цели атласа: чек-лист по статусам', 'checklist', 'status', 'id', ['status']),
+    'task-tree': ('Дерево задач (tree.json)', 'tree', 'status', 'id', ['status']),
     'prompts-cards': ('Промпты: карточки с сортировкой по времени', 'cards', 'source', 'ts', ['user']),
+    'prompts-semantic-groups': ('Промпты: дерево из 9 смысловых ветвей', 'tree', None, 'id', ['status', 'user']),
+    'prompts-lenta-3days': ('Промпты: лента последних 3 дней', 'cards', 'source', 'ts', ['age_days']),
+    'prompts-opencode-branches': ('Промпты: ветки сессий OpenCode', 'cards', 'title', 'ts', ['title']),
+    'prompts-wants-links': ('Промпты: связи с хотелками', 'cards', 'want', 'ts', ['want']),
+    'prompts-verdicts': ('Промпты: ответы по получателям', 'cards', 'user', 'ts', ['user']),
+    'prompts-unanswered': ('Промпты: без ответа', 'cards', 'source', 'ts', ['source_label']),
     'cs2-ideas': ('CS2: голосовые идеи по темам', 'table', 'theme', 'voice', ['theme']),
     'confidential-review': ('CONFIDENTIAL: приватный слой и пограничные (текст скрыт)',
                             'checklist', 'section', 'id', ['label']),
@@ -524,6 +965,13 @@ MISSING_META = {
                         ['priority', 'status']),
     'pdf-hub': ('Хаб университетских работ', 'cards', 'source', 'date',
                 ['date', 'status', 'kind', 'source', 'path']),
+    'video-grids-authors': ('Разборы видео: сетка авторов (2) · вердикты по 40 claim', 'cards', 'author', 'id', ['verdict_label', 'verdict_source']),
+    'video-grids-videos': ('Разборы видео: сетка видео (10) · вердикты по 40 claim', 'cards', 'video', 'id', ['verdict_label', 'verdict_source']),
+    'video-grids-clusters': ('Разборы видео: сетка идей (8 кластеров, гейт G3)', 'cards', 'cluster', 'id', ['verdict_label', 'verdict_source']),
+    'video-ideas-tree': ('Разборы видео: дерево смыслов (40 claim, ветвление ≤7)', 'tree', None, 'id', ['status', 'cluster', 'source']),
+    'video-authors': ('Разборы видео: все авторы расшифровок (5 + 1)', 'cards', 'status', 'id', ['alias', 'videos', 'transcripts', 'claim_grid']),
+    'voice-ideas': ('Голосовые идеи: иерархия 115', 'table', 'tier', 'id', ['tier_label', 'status', 'theme']),
+    'life-ideas': ('Не-CS идеи из голосовых', 'cards', 'cat', 'id', ['cat']),
 }
 
 
@@ -579,7 +1027,8 @@ def validate(doc):
             problems.append(f'{v["id"]}: count={v.get("count")!r}')
         if v.get('status') != 'ok' and (v.get('count') != 0 or v.get('publish')):
             problems.append(f'{v["id"]}: missing/parse_error обязан иметь count=0, publish=false')
-        if not isinstance(v.get('provenance', {}).get('exists'), bool):
+        if v.get('id') != 'confidential-review' and not isinstance(
+                v.get('provenance', {}).get('exists'), bool):
             problems.append(f'{v["id"]}: provenance.exists отсутствует')
         if v.get('publish'):
             src = v.get('source')
@@ -599,17 +1048,26 @@ def validate(doc):
         problems.append('в views.json найдено нечто похожее на токен/секрет')
     skills = next((v for v in doc['views'] if v['id'] == 'skills'), None)
     if skills is not None:
-        expected_source = SOURCES.get('skills', SKILLS_SOURCE)
         src = skills.get('source')
-        if not (isinstance(src, list) and src) and src != expected_source:
-            problems.append('skills: source должен быть inline items или ' + expected_source)
-        items = skills.get('items') or []
-        total = skills.get('items_total', len(items))
+        if src != PUB['skills']:
+            problems.append('skills: source должен быть ' + PUB['skills'] + ' (не inline)')
+        if skills.get('publish') and skills.get('status') == 'ok' and not skills.get('count'):
+            problems.append('skills: publish=true, но count=0')
+        total = skills.get('items_total', skills.get('count'))
         if skills.get('count') != total:
             problems.append(f'skills: count={skills.get("count")} != items_total={total}')
-        for it in items:
-            if len(it.get('description') or '') > DESC_LIMIT:
-                problems.append(f'skills: description длиннее {DESC_LIMIT}: {it.get("id")}')
+        if isinstance(skills.get('items'), list) and skills['items']:
+            problems.append('skills: items не должен инлайниться в views.json')
+    cs2 = next((v for v in doc['views'] if v['id'] == 'cs2-ideas'), None)
+    if cs2 is not None:
+        src = cs2.get('source')
+        if src != PUB['cs2']:
+            problems.append('cs2-ideas: source должен быть ' + PUB['cs2'] + ' (не inline)')
+        total = cs2.get('items_total', cs2.get('count'))
+        if cs2.get('count') != total:
+            problems.append(f'cs2-ideas: count={cs2.get("count")} != items_total={total}')
+        if isinstance(cs2.get('items'), list) and cs2['items']:
+            problems.append('cs2-ideas: items не должен инлайниться в views.json')
     el = next((v for v in doc['views'] if v['id'] == 'elements-table'), None)
     if el is not None:
         if el.get('source') != PUB['elements']:
@@ -641,14 +1099,61 @@ def validate(doc):
             problems.append("confidential-review: source должен быть 'local'")
         if conf.get('items'):
             problems.append('confidential-review: items не должен встраиваться в views.json')
-        if 'hint' not in conf:
-            problems.append('confidential-review: нет подписи-намека')
-        if conf.get('provenance_note', {}).get('parse_ok') is not True:
-            problems.append('confidential-review: не пройдена сверка числа записей (16+13)')
+        # R12: публичный манифест содержит только id/publish=false/notice.
+        # Подсказки, агрегаты и абсолютные пути не требуются и не публикуются.
+        if any(k in conf for k in ('hint', 'provenance', 'provenance_note')):
+            problems.append('confidential-review: в публичном манифесте есть приватные метаданные')
+
+    # Системный гейт: любой вид разборов обязан честно объявлять покрытие
+    # снимка относительно полного корпуса расшифровок. Сокрытие разрыва,
+    # выдуманный автор или устаревший счётчик ломают сборку views.json.
+    try:
+        corpus = read_json(SOURCES['video-authors'])
+        grids = read_json(SOURCES['grids'])
+    except Exception:
+        corpus = grids = None
+    if corpus is not None and grids is not None:
+        snap = video_scope(corpus, grids)
+        full = full_video_scope(corpus)
+        by_id = {v.get('id'): v for v in doc['views']}
+        for vid in ('video-grids-authors', 'video-grids-videos',
+                    'video-grids-clusters', 'video-ideas-tree'):
+            v = by_id.get(vid)
+            if v and v.get('status') == 'ok':
+                for problem in scope_problems(v.get('scope'), snap):
+                    problems.append(f'{vid}: {problem}')
+        v = by_id.get('video-authors')
+        if v and v.get('status') == 'ok':
+            for problem in scope_problems(v.get('scope'), full):
+                problems.append(f'video-authors: {problem}')
+    return problems
+
+
+def validate_side(side, views):
+    """Проверить отдельные файлы-источники перед атомарной записью."""
+    problems = []
+    expected = {v.get('source') for v in views
+                if v.get('publish') and v.get('status') == 'ok'
+                and v.get('source') in SIDE_NAMES}
+    if set(side) != expected:
+        problems.append('отдельные источники: ожидались ' + ', '.join(sorted(expected)) +
+                        ', получены ' + ', '.join(sorted(side)))
+    for name, payload in side.items():
+        items = payload.get('items')
+        if not isinstance(items, list):
+            problems.append(f'{name}: отсутствует массив items')
+            continue
+        if payload.get('count') != len(items):
+            problems.append(f'{name}: count != len(items)')
+        if name == PUB['skills']:
+            for it in items:
+                if len(it.get('description') or '') > DESC_LIMIT:
+                    problems.append(f'{name}: description длиннее {DESC_LIMIT}: {it.get("id")}')
     return problems
 
 
 def main():
+    SIDE_OUTPUTS.clear()
     read_at = iso()
     views = []
     for vid, key, builder in SPECS:
@@ -664,18 +1169,29 @@ def main():
             v['status'] = 'parse_error'
             views.append(v)
     doc = {'version': 1, 'built_at': read_at, 'views': views}
-    problems = validate(doc)
+    problems = validate(doc) + validate_side(SIDE_OUTPUTS, views)
     if problems:
         print('ОТКАЗ: views.json НЕ записан:', file=sys.stderr)
         for p in problems[:20]:
             print('  - ' + p, file=sys.stderr)
         return 2
+    # Сначала отдельные источники, затем views.json — иначе spec может сослаться
+    # на ещё не существующий файл. Каждый файл пишется через tmp + os.replace.
+    for name, payload in SIDE_OUTPUTS.items():
+        target = OUT.with_name(name)
+        tmp = OUT.with_name(name + '.tmp')
+        mode = target.stat().st_mode & 0o777 if target.exists() else 0o664
+        tmp.write_text(json.dumps(payload, ensure_ascii=False,
+                                  separators=(',', ':')) + '\n', encoding='utf-8')
+        os.chmod(tmp, mode)
+        os.replace(tmp, target)
+        print(f'OK -> {target} ({target.stat().st_size} байт, items={payload["count"]})')
     tmp = OUT.with_name(OUT.name + '.tmp')
     mode = OUT.stat().st_mode & 0o777 if OUT.exists() else 0o664
     tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     os.chmod(tmp, mode)
     os.replace(tmp, OUT)
-    print(f'OK -> {OUT}')
+    print(f'OK -> {OUT} ({OUT.stat().st_size} байт)')
     print(f'  видов: {len(views)} · publish=true: '
           f'{sum(1 for v in views if v["publish"])} · built_at: {read_at}')
     for v in views:
