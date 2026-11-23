@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T11:14:28+00:00",
-  "generated_human": "23.11 11:14 UTC",
-  "as_of": 1795432468994,
+  "generated": "2026-11-23T11:15:29+00:00",
+  "generated_human": "23.11 11:15 UTC",
+  "as_of": 1795432529832,
   "stale_days": 1,
   "count": 1062,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-vYbGLO5qs7",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795432463000,
+     "ts": 1795432524000,
      "source": "session",
      "title": "Калибровка dot_quality на cyan-сигнал",
      "source_label": "ноут",
@@ -61,7 +61,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795432463000,
+     "as_of": 1795432524000,
      "is_stale": false
     },
     {
@@ -4080,7 +4080,7 @@
     {
      "id": "ses-OHM5gk16g1",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12150. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwt5gb1ny85y: R01bb-c8e6e6: детектор радара cyan as_CT на новом корпусе GRID139BB — 51-я итерация трека R01. Где: goals.json · Источник: 78-top1000-dust2-ingest.md (307 de_dust2 в БД) + разобранные FACEIT-демо. Предрегистрация R01BB-C8E6E6 с гейтом recall>0.50 @ FP<0.10, n>=10 В конце вызови tools.goals.track({action:'done', id:'gmwt5gb1ny85y', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12150_run14370.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795432463000,
+     "ts": 1795432521000,
      "source": "session",
      "title": "Radar Detector Recall Validation on GRID139BB",
      "source_label": "ноут",
@@ -4099,7 +4099,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795432463000,
+     "as_of": 1795432521000,
      "is_stale": false
     },
     {
