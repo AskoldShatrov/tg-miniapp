@@ -985,7 +985,7 @@
           <div class="bk-title">Ключ INVENTORS</div>
           <div class="bk-sub">Settings → API keys в invento.rs. Ключ сохраняется на ноуте с режимом 600 и не показывается обратно в мини-апе.</div>
           <input class="bk-input" id="bkKeyInput" type="password" placeholder="Вставьте ключ API" autocomplete="off">
-          <div class="bk-actions"><button class="btn btn-primary" id="bkSaveKey" type="button">Сохранить ключ</button></div>
+          <div class="bk-actions"><button class="btn btn-primary" id="bkSaveKey" type="button">Сохранить ключ</button><button class="btn" id="bkOpenSite" type="button">Открыть invento.rs</button></div>
         </div>
         <div class="bk-card">
           <div class="bk-title">Как выполняются задачи</div>
@@ -1644,7 +1644,7 @@ async function backupSaveKey(){
   if(input) input.value="";
   const b=d.billing;
   const bal=b&&b.available!=null
-    ? " Проверен: "+b.available+" из "+b.grant+" токенов, сброс "+b.balance_reset
+    ? " Проверен: "+b.available+" из "+b.grant+" токенов, сброс "+b.reset
     : "";
   bkSay("Ключ проверен и сохранён (режим 600)."+bal+" Теперь включите резерв.", "ok");
   if(b&&b.available!=null){const el=$("#bkBalance"); if(el) el.textContent=b.available+" / "+b.grant+" · сброс "+b.reset;}
