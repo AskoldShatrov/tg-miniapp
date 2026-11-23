@@ -331,6 +331,13 @@
   .trow.expanded{background:rgba(137,180,250,.12)}
   .a-meta{font:600 9.5px/1.4 var(--fm);color:var(--overlay1);margin-bottom:6px}
   .a-full{white-space:pre-wrap;word-break:break-word;font:500 11px/1.55 var(--ff);color:var(--text);max-height:46vh;overflow:auto}
+  .a-raw{margin-top:10px;border-top:1px dashed var(--surface1);padding-top:8px}
+  .a-raw h4{margin:0 0 6px;font:700 10px/1.2 var(--fm);color:var(--mauve);letter-spacing:.03em}
+  .a-raw-item{border:1px solid var(--surface1);border-radius:8px;padding:7px 8px;margin:6px 0;background:color-mix(in srgb,var(--base) 70%,transparent)}
+  .a-raw-item .rid{font:600 9.5px/1.2 var(--fm);color:var(--overlay1)}
+  .a-raw-item .ridea{font:500 11px/1.45 var(--ff);color:var(--text);margin-top:3px}
+  .a-raw-item .rquote{font:400 10.5px/1.45 var(--ff);color:var(--subtext0);margin-top:4px;white-space:pre-wrap}
+  .a-raw-item .rmeta{font:600 9px/1.2 var(--fm);color:var(--overlay0);margin-top:4px}
   .a-query{display:flex;gap:6px;margin-top:10px}
   .a-query input{flex:1;min-width:0;border:1px solid var(--surface1);border-radius:8px;background:var(--surface1);color:var(--text);padding:9px;font:500 12px/1.3 var(--ff)}
   .a-query button{border:0;border-radius:8px;padding:9px 12px;cursor:pointer;background:var(--blue);color:var(--crust);font:700 11px/1 var(--fm)}
@@ -2399,9 +2406,9 @@ setInterval(refreshReplies, 5000);
   /* @auto:poll-prompts:end */
 
 /* ---------- атлас: интерактивные деревья одного графа ---------- */
-let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={}, ATLAS_OPEN_KEY=null;
-const ATLAS_KIND={author:"автор",video:"видео",claim:"утверждение",verdict:"вердикт",hypothesis:"гипотеза",want:"хотелка",goal:"цель",group:"ветка",ref:"проверка"};
-const ATLAS_STATUS={open:"открыто",done:"готово",deferred:"отложено",doing:"в работе",pass:"подтверждено",verified:"проверено",fail:"опровергнуто",refuted:"опровергнуто",measuring:"измеряется",signal:"сигнал",noise:"шум",false:""};
+let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={}, ATLAS_OPEN_KEY=null, ATLAS_VOICE_BY_HYP={};
+const ATLAS_KIND={author:"автор",video:"видео",claim:"утверждение",verdict:"вердикт",hypothesis:"гипотеза",want:"хотелка",goal:"цель",group:"ветка",ref:"проверка",raw_card:"сырая карточка",rawcard:"сырая карточка",voicesig:"голосовой сигнал"};
+const ATLAS_STATUS={open:"открыто",done:"готово",deferred:"отложено",doing:"в работе",pass:"подтверждено",verified:"проверено",fail:"опровергнуто",refuted:"опровергнуто",measuring:"измеряется",signal:"сигнал",noise:"шум",hidden:"скрыто (личное)",false:""};
 function atlasBadge(raw){
   const s=String(raw||"open");
   const k=(s==="pass"||s==="verified"||s==="done"||s==="signal")?"PASS":((s==="fail"||s==="refuted"||s==="noise")?"FAIL":"OPEN");
@@ -2436,8 +2443,15 @@ function atlasDetail(n,row){
   if(!box) return;
   if(ATLAS_OPEN_KEY===n.__k && box.classList.contains("open")){ atlasCloseDetail(); return; }
   atlasCloseDetail();
+  const rawItems = Array.isArray(n.raw) ? n.raw : [];
+  const rawHtml = rawItems.length ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки (${rawItems.length})</div>${rawItems.map(r=>{
+    const voice = esc(String(r.voice||""));
+    const themes = Array.isArray(r.themes) ? r.themes.map(t=>esc(String(t))).join(", ") : "";
+    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${themes?`<span class="a-raw-themes">${themes}</span>`:""}</div>`;
+  }).join("")}</div>` : "";
   box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
     <div class="a-full">${esc(n.full||n.answer||n.title||"")}</div>
+    ${rawHtml}
     <div class="a-query"><input class="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
   box.classList.add("open");
   row.classList.add("expanded");
@@ -2466,6 +2480,18 @@ function atlasDetail(n,row){
   if(btn) btn.addEventListener("click",send);
   const inp=box.querySelector(".atlasQuery");
   if(inp) inp.addEventListener("keydown",e=>{ if(e.key==="Enter"){ e.preventDefault(); send(); } });
+  box.querySelectorAll('[data-role="voice-link"]').forEach(btn=>{
+    btn.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const voice = btn.getAttribute("data-voice") || "";
+      if(!voice) return;
+      if(typeof setTab === "function") setTab("prompts");
+      if(window.__miniappViews && typeof window.__miniappViews.selectView === "function"){
+        window.__miniappViews.selectView("cs2-ideas");
+        if(typeof window.__miniappViews.setSearch === "function") window.__miniappViews.setSearch(voice);
+      }
+    });
+  });
 }
 function renderAtlas(){
   if(!ATLAS) return;
