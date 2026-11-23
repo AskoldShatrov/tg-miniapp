@@ -1567,14 +1567,14 @@ if (tg) {
 let LATEST_STATUS = null;      // последний успешно прочитанный status.json
 let API_LAST_ERROR = "";       // текст последней ошибки — для тостов
 const apiWarned = {};          // логируем сбой каждого эндпоинта только раз
-async function api(path, body){
+async function api(path, body, timeoutMs){
   const raw = (LATEST_STATUS && LATEST_STATUS.process_api_url) ? LATEST_STATUS.process_api_url : "";
   const base = raw ? String(raw).replace(/\/+$/,"") : "";
   if(!base) return null;
   const wa = (typeof window!=="undefined" && window.Telegram && window.Telegram.WebApp) ? window.Telegram.WebApp : null;
   const initData = (wa && wa.initData) ? wa.initData : "";
   const ctl = new AbortController();
-  const timer = setTimeout(()=>ctl.abort(), 6000);
+  const timer = setTimeout(()=>ctl.abort(), timeoutMs||6000);
   API_LAST_ERROR = "";
   try{
     const opt = {method: body===undefined?"GET":"POST", headers:{}, signal:ctl.signal, cache:"no-store"};
@@ -1605,7 +1605,7 @@ function bkSay(text, cls){
   el.className="bk-msg"+(cls?" "+cls:"");
 }
 async function backupLoad(){
-  const d=await api("/backup/status");
+  const d=await api("/backup/status",undefined,20000);
   if(!d){ bkSay("не удалось прочитать статус: "+apiErr(), "err"); return; }
   const state=$("#bkState");
   if(state){
@@ -1635,7 +1635,7 @@ async function backupSaveKey(){
   const key=input?String(input.value||"").trim():"";
   if(key.length<16){ bkSay("Ключ слишком короткий", "err"); return; }
   bkSay("Сохраняю ключ…");
-  const d=await api("/backup/key",{key:key});
+  const d=await api("/backup/key",{key:key},20000);
   if(!d){ bkSay("не удалось сохранить: "+apiErr(), "err"); return; }
   if(input) input.value="";
   bkSay("Ключ сохранён на ноуте (режим 600). Теперь включите резерв.", "ok");
@@ -1645,14 +1645,14 @@ async function backupToggle(){
   const st=$("#bkState");
   const on=st?st.textContent==="ВКЛЮЧЁН":false;
   bkSay(on?"Выключаю резерв…":"Включаю резерв…");
-  const d=await api("/backup/toggle",{enabled:!on});
+  const d=await api("/backup/toggle",{enabled:!on},20000);
   if(!d){ bkSay("не удалось переключить: "+apiErr(), "err"); return; }
   bkSay(d.enabled?"Резерв включён: INVENTORS подключен в конце цепочки бота.":"Резерв выключен.", "ok");
   backupLoad();
 }
 async function backupTest(){
   bkSay("Отправляю тестовый запрос в INVENTORS…");
-  const d=await api("/backup/test",{});
+  const d=await api("/backup/test",{},180000);
   if(!d){ bkSay("тест не прошёл: "+apiErr(), "err"); return; }
   if(d.ok) bkSay("Тест прошёл за "+d.seconds+" с · «"+String(d.preview||"").slice(0,60)+"»", "ok");
   else bkSay("Тест FAIL: "+(d.error||"нет деталей"), "err");
