@@ -2286,11 +2286,12 @@ function atlasDetail(n,row){
   };
   const btn=box.querySelector("button[data-act='ask']");
   if(btn) btn.addEventListener("click",send);
-  const inp=$("#atlasQuery");
+  const inp=box.querySelector(".atlasQuery");
   if(inp) inp.addEventListener("keydown",e=>{ if(e.key==="Enter"){ e.preventDefault(); send(); } });
 }
 function renderAtlas(){
   if(!ATLAS) return;
+  ATLAS_OPEN_KEY=null;
   const tabs=$("#atlasGrids"), cards=$("#atlasCards");
   if(!tabs||!cards) return;
   const trees=Array.isArray(ATLAS.trees)?ATLAS.trees:[];
@@ -2311,21 +2312,23 @@ function renderAtlas(){
   $$("#atlasCards .a-ask").forEach(b=>b.addEventListener("click",ev=>{
     ev.stopPropagation();
     const n=ATLAS_LOOKUP[b.dataset.key];
-    if(n) atlasDetail(n);
+    if(n) atlasDetail(n,b.closest(".trow"));
   }));
   $$("#atlasCards .trow").forEach(row=>row.addEventListener("click",()=>{
-    const box=row.nextElementSibling, tw=row.querySelector(".twist");
-    if(box&&box.classList.contains("children")){
+    const host=row.closest(".tnode");
+    const box=host&&Array.from(host.children).find(el=>el.classList.contains("children"));
+    const tw=row.querySelector(".twist");
+    if(box){
       box.classList.toggle("open");
       if(tw) tw.classList.toggle("open");
     }
     const n=ATLAS_LOOKUP[row.dataset.key];
-    if(n) atlasDetail(n);
+    if(n) atlasDetail(n,row);
   }));
   // первый уровень раскрыт сразу: нужная ветка доступна за ≤2 тапа
   $$("#atlasCards > .tree > .tnode > .children").forEach(box=>{
     box.classList.add("open");
-    const row=box.previousElementSibling;
+    const row=box.closest(".tnode")?.querySelector(".trow");
     const tw=row?row.querySelector(".twist"):null;
     if(tw) tw.classList.add("open");
   });
