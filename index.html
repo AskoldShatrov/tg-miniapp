@@ -1639,14 +1639,17 @@ async function backupSaveKey(){
   const key=input?String(input.value||"").trim():"";
   if(key.length<16){ bkSay("Ключ слишком короткий", "err"); return; }
   bkSay("Сохраняю ключ…");
-  const d=await api("/backup/key",{key:key},20000);
+  const d=await api("/backup/key",{key:key},180000);
   if(!d){ bkSay("не удалось сохранить: "+apiErr(), "err"); return; }
   if(input) input.value="";
   const b=d.billing;
   const bal=b&&b.available!=null
     ? " Проверен: "+b.available+" из "+b.grant+" токенов, сброс "+b.reset
     : "";
-  bkSay("Ключ проверен и сохранён (режим 600)."+bal+" Теперь включите резерв.", "ok");
+  const p=d.probe;
+  const probe=p ? (p.ok ? " Тест прошёл за "+p.seconds+" с: «"+String(p.preview||"").slice(0,40)+"»."
+                       : " Тест не прошёл: "+(p.error||"нет деталей")+".") : "";
+  bkSay("Ключ проверен, сохранён и включён."+bal+probe, p&&p.ok?"ok":"err");
   if(b&&b.available!=null){const el=$("#bkBalance"); if(el) el.textContent=b.available+" / "+b.grant+" · сброс "+b.reset;}
   backupLoad();
 }
