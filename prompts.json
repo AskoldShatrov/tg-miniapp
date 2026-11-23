@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T22:34:40+00:00",
-  "generated_human": "23.11 22:34 UTC",
-  "as_of": 1795473280310,
+  "generated": "2026-11-23T22:35:43+00:00",
+  "generated_human": "23.11 22:35 UTC",
+  "as_of": 1795473343822,
   "stale_days": 1,
   "count": 1053,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-QdFOKHuVSr",
      "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на расширенном корпусе (320 демо, 7 карт). Честно отделить pooled от contested. Новый отчёт ~/overnight/open_tracks/T05-t1c-coverage.md. Не переоткрывать закрытые T1/wp_v3 (см. MASTERPLAN-v2 §2.1). ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795473278000,
+     "ts": 1795473334000,
      "source": "session",
      "title": "T5 T1c coverage gate and report",
      "source_label": "ноут",
@@ -61,7 +61,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795473278000,
+     "as_of": 1795473334000,
      "is_stale": false
     },
     {
@@ -4281,20 +4281,20 @@
     {
      "id": "ses-pV3AXyMJgs",
      "text": "Уточнение пользователя по твоей задаче S03-GT: в T29.1 «>3 карты» означало НЕ разные карты/мапы, а >3 игр/демо/матчей. Пересмотри предрегистрацию и гейт: нужно ≥60 уникальных кадров, ≥3 различных демо/матча, SHA заморожены, настоящие cyan-FP без side-артефакта. Разнообразие мапов не требуется. Если в существующих gt_realgt_05/06 и gt_sf_g2 можно доказать ≥3 разных демо/матча по gsi/meta — используй их; если demo_id в метаданных отсутствует, честно зафиксируй это как OPEN по proofs и добавь требование писать demo_id в новые capture-meta. Не трать время на поиск третьей карты.",
-     "ts": 1795473278000,
+     "ts": 1795473287000,
      "source": "session",
      "title": "DSH delegation",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795473278000,
+     "as_of": 1795473287000,
      "is_stale": false
     },
     {
      "id": "ses-pV3AXyMJgs-2",
      "text": "Задача S03-GT (новая сессия, только твоя зона файлов). Цель: реально продвинуть T29.1 — собрать новый REAL GT-корпус для калибровки радарного детектора cyan: >=60 уникальных кадров, >3 карты, SHA заморожены до сбора; FP должны быть настоящими ложными срабатываниями cyan-детектора, а не side-артефактом (`legacy_enemy`), SYNTHETIC не смешивать.\n\nОбязательно:\n1. Загрузи через tool skill `hypothesis-check`, зафиксируй пороги через `prereg.py init` ДО сбора/расчёта, ID возьми свободный из ~/scripts/background/hypothesis_backlog.jsonl.\n2. Известные факты (проверены): в ~/scanfeed/data/realgt_batch/runs 27 369 строк GSI, у всех allplayers=10, карты de_dust2 18 609 и de_mirage 8 760; UNBLK1 закрыт на 180 кадрах de_dust2; S02ch дал ECE 0.0075 pooled, но AUC 0.461 и ECE 0.2514 на S01CJ с side-артефактом.\n3. Проверь через pc-bridge (`~/pc-bridge/dispatch.py`, lane normal) состояние CS2 и список доступных демо. НЕ перезапускай CS2, воркер, мост; НЕ мешай пользователю, если он играет. Если третью карту можно захватить существующим `~/scanfeed/tools/realgt_capture_batch.py --attempt-capture --speed 4` без вмешательства — сделай. Если объективно нельзя — подготовь готовый capture-kit и зафиксируй OPEN с точной командой и владельцем, а не выдумывай данные.\n4. НЕ трогай progress.json, claims.json, ~/scanfeed/data/ (кроме новых подкаталогов с уникальным RUN_ID), чужие отчёты S01/S02/O01, draft_gate.py.\n5. Новый отчёт: ~/overnight/open_tracks/S03-GT-REAL.md с R13-проверкой MANIFEST и финальной строкой АРТЕФАКТ: <путь> <sha256|ISO-mtime> <гейт>. Отрицательный результат фиксируй наравне с успехом.\n\nВерни кратко: путь отчёта, sha256, mtime, сколько кадров/карт реально закрыто, что осталось OPEN и почему.",
-     "ts": 1795473278000,
+     "ts": 1795473287000,
      "source": "session",
      "title": "DSH delegation",
      "source_label": "ноут",
@@ -4313,7 +4313,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795473278000,
+     "as_of": 1795473287000,
      "is_stale": false
     },
     {
