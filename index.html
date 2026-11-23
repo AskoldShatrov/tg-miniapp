@@ -1642,7 +1642,12 @@ async function backupSaveKey(){
   const d=await api("/backup/key",{key:key},20000);
   if(!d){ bkSay("не удалось сохранить: "+apiErr(), "err"); return; }
   if(input) input.value="";
-  bkSay("Ключ сохранён на ноуте (режим 600). Теперь включите резерв.", "ok");
+  const b=d.billing;
+  const bal=b&&b.available!=null
+    ? " Проверен: "+b.available+" из "+b.grant+" токенов, сброс "+b.balance_reset
+    : "";
+  bkSay("Ключ проверен и сохранён (режим 600)."+bal+" Теперь включите резерв.", "ok");
+  if(b&&b.available!=null){const el=$("#bkBalance"); if(el) el.textContent=b.available+" / "+b.grant+" · сброс "+b.reset;}
   backupLoad();
 }
 async function backupToggle(){

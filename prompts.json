@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T04:54:12+00:00",
-  "generated_human": "23.11 04:54 UTC",
-  "as_of": 1795409652275,
+  "generated": "2026-11-23T04:55:12+00:00",
+  "generated_human": "23.11 04:55 UTC",
+  "as_of": 1795409712130,
   "stale_days": 1,
   "count": 1156,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-IMw5rBJ17w",
      "text": "ТЫ — менеджер 20-часового мандата (роль надзирателя, не исполнителя чужих задач).\nОбязательно загрузи через tool skill: progress и ready-to-deliver.\n\nПрочитай (не целиком огромные файлы, а точечно):\n1. ~/overnight/manager_status.json — здоровье экосистемы;\n2. `python3 ~/.config/opencode/scripts/progress.py --no-color --ascii` — сводка;\n3. свежие отчёты ~/overnight/cloud_tracks/*.md (только шапки и хвосты, самые новые 5–8);\n4. ~/overnight/manager_cycle_digest.md если есть — предыдущий цикл.\n\nСДЕЛАЙ:\n- Найди running-шаги старше 30 мин и все blocked. Для каждого живого, но тихого\n  шага сделай `python3 ~/.config/opencode/scripts/progress.py step work <T> <step> --note \"менеджер: проверка < что >\"`;\n  для блокера — `event <T> --text \"…\"` с причиной и владельцем. Не выдумывай гейты.\n- Проверь, работают ли все агенты/диалоги из статуса; если агент мёртв, а сервис\n  жив — зафиксируй причину в лог цикла, не перезапускай вручную (это делает watchdog).\n- Если нашёл дефект в доступной зоне — попытайся исправить; если нельзя — честный\n  OPEN с владельцем и готовым путём, не сваливай на пользователя.\n- Напиши КОРОТКИЙ отчёт ~/overnight/manager_cycle_digest.md (вердикт HEALTHY /\n  NEEDS_ATTENTION, найденное, действия, OPEN). Не перезаписывай чужие отчёты.\n\nЗАПРЕТ: data/, защищённые отчёты 64/71/103, платные модели, правка progress.json\nнапрямую (только CLI), вопросы пользователю, остановка шин/воркеров.\nНе спрашивай — действуй в доступной зоне и честно фиксируй OPEN.",
-     "ts": 1795409647000,
+     "ts": 1795409705000,
      "source": "session",
      "title": "20-часовой мандат менеджера",
      "source_label": "ноут",
@@ -60,7 +60,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795409647000,
+     "as_of": 1795409705000,
      "is_stale": false
     },
     {
@@ -918,7 +918,7 @@
     {
      "id": "ses-Q98oAbxq9h",
      "text": "ПРОРАБОТКА ОВЕРЛЕЯ, P0-1. Проверить через pc-bridge/GSI один кадр реального матча с allplayers>0 и проверить оверлей в кадре: деньги/бай/AWP под иконками. Если allplayers недоступны — честно зафиксировать как блокер с причиной и n попыток. Новый отчёт ~/overnight/open_tracks/O01-overlay-allplayers.md. Не трогать data/ и 44/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795409642000,
+     "ts": 1795409704000,
      "source": "session",
      "title": "Проверка оверлея при allplayers>0",
      "source_label": "ноут",
@@ -937,7 +937,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795409642000,
+     "as_of": 1795409704000,
      "is_stale": false
     },
     {
@@ -7273,14 +7273,14 @@
     {
      "id": "ses-7faW35r065",
      "text": "прием как работа идет?",
-     "ts": 1795409597000,
+     "ts": 1795409667000,
      "source": "session",
      "title": "opencode API в deepseek harness",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795409597000,
+     "as_of": 1795409667000,
      "is_stale": false
     },
     {
@@ -7518,14 +7518,14 @@
     {
      "id": "ses-7faW35r065-2",
      "text": "причем как работа идет? до этого тг мини апп работал с опен кодом сможешь ли ты перевести его на дипсик харнесс?",
-     "ts": 1795409597000,
+     "ts": 1795409667000,
      "source": "session",
      "title": "opencode API в deepseek harness",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795409597000,
+     "as_of": 1795409667000,
      "is_stale": false
     },
     {
