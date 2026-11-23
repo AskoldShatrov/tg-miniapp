@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "built_at": "2026-11-23T05:12:37+00:00",
+  "built_at": "2026-11-23T06:39:50+00:00",
   "views": [
     {
       "id": "atlas-tree",
       "title": "Атлас: сущности по видам (126 связей не визуализируются)",
       "type": "tree",
       "source": "atlas.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 589,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 631,
       "publish": true,
       "group_by": "kind",
       "sort_by": "id",
@@ -37,6 +37,8 @@
             "pass",
             "refuted",
             "signal",
+            "subtitles_complete",
+            "subtitles_partial",
             "verified"
           ]
         }
@@ -59,10 +61,10 @@
         "file": "shared-repo/bots/miniapp/atlas.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/atlas.json",
         "exists": true,
-        "size_bytes": 1311758,
-        "mtime_utc": "2026-11-23T01:58:17+00:00",
-        "sha256": "d8ffe9ada1001ffd2c27673acbf881f2560885c042d2b8b76cb20dea96b52299",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 1715486,
+        "mtime_utc": "2026-11-23T06:38:24+00:00",
+        "sha256": "d61999b78a0c3561e1640ea7383dc5be85fd6a98a9fceb0d23daac468d7b14a6",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -70,8 +72,8 @@
       "title": "Атлас: сетки (group_by)",
       "type": "cards",
       "source": "atlas.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 5,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 6,
       "publish": true,
       "group_by": "group_by",
       "sort_by": "id",
@@ -81,6 +83,7 @@
           "values": [
             "author",
             "chain",
+            "hypothesis",
             "status",
             "theme",
             "video"
@@ -104,10 +107,10 @@
         "file": "shared-repo/bots/miniapp/atlas.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/atlas.json",
         "exists": true,
-        "size_bytes": 1311758,
-        "mtime_utc": "2026-11-23T01:58:17+00:00",
-        "sha256": "d8ffe9ada1001ffd2c27673acbf881f2560885c042d2b8b76cb20dea96b52299",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 1715486,
+        "mtime_utc": "2026-11-23T06:38:24+00:00",
+        "sha256": "d61999b78a0c3561e1640ea7383dc5be85fd6a98a9fceb0d23daac468d7b14a6",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -115,8 +118,8 @@
       "title": "Цели атласа: чек-лист по статусам",
       "type": "checklist",
       "source": "atlas.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 206,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 235,
       "publish": true,
       "group_by": "status",
       "sort_by": "id",
@@ -146,10 +149,10 @@
         "file": "shared-repo/bots/miniapp/atlas.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/atlas.json",
         "exists": true,
-        "size_bytes": 1311758,
-        "mtime_utc": "2026-11-23T01:58:17+00:00",
-        "sha256": "d8ffe9ada1001ffd2c27673acbf881f2560885c042d2b8b76cb20dea96b52299",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 1715486,
+        "mtime_utc": "2026-11-23T06:38:24+00:00",
+        "sha256": "d61999b78a0c3561e1640ea7383dc5be85fd6a98a9fceb0d23daac468d7b14a6",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -157,7 +160,7 @@
       "title": "Дерево задач: 48 корней / 254 узлов",
       "type": "tree",
       "source": "tree.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 254,
       "publish": true,
       "group_by": "status",
@@ -189,9 +192,9 @@
         "abs": "/home/nyaka/shared-repo/bots/miniapp/tree.json",
         "exists": true,
         "size_bytes": 38633,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
         "sha256": "f58f587dea49c3df7589dfbb769fa544cc6016368fd745c711d587da7240bc10",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "root_count": 48,
       "node_count": 254,
@@ -202,8 +205,8 @@
       "title": "Промпты: карточки с сортировкой по времени",
       "type": "cards",
       "source": "prompts.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 1081,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 1078,
       "publish": true,
       "group_by": "source",
       "sort_by": "ts",
@@ -242,10 +245,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -253,8 +256,8 @@
       "title": "Промпты: дерево из 9 смысловых ветвей",
       "type": "tree",
       "source": "prompts-groups.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 1081,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 1078,
       "publish": true,
       "group_by": null,
       "sort_by": "id",
@@ -270,7 +273,6 @@
             "Память, цели и хотелки",
             "Прогресс, гейты и claims",
             "Разное",
-            "Сеть, VPN и доступ",
             "Экономика и оверлей CS2"
           ]
         }
@@ -294,10 +296,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -305,8 +307,8 @@
       "title": "Промпты: лента последних 3 дней",
       "type": "cards",
       "source": "prompts-3days.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 997,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 984,
       "publish": true,
       "group_by": "source",
       "sort_by": "ts",
@@ -340,10 +342,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -351,8 +353,8 @@
       "title": "Промпты: ветки сессий OpenCode",
       "type": "cards",
       "source": "prompts-branches.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 805,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 802,
       "publish": true,
       "group_by": "title",
       "sort_by": "ts",
@@ -360,30 +362,83 @@
         {
           "field": "title",
           "values": [
+            "**Начинаю реализацию.** Сначала читаю источники: реестр гипотез, сырые карточки и Атлас.",
+            "**Принято.** Делаю мост между гипотезами (`MASTER_IDEAS-2026-11-23.json`) и сырыми карточками (`C...",
+            "**Проверю структуру, потом реализую.**",
             "20-часовой мандат менеджера",
+            "20-часовой цикл менеджера overnight",
             "AU12123 hypothesis verification",
             "AU12124 T05/T1c coverage gate",
             "AU12128: гипотеза C02-13554",
+            "AU12131 real-frame CV gate check",
+            "AU12132: проверка оверлея P0-1",
+            "AU12133 T4 donk-бенчмарк",
+            "AU12135: T5/T1c coverage gate hypothesis",
+            "AU12137 confidence calibration check",
+            "AU12139 replication hypothesis check",
+            "AU12140 radar detector hypothesis",
+            "AU12141 small-radar hypothesis check",
+            "AU12142 hypothesis check: C10-13658 dust2 top1000",
+            "Atlas raw card links",
             "C02-13506 detector confidence calibration",
             "CS2 dust2 cyan detector validation",
             "CS2 оверлей и pc-bridge/GSI",
             "Cloud tracks reconciliation with claims.json",
             "Confidence калибровка детектора на REAL-кадрах",
+            "DSH delegation",
             "Detector confidence calibration on fresh REAL frames",
             "Dot_quality cyan retraining with nested CV",
+            "Dust2 top1000 download budget",
+            "Dust2 top1000 download budget check",
+            "Dust2 top1000 download budget plan",
+            "Dust2 top1000 download plan",
             "EVOLUTION.md обновление по C16-13344",
+            "Exact response requested: pong",
+            "Exact word response: pong",
             "FACEIT dust2 REAL scanfeed calibration",
             "FACEIT spectator radar access in new corpus",
             "FaceIT Dust2 demo duels parsing",
             "FaceIT Dust2 demo parsing via pc-bridge",
             "FaceIT Dust2 demo дуэли через pc-bridge",
+            "GRID127AX radar detector hypothesis AU12140",
+            "Greeting",
+            "HLTV/FACEIT feed and report checks",
+            "HLTV/FACEIT feed verification",
             "HLTV/FACEIT feed verification report",
             "Nested CV for cyan dot_quality calibration",
+            "OK response",
+            "One word answer: pong",
+            "One word reply: pong",
+            "One word request: pong",
+            "One word response: pong",
+            "Overnight manager cycle checks",
+            "Overnight manager cycle health check",
+            "Overnight manager cycle status",
+            "PONG",
+            "Ping pong response",
+            "Pong response",
+            "R01 cyan recall gate report",
             "RADAR confidence calibration on fresh REAL frames",
             "REAL confidence calibration report",
+            "REAL scanfeed calibration with FACEIT data",
+            "REAL-набор scanfeed и калибровка dot_quality",
+            "Radar detector on new FACEIT corpus",
+            "Response with one word: pong",
+            "S02 dot-quality ECE gate under cyan",
+            "S02 dot-quality под cyan hypothesis check",
             "SCANFID T4 OPEN evaluation report",
+            "Scancfeed corrected handoff v2",
+            "Scanfeed REAL кадровая калибровка T4",
+            "Scanfeed handoff fix v2",
+            "Scanfeed survivor vision v2",
+            "Session title from messages",
+            "Single word reply: pong",
             "T1c 320/320 предварительно зарегистрированный гейт",
+            "T1c contested AUC preregistered test",
+            "T4 донк-бенчмарк с REAL FP",
             "T5 T1c coverage gate for 320 positions",
+            "T5 T1c coverage report gate",
+            "T5/T1c contested AUC coverage gate",
             "autopilot-evo1",
             "autopilot-evo2",
             "autopilot-evo3",
@@ -395,22 +450,30 @@
             "autopilot-evo9",
             "dot_quality cyan calibration and CV",
             "los_v4.py sort-после-индексации",
-            "lree-QR-CLM-51476ea3-c285",
             "lree-QR-CLM-acbacfcc-c292",
             "lree-QR-GOAL-0f5b6d35-c344",
             "lree-QR-GOAL-132c6d52-c317",
+            "lree-QR-GOAL-1bd1d66d-c374",
             "lree-QR-GOAL-311ba5b2-c313",
+            "lree-QR-GOAL-31385f71-c376",
+            "lree-QR-GOAL-3a1f7c03-c367",
+            "lree-QR-GOAL-5258f26a-c370",
             "lree-QR-GOAL-540f22eb-c312",
-            "lree-QR-GOAL-9edf3c1c-c287",
+            "lree-QR-GOAL-7f823f9b-c385",
             "lree-QR-GOAL-9ff0d080-c365",
+            "lree-QR-GOAL-a93c0b75-c377",
             "lree-QR-GOAL-c0b6242e-c314",
-            "lree-QR-GOAL-c55ee9b8-c289",
+            "lree-QR-GOAL-e3243283-c375",
             "lree-QR-GOAL-ef0cc2d2-c318",
-            "lree-QR-GOAL-fadac70d-c286",
+            "lree-QR-GOAL-fcef3794-c369",
+            "lree-QR-HYP-07f5a3db-c373",
+            "lree-QR-HYP-2d52a66b-c372",
             "lree-QR-HYP-3adf66d3-c366",
+            "lree-QR-HYP-73a15394-c368",
             "lree-QR-IDEA-234cbeb9-c315",
-            "lree-QR-IDEA-2ffe4f0c-c288",
+            "lree-QR-IDEA-358a8ad5-c371",
             "lree-QR-IDEA-6125b9e7-c291",
+            "lree-QR-IDEA-7c8055f2-c381",
             "lree-QR-IDEA-b401e4db-c316",
             "lree-QR-IDEA-f80ccbf2-c290",
             "opencode API в deepseek harness",
@@ -422,24 +485,49 @@
             "verify-evo6",
             "verify-evo7",
             "verify-evo8",
+            "verify-evo9",
             "verify:failover-paid-ban:20261123-035706",
             "verify:paid-manual-only:20261123-040506",
             "verify:quota-console:20261123-051230",
+            "wanted-задача w261123053459cf23: overlay с деньгами и AWP",
+            "Автороутинг Longcat 2.5 Free",
+            "Автороутинг OpenCode model unavailable",
             "Безостановочный спам при недоступной модели",
+            "Выборочная закачка top1000 по Dust2",
+            "Гейт c49 для CV-зрения на 12 кадрах",
+            "Голосовые Ивана и Аскольда",
             "Детектор confidence на REAL-кадрах",
             "Детектор confidence: ECE и Brier на REAL-кадрах",
+            "Дипсик харнесс сломался",
+            "Запрос на ответ OK",
+            "Запрос ответа OK",
             "Калибровка confidence детектора на REAL-кадрах",
             "Калибровка confidence на REAL-кадрах",
             "Калибровка confidence радара на REAL-кадрах",
             "Калибровка dot_quality под cyan-сигнал",
+            "Калибровка scanfeed ECE и регресс T29.6",
+            "Короткий ответ OK",
             "Малый радар в spectator-режиме FACEIT-демо",
+            "Менеджерский цикл экосистемы overnight",
+            "Мониторинг overnight-экосистемы",
             "Надзор за 20-часовым мандатом",
+            "Начинаю с проверки реального состояния: конфликты, структура файлов и то, что я реально уже делал...",
+            "Новый корпус cyan для радара CS2",
             "Новый корпус cyan-радара FACEIT",
             "Ночной цикл менеджера экосистемы",
+            "ОВЕРЛЕЙ P0-1: проверка allplayers",
+            "Оверлей матча и allplayers через GSI",
+            "Оверлей матча и проверка GSI",
+            "Ответ OK",
+            "Ответ ровно OK",
+            "Ответить OK",
             "Отключение платных моделей в автопереключении",
             "Отчёт C11-13339 по demoparser v4",
+            "План закачки top1000 по dust2",
             "Поиск бесплатных Groq ключей",
+            "Покрытие T5 и гейт T1c",
             "Польза MCP в opencode_console",
+            "Посмотрю на структуру атласа и сырых карточек — прежде чем предлагать, куда подключить.",
             "Почему так Image 1",
             "Проверка C15-13375 и claims.json",
             "Проверка гипотезы AU12119",
@@ -449,18 +537,32 @@
             "Проверка гипотезы AU12125 на FACEIT-демо",
             "Проверка гипотезы AU12126",
             "Проверка гипотезы AU12127",
+            "Проверка гипотезы AU12129",
+            "Проверка гипотезы AU12136 R01 радар cyan",
+            "Проверка гипотезы AU12138",
             "Проверка калибровки confidence детектора на REAL-кадрах",
+            "Проверка малого радара в FACEIT-демо",
             "Проверка оверлея allplayers через pc-bridge/GSI",
+            "Проверка оверлея при allplayers>0",
+            "Проверка оверлея с allplayers via GSI",
             "Проверка отчётов cloud_tracks и hypothesis",
             "РАДАР confidence калибровка детектора",
             "РАДАР тепловые карты зон",
+            "Радар в spectator-режиме FACEIT-демо",
             "Радар в spectator/overview FACEIT-демо",
+            "Разберусь, что именно называется «плюсами» и «сырыми карточками» в атласе. Посмотрю структуру atl...",
+            "СКАНФИД T4 OPEN: REAL-набор и ECE",
             "СКАНФИД: ложные срабатывания и трек на 3 кадра",
+            "Сверка HLTV/FACEIT-фида C07-13783",
             "Сверка cloud_tracks и hypothesis с claims.json",
+            "Связь гипотез с карточками в атласе",
+            "Сканфид хендофф v2",
+            "Сканфид: исправленный хендофф v2",
             "Сканфид: одинаковое изображение на ПК",
             "Совет по вопросу per_205e2433c001",
             "Совет по вопросу per_2060623b9001",
             "Тест",
+            "Точный ответ OK",
             "ФИД cleanup-список и C08-13352.md",
             "ФИД инвентарь и cleanup-список"
           ]
@@ -487,10 +589,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -498,8 +600,8 @@
       "title": "Промпты: связи с хотелками",
       "type": "cards",
       "source": "prompts-wants.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 732,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 660,
       "publish": true,
       "group_by": "want",
       "sort_by": "ts",
@@ -507,7 +609,10 @@
         {
           "field": "want",
           "values": [
+            "w26111909050902b4",
             "w26111909050929f4",
+            "w2611190905099141",
+            "w2611190905099d36",
             "w261119090518006d",
             "w2611191907416032",
             "w26111919074178dc",
@@ -518,6 +623,7 @@
             "w261120005246786d",
             "w2611200052468b4b",
             "w261120005246a1ca",
+            "w261120005246c70b",
             "w2611200241431d95",
             "w26112002414345ae",
             "w261120024143491d",
@@ -527,7 +633,8 @@
             "w261120024143dba6",
             "w261120024143ffc3",
             "w2611200243563051",
-            "w2611212151519801"
+            "w2611212151519801",
+            "w2611230534591383"
           ]
         }
       ],
@@ -552,10 +659,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -563,8 +670,8 @@
       "title": "Промпты: свежие короткие ответы (не дубль связей с хотелками)",
       "type": "cards",
       "source": "prompts-verdicts.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 727,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 655,
       "publish": true,
       "group_by": "user",
       "sort_by": "ts",
@@ -597,10 +704,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -608,8 +715,8 @@
       "title": "Промпты: без ответа",
       "type": "cards",
       "source": "prompts-unanswered.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
-      "count": 349,
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 418,
       "publish": true,
       "group_by": "source",
       "sort_by": "ts",
@@ -643,10 +750,10 @@
         "file": "shared-repo/bots/miniapp/prompts.json",
         "abs": "/home/nyaka/shared-repo/bots/miniapp/prompts.json",
         "exists": true,
-        "size_bytes": 4203058,
-        "mtime_utc": "2026-11-23T02:33:37+00:00",
-        "sha256": "55e3f116de317987c5b5b190698b593ea321026e378c4e753defecbdea53d746",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "size_bytes": 13010440,
+        "mtime_utc": "2026-11-23T06:38:55+00:00",
+        "sha256": "bdb49c43136007284e77f47a25aeddaeff691b55ac14a130cb80c3fd28289b27",
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -654,7 +761,7 @@
       "title": "CS2: голосовые идеи по темам — 300/1438 строк, уникальных голосовых 794",
       "type": "table",
       "source": "cs2-ideas.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 1438,
       "publish": true,
       "group_by": "theme",
@@ -677,7 +784,8 @@
       "value_field": "voice",
       "meta_fields": [
         "theme",
-        "voice"
+        "voice",
+        "atlas"
       ],
       "actions": [
         {
@@ -693,7 +801,7 @@
         "size_bytes": 1445264,
         "mtime_utc": "2026-11-18T14:18:20+00:00",
         "sha256": "d53ccda71fb5e9e9aa05285c06ea4d20721319bf213c405ef1c61b7b3842ba7d",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "items_total": 1438,
       "truncated": true,
@@ -711,7 +819,7 @@
       "title": "CONFIDENTIAL: приватный слой и пограничные (текст скрыт)",
       "type": "checklist",
       "source": "/private/review",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 0,
       "publish": false,
       "group_by": "section",
@@ -741,7 +849,7 @@
       "title": "Обзор скиллов",
       "type": "cards",
       "source": "skills.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 33,
       "publish": true,
       "group_by": null,
@@ -767,8 +875,8 @@
         "size_bytes": 331821,
         "mtime_utc": "2026-11-23T02:11:57+00:00",
         "sha256": null,
-        "read_at": "2026-11-23T02:33:42+00:00",
-        "built_at": "2026-11-23T02:33:42+00:00",
+        "read_at": "2026-11-23T06:39:50+00:00",
+        "built_at": "2026-11-23T06:39:50+00:00",
         "count": 33,
         "note": "только шапки SKILL.md (первые 10 строк): name/description; описание обрезано до 140 символов; токены вырезаны",
         "files": [
@@ -816,7 +924,7 @@
       "title": "Единая таблица элементов",
       "type": "table",
       "source": "elements.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 63,
       "publish": true,
       "group_by": "group",
@@ -869,7 +977,7 @@
         "size_bytes": 212182,
         "mtime_utc": "2026-11-21T03:11:50+00:00",
         "sha256": "864524abfa835d0e220c9e2e810f1a82ce180bc07a405bd1f14b381e4cf29f84",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "provenance_note": {
         "groups": 9,
@@ -883,7 +991,7 @@
       "title": "Сужающие вопросы (да/нет)",
       "type": "decision",
       "source": "yesno-questions.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 15,
       "publish": true,
       "group_by": "status",
@@ -930,7 +1038,7 @@
         "size_bytes": 38861,
         "mtime_utc": "2026-11-21T03:42:39+00:00",
         "sha256": "6ab216566ab4a31e5007d7665b1196b99d7eccde5f7d369db5c7b40412656d73",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "max_questions": 15,
       "provenance_note": {
@@ -949,7 +1057,7 @@
       "title": "Хаб университетских работ",
       "type": "cards",
       "source": "works.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 9,
       "publish": true,
       "group_by": "source",
@@ -1004,7 +1112,7 @@
         "size_bytes": 4955,
         "mtime_utc": "2026-11-21T02:53:00+00:00",
         "sha256": "0c70b023e1b7b18c67936ac0befcbe149323ba7f8fb3f54ffb96848f9567a7dc",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       }
     },
     {
@@ -1012,7 +1120,7 @@
       "title": "Разборы видео: сетка авторов 6 из 10 · снимок 2026-11-22",
       "type": "cards",
       "source": "grids.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 90,
       "publish": false,
       "group_by": "author",
@@ -1097,7 +1205,7 @@
         "size_bytes": 270039,
         "mtime_utc": "2026-11-23T01:58:17+00:00",
         "sha256": "b630245ea1fd89a55bd6504b35ed1775a4a222b0f569ea50cb93219d9a655c38",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "scope": {
         "corpus": {
@@ -1140,7 +1248,7 @@
       "title": "Разборы видео: сетка видео 22 из 227 · снимок 2026-11-22",
       "type": "cards",
       "source": "grids.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 90,
       "publish": false,
       "group_by": "video",
@@ -1252,7 +1360,7 @@
         "size_bytes": 270039,
         "mtime_utc": "2026-11-23T01:58:17+00:00",
         "sha256": "b630245ea1fd89a55bd6504b35ed1775a4a222b0f569ea50cb93219d9a655c38",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "scope": {
         "corpus": {
@@ -1295,7 +1403,7 @@
       "title": "Разборы видео: сетка идей 8 кластеров · снимок 2026-11-22",
       "type": "cards",
       "source": "grids.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 90,
       "publish": false,
       "group_by": "cluster",
@@ -1380,7 +1488,7 @@
         "size_bytes": 270039,
         "mtime_utc": "2026-11-23T01:58:17+00:00",
         "sha256": "b630245ea1fd89a55bd6504b35ed1775a4a222b0f569ea50cb93219d9a655c38",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "scope": {
         "corpus": {
@@ -1423,7 +1531,7 @@
       "title": "Разборы видео: дерево смыслов (90 утверждений, снимок 2026-11-22)",
       "type": "tree",
       "source": "video-tree.json",
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 90,
       "publish": true,
       "group_by": null,
@@ -1463,7 +1571,7 @@
         "size_bytes": 124424,
         "mtime_utc": "2026-11-23T01:58:18+00:00",
         "sha256": "553e449ba87ce379f27b16e8a5790afb86be6ede61bdc09f986b427260710ee4",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "scope": {
         "corpus": {
@@ -1654,7 +1762,7 @@
           "note": "HHhVoql9BNQ из запроса пользователя; канал найден по видео"
         }
       ],
-      "built_at": "2026-11-23T02:33:42+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 11,
       "publish": true,
       "group_by": "status",
@@ -1709,7 +1817,7 @@
         "size_bytes": 6106,
         "mtime_utc": "2026-11-23T02:33:33+00:00",
         "sha256": "acd9dcc4b2ee1716f0af728ec3c8b1f98fb4d3c2e5a4d1f92cc73a618403331b",
-        "read_at": "2026-11-23T02:33:42+00:00"
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "items": [
         {
@@ -1899,11 +2007,78 @@
       }
     },
     {
+      "id": "atlas-raw-cards",
+      "title": "Атлас ↔ сырые карточки: 1503 карточек (personal исключены)",
+      "type": "table",
+      "source": "atlas-cards.json",
+      "built_at": "2026-11-23T06:39:50+00:00",
+      "count": 1503,
+      "publish": true,
+      "group_by": "theme",
+      "sort_by": "atlas_n",
+      "filters": [
+        {
+          "field": "theme",
+          "values": [
+            "aim",
+            "comms",
+            "econ",
+            "maps",
+            "meta",
+            "other",
+            "psycho",
+            "roles",
+            "utility"
+          ]
+        },
+        {
+          "field": "kind",
+          "values": [
+            "advice",
+            "claim",
+            "observation",
+            "psych",
+            "strategy"
+          ]
+        }
+      ],
+      "label_field": "idea",
+      "value_field": "id",
+      "meta_fields": [
+        "theme",
+        "kind",
+        "atlas_nodes",
+        "ideas",
+        "audio"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/atlas-cards.json",
+        "exists": false,
+        "size_bytes": null,
+        "mtime_utc": null,
+        "sha256": null,
+        "read_at": "2026-11-23T06:39:50+00:00",
+        "note": "генерируется из CARDS-ALL + MASTER_IDEAS + atlas.json; personal исключены"
+      },
+      "items_total": 1503,
+      "truncated": true,
+      "items_note": "показано 300 из 1503",
+      "personal_excluded": 250,
+      "note": "связь Атлас/MASTER_IDEAS ↔ сырые карточки; personal исключено: 250; quote не публикуется"
+    },
+    {
       "id": "voice-ideas",
       "title": "Голосовые идеи: 115 гипотез, 26 готовы к прогону",
       "type": "table",
       "source": "voice-ideas.json",
-      "built_at": "2026-11-23T05:12:37+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 115,
       "publish": true,
       "group_by": "tier",
@@ -1955,9 +2130,9 @@
         "file": "shared-repo/bots/miniapp/voice-ideas.json",
         "exists": true,
         "size_bytes": 33188,
-        "mtime_utc": "2026-11-23T05:11:37+00:00",
-        "sha256": "9fc64b4bc7e25f0bef682561385e326bd2528c53af68019a7888c4eb883e0a0f",
-        "read_at": "2026-11-23T05:12:37+00:00"
+        "mtime_utc": "2026-11-23T06:39:09+00:00",
+        "sha256": "f98eea9418da41f47a561366afe9ec7d8c030c1ae76b13156cf6a81346da31df",
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "items_total": 115,
       "truncated": true,
@@ -1970,7 +2145,7 @@
       "title": "Не-CS идеи из голосовых: 157 принципов",
       "type": "cards",
       "source": "life-ideas.json",
-      "built_at": "2026-11-23T05:12:37+00:00",
+      "built_at": "2026-11-23T06:39:50+00:00",
       "count": 157,
       "publish": true,
       "group_by": "cat",
@@ -2003,9 +2178,9 @@
         "file": "shared-repo/bots/miniapp/life-ideas.json",
         "exists": true,
         "size_bytes": 58611,
-        "mtime_utc": "2026-11-23T05:11:37+00:00",
-        "sha256": "5900313ec80136ab9ae2b290c70ba8eadea16b6f9b8bd9a3eadf5a5e552e689e",
-        "read_at": "2026-11-23T05:12:37+00:00"
+        "mtime_utc": "2026-11-23T06:39:09+00:00",
+        "sha256": "6e874ee4f004974de18e72f6688c5c838e4cc1eed27c315b61e9c5443889ff91",
+        "read_at": "2026-11-23T06:39:50+00:00"
       },
       "items_total": 157,
       "truncated": true,
