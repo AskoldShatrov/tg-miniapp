@@ -2,16 +2,16 @@
   "version": 1,
   "built_at": "2026-11-23T04:58:17+03:00",
   "source": "cs2-transcribe/state.db (read-only)",
-  "as_of": "2026-11-22",
+  "as_of": "2026-11-23T05:32:16+03:00",
   "counts": {
-    "channels": 6,
-    "with_transcripts": 5,
-    "transcripts": 164,
-    "in_claim_grid": 6,
+    "channels": 11,
+    "with_transcripts": 10,
+    "transcripts": 227,
+    "in_claim_grid": 5,
     "en_video_claims": 50,
-    "authors_with_new_claims": 4
+    "named_channels_added": 5
   },
-  "note": "Каталог каналов с расшифровками. Обновлено 2026-11-23 зоной A по отчёту EN-VIDEO-CLAIMS-20261122.md (SHA 6c372500…): добавлено 50 claim из 13 видео (jerry 22, chopper 17, emsx 8, aimclub 3). in_claim_grid=6 — число значений author в grids.json (teamo, 143 Aim Club, jerry, chopper, emsx, aimclub); каналов каталога с утверждениями 5 из 6 (moreostins без расшифровок). teamo остался только в снимке N2/67. austincs, elmapuddy, mahone, nartouthere, sebcs, moreostins не имеют локальных расшифровок, новых утверждений из них нет. Старый снимок N2/67: 40 claim, 2 автора.",
+  "note": "Каталог каналов с расшифровками. 22.11 добавлены 50 claim от 4 авторов; 23.11 добавлены каналы, названные пользователем, с встроенными-en-субтитрами YouTube (REPORT.md зоны C).",
   "items": [
     {
       "id": "aimclub",
@@ -94,6 +94,71 @@
       "claim_grid": "есть в сетке N2/67 (27 claim); новых claim из EN-VIDEO нет",
       "note": "в старом снимке N2/67; зона A не добавляла ему новые claim",
       "as_of": "2026-11-22"
+    },
+    {
+      "id": "austincs",
+      "title": "austincs (Остин) — экономика CS2",
+      "alias": "Остин / austincs",
+      "grid_id": "austincs",
+      "channel_id": "UCIs2xtmqxHlIeKGQZt6UEGQ",
+      "videos": 349,
+      "videos_transcribed": 22,
+      "transcripts": 22,
+      "status": "subtitles_partial",
+      "claim_grid": "нет: утверждения не извлечены",
+      "note": "22 VTT из 349; хендл @austincs ведёт на другой канал без вкладки Videos; прямой u80g7AtlUDQ подтверждён"
+    },
+    {
+      "id": "elmapuddy",
+      "title": "elmapuddy — разборы",
+      "alias": "elmapuddy",
+      "grid_id": "elmapuddy",
+      "channel_id": "UCBKXQ-XSihIdD5Xh82F8MpA",
+      "videos": 290,
+      "videos_transcribed": 22,
+      "transcripts": 22,
+      "status": "subtitles_partial",
+      "claim_grid": "нет: утверждения не извлечены",
+      "note": "22 VTT из 290"
+    },
+    {
+      "id": "mahone",
+      "title": "mahone — разборы",
+      "alias": "mahone",
+      "grid_id": "mahone",
+      "channel_id": "UCIyI5PQd0nATex_G03DIcyg",
+      "videos": 15,
+      "videos_transcribed": 15,
+      "transcripts": 15,
+      "status": "subtitles_complete",
+      "claim_grid": "нет: утверждения не извлечены",
+      "note": "15 из 15 публичных роликов; канал найден по ID после HTTP 404 хендла"
+    },
+    {
+      "id": "nartouthere",
+      "title": "nartouthere — разборы",
+      "alias": "nartouthere",
+      "grid_id": "nartouthere",
+      "channel_id": "UC00c_HMwews3UArujN-Lf6Q",
+      "videos": 900,
+      "videos_transcribed": 3,
+      "transcripts": 3,
+      "status": "subtitles_partial",
+      "claim_grid": "нет: утверждения не извлечены",
+      "note": "3 VTT из 900; закачка остановлена по решению оператора, сеть не блокирует"
+    },
+    {
+      "id": "sebcs",
+      "title": "sebcs — Nuke",
+      "alias": "sebcs",
+      "grid_id": "sebcs",
+      "channel_id": "UClfTLm9wUBx6G66YojNP1_A",
+      "videos": 0,
+      "videos_transcribed": 1,
+      "transcripts": 1,
+      "status": "direct_link_only",
+      "claim_grid": "нет: утверждения не извлечены",
+      "note": "HHhVoql9BNQ из запроса пользователя; канал найден по видео"
     }
   ]
 }
