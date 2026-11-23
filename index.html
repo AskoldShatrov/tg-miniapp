@@ -990,7 +990,7 @@
         <div class="bk-card">
           <div class="bk-title">Как выполняются задачи</div>
           <div class="bk-sub">
-            <b>OpenCode</b> — резерв стоит последним в цепочке моделей бота: сначала бесплатные, потом INVENTORS.<br>
+            <b>OpenCode</b> — в TG-боте резерв добавляется в конец цепочки; провайдер доступен и прямым вызовом <code>opencode run --model invento/…</code>.<br>
             <b>DeepSeek Harness</b> — задачи приходят через встроенный MCP-мост <code>opencode_prompt</code> и попадают в тот же резервный провайдер. Отдельный ключ харнессу не нужен.
           </div>
           <div class="bk-sub" id="bkLast" style="margin-top:8px">Последний тест: нет</div>
@@ -1621,7 +1621,8 @@ async function backupLoad(){
     ? ("живой"+(d.bridge.enabled?" · резерв активен":" · ждёт включения")) : "недоступен";
   const bal=$("#bkBalance");
   if(bal) bal.textContent=d.billing&&d.billing.available!=null
-    ? (d.billing.available+" / "+d.billing.grant+" · сброс "+d.billing.reset) : "нет данных";
+    ? (d.billing.available+" / "+d.billing.grant+" · сброс "+d.billing.reset)
+    : ((d.billing&&d.billing.error)?d.billing.error:"нет данных");
   const model=$("#bkModel"); if(model) model.textContent=d.model||"—";
   const toggle=$("#bkToggle"); if(toggle) toggle.textContent=d.enabled?"Выключить резерв":"Включить резерв";
   const last=$("#bkLast");
