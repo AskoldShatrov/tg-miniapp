@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T15:46:50+00:00",
-  "generated_human": "23.11 15:46 UTC",
-  "as_of": 1795448810381,
+  "generated": "2026-11-23T15:47:50+00:00",
+  "generated_human": "23.11 15:47 UTC",
+  "as_of": 1795448870670,
   "stale_days": 1,
   "count": 1057,
   "groups": 9,
@@ -40,29 +40,29 @@
    ],
    "prompts": [
     {
-     "id": "ses-W8I69DD4kG",
-     "text": "Собери из /home/nyaka/.dsh/logs/autoroute-failover.log, autoroute-load.log и сессий хронологию инцидентов 20-23.11: stream idle timeout, API key invalid, self-signed cert, resume failed, самоперезапуски web. Для каждого: причина, доказательство с путём и временем, патч/владелец. VERDICT. Запиши артефакт ровно по пути /home/nyaka/evolution-work-dsh/artifacts/DSH-4DAY-INCIDENTS-*.md. Обязательно выведи строку PROMISE: DONE сразу после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-dsh/artifacts/DSH-4DAY-INCIDENTS-c56.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795448804000,
-     "source": "session",
-     "title": "lree-DSH-4DAY-INCIDENTS-c56",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795448804000,
-     "is_stale": false
-    },
-    {
      "id": "ses-zHp17fs0T9",
      "text": "Не создавай новые цели и не переоткрывай гейты. Собери mtime/SHA всех свежих артефактов пяти движков за ночь, отметь OPEN-блокеры с источником и VERDICT. Запиши артефакт ровно по пути /home/nyaka/evolution-work-research/artifacts/RS-NIGHT-WATCH-*.md. Обязательно выведи PROMISE: DONE после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-research/artifacts/RS-NIGHT-WATCH-c974.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795448800000,
+     "ts": 1795448863000,
      "source": "session",
      "title": "lree-RS-NIGHT-WATCH-c974",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795448800000,
+     "as_of": 1795448863000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-W8I69DD4kG",
+     "text": "Собери из /home/nyaka/.dsh/logs/autoroute-failover.log, autoroute-load.log и сессий хронологию инцидентов 20-23.11: stream idle timeout, API key invalid, self-signed cert, resume failed, самоперезапуски web. Для каждого: причина, доказательство с путём и временем, патч/владелец. VERDICT. Запиши артефакт ровно по пути /home/nyaka/evolution-work-dsh/artifacts/DSH-4DAY-INCIDENTS-*.md. Обязательно выведи строку PROMISE: DONE сразу после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-dsh/artifacts/DSH-4DAY-INCIDENTS-c56.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795448862000,
+     "source": "session",
+     "title": "lree-DSH-4DAY-INCIDENTS-c56",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795448862000,
      "is_stale": false
     },
     {
@@ -2812,14 +2812,14 @@
     {
      "id": "ses-ev2RhVyPme",
      "text": "НЕ переделывай закрытые гейты и не создавай новые цели. Работай только с готовым: /home/nyaka/turngame/data/gt_engine_dust2.jsonl (2046 меток/907 кадров), gt_engine_dust2_dets.jsonl (907/3403 точек), /home/nyaka/turngame/data/faceit_parsed и faceit_kings_parsed (165 демо), /home/nyaka/overnight/N10-scanfeed-status.md, board-scanfeed.json, board-demoparser.json. Собери аудит офлайн обучающей выборки: пересечение GT с кадрами, разрывы, что реально пригодно для обучения детектора и калибровки без живого GSI. Предрегистрируй одну метрику пригодности ДО расчёта, посчитай её по существующим файлам, VERDICT. Запиши артефакт ровно по пути /home/nyaka/evolution-work-curator/artifacts/OFFLINE-TRAIN-SET-*.md. Обязательно выведи PROMISE: DONE сразу после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-curator/artifacts/OFFLINE-TRAIN-SET-c47.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795448804000,
+     "ts": 1795448840000,
      "source": "session",
      "title": "lree-OFFLINE-TRAIN-SET-c47",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795448804000,
+     "as_of": 1795448840000,
      "is_stale": false
     },
     {
@@ -6196,7 +6196,7 @@
     {
      "id": "ses-12afIgbR8P",
      "text": "Проверь PID, state.json, ledger.jsonl и mtime пяти движков; при признаке останова назови причину и владельца, но не перезапускай web. VERDICT. Запиши артефакт ровно по пути /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-CONTINUITY-*.md. Обязательно выведи PROMISE: DONE после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-CONTINUITY-c1001.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795448797000,
+     "ts": 1795448809000,
      "source": "session",
      "title": "lree-SFC-CONTINUITY-c1001",
      "source_label": "ноут",
@@ -6215,7 +6215,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795448797000,
+     "as_of": 1795448809000,
      "is_stale": false
     },
     {
