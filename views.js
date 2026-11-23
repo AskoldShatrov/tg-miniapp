@@ -341,6 +341,8 @@
     ".vw-table th,.vw-table td{padding:7px 8px;text-align:left;border-bottom:1px solid var(--surface0,#313244);white-space:nowrap;max-width:240px;overflow:hidden;text-overflow:ellipsis}",
     ".vw-table th{color:var(--overlay2,#9399b2);font-weight:700;background:var(--crust,#11111b);position:sticky;top:0;z-index:1}",
     ".vw-table tr.sel td{background:rgba(137,180,250,.06)}",
+    ".vw-atlas-link,.vw-voice-link{display:inline-block;margin:0 4px 2px 0;padding:1px 6px;border-radius:6px;border:1px solid rgba(137,180,250,.35);background:rgba(137,180,250,.08);color:var(--blue,#89b4fa);font:600 10px/1.4 var(--fm,monospace);cursor:pointer}",
+    ".vw-atlas-link:hover,.vw-voice-link:hover{background:rgba(137,180,250,.18);color:var(--text,#cdd6f4)}",
     ".vw-empty{border:1px dashed var(--surface1,#45475a);border-radius:10px;padding:14px 12px;",
       "font:500 11.5px/1.6 var(--ff,sans-serif);color:var(--overlay1,#7f849c);word-break:break-word}",
     ".vw-empty b{color:var(--yellow,#f9e2af)}",
@@ -671,6 +673,13 @@
     loadData(v, false);
     pfSubmit(pfNeighbours(id), false);  // греем выбранный вид и его соседей
   }
+  function setSearch(q){
+    V.search = String(q || "");
+    var inp = $("#vwSearch"); if(inp) inp.value = V.search;
+    V.visible = visibleItems(currentView(), V.wrapped, V.cur);
+    renderContent();
+  }
+  window.__miniappViews = {selectView: selectView, setSearch: setSearch, getState: function(){ return V; }};
 
   /* ---------- рендер ---------- */
   function renderSelector(){
@@ -833,7 +842,14 @@
       cols.forEach(function(c){
         var val = getPath(w.item, c);
         if(c === (v && v.label_field)) val = w.label;
-        h.push("<td title='" + esc(asText(val)) + "'>" + esc(asText(val)) + "</td>");
+        if(c === "atlas" && Array.isArray(val) && val.length){
+          var links = val.map(function(aid){
+            return "<button type='button' class='vw-atlas-link' data-role='atlas-link' data-atlas='" + esc(String(aid)) + "'>" + esc(String(aid)) + "</button>";
+          }).join(" ");
+          h.push("<td title='" + esc(val.join(", ")) + "'>" + links + "</td>");
+        } else {
+          h.push("<td title='" + esc(asText(val)) + "'>" + esc(asText(val)) + "</td>");
+        }
       });
       h.push("</tr>");
     });
@@ -1124,6 +1140,20 @@
       if(!V.collapsed[V.cur]) V.collapsed[V.cur] = {};
       V.collapsed[V.cur][key] = !V.collapsed[V.cur][key];
       renderContent();
+      return;
+    }
+    if(role === "atlas-link"){
+      var aid = t.getAttribute("data-atlas") || "";
+      if(aid && typeof window.__openAtlasNode === "function") window.__openAtlasNode(aid);
+      return;
+    }
+    if(role === "voice-link"){
+      var voice = t.getAttribute("data-voice") || "";
+      if(voice){
+        selectView("cs2-ideas");
+        setSearch(voice);
+        if(typeof window.setTab === "function") window.setTab("prompts");
+      }
       return;
     }
     if(role === "yn"){
