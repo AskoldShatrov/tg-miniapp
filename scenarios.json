@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-24 02:00",
+ "generated": "2026-11-24 02:30",
  "window": {
-  "start": "2026-11-23T18:39",
-  "end": "2026-11-23T22:55",
+  "start": "2026-11-23T18:52",
+  "end": "2026-11-23T23:26",
   "sessions": 152,
   "roots": 150
  },
  "summary": {
-  "skills": 35,
+  "skills": 36,
   "skills_used": 18,
   "agents": 6,
   "agents_used": 1,
@@ -23,17 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 408,
+   "median_s": 410,
    "max_s": 3458,
-   "last": "2026-11-23T22:55:40.861000+00:00",
+   "last": "2026-11-23T23:26:05.012000+00:00",
    "outcomes": {
+    "waiting_user": 2,
     "error": 53,
-    "done": 89,
+    "done": 87,
     "cancelled": 8
    },
    "example": [
-    "WBT2ZUWn",
-    "1eEAzyUi"
+    "0xMwyLnJ",
+    "9MqvScWW"
    ],
    "actual": [
     {
@@ -44,13 +45,13 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 106 из 150",
+     "t": "в 109 из 150",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 71 из 150",
+     "t": "в 73 из 150",
      "d": 1
     },
     {
@@ -62,7 +63,7 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 115 из 150, ≈8 вызовов за раз",
+     "t": "в 117 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -876,71 +877,72 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 73,
-   "median_s": 594,
+   "runs": 75,
+   "median_s": 612,
    "max_s": 1730,
-   "last": "2026-11-23T22:55:40.861000+00:00",
+   "last": "2026-11-23T23:18:01.392000+00:00",
    "outcomes": {
+    "waiting_user": 1,
+    "done": 37,
     "error": 31,
-    "done": 36,
     "cancelled": 6
    },
    "example": [
-    "bQxy6KUx",
-    "1eEAzyUi"
+    "1rElZbe2",
+    "vSlv5krF"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 73"
+     "t": "запусков: 75"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 69 из 73",
+     "t": "в 71 из 75",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 71 из 73",
+     "t": "в 73 из 75",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 24 из 73",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 73 из 73, ≈28 вызовов за раз",
+     "t": "в 24 из 75",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 68 из 73, ≈9 вызовов за раз",
+     "t": "в 70 из 75, ≈9 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 75 из 75, ≈27 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 15 из 73",
+     "t": "в 17 из 75",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 69 из 73, ≈9 вызовов за раз",
+     "t": "в 71 из 75, ≈10 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: code-review, disk-triage, draft-gate, hidden-auditor, minimal-run-and-audit, pc-bridge-live, progress, resources, show-i",
-     "t": "меньше 15 из 73",
+     "t": "меньше 15 из 75",
      "d": 1
     }
    ],
@@ -992,7 +994,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 0",
+   "state": "Прогонов сейчас: 2",
    "level": "ok",
    "f": "C1"
   },
@@ -1008,7 +1010,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×90, opencode/big-pickle ×29, opencode/nemotron-3.5-super-vl-free ×21",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×89, opencode/big-pickle ×31, opencode/nemotron-3.5-super-vl-free ×20",
    "level": "ok",
    "f": "C13"
   },
@@ -1032,7 +1034,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 11, с файлами 2",
+   "state": "Владельцев 7, с файлами 3",
    "level": "ok",
    "f": "C11"
   },
