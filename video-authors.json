@@ -1,15 +1,17 @@
 {
   "version": 1,
-  "built_at": "2026-11-22T07:46:49+00:00",
+  "built_at": "2026-11-23T04:58:17+03:00",
   "source": "cs2-transcribe/state.db (read-only)",
-  "as_of": "2026-11-19T09:31:02.636465+00:00",
+  "as_of": "2026-11-22",
   "counts": {
     "channels": 6,
     "with_transcripts": 5,
     "transcripts": 164,
-    "in_claim_grid": 2
+    "in_claim_grid": 6,
+    "en_video_claims": 50,
+    "authors_with_new_claims": 4
   },
-  "note": "Каталог всех каналов с расшифровками. Сетка N2/67 (40 claim, 2 автора) — отдельный снимок от 19.11, а не весь корпус.",
+  "note": "Каталог каналов с расшифровками. Обновлено 2026-11-23 зоной A по отчёту EN-VIDEO-CLAIMS-20261122.md (SHA 6c372500…): добавлено 50 claim из 13 видео (jerry 22, chopper 17, emsx 8, aimclub 3). in_claim_grid=6 — число значений author в grids.json (teamo, 143 Aim Club, jerry, chopper, emsx, aimclub); каналов каталога с утверждениями 5 из 6 (moreostins без расшифровок). teamo остался только в снимке N2/67. austincs, elmapuddy, mahone, nartouthere, sebcs, moreostins не имеют локальных расшифровок, новых утверждений из них нет. Старый снимок N2/67: 40 claim, 2 автора.",
   "items": [
     {
       "id": "aimclub",
@@ -20,8 +22,10 @@
       "videos_transcribed": 5,
       "transcripts": 5,
       "status": "transcribed",
-      "claim_grid": "есть в сетке N2/67",
-      "note": "утверждения и вердикты есть в снимке N2/67"
+      "claim_grid": "есть в EN-VIDEO-CLAIMS (3 claim)",
+      "note": "3 утверждений из отчёта EN-VIDEO-CLAIMS-20261122.md; проверка не проводилась",
+      "claims_in_grid": 3,
+      "as_of": "2026-11-22"
     },
     {
       "id": "chopper",
@@ -32,8 +36,10 @@
       "videos_transcribed": 28,
       "transcripts": 28,
       "status": "transcribed",
-      "claim_grid": "нет: утверждения не извлечены",
-      "note": "есть расшифровки, нет разобранных утверждений"
+      "claim_grid": "есть в EN-VIDEO-CLAIMS (17 claim)",
+      "note": "17 утверждений из отчёта EN-VIDEO-CLAIMS-20261122.md; проверка не проводилась",
+      "claims_in_grid": 17,
+      "as_of": "2026-11-22"
     },
     {
       "id": "emsx",
@@ -44,8 +50,10 @@
       "videos_transcribed": 10,
       "transcripts": 10,
       "status": "transcribed",
-      "claim_grid": "нет: утверждения не извлечены",
-      "note": "есть расшифровки, нет разобранных утверждений"
+      "claim_grid": "есть в EN-VIDEO-CLAIMS (8 claim)",
+      "note": "8 утверждений из отчёта EN-VIDEO-CLAIMS-20261122.md; проверка не проводилась",
+      "claims_in_grid": 8,
+      "as_of": "2026-11-22"
     },
     {
       "id": "jerry",
@@ -56,8 +64,10 @@
       "videos_transcribed": 116,
       "transcripts": 116,
       "status": "transcribed",
-      "claim_grid": "нет: утверждения не извлечены",
-      "note": "есть расшифровки, нет разобранных утверждений"
+      "claim_grid": "есть в EN-VIDEO-CLAIMS (22 claim)",
+      "note": "22 утверждений из отчёта EN-VIDEO-CLAIMS-20261122.md; проверка не проводилась",
+      "claims_in_grid": 22,
+      "as_of": "2026-11-22"
     },
     {
       "id": "moreostins",
@@ -68,8 +78,9 @@
       "videos_transcribed": 0,
       "transcripts": 0,
       "status": "no_transcripts",
-      "claim_grid": "нет: расшифровок нет",
-      "note": "канал не найден, YouTube 404"
+      "claim_grid": "нет: локальных расшифровок нет",
+      "note": "канал не найден, YouTube 404",
+      "as_of": "2026-11-19"
     },
     {
       "id": "teamo",
@@ -80,8 +91,9 @@
       "videos_transcribed": 5,
       "transcripts": 5,
       "status": "transcribed",
-      "claim_grid": "есть в сетке N2/67",
-      "note": "утверждения и вердикты есть в снимке N2/67"
+      "claim_grid": "есть в сетке N2/67 (27 claim); новых claim из EN-VIDEO нет",
+      "note": "в старом снимке N2/67; зона A не добавляла ему новые claim",
+      "as_of": "2026-11-22"
     }
   ]
 }
