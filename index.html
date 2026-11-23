@@ -326,6 +326,9 @@
   .grid-tab.active{border-color:var(--blue);color:var(--text);background:rgba(137,180,250,.12)}
   .a-detail{margin-top:10px;border:1px solid var(--surface1);border-radius:9px;background:var(--surface0);padding:10px}
   .a-detail[hidden]{display:none}
+  .a-inline{display:none;margin:4px 0 8px 18px;border:1px solid var(--surface1);border-radius:9px;background:var(--surface0);padding:10px;animation:fade .15s ease}
+  .a-inline.open{display:block}
+  .trow.expanded{background:rgba(137,180,250,.12)}
   .a-meta{font:600 9.5px/1.4 var(--fm);color:var(--overlay1);margin-bottom:6px}
   .a-full{white-space:pre-wrap;word-break:break-word;font:500 11px/1.55 var(--ff);color:var(--text);max-height:46vh;overflow:auto}
   .a-query{display:flex;gap:6px;margin-top:10px}
@@ -857,11 +860,10 @@
 
     <section class="screen" id="screen-atlas">
       <div class="eyebrow">Атлас · конструктор карточек</div>
-      <div class="hint" style="margin:8px 0 4px">Один граф — пять деревьев: авторы, видео, идеи, разбор демопарсера, сигнал/шум/прорыв. Нажми на строку, чтобы раскрыть ветку; на «?» — прочитать целиком и написать запрос.</div>
+      <div class="hint" style="margin:8px 0 4px">Один граф — пять деревьев: авторы, видео, идеи, разбор демопарсера, сигнал/шум/прорыв. Нажми на строку, чтобы раскрыть ветку; на «?» — прочитать карточку прямо под строкой. Повторный тап по той же строке или «?» сворачивает её.</div>
       <div class="grid-tabs" id="atlasGrids"></div>
       <div class="live-strip"><span>узлов <b id="atlasCount">…</b></span><span id="atlasTime" style="margin-left:auto;color:var(--overlay0)">…</span></div>
       <div id="atlasCards"></div>
-      <div id="atlasDetail" class="a-detail" hidden></div>
     </section>
 
     <section class="screen" id="screen-questions">
@@ -2218,7 +2220,7 @@ setInterval(refreshReplies, 5000);
   /* @auto:poll-prompts:end */
 
 /* ---------- атлас: интерактивные деревья одного графа ---------- */
-let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={};
+let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={}, ATLAS_OPEN_KEY=null;
 const ATLAS_KIND={author:"автор",video:"видео",claim:"утверждение",verdict:"вердикт",hypothesis:"гипотеза",want:"хотелка",goal:"цель",group:"ветка",ref:"проверка"};
 const ATLAS_STATUS={open:"открыто",done:"готово",deferred:"отложено",doing:"в работе",pass:"подтверждено",verified:"проверено",fail:"опровергнуто",refuted:"опровергнуто",measuring:"измеряется",signal:"сигнал",noise:"шум",false:""};
 function atlasBadge(raw){
@@ -2233,7 +2235,7 @@ function atlasNodeHtml(n){
   const ask=`<span class="tid a-ask" data-key="${esc(n.__k)}" style="color:var(--blue)" title="Открыть целиком и написать запрос">?</span>`;
   const title=esc(n.title||"узел без названия");
   const row=`<div class="trow ${kids.length?"parent":""}" data-key="${esc(n.__k)}">${twist}${kind}<span class="tname">${title}</span>${ask}${atlasBadge(n.status)}</div>`;
-  return `<div class="tnode">${row}${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
+  return `<div class="tnode"><div class="a-inline"></div>${row}${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
 }
 function atlasIndex(rs){
   (rs||[]).forEach(n=>{
@@ -2241,14 +2243,28 @@ function atlasIndex(rs){
     n.__k=k; ATLAS_LOOKUP[k]=n; atlasIndex(n.children);
   });
 }
-function atlasDetail(n){
-  const box=$("#atlasDetail"); if(!box) return;
-  box.hidden=false;
+function atlasCloseDetail(){
+  const box=$("#atlasCards .a-inline.open"); if(!box) return;
+  box.classList.remove("open"); box.innerHTML="";
+  const row=box.closest(".tnode")?.querySelector(".trow");
+  if(row) row.classList.remove("expanded");
+  ATLAS_OPEN_KEY=null;
+}
+function atlasDetail(n,row){
+  if(!n||!row) return;
+  const host=row.closest(".tnode"); if(!host) return;
+  const box=Array.from(host.children).find(el=>el.classList.contains("a-inline"));
+  if(!box) return;
+  if(ATLAS_OPEN_KEY===n.__k && box.classList.contains("open")){ atlasCloseDetail(); return; }
+  atlasCloseDetail();
   box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
-    <div class="a-full" id="atlasFull">${esc(n.full||n.answer||n.title||"")}</div>
-    <div class="a-query"><input id="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
+    <div class="a-full">${esc(n.full||n.answer||n.title||"")}</div>
+    <div class="a-query"><input class="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
+  box.classList.add("open");
+  row.classList.add("expanded");
+  ATLAS_OPEN_KEY=n.__k;
   const send=()=>{
-    const inp=$("#atlasQuery"), text=((inp&&inp.value)||"").trim();
+    const inp=box.querySelector(".atlasQuery"), text=((inp&&inp.value)||"").trim();
     if(!text){ toast("Введите запрос"); return; }
     if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
     if(!userID||userID==="0"){ toast("Открой мини-ап через бота — запрос адресуется получателю"); return; }
