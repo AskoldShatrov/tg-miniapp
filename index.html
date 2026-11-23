@@ -2521,6 +2521,7 @@ function atlasDetail(n,row){
   const metaExtra = rawCount ? ` · сырых карточек: ${rawCount}` : "";
   box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")}${metaExtra} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
     <div class="a-full">${esc(n.full||n.answer||n.title||"")}</div>
+    ${crossHtml}
     ${rawHtml}
     ${signalsHtml}
     <div class="a-query"><input class="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
@@ -2578,6 +2579,7 @@ function atlasDetail(n,row){
 }
 function renderAtlas(){
   if(!ATLAS) return;
+  atlasLoadRawCards();
   ATLAS_OPEN_KEY=null;
   const tabs=$("#atlasGrids"), cards=$("#atlasCards");
   if(!tabs||!cards) return;

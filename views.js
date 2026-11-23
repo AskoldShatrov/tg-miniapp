@@ -842,11 +842,16 @@
       cols.forEach(function(c){
         var val = getPath(w.item, c);
         if(c === (v && v.label_field)) val = w.label;
-        if(c === "atlas" && Array.isArray(val) && val.length){
+        if((c === "atlas" || c === "atlas_nodes") && Array.isArray(val) && val.length){
           var links = val.map(function(aid){
             return "<button type='button' class='vw-atlas-link' data-role='atlas-link' data-atlas='" + esc(String(aid)) + "'>" + esc(String(aid)) + "</button>";
           }).join(" ");
           h.push("<td title='" + esc(val.join(", ")) + "'>" + links + "</td>");
+        } else if(c === "ideas" && Array.isArray(val) && val.length){
+          var ilinks = val.map(function(iid){
+            return "<button type='button' class='vw-voice-link' data-role='idea-link' data-idea='" + esc(String(iid)) + "'>" + esc(String(iid)) + "</button>";
+          }).join(" ");
+          h.push("<td title='" + esc(val.join(", ")) + "'>" + ilinks + "</td>");
         } else {
           h.push("<td title='" + esc(asText(val)) + "'>" + esc(asText(val)) + "</td>");
         }
@@ -1147,12 +1152,29 @@
       if(aid && typeof window.__openAtlasNode === "function") window.__openAtlasNode(aid);
       return;
     }
+    if(role === "idea-link"){
+      var iid = t.getAttribute("data-idea") || "";
+      if(iid){
+        selectView("voice-ideas");
+        setSearch(iid);
+        if(typeof window.setTab === "function") window.setTab("prompts");
+      }
+      return;
+    }
     if(role === "voice-link"){
       var voice = t.getAttribute("data-voice") || "";
       if(voice){
         selectView("cs2-ideas");
         setSearch(voice);
         if(typeof window.setTab === "function") window.setTab("prompts");
+      }
+      return;
+    }
+    if(role === "idea-link"){
+      var iid = t.getAttribute("data-idea") || "";
+      if(iid){
+        selectView("voice-ideas");
+        setSearch(iid);
       }
       return;
     }
