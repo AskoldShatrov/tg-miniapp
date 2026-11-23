@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-23 19:00",
+ "generated": "2026-11-23 19:30",
  "window": {
-  "start": "2026-11-23T14:15",
-  "end": "2026-11-23T15:58",
+  "start": "2026-11-23T14:30",
+  "end": "2026-11-23T16:29",
   "sessions": 152,
   "roots": 150
  },
  "summary": {
   "skills": 33,
-  "skills_used": 14,
+  "skills_used": 16,
   "agents": 6,
   "agents_used": 2,
   "autofeed": 0,
@@ -23,18 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 174,
+   "median_s": 190,
    "max_s": 1593,
-   "last": "2026-11-23T15:58:05.636000+00:00",
+   "last": "2026-11-23T16:29:33.285000+00:00",
    "outcomes": {
-    "done": 100,
-    "waiting_user": 4,
-    "error": 44,
+    "waiting_user": 3,
+    "done": 95,
+    "error": 50,
     "cancelled": 2
    },
    "example": [
-    "cjq37YRe",
-    "Q7fol5Ky"
+    "8UuGLy7u",
+    "nUL8CN4P"
    ],
    "actual": [
     {
@@ -43,32 +43,32 @@
      "t": "запусков: 150"
     },
     {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 146 из 150, ≈19 вызовов за раз",
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 39 из 150",
      "d": 1
     },
     {
-     "k": "skill",
-     "n": "hypothesis-check",
-     "t": "в 34 из 150",
+     "k": "tool",
+     "n": "shell",
+     "t": "в 145 из 150, ≈19 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 114 из 150, ≈5 вызовов за раз",
+     "t": "в 118 из 150, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 117 из 150, ≈3 вызовов за раз",
+     "t": "в 114 из 150, ≈3 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: anti-autism, code-review, diagnosing-bugs, draft-gate, longrun-evolution, network-constraints, progress, ready-to-delive",
+     "n": "реже: anti-autism, code-review, diagnosing-bugs, draft-gate, hidden-auditor, longrun-evolution, network-constraints, progress,",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -83,7 +83,7 @@
      "k": "skill",
      "n": "strange-question",
      "t": "если вопрос короткий или неполный",
-     "u": true
+     "u": false
     },
     {
      "k": "agent",
@@ -477,15 +477,15 @@
    "status": "warn",
    "status_text": "На грани лимита",
    "runs": 4,
-   "median_s": 196,
-   "max_s": 226,
-   "last": "2026-11-23T15:54:20.208000+00:00",
+   "median_s": 210,
+   "max_s": 274,
+   "last": "2026-11-23T16:24:20.516000+00:00",
    "outcomes": {
     "done": 4
    },
    "example": [
-    "tKFxeeVU",
-    "8FgN0swx"
+    "8FgN0swx",
+    "crVtdBpP"
    ],
    "actual": [
     {
@@ -520,7 +520,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 4 из 4, ≈4 вызовов за раз",
+     "t": "в 4 из 4, ≈2 вызовов за раз",
      "d": 1
     }
    ],
@@ -711,78 +711,66 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 16,
-   "median_s": 375,
+   "runs": 21,
+   "median_s": 370,
    "max_s": 1593,
-   "last": "2026-11-23T15:53:32.993000+00:00",
+   "last": "2026-11-23T16:29:33.285000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "error": 8,
-    "cancelled": 1,
-    "done": 6
+    "waiting_user": 2,
+    "done": 7,
+    "error": 11,
+    "cancelled": 1
    },
    "example": [
-    "0ncBolzX",
-    "f6Wt8Htk"
+    "iQ3V65zM",
+    "nUL8CN4P"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 16"
+     "t": "запусков: 21"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 15 из 16",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 8 из 16",
+     "t": "в 20 из 21",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 13 из 16",
+     "t": "в 15 из 21",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 11 из 21",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 16 из 16, ≈26 вызовов за раз",
+     "t": "в 21 из 21, ≈24 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 15 из 16, ≈9 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "в 3 из 16",
+     "t": "в 20 из 21, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 11 из 16, ≈4 вызовов за раз",
+     "t": "в 15 из 21, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "show-in-answer",
-     "t": "в 3 из 16",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "реже: anti-autism, resources, scientific-ergonomics",
-     "t": "меньше 3 из 16",
+     "n": "реже: anti-autism, code-review, draft-gate, network-constraints, resources, show-in-answer, studio-taste, suspicion-gate, veri",
+     "t": "меньше 4 из 21",
      "d": 1
     }
    ],
@@ -850,7 +838,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×110, opencode/iceman-free ×9, opencode/flint-40b-free ×8",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×104, opencode/big-pickle ×11, opencode/nemotron-3.5-super-vl-free ×10",
    "level": "ok",
    "f": "C13"
   },
@@ -874,7 +862,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 47, с файлами 11",
+   "state": "Владельцев 39, с файлами 9",
    "level": "ok",
    "f": "C11"
   },
@@ -1019,7 +1007,7 @@
     },
     {
      "n": "studio-taste",
-     "used": false,
+     "used": true,
      "merged": true
     }
    ],
