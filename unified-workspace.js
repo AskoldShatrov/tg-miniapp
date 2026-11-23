@@ -3,9 +3,11 @@
    низ — единый инпут с quick-кнопками. Встроенный слой ВНУТРИ существующего
    #screen-studio: вкладки не удаляются, Студия и Чат не ломаются.
 
-   Канал отправки — тот же, что в studioAskWithContext/sendChat:
-     tg.sendData({source:"miniapp_chat", text:<контекст>+<вопрос>, user_id, rid})
-   sendData для навигации НЕ используется; pairChat и генерацию rid бота НЕ трогаем.
+   Канал отправки — DeepSeek Harness через process_api:
+     POST <process_api_url>/dsh/task {text, user_id, rid}
+   Старый путь tg.sendData остаётся только явным фолбэком при недоступном API,
+   чтобы задача не терялась молча. sendData для навигации НЕ используется;
+   pairChat и генерацию rid бота НЕ трогаем.
 
    Треки «отправлено → думает → готово» обновляются через существующий polling
    replies.json: accessor на CHAT.replies ловит присваивание из refreshReplies()
@@ -200,8 +202,39 @@
     if(input) input.value="";
     renderTracks();
 
-    if (typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
-      tg.sendData(JSON.stringify({source:"miniapp_chat",text:text,user_id:uid(),rid:rid}));
+    var payload={source:"miniapp_chat",text:text,user_id:uid(),rid:rid,engine:"dsh"};
+    var apiBase="";
+    try{
+      var st=window.LATEST_STATUS||{};
+      apiBase=String(st.process_api_url||"").replace(/\/+$/,"");
+    }catch(e){}
+    var initData="";
+    try{
+      initData=(window.Telegram && window.Telegram.WebApp &&
+                window.Telegram.WebApp.initData) ||
+               (typeof tg!=="undefined" && tg && tg.initData) || "";
+    }catch(e){}
+
+    function legacyFallback(){
+      if (typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
+        tg.sendData(JSON.stringify(payload));
+        if (typeof toast==="function") toast("API недоступен — задача ушла через OpenCode");
+      } else if (typeof toast==="function"){
+        toast("API недоступен и sendData нет — задача не отправлена");
+      }
+    }
+
+    if (apiBase && typeof fetch==="function"){
+      fetch(apiBase+"/dsh/task",{
+        method:"POST",
+        headers:{"Content-Type":"application/json","X-Telegram-Init-Data":initData},
+        body:JSON.stringify(payload)
+      }).then(function(r){ return r.json(); }).then(function(j){
+        if(!j || !j.ok) throw new Error("dsh/task rejected");
+        if (typeof toast==="function") toast("Задача принята DeepSeek Harness");
+      }).catch(legacyFallback);
+    } else {
+      legacyFallback();
     }
     return rid;
   }
