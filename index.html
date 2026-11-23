@@ -1011,6 +1011,8 @@
     <span class="sep"></span>
     <span class="hk"><kbd>5</kbd> Чат</span>
     <span class="sep"></span>
+    <span class="hk"><kbd>6</kbd> Резерв</span>
+    <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
 
@@ -1540,6 +1542,7 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="3"){setTab("prompts")}
   else if(e.key==="4"){setTab("atlas"); renderAtlas()}
   else if(e.key==="5"){setTab("chat"); renderChat()}
+  else if(e.key==="6"){setTab("backup")}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
