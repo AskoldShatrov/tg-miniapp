@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "built_at": "2026-11-23T02:33:42+00:00",
+  "built_at": "2026-11-23T05:11:37+00:00",
   "views": [
     {
       "id": "atlas-tree",
@@ -1897,6 +1897,122 @@
         "coverage_transcripts_pct": 100.0,
         "scope_note": "полный корпус: 10 каналов с расшифровками, 227 расшифровок"
       }
+    },
+    {
+      "id": "voice-ideas",
+      "title": "Голосовые идеи: 115 гипотез, 26 готовы к прогону",
+      "type": "table",
+      "source": "voice-ideas.json",
+      "built_at": "2026-11-23T05:11:37+00:00",
+      "count": 115,
+      "publish": true,
+      "group_by": "tier",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "tier",
+          "values": [
+            "A0n",
+            "A0v",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5"
+          ]
+        },
+        {
+          "field": "theme",
+          "values": [
+            "Аим/позиция",
+            "Голосовые гипотезы",
+            "Исполнение",
+            "Карты",
+            "Кейсы",
+            "Коллы",
+            "Психология",
+            "Роли/тайминг",
+            "Утилити",
+            "Экономика"
+          ]
+        }
+      ],
+      "label_field": "title",
+      "value_field": "id",
+      "meta_fields": [
+        "tier_label",
+        "status",
+        "theme"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/voice-ideas.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/voice-ideas.json",
+        "exists": true,
+        "size_bytes": 38703,
+        "mtime_utc": "2026-11-23T05:10:50+00:00",
+        "sha256": "6f6240a39bab64a77ae889653ccfab822e91ab5630cd1f32a923ab81c4df4a75",
+        "read_at": "2026-11-23T05:11:37+00:00"
+      },
+      "items_total": 115,
+      "truncated": true,
+      "items_note": "показано 115 из 115",
+      "queue_n": 26,
+      "note": "115 идей: 26 готовы к прогону; без цитат и имён — детали в локальном отчёте"
+    },
+    {
+      "id": "life-ideas",
+      "title": "Не-CS идеи из голосовых: 157 принципов",
+      "type": "cards",
+      "source": "life-ideas.json",
+      "built_at": "2026-11-23T05:11:37+00:00",
+      "count": 157,
+      "publish": true,
+      "group_by": "cat",
+      "sort_by": "id",
+      "filters": [
+        {
+          "field": "cat",
+          "values": [
+            "Жизнь и практика",
+            "Инструменты и код",
+            "Исследования",
+            "Продукт/интерфейс",
+            "Работа и карьера"
+          ]
+        }
+      ],
+      "label_field": "idea",
+      "value_field": "id",
+      "meta_fields": [
+        "cat"
+      ],
+      "actions": [
+        {
+          "label": "В работу",
+          "source": "miniapp_selection"
+        }
+      ],
+      "status": "ok",
+      "provenance": {
+        "file": "shared-repo/bots/miniapp/life-ideas.json",
+        "abs": "/home/nyaka/shared-repo/bots/miniapp/life-ideas.json",
+        "exists": true,
+        "size_bytes": 61993,
+        "mtime_utc": "2026-11-23T05:10:50+00:00",
+        "sha256": "df479174a9494b8d16a6b6913973972d09164395ab47bb10b89b72441f1d5daa",
+        "read_at": "2026-11-23T05:11:37+00:00"
+      },
+      "items_total": 157,
+      "truncated": true,
+      "items_note": "показано 157 из 157",
+      "note": "157 не-CS принципов из голосовых; без цитат"
     }
   ]
 }
