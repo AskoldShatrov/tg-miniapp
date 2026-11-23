@@ -205,7 +205,8 @@
     var payload={source:"miniapp_chat",text:text,user_id:uid(),rid:rid,engine:"dsh"};
     var apiBase="";
     try{
-      var st=window.LATEST_STATUS||{};
+      /* LATEST_STATUS — глобальная lexical-переменная index.html, не свойство window. */
+      var st=(typeof LATEST_STATUS!=="undefined"&&LATEST_STATUS)||{};
       apiBase=String(st.process_api_url||"").replace(/\/+$/,"");
     }catch(e){}
     var initData="";
