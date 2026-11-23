@@ -255,10 +255,10 @@
       "task": "T6",
       "id": "T6.6",
       "title": "Live: активная закачка прямо сейчас",
-      "status": "done",
-      "note": "опрос pc-bridge :8898 каждые 2 мин",
+      "status": "running",
+      "note": "идёт закачка: & \"C:\\Program Files\\Python312\\python.exe\" \"C:\\scanfeed\\launch_demo_cons…",
       "startedAt": "2026-11-19T08:22:05+03:00",
-      "updatedAt": "2026-11-23T20:21:28+03:00",
+      "updatedAt": "2026-11-23T20:57:45+03:00",
       "completedAt": "2026-11-23T20:21:28+03:00"
     },
     {
@@ -1783,6 +1783,15 @@
       "updatedAt": "2026-11-23T20:55:14+03:00"
     },
     {
+      "task": "T29",
+      "id": "T29.9",
+      "title": "Концепт: ноут управляет локальным DSH на ПК через pc-bridge",
+      "status": "done",
+      "note": "Артефакты: LAPTOP-TO-PC-DSH.md (20:34, PASS, LAPTOP_TO_PC_DSH_OK task 83e2a4b00c70), pc_dsh_run.sh (20:33), PC-ADMIN-GATE.md (20:37, OPEN: admin без ручного UAC невозможен, для сканфида не нужен). Добавлено по запросу пользователя для видимости параллельной работы.",
+      "updatedAt": "2026-11-23T20:57:30+03:00",
+      "completedAt": "2026-11-23T20:57:30+03:00"
+    },
+    {
       "task": "SYS-3",
       "id": "SYS-3.1",
       "title": "Заморозка SHA и предрегистрация прогноза",
@@ -1935,11 +1944,19 @@
   ],
   "active": [
     {
+      "id": "T6/T6.6",
+      "title": "Live: активная закачка прямо сейчас",
+      "source": "progress",
+      "claimed_human": "20:57:45",
+      "age_min": 0,
+      "full": "идёт закачка: & \"C:\\Program Files\\Python312\\python.exe\" \"C:\\scanfeed\\launch_demo_cons…"
+    },
+    {
       "id": "T29/T29.1",
       "title": "S1 Данные: 9 -> >=60 кадров, >3 карты, SHA заморожены",
       "source": "progress",
       "claimed_human": "20:55:14",
-      "age_min": 1,
+      "age_min": 2,
       "full": "движок longrun-evolution запущен, задача SF-S1-DATA, PID 2247221"
     },
     {
@@ -1947,7 +1964,7 @@
       "title": "S8 CV: 20+ физических кадров (180 из UNBLK1)",
       "source": "progress",
       "claimed_human": "20:55:14",
-      "age_min": 1,
+      "age_min": 2,
       "full": "180 кадров 1280x720 распакованы в /tmp/opencode/unblk1 из inbox-архива; строю GT victim/alive по GSI allplayers и гоню matching"
     }
   ],
@@ -1961,10 +1978,10 @@
       "failed": 9
     }
   },
-  "updatedAt": "2026-11-23T20:55:14+03:00",
-  "progress_updated_at": "2026-11-23T20:55:14+03:00",
+  "updatedAt": "2026-11-23T20:57:45+03:00",
+  "progress_updated_at": "2026-11-23T20:57:45+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795456617,
-  "fetched_human": "2026-11-23 20:56:57 +0300"
+  "fetched_at": 1795456677,
+  "fetched_human": "2026-11-23 20:57:57 +0300"
 }
