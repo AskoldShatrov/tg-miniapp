@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T16:05:58+00:00",
-  "generated_human": "23.11 16:05 UTC",
-  "as_of": 1795449958670,
+  "generated": "2026-11-23T16:06:59+00:00",
+  "generated_human": "23.11 16:06 UTC",
+  "as_of": 1795450019169,
   "stale_days": 1,
   "count": 1057,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-9ssZzkDP0q",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795449955000,
+     "ts": 1795450014000,
      "source": "session",
      "title": "Калибровка dot_quality по cyan-сигналу",
      "source_label": "ноут",
@@ -61,20 +61,20 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795449955000,
+     "as_of": 1795450014000,
      "is_stale": false
     },
     {
      "id": "ses-fNzZgMjPan",
      "text": "НЕ переделывай и не переоткрывай закрытые гейты. Используй только готовое: /home/nyaka/Documents/deepseek-harness/default-workspace/oc-hierarchy/out/parts/board-scanfeed.json, board-demoparser.json, отчёты P0-3/S01BC/R01ay, 374/374 ссылки и дефект C12 sort. Найди точку стыка: общие демки/GSI/кадры, где выход сканфида питает демопарсер и наоборот. Предрегистрируй одну метрику стыка ДО проверки, посчитай её на существующих данных,Verbdict. Новые цели не создавай. Запиши артефакт ровно по пути /home/nyaka/evolution-work-curator/artifacts/JOINT-SF-DP-MAP-*.md. Обязательно выведи PROMISE: DONE сразу после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-curator/artifacts/JOINT-SF-DP-MAP-c50.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795449951000,
+     "ts": 1795450012000,
      "source": "session",
      "title": "lree-JOINT-SF-DP-MAP-c50",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795449951000,
+     "as_of": 1795450012000,
      "is_stale": false
     },
     {
@@ -3540,14 +3540,14 @@
     {
      "id": "ses-38zGCDrJnG",
      "text": "Не создавай новые цели и не переоткрывай гейты. Собери mtime/SHA всех свежих артефактов пяти движков за ночь, отметь OPEN-блокеры с источником и VERDICT. Запиши артефакт ровно по пути /home/nyaka/evolution-work-research/artifacts/RS-NIGHT-WATCH-*.md. Обязательно выведи PROMISE: DONE после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-research/artifacts/RS-NIGHT-WATCH-c978.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795449954000,
+     "ts": 1795449997000,
      "source": "session",
      "title": "lree-RS-NIGHT-WATCH-c978",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795449954000,
+     "as_of": 1795449997000,
      "is_stale": false
     },
     {
