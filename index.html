@@ -2447,8 +2447,13 @@ function atlasNodeHtml(n){
   const twist=kids.length?'<span class="twist">▶</span>':'<span class="twist leaf">·</span>';
   const kind=`<span class="tid">${esc(ATLAS_KIND[n.kind]||"узел")}</span>`;
   const ask=`<span class="tid a-ask" data-key="${esc(n.__k)}" style="color:var(--blue)" title="Открыть целиком и написать запрос">?</span>`;
+  const hypId = (n.ref && ATLAS_VOICE_BY_HYP[String(n.ref)]) ? String(n.ref)
+    : (String(n.id||"").startsWith("voicesig:") ? String(n.id).slice("voicesig:".length) : "");
+  const sigRec = hypId ? ATLAS_VOICE_BY_HYP[hypId] : null;
+  const rawN = (Array.isArray(n.raw)?n.raw.length:0) || (Array.isArray(n.raw_links)?n.raw_links.length:0) || (sigRec && Array.isArray(sigRec.signals)?sigRec.signals.length:0) || ((ATLAS_RAW_BY_IDEA[hypId]||[]).length) || ((ATLAS_RAW_BY_NODE[String(n.id||"")]||[]).length);
+  const rawBadge = rawN ? `<span class="tid" style="color:var(--mauve)" title="Связанные сырые карточки">◌ ${rawN}</span>` : "";
   const title=esc(n.title||"узел без названия");
-  const row=`<div class="trow ${kids.length?"parent":""}" data-key="${esc(n.__k)}">${twist}${kind}<span class="tname">${title}</span>${ask}${atlasBadge(n.status)}</div>`;
+  const row=`<div class="trow ${kids.length?"parent":""}" data-key="${esc(n.__k)}">${twist}${kind}<span class="tname">${title}</span>${rawBadge}${ask}${atlasBadge(n.status)}</div>`;
   return `<div class="tnode">${row}<div class="a-inline"></div>${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
 }
 function atlasIndex(rs){
@@ -2579,7 +2584,8 @@ function atlasDetail(n,row){
 }
 function renderAtlas(){
   if(!ATLAS) return;
-  atlasLoadRawCards();
+  const _rawWas = ATLAS_RAW_CARDS;
+  atlasLoadRawCards().then(()=>{ if(ATLAS && !_rawWas && ATLAS_RAW_CARDS) renderAtlas(); });
   ATLAS_OPEN_KEY=null;
   const tabs=$("#atlasGrids"), cards=$("#atlasCards");
   if(!tabs||!cards) return;
