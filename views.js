@@ -822,8 +822,9 @@
         var sel = !!pickOf(V.cur)[n.id];
         head += "<input type='checkbox' data-role='pick' data-id='" + esc(n.id) + "'" + (sel ? " checked" : "") + ">";
       }
+      var hid = (n.w && n.w.item && n.w.item.hypothesis_id) ? n.w.item.hypothesis_id : "";
       var rawLink = (n.w && v && v.id === "atlas-tree")
-        ? " <button type='button' class='vw-atlas-link' data-role='raw-cards-link' data-node='" + esc(n.id) + "'>карточки</button>"
+        ? " <button type='button' class='vw-atlas-link' data-role='raw-cards-link' data-node='" + esc(n.id) + "'" + (hid ? " data-hid='" + esc(hid) + "'" : "") + ">карточки</button>"
         : "";
       head += "<div class='vw-main'><div class='vw-title'>" + esc(n.label || "—") + rawLink + "</div>" +
         (n.w ? "<div class='vw-id'>" + esc(n.id) + "</div>" + metasHTML(n.w, v) : "") + "</div></div>";
@@ -1183,9 +1184,11 @@
     }
     if(role === "raw-cards-link"){
       var nid = t.getAttribute("data-node") || "";
-      if(nid){
+      var hid = t.getAttribute("data-hid") || "";
+      var q = hid || nid.replace(/^voicehyp:/, "");
+      if(q){
         selectView("atlas-raw-cards");
-        setSearch(nid);
+        setSearch(q);
       }
       return;
     }
