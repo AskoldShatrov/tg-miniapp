@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1e1e2e">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
-<title>Mini App · OpenCode</title>
+<title>Mini App · DeepSeek Harness</title>
 <style>
   :root{
     /* Catppuccin Mocha */
@@ -812,7 +812,7 @@
       <div class="eyebrow"><span id="treeEyebrow">Дерево задач · T1—T11</span> <span class="api-badge" id="treeApiBadge">API · нет</span></div>
       <div class="live-strip" id="liveStrip">
         <span class="dot-live"></span>
-        <span title="агенты = max(живые opencode run, воркеры) — стабильный сигнал; в работе — мгновенные run; сессии — вкладки OpenCode за сутки; сабагенты — дочерние сессии; воркеры — systemd-сервисы">агентов <b id="stripAgents">…</b> · в работе <b id="stripLive">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
+        <span title="агенты = max(живые dsh headless, сессии DSH); в работе — мгновенные dsh headless; сессии — сессии DeepSeek Harness за сутки; сабагенты — дочерние сессии DSH; воркеры — systemd-сервисы">агентов <b id="stripAgents">…</b> · в работе <b id="stripLive">…</b> · сессий <b id="stripSessions">…</b> · сабагентов <b id="stripSub">…</b> · воркеров <b id="stripWorkers">…</b></span>
         <span id="stripNote" style="color:var(--yellow)"></span>
         <span id="stripTime" style="margin-left:auto;color:var(--overlay0)">…</span>
       </div>
@@ -1574,9 +1574,10 @@ async function refreshAgentStatus(){
     if(badge){
       /* E-19: склонение из word (1 агент / 2 агента / 5 агентов), а не «1 агентов». */
       badge.textContent = `🤖 ${n} ${word}`;
-      badge.title = `агенты = max(живые run, воркеры) — стабильный сигнал (${n})\n` +
-        `в работе = мгновенные процессы opencode run (${Number(s.agents_running)||0})\n` +
-        `сессии = вкладки OpenCode за 24 ч (${Number(s.sessions_active)||0})\n` +
+      badge.title = `движок: ${s.engine||"DeepSeek Harness"}\n` +
+        `агенты = max(живые dsh headless, сессии DSH) — стабильный сигнал (${n})\n` +
+        `в работе = мгновенные процессы dsh headless (${Number(s.agents_running)||0})\n` +
+        `сессии = сессии DSH за 24 ч (${Number(s.sessions_active)||0})\n` +
         `сабагенты = дочерние сессии (${Number(s.subagents)||0})\n` +
         `воркеры = systemd-сервисы (${s.workers||0})\n` +
         `обновлено ${s.ts_human||"—"}` + (s.game_mode?" · во время игры":"");
@@ -2546,11 +2547,11 @@ function renderQuestions(){
     </div>`;
   }).join(""):'<div class="p-empty">Ожидающих вопросов нет.</div>';
   box.querySelectorAll(".qanswer").forEach(b=>b.addEventListener("click",()=>{
-    if(!tg||typeof tg.sendData!=="function"){toast("Открой мини-ап через бота");return;}
-    tg.sendData(JSON.stringify({source:"miniapp_answer",id:b.dataset.qid,node:b.dataset.node,
+    if(!canSend()){toast("Нет канала к агенту: открой мини-ап через бота");return;}
+    dshSend({source:"miniapp_answer",id:b.dataset.qid,node:b.dataset.node,
       answer:b.dataset.answer,
-      user_id:((tg.initDataUnsafe||{}).user||{}).id||null}));
-    toast("Ответ отправлен");
+      text:`Ответ на вопрос ${b.dataset.qid}: ${b.dataset.answer}`,
+      user_id:userID}, "Ответ отправлен в DeepSeek Harness");
   }));
   box.querySelectorAll(".qsend").forEach(b=>b.addEventListener("click",()=>sendTypedQuestion(b,"answer")));
   box.querySelectorAll(".qask").forEach(b=>b.addEventListener("click",()=>sendTypedQuestion(b,"ask")));
@@ -2867,7 +2868,7 @@ function studioBind(){
   });
 }
 function studioSend(sid){
-  if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+  if(!canSend()){ toast("Нет канала к агенту: открой мини-ап через бота"); return; }
   const c=studioCards().find(x=>x.id===sid);
   const payload={ source:"miniapp_studio", id:sid, kind:c?c.kind:"",
     sticker:c?studioSticker(c):"", rating:SMAN.rating[sid]||0,
@@ -2878,8 +2879,7 @@ function studioSend(sid){
     t:new Date().toTimeString().slice(0,8), ts:payload.ts, rid:"st"+payload.ts, source:"miniapp_studio" });
   CHAT.sent=CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
-  tg.sendData(JSON.stringify(payload));
-  toast("Отправлено — ответ появится здесь же");
+  dshSend(payload, "Отправлено в DeepSeek Harness — ответ появится здесь же");
 }
 
 /* Запрос из Студии несёт свой source и компактный контекст карточек; несёт компактный контекст отобранных карточек. Бот не трогаем:
@@ -2920,7 +2920,7 @@ function updateStudioAskMeta(){
 function studioAskWithContext(){
   const inp=$("#sPrompt"); if(!inp) return;
   const q=(inp.value||"").trim(); if(!q){ toast("Введи вопрос"); return; }
-  if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+  if(!canSend()){ toast("Нет канала к агенту: открой мини-ап через бота"); return; }
   const text=studioContext().text+" "+q;
   const rid=Date.now().toString(36)+Math.random().toString(36).slice(2,6);
   const ts=Date.now();
@@ -2931,12 +2931,10 @@ function studioAskWithContext(){
   CHAT.sent=CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   renderStudioReplies();
-  /* @owner:redesign-2026-11-21 @region:source-unique: Студия шлёт свой source,
-     не miniapp_chat (G1: 5 уникальных source). Бот-хендлер читает source как тип задачи. */
-  tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID, rid:rid,
-    surface:"studio"}));  /* @owner:fix-2026-11-21: бот понимает miniapp_chat; surface — семантика, не source */
+  /* surface=studio — семантика задачи; канал теперь DSH, а не бот. */
+  dshSend({source:"miniapp_chat", text:text, user_id:userID, rid:rid,
+    surface:"studio"}, "Отправлено в DeepSeek Harness — ответ появится здесь же");
   inp.value=""; updateStudioAskMeta();
-  toast("Отправлено — ответ появится здесь же");
 }
 const sAskBtn=$("#sAsk"); if(sAskBtn) sAskBtn.addEventListener("click", studioAskWithContext);
 const sPrompt=$("#sPrompt"); if(sPrompt) sPrompt.addEventListener("keydown", e=>{
@@ -3042,10 +3040,9 @@ async function voiceFinish(){
   const ext=type.indexOf("ogg")>=0 ? "ogg" : "webm";
   const entry={ text:"🎤 Голос "+dur+" с · отправляю…", t:new Date().toTimeString().slice(0,8),
     ts:Date.now(), rid:rid, source:"miniapp_chat", surface:"voice" };  /* @owner:fix-2026-11-21 */
-  if(typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
-    tg.sendData(JSON.stringify({source:"miniapp_chat", surface:"voice",
-      text:"🎤 Голосовое сообщение ("+dur+" с) — расшифруй и ответь", user_id:userID, rid:rid}));
-  }
+  dshSend({source:"miniapp_chat", surface:"voice",
+    text:"🎤 Голосовое сообщение ("+dur+" с) — расшифруй и ответь",
+    user_id:userID, rid:rid}, "Голос принят DeepSeek Harness");
   CHAT.sent.push(entry); CHAT.sent=CHAT.sent.slice(-50);
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   renderStudioReplies();
