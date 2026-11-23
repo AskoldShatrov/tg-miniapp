@@ -2601,6 +2601,7 @@ let STUDIO = { loaded:false, loading:false, nodes:[], edges:[], meta:"" };
 let SMAN = { sticker:{}, rating:{}, links:{} };
 try { SMAN = Object.assign(SMAN, JSON.parse(localStorage.getItem(STUDIO_KEY)||"{}")); } catch(e){}
 ["sticker","rating","links"].forEach(k=>{ if(!SMAN[k]||typeof SMAN[k]!=="object") SMAN[k]={}; });
+SMAN.open = SMAN.open || {};
 let SEDGES = {};
 let sView = "cards", sKind = "all", sQuery = "", sLimit = 40;
 
@@ -2721,7 +2722,7 @@ function studioCardHTML(c){
   const vid=(c.kind==="video"&&c.id.indexOf("video:")===0)
     ? `<a class="slink vid" href="https://youtu.be/${esc(c.id.slice(6))}" target="_blank" rel="noopener">▶ открыть видео</a>` : "";
   const anyLinks=(autoChips+edgeChips+manChips+vid)||'<span class="slink" style="opacity:.45">связей нет</span>';
-  return `<div class="scard ${r>=5?"r5":r===4?"r4":r===3?"r3":""}" data-sid="${esc(c.id)}">
+  return `<div class="scard ${SMAN.open[c.id]?"open":""} ${r>=5?"r5":r===4?"r4":r===3?"r3":""}" data-sid="${esc(c.id)}">
     <div class="shead">
       <span class="skind ${kc}">${esc(kindLabel)}</span>
       ${c.group?`<span class="stime" style="margin-left:0">${esc(c.group)}</span>`:""}
@@ -2768,7 +2769,6 @@ function studioOptimistic(card, mutate){
     clearTimeout(slowTimer);
     card.classList.remove("s-optimistic");
     if(typeof updateStudioAskMeta==="function") updateStudioAskMeta();
-    if(typeof studioRender==="function") studioRender();
     if(err) throw err;
   });
 }
@@ -2777,7 +2777,8 @@ function studioBind(){
     const sid=card.dataset.sid;
     const txt=card.querySelector(".stext");
     if(txt) txt.addEventListener("click",()=>studioOptimistic(card,()=>{
-      card.classList.toggle("open"); updateStudioAskMeta();
+      SMAN.open[sid] = !SMAN.open[sid];
+      card.classList.toggle("open", !!SMAN.open[sid]); updateStudioAskMeta();
     }));
     $$(".srate button",card).forEach(b=>b.addEventListener("click",ev=>{
       ev.stopPropagation();
