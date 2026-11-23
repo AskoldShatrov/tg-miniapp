@@ -942,6 +942,61 @@
     <section class="screen" id="screen-scenarios">
       <div id="scenarios-tab"></div>
     </section>
+
+    <!-- Резервный канал INVENTORS (invento.rs). Управление только владельцем. -->
+    <section class="screen" id="screen-backup">
+      <style>
+        .bk-wrap{padding:14px 14px 24px;display:flex;flex-direction:column;gap:12px}
+        .bk-card{background:var(--surface0);border:1px solid var(--surface1);
+          border-radius:var(--radius-sm);padding:12px}
+        .bk-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+        .bk-title{font:700 13px/1.3 var(--ff);color:var(--text)}
+        .bk-sub{font:500 11px/1.5 var(--ff);color:var(--subtext1);margin-top:4px}
+        .bk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+        .bk-kv{background:var(--mantle);border:1px solid var(--surface1);border-radius:8px;padding:8px}
+        .bk-kv b{display:block;font:700 9px/1 var(--fm);letter-spacing:.4px;color:var(--overlay2)}
+        .bk-kv span{display:block;font:600 12px/1.4 var(--ff);color:var(--text);margin-top:5px}
+        .bk-input{width:100%;padding:10px;font:500 13px/1.3 var(--ff);color:var(--text);
+          background:var(--mantle);border:1px solid var(--surface1);border-radius:8px}
+        .bk-input:focus{outline:none;border-color:var(--blue)}
+        .bk-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+        .bk-msg{font:600 11px/1.5 var(--ff);color:var(--subtext1);min-height:18px}
+        .bk-msg.ok{color:var(--green)} .bk-msg.err{color:var(--red)}
+      </style>
+      <div class="bk-wrap">
+        <div class="bk-card">
+          <div class="bk-row"><span class="bk-title">Резервный канал INVENTORS</span>
+            <span class="chip" id="bkState">проверяю…</span></div>
+          <div class="bk-sub">Независимый пул моделей invento.rs: работает, когда модели OpenCode недоступны или упёрлись в лимит. Включается только владельцем.</div>
+          <div class="bk-grid">
+            <div class="bk-kv"><b>КЛЮЧ API</b><span id="bkKeyState">—</span></div>
+            <div class="bk-kv"><b>МОСТ</b><span id="bkBridge">—</span></div>
+            <div class="bk-kv"><b>ОСТАТОК</b><span id="bkBalance">—</span></div>
+            <div class="bk-kv"><b>МОДЕЛЬ</b><span id="bkModel">—</span></div>
+          </div>
+          <div class="bk-actions">
+            <button class="btn btn-primary" id="bkToggle" type="button">Включить резерв</button>
+            <button class="btn" id="bkTest" type="button">Тестовый запрос</button>
+            <button class="btn" id="bkRefresh" type="button">⟳ Обновить</button>
+          </div>
+          <div class="bk-msg" id="bkMsg"></div>
+        </div>
+        <div class="bk-card">
+          <div class="bk-title">Ключ INVENTORS</div>
+          <div class="bk-sub">Settings → API keys в invento.rs. Ключ сохраняется на ноуте с режимом 600 и не показывается обратно в мини-апе.</div>
+          <input class="bk-input" id="bkKeyInput" type="password" placeholder="Вставьте ключ API" autocomplete="off">
+          <div class="bk-actions"><button class="btn btn-primary" id="bkSaveKey" type="button">Сохранить ключ</button></div>
+        </div>
+        <div class="bk-card">
+          <div class="bk-title">Как выполняются задачи</div>
+          <div class="bk-sub">
+            <b>OpenCode</b> — резерв стоит последним в цепочке моделей бота: сначала бесплатные, потом INVENTORS.<br>
+            <b>DeepSeek Harness</b> — задачи приходят через встроенный MCP-мост <code>opencode_prompt</code> и попадают в тот же резервный провайдер. Отдельный ключ харнессу не нужен.
+          </div>
+          <div class="bk-sub" id="bkLast" style="margin-top:8px">Последний тест: нет</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="hotbar">
@@ -1038,7 +1093,7 @@ function toast(msg){
 
 /* ---------- tabs ---------- */
 /* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
-const TAB_IDS=["live","tasks","prompts","atlas","chat"];
+const TAB_IDS=["live","tasks","prompts","atlas","chat","backup"];
 
 const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function setTab(name){
@@ -1053,6 +1108,7 @@ function setTab(name){
     const tn=$("#taskSubNav"); if(tn) tn.hidden=true;
   }
   if(name==="scenarios"&&typeof mountScenarios==="function") mountScenarios();
+  if(name==="backup"&&typeof backupLoad==="function") backupLoad();
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
@@ -1539,6 +1595,74 @@ async function api(path, body){
   }finally{ clearTimeout(timer); }
 }
 function apiErr(){ return API_LAST_ERROR || "неизвестная ошибка API"; }
+
+/* ---------- резервный канал INVENTORS (invento.rs) ----------
+   Все мутации — только через process_api.py, где initData проверен HMAC
+   и роль owner выведена на бэкенде. Ключ в ответ не приходит никогда. */
+function bkSay(text, cls){
+  const el=$("#bkMsg"); if(!el) return;
+  el.textContent=text||"";
+  el.className="bk-msg"+(cls?" "+cls:"");
+}
+async function backupLoad(){
+  const d=await api("/backup/status");
+  if(!d){ bkSay("не удалось прочитать статус: "+apiErr(), "err"); return; }
+  const state=$("#bkState");
+  if(state){
+    state.textContent=d.enabled?"ВКЛЮЧЁН":"выключен";
+    state.className="chip "+(d.enabled?"open":"");
+  }
+  const key=$("#bkKeyState"); if(key) key.textContent=d.key_present?"есть":"нет — введите ниже";
+  const bridge=$("#bkBridge");
+  if(bridge) bridge.textContent=d.bridge&&d.bridge.ok
+    ? ("живой"+(d.bridge.enabled?" · резерв активен":" · ждёт включения")) : "недоступен";
+  const bal=$("#bkBalance");
+  if(bal) bal.textContent=d.billing&&d.billing.available!=null
+    ? (d.billing.available+" / "+d.billing.grant+" · сброс "+d.billing.reset) : "нет данных";
+  const model=$("#bkModel"); if(model) model.textContent=d.model||"—";
+  const toggle=$("#bkToggle"); if(toggle) toggle.textContent=d.enabled?"Выключить резерв":"Включить резерв";
+  const last=$("#bkLast");
+  if(last){
+    const t=d.last_test;
+    last.textContent=t ? ("Последний тест: "+(t.ok?"успех "+t.seconds+" с":"FAIL — "+(t.error||"нет деталей"))
+      + (t.preview?" · «"+t.preview.slice(0,40)+"»":"")) : "Последний тест: нет";
+  }
+  if(!d.can_manage) bkSay("Управление резервом доступно только владельцу.");
+  else bkSay("");
+}
+async function backupSaveKey(){
+  const input=$("#bkKeyInput");
+  const key=input?String(input.value||"").trim():"";
+  if(key.length<16){ bkSay("Ключ слишком короткий", "err"); return; }
+  bkSay("Сохраняю ключ…");
+  const d=await api("/backup/key",{key:key});
+  if(!d){ bkSay("не удалось сохранить: "+apiErr(), "err"); return; }
+  if(input) input.value="";
+  bkSay("Ключ сохранён на ноуте (режим 600). Теперь включите резерв.", "ok");
+  backupLoad();
+}
+async function backupToggle(){
+  const st=$("#bkState");
+  const on=st?st.textContent==="ВКЛЮЧЁН":false;
+  bkSay(on?"Выключаю резерв…":"Включаю резерв…");
+  const d=await api("/backup/toggle",{enabled:!on});
+  if(!d){ bkSay("не удалось переключить: "+apiErr(), "err"); return; }
+  bkSay(d.enabled?"Резерв включён: INVENTORS подключен в конце цепочки бота.":"Резерв выключен.", "ok");
+  backupLoad();
+}
+async function backupTest(){
+  bkSay("Отправляю тестовый запрос в INVENTORS…");
+  const d=await api("/backup/test",{});
+  if(!d){ bkSay("тест не прошёл: "+apiErr(), "err"); return; }
+  if(d.ok) bkSay("Тест прошёл за "+d.seconds+" с · «"+String(d.preview||"").slice(0,60)+"»", "ok");
+  else bkSay("Тест FAIL: "+(d.error||"нет деталей"), "err");
+  backupLoad();
+}
+(function(){
+  const pairs=[["#bkToggle",backupToggle],["#bkTest",backupTest],
+               ["#bkRefresh",backupLoad],["#bkSaveKey",backupSaveKey]];
+  pairs.forEach(([sel,fn])=>{const el=$(sel); if(el) el.addEventListener("click",fn);});
+})();
 function setApiBadge(el, on, label){
   if(!el) return;
   el.textContent = on ? "API · live" : "API · нет";
