@@ -991,7 +991,7 @@
           <div class="bk-title">Как выполняются задачи</div>
           <div class="bk-sub">
             <b>OpenCode</b> — в TG-боте резерв добавляется в конец цепочки; провайдер доступен и прямым вызовом <code>opencode run --model invento/…</code>.<br>
-            <b>DeepSeek Harness</b> — задачи приходят через встроенный MCP-мост <code>opencode_prompt</code> и попадают в тот же резервный провайдер. Отдельный ключ харнессу не нужен.
+            <b>DeepSeek Harness</b> — задачи уходят агенту OpenCode через встроенный MCP-мост <code>opencode_prompt</code>; резервный провайдер доступен ему через <code>invento/…</code>. Отдельный ключ харнессу не нужен.
           </div>
           <div class="bk-sub" id="bkLast" style="margin-top:8px">Последний тест: нет</div>
         </div>
