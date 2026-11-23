@@ -1664,6 +1664,46 @@ if (reloadBtn) reloadBtn.addEventListener("click", () => {
   });
 });
 
+/* --- DeepSeek Harness: единый канал задач мини-апа ----------------------
+   Все задачи уходят POST /dsh/task на process_api. Старый sendData остаётся
+   только явным фолбэком с честным сообщением в UI. */
+function dshAvailable(){
+  try{ return !!((LATEST_STATUS&&LATEST_STATUS.process_api_url)||""); }
+  catch(e){ return false; }
+}
+function dshFallback(payload){
+  if(typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
+    tg.sendData(JSON.stringify(payload));
+    toast("API недоступен — задача ушла через OpenCode");
+    return true;
+  }
+  toast("Нет API и нет sendData — задача не отправлена");
+  return false;
+}
+function dshSend(payload, okText){
+  var base="";
+  try{ base=String((LATEST_STATUS&&LATEST_STATUS.process_api_url)||"").replace(/\/+$/,""); }
+  catch(e){}
+  var init="";
+  try{
+    init=(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)||
+         (typeof tg!=="undefined"&&tg&&tg.initData)||"";
+  }catch(e){}
+  var text=String(payload.text||payload.id||JSON.stringify(payload));
+  if(!base || typeof fetch!=="function") return Promise.resolve(dshFallback(payload));
+  return fetch(base+"/dsh/task",{
+    method:"POST",
+    headers:{"Content-Type":"application/json","X-Telegram-Init-Data":init},
+    body:JSON.stringify({source:payload.source||"miniapp",text:text,
+      user_id:payload.user_id||userID,rid:payload.rid||"",surface:payload.surface||"chat"})
+  }).then(function(r){ return r.json(); }).then(function(j){
+    if(!j || !j.ok) throw new Error("dsh/task rejected");
+    if(okText) toast(okText);
+    return true;
+  }).catch(function(){ return dshFallback(payload); });
+}
+function canSend(){ return dshAvailable() || (typeof tg!=="undefined" && tg && typeof tg.sendData==="function"); }
+
 function sendToAgent(){
   const payload = {
     source: "miniapp",
@@ -1671,8 +1711,7 @@ function sendToAgent(){
     actions: actions,
     tab: ((document.querySelector(".tab.active") || {}).dataset || {}).tab || "card"
   };
-  if (tg) { tg.sendData(JSON.stringify(payload)); }
-  else { toast("Открой приложение через бот /app, чтобы отправить агенту"); }
+  dshSend(payload, "Отправлено в DeepSeek Harness");
 }
 const sendBtn = $("#sendAgent");
 if (sendBtn) sendBtn.addEventListener("click", sendToAgent);
@@ -1821,13 +1860,9 @@ function sendChat(){
   localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT));
   chatPinned=true; chatUnread=0;
   renderChat(); inp.value = "";
-  if(typeof tg !== "undefined" && tg){
-    /* rid пока не используется ботом, но уже уходит в payload: когда
-       replies.json начнёт его возвращать, pairing станет точным без миграции. */
-    tg.sendData(JSON.stringify({source:"miniapp_chat", text:text, user_id:userID, rid:rid}));
-  } else {
-    toast("Открой мини-ап через /app, чтобы отправить агенту");
-  }
+  /* rid уходит в payload: replies.json возвращает его, pairing точный. */
+  dshSend({source:"miniapp_chat", text:text, user_id:userID, rid:rid},
+          "Отправлено в DeepSeek Harness");
 }
 const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", sendChat);
 const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown", e => {
@@ -2266,17 +2301,16 @@ function atlasDetail(n,row){
   const send=()=>{
     const inp=box.querySelector(".atlasQuery"), text=((inp&&inp.value)||"").trim();
     if(!text){ toast("Введите запрос"); return; }
-    if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+    if(!canSend()){ toast("Нет канала к агенту: открой мини-ап через бота"); return; }
     if(!userID||userID==="0"){ toast("Открой мини-ап через бота — запрос адресуется получателю"); return; }
     const ts=Date.now();
     const card=String(n.title||"карточка атласа");
     const full=String(n.full||"");
     const prompt="По карточке атласа «"+card+"». Запрос: "+text+
       (full?"\nПолный текст карточки: "+full:"");
-    /* Используем существующий обработчик бота source=miniapp_chat — у него есть
-       реальный handle(); новый source не был бы поддержан. */
-    tg.sendData(JSON.stringify({source:"miniapp_chat", surface:"atlas",
-      text:prompt, user_id:userID, rid:"at"+ts, ts:ts}));
+    /* surface=atlas сохраняем как семантику задачи — DSH видит тот же контекст. */
+    dshSend({source:"miniapp_chat", surface:"atlas",
+      text:prompt, user_id:userID, rid:"at"+ts, ts:ts}, "Отправлено в DeepSeek Harness");
     CHAT.sent.push({text:"◈ "+card+": "+text,
       t:new Date().toTimeString().slice(0,8), ts:ts, rid:"at"+ts, source:"miniapp_chat"});
     CHAT.sent=CHAT.sent.slice(-50);
@@ -2462,17 +2496,16 @@ function sendTypedQuestion(btn, mode){
   const inp=row.querySelector(".qfree");
   const text=((inp&&inp.value)||"").trim();
   if(!text){ toast("Напиши текст — потом нажми кнопку"); return; }
-  if(!tg||typeof tg.sendData!=="function"){ toast("Открой мини-ап через бота"); return; }
+  if(!canSend()){ toast("Нет канала к агенту: открой мини-ап через бота"); return; }
   if(mode==="ask"){
-    tg.sendData(JSON.stringify({source:"miniapp_chat",
+    dshSend({source:"miniapp_chat",
       text:`Уточнение по вопросу «${btn.dataset.qid}»: ${text}`,
-      user_id:userID, rid:Date.now().toString(36)}));
-    toast("Уточнение отправлено агенту");
+      user_id:userID, rid:Date.now().toString(36)}, "Уточнение отправлено в DeepSeek Harness");
   }else{
-    tg.sendData(JSON.stringify({source:"miniapp_answer", id:btn.dataset.qid,
+    dshSend({source:"miniapp_answer", id:btn.dataset.qid,
       node:btn.dataset.node, answer:text,
-      user_id:((tg.initDataUnsafe||{}).user||{}).id||null}));
-    toast("Ответ отправлен");
+      text:`Ответ на вопрос ${btn.dataset.qid}: ${text}`,
+      user_id:userID}, "Ответ отправлен в DeepSeek Harness");
     if(inp) inp.value="";
     if(btn.dataset.qid) delete QDRAFTS[btn.dataset.qid];
   }
