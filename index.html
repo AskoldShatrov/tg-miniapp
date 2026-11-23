@@ -2235,7 +2235,7 @@ function atlasNodeHtml(n){
   const ask=`<span class="tid a-ask" data-key="${esc(n.__k)}" style="color:var(--blue)" title="Открыть целиком и написать запрос">?</span>`;
   const title=esc(n.title||"узел без названия");
   const row=`<div class="trow ${kids.length?"parent":""}" data-key="${esc(n.__k)}">${twist}${kind}<span class="tname">${title}</span>${ask}${atlasBadge(n.status)}</div>`;
-  return `<div class="tnode"><div class="a-inline"></div>${row}${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
+  return `<div class="tnode">${row}<div class="a-inline"></div>${kids.length?`<div class="children">${kids.map(atlasNodeHtml).join("")}</div>`:""}</div>`;
 }
 function atlasIndex(rs){
   (rs||[]).forEach(n=>{
