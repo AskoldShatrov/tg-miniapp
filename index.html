@@ -332,7 +332,8 @@
   .a-meta{font:600 9.5px/1.4 var(--fm);color:var(--overlay1);margin-bottom:6px}
   .a-full{white-space:pre-wrap;word-break:break-word;font:500 11px/1.55 var(--ff);color:var(--text);max-height:46vh;overflow:auto}
   .a-raw{margin-top:10px;border-top:1px dashed var(--surface1);padding-top:8px}
-  .a-raw h4{margin:0 0 6px;font:700 10px/1.2 var(--fm);color:var(--mauve);letter-spacing:.03em}
+  .a-raw h4,.a-raw-title{margin:0 0 6px;font:700 10px/1.2 var(--fm);color:var(--mauve);letter-spacing:.03em}
+  .a-raw-themes{font:600 9px/1.2 var(--fm);color:var(--overlay0);margin-left:6px}
   .a-raw-item{border:1px solid var(--surface1);border-radius:8px;padding:7px 8px;margin:6px 0;background:color-mix(in srgb,var(--base) 70%,transparent)}
   .a-raw-item .rid{font:600 9.5px/1.2 var(--fm);color:var(--overlay1)}
   .a-raw-item .ridea{font:500 11px/1.45 var(--ff);color:var(--text);margin-top:3px}
@@ -2443,13 +2444,21 @@ function atlasDetail(n,row){
   if(!box) return;
   if(ATLAS_OPEN_KEY===n.__k && box.classList.contains("open")){ atlasCloseDetail(); return; }
   atlasCloseDetail();
-  const rawItems = Array.isArray(n.raw) ? n.raw : [];
+  const rawItems = [];
+  if(Array.isArray(n.raw)) n.raw.forEach(r=>{ if(r) rawItems.push(r); });
+  if(n.kind==="raw_card" || n.kind==="rawcard") rawItems.unshift({voice:n.card_id||n.voice||n.id, idea:n.idea||"", quote:n.quote||"", themes:n.theme?[n.theme]:[], kind:n.card_kind||"", similarity:n.similarity, personal:n.personal, _self:true});
+  const rawLinks = Array.isArray(n.raw_links) ? n.raw_links.length : 0;
   const rawHtml = rawItems.length ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки (${rawItems.length})</div>${rawItems.map(r=>{
-    const voice = esc(String(r.voice||""));
-    const themes = Array.isArray(r.themes) ? r.themes.map(t=>esc(String(t))).join(", ") : "";
-    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${themes?`<span class="a-raw-themes">${themes}</span>`:""}</div>`;
-  }).join("")}</div>` : "";
-  box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
+    if(r.personal) return `<div class="a-raw-item"><div class="rid">${esc(String(r.voice||r.card_id||"карточка"))}</div><div class="rmeta">личная карточка — скрыта в публичном Атласе</div></div>`;
+    const voice = esc(String(r.voice||r.card_id||""));
+    const themes = Array.isArray(r.themes) ? r.themes.map(t=>esc(String(t))).join(", ") : (r.theme?esc(String(r.theme)):"");
+    const idea = r.idea ? esc(String(r.idea)) : "";
+    const quote = (r.quote && r.quote!==r.idea) ? esc(String(r.quote)) : (!r.idea && r.snippet ? esc(String(r.snippet)) : "");
+    const meta = [themes, r.kind||r.card_kind||"", (r.similarity!=null?"сходство "+r.similarity:"")].filter(Boolean).join(" · ");
+    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}${idea?`<div class="ridea">${idea}</div>`:""}${quote?`<div class="rquote">«${quote}»</div>`:""}</div>`;
+  }).join("")}</div>` : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые идеи → сырые карточки».</div></div></div>` : "");
+  const metaExtra = rawLinks ? ` · сырых карточек: ${rawLinks}` : (rawItems.length?` · сырых карточек: ${rawItems.length}`:"");
+  box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")}${metaExtra} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
     <div class="a-full">${esc(n.full||n.answer||n.title||"")}</div>
     ${rawHtml}
     <div class="a-query"><input class="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
@@ -2512,6 +2521,10 @@ function renderAtlas(){
   const atEl=$("#atlasTime"), af=paint("atlas", atEl);
   if(atEl) atEl.textContent=((ATLAS.updatedAt||"").slice(11,16)||"—")+" · "+af.text;
   ATLAS_LOOKUP={}; atlasIndex(tree.roots);
+  ATLAS_VOICE_BY_HYP={};
+  (Array.isArray(ATLAS.voice_signals)?ATLAS.voice_signals:[]).forEach(s=>{
+    if(s&&s.hypothesis) ATLAS_VOICE_BY_HYP[String(s.hypothesis)]=s;
+  });
   cards.innerHTML=`<div class="tree">${(tree.roots||[]).map(atlasNodeHtml).join("")}</div>`;
   $$("#atlasCards .a-ask").forEach(b=>b.addEventListener("click",ev=>{
     ev.stopPropagation();
@@ -2537,6 +2550,49 @@ function renderAtlas(){
     if(tw) tw.classList.add("open");
   });
 }
+
+window.__openAtlasNode = function(nodeId){
+  if(!nodeId) return;
+  if(typeof setTab === "function") setTab("atlas");
+  const findInTrees = ()=>{
+    const trees = Array.isArray(ATLAS&&ATLAS.trees) ? ATLAS.trees : [];
+    for(const t of trees){
+      let found = null;
+      const walk = (nodes)=>{
+        for(const n of (nodes||[])){
+          if(String(n.id) === String(nodeId)){ found = n; return; }
+          walk(n.children);
+          if(found) return;
+        }
+      };
+      walk(t.roots||[]);
+      if(found) return {tree:t, node:found};
+    }
+    return null;
+  };
+  const open = ()=>{
+    if(!ATLAS) return false;
+    const hit = findInTrees();
+    if(!hit) return false;
+    if(ATLAS_TREE !== hit.tree.id){ ATLAS_TREE = hit.tree.id; renderAtlas(); }
+    const row = document.querySelector(`#atlasCards .trow[data-key="${CSS.escape(String(hit.node.__k||""))}"]`);
+    if(!row) return false;
+    let p = row.parentElement;
+    while(p){
+      if(p.classList && p.classList.contains("children")){ p.classList.add("open"); const tw=p.closest(".tnode")?.querySelector(".trow .twist"); if(tw) tw.classList.add("open"); }
+      p = p.parentElement;
+    }
+    row.scrollIntoView({block:"center", behavior:"smooth"});
+    atlasDetail(hit.node, row);
+    return true;
+  };
+  if(open()) return;
+  let tries = 0;
+  const timer = setInterval(()=>{
+    tries++;
+    if(open() || tries > 20) clearInterval(timer);
+  }, 150);
+};
 
 /* ---------- ход работы: активные шаги и задачи ---------- */
 let LIVE_JOBS=null;
