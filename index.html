@@ -2452,7 +2452,7 @@ function atlasDetail(n,row){
     const quote = (r.quote && r.quote!==r.idea) ? esc(String(r.quote)) : (!r.idea && r.snippet ? esc(String(r.snippet)) : "");
     const meta = [themes, r.kind||r.card_kind||"", (r.similarity!=null?"сходство "+r.similarity:"")].filter(Boolean).join(" · ");
     return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}${idea?`<div class="ridea">${idea}</div>`:""}${quote?`<div class="rquote">«${quote}»</div>`:""}</div>`;
-  }).join("")}</div>` : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые идеи → сырые карточки».</div></div></div>` : "");
+  }).join("")}</div>` : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые сигналы → сырые карточки».</div></div></div>` : "");
   let signalsHtml="";
   const hypId = (n.ref && ATLAS_VOICE_BY_HYP[String(n.ref)]) ? String(n.ref)
     : (String(n.id||"").startsWith("voicesig:") ? String(n.id).slice("voicesig:".length) : "");
