@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T11:26:11+00:00",
-  "generated_human": "23.11 11:26 UTC",
-  "as_of": 1795433171968,
+  "generated": "2026-11-23T11:27:12+00:00",
+  "generated_human": "23.11 11:27 UTC",
+  "as_of": 1795433232196,
   "stale_days": 1,
   "count": 1096,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-5GeUpp0KLO",
      "text": "ПРОРАБОТКА ОВЕРЛЕЯ, P0-1. Проверить через pc-bridge/GSI один кадр реального матча с allplayers>0 и проверить оверлей в кадре: деньги/бай/AWP под иконками. Если allplayers недоступны — честно зафиксировать как блокер с причиной и n попыток. Новый отчёт ~/overnight/open_tracks/O01-overlay-allplayers.md. Не трогать data/ и 44/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795433165000,
+     "ts": 1795433225000,
      "source": "session",
      "title": "Оверлей allplayers через pc-bridge/GSI",
      "source_label": "ноут",
@@ -60,7 +60,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795433165000,
+     "as_of": 1795433225000,
      "is_stale": false
     },
     {
@@ -4130,7 +4130,7 @@
     {
      "id": "ses-aI9f1hoDbp",
      "text": "ТЫ — менеджер 20-часового мандата (роль надзирателя, не исполнителя чужих задач).\nОбязательно загрузи через tool skill: progress и ready-to-deliver.\n\nПрочитай (не целиком огромные файлы, а точечно):\n1. ~/overnight/manager_status.json — здоровье экосистемы;\n2. `python3 ~/.config/opencode/scripts/progress.py --no-color --ascii` — сводка;\n3. свежие отчёты ~/overnight/cloud_tracks/*.md (только шапки и хвосты, самые новые 5–8);\n4. ~/overnight/manager_cycle_digest.md если есть — предыдущий цикл.\n\nСДЕЛАЙ:\n- Найди running-шаги старше 30 мин и все blocked. Для каждого живого, но тихого\n  шага сделай `python3 ~/.config/opencode/scripts/progress.py step work <T> <step> --note \"менеджер: проверка < что >\"`;\n  для блокера — `event <T> --text \"…\"` с причиной и владельцем. Не выдумывай гейты.\n- Проверь, работают ли все агенты/диалоги из статуса; если агент мёртв, а сервис\n  жив — зафиксируй причину в лог цикла, не перезапускай вручную (это делает watchdog).\n- Если нашёл дефект в доступной зоне — попытайся исправить; если нельзя — честный\n  OPEN с владельцем и готовым путём, не сваливай на пользователя.\n- Напиши КОРОТКИЙ отчёт ~/overnight/manager_cycle_digest.md (вердикт HEALTHY /\n  NEEDS_ATTENTION, найденное, действия, OPEN). Не перезаписывай чужие отчёты.\n\nЗАПРЕТ: data/, защищённые отчёты 64/71/103, платные модели, правка progress.json\nнапрямую (только CLI), вопросы пользователю, остановка шин/воркеров.\nНе спрашивай — действуй в доступной зоне и честно фиксируй OPEN.",
-     "ts": 1795433162000,
+     "ts": 1795433214000,
      "source": "session",
      "title": "20-часовой мандат менеджера overnight",
      "source_label": "ноут",
@@ -4149,7 +4149,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795433162000,
+     "as_of": 1795433214000,
      "is_stale": false
     },
     {
