@@ -1671,6 +1671,12 @@ async function backupTest(){
   const pairs=[["#bkToggle",backupToggle],["#bkTest",backupTest],
                ["#bkRefresh",backupLoad],["#bkSaveKey",backupSaveKey]];
   pairs.forEach(([sel,fn])=>{const el=$(sel); if(el) el.addEventListener("click",fn);});
+  const site=$("#bkOpenSite");
+  if(site) site.addEventListener("click",()=>{
+    const wa=(window.Telegram&&window.Telegram.WebApp)?window.Telegram.WebApp:null;
+    if(wa&&typeof wa.openLink==="function") wa.openLink("https://invento.rs/settings");
+    else window.open("https://invento.rs/settings","_blank","noopener");
+  });
 })();
 function setApiBadge(el, on, label){
   if(!el) return;
