@@ -2442,16 +2442,14 @@ function atlasDetail(n,row){
   atlasCloseDetail();
   const rawItems = [];
   if(Array.isArray(n.raw)) n.raw.forEach(r=>{ if(r) rawItems.push(r); });
-  if(n.kind==="raw_card" || n.kind==="rawcard") rawItems.unshift({voice:n.card_id||n.voice||n.id, idea:n.idea||"", quote:n.quote||"", themes:n.theme?[n.theme]:[], kind:n.card_kind||"", similarity:n.similarity, personal:n.personal, _self:true});
+  if(n.kind==="raw_card" || n.kind==="rawcard") rawItems.unshift({voice:n.card_id||n.voice||n.id, themes:n.theme?[n.theme]:[], kind:n.card_kind||"", similarity:n.similarity, personal:n.personal, _self:true});
   const rawLinks = Array.isArray(n.raw_links) ? n.raw_links.length : 0;
   const rawHtml = rawItems.length ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки (${rawItems.length})</div>${rawItems.map(r=>{
     if(r.personal) return `<div class="a-raw-item"><div class="rid">${esc(String(r.voice||r.card_id||"карточка"))}</div><div class="rmeta">личная карточка — скрыта в публичном Атласе</div></div>`;
     const voice = esc(String(r.voice||r.card_id||""));
     const themes = Array.isArray(r.themes) ? r.themes.map(t=>esc(String(t))).join(", ") : (r.theme?esc(String(r.theme)):"");
-    const idea = r.idea ? esc(String(r.idea)) : "";
-    const quote = (r.quote && r.quote!==r.idea) ? esc(String(r.quote)) : (!r.idea && r.snippet ? esc(String(r.snippet)) : "");
     const meta = [themes, r.kind||r.card_kind||"", (r.similarity!=null?"сходство "+r.similarity:"")].filter(Boolean).join(" · ");
-    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}${idea?`<div class="ridea">${idea}</div>`:""}${quote?`<div class="rquote">«${quote}»</div>`:""}</div>`;
+    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}</div>`;
   }).join("")}</div>` : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые сигналы → сырые карточки».</div></div></div>` : "");
   let signalsHtml="";
   const hypId = (n.ref && ATLAS_VOICE_BY_HYP[String(n.ref)]) ? String(n.ref)
@@ -2460,11 +2458,9 @@ function atlasDetail(n,row){
   if(sigRec && Array.isArray(sigRec.signals) && sigRec.signals.length && !rawItems.length){
     const items=sigRec.signals.map(s=>{
       const sim=(typeof s.similarity==="number")?s.similarity.toFixed(3):"?";
-      const q=esc(String(s.quote||""));
-      const idea=esc(String(s.idea||""));
       const vid=esc(String(s.voice||""));
       const kind=esc(String(s.kind||""));
-      return `<div class="a-raw-item"><div class="a-sig-meta">сырая карточка · ${kind} · сходство ${sim} · <span style="opacity:.7">${vid}</span></div>${q?`<div class="rquote">«${q}»</div>`:""}${idea?`<div class="ridea">${idea}</div>`:""}</div>`;
+      return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${vid}">${vid||"—"}</button><span class="a-raw-themes"> ${kind}${kind?" · ":""}сходство ${sim}</span></div>`;
     }).join("");
     signalsHtml=`<div class="a-raw"><div class="a-raw-title">Связанные сырые карточки (${sigRec.signals.length})</div>${items}</div>`;
   }
