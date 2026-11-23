@@ -2403,7 +2403,38 @@ setInterval(refreshReplies, 5000);
   /* @auto:poll-prompts:end */
 
 /* ---------- атлас: интерактивные деревья одного графа ---------- */
-let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={}, ATLAS_OPEN_KEY=null, ATLAS_VOICE_BY_HYP={};
+let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={}, ATLAS_OPEN_KEY=null, ATLAS_VOICE_BY_HYP={}, ATLAS_RAW_CARDS=null, ATLAS_RAW_BY_NODE={}, ATLAS_RAW_BY_IDEA={};
+function atlasLoadRawCards(){
+  if(ATLAS_RAW_CARDS) return Promise.resolve(ATLAS_RAW_CARDS);
+  return fetch("atlas-cards.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(d=>{
+    const items = Array.isArray(d) ? d : (Array.isArray(d&&d.items) ? d.items : []);
+    ATLAS_RAW_CARDS = items;
+    ATLAS_RAW_BY_NODE = {};
+    ATLAS_RAW_BY_IDEA = {};
+    items.forEach(c=>{
+      (Array.isArray(c.atlas_nodes)?c.atlas_nodes:[]).forEach(id=>{ const k=String(id); (ATLAS_RAW_BY_NODE[k]=ATLAS_RAW_BY_NODE[k]||[]).push(c); });
+      (Array.isArray(c.ideas)?c.ideas:[]).forEach(id=>{ const k=String(id); (ATLAS_RAW_BY_IDEA[k]=ATLAS_RAW_BY_IDEA[k]||[]).push(c); });
+    });
+    return ATLAS_RAW_CARDS;
+  }).catch(()=>{ ATLAS_RAW_CARDS=[]; return ATLAS_RAW_CARDS; });
+}
+function atlasRawCardsForNode(n, hypId, sigRec){
+  const out = [];
+  const seen = new Set();
+  const push = (c)=>{ const id=String(c&& (c.id||c.audio||c.voice)||""); if(!id || seen.has(id)) return; seen.add(id); out.push(c); };
+  const nodeIds = [String(n&&n.id||""), String(n&&n.ref||"")].filter(Boolean);
+  nodeIds.forEach(id=> (ATLAS_RAW_BY_NODE[id]||[]).forEach(push));
+  if(hypId) (ATLAS_RAW_BY_IDEA[String(hypId)]||[]).forEach(push);
+  if(sigRec && Array.isArray(sigRec.signals)){
+    sigRec.signals.forEach(s=>{
+      const v = String(s.voice||s.audio||"");
+      if(!v) return;
+      const found = (ATLAS_RAW_CARDS||[]).find(c=>String(c.id||c.audio||c.voice)===v);
+      if(found) push(found); else push({id:v,audio:v,voice:v,theme:s.theme||"",kind:s.kind||"claim",idea:s.idea||"",quote:s.quote||"",atlas_nodes:nodeIds.filter(Boolean),ideas:hypId?[hypId]:[]});
+    });
+  }
+  return out;
+}
 const ATLAS_KIND={author:"автор",video:"видео",claim:"утверждение",verdict:"вердикт",hypothesis:"гипотеза",want:"хотелка",goal:"цель",group:"ветка",ref:"проверка",raw_card:"сырая карточка",rawcard:"сырая карточка",voicesig:"голосовой сигнал"};
 const ATLAS_STATUS={open:"открыто",done:"готово",deferred:"отложено",doing:"в работе",pass:"подтверждено",verified:"проверено",fail:"опровергнуто",refuted:"опровергнуто",measuring:"измеряется",signal:"сигнал",noise:"шум",hidden:"скрыто (личное)",false:""};
 function atlasBadge(raw){
@@ -2442,29 +2473,52 @@ function atlasDetail(n,row){
   atlasCloseDetail();
   const rawItems = [];
   if(Array.isArray(n.raw)) n.raw.forEach(r=>{ if(r) rawItems.push(r); });
-  if(n.kind==="raw_card" || n.kind==="rawcard") rawItems.unshift({voice:n.card_id||n.voice||n.id, themes:n.theme?[n.theme]:[], kind:n.card_kind||"", similarity:n.similarity, personal:n.personal, _self:true});
+  if(n.kind==="raw_card" || n.kind==="rawcard") rawItems.unshift({voice:n.card_id||n.voice||n.id, idea:n.idea||"", quote:n.quote||"", themes:n.theme?[n.theme]:[], kind:n.card_kind||"", similarity:n.similarity, personal:n.personal, _self:true});
   const rawLinks = Array.isArray(n.raw_links) ? n.raw_links.length : 0;
-  const rawHtml = rawItems.length ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки (${rawItems.length})</div>${rawItems.map(r=>{
-    if(r.personal) return `<div class="a-raw-item"><div class="rid">${esc(String(r.voice||r.card_id||"карточка"))}</div><div class="rmeta">личная карточка — скрыта в публичном Атласе</div></div>`;
-    const voice = esc(String(r.voice||r.card_id||""));
-    const themes = Array.isArray(r.themes) ? r.themes.map(t=>esc(String(t))).join(", ") : (r.theme?esc(String(r.theme)):"");
-    const meta = [themes, r.kind||r.card_kind||"", (r.similarity!=null?"сходство "+r.similarity:"")].filter(Boolean).join(" · ");
-    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}</div>`;
-  }).join("")}</div>` : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые сигналы → сырые карточки».</div></div></div>` : "");
-  let signalsHtml="";
   const hypId = (n.ref && ATLAS_VOICE_BY_HYP[String(n.ref)]) ? String(n.ref)
     : (String(n.id||"").startsWith("voicesig:") ? String(n.id).slice("voicesig:".length) : "");
   const sigRec = hypId ? ATLAS_VOICE_BY_HYP[hypId] : null;
-  if(sigRec && Array.isArray(sigRec.signals) && sigRec.signals.length && !rawItems.length){
+  const linkedRawCards = (typeof atlasRawCardsForNode === "function") ? atlasRawCardsForNode(n, hypId, sigRec) : [];
+  const rawCount = rawItems.length || (sigRec && sigRec.signals ? sigRec.signals.length : 0) || rawLinks || linkedRawCards.length;
+  const openRawView = (q)=>{
+    if(window.__miniappViews && typeof window.__miniappViews.selectView === "function"){
+      window.__miniappViews.selectView("atlas-raw-cards");
+      if(q && typeof window.__miniappViews.setSearch === "function") window.__miniappViews.setSearch(q);
+    }
+  };
+  const crossLinks = [];
+  if(hypId) crossLinks.push(`<button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="voice-ideas" data-q="${esc(hypId)}">Гипотеза ${esc(hypId)}</button>`);
+  if(rawCount || hypId) crossLinks.push(`<button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="atlas-raw-cards" data-q="${esc(hypId || String(n.id||'').replace(/^claim:/,''))}">Сырые карточки${rawCount?` (${rawCount})`:""}</button>`);
+  crossLinks.push(`<button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="cs2-ideas" data-q="${esc(hypId||'')}">CS2-идеи</button>`);
+  const crossHtml = `<div class="a-raw"><div class="a-raw-title">Взаимосвязи</div><div class="a-raw-item"><div class="rmeta" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">${crossLinks.join("")}</div></div></div>`;
+
+  const renderRawCard = (r, fallbackVoice)=>{
+    if(r.personal) return `<div class="a-raw-item"><div class="rid">${esc(String(r.voice||r.card_id||r.id||"карточка"))}</div><div class="rmeta">личная карточка — скрыта в публичном Атласе</div></div>`;
+    const voice = esc(String(r.voice||r.audio||r.card_id||r.id||fallbackVoice||""));
+    const themes = Array.isArray(r.themes) ? r.themes.map(t=>esc(String(t))).join(", ") : (r.theme?esc(String(r.theme)):"");
+    const idea = r.idea ? esc(String(r.idea)) : "";
+    const quote = (r.quote && r.quote!==r.idea) ? esc(String(r.quote)) : (!r.idea && r.snippet ? esc(String(r.snippet)) : "");
+    const meta = [themes, r.kind||r.card_kind||"", (r.similarity!=null?"сходство "+r.similarity:""), (Array.isArray(r.atlas_nodes)&&r.atlas_nodes.length?"узлы: "+r.atlas_nodes.slice(0,3).join(", "):""), (Array.isArray(r.ideas)&&r.ideas.length?"идеи: "+r.ideas.slice(0,3).join(", "):"")].filter(Boolean).join(" · ");
+    return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}${idea?`<div class="ridea">${idea}</div>`:""}${quote?`<div class="rquote">«${quote}»</div>`:""}</div>`;
+  };
+
+  const rawHtml = rawItems.length ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки (${rawItems.length})</div>${rawItems.map(r=>renderRawCard(r,"")).join("")}</div>`
+    : (linkedRawCards.length ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки из atlas-cards (${linkedRawCards.length})</div>${linkedRawCards.slice(0,8).map(r=>renderRawCard(r,"")).join("")}${linkedRawCards.length>8?`<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="atlas-raw-cards" data-q="${esc(hypId||String(n.id||''))}">Показать все ${linkedRawCards.length} в виде «Атлас ↔ сырые карточки»</button></div>`:""}</div>`
+    : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые сигналы → сырые карточки».</div><div style="margin-top:6px"><button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="atlas-raw-cards" data-q="${esc(hypId||String(n.id||''))}">Открыть в виде «Атлас ↔ сырые карточки»</button></div></div></div>` : ""));
+
+  let signalsHtml="";
+  if(sigRec && Array.isArray(sigRec.signals) && sigRec.signals.length && !rawItems.length && !linkedRawCards.length){
     const items=sigRec.signals.map(s=>{
       const sim=(typeof s.similarity==="number")?s.similarity.toFixed(3):"?";
+      const q=esc(String(s.quote||""));
+      const idea=esc(String(s.idea||""));
       const vid=esc(String(s.voice||""));
       const kind=esc(String(s.kind||""));
-      return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${vid}">${vid||"—"}</button><span class="a-raw-themes"> ${kind}${kind?" · ":""}сходство ${sim}</span></div>`;
+      return `<div class="a-raw-item"><div class="a-sig-meta">сырая карточка · ${kind} · сходство ${sim} · <button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="atlas-raw-cards" data-q="${vid}" style="padding:0;border:none;background:none">${vid}</button></div>${q?`<div class="rquote">«${q}»</div>`:""}${idea?`<div class="ridea">${idea}</div>`:""}</div>`;
     }).join("");
-    signalsHtml=`<div class="a-raw"><div class="a-raw-title">Связанные сырые карточки (${sigRec.signals.length})</div>${items}</div>`;
+    signalsHtml=`<div class="a-raw"><div class="a-raw-title">Связанные сырые карточки (${sigRec.signals.length})</div>${items}<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="atlas-open-view" data-view="atlas-raw-cards" data-q="${esc(hypId)}">Открыть все связи гипотезы ${esc(hypId)} в «Атлас ↔ сырые карточки»</button></div></div>`;
   }
-  const metaExtra = rawLinks ? ` · сырых карточек: ${rawLinks}` : ((rawItems.length|| (sigRec&&sigRec.signals&&sigRec.signals.length))?` · сырых карточек: ${rawItems.length||(sigRec.signals.length)}`:"");
+  const metaExtra = rawCount ? ` · сырых карточек: ${rawCount}` : "";
   box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")}${metaExtra} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
     <div class="a-full">${esc(n.full||n.answer||n.title||"")}</div>
     ${rawHtml}
@@ -2506,6 +2560,18 @@ function atlasDetail(n,row){
       if(window.__miniappViews && typeof window.__miniappViews.selectView === "function"){
         window.__miniappViews.selectView("cs2-ideas");
         if(typeof window.__miniappViews.setSearch === "function") window.__miniappViews.setSearch(voice);
+      }
+    });
+  });
+  box.querySelectorAll('[data-role="atlas-open-view"]').forEach(btn=>{
+    btn.addEventListener("click",ev=>{
+      ev.stopPropagation();
+      const view = btn.getAttribute("data-view") || "atlas-raw-cards";
+      const q = btn.getAttribute("data-q") || "";
+      if(typeof setTab === "function") setTab("prompts");
+      if(window.__miniappViews && typeof window.__miniappViews.selectView === "function"){
+        window.__miniappViews.selectView(view);
+        if(q && typeof window.__miniappViews.setSearch === "function") window.__miniappViews.setSearch(q);
       }
     });
   });

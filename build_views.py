@@ -404,10 +404,34 @@ build_prompts_unanswered = _prompt_view(
     'source', 'prompts-unanswered.json', lambda r: not r.get('has_answer'))
 
 
+def atlas_raw_map():
+    """voice (как в таблице cs2-ideas) → [atlas node id] по raw-ссылкам из atlas.json."""
+    m = {}
+    doc = read_json(SOURCES['atlas'])
+
+    def walk(n):
+        if not isinstance(n, dict):
+            return
+        for r in (n.get('raw') or []):
+            v = (r or {}).get('voice')
+            if v and n.get('id'):
+                m.setdefault(v, []).append(n['id'])
+        for c in (n.get('children') or []):
+            walk(c)
+
+    for n in (doc.get('nodes') or []):
+        walk(n)
+    for t in (doc.get('trees') or []):
+        for r in (t.get('roots') or []):
+            walk(r)
+    return m
+
+
 def build_cs2(rel, read_at):
     d = read_json(rel)
     themes = d.get('themes') or {}
     rows = [(t, item) for t, items in themes.items() for item in (items or [])]
+    atlas_map = atlas_raw_map()
     items = []
     for t, it in rows:
         row = dict(it or {})
@@ -416,6 +440,9 @@ def build_cs2(rel, read_at):
         voice = str(row.get('voice') or '')
         row['voice'] = voice.rsplit('/', 1)[-1].replace('audio_', '') or '—'
         row['theme'] = t
+        refs = atlas_map.get(row.get('voice'))
+        if refs:
+            row['atlas'] = sorted(set(refs))
         items.append(row)
     meta = inline_items(items)
     shown = meta.pop('source')
@@ -455,7 +482,7 @@ def build_cs2(rel, read_at):
                    f'строк, уникальных голосовых {uniq}'),
          'type': 'table', 'publish': True, 'group_by': 'theme', 'sort_by': 'voice',
          'label_field': 'text', 'value_field': 'voice',
-         'meta_fields': ['theme', 'voice'], 'actions': WORK_ACTION},
+         'meta_fields': ['theme', 'voice', 'atlas'], 'actions': WORK_ACTION},
         rel, read_at, len(rows),
         [{'field': 'theme', 'values': sorted(themes)}],
         extra=extra)
