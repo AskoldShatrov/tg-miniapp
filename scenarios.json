@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-23 02:30",
+ "generated": "2026-11-23 03:00",
  "window": {
-  "start": "2026-11-22T23:25",
-  "end": "2026-11-22T23:29",
+  "start": "2026-11-22T23:55",
+  "end": "2026-11-23T00:00",
   "sessions": 150,
   "roots": 150
  },
@@ -23,16 +23,16 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 5,
-   "max_s": 9,
-   "last": "2026-11-22T23:29:59.672000+00:00",
+   "median_s": 6,
+   "max_s": 8,
+   "last": "2026-11-23T00:00:01.358000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "error": 149
+    "waiting_user": 3,
+    "error": 147
    },
    "example": [
-    "lIg7uTBK",
-    "aFFSjF46"
+    "TwasRfqx",
+    "qrP33LkA"
    ],
    "actual": [
     {
@@ -646,7 +646,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 8",
+   "state": "Прогонов сейчас: 6",
    "level": "bad",
    "f": "C1"
   },
@@ -662,7 +662,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/deepseek-v4.1-flash ×147, opencode-go/glm-5.3 ×3",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/tidepool-alpha-free. По факту: opencode-go/deepseek-v4.1-flash ×147, opencode-go/hy4-flash-free ×2, opencode-go/glm-5.3 ×1",
    "level": "ok",
    "f": "C13"
   },
@@ -686,7 +686,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 1, с файлами 0",
+   "state": "Владельцев 3, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
