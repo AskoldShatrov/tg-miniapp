@@ -2453,10 +2453,26 @@ function atlasDetail(n,row){
     const meta = [themes, r.kind||r.card_kind||"", (r.similarity!=null?"сходство "+r.similarity:"")].filter(Boolean).join(" · ");
     return `<div class="a-raw-item"><button type="button" class="vw-voice-link" data-role="voice-link" data-voice="${voice}">${voice||"—"}</button>${meta?`<span class="a-raw-themes"> ${esc(meta)}</span>`:""}${idea?`<div class="ridea">${idea}</div>`:""}${quote?`<div class="rquote">«${quote}»</div>`:""}</div>`;
   }).join("")}</div>` : (rawLinks ? `<div class="a-raw"><div class="a-raw-title">Сырые карточки</div><div class="a-raw-item"><div class="rmeta">Связано сырых карточек: ${rawLinks} — раскрой дочерние узлы в дереве «Голосовые идеи → сырые карточки».</div></div></div>` : "");
-  const metaExtra = rawLinks ? ` · сырых карточек: ${rawLinks}` : (rawItems.length?` · сырых карточек: ${rawItems.length}`:"");
+  let signalsHtml="";
+  const hypId = (n.ref && ATLAS_VOICE_BY_HYP[String(n.ref)]) ? String(n.ref)
+    : (String(n.id||"").startsWith("voicesig:") ? String(n.id).slice("voicesig:".length) : "");
+  const sigRec = hypId ? ATLAS_VOICE_BY_HYP[hypId] : null;
+  if(sigRec && Array.isArray(sigRec.signals) && sigRec.signals.length && !rawItems.length){
+    const items=sigRec.signals.map(s=>{
+      const sim=(typeof s.similarity==="number")?s.similarity.toFixed(3):"?";
+      const q=esc(String(s.quote||""));
+      const idea=esc(String(s.idea||""));
+      const vid=esc(String(s.voice||""));
+      const kind=esc(String(s.kind||""));
+      return `<div class="a-raw-item"><div class="a-sig-meta">сырая карточка · ${kind} · сходство ${sim} · <span style="opacity:.7">${vid}</span></div>${q?`<div class="rquote">«${q}»</div>`:""}${idea?`<div class="ridea">${idea}</div>`:""}</div>`;
+    }).join("");
+    signalsHtml=`<div class="a-raw"><div class="a-raw-title">Связанные сырые карточки (${sigRec.signals.length})</div>${items}</div>`;
+  }
+  const metaExtra = rawLinks ? ` · сырых карточек: ${rawLinks}` : ((rawItems.length|| (sigRec&&sigRec.signals&&sigRec.signals.length))?` · сырых карточек: ${rawItems.length||(sigRec.signals.length)}`:"");
   box.innerHTML=`<div class="a-meta">${esc(n.title||"узел")} · ${esc(ATLAS_KIND[n.kind]||"узел")} · ${esc(ATLAS_STATUS[n.status]||n.status||"открыто")}${metaExtra} · источник: атлас, ${esc((ATLAS&&ATLAS.updatedAt||"").slice(11,16)||"время неизвестно")}</div>
     <div class="a-full">${esc(n.full||n.answer||n.title||"")}</div>
     ${rawHtml}
+    ${signalsHtml}
     <div class="a-query"><input class="atlasQuery" placeholder="Написать запрос по этой карточке…"><button data-act="ask">Спросить</button></div>`;
   box.classList.add("open");
   row.classList.add("expanded");
