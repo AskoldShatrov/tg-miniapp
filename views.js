@@ -1047,7 +1047,8 @@
     var tgApp = getTG();
     if(!tgApp){ vtoast("Открой мини-ап через бота: sendData недоступен"); return; }
     try {
-      tgApp.sendData(JSON.stringify(payload));
+      if (typeof dshSend === "function") dshSend(payload, "Отправлено в DeepSeek Harness");
+      else tgApp.sendData(JSON.stringify(payload));
       var a = ynAnswers(), label = a[0].label;
       for(var i=0;i<a.length;i++) if(a[i].answer === answer) label = a[i].label;
       answered[id] = label;
@@ -1076,7 +1077,8 @@
     var tgApp = getTG();
     if(!tgApp){ vtoast("Открой мини-ап через бота: sendData недоступен"); return; }
     try {
-      tgApp.sendData(JSON.stringify(payload));
+      if (typeof dshSend === "function") dshSend(payload, "Отправлено в DeepSeek Harness");
+      else tgApp.sendData(JSON.stringify(payload));
       vtoast("Отправлено · " + ids.length + " из " + V.cur + " · " + label);
     } catch(e){
       vtoast("Ошибка отправки: " + ((e && e.message) || String(e)));
@@ -1177,4 +1179,16 @@
   window.addEventListener("miniapp-views-reload", function(){
     V.data = {}; V.ynAnswered = {}; loadSpec(); if(V.cur) loadData(currentView(), true);
   });
+
+  /* @owner:casino-vibes @region:vibes-loader — независимая подгрузка вайбов казино.
+     Дубль страховки на случай, если сгенерированный casino-activity.js перегенерируется.
+     Идентификатор тега один и тот же — второй раз модуль не подгрузится. */
+  try {
+    if (!document.getElementById('csn-vibes-loader')) {
+      var s = document.createElement('script');
+      s.id = 'csn-vibes-loader';
+      s.src = 'casino-vibes.js?v=20261122-vibes1';
+      (document.head || document.documentElement).appendChild(s);
+    }
+  } catch (e) { /* без вайбов приложение работает */ }
 })();
