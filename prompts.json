@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-23T05:03:16+00:00",
-  "generated_human": "23.11 05:03 UTC",
-  "as_of": 1795410196434,
+  "generated": "2026-11-23T05:04:16+00:00",
+  "generated_human": "23.11 05:04 UTC",
+  "as_of": 1795410256522,
   "stale_days": 1,
   "count": 1081,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-Yg8m6fljAT",
      "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на расширенном корпусе (320 демо, 7 карт). Честно отделить pooled от contested. Новый отчёт ~/overnight/open_tracks/T05-t1c-coverage.md. Не переоткрывать закрытые T1/wp_v3 (см. MASTERPLAN-v2 §2.1). ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795410178000,
+     "ts": 1795410240000,
      "source": "session",
      "title": "Покрытие T5 и гейт T1c",
      "source_label": "ноут",
@@ -61,7 +61,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795410178000,
+     "as_of": 1795410240000,
      "is_stale": false
     },
     {
@@ -6068,14 +6068,14 @@
     {
      "id": "ses-7faW35r065",
      "text": "прием как работа идет?",
-     "ts": 1795410166000,
+     "ts": 1795410226000,
      "source": "session",
      "title": "opencode API в deepseek harness",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795410166000,
+     "as_of": 1795410226000,
      "is_stale": false
     },
     {
@@ -6313,14 +6313,14 @@
     {
      "id": "ses-7faW35r065-2",
      "text": "причем как работа идет? до этого тг мини апп работал с опен кодом сможешь ли ты перевести его на дипсик харнесс?",
-     "ts": 1795410166000,
+     "ts": 1795410226000,
      "source": "session",
      "title": "opencode API в deepseek harness",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795410166000,
+     "as_of": 1795410226000,
      "is_stale": false
     },
     {
@@ -7569,16 +7569,16 @@
      "wants": [
       "w26112002414345ae"
      ],
-     "answer": "[w26112002414345ae] I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в ",
-     "answer_short": "w26112002414345ae: I'll start by loading the progress skill and reading the pla",
-     "answer_full": "I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в аппе (任务 `PT` присутствует в `live.json`/`tree.json` на GitHub Pages, экран «Ход работы» и «Дерево»).\n\n**Что сделано**\n\n- **Этап 5 — вопросы.** `bots/process_questions.py` + timer: рассылка нового вопроса всем из whitelist, советчик через 15 минут с тем же OpenCode `reply` и событием `advice`, защита «первый отвечает» (`question_claimed` + лок), уведомления об ошибках/зависании/потере. Патч `miniapp_answer` активен в рантайме (бот перезапущён в 15:11).\n- **Этап 6 — управление.** `process_api.py:do_action()` + `can_for()`: `stop/pause/resume/retry/answer` для сессий, `stop` только для `queued` pc_task, `stop/pause/resume` для job; `stop` теперь ставит `cancelled`, `can` пересчитывается, каскад рекурсивный с защитой от циклов, ошибки пишут `action_failed` с `actor`.\n- **Этап 7 — API и мини-апп.** REST-ручки `/projects`, `/projects/:id/tree`, `/nodes/:id`, `/questions`, POST-действия; HMAC `initData` + whitelist на каждый запрос; публичный HTTPS `https://7f953ebf9da208.app.lhr.life` через `process-api-tunnel.service` (адрес в `status.json:process_api_url`). Фронтенд мини-апа: живые проекты/дерево/узел с 20 событиями, кнопки из `can` с подтверждением стопа, вопросы через `/questions`, опрос 5 с; Pages-коммиты `1fc00a9`, `183ca5e`, `002e553`.\n- Трекинг `PT` (5/5 шагов), отчёт в `docs/process-plan-status.md`, события в `docs/process-plan-log.jsonl`, цель `gmwou9ey70pj5` отмечена достигнутой.\n\n**Проверено:** `/health` → 200 без подписи; `/projects` → 401 без подписи и 200 с валидным HMAC; Pages отдаёт API-фронтенд и 5-секундный опрос; self-test гонки ответов в отдельной БД (первый `True`, второй `False`).\n\n**Осталось открытым (честно):** Tier B отмены уже запущенного pc_task (pc-bridge не читает STOP-флаг) — поэтому `stop` для `running pc_task` не объявляется; E2E на реальном вопросе (сейчас 0 `waiting_user`); claim-guard в коде бота подхватится после следующего рестарта (5 активных сессий — не трогал); `goalId→projectID` и событийная будилка спящих проектов. Расход: 0% allowance (free-модель), `oc-usage` в этом окружении недоступен.",
+     "answer": "[w26112002414345ae] Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева пр",
+     "answer_short": "w26112002414345ae: Начинаю изучение. Сначала загружаю профильный скилл по OpenC",
+     "answer_full": "Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева процессов.\n\nСмотрю живые IRC-процессы Telegram-бота и журнал событий, чтобы построить детектор конфликтов на реальных данных.\n\nУточняю, где объявлены агенты, и состояние telemetry/узлов процесса.\n\n\nПриступаю к созданию агента. Сначала соберу реальную картину по активным Telegram-задачам и их правкам файлов — это станет и основой детектора, и тестом.\n\nВсе 5 активных сессий — задачи, запущенные Telegram-ботом (`[память чата]`). Это идеальный тест. Проверю, какие файлы они правят, через API.\n\nПишу механизм: скрипт-детектор, агента и интеграцию.\n\n\nИнтегрирую в конфигурацию: запрет на редактирование карты всем, правило проверки перед правкой и периодический запуск.\n\nСкан работает, но нашёл дубли владельцев (PID без сессии). Исправляю привязку PID к реальным сессиям.\n\n\nТест на живых процессах Telegram-бота: закрепляю области за двумя реальными сессиями и проверяю детектор.\n\nПроверяю правки через `opencode-selfcheck`, как требует регламент.\n\nГотово. Второй хаускипер создан и работает на живых задачах Telegram-бота.\n\n**Что появилось**\n- Агент `conflict-keeper` — зарегистрирован в `/api/agent` (всего агентов 15), free-модель, `mode: subagent`; отвечает на «кто правит файл/область», «занята ли область», «проверь перед правкой».\n- Скрипт `~/.config/opencode/scripts/conflict_guard.py` с командами `scan`, `check`, `claim`, `release`, `status`. Собирает владельцев из активных сессий OpenCode (включая задачи бота с префиксом `[память чата]`), `telemetry.nodes`, живых `opencode run`, свежих событий правок и явных закреплений; определяет конфликты по файлу и по области.\n- `~/.config/opencode/CONFLICT-MAP.json` — ридонли-карта 0444; всем агентам запрещено её редактировать в `opencode.jsonc`, писать может только `conflict-keeper`.\n- Аудит: `~/docs/conflict-audit.jsonl` + события `conflict_scan` / `conflict_detected` в `telemetry.events` (node_id `conflict-keeper`); `telemetry.requests` не тронут.\n- Таймер `conflict-guard.timer` — скан каждые 5 минут, `active`/`enabled`; в `AGENTS.md` добавлено правило вызывать `check <путь>` перед правкой.\n\n**Тест на процессах Telegram-бота**\nВзял три реальные активные сессии (`ses_e070d1018…`, `ses_e07131a29…`, `ses_e071f897…`). Закрепил за двумя из них один файл `shared-repo/bots/remote_agent_bot.py` и область `telegram-app` — детектор нашёл 2 конфликта (file + area), `check` вернул `ЗАНЯТО` и exit 1. После `release` — `СВОБОДНО` и exit 0. События конфликта есть в Mongo. Тестовые закрепления сняты, карта чистая.\n\nОграничение, которое стоит знать: автоматический сбор правок из `docs/process-events.jsonl` дал 0 попаданий — журнал плагина заканчивается 12:01 UTC, а активные сессии появились позже. Поэтому функциональный тест делался через явные `claim` на реальных `ses_`-id, а не через историю tool-событий. Дальнейший скан будет подхватыв",
      "answer_digest": {
-      "length": 2262,
-      "sha256": "720c5b5f56b9308e25b87100cefeb314994a60cdae576ba3108e31520571c6a9"
+      "length": 3000,
+      "sha256": "4de9fc31514e4fb66f34bbe065c727001b6d000f1fd87f14e49fbcb1685a19e9"
      },
-     "answer_text_id": "720c5b5f56b9308e",
+     "answer_text_id": "4de9fc31514e4fb6",
      "answer_source": "replies.json",
-     "delivered_ts": 1795178579016,
+     "delivered_ts": 1795178731607,
      "as_of": 1795172529000,
      "is_stale": true
     },
@@ -7713,16 +7713,16 @@
      "wants": [
       "w2611200241431d95"
      ],
-     "answer": "[w2611200241431d95] I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в ",
-     "answer_short": "w2611200241431d95: I'll start by loading the progress skill and reading the pla",
-     "answer_full": "I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в аппе (任务 `PT` присутствует в `live.json`/`tree.json` на GitHub Pages, экран «Ход работы» и «Дерево»).\n\n**Что сделано**\n\n- **Этап 5 — вопросы.** `bots/process_questions.py` + timer: рассылка нового вопроса всем из whitelist, советчик через 15 минут с тем же OpenCode `reply` и событием `advice`, защита «первый отвечает» (`question_claimed` + лок), уведомления об ошибках/зависании/потере. Патч `miniapp_answer` активен в рантайме (бот перезапущён в 15:11).\n- **Этап 6 — управление.** `process_api.py:do_action()` + `can_for()`: `stop/pause/resume/retry/answer` для сессий, `stop` только для `queued` pc_task, `stop/pause/resume` для job; `stop` теперь ставит `cancelled`, `can` пересчитывается, каскад рекурсивный с защитой от циклов, ошибки пишут `action_failed` с `actor`.\n- **Этап 7 — API и мини-апп.** REST-ручки `/projects`, `/projects/:id/tree`, `/nodes/:id`, `/questions`, POST-действия; HMAC `initData` + whitelist на каждый запрос; публичный HTTPS `https://7f953ebf9da208.app.lhr.life` через `process-api-tunnel.service` (адрес в `status.json:process_api_url`). Фронтенд мини-апа: живые проекты/дерево/узел с 20 событиями, кнопки из `can` с подтверждением стопа, вопросы через `/questions`, опрос 5 с; Pages-коммиты `1fc00a9`, `183ca5e`, `002e553`.\n- Трекинг `PT` (5/5 шагов), отчёт в `docs/process-plan-status.md`, события в `docs/process-plan-log.jsonl`, цель `gmwou9ey70pj5` отмечена достигнутой.\n\n**Проверено:** `/health` → 200 без подписи; `/projects` → 401 без подписи и 200 с валидным HMAC; Pages отдаёт API-фронтенд и 5-секундный опрос; self-test гонки ответов в отдельной БД (первый `True`, второй `False`).\n\n**Осталось открытым (честно):** Tier B отмены уже запущенного pc_task (pc-bridge не читает STOP-флаг) — поэтому `stop` для `running pc_task` не объявляется; E2E на реальном вопросе (сейчас 0 `waiting_user`); claim-guard в коде бота подхватится после следующего рестарта (5 активных сессий — не трогал); `goalId→projectID` и событийная будилка спящих проектов. Расход: 0% allowance (free-модель), `oc-usage` в этом окружении недоступен.",
+     "answer": "[w2611200241431d95] Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева пр",
+     "answer_short": "w2611200241431d95: Начинаю изучение. Сначала загружаю профильный скилл по OpenC",
+     "answer_full": "Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева процессов.\n\nСмотрю живые IRC-процессы Telegram-бота и журнал событий, чтобы построить детектор конфликтов на реальных данных.\n\nУточняю, где объявлены агенты, и состояние telemetry/узлов процесса.\n\n\nПриступаю к созданию агента. Сначала соберу реальную картину по активным Telegram-задачам и их правкам файлов — это станет и основой детектора, и тестом.\n\nВсе 5 активных сессий — задачи, запущенные Telegram-ботом (`[память чата]`). Это идеальный тест. Проверю, какие файлы они правят, через API.\n\nПишу механизм: скрипт-детектор, агента и интеграцию.\n\n\nИнтегрирую в конфигурацию: запрет на редактирование карты всем, правило проверки перед правкой и периодический запуск.\n\nСкан работает, но нашёл дубли владельцев (PID без сессии). Исправляю привязку PID к реальным сессиям.\n\n\nТест на живых процессах Telegram-бота: закрепляю области за двумя реальными сессиями и проверяю детектор.\n\nПроверяю правки через `opencode-selfcheck`, как требует регламент.\n\nГотово. Второй хаускипер создан и работает на живых задачах Telegram-бота.\n\n**Что появилось**\n- Агент `conflict-keeper` — зарегистрирован в `/api/agent` (всего агентов 15), free-модель, `mode: subagent`; отвечает на «кто правит файл/область», «занята ли область», «проверь перед правкой».\n- Скрипт `~/.config/opencode/scripts/conflict_guard.py` с командами `scan`, `check`, `claim`, `release`, `status`. Собирает владельцев из активных сессий OpenCode (включая задачи бота с префиксом `[память чата]`), `telemetry.nodes`, живых `opencode run`, свежих событий правок и явных закреплений; определяет конфликты по файлу и по области.\n- `~/.config/opencode/CONFLICT-MAP.json` — ридонли-карта 0444; всем агентам запрещено её редактировать в `opencode.jsonc`, писать может только `conflict-keeper`.\n- Аудит: `~/docs/conflict-audit.jsonl` + события `conflict_scan` / `conflict_detected` в `telemetry.events` (node_id `conflict-keeper`); `telemetry.requests` не тронут.\n- Таймер `conflict-guard.timer` — скан каждые 5 минут, `active`/`enabled`; в `AGENTS.md` добавлено правило вызывать `check <путь>` перед правкой.\n\n**Тест на процессах Telegram-бота**\nВзял три реальные активные сессии (`ses_e070d1018…`, `ses_e07131a29…`, `ses_e071f897…`). Закрепил за двумя из них один файл `shared-repo/bots/remote_agent_bot.py` и область `telegram-app` — детектор нашёл 2 конфликта (file + area), `check` вернул `ЗАНЯТО` и exit 1. После `release` — `СВОБОДНО` и exit 0. События конфликта есть в Mongo. Тестовые закрепления сняты, карта чистая.\n\nОграничение, которое стоит знать: автоматический сбор правок из `docs/process-events.jsonl` дал 0 попаданий — журнал плагина заканчивается 12:01 UTC, а активные сессии появились позже. Поэтому функциональный тест делался через явные `claim` на реальных `ses_`-id, а не через историю tool-событий. Дальнейший скан будет подхватыв",
      "answer_digest": {
-      "length": 2262,
-      "sha256": "720c5b5f56b9308e25b87100cefeb314994a60cdae576ba3108e31520571c6a9"
+      "length": 3000,
+      "sha256": "4de9fc31514e4fb66f34bbe065c727001b6d000f1fd87f14e49fbcb1685a19e9"
      },
-     "answer_text_id": "720c5b5f56b9308e",
+     "answer_text_id": "4de9fc31514e4fb6",
      "answer_source": "replies.json",
-     "delivered_ts": 1795178579016,
+     "delivered_ts": 1795178731607,
      "as_of": 1795145944000,
      "is_stale": true
     },
@@ -7749,16 +7749,16 @@
      "wants": [
       "w2611212151519801"
      ],
-     "answer": "[w2611212151519801] I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в ",
-     "answer_short": "w2611212151519801: I'll start by loading the progress skill and reading the pla",
-     "answer_full": "I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в аппе (任务 `PT` присутствует в `live.json`/`tree.json` на GitHub Pages, экран «Ход работы» и «Дерево»).\n\n**Что сделано**\n\n- **Этап 5 — вопросы.** `bots/process_questions.py` + timer: рассылка нового вопроса всем из whitelist, советчик через 15 минут с тем же OpenCode `reply` и событием `advice`, защита «первый отвечает» (`question_claimed` + лок), уведомления об ошибках/зависании/потере. Патч `miniapp_answer` активен в рантайме (бот перезапущён в 15:11).\n- **Этап 6 — управление.** `process_api.py:do_action()` + `can_for()`: `stop/pause/resume/retry/answer` для сессий, `stop` только для `queued` pc_task, `stop/pause/resume` для job; `stop` теперь ставит `cancelled`, `can` пересчитывается, каскад рекурсивный с защитой от циклов, ошибки пишут `action_failed` с `actor`.\n- **Этап 7 — API и мини-апп.** REST-ручки `/projects`, `/projects/:id/tree`, `/nodes/:id`, `/questions`, POST-действия; HMAC `initData` + whitelist на каждый запрос; публичный HTTPS `https://7f953ebf9da208.app.lhr.life` через `process-api-tunnel.service` (адрес в `status.json:process_api_url`). Фронтенд мини-апа: живые проекты/дерево/узел с 20 событиями, кнопки из `can` с подтверждением стопа, вопросы через `/questions`, опрос 5 с; Pages-коммиты `1fc00a9`, `183ca5e`, `002e553`.\n- Трекинг `PT` (5/5 шагов), отчёт в `docs/process-plan-status.md`, события в `docs/process-plan-log.jsonl`, цель `gmwou9ey70pj5` отмечена достигнутой.\n\n**Проверено:** `/health` → 200 без подписи; `/projects` → 401 без подписи и 200 с валидным HMAC; Pages отдаёт API-фронтенд и 5-секундный опрос; self-test гонки ответов в отдельной БД (первый `True`, второй `False`).\n\n**Осталось открытым (честно):** Tier B отмены уже запущенного pc_task (pc-bridge не читает STOP-флаг) — поэтому `stop` для `running pc_task` не объявляется; E2E на реальном вопросе (сейчас 0 `waiting_user`); claim-guard в коде бота подхватится после следующего рестарта (5 активных сессий — не трогал); `goalId→projectID` и событийная будилка спящих проектов. Расход: 0% allowance (free-модель), `oc-usage` в этом окружении недоступен.",
+     "answer": "[w2611212151519801] Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева пр",
+     "answer_short": "w2611212151519801: Начинаю изучение. Сначала загружаю профильный скилл по OpenC",
+     "answer_full": "Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева процессов.\n\nСмотрю живые IRC-процессы Telegram-бота и журнал событий, чтобы построить детектор конфликтов на реальных данных.\n\nУточняю, где объявлены агенты, и состояние telemetry/узлов процесса.\n\n\nПриступаю к созданию агента. Сначала соберу реальную картину по активным Telegram-задачам и их правкам файлов — это станет и основой детектора, и тестом.\n\nВсе 5 активных сессий — задачи, запущенные Telegram-ботом (`[память чата]`). Это идеальный тест. Проверю, какие файлы они правят, через API.\n\nПишу механизм: скрипт-детектор, агента и интеграцию.\n\n\nИнтегрирую в конфигурацию: запрет на редактирование карты всем, правило проверки перед правкой и периодический запуск.\n\nСкан работает, но нашёл дубли владельцев (PID без сессии). Исправляю привязку PID к реальным сессиям.\n\n\nТест на живых процессах Telegram-бота: закрепляю области за двумя реальными сессиями и проверяю детектор.\n\nПроверяю правки через `opencode-selfcheck`, как требует регламент.\n\nГотово. Второй хаускипер создан и работает на живых задачах Telegram-бота.\n\n**Что появилось**\n- Агент `conflict-keeper` — зарегистрирован в `/api/agent` (всего агентов 15), free-модель, `mode: subagent`; отвечает на «кто правит файл/область», «занята ли область», «проверь перед правкой».\n- Скрипт `~/.config/opencode/scripts/conflict_guard.py` с командами `scan`, `check`, `claim`, `release`, `status`. Собирает владельцев из активных сессий OpenCode (включая задачи бота с префиксом `[память чата]`), `telemetry.nodes`, живых `opencode run`, свежих событий правок и явных закреплений; определяет конфликты по файлу и по области.\n- `~/.config/opencode/CONFLICT-MAP.json` — ридонли-карта 0444; всем агентам запрещено её редактировать в `opencode.jsonc`, писать может только `conflict-keeper`.\n- Аудит: `~/docs/conflict-audit.jsonl` + события `conflict_scan` / `conflict_detected` в `telemetry.events` (node_id `conflict-keeper`); `telemetry.requests` не тронут.\n- Таймер `conflict-guard.timer` — скан каждые 5 минут, `active`/`enabled`; в `AGENTS.md` добавлено правило вызывать `check <путь>` перед правкой.\n\n**Тест на процессах Telegram-бота**\nВзял три реальные активные сессии (`ses_e070d1018…`, `ses_e07131a29…`, `ses_e071f897…`). Закрепил за двумя из них один файл `shared-repo/bots/remote_agent_bot.py` и область `telegram-app` — детектор нашёл 2 конфликта (file + area), `check` вернул `ЗАНЯТО` и exit 1. После `release` — `СВОБОДНО` и exit 0. События конфликта есть в Mongo. Тестовые закрепления сняты, карта чистая.\n\nОграничение, которое стоит знать: автоматический сбор правок из `docs/process-events.jsonl` дал 0 попаданий — журнал плагина заканчивается 12:01 UTC, а активные сессии появились позже. Поэтому функциональный тест делался через явные `claim` на реальных `ses_`-id, а не через историю tool-событий. Дальнейший скан будет подхватыв",
      "answer_digest": {
-      "length": 2262,
-      "sha256": "720c5b5f56b9308e25b87100cefeb314994a60cdae576ba3108e31520571c6a9"
+      "length": 3000,
+      "sha256": "4de9fc31514e4fb66f34bbe065c727001b6d000f1fd87f14e49fbcb1685a19e9"
      },
-     "answer_text_id": "720c5b5f56b9308e",
+     "answer_text_id": "4de9fc31514e4fb6",
      "answer_source": "replies.json",
-     "delivered_ts": 1795178579016,
+     "delivered_ts": 1795178731607,
      "as_of": 1795133617000,
      "is_stale": true
     },
@@ -22330,16 +22330,16 @@
      "wants": [
       "w2611200243563051"
      ],
-     "answer": "[w2611200243563051] I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в ",
-     "answer_short": "w2611200243563051: I'll start by loading the progress skill and reading the pla",
-     "answer_full": "I'll start by loading the progress skill and reading the plan file to understand where work stopped.\n\n\nПринял в работу. План `/home/nyaka/docs/process-plan.md` доведён по этапам 5–7, прогресс виден в аппе (任务 `PT` присутствует в `live.json`/`tree.json` на GitHub Pages, экран «Ход работы» и «Дерево»).\n\n**Что сделано**\n\n- **Этап 5 — вопросы.** `bots/process_questions.py` + timer: рассылка нового вопроса всем из whitelist, советчик через 15 минут с тем же OpenCode `reply` и событием `advice`, защита «первый отвечает» (`question_claimed` + лок), уведомления об ошибках/зависании/потере. Патч `miniapp_answer` активен в рантайме (бот перезапущён в 15:11).\n- **Этап 6 — управление.** `process_api.py:do_action()` + `can_for()`: `stop/pause/resume/retry/answer` для сессий, `stop` только для `queued` pc_task, `stop/pause/resume` для job; `stop` теперь ставит `cancelled`, `can` пересчитывается, каскад рекурсивный с защитой от циклов, ошибки пишут `action_failed` с `actor`.\n- **Этап 7 — API и мини-апп.** REST-ручки `/projects`, `/projects/:id/tree`, `/nodes/:id`, `/questions`, POST-действия; HMAC `initData` + whitelist на каждый запрос; публичный HTTPS `https://7f953ebf9da208.app.lhr.life` через `process-api-tunnel.service` (адрес в `status.json:process_api_url`). Фронтенд мини-апа: живые проекты/дерево/узел с 20 событиями, кнопки из `can` с подтверждением стопа, вопросы через `/questions`, опрос 5 с; Pages-коммиты `1fc00a9`, `183ca5e`, `002e553`.\n- Трекинг `PT` (5/5 шагов), отчёт в `docs/process-plan-status.md`, события в `docs/process-plan-log.jsonl`, цель `gmwou9ey70pj5` отмечена достигнутой.\n\n**Проверено:** `/health` → 200 без подписи; `/projects` → 401 без подписи и 200 с валидным HMAC; Pages отдаёт API-фронтенд и 5-секундный опрос; self-test гонки ответов в отдельной БД (первый `True`, второй `False`).\n\n**Осталось открытым (честно):** Tier B отмены уже запущенного pc_task (pc-bridge не читает STOP-флаг) — поэтому `stop` для `running pc_task` не объявляется; E2E на реальном вопросе (сейчас 0 `waiting_user`); claim-guard в коде бота подхватится после следующего рестарта (5 активных сессий — не трогал); `goalId→projectID` и событийная будилка спящих проектов. Расход: 0% allowance (free-модель), `oc-usage` в этом окружении недоступен.",
+     "answer": "[w2611200243563051] Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева пр",
+     "answer_short": "w2611200243563051: Начинаю изучение. Сначала загружаю профильный скилл по OpenC",
+     "answer_full": "Начинаю изучение. Сначала загружаю профильный скилл по OpenCode и читаю карту каталогов.\n\nИзучаю текущего housekeeper и структуру процессов.\n\nНахожу определение housekeeper и текущую систему дерева процессов.\n\nСмотрю живые IRC-процессы Telegram-бота и журнал событий, чтобы построить детектор конфликтов на реальных данных.\n\nУточняю, где объявлены агенты, и состояние telemetry/узлов процесса.\n\n\nПриступаю к созданию агента. Сначала соберу реальную картину по активным Telegram-задачам и их правкам файлов — это станет и основой детектора, и тестом.\n\nВсе 5 активных сессий — задачи, запущенные Telegram-ботом (`[память чата]`). Это идеальный тест. Проверю, какие файлы они правят, через API.\n\nПишу механизм: скрипт-детектор, агента и интеграцию.\n\n\nИнтегрирую в конфигурацию: запрет на редактирование карты всем, правило проверки перед правкой и периодический запуск.\n\nСкан работает, но нашёл дубли владельцев (PID без сессии). Исправляю привязку PID к реальным сессиям.\n\n\nТест на живых процессах Telegram-бота: закрепляю области за двумя реальными сессиями и проверяю детектор.\n\nПроверяю правки через `opencode-selfcheck`, как требует регламент.\n\nГотово. Второй хаускипер создан и работает на живых задачах Telegram-бота.\n\n**Что появилось**\n- Агент `conflict-keeper` — зарегистрирован в `/api/agent` (всего агентов 15), free-модель, `mode: subagent`; отвечает на «кто правит файл/область», «занята ли область», «проверь перед правкой».\n- Скрипт `~/.config/opencode/scripts/conflict_guard.py` с командами `scan`, `check`, `claim`, `release`, `status`. Собирает владельцев из активных сессий OpenCode (включая задачи бота с префиксом `[память чата]`), `telemetry.nodes`, живых `opencode run`, свежих событий правок и явных закреплений; определяет конфликты по файлу и по области.\n- `~/.config/opencode/CONFLICT-MAP.json` — ридонли-карта 0444; всем агентам запрещено её редактировать в `opencode.jsonc`, писать может только `conflict-keeper`.\n- Аудит: `~/docs/conflict-audit.jsonl` + события `conflict_scan` / `conflict_detected` в `telemetry.events` (node_id `conflict-keeper`); `telemetry.requests` не тронут.\n- Таймер `conflict-guard.timer` — скан каждые 5 минут, `active`/`enabled`; в `AGENTS.md` добавлено правило вызывать `check <путь>` перед правкой.\n\n**Тест на процессах Telegram-бота**\nВзял три реальные активные сессии (`ses_e070d1018…`, `ses_e07131a29…`, `ses_e071f897…`). Закрепил за двумя из них один файл `shared-repo/bots/remote_agent_bot.py` и область `telegram-app` — детектор нашёл 2 конфликта (file + area), `check` вернул `ЗАНЯТО` и exit 1. После `release` — `СВОБОДНО` и exit 0. События конфликта есть в Mongo. Тестовые закрепления сняты, карта чистая.\n\nОграничение, которое стоит знать: автоматический сбор правок из `docs/process-events.jsonl` дал 0 попаданий — журнал плагина заканчивается 12:01 UTC, а активные сессии появились позже. Поэтому функциональный тест делался через явные `claim` на реальных `ses_`-id, а не через историю tool-событий. Дальнейший скан будет подхватыв",
      "answer_digest": {
-      "length": 2262,
-      "sha256": "720c5b5f56b9308e25b87100cefeb314994a60cdae576ba3108e31520571c6a9"
+      "length": 3000,
+      "sha256": "4de9fc31514e4fb66f34bbe065c727001b6d000f1fd87f14e49fbcb1685a19e9"
      },
-     "answer_text_id": "720c5b5f56b9308e",
+     "answer_text_id": "4de9fc31514e4fb6",
      "answer_source": "replies.json",
-     "delivered_ts": 1795178579016,
+     "delivered_ts": 1795178731607,
      "as_of": 1795131588000,
      "is_stale": true
     },
