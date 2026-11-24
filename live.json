@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 268,
+      "age_min": 270,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 290,
+      "age_min": 291,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 291,
+      "age_min": 292,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1997,12 +1997,8 @@
       "step_label": "Найти о чём результаты",
       "step": 1,
       "total": 4,
-      "events": 10,
+      "events": 11,
       "trail": [
-        {
-          "ts": 1795555877,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795555903,
           "label": "FIND · /home/nyaka"
@@ -2046,10 +2042,14 @@
         {
           "ts": 1795556206,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795556253,
+          "label": "BASH · python3 - <<'PY'"
         }
       ],
       "started_at": 1795555833,
-      "updated_at": 1795556215
+      "updated_at": 1795556276
     },
     {
       "key": "req-20261125-003308-c1ad42",
@@ -2088,10 +2088,35 @@
         {
           "ts": 1795556193,
           "label": "BASH · grep -rn --includ"
+        },
+        {
+          "ts": 1795556241,
+          "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795556264,
+          "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795556279,
+          "label": "SUBAGENT · subagent"
         }
       ],
       "started_at": 1795555997,
-      "updated_at": 1795556217
+      "updated_at": 1795556279
+    },
+    {
+      "key": "req-20261125-003704-651829",
+      "session_id": "",
+      "source": "task",
+      "label": "посмотри в аудиты и телеметрию в монго и напиши топ 5 находо",
+      "step_label": "Проверить подключение MongoDB к харнесу",
+      "step": 1,
+      "total": 3,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795556242,
+      "updated_at": 1795556268
     }
   ],
   "bars": [
@@ -2140,6 +2165,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 4.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795556220,
-  "fetched_human": "2026-11-25 00:37:00 +0300"
+  "fetched_at": 1795556284,
+  "fetched_human": "2026-11-25 00:38:04 +0300"
 }
