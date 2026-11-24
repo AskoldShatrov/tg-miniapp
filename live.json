@@ -1950,7 +1950,7 @@
       "title": "что по работе со сканф",
       "source": "dsh",
       "claimed_human": "23:35:32",
-      "age_min": 1,
+      "age_min": 2,
       "full": "что по работе со сканф"
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
       "claimed_human": "23:29:10",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Askold в Telegram Mini App: задержка ответа"
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 208,
+      "age_min": 209,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 230,
+      "age_min": 231,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 231,
+      "age_min": 232,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2013,12 +2013,8 @@
       "step_label": "РИЧ",
       "step": 3,
       "total": 4,
-      "events": 63,
+      "events": 64,
       "trail": [
-        {
-          "ts": 1795552456,
-          "label": "EDIT · /home/nyaka/share"
-        },
         {
           "ts": 1795552466,
           "label": "EDIT · /home/nyaka/share"
@@ -2062,10 +2058,14 @@
         {
           "ts": 1795552608,
           "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795552649,
+          "label": "WRITE · /tmp/opencode/te"
         }
       ],
       "started_at": 1795551783,
-      "updated_at": 1795552609
+      "updated_at": 1795552658
     },
     {
       "key": "req-20261124-233514-8b39be",
@@ -2075,12 +2075,8 @@
       "step_label": "B",
       "step": 1,
       "total": 5,
-      "events": 5,
+      "events": 6,
       "trail": [
-        {
-          "ts": 1795552531,
-          "label": "NET · https://github.com"
-        },
         {
           "ts": 1795552538,
           "label": "READ · /home/nyaka/.conf"
@@ -2124,10 +2120,14 @@
         {
           "ts": 1795552612,
           "label": "BASH · sed -n '1225,1265"
+        },
+        {
+          "ts": 1795552663,
+          "label": "BASH · grep -n -E \"^def "
         }
       ],
       "started_at": 1795552515,
-      "updated_at": 1795552612
+      "updated_at": 1795552673
     },
     {
       "key": "req-20261124-233543-0dd3ca",
@@ -2146,10 +2146,18 @@
         {
           "ts": 1795552613,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552638,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552663,
+          "label": "BASH · ls -la ~/.config/"
         }
       ],
       "started_at": 1795552543,
-      "updated_at": 1795552613
+      "updated_at": 1795552663
     },
     {
       "key": "req-20261124-233601-9fa49e",
@@ -2159,7 +2167,7 @@
       "step_label": "проверить состояние гейм-мода",
       "step": 1,
       "total": 4,
-      "events": 2,
+      "events": 4,
       "trail": [
         {
           "ts": 1795552592,
@@ -2168,10 +2176,18 @@
         {
           "ts": 1795552612,
           "label": "SYNC · suspicion-gate"
+        },
+        {
+          "ts": 1795552638,
+          "label": "BASH · ls -d ~/.config/o"
+        },
+        {
+          "ts": 1795552663,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795552566,
-      "updated_at": 1795552612
+      "updated_at": 1795552663
     }
   ],
   "bars": [
@@ -2220,6 +2236,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795552619,
-  "fetched_human": "2026-11-24 23:36:59 +0300"
+  "fetched_at": 1795552680,
+  "fetched_human": "2026-11-24 23:38:00 +0300"
 }
