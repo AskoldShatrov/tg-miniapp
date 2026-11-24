@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 340,
+      "age_min": 341,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 362,
+      "age_min": 363,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 362,
+      "age_min": 363,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1996,36 +1996,8 @@
       "step_label": "бот_и_харнесс",
       "step": 4,
       "total": 5,
-      "events": 96,
+      "events": 100,
       "trail": [
-        {
-          "ts": 1795560431,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795560442,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795560442,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795560457,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795560457,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795560467,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795560467,
-          "label": "THINK"
-        },
         {
           "ts": 1795560478,
           "label": "BASH · cd /home/nyaka &&"
@@ -2045,10 +2017,38 @@
         {
           "ts": 1795560510,
           "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795560520,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795560520,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795560532,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795560532,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795560542,
+          "label": "WRITE · /home/nyaka/diag"
+        },
+        {
+          "ts": 1795560542,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795560556,
+          "label": "BASH · cd /home/nyaka &&"
         }
       ],
       "started_at": 1795559357,
-      "updated_at": 1795560518
+      "updated_at": 1795560576
     }
   ],
   "bars": [
@@ -2097,6 +2097,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 5.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795560519,
-  "fetched_human": "2026-11-25 01:48:39 +0300"
+  "fetched_at": 1795560584,
+  "fetched_human": "2026-11-25 01:49:44 +0300"
 }
