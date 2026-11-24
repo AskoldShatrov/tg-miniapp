@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 284,
+      "age_min": 285,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 306,
+      "age_min": 307,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,32 +1966,32 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 306,
+      "age_min": 307,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     },
     {
       "id": "session-d66b31b8",
       "title": "что по работе со сканф",
       "source": "dsh",
-      "claimed_human": "00:52:44",
+      "claimed_human": "00:53:41",
       "age_min": 0,
       "full": "что по работе со сканф"
-    },
-    {
-      "id": "session-7a57624f",
-      "title": "Askold в Telegram Mini App: задержка ответа",
-      "source": "dsh",
-      "claimed_human": "00:52:42",
-      "age_min": 0,
-      "full": "Askold в Telegram Mini App: задержка ответа"
     },
     {
       "id": "session-b73e87b7",
       "title": "Причина сбоя мини-приложения",
       "source": "dsh",
-      "claimed_human": "00:52:32",
+      "claimed_human": "00:53:38",
       "age_min": 0,
       "full": "Причина сбоя мини-приложения"
+    },
+    {
+      "id": "session-7a57624f",
+      "title": "Askold в Telegram Mini App: задержка ответа",
+      "source": "dsh",
+      "claimed_human": "00:53:16",
+      "age_min": 0,
+      "full": "Askold в Telegram Mini App: задержка ответа"
     }
   ],
   "queues": {
@@ -2021,32 +2021,8 @@
       "step_label": "Проверить живой фид",
       "step": 1,
       "total": 4,
-      "events": 18,
+      "events": 21,
       "trail": [
-        {
-          "ts": 1795557055,
-          "label": "GREP · /home/nyaka/share"
-        },
-        {
-          "ts": 1795557055,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557069,
-          "label": "BASH · grep -n 'call as\\"
-        },
-        {
-          "ts": 1795557091,
-          "label": "BASH · grep -n 'call(' /"
-        },
-        {
-          "ts": 1795557103,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795557103,
-          "label": "THINK"
-        },
         {
           "ts": 1795557115,
           "label": "NET · Telegram Bot API 1"
@@ -2070,10 +2046,34 @@
         {
           "ts": 1795557154,
           "label": "THINK"
+        },
+        {
+          "ts": 1795557168,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795557168,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557201,
+          "label": "NET · https://core.teleg"
+        },
+        {
+          "ts": 1795557201,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557217,
+          "label": "BASH · grep -nE 'status|"
+        },
+        {
+          "ts": 1795557217,
+          "label": "THINK"
         }
       ],
       "started_at": 1795556891,
-      "updated_at": 1795557162
+      "updated_at": 1795557220
     },
     {
       "key": "req-20261125-004811-0e0e4c",
@@ -2083,41 +2083,9 @@
       "step_label": "СборкаA2AJSON",
       "step": 5,
       "total": 5,
-      "events": 15,
+      "events": 19,
       "trail": [
         {
-          "ts": 1795557085,
-          "label": "WRITE · /home/nyaka/over"
-        },
-        {
-          "ts": 1795557085,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557095,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557095,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557111,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557122,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795557122,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795557122,
-          "label": "THINK"
-        },
-        {
           "ts": 1795557136,
           "label": "BASH · python3 - <<'PY'"
         },
@@ -2131,11 +2099,43 @@
         },
         {
           "ts": 1795557157,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557178,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795557179,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557190,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795557190,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557200,
+          "label": "BASH · tail -c 900 /home"
+        },
+        {
+          "ts": 1795557200,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557209,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795557209,
           "label": "THINK"
         }
       ],
       "started_at": 1795556892,
-      "updated_at": 1795557161
+      "updated_at": 1795557222
     },
     {
       "key": "req-20261125-004920-31e32b",
@@ -2145,44 +2145,8 @@
       "step_label": "Поиск и устранение регрессий рендеринга",
       "step": 2,
       "total": 4,
-      "events": 17,
+      "events": 22,
       "trail": [
-        {
-          "ts": 1795557094,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795557104,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795557112,
-          "label": "BASH · cd ~/shared-repo/"
-        },
-        {
-          "ts": 1795557112,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557128,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795557128,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557152,
-          "label": "SYNC · parallel-edit"
-        },
-        {
-          "ts": 1795557153,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795557153,
-          "label": "SUBAGENT · subagent"
-        },
         {
           "ts": 1795557153,
           "label": "SUBAGENT · subagent"
@@ -2194,10 +2158,46 @@
         {
           "ts": 1795557161,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795557161,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557179,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795557179,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557189,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557189,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557205,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557205,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557214,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795557223,
+          "label": "BASH · echo \"SESSION_ID="
         }
       ],
       "started_at": 1795556961,
-      "updated_at": 1795557161
+      "updated_at": 1795557223
     },
     {
       "key": "req-20261125-005212-3189b1",
@@ -2207,43 +2207,89 @@
       "step_label": "Проверить подключение Mongo к DeepSeek-харнесу",
       "step": 1,
       "total": 4,
-      "events": 2,
+      "events": 6,
       "trail": [
         {
-          "ts": 1795557147,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795557147,
-          "label": "BASH · ls ~/.config/open"
-        },
-        {
-          "ts": 1795557147,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795557147,
+          "ts": 1795557153,
           "label": "THINK"
         },
         {
-          "ts": 1795557152,
-          "label": "READ · /home/nyaka/.conf"
+          "ts": 1795557165,
+          "label": "READ · /home/nyaka/share"
         },
         {
-          "ts": 1795557153,
-          "label": "BASH · ls -la ~/shared-r"
+          "ts": 1795557167,
+          "label": "BASH · grep -rniE 'mongo"
         },
         {
-          "ts": 1795557153,
-          "label": "BASH · grep -rliE 'mongo"
+          "ts": 1795557167,
+          "label": "BASH · grep -rniE 'mongo"
         },
         {
-          "ts": 1795557153,
+          "ts": 1795557167,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557178,
+          "label": "BASH · echo '=== mongod "
+        },
+        {
+          "ts": 1795557178,
+          "label": "BASH · echo '=== dsh bri"
+        },
+        {
+          "ts": 1795557178,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557198,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557198,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557209,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557210,
           "label": "THINK"
         }
       ],
       "started_at": 1795557133,
-      "updated_at": 1795557161
+      "updated_at": 1795557220
+    },
+    {
+      "key": "req-20261125-005313-c6fdb9",
+      "session_id": "",
+      "source": "task",
+      "label": "задача - описать харнесс и его детальное применение к трем о",
+      "step_label": "Проверить лайв-фид и сервис бота",
+      "step": 1,
+      "total": 4,
+      "events": 1,
+      "trail": [
+        {
+          "ts": 1795557218,
+          "label": "BASH · stat -c '%y %s %n"
+        },
+        {
+          "ts": 1795557218,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795557218,
+          "label": "BASH · systemctl --user "
+        },
+        {
+          "ts": 1795557218,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795557194,
+      "updated_at": 1795557221
     }
   ],
   "bars": [
@@ -2290,8 +2336,8 @@
   ],
   "updatedAt": "2026-11-24T20:08:01+03:00",
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 4.7,
+  "plan_age_hours": 4.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795557164,
-  "fetched_human": "2026-11-25 00:52:44 +0300"
+  "fetched_at": 1795557225,
+  "fetched_human": "2026-11-25 00:53:45 +0300"
 }
