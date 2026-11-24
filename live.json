@@ -1946,27 +1946,27 @@
   ],
   "active": [
     {
-      "id": "session-d66b31b8",
-      "title": "что по работе со сканф",
-      "source": "dsh",
-      "claimed_human": "23:27:41",
-      "age_min": 0,
-      "full": "что по работе со сканф"
-    },
-    {
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "23:27:41",
+      "claimed_human": "23:28:34",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
+    },
+    {
+      "id": "session-d66b31b8",
+      "title": "что по работе со сканф",
+      "source": "dsh",
+      "claimed_human": "23:28:25",
+      "age_min": 0,
+      "full": "что по работе со сканф"
     },
     {
       "id": "session-68192da3",
       "title": "Анализ видео и результатов CS2",
       "source": "dsh",
       "claimed_human": "23:26:41",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Анализ видео и результатов CS2"
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 199,
+      "age_min": 200,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 221,
+      "age_min": 222,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 221,
+      "age_min": 222,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2020,12 +2020,8 @@
       "step_label": "Собрать критик-гейт",
       "step": 2,
       "total": 4,
-      "events": 25,
+      "events": 26,
       "trail": [
-        {
-          "ts": 1795551779,
-          "label": "BASH · curl -s --max-tim"
-        },
         {
           "ts": 1795551785,
           "label": "BASH · curl -s --max-tim"
@@ -2069,10 +2065,14 @@
         {
           "ts": 1795552029,
           "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795552100,
+          "label": "BASH · cat /home/nyaka/."
         }
       ],
       "started_at": 1795551635,
-      "updated_at": 1795552061
+      "updated_at": 1795552121
     },
     {
       "key": "req-20261124-232301-a6f0c2",
@@ -2082,59 +2082,59 @@
       "step_label": "НАЙТИ",
       "step": 1,
       "total": 4,
-      "events": 18,
+      "events": 30,
       "trail": [
         {
-          "ts": 1795551836,
-          "label": "BASH · python3 -c \"impor"
+          "ts": 1795552079,
+          "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795551843,
+          "ts": 1795552079,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795552079,
           "label": "BASH · cd ~/shared-repo/"
         },
         {
-          "ts": 1795551844,
-          "label": "BASH · python3 -c \"impor"
+          "ts": 1795552079,
+          "label": "BASH · grep -rln \"ivan_d"
         },
         {
-          "ts": 1795551850,
-          "label": "NET · Telegram Bot API 1"
+          "ts": 1795552079,
+          "label": "BASH · ls -la ~/scripts/"
         },
         {
-          "ts": 1795551891,
-          "label": "NET · https://core.teleg"
+          "ts": 1795552079,
+          "label": "READ · /home/nyaka/share"
         },
         {
-          "ts": 1795551896,
-          "label": "BASH · grep -rn \"editMes"
+          "ts": 1795552079,
+          "label": "BASH · cd ~/shared-repo "
         },
         {
-          "ts": 1795551904,
-          "label": "BASH · for m in sendRich"
+          "ts": 1795552079,
+          "label": "BASH · cd ~/shared-repo/"
         },
         {
-          "ts": 1795551917,
-          "label": "BASH · curl -s --max-tim"
+          "ts": 1795552079,
+          "label": "BASH · cd ~/shared-repo "
         },
         {
-          "ts": 1795551928,
-          "label": "BASH · python3 - <<'PY'"
+          "ts": 1795552079,
+          "label": "BASH · ps -eo pid,lstart"
         },
         {
-          "ts": 1795551942,
-          "label": "BASH · for m in foobarMe"
+          "ts": 1795552095,
+          "label": "BASH · echo \"SESSION=$OP"
         },
         {
-          "ts": 1795551979,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795552023,
-          "label": "BASH · python3 - <<'PY'"
+          "ts": 1795552111,
+          "label": "BASH · cd ~/shared-repo/"
         }
       ],
       "started_at": 1795551783,
-      "updated_at": 1795552046
+      "updated_at": 1795552120
     }
   ],
   "bars": [
@@ -2183,6 +2183,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795552065,
-  "fetched_human": "2026-11-24 23:27:45 +0300"
+  "fetched_at": 1795552125,
+  "fetched_human": "2026-11-24 23:28:45 +0300"
 }
