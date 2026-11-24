@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 390,
+      "age_min": 391,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 411,
+      "age_min": 412,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 412,
+      "age_min": 413,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     }
   ],
@@ -1989,128 +1989,66 @@
   },
   "runs": [
     {
-      "key": "req-20261125-023239-ca9899",
-      "session_id": "ses_df0cb0a81ffehs1pEpzufig1bo",
-      "source": "task",
-      "label": "Ща 32 минуты прогресс статус не обновился это нормально вооб",
-      "step_label": "Сверить время и живой фид",
-      "step": 1,
-      "total": 4,
-      "events": 12,
-      "trail": [
-        {
-          "ts": 1795563318,
-          "label": "EDIT · /home/nyaka/docs/"
-        },
-        {
-          "ts": 1795563318,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563331,
-          "label": "BASH · sha256sum /home/n"
-        },
-        {
-          "ts": 1795563361,
-          "label": "BASH · sha256sum '/home/"
-        },
-        {
-          "ts": 1795563361,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563394,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795563457,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563488,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795563489,
-          "label": "BASH · mv '/home/nyaka/d"
-        },
-        {
-          "ts": 1795563489,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563489,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795563489,
-          "label": "BASH · python3 ~/.config"
-        }
-      ],
-      "started_at": 1795563160,
-      "updated_at": 1795563494
-    },
-    {
       "key": "req-20261125-023418-df3023",
       "session_id": "",
       "source": "task",
       "label": "В inventors гораздо больше функционала можно ли его в тг апп",
-      "step_label": "B",
+      "step_label": "C",
       "step": 1,
       "total": 5,
-      "events": 22,
+      "events": 27,
       "trail": [
         {
-          "ts": 1795563490,
+          "ts": 1795563491,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
-          "label": "BASH · cd ~/shared-repo/"
+          "ts": 1795563505,
+          "label": "BASH · curl -sSI --max-t"
         },
         {
-          "ts": 1795563490,
+          "ts": 1795563506,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
-          "label": "BASH · cd ~/shared-repo/"
+          "ts": 1795563514,
+          "label": "BASH · cd /tmp/opencode/"
         },
         {
-          "ts": 1795563490,
+          "ts": 1795563514,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
-          "label": "BASH · cd ~/shared-repo/"
+          "ts": 1795563524,
+          "label": "BASH · cd /tmp/opencode/"
         },
         {
-          "ts": 1795563490,
-          "label": "BASH · cd ~/shared-repo/"
-        },
-        {
-          "ts": 1795563490,
+          "ts": 1795563524,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
+          "ts": 1795563542,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795563543,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795563543,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563552,
           "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795563490,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563491,
-          "label": "BASH · ~/bin/invento sta"
-        },
-        {
-          "ts": 1795563491,
+          "ts": 1795563552,
           "label": "THINK"
         }
       ],
       "started_at": 1795563259,
-      "updated_at": 1795563492
+      "updated_at": 1795563558
     },
     {
       "key": "req-20261125-023553-4e8062",
@@ -2120,121 +2058,121 @@
       "step_label": "Проверка карты фиш Invento по источникам",
       "step": 2,
       "total": 4,
-      "events": 11,
+      "events": 16,
       "trail": [
         {
-          "ts": 1795563489,
-          "label": "BASH · sed -n '1031,1090"
+          "ts": 1795563517,
+          "label": "BASH · ls -la /tmp/openc"
         },
         {
-          "ts": 1795563489,
-          "label": "BASH · opencode api sess"
-        },
-        {
-          "ts": 1795563489,
+          "ts": 1795563517,
           "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795563489,
+          "ts": 1795563517,
           "label": "THINK"
         },
         {
-          "ts": 1795563489,
-          "label": "BASH · sed -n '60,130p' "
+          "ts": 1795563527,
+          "label": "BASH · cd /tmp/opencode/"
         },
         {
-          "ts": 1795563489,
-          "label": "BASH · sed -n '1143,1195"
+          "ts": 1795563527,
+          "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795563489,
-          "label": "BASH · python3 -c 'impor"
-        },
-        {
-          "ts": 1795563489,
-          "label": "BASH · opencode api sess"
-        },
-        {
-          "ts": 1795563489,
+          "ts": 1795563527,
           "label": "THINK"
         },
         {
-          "ts": 1795563489,
-          "label": "BASH · opencode api GET "
+          "ts": 1795563537,
+          "label": "BASH · cd /tmp/opencode/"
         },
         {
-          "ts": 1795563489,
-          "label": "BASH · ls -la ~/.config/"
+          "ts": 1795563537,
+          "label": "BASH · cd /tmp/opencode/"
         },
         {
-          "ts": 1795563489,
+          "ts": 1795563537,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795563537,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563553,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795563553,
           "label": "THINK"
         }
       ],
       "started_at": 1795563353,
-      "updated_at": 1795563494
+      "updated_at": 1795563556
     },
     {
       "key": "req-20261125-023653-f53b36",
       "session_id": "",
       "source": "task",
       "label": "Выключи гейм мод и делай сканфид",
-      "step_label": "продвинуть задачу",
-      "step": 3,
+      "step_label": "собрать отчёт",
+      "step": 4,
       "total": 4,
-      "events": 6,
+      "events": 13,
       "trail": [
         {
-          "ts": 1795563490,
+          "ts": 1795563511,
+          "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795563511,
+          "label": "BASH · grep -c 'H80[78]'"
+        },
+        {
+          "ts": 1795563511,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
+          "ts": 1795563516,
           "label": "BASH · cd /home/nyaka/sc"
         },
         {
-          "ts": 1795563490,
+          "ts": 1795563516,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
+          "ts": 1795563525,
           "label": "READ · /home/nyaka/scanf"
         },
         {
-          "ts": 1795563490,
-          "label": "READ · /home/nyaka/scanf"
-        },
-        {
-          "ts": 1795563490,
-          "label": "READ · /home/nyaka/scanf"
-        },
-        {
-          "ts": 1795563490,
+          "ts": 1795563525,
           "label": "THINK"
         },
         {
-          "ts": 1795563490,
-          "label": "SYNC · hypothesis-check"
+          "ts": 1795563536,
+          "label": "BASH · cd /home/nyaka/sc"
         },
         {
-          "ts": 1795563490,
-          "label": "READ · /home/nyaka/scanf"
-        },
-        {
-          "ts": 1795563490,
-          "label": "BASH · find /home/nyaka "
-        },
-        {
-          "ts": 1795563490,
+          "ts": 1795563536,
           "label": "THINK"
         },
         {
-          "ts": 1795563492,
-          "label": "READ · /home/nyaka/overn"
+          "ts": 1795563549,
+          "label": "BASH · tesseract --versi"
+        },
+        {
+          "ts": 1795563549,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563559,
+          "label": "WRITE · /tmp/opencode/oc"
         }
       ],
       "started_at": 1795563440,
-      "updated_at": 1795563492
+      "updated_at": 1795563559
     }
   ],
   "bars": [
@@ -2283,6 +2221,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 6.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795563494,
-  "fetched_human": "2026-11-25 02:38:14 +0300"
+  "fetched_at": 1795563559,
+  "fetched_human": "2026-11-25 02:39:19 +0300"
 }
