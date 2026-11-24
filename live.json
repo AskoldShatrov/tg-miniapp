@@ -1949,7 +1949,7 @@
       "id": "session-d66b31b8",
       "title": "что по работе со сканф",
       "source": "dsh",
-      "claimed_human": "22:46:06",
+      "claimed_human": "22:46:58",
       "age_min": 0,
       "full": "что по работе со сканф"
     },
@@ -1957,7 +1957,7 @@
       "id": "session-0de35ba9",
       "title": "Анализ видео КС2: экономика и мувы",
       "source": "dsh",
-      "claimed_human": "22:46:04",
+      "claimed_human": "22:46:57",
       "age_min": 0,
       "full": "Анализ видео КС2: экономика и мувы"
     },
@@ -1966,7 +1966,7 @@
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
       "claimed_human": "22:41:32",
-      "age_min": 4,
+      "age_min": 5,
       "full": "Askold в Telegram Mini App: задержка ответа"
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 158,
+      "age_min": 159,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 179,
+      "age_min": 180,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 180,
+      "age_min": 181,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2013,226 +2013,17 @@
   },
   "runs": [
     {
-      "key": "req-20261124-224252-f888b5",
+      "key": "req-20261124-224657-dcccab",
       "session_id": "",
       "source": "task",
       "label": "А какой вывод из этого? Ты вернул функционал? Batch был поле",
-      "step_label": "Проверить подозрение и блокировку",
-      "step": 1,
-      "total": 3,
-      "events": 4,
-      "trail": [
-        {
-          "ts": 1795549391,
-          "label": "FIND · /home/nyaka/share"
-        },
-        {
-          "ts": 1795549391,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549391,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549398,
-          "label": "BASH · stat -c '%n %y %s"
-        },
-        {
-          "ts": 1795549399,
-          "label": "BASH · grep -n \"batch_mo"
-        },
-        {
-          "ts": 1795549400,
-          "label": "BASH · for f in shared-r"
-        },
-        {
-          "ts": 1795549409,
-          "label": "FIND · /home/nyaka/.loca"
-        },
-        {
-          "ts": 1795549410,
-          "label": "BASH · sed -n '30,48p;29"
-        },
-        {
-          "ts": 1795549410,
-          "label": "BASH · python3 -m py_com"
-        },
-        {
-          "ts": 1795549410,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795549417,
-          "label": "FIND · /home/nyaka/share"
-        },
-        {
-          "ts": 1795549479,
-          "label": "BASH · grep -n 'batch\\|/"
-        }
-      ],
-      "started_at": 1795549374,
-      "updated_at": 1795549479
-    },
-    {
-      "key": "req-20261124-224254-9af6e7",
-      "session_id": "",
-      "source": "task",
-      "label": "А ты Тул в итоге починил, ты убедился, что в ТГ-сообщениях, ",
-      "step_label": "Найти контекст про Тул и DeepSeekHarness",
-      "step": 1,
-      "total": 4,
-      "events": 3,
-      "trail": [
-        {
-          "ts": 1795549391,
-          "label": "SYNC · answer-integrity"
-        },
-        {
-          "ts": 1795549391,
-          "label": "SYNC · suspicion-gate"
-        },
-        {
-          "ts": 1795549391,
-          "label": "SYNC · strange-question"
-        },
-        {
-          "ts": 1795549398,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549398,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549399,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549410,
-          "label": "READ · /home/nyaka/.conf"
-        }
-      ],
-      "started_at": 1795549374,
-      "updated_at": 1795549441
-    },
-    {
-      "key": "req-20261124-224254-e3b175",
-      "session_id": "",
-      "source": "task",
-      "label": "У меня весь тг миниап находится в приватной репе на гитхабе,",
-      "step_label": "ПроверитьПравкуТулаИСвежестьДоказательств",
-      "step": 1,
-      "total": 4,
-      "events": 7,
-      "trail": [
-        {
-          "ts": 1795549385,
-          "label": "SYNC · suspicion-gate"
-        },
-        {
-          "ts": 1795549390,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549393,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795549400,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549404,
-          "label": "SYNC · opencode"
-        },
-        {
-          "ts": 1795549409,
-          "label": "SYNC · request-confident"
-        },
-        {
-          "ts": 1795549414,
-          "label": "BASH · echo \"SESSION=$OP"
-        }
-      ],
-      "started_at": 1795549375,
-      "updated_at": 1795549461
-    },
-    {
-      "key": "req-20261124-224255-a01a33",
-      "session_id": "",
-      "source": "task",
-      "label": "Снова tool \"🤖 ⏳ Шаг 1/4 · ██░░░░░░░░ · A · параллельно · 26с",
-      "step_label": "Разобраться что такое Tool и починен ли он (сверка с DeepSeekHarness)",
-      "step": 1,
-      "total": 3,
-      "events": 1,
-      "trail": [
-        {
-          "ts": 1795549397,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795549415,
-          "label": "SYNC · suspicion-gate"
-        }
-      ],
-      "started_at": 1795549376,
-      "updated_at": 1795549456
-    },
-    {
-      "key": "req-20261124-224256-8a54c5",
-      "session_id": "",
-      "source": "task",
-      "label": "Ну так сделай restart плюс не шли ничего в резервный канал б",
-      "step_label": "Собрать факты о мосте и туле",
-      "step": 1,
-      "total": 5,
-      "events": 2,
-      "trail": [
-        {
-          "ts": 1795549393,
-          "label": "SYNC · pc-bridge-live"
-        },
-        {
-          "ts": 1795549393,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795549393,
-          "label": "BASH · systemctl list-un"
-        },
-        {
-          "ts": 1795549401,
-          "label": "BASH · ls -la ~/pc-bridg"
-        },
-        {
-          "ts": 1795549401,
-          "label": "BASH · for d in ~/shared"
-        },
-        {
-          "ts": 1795549401,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795549404,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795549414,
-          "label": "BASH · echo '--- TOOL ma"
-        },
-        {
-          "ts": 1795549467,
-          "label": "BASH · echo '--- miniapp"
-        },
-        {
-          "ts": 1795549473,
-          "label": "BASH · systemctl status "
-        }
-      ],
-      "started_at": 1795549376,
-      "updated_at": 1795549473
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795549618,
+      "updated_at": 1795549628
     }
   ],
   "bars": [
@@ -2279,8 +2070,8 @@
   ],
   "updatedAt": "2026-11-24T20:08:01+03:00",
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 2.6,
+  "plan_age_hours": 2.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795549570,
-  "fetched_human": "2026-11-24 22:46:10 +0300"
+  "fetched_at": 1795549630,
+  "fetched_human": "2026-11-24 22:47:10 +0300"
 }
