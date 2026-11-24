@@ -1950,7 +1950,7 @@
       "title": "Скилл для быстрого ревью кода",
       "source": "dsh",
       "claimed_human": "23:41:49",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Скилл для быстрого ревью кода"
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "что по работе со сканф",
       "source": "dsh",
       "claimed_human": "23:35:32",
-      "age_min": 6,
+      "age_min": 7,
       "full": "что по работе со сканф"
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 214,
+      "age_min": 215,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 235,
+      "age_min": 236,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 236,
+      "age_min": 237,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2010,51 +2010,11 @@
       "session_id": "",
       "source": "task",
       "label": "сделай так чтоб все логи в сообщения были в Rich Messages те",
-      "step_label": "РИЧ",
-      "step": 3,
+      "step_label": "ПРОВЕРКА",
+      "step": 4,
       "total": 4,
-      "events": 84,
+      "events": 93,
       "trail": [
-        {
-          "ts": 1795552728,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795552737,
-          "label": "EDIT · /tmp/opencode/tes"
-        },
-        {
-          "ts": 1795552748,
-          "label": "BASH · cd /tmp/opencode "
-        },
-        {
-          "ts": 1795552761,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795552775,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795552786,
-          "label": "BASH · cd /tmp/opencode "
-        },
-        {
-          "ts": 1795552796,
-          "label": "BASH · cd ~/shared-repo/"
-        },
-        {
-          "ts": 1795552806,
-          "label": "BASH · cd ~/shared-repo "
-        },
-        {
-          "ts": 1795552816,
-          "label": "BASH · cd ~/shared-repo "
-        },
-        {
-          "ts": 1795552827,
-          "label": "BASH · cd ~/shared-repo/"
-        },
         {
           "ts": 1795552869,
           "label": "BASH · systemctl --user "
@@ -2062,196 +2022,174 @@
         {
           "ts": 1795552926,
           "label": "SYNC · answer-integrity"
+        },
+        {
+          "ts": 1795552958,
+          "label": "SYNC · draft-gate"
+        },
+        {
+          "ts": 1795552983,
+          "label": "BASH · ls ~/docs/answers"
+        },
+        {
+          "ts": 1795552983,
+          "label": "WRITE · /home/nyaka/docs"
+        },
+        {
+          "ts": 1795552983,
+          "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795552983,
+          "label": "BASH · sha256sum ~/docs/"
+        },
+        {
+          "ts": 1795552983,
+          "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795552983,
+          "label": "EDIT · /tmp/opencode/dra"
+        },
+        {
+          "ts": 1795552983,
+          "label": "EDIT · /tmp/opencode/dra"
+        },
+        {
+          "ts": 1795552988,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552988,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795551783,
-      "updated_at": 1795552926
+      "updated_at": 1795552991
     },
     {
       "key": "req-20261124-233514-8b39be",
       "session_id": "",
       "source": "task",
       "label": "https://github.com/mattpocock/skills накати эти скилы на дип",
-      "step_label": "E",
+      "step_label": "F",
       "step": 1,
       "total": 5,
-      "events": 27,
+      "events": 38,
       "trail": [
         {
-          "ts": 1795552732,
-          "label": "WRITE · /home/nyaka/shar"
-        },
-        {
-          "ts": 1795552740,
-          "label": "EDIT · /home/nyaka/share"
-        },
-        {
-          "ts": 1795552752,
-          "label": "EDIT · /home/nyaka/share"
-        },
-        {
-          "ts": 1795552761,
-          "label": "BASH · echo \"=== MODULE "
-        },
-        {
-          "ts": 1795552771,
-          "label": "EDIT · /home/nyaka/share"
-        },
-        {
-          "ts": 1795552780,
-          "label": "BASH · echo \"SESSION=$OP"
-        },
-        {
-          "ts": 1795552791,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795552791,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795552800,
-          "label": "BASH · echo \"=== WORKER "
-        },
-        {
-          "ts": 1795552822,
-          "label": "BASH · echo \"=== GAME ST"
-        },
-        {
-          "ts": 1795552857,
-          "label": "BASH · echo \"=== PROCS ="
-        },
-        {
-          "ts": 1795552909,
+          "ts": 1795552971,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795552984,
+          "label": "WRITE · /tmp/opencode/ap"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795552984,
+          "label": "SYNC · suspicion-gate"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · echo \"=== BRIDGE "
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · grep -n \"batch_mo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · python3 -m py_com"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552993,
+          "label": "BASH · sed -n '3175,3200"
         }
       ],
       "started_at": 1795552515,
-      "updated_at": 1795552924
-    },
-    {
-      "key": "req-20261124-233543-0dd3ca",
-      "session_id": "",
-      "source": "task",
-      "label": "Это нормально что у меня автофокус кс и павершел все равно?",
-      "step_label": "честно ответить",
-      "step": 3,
-      "total": 3,
-      "events": 15,
-      "trail": [
-        {
-          "ts": 1795552683,
-          "label": "BASH · grep -rniE 'SetFo"
-        },
-        {
-          "ts": 1795552683,
-          "label": "BASH · echo \"=== game_mo"
-        },
-        {
-          "ts": 1795552683,
-          "label": "BASH · echo \"=== gm_guar"
-        },
-        {
-          "ts": 1795552683,
-          "label": "BASH · echo \"=== bridge "
-        },
-        {
-          "ts": 1795552683,
-          "label": "BASH · echo \"=== guard s"
-        },
-        {
-          "ts": 1795552794,
-          "label": "BASH · grep -rln 'game_f"
-        },
-        {
-          "ts": 1795552802,
-          "label": "BASH · grep -nE 'gamemod"
-        },
-        {
-          "ts": 1795552802,
-          "label": "BASH · echo \"=== staged "
-        },
-        {
-          "ts": 1795552807,
-          "label": "BASH · sed -n '1,200p' ~"
-        },
-        {
-          "ts": 1795552813,
-          "label": "BASH · sed -n '200,340p'"
-        },
-        {
-          "ts": 1795552826,
-          "label": "BASH · echo \"=== synced "
-        },
-        {
-          "ts": 1795552883,
-          "label": "WRITE · /tmp/opencode/dr"
-        }
-      ],
-      "started_at": 1795552543,
-      "updated_at": 1795552915
+      "updated_at": 1795552994
     },
     {
       "key": "req-20261124-233601-9fa49e",
       "session_id": "",
       "source": "task",
       "label": "Типа я сижу с другом в дискорде у меня автофокус на кс таког",
-      "step_label": "найти кто крадёт фокус",
-      "step": 2,
+      "step_label": "убрать автофокус и павершел",
+      "step": 3,
       "total": 4,
-      "events": 17,
+      "events": 31,
       "trail": [
         {
-          "ts": 1795552683,
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · sed -n '232,285p'"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · sed -n '285,305p'"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "EDIT · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795552984,
+          "label": "BASH · python3 -m py_com"
+        },
+        {
+          "ts": 1795552985,
           "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795552683,
-          "label": "WRITE · /tmp/opencode/di"
-        },
-        {
-          "ts": 1795552747,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795552758,
-          "label": "BASH · grep -n -E 'telem"
-        },
-        {
-          "ts": 1795552763,
-          "label": "BASH · sed -n '240,290p'"
-        },
-        {
-          "ts": 1795552772,
-          "label": "BASH · grep -n -A12 -B3 "
-        },
-        {
-          "ts": 1795552781,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795552803,
-          "label": "WRITE · /tmp/opencode/di"
-        },
-        {
-          "ts": 1795552810,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795552823,
-          "label": "BASH · stat -c '%y %n' ~"
-        },
-        {
-          "ts": 1795552857,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795552909,
-          "label": "BASH · python3 -c \"impor"
         }
       ],
       "started_at": 1795552566,
-      "updated_at": 1795552909
+      "updated_at": 1795552992
     }
   ],
   "bars": [
@@ -2300,6 +2238,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795552934,
-  "fetched_human": "2026-11-24 23:42:14 +0300"
+  "fetched_at": 1795552994,
+  "fetched_human": "2026-11-24 23:43:14 +0300"
 }
