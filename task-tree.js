@@ -545,4 +545,8 @@
     bindFilters(events);
     startTools(task);
   }
+
+  /* Публичный вход: index.html может открыть дерево задачи сам (например,
+     по клику на прогресс-бар в «Ходе»), не дублируя обработчиков выше. */
+  window.TaskTree = {open: open, close: close};
 })();
