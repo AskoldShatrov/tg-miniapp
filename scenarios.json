@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24 21:00",
+ "generated": "2026-11-24 21:30",
  "window": {
-  "start": "2026-11-24T11:33",
-  "end": "2026-11-24T17:54",
+  "start": "2026-11-24T11:45",
+  "end": "2026-11-24T18:21",
   "sessions": 177,
   "roots": 150
  },
@@ -23,18 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 224,
+   "median_s": 226,
    "max_s": 16063,
-   "last": "2026-11-24T17:54:54.537000+00:00",
+   "last": "2026-11-24T18:21:25.761000+00:00",
    "outcomes": {
+    "waiting_user": 5,
+    "error": 40,
     "done": 104,
-    "error": 41,
-    "waiting_user": 4,
     "cancelled": 1
    },
    "example": [
-    "k02Q8hMb",
-    "Aor4nsp5"
+    "FvQLpAD5",
+    "yjTr6su8"
    ],
    "actual": [
     {
@@ -45,19 +45,19 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 87 из 150, ≈8 вызовов за раз",
+     "t": "в 85 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 109 из 150, ≈33 вызовов за раз",
+     "t": "в 107 из 150, ≈33 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 92 из 150, ≈8 вызовов за раз",
+     "t": "в 90 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -1742,7 +1742,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free → opencode-go/glm-5.3#high → opencode-go/deepseek-v4.1-flash#high → opencode-go/glm-5.3-flash. По факту: opencode-go/hy4-flash-free ×80, opencode/mimo-v2.6-flash-free ×18, opencode-go/hungerg-free ×16",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free → opencode-go/glm-5.3#high → opencode-go/deepseek-v4.1-flash#high → opencode-go/glm-5.3-flash. По факту: opencode-go/hy4-flash-free ×81, opencode/mimo-v2.6-flash-free ×21, opencode-go/hungerg-free ×16",
    "level": "ok",
    "f": "C13"
   },
@@ -1766,8 +1766,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 10, с файлами 1",
-   "level": "ok",
+   "state": "Владельцев 9, с файлами 0",
+   "level": "warn",
    "f": "C11"
   },
   {
