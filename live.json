@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 274,
+      "age_min": 276,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 296,
+      "age_min": 298,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,24 +1966,24 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 296,
+      "age_min": 298,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
-    },
-    {
-      "id": "session-b73e87b7",
-      "title": "Сессия без названия",
-      "source": "dsh",
-      "claimed_human": "00:42:18",
-      "age_min": 0,
-      "full": "Сессия без названия"
     },
     {
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "00:42:15",
+      "claimed_human": "00:44:23",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
+    },
+    {
+      "id": "session-b73e87b7",
+      "title": "Причина сбоя мини-приложения",
+      "source": "dsh",
+      "claimed_human": "00:44:22",
+      "age_min": 0,
+      "full": "Причина сбоя мини-приложения"
     }
   ],
   "queues": {
@@ -2013,12 +2013,8 @@
       "step_label": "Найти о чём результаты",
       "step": 1,
       "total": 4,
-      "events": 14,
+      "events": 15,
       "trail": [
-        {
-          "ts": 1795555949,
-          "label": "BASH · grep -n \"session\\"
-        },
         {
           "ts": 1795555972,
           "label": "BASH · head -20 ~/.confi"
@@ -2062,10 +2058,14 @@
         {
           "ts": 1795556524,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795556611,
+          "label": "BASH · python3 - <<'PY'"
         }
       ],
       "started_at": 1795555833,
-      "updated_at": 1795556524
+      "updated_at": 1795556646
     },
     {
       "key": "req-20261125-003308-c1ad42",
@@ -2075,16 +2075,8 @@
       "step_label": "Изучить харнесс и реестр скиллов",
       "step": 1,
       "total": 4,
-      "events": 4,
+      "events": 5,
       "trail": [
-        {
-          "ts": 1795556074,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795556122,
-          "label": "SYNC · cs2-demo-capture"
-        },
         {
           "ts": 1795556146,
           "label": "SYNC · scanfeed"
@@ -2124,10 +2116,18 @@
         {
           "ts": 1795556512,
           "label": "BASH · for f in ~/.confi"
+        },
+        {
+          "ts": 1795556559,
+          "label": "BASH · echo \"=== scanfee"
+        },
+        {
+          "ts": 1795556602,
+          "label": "BASH · echo \"=== agents\""
         }
       ],
       "started_at": 1795555997,
-      "updated_at": 1795556521
+      "updated_at": 1795556666
     },
     {
       "key": "req-20261125-003704-651829",
@@ -2137,7 +2137,7 @@
       "step_label": "Проверить подключение MongoDB к харнесу",
       "step": 1,
       "total": 3,
-      "events": 2,
+      "events": 3,
       "trail": [
         {
           "ts": 1795556294,
@@ -2158,10 +2158,18 @@
         {
           "ts": 1795556501,
           "label": "SYNC · backend-latency-p"
+        },
+        {
+          "ts": 1795556548,
+          "label": "BASH · grep -nE \"MONGO|m"
+        },
+        {
+          "ts": 1795556638,
+          "label": "BASH · cd ~/shared-repo/"
         }
       ],
       "started_at": 1795556242,
-      "updated_at": 1795556501
+      "updated_at": 1795556638
     },
     {
       "key": "req-20261125-003804-57a5a6",
@@ -2171,7 +2179,7 @@
       "step_label": "поиск контекста",
       "step": 1,
       "total": 5,
-      "events": 4,
+      "events": 1,
       "trail": [
         {
           "ts": 1795556397,
@@ -2188,10 +2196,32 @@
         {
           "ts": 1795556529,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795556617,
+          "label": "SYNC · progress"
         }
       ],
       "started_at": 1795556312,
-      "updated_at": 1795556539
+      "updated_at": 1795556627
+    },
+    {
+      "key": "req-20261125-004149-6f349e",
+      "session_id": "",
+      "source": "task",
+      "label": "А где прогресс бар и тд?? 🤖 ⏳ Составляю план · ░░░░░░█░░░ · ",
+      "step_label": "Проверка свежести лайв-фида",
+      "step": 1,
+      "total": 5,
+      "events": 1,
+      "trail": [
+        {
+          "ts": 1795556665,
+          "label": "BASH · ls -la /home/nyak"
+        }
+      ],
+      "started_at": 1795556549,
+      "updated_at": 1795556665
     }
   ],
   "bars": [
@@ -2240,6 +2270,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 4.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795556544,
-  "fetched_human": "2026-11-25 00:42:24 +0300"
+  "fetched_at": 1795556670,
+  "fetched_human": "2026-11-25 00:44:30 +0300"
 }
