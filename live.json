@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 383,
+      "age_min": 384,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 405,
+      "age_min": 406,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 405,
+      "age_min": 407,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1989,252 +1989,17 @@
   },
   "runs": [
     {
-      "key": "req-20261125-022024-067c1c",
+      "key": "req-20261125-023239-ca9899",
       "session_id": "ses_df0cb0a81ffehs1pEpzufig1bo",
       "source": "task",
-      "label": "У тебя есть в библиотеке скилл добавь его пж я хочу пройти и",
-      "step_label": "Проверить гейм-мод",
-      "step": 1,
-      "total": 4,
-      "events": 17,
-      "trail": [
-        {
-          "ts": 1795562769,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562771,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562808,
-          "label": "SYNC · opencode-selfchec"
-        },
-        {
-          "ts": 1795562808,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562838,
-          "label": "BASH · ls -l ~/.config/o"
-        },
-        {
-          "ts": 1795562838,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562852,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795562856,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562865,
-          "label": "BASH · head -c 1200 /tmp"
-        },
-        {
-          "ts": 1795562866,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562885,
-          "label": "BASH · date '+%H:%M:%S М"
-        },
-        {
-          "ts": 1795562885,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795562424,
-      "updated_at": 1795562914
-    },
-    {
-      "key": "req-20261125-022146-070fc4",
-      "session_id": "",
-      "source": "task",
-      "label": "Выключи гейм мод и делай сканфид",
-      "step_label": "продолжить работу сканфида",
-      "step": 3,
-      "total": 4,
-      "events": 42,
-      "trail": [
-        {
-          "ts": 1795562820,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562835,
-          "label": "WRITE · /home/nyaka/scan"
-        },
-        {
-          "ts": 1795562835,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562847,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795562855,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562862,
-          "label": "BASH · cd ~/scanfeed && "
-        },
-        {
-          "ts": 1795562865,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562879,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562879,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562896,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562896,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562904,
-          "label": "BASH · python3 - <<'PY'"
-        }
-      ],
-      "started_at": 1795562506,
-      "updated_at": 1795562924
-    },
-    {
-      "key": "req-20261125-022425-b73ce7",
-      "session_id": "",
-      "source": "task",
-      "label": "Разрешения пользователя (заполнить перед запуском):\n  БОТ_ПР",
-      "step_label": "разведка",
-      "step": 1,
-      "total": 5,
-      "events": 22,
-      "trail": [
-        {
-          "ts": 1795562847,
-          "label": "BASH · cd ~/scanfeed && "
-        },
-        {
-          "ts": 1795562847,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562856,
-          "label": "BASH · ls -la ~/pc-bridg"
-        },
-        {
-          "ts": 1795562857,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562857,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562857,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562871,
-          "label": "BASH · cd ~/diag_bundle_"
-        },
-        {
-          "ts": 1795562871,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562879,
-          "label": "BASH · ls -la ~/pc-bridg"
-        },
-        {
-          "ts": 1795562879,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562888,
-          "label": "BASH · cd /tmp/opencode "
-        },
-        {
-          "ts": 1795562929,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795562688,
-      "updated_at": 1795562929
-    },
-    {
-      "key": "req-20261125-022448-81ab3c",
-      "session_id": "",
-      "source": "task",
-      "label": "уведомления\n     по его собственным запросам (владелец берёт",
-      "step_label": "править broadcast_notice",
-      "step": 2,
-      "total": 5,
-      "events": 14,
-      "trail": [
-        {
-          "ts": 1795562823,
-          "label": "BASH · cd /home/nyaka/.l"
-        },
-        {
-          "ts": 1795562848,
-          "label": "BASH · cd /home/nyaka/.l"
-        },
-        {
-          "ts": 1795562856,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562857,
-          "label": "GREP · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795562857,
-          "label": "GREP · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795562857,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562861,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795562868,
-          "label": "BASH · cd /home/nyaka/.l"
-        },
-        {
-          "ts": 1795562868,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562884,
-          "label": "BASH · mkdir -p /home/ny"
-        },
-        {
-          "ts": 1795562884,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562895,
-          "label": "EDIT · /home/nyaka/share"
-        }
-      ],
-      "started_at": 1795562712,
-      "updated_at": 1795562927
+      "label": "Ща 32 минуты прогресс статус не обновился это нормально вооб",
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795563160,
+      "updated_at": 1795563179
     }
   ],
   "bars": [
@@ -2283,6 +2048,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 6.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795563114,
-  "fetched_human": "2026-11-25 02:31:54 +0300"
+  "fetched_at": 1795563179,
+  "fetched_human": "2026-11-25 02:32:59 +0300"
 }
