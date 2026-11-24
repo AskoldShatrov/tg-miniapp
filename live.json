@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 324,
+      "age_min": 325,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 346,
+      "age_min": 347,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 346,
+      "age_min": 347,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwv5mdsz4gal: C10-23418: ДЕМО top1000 по dust2 — отчёт с вердиктом записан до зондов",
       "source": "ноут",
       "claimed_human": "01:31:02",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwv5mdsz4gal: C10-23418: ДЕМО top1000 по dust2 — отчёт с вердиктом записан до зондов",
       "autogen": true
     }
@@ -2006,40 +2006,8 @@
       "step_label": "Проверить состояние режима",
       "step": 1,
       "total": 4,
-      "events": 12,
+      "events": 16,
       "trail": [
-        {
-          "ts": 1795559431,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795559449,
-          "label": "BASH · python3 /home/nya"
-        },
-        {
-          "ts": 1795559449,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795559467,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795559467,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795559497,
-          "label": "GREP · /home/nyaka/windo"
-        },
-        {
-          "ts": 1795559497,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795559516,
-          "label": "GREP · /home/nyaka/windo"
-        },
         {
           "ts": 1795559516,
           "label": "THINK"
@@ -2055,10 +2023,42 @@
         {
           "ts": 1795559554,
           "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559572,
+          "label": "BASH · cat /home/nyaka/w"
+        },
+        {
+          "ts": 1795559572,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559589,
+          "label": "READ · /home/nyaka/windo"
+        },
+        {
+          "ts": 1795559589,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559612,
+          "label": "BASH · cat > /tmp/openco"
+        },
+        {
+          "ts": 1795559612,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559627,
+          "label": "GREP · /home/nyaka/pc-br"
+        },
+        {
+          "ts": 1795559627,
+          "label": "THINK"
         }
       ],
       "started_at": 1795559331,
-      "updated_at": 1795559564
+      "updated_at": 1795559629
     },
     {
       "key": "req-20261125-012917-edd022",
@@ -2068,59 +2068,59 @@
       "step_label": "стенд",
       "step": 2,
       "total": 5,
-      "events": 26,
+      "events": 33,
       "trail": [
         {
-          "ts": 1795559509,
+          "ts": 1795559578,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559578,
           "label": "THINK"
         },
         {
-          "ts": 1795559521,
-          "label": "BASH · cd /home/nyaka &&"
+          "ts": 1795559586,
+          "label": "SYNC · cs2-demo-capture"
         },
         {
-          "ts": 1795559521,
+          "ts": 1795559586,
           "label": "THINK"
         },
         {
-          "ts": 1795559530,
+          "ts": 1795559593,
           "label": "BASH · cd /home/nyaka &&"
         },
         {
-          "ts": 1795559536,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795559536,
+          "ts": 1795559594,
           "label": "THINK"
         },
         {
-          "ts": 1795559543,
+          "ts": 1795559601,
           "label": "BASH · cd /home/nyaka &&"
         },
         {
-          "ts": 1795559543,
+          "ts": 1795559601,
           "label": "THINK"
         },
         {
-          "ts": 1795559550,
+          "ts": 1795559608,
           "label": "BASH · cd /home/nyaka &&"
         },
         {
-          "ts": 1795559550,
+          "ts": 1795559608,
           "label": "THINK"
         },
         {
-          "ts": 1795559558,
+          "ts": 1795559623,
           "label": "BASH · cd /home/nyaka &&"
         },
         {
-          "ts": 1795559558,
+          "ts": 1795559623,
           "label": "THINK"
         }
       ],
       "started_at": 1795559357,
-      "updated_at": 1795559563
+      "updated_at": 1795559629
     }
   ],
   "bars": [
@@ -2169,6 +2169,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 5.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795559564,
-  "fetched_human": "2026-11-25 01:32:44 +0300"
+  "fetched_at": 1795559629,
+  "fetched_human": "2026-11-25 01:33:49 +0300"
 }
