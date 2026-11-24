@@ -24,6 +24,14 @@
     "full": "Паттерн «смок на миде как фильтр» опровергнут — отрицательный результат B2 воспроизведён полностью"
   },
   {
+    "h": "O8-BRIDGE-STATE",
+    "verdict": "PASS",
+    "title": "O8: pc-bridge state и TTL находятся под контролем",
+    "note": "state.json 16.6 МБ < 64 МБ cap; running=0, queued=0, done=5055; sweep каждые 30 с, ttl_min 300 с, queue_ttl 21600 с; health state_age 4 с. telemetry_age велик, но e2e rou",
+    "src": "coordination/o8_bridge_state_closure_20261124.json",
+    "full": "O8: pc-bridge state и TTL находятся под контролем"
+  },
+  {
     "h": "S4H-O2",
     "verdict": "PASS",
     "title": "Задача O2 выполнена в автономном 4h-спринте",
@@ -54,13 +62,5 @@
     "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
     "src": "overnight/prereg/H358_run1795158983.md",
     "full": "H358_RUN1795158983: Предрегистрация H358_run1795158983"
-  },
-  {
-    "h": "H358_run17951589",
-    "verdict": "FAIL",
-    "title": "H358_run1795158983: Предрегистрация H358_run1795158983",
-    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
-    "src": "overnight/prereg/H358_run1795158983.md",
-    "full": "H358_run1795158983: Предрегистрация H358_run1795158983"
   }
 ]
