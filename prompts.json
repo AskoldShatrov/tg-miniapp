@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T20:56:05+00:00",
-  "generated_human": "24.11 20:56 UTC",
-  "as_of": 1795553765188,
+  "generated": "2026-11-24T20:57:05+00:00",
+  "generated_human": "24.11 20:57 UTC",
+  "as_of": 1795553825198,
   "stale_days": 1,
   "count": 1024,
   "groups": 9,
@@ -19,11 +19,10 @@
    "inbox.log",
    "opencode.db (сессии ноута)",
    "wants.json",
-   "replies.json"
+   "replies.json",
+   "runtime/tmp-checkpoint/pc_user_msgs.json"
   ],
-  "sources_skipped": [
-   "runtime/tmp-checkpoint/pc_user_msgs.json (выгрузка с ПК ещё не настроена)"
-  ],
+  "sources_skipped": [],
   "note": "группировка по темам; связи с хотелками (минимум 2 слова); ответ — реальная доставка из replies.json с префиксом want_id; as_of — время вопроса, is_stale — возраст доставки; сессии ноута — последние 800 с user-сообщениями из живой БД, до 2 текста на сессию (окно 3 дн), не вся история"
  },
  "groups": [
