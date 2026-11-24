@@ -2866,7 +2866,7 @@ function renderLive(){
         }).join("");
         const stepLine=(Number(cur.step)||0)
           ?`шаг ${Number(cur.step)}${cur.total?"/"+Number(cur.total):""}`+
-           (cur.label?` · ${esc(String(cur.label).slice(0,40))}`:"")
+           (cur.step_label?` · ${esc(String(cur.step_label).slice(0,40))}`:"")
           :"составляю план";
         host.insertAdjacentHTML("afterend",
           `<div class="pbar-branch">`+
