@@ -1949,7 +1949,7 @@
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "22:58:18",
+      "claimed_human": "22:59:14",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
     },
@@ -1958,7 +1958,7 @@
       "title": "что по работе со сканф",
       "source": "dsh",
       "claimed_human": "22:58:03",
-      "age_min": 0,
+      "age_min": 1,
       "full": "что по работе со сканф"
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 170,
+      "age_min": 171,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 191,
+      "age_min": 192,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 192,
+      "age_min": 193,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2009,43 +2009,11 @@
       "session_id": "",
       "source": "task",
       "label": "А ты Тул в итоге починил, ты убедился, что в ТГ-сообщениях, ",
-      "step_label": "Сверить живую ленту и метки",
-      "step": 2,
+      "step_label": "Сравнить с эталоном DSH",
+      "step": 3,
       "total": 4,
-      "events": 6,
+      "events": 9,
       "trail": [
-        {
-          "ts": 1795550251,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550251,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550255,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795550266,
-          "label": "BASH · stat -c '%n %s by"
-        },
-        {
-          "ts": 1795550266,
-          "label": "BASH · sed -n '1,200p' /"
-        },
-        {
-          "ts": 1795550266,
-          "label": "BASH · ls -la /home/nyak"
-        },
-        {
-          "ts": 1795550279,
-          "label": "BASH · stat -c '%n %s mt"
-        },
-        {
-          "ts": 1795550280,
-          "label": "BASH · systemctl --user "
-        },
         {
           "ts": 1795550280,
           "label": "BASH · ls -la /home/nyak"
@@ -2061,10 +2029,42 @@
         {
           "ts": 1795550290,
           "label": "BASH · echo '--- live ta"
+        },
+        {
+          "ts": 1795550300,
+          "label": "BASH · echo '--- DSH AGE"
+        },
+        {
+          "ts": 1795550300,
+          "label": "BASH · echo '--- edit_st"
+        },
+        {
+          "ts": 1795550300,
+          "label": "BASH · echo '--- fresh t"
+        },
+        {
+          "ts": 1795550307,
+          "label": "BASH · D=/home/nyaka/.ds"
+        },
+        {
+          "ts": 1795550309,
+          "label": "BASH · echo '--- DSH UI "
+        },
+        {
+          "ts": 1795550324,
+          "label": "BASH · D=/home/nyaka/.ds"
+        },
+        {
+          "ts": 1795550325,
+          "label": "BASH · echo '--- cache s"
+        },
+        {
+          "ts": 1795550333,
+          "label": "BASH · python3 -c \""
         }
       ],
       "started_at": 1795550236,
-      "updated_at": 1795550297
+      "updated_at": 1795550349
     },
     {
       "key": "req-20261124-225716-34732a",
@@ -2074,44 +2074,8 @@
       "step_label": "",
       "step": 0,
       "total": null,
-      "events": 6,
+      "events": 8,
       "trail": [
-        {
-          "ts": 1795550269,
-          "label": "BASH · ls -la ~/.local/s"
-        },
-        {
-          "ts": 1795550270,
-          "label": "BASH · ls -la ~/shared-r"
-        },
-        {
-          "ts": 1795550270,
-          "label": "BASH · grep -rn \"TOOL\" ~"
-        },
-        {
-          "ts": 1795550270,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795550279,
-          "label": "BASH · sed -n '1,140p' ~"
-        },
-        {
-          "ts": 1795550279,
-          "label": "BASH · grep -n \"live.jso"
-        },
-        {
-          "ts": 1795550279,
-          "label": "BASH · stat -c '%n %s mt"
-        },
-        {
-          "ts": 1795550280,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550291,
-          "label": "BASH · ls -la ~/.local/s"
-        },
         {
           "ts": 1795550293,
           "label": "BASH · sed -n '1810,1870"
@@ -2123,78 +2087,118 @@
         {
           "ts": 1795550293,
           "label": "BASH · grep -n \"Системна"
+        },
+        {
+          "ts": 1795550299,
+          "label": "BASH · sed -n '150,290p'"
+        },
+        {
+          "ts": 1795550299,
+          "label": "BASH · sed -n '598,700p'"
+        },
+        {
+          "ts": 1795550299,
+          "label": "BASH · grep -n \"def rend"
+        },
+        {
+          "ts": 1795550299,
+          "label": "BASH · for f in ~/.local"
+        },
+        {
+          "ts": 1795550317,
+          "label": "BASH · grep -n \"BROADCAS"
+        },
+        {
+          "ts": 1795550317,
+          "label": "BASH · sed -n '340,405p'"
+        },
+        {
+          "ts": 1795550317,
+          "label": "BASH · ps -eo pid,lstart"
+        },
+        {
+          "ts": 1795550317,
+          "label": "BASH · cd ~/shared-repo "
+        },
+        {
+          "ts": 1795550341,
+          "label": "BASH · grep -n \"message_"
         }
       ],
       "started_at": 1795550236,
-      "updated_at": 1795550295
+      "updated_at": 1795550341
     },
     {
       "key": "req-20261124-225716-3cfd66",
       "session_id": "",
       "source": "task",
       "label": "У меня весь тг миниап находится в приватной репе на гитхабе,",
-      "step_label": "проверить живую ленту tool после рестарта",
-      "step": 2,
+      "step_label": "проверить репозитории и приватность",
+      "step": 3,
       "total": 4,
-      "events": 3,
+      "events": 6,
       "trail": [
         {
-          "ts": 1795550261,
-          "label": "SYNC · suspicion-gate"
-        },
-        {
-          "ts": 1795550261,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795550261,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550271,
-          "label": "SYNC · opencode"
-        },
-        {
-          "ts": 1795550271,
-          "label": "SYNC · tg-bot-ui"
-        },
-        {
-          "ts": 1795550271,
-          "label": "SYNC · request-confident"
-        },
-        {
-          "ts": 1795550271,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550281,
-          "label": "BASH · date '+%F %T %Z'"
-        },
-        {
-          "ts": 1795550281,
-          "label": "BASH · grep -n \"TOOL\" /h"
-        },
-        {
-          "ts": 1795550281,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795550281,
+          "ts": 1795550296,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795550296,
+          "label": "BASH · grep -rn \"Системн"
+        },
+        {
+          "ts": 1795550296,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795550306,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795550307,
+          "label": "BASH · sed -n '585,635p'"
+        },
+        {
+          "ts": 1795550307,
+          "label": "BASH · grep -rn -m 3 \"22"
+        },
+        {
+          "ts": 1795550307,
+          "label": "BASH · which gh && gh au"
+        },
+        {
+          "ts": 1795550323,
+          "label": "BASH · journalctl --user"
+        },
+        {
+          "ts": 1795550325,
+          "label": "BASH · grep -n -i -E \"to"
+        },
+        {
+          "ts": 1795550325,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795550325,
+          "label": "BASH · gh api repos/Asko"
+        },
+        {
+          "ts": 1795550345,
+          "label": "BASH · sha256sum /home/n"
         }
       ],
       "started_at": 1795550238,
-      "updated_at": 1795550296
+      "updated_at": 1795550345
     },
     {
       "key": "req-20261124-225718-366003",
       "session_id": "",
       "source": "task",
       "label": "Ну так сделай restart плюс не шли ничего в резервный канал б",
-      "step_label": "ПРОВЕРКА",
-      "step": 1,
+      "step_label": "ПРИЧИНА",
+      "step": 2,
       "total": 4,
-      "events": 2,
+      "events": 4,
       "trail": [
         {
           "ts": 1795550255,
@@ -2219,10 +2223,26 @@
         {
           "ts": 1795550278,
           "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795550303,
+          "label": "BASH · echo '=== 10-safe"
+        },
+        {
+          "ts": 1795550303,
+          "label": "BASH · echo '=== git rem"
+        },
+        {
+          "ts": 1795550303,
+          "label": "BASH · echo '=== bare TO"
+        },
+        {
+          "ts": 1795550309,
+          "label": "BASH · cat /home/nyaka/."
         }
       ],
       "started_at": 1795550239,
-      "updated_at": 1795550297
+      "updated_at": 1795550341
     },
     {
       "key": "req-20261124-225719-1592e0",
@@ -2232,36 +2252,8 @@
       "step_label": "разобраться с дублем рассылки и TOOL-меткой",
       "step": 1,
       "total": 5,
-      "events": 5,
+      "events": 7,
       "trail": [
-        {
-          "ts": 1795550269,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550271,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550271,
-          "label": "SYNC · request-confident"
-        },
-        {
-          "ts": 1795550271,
-          "label": "BASH · echo \"SESSION=$OP"
-        },
-        {
-          "ts": 1795550271,
-          "label": "BASH · echo \"--- service"
-        },
-        {
-          "ts": 1795550278,
-          "label": "BASH · echo \"--- live-pr"
-        },
-        {
-          "ts": 1795550278,
-          "label": "BASH · echo \"--- code wr"
-        },
         {
           "ts": 1795550278,
           "label": "BASH · for d in /home/ny"
@@ -2281,10 +2273,38 @@
         {
           "ts": 1795550290,
           "label": "BASH · echo \"=== old TOO"
+        },
+        {
+          "ts": 1795550304,
+          "label": "BASH · echo \"=== stale T"
+        },
+        {
+          "ts": 1795550305,
+          "label": "BASH · echo \"=== bot pro"
+        },
+        {
+          "ts": 1795550306,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795550329,
+          "label": "BASH · echo \"=== broadca"
+        },
+        {
+          "ts": 1795550329,
+          "label": "BASH · echo \"=== old tas"
+        },
+        {
+          "ts": 1795550330,
+          "label": "BASH · echo \"=== repo .g"
+        },
+        {
+          "ts": 1795550344,
+          "label": "BASH · grep -n -E 'def b"
         }
       ],
       "started_at": 1795550240,
-      "updated_at": 1795550298
+      "updated_at": 1795550359
     }
   ],
   "bars": [
@@ -2331,8 +2351,8 @@
   ],
   "updatedAt": "2026-11-24T20:08:01+03:00",
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 2.8,
+  "plan_age_hours": 2.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795550298,
-  "fetched_human": "2026-11-24 22:58:18 +0300"
+  "fetched_at": 1795550359,
+  "fetched_human": "2026-11-24 22:59:19 +0300"
 }
