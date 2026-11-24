@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T11:03:56+00:00",
-  "generated_human": "24.11 11:03 UTC",
-  "as_of": 1795518236040,
+  "generated": "2026-11-24T11:04:56+00:00",
+  "generated_human": "24.11 11:04 UTC",
+  "as_of": 1795518296462,
   "stale_days": 1,
   "count": 1072,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-giLyisyz5N",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795518234000,
+     "ts": 1795518293000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -61,7 +61,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795518234000,
+     "as_of": 1795518293000,
      "is_stale": true
     },
     {
@@ -5038,14 +5038,14 @@
     {
      "id": "ses-p7iKhK05oT",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН ОТЧЁТ. Проверь df -h ноута и resource-radar --pc-only + запрос Get-PSDrive через pc-bridge (--lane normal). Посчитай, сколько демо/артефактов реально помещается на C: и D: ПК и почему ноут использовать нельзя. НЕ скачивай и НЕ парсь ничего. Отчёт в artifacts/LR10-PC-DISK-1124-c1.md с путями, SHA256 и числами.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/longrun-1124-10h/artifacts/LR10-PC-DISK-1124-c1.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795518233000,
+     "ts": 1795518291000,
      "source": "session",
      "title": "lree-LR10-PC-DISK-1124-c1",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795518233000,
+     "as_of": 1795518291000,
      "is_stale": false
     },
     {
