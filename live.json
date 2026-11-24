@@ -1727,8 +1727,8 @@
       "id": "T29.2",
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "status": "blocked",
-      "note": "Пилот S2-NAMES-1124: 70 REAL-кадров, coverage 0.0, count-match 0.0143, пороги провалены; владелец dsh-current; next=S2.1 grid OCR (язык/области/бинаризация) на 5 кадрах, затем повтор на 4 картах; пороги не двигать",
-      "updatedAt": "2026-11-24T19:24:07+03:00"
+      "note": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать.",
+      "updatedAt": "2026-11-24T19:46:22+03:00"
     },
     {
       "task": "T29",
@@ -1949,41 +1949,41 @@
       "id": "session-0de35ba9",
       "title": "Анализ видео КС2: экономика и мувы",
       "source": "dsh",
-      "claimed_human": "19:46:18",
+      "claimed_human": "19:47:13",
       "age_min": 0,
       "full": "Анализ видео КС2: экономика и мувы"
     },
     {
       "id": "session-2fc221d7",
-      "title": "Сессия без названия",
+      "title": "Аккуратное освобождение места на ноутбуке",
       "source": "dsh",
-      "claimed_human": "19:46:08",
+      "claimed_human": "19:47:12",
       "age_min": 0,
-      "full": "Сессия без названия"
+      "full": "Аккуратное освобождение места на ноутбуке"
     },
     {
       "id": "session-69b78e67",
       "title": "продолжи вкладку и це",
       "source": "dsh",
-      "claimed_human": "19:46:04",
+      "claimed_human": "19:46:49",
       "age_min": 0,
       "full": "продолжи вкладку и це"
+    },
+    {
+      "id": "T29/T29.2",
+      "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
+      "source": "progress",
+      "claimed_human": "19:46:22",
+      "age_min": 0,
+      "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
       "id": "T29/T29.3",
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
-    },
-    {
-      "id": "T29/T29.2",
-      "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
-      "source": "progress",
-      "claimed_human": "19:24:07",
-      "age_min": 22,
-      "full": "Пилот S2-NAMES-1124: 70 REAL-кадров, coverage 0.0, count-match 0.0143, пороги провалены; владелец dsh-current; next=S2.1 grid OCR (язык/области/бинаризация) на 5 кадрах, затем повтор на 4 картах; пороги не двигать"
     }
   ],
   "queues": {
@@ -2012,7 +2012,7 @@
       "step_label": "Собрать хронологию таймаутов и незакрытые вопросы",
       "step": 1,
       "total": 4,
-      "events": 1,
+      "events": 4,
       "trail": [
         {
           "ts": 1795538764,
@@ -2020,7 +2020,7 @@
         }
       ],
       "started_at": 1795538745,
-      "updated_at": 1795538776
+      "updated_at": 1795538837
     }
   ],
   "bars": [
@@ -2032,7 +2032,7 @@
       "unit": "шагов",
       "color": "red",
       "source": "progress.json",
-      "updated_at": "2026-11-24T19:45:56+03:00"
+      "updated_at": "2026-11-24T19:46:22+03:00"
     },
     {
       "key": "captions",
@@ -2065,10 +2065,10 @@
       "updated_at": "2026-11-24T10:16:32+03:00"
     }
   ],
-  "updatedAt": "2026-11-24T19:45:56+03:00",
-  "progress_updated_at": "2026-11-24T19:45:56+03:00",
+  "updatedAt": "2026-11-24T19:46:22+03:00",
+  "progress_updated_at": "2026-11-24T19:46:22+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795538778,
-  "fetched_human": "2026-11-24 19:46:18 +0300"
+  "fetched_at": 1795538839,
+  "fetched_human": "2026-11-24 19:47:19 +0300"
 }
