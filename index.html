@@ -891,6 +891,8 @@
     <section class="screen" id="screen-live">
       <div class="eyebrow" id="liveEyebrow">План · снимок (см. возраст ниже)</div>
       <div class="live-strip"><span class="dot-live"></span><span id="liveStamp">…</span></div>
+      <!-- @owner:miniapp-progress @region:pbar: живой прогресс корпуса, источник — live.json:corpus -->
+      <div id="liveProgressBar" class="pbar"></div>
       <div class="qbox" id="liveQueues"></div>
       <div class="eyebrow" style="margin-top:12px">Активные шаги progress.json</div>
       <div class="live-strip" id="livePlanStamp">…</div>
@@ -2769,6 +2771,26 @@ function renderLive(){
     ps.classList.toggle("p-badge",planStale);
     ps.classList.toggle("stale",planStale);
     ps.textContent=planStamp+(planStale?" — план давно не менялся (это не ошибка)":"");
+  }
+
+  /* @owner:miniapp-progress @region:pbar: полоски из live.json:corpus и tasks */
+  const bars=$("#liveProgressBar");
+  if(bars){
+    const c=d.corpus||{};
+    const rows=[];
+    const add=(label,done,total,color)=>{
+      const n=Number(done)||0, N=Number(total)||0;
+      if(!N) return;
+      const pct=Math.max(0,Math.min(100,Math.round(100*n/N)));
+      rows.push(`<div class="pbar"><div class="pbar-head"><b>${esc(label)}</b>`+
+        `<span>${n} / ${N} · ${pct}%</span></div>`+
+        `<div class="pbar-track"><div class="pbar-fill c-${color}" style="width:${pct}%"></div></div></div>`);
+    };
+    add("Транскрипции корпуса",c.done,c.total,"green");
+    add("Английские субтитры",c.captions_done,c.captions_total,"blue");
+    const allSteps=d.tasks||[];
+    add("Шаги плана",allSteps.filter(s=>s.status==="done").length,allSteps.length,"yellow");
+    bars.innerHTML=rows.join("");
   }
 
   const q=$("#liveQueues");
