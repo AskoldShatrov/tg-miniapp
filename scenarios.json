@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-24 12:00",
+ "generated": "2026-11-24 12:30",
  "window": {
-  "start": "2026-11-24T02:06",
-  "end": "2026-11-24T08:57",
+  "start": "2026-11-24T03:15",
+  "end": "2026-11-24T09:29",
   "sessions": 151,
   "roots": 150
  },
  "summary": {
   "skills": 39,
-  "skills_used": 14,
+  "skills_used": 15,
   "agents": 6,
   "agents_used": 1,
   "autofeed": 0,
@@ -23,18 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 14,
+   "median_s": 19,
    "max_s": 1360,
-   "last": "2026-11-24T08:57:18.427000+00:00",
+   "last": "2026-11-24T09:29:56.154000+00:00",
    "outcomes": {
     "waiting_user": 1,
-    "done": 77,
-    "error": 71,
+    "done": 78,
+    "error": 70,
     "cancelled": 1
    },
    "example": [
-    "4IDO2ceS",
-    "wXxbJi1x"
+    "UyhwyFHm",
+    "pN6IIoDN"
    ],
    "actual": [
     {
@@ -45,30 +45,30 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 39 из 150",
+     "t": "в 38 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 69 из 150, ≈20 вызовов за раз",
+     "t": "в 74 из 150, ≈19 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 48 из 150, ≈7 вызовов за раз",
+     "t": "в 52 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 56 из 150, ≈4 вызовов за раз",
+     "t": "в 59 из 150, ≈4 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, code-review, disk-triage, draft-gate, hidden-auditor, minimal-run-and-audit, network-constraints, pc-b",
+     "n": "реже: answer-integrity, code-review, disk-triage, draft-gate, hidden-auditor, longrun-evolution, minimal-run-and-audit, networ",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -585,78 +585,20 @@
    "group": "big",
    "title": "Большая задача по этапам",
    "when": "«продолжи план по этапам», process-plan.md",
-   "status": "warn",
-   "status_text": "На грани лимита",
-   "runs": 1,
-   "median_s": 1082,
-   "max_s": 1082,
-   "last": "2026-11-24T02:06:46.427000+00:00",
-   "outcomes": {
-    "done": 1
-   },
-   "example": [
-    "6yumgsPn"
-   ],
-   "actual": [
-    {
-     "k": "agent",
-     "n": "build",
-     "t": "запусков: 1"
-    },
-    {
-     "k": "skill",
-     "n": "hypothesis-check",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "explore",
-     "t": "≈25 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "≈41 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "progress",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "правки",
-     "t": "≈3 вызовов за раз",
-     "d": 1
-    }
-   ],
+   "status": "idle",
+   "status_text": "Нет запусков за окно",
+   "runs": 0,
+   "median_s": null,
+   "max_s": null,
+   "last": "",
+   "outcomes": {},
+   "example": [],
+   "actual": [],
    "declared": [
     {
      "k": "skill",
      "n": "progress",
-     "u": false
+     "u": true
     },
     {
      "k": "agent",
@@ -792,13 +734,13 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 30,
-   "median_s": 440,
+   "runs": 28,
+   "median_s": 418,
    "max_s": 1135,
    "last": "2026-11-24T08:24:33.366000+00:00",
    "outcomes": {
     "error": 21,
-    "done": 9
+    "done": 7
    },
    "example": [
     "iOFhdh2f",
@@ -808,54 +750,54 @@
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 30"
+     "t": "запусков: 28"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 29 из 30",
+     "t": "в 28 из 28",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 15 из 30",
+     "t": "в 13 из 28",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 26 из 30",
+     "t": "в 25 из 28",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 30 из 30, ≈24 вызовов за раз",
+     "t": "в 28 из 28, ≈24 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 12 из 30",
+     "t": "в 11 из 28",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 25 из 30, ≈10 вызовов за раз",
+     "t": "в 23 из 28, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 27 из 30, ≈5 вызовов за раз",
+     "t": "в 25 из 28, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, code-review, disk-triage, hidden-auditor, minimal-run-and-audit, pc-bridge-live, progress, show-in-ans",
-     "t": "меньше 6 из 30",
+     "n": "реже: answer-integrity, code-review, disk-triage, hidden-auditor, minimal-run-and-audit, pc-bridge-live, show-in-answer",
+     "t": "меньше 6 из 28",
      "d": 1
     }
    ],
@@ -923,7 +865,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×40, opencode/tidepool-alpha-free ×20, opencode/big-pickle ×20",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×47, opencode/tidepool-alpha-free ×20, opencode/iceman-free ×18",
    "level": "ok",
    "f": "C13"
   },
@@ -947,7 +889,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 11, с файлами 6",
+   "state": "Владельцев 10, с файлами 4",
    "level": "ok",
    "f": "C11"
   },
@@ -1015,7 +957,7 @@
     },
     {
      "n": "progress",
-     "used": true,
+     "used": false,
      "merged": false
     },
     {
