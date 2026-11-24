@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T01:14:08+00:00",
-  "generated_human": "24.11 01:14 UTC",
-  "as_of": 1795482848505,
+  "generated": "2026-11-24T01:15:08+00:00",
+  "generated_human": "24.11 01:15 UTC",
+  "as_of": 1795482908429,
   "stale_days": 1,
   "count": 1066,
   "groups": 9,
@@ -40,9 +40,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-xZ2dC5iO7G",
+     "text": "ЗАДАЧА-ПРОРЫВ. Не пересчитывай старые корпуса C04-2180/t4-full: они дали ECE 0.1367 и вырождение. Работай только с новым проиндексированным REAL-корпусом /home/nyaka/scanfeed/data/realgt_batch/S03GT_REAL_20261123T223801Z/ (1050 кадров, 243 честных cyan FP, allplayers=10, prereg /home/nyaka/overnight/prereg/S03GT-REAL60.json). Построй покадровую GT-таблицу, раздели по матчам (кластер match_id, 3 матча), сделай group-aware holdout, невырождающуюся калибровку dot_quality/prediction, посчитай ECE, Wilson 95% и сравнение с честным константным baseline. НЕ трогай ПК, pc-bridge и защищённые data/. Создай новый JSON-артефакт ровно по пути /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-<суффикс>.json с полями: VERDICT, n, fp, ece_after, honest_baseline_beaten, source, cluster_unit, holdout_matches, limitations. VERDICT=PASS только если n>=60, fp>0, ece_after<0.15, baseline обыгран и есть group-holdout; иначе честно VERDICT=FAIL. Сам запусти verify_cmd и добейся rc=0; выведи PROMISE: DONE и путь файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-c1061.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795482906000,
+     "source": "session",
+     "title": "lree-SFC-S03GT-BREAKTHROUGH-c1061",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795482906000,
+     "is_stale": false
+    },
+    {
      "id": "ses-qTSiog3e1g",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15580. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtxgk7n44j5: S01CB: расширение REAL-набора калибровки confidence (T4). Где: goals.json · Новые дизъюнтные GSI allplayers-запуски + свежий FACEIT dust2 демо-срез; prereg S01CB-REAL60-EXT до прогона; гейт n>=60, FP>0, ECE<0.15; отчёт ~/overn В конце вызови tools.goals.track({action:'done', id:'gmwtxgk7n44j5', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15580_run1795482020.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795482843000,
+     "ts": 1795482904000,
      "source": "session",
      "title": "AU15580 confidence calibration hypothesis",
      "source_label": "ноут",
@@ -61,21 +74,8 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795482843000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-xZ2dC5iO7G",
-     "text": "ЗАДАЧА-ПРОРЫВ. Не пересчитывай старые корпуса C04-2180/t4-full: они дали ECE 0.1367 и вырождение. Работай только с новым проиндексированным REAL-корпусом /home/nyaka/scanfeed/data/realgt_batch/S03GT_REAL_20261123T223801Z/ (1050 кадров, 243 честных cyan FP, allplayers=10, prereg /home/nyaka/overnight/prereg/S03GT-REAL60.json). Построй покадровую GT-таблицу, раздели по матчам (кластер match_id, 3 матча), сделай group-aware holdout, невырождающуюся калибровку dot_quality/prediction, посчитай ECE, Wilson 95% и сравнение с честным константным baseline. НЕ трогай ПК, pc-bridge и защищённые data/. Создай новый JSON-артефакт ровно по пути /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-<суффикс>.json с полями: VERDICT, n, fp, ece_after, honest_baseline_beaten, source, cluster_unit, holdout_matches, limitations. VERDICT=PASS только если n>=60, fp>0, ece_after<0.15, baseline обыгран и есть group-holdout; иначе честно VERDICT=FAIL. Сам запусти verify_cmd и добейся rc=0; выведи PROMISE: DONE и путь файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-c1061.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795482842000,
-     "source": "session",
-     "title": "lree-SFC-S03GT-BREAKTHROUGH-c1061",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795482842000,
-     "is_stale": false
+     "as_of": 1795482904000,
+     "is_stale": true
     },
     {
      "id": "ses-4815gn5lls",
@@ -100,7 +100,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481802000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sJ7tkCx63o",
@@ -125,7 +125,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481681000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-bZ6JS811Vj",
@@ -150,7 +150,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481495000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ajIM413iNp",
@@ -175,7 +175,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481318000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0jAm5a0hxg",
@@ -200,7 +200,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481180000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-uYevmje8gj",
@@ -225,7 +225,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481101000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pbyzg3FN60",
@@ -250,7 +250,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481098000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Ck7384dy2J",
@@ -275,7 +275,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481047000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-GrtK5ZUPvz",
@@ -300,7 +300,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481018000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-FD1atVZk4V",
@@ -351,7 +351,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795479439000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-riiDejLFx5",
@@ -428,7 +428,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795478719000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-PuGE565FSH",
@@ -466,7 +466,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795478569000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ZWffisyCQs",
@@ -491,7 +491,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795478555000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-57mIQzwixh",
@@ -555,7 +555,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477806000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-VHcIKOvYP3",
@@ -606,7 +606,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795476609000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MyWS3t1qWb",
@@ -631,7 +631,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795475489000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xH1eEAzyUi",
@@ -656,7 +656,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795474791000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1ibQxy6KUx",
@@ -681,7 +681,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795474527000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ZQ0ni6vWJi",
@@ -706,7 +706,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795473989000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pV3AXyMJgs",
@@ -744,7 +744,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795473734000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-NuXySX9Zzv",
@@ -769,7 +769,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795473734000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-iKDa4IVxUU",
@@ -794,7 +794,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795472955000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-OWZWVFHfeD",
@@ -819,7 +819,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795472221000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eWMOLptp7u",
@@ -844,7 +844,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795471593000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-UncR0FB6X5",
@@ -869,7 +869,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795470988000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-mIzLb1PocM",
@@ -894,7 +894,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795470022000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YLdW7Cr2F4",
@@ -919,7 +919,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469919000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kjSb4qCLUB",
@@ -944,7 +944,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469609000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-w7lmox3Ze2",
@@ -969,7 +969,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469354000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-OkffTDanD3",
@@ -994,7 +994,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468896000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-N4jdug1I9p",
@@ -1019,7 +1019,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468001000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-rzTfOM60eH",
@@ -1044,7 +1044,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795466493000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MBEvwN00Q7",
@@ -1069,7 +1069,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795465792000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xBCRXRTmqH",
@@ -1094,7 +1094,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795465467000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HIfkUcNO43",
@@ -1119,7 +1119,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795465218000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YzJ7n9x5Jq",
@@ -1144,7 +1144,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464992000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-jpkpRTD0l2",
@@ -1169,7 +1169,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464616000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XYpo2F5z76",
@@ -1194,7 +1194,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464474000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-i332vIPMQ7",
@@ -1219,7 +1219,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464451000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-w4rUmtWnmM",
@@ -1244,7 +1244,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464348000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-adPhKXkenH",
@@ -1269,7 +1269,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464321000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-PrEuOCRz0b",
@@ -1294,7 +1294,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464321000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xOo93oX0Az",
@@ -1319,7 +1319,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464259000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dsJHWDAExT",
@@ -1344,7 +1344,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464206000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1WXskY6t9W",
@@ -1369,7 +1369,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464197000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-mmtn4Wt3uq",
@@ -1394,7 +1394,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464190000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-R4zqNexwCf",
@@ -1419,7 +1419,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463985000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-U1WRd4YUUe",
@@ -1444,7 +1444,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463701000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-L7gG5PpKqL",
@@ -1469,7 +1469,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463698000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XsvCvauGZz",
@@ -1494,7 +1494,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463323000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4ElndZlLu4",
@@ -1519,7 +1519,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463233000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-9cqLei0pM6",
@@ -1544,7 +1544,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463206000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-x40HwxrnEa",
@@ -1569,7 +1569,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463049000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-bFf6WkeQi5",
@@ -1594,7 +1594,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463046000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Vp4dXp2b5j",
@@ -1619,7 +1619,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462944000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-cQXGABO2ez",
@@ -1644,7 +1644,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462882000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zmNlwGm00T",
@@ -1669,7 +1669,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462881000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-woE29mm6et",
@@ -1694,7 +1694,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462065000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-vkjLtDQfnK",
@@ -1719,7 +1719,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461125000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CJgg8Cbrv0",
@@ -1744,7 +1744,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795460724000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-9hUovVn0v0",
@@ -1769,7 +1769,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795460007000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0I9BkuUWOj",
@@ -1794,7 +1794,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459937000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-SVgc4liOhc",
@@ -1819,7 +1819,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459265000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7i0eu7tckt",
@@ -1844,7 +1844,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459108000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-h0Ho2q4bCa",
@@ -1869,7 +1869,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458979000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Cq4t8xJZEg",
@@ -1894,7 +1894,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458946000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ITxxkVCd1D",
@@ -1919,7 +1919,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458820000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DHsbytnsMH",
@@ -1944,7 +1944,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458761000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DAjT5I5AFt",
@@ -1969,7 +1969,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458689000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-d43bYCrGrN",
@@ -1994,7 +1994,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458617000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-bdNlaaxd95",
@@ -2019,7 +2019,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458556000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-otfvyvxETr",
@@ -2044,7 +2044,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458538000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7AkFnEtD18",
@@ -2069,7 +2069,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458538000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sT9S2Apq6a",
@@ -2094,7 +2094,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458497000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-OGu0nEhm1M",
@@ -2119,7 +2119,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458195000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-U5luxFiVJI",
@@ -2144,7 +2144,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795457841000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-FfFTaWyc5H",
@@ -2169,7 +2169,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795457118000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-TieCYij43R",
@@ -2194,7 +2194,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795456433000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pvLiuks4l1",
@@ -2219,7 +2219,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795456004000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HczRjAYtro",
@@ -2244,7 +2244,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795454271000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-UK7245icxC",
@@ -2269,7 +2269,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795453538000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eJv69kq12k",
@@ -2294,7 +2294,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795452996000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CUcuTrD06m",
@@ -2319,7 +2319,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795452487000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-czjgtWePL3",
@@ -2370,7 +2370,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795451825000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1AiQ3V65zM",
@@ -2434,7 +2434,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795450760000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-yWG6cxbE2b",
@@ -2472,7 +2472,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795450320000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-fNzZgMjPan",
@@ -2510,7 +2510,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449922000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xacjq37YRe",
@@ -2561,7 +2561,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449200000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-LN87VIOJkM",
@@ -2586,7 +2586,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449072000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ev2RhVyPme",
@@ -2650,7 +2650,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447792000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-B7obDEn46v",
@@ -2688,7 +2688,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447409000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-oCbnhUFBSj",
@@ -2726,7 +2726,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447303000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YGpKcT8D4U",
@@ -2764,7 +2764,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447031000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7t6TPgCwP0",
@@ -2802,7 +2802,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446642000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EDIOAP829n",
@@ -2840,7 +2840,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446328000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Zhu2RuL3mP",
@@ -2865,7 +2865,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446300000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CalaZW654c",
@@ -2890,7 +2890,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446007000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-22CA1KP9KF",
@@ -2915,7 +2915,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445918000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ZHthnhrLSG",
@@ -2940,7 +2940,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445907000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EfMr20WDXM",
@@ -2965,7 +2965,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445737000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-X1JIqHbfMQ",
@@ -2990,7 +2990,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445609000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ge0t7QaQHG",
@@ -3015,7 +3015,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445608000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MfDDxiAMPE",
@@ -3040,7 +3040,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445597000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-E3KWsVYZUt",
@@ -3065,7 +3065,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445568000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-JpaCEJHeLU",
@@ -3090,7 +3090,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445553000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-r7RNIleDtg",
@@ -3115,7 +3115,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445480000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-8cLl97cQLI",
@@ -3140,7 +3140,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445080000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Gx6CxBdlSq",
@@ -3165,7 +3165,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444697000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-N3wcW25oAy",
@@ -3190,7 +3190,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444183000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-IRG0guRMI9",
@@ -3215,7 +3215,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443521000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dAsbXoLha3",
@@ -3240,7 +3240,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442777000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-v0XfeB0zRZ",
@@ -3265,7 +3265,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442038000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1H0UMsYJq4",
@@ -3290,7 +3290,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441927000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ZJzXGNfIt2",
@@ -3315,7 +3315,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441679000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ECJ2O3DJDK",
@@ -3340,7 +3340,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441673000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sqH8C7x7n1",
@@ -3365,7 +3365,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441599000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-2qR8G5XKai",
@@ -3390,7 +3390,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441279000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xrmVdE7u1Z",
@@ -3415,7 +3415,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441279000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-WmwYdScgwO",
@@ -3440,7 +3440,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441278000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-IVxKJ0HQhX",
@@ -3465,7 +3465,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441063000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EaFps3nzi3",
@@ -3490,7 +3490,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440840000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-KErbFDy1C8",
@@ -3515,7 +3515,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440668000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zFpE7kD176",
@@ -3540,7 +3540,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440328000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sYhdrKwHJk",
@@ -3565,7 +3565,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440214000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-lnHkmEqwEo",
@@ -3590,7 +3590,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440167000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-qGMWEg1ufj",
@@ -3615,7 +3615,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439328000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dCcVYmi6lP",
@@ -3640,7 +3640,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438327000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-q6qEeabgfB",
@@ -3665,7 +3665,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438169000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-QZsOonnK2p",
@@ -3703,7 +3703,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437705000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-RbEyJ8825f",
@@ -3754,7 +3754,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437312000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-vV60MgmBew",
@@ -3792,7 +3792,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436862000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DDLYCGlej6",
@@ -3817,7 +3817,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436859000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-FjHY75m3rV",
@@ -3842,7 +3842,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436808000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-aTlZzWwH2T",
@@ -3880,7 +3880,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436659000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-huvJkjhbYZ",
@@ -3905,7 +3905,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436574000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XlMDMYNZjI",
@@ -3930,7 +3930,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436488000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zuvr7Gyd91",
@@ -3955,7 +3955,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436473000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-33PyPNxdz1",
@@ -3980,7 +3980,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436461000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3Wn7SwAxwH",
@@ -4005,7 +4005,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436452000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-yh7lvnUTY2",
@@ -4030,7 +4030,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436445000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Fz67lXW0oP",
@@ -4055,7 +4055,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436371000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ev43Y79pDu",
@@ -4093,7 +4093,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436319000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-rMtW2cjnLz",
@@ -4118,7 +4118,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436060000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-hy4m3y7m6M",
@@ -4156,7 +4156,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795435926000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-GLQ4AYf3i1",
@@ -4194,7 +4194,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795435333000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-WVrCXzcgDd",
@@ -4232,7 +4232,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795435096000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-g9pGldFfwW",
@@ -4270,7 +4270,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434880000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4VCFRKiCih",
@@ -4295,7 +4295,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434804000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XaV6ayf7uf",
@@ -4333,7 +4333,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434707000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5UFmJpYAWc",
@@ -4384,7 +4384,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434490000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-BOquRJr1HL",
@@ -4409,7 +4409,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434362000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0NdbQnf516",
@@ -4434,7 +4434,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434347000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CfgG2MVhng",
@@ -4472,7 +4472,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434296000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-OsCd45p47E",
@@ -4497,7 +4497,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434131000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nyehgFdxik",
@@ -4522,7 +4522,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795433861000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5GeUpp0KLO",
@@ -4547,7 +4547,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795433543000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-vYbGLO5qs7",
@@ -4572,7 +4572,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795433016000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-hLa7ouH2Dh",
@@ -4597,7 +4597,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795432300000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-tWLMdpz35C",
@@ -4622,7 +4622,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795431560000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xdhOsedfIF",
@@ -4647,7 +4647,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795431429000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wEg5x07EHd",
@@ -4672,7 +4672,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795430947000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-rldADCwB7M",
@@ -4697,7 +4697,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795430655000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-UVNEPa18Yp",
@@ -4722,7 +4722,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795430108000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261122111945",
@@ -4871,7 +4871,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795482231000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Zp3wt7Ym6J",
@@ -4896,7 +4896,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481997000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Xk6JStjU5r",
@@ -4921,7 +4921,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481956000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-a0J7L4sWDt",
@@ -4946,7 +4946,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481737000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-SyUnce1Ig0",
@@ -4971,7 +4971,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481704000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-vQFSN1IbsW",
@@ -4996,7 +4996,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481681000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-S6LtvX6JWk",
@@ -5021,7 +5021,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481681000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0d0Z7nqILd",
@@ -5046,7 +5046,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481492000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0yfLkUydcz",
@@ -5071,7 +5071,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481458000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zwsrH8FX73",
@@ -5096,7 +5096,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481455000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-SpywRZQJz1",
@@ -5121,7 +5121,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481412000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-b2ATjSHC20",
@@ -5146,7 +5146,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481301000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ulTXYHfhnb",
@@ -5171,7 +5171,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795481079000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xSzt2ZyPpH",
@@ -5196,7 +5196,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480955000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-NfIvtgOEjX",
@@ -5221,7 +5221,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480950000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-N1ymY0dBvE",
@@ -5246,7 +5246,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480892000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CezKh4Jngm",
@@ -5271,7 +5271,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480846000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-gamlu24vFd",
@@ -5296,7 +5296,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480800000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-jwoX1FSoIL",
@@ -5321,7 +5321,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480690000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Wi4seT6HlQ",
@@ -5372,7 +5372,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795478101000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EaNAZyjM2J",
@@ -5397,7 +5397,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477876000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-qUXrsrIs0N",
@@ -5422,7 +5422,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477316000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HtLWaB7xZ5",
@@ -5447,7 +5447,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477228000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eJk14Ojq2N",
@@ -5472,7 +5472,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795476958000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YjWBT2ZUWn",
@@ -5497,7 +5497,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795474423000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-SwaN1nCTHv",
@@ -5522,7 +5522,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795471426000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YpgDyZ6jj1",
@@ -5547,7 +5547,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795470683000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kj8nkr5jf9",
@@ -5572,7 +5572,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468987000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-bVB3o2lM4z",
@@ -5597,7 +5597,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468669000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-meeqvuW1PZ",
@@ -5622,7 +5622,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468337000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-j8c2PEyFz6",
@@ -5647,7 +5647,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468309000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nbOxg5LIg7",
@@ -5672,7 +5672,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468303000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ChsgHnGBtX",
@@ -5697,7 +5697,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468298000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-IIqO3LfRIF",
@@ -5722,7 +5722,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468275000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-66kcfrByxC",
@@ -5747,7 +5747,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468178000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kV8zNMN1KC",
@@ -5772,7 +5772,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795467916000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nMzUinJQHk",
@@ -5797,7 +5797,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795467817000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-vmKrUAeCgR",
@@ -5822,7 +5822,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795467712000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-l3tNg1RKZF",
@@ -5847,7 +5847,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795467249000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kA8YyOluUh",
@@ -5872,7 +5872,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795465156000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-yYxPjtvDWr",
@@ -5897,7 +5897,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795464419000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-iNNT9GedRU",
@@ -5922,7 +5922,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463792000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nvTThYTrky",
@@ -5947,7 +5947,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462332000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-VNB96MUXNH",
@@ -5972,7 +5972,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462173000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pLqxH3V0Mh",
@@ -5997,7 +5997,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462071000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-C6ClL4G3Zs",
@@ -6022,7 +6022,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462020000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ks22OwXWyy",
@@ -6047,7 +6047,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461879000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-fTEyFOOrlo",
@@ -6072,7 +6072,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461618000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-QtXMgEUWF5",
@@ -6097,7 +6097,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461495000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-UUdjh8p3Jp",
@@ -6122,7 +6122,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461451000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-l4mOhLhdKU",
@@ -6147,7 +6147,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461450000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-rcAR7BrceE",
@@ -6172,7 +6172,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461449000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0DB91a8erV",
@@ -6197,7 +6197,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459666000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-I0P5Lgx5WA",
@@ -6222,7 +6222,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459276000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-o5RrqtVC0g",
@@ -6247,7 +6247,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459251000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wVxgyGA19P",
@@ -6272,7 +6272,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459163000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XJzn6OXgO5",
@@ -6297,7 +6297,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459015000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-cQt9WM5Wme",
@@ -6322,7 +6322,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458888000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HJeQ0HAkRZ",
@@ -6347,7 +6347,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458886000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4cgAg2Aaq9",
@@ -6372,7 +6372,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458862000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dXwJ9qEMhB",
@@ -6397,7 +6397,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458856000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-OB9UnqFuzP",
@@ -6422,7 +6422,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449918000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Ci6KTIsQcI",
@@ -6447,7 +6447,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449759000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zvQ7fol5Ky",
@@ -6472,7 +6472,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449593000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-UsAt7KYIzm",
@@ -6497,7 +6497,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449425000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0x13NnMZp0",
@@ -6522,7 +6522,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449341000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XJQOTzzqff",
@@ -6547,7 +6547,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449017000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-12afIgbR8P",
@@ -6572,7 +6572,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795448809000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-oJ4vMN9acM",
@@ -6597,7 +6597,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795448654000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-plFquAmFeH",
@@ -6622,7 +6622,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795448413000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dJhq9Vzhfp",
@@ -6647,7 +6647,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795448187000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-185Z27o3Gl",
@@ -6672,7 +6672,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447799000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-GyRa4YGtar",
@@ -6697,7 +6697,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447714000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7X3KU5QOX2",
@@ -6722,7 +6722,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447517000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-bviJALt2BT",
@@ -6747,7 +6747,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447347000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-QSknKT2Tz2",
@@ -6772,7 +6772,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447182000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kjbQfuHzgH",
@@ -6797,7 +6797,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447000000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wyQ2MBVx3J",
@@ -6822,7 +6822,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446690000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YCz0Tv7MMB",
@@ -6847,7 +6847,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446353000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wd8uykqNK5",
@@ -6872,7 +6872,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446352000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-VYN5SY1UJw",
@@ -6897,7 +6897,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446340000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1SKIPquAGG",
@@ -6922,7 +6922,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446195000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eAm9FQnuKa",
@@ -6947,7 +6947,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445879000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ev1jNRTyys",
@@ -6985,7 +6985,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445702000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0QkLjwhug7",
@@ -7010,7 +7010,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445668000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-JO6dElHm3s",
@@ -7061,7 +7061,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445443000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-8nwsdHx1w6",
@@ -7099,7 +7099,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445288000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Sc35wkN7rY",
@@ -7137,7 +7137,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445115000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5lDEniTyyf",
@@ -7175,7 +7175,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444937000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-PqqoektDjt",
@@ -7226,7 +7226,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444689000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3l6Qd5Xgd2",
@@ -7277,7 +7277,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444507000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1H2ygjeJTu",
@@ -7328,7 +7328,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444335000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CZcDmF376R",
@@ -7366,7 +7366,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444156000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pkZ5W672iX",
@@ -7417,7 +7417,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444082000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0JQUUpFEv9",
@@ -7442,7 +7442,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444062000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zKICWBmTB1",
@@ -7467,7 +7467,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444053000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5DZu6mPs7v",
@@ -7505,7 +7505,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443889000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-FhA0q79sim",
@@ -7556,7 +7556,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443760000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-P1gfzHLqYI",
@@ -7581,7 +7581,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443759000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-BE0E7h1sp0",
@@ -7606,7 +7606,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443708000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-gPZAulbmHk",
@@ -7631,7 +7631,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443694000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-uBD3objqKc",
@@ -7669,7 +7669,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443651000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CoZmSB0jdl",
@@ -7720,7 +7720,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443481000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0qe8UgdFIh",
@@ -7758,7 +7758,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443416000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-C6ZeNusME2",
@@ -7796,7 +7796,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443301000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5tFYveFXw1",
@@ -7821,7 +7821,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443275000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ZhWUXRosIa",
@@ -7872,7 +7872,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443176000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-At6RYOLuI1",
@@ -7897,7 +7897,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795443097000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-WPpdIdW8W0",
@@ -7935,7 +7935,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442962000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-g60cTI1dfh",
@@ -8012,7 +8012,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442708000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-aXwqk5GYkL",
@@ -8076,7 +8076,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442550000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-UOypH4ftYA",
@@ -8114,7 +8114,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442326000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xKJ5KIngz4",
@@ -8139,7 +8139,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442301000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-rCxaSD6bez",
@@ -8190,7 +8190,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442044000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pp6Xwre5AF",
@@ -8241,7 +8241,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441841000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EfiGZOriZo",
@@ -8279,7 +8279,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441667000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ea60MaWm76",
@@ -8330,7 +8330,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441452000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MuSyRzrgCn",
@@ -8381,7 +8381,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441206000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-N5O60thKLs",
@@ -8432,7 +8432,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440948000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-JSgbPLy4KD",
@@ -8483,7 +8483,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440700000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-fKyP3l3lXn",
@@ -8534,7 +8534,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440449000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-doHgjT55M5",
@@ -8559,7 +8559,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440444000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wuLJLQwO0P",
@@ -8597,7 +8597,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440262000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-NZtYq2UbdD",
@@ -8622,7 +8622,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440156000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Wbut0X3OQR",
@@ -8673,7 +8673,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439875000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-jsWyqMnR0b",
@@ -8698,7 +8698,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439810000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-KL8BI5aIwO",
@@ -8736,7 +8736,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439667000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Lzv1P8AiH8",
@@ -8761,7 +8761,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439590000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-c8sB7FT46d",
@@ -8786,7 +8786,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439570000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4CH4qjdTZr",
@@ -8824,7 +8824,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439457000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sj310l4ns1",
@@ -8849,7 +8849,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439445000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MQKGCudh4q",
@@ -8874,7 +8874,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439438000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pq0IPLmeq3",
@@ -8912,7 +8912,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439390000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4c0tLVeqs6",
@@ -8937,7 +8937,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439381000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-BSZvhAAnmR",
@@ -8975,7 +8975,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439268000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-WU7WXYq8HN",
@@ -9000,7 +9000,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439195000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eW5uwqtyEH",
@@ -9038,7 +9038,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439170000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-jTwB1aTUo2",
@@ -9063,7 +9063,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439153000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Ku52aQoglr",
@@ -9101,7 +9101,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438910000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kr5LIln44K",
@@ -9152,7 +9152,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438753000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-W81oWWHooj",
@@ -9177,7 +9177,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438749000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0YfdlvmbbR",
@@ -9215,7 +9215,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438605000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pueCAfV8O4",
@@ -9266,7 +9266,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438411000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-2YUAWo5V9p",
@@ -9304,7 +9304,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438205000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EEqfNDCZF3",
@@ -9342,7 +9342,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438038000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5j8D85JQtm",
@@ -9393,7 +9393,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437863000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-IwK3BEH4Gs",
@@ -9431,7 +9431,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437667000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-rGQLxjE9kX",
@@ -9456,7 +9456,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437432000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sRIzD0KyDW",
@@ -9481,7 +9481,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437118000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kwt9C5urKP",
@@ -9506,7 +9506,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437009000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Vmy8b4pCvy",
@@ -9531,7 +9531,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795437004000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-J6GskWqI2R",
@@ -9556,7 +9556,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436996000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-BWPOEjcZU1",
@@ -9581,7 +9581,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436964000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-SlfLJ7VvaW",
@@ -9606,7 +9606,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436815000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-2TrggQ3ulM",
@@ -9631,7 +9631,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436806000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-AbvJb5Uls7",
@@ -9656,7 +9656,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436770000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3i1s8A4CeL",
@@ -9681,7 +9681,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436732000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7AFx1xYuRP",
@@ -9810,7 +9810,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795435220000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MRBZOrPonN",
@@ -9926,7 +9926,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795432674000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261122203548",
@@ -10157,7 +10157,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795482631000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HVU1G3SboA",
@@ -10182,7 +10182,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795480171000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Ej2qYqtVMw",
@@ -10259,7 +10259,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795476655000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ry1rElZbe2",
@@ -10284,7 +10284,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795475861000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4BSMR0Cl2p",
@@ -10309,7 +10309,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795473754000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-QdFOKHuVSr",
@@ -10334,7 +10334,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795473629000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261124003808",
@@ -10371,7 +10371,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469738000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7zUpO6JLkL",
@@ -10409,7 +10409,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795468402000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-mqJ0FoH4KQ",
@@ -10447,7 +10447,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795466296000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eVk8rfCMvi",
@@ -10472,7 +10472,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795465866000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ukWBt92bDn",
@@ -10575,7 +10575,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462727000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-qLw9pDQXD9",
@@ -10600,7 +10600,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462697000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-otSN5lwirK",
@@ -10625,7 +10625,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462653000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5j0eQn2mhI",
@@ -10650,7 +10650,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462559000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Fz1JtS4kkX",
@@ -10675,7 +10675,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462515000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Jy6O5nLMSB",
@@ -10700,7 +10700,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462458000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-9nc2O1N1pJ",
@@ -10725,7 +10725,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462441000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-NCQMtzsBm8",
@@ -10750,7 +10750,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462375000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-80b8eUXvJl",
@@ -10801,7 +10801,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462274000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-uI2BhwSYwv",
@@ -10826,7 +10826,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462254000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-gxwxLtATqM",
@@ -10851,7 +10851,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462214000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-t0KckLpkUK",
@@ -10876,7 +10876,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462172000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-s5OX6h7kGc",
@@ -10901,7 +10901,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462141000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-w9wqR366Wg",
@@ -10926,7 +10926,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462133000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-fkIgJCE0Pu",
@@ -10951,7 +10951,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462076000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-uOJAu04y5g",
@@ -10976,7 +10976,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462071000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-RAooc2yq6n",
@@ -11001,7 +11001,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461905000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MDkNoZqemk",
@@ -11026,7 +11026,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461844000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ELFwtPliLU",
@@ -11051,7 +11051,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461827000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-JNPcEBz2OX",
@@ -11076,7 +11076,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461778000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-MRgv9688be",
@@ -11101,7 +11101,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461774000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-lcQwmlFj9L",
@@ -11126,7 +11126,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461731000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0NbdIvUAru",
@@ -11177,7 +11177,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461522000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4m39ImhmA0",
@@ -11202,7 +11202,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461449000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ItxXy9k9at",
@@ -11227,7 +11227,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461449000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-iaMB8x1RbK",
@@ -11252,7 +11252,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461448000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-FsApqbMaij",
@@ -11277,7 +11277,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461421000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3wkFhoF9TA",
@@ -11302,7 +11302,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461405000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ixtqhMd46c",
@@ -11327,7 +11327,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795461387000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-F0Ts7427P0",
@@ -11469,7 +11469,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459330000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wbXtL33EDU",
@@ -11494,7 +11494,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459123000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-B2R7HR0v28",
@@ -11519,7 +11519,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795459114000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nazc2qbjhh",
@@ -11700,7 +11700,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795454933000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-y60p5J3Sd0",
@@ -11920,7 +11920,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795451354000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HrGQrmifIq",
@@ -12257,7 +12257,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795448148000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-316YV77o01",
@@ -12399,7 +12399,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446722000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DvEvWMPmLc",
@@ -12463,7 +12463,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795446241000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-E0EBcCcLeq",
@@ -12969,7 +12969,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442530000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-4Q26g71SVg",
@@ -13228,7 +13228,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440304000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Xi7TbaNBWO",
@@ -13266,7 +13266,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440255000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nFjr71NJFg",
@@ -13291,7 +13291,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440193000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Nr1qkZ5GIo",
@@ -13329,7 +13329,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439777000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-CUvLS64lV8",
@@ -13354,7 +13354,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439728000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-qjeMmHxM3l",
@@ -13379,7 +13379,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439720000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sZFH5GYkyS",
@@ -13430,7 +13430,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439598000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XDgHT471aE",
@@ -13455,7 +13455,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439576000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-2V5KDjN3Tm",
@@ -13480,7 +13480,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439566000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-GYU51NVKU2",
@@ -13518,7 +13518,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439477000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-2A6O6THUKq",
@@ -13543,7 +13543,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439443000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-SBnXCfmYX4",
@@ -13581,7 +13581,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439368000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ljCxapqnlL",
@@ -13619,7 +13619,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439304000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-wdeO042xPO",
@@ -13644,7 +13644,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439267000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xeMS4OVKQP",
@@ -13669,7 +13669,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439243000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Tr4UqprtcR",
@@ -13759,7 +13759,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438713000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5rJ7HCUawa",
@@ -14057,7 +14057,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795435842000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-8666AsDrvK",
@@ -14173,7 +14173,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434589000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-S1C7IN3Bwr",
@@ -14224,7 +14224,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795433720000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-KM1NYXs7p4",
@@ -14249,7 +14249,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795431127000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261122125253",
@@ -14386,7 +14386,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795476889000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Vn0xMwyLnJ",
@@ -14463,7 +14463,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795470085000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-A0QeHkXFIu",
@@ -14488,7 +14488,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469681000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0hgTGEbxyi",
@@ -14513,7 +14513,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469536000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-XtulNhfx08",
@@ -14538,7 +14538,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469534000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-26PHCycffx",
@@ -14563,7 +14563,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469533000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-KTH91XHDYh",
@@ -14588,7 +14588,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795469486000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-j2af61BZUC",
@@ -14717,7 +14717,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795454479000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DQw5tXGf51",
@@ -15933,7 +15933,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795478385000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-8eRWzrkUFm",
@@ -15958,7 +15958,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795478188000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-AQzPrpcIZN",
@@ -15983,7 +15983,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477884000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EVCZOfTGHi",
@@ -16008,7 +16008,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477693000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-0bVA1DqvvI",
@@ -16033,7 +16033,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795477501000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-eIF74HgLUS",
@@ -16058,7 +16058,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795466030000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-TdfUMMT9WE",
@@ -16083,7 +16083,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795465660000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-muqmq4Sz8f",
@@ -16108,7 +16108,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795463859000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-FHeK9YIu4n",
@@ -16133,7 +16133,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462396000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Q5dw6wsNFg",
@@ -16158,7 +16158,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795462065000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-pAxcEwg2a5",
@@ -16183,7 +16183,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795460348000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3Jtq4yuPmB",
@@ -16208,7 +16208,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795458418000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-fjcR6l48Hf",
@@ -16233,7 +16233,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795456669000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-cWsTQ2HKvF",
@@ -16258,7 +16258,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795454959000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-iDWsCwnWyt",
@@ -16296,7 +16296,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795453187000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-1lcrVtdBpP",
@@ -16321,7 +16321,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795451334000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Jy8FgN0swx",
@@ -16346,7 +16346,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795449453000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3ytKFxeeVU",
@@ -16371,7 +16371,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795447589000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-sUBEfLHSeo",
@@ -16396,7 +16396,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795445883000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-fEQCxcLOKD",
@@ -16421,7 +16421,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795444055000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-u1xc4SvszG",
@@ -16446,7 +16446,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795442300000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-KaXmFQEeTO",
@@ -16471,7 +16471,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441936000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-GpvBqFHfc2",
@@ -16496,7 +16496,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441719000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Y4IVLY2tUY",
@@ -16521,7 +16521,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795441326000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ZyyQ6mHMQR",
@@ -16546,7 +16546,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440933000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-qPQAYaIP0D",
@@ -16571,7 +16571,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440479000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-U0d64WLFnZ",
@@ -16596,7 +16596,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440462000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-uvmDAEbU94",
@@ -16621,7 +16621,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440435000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xbXTvwzTk1",
@@ -16646,7 +16646,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795440254000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-56kpMi2vD8",
@@ -16671,7 +16671,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439731000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xTG88VJqJR",
@@ -16696,7 +16696,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795439607000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-REg9nfXpfu",
@@ -16721,7 +16721,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795438643000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-VfE5Lk76rX",
@@ -16746,7 +16746,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795436901000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-hHaTZv7DGv",
@@ -16797,7 +16797,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795434880000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-aI9f1hoDbp",
@@ -16822,7 +16822,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795433281000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-YktGFl6XVY",
@@ -16847,7 +16847,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795431452000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-9HoP3vG3Cx",
@@ -16872,7 +16872,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
      "as_of": 1795430903000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261122133916",
