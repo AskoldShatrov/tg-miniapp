@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 292,
+      "age_min": 293,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 313,
+      "age_min": 314,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 314,
+      "age_min": 315,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "Причина сбоя мини-приложения",
       "source": "dsh",
       "claimed_human": "00:54:31",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Причина сбоя мини-приложения"
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "что по работе со сканф",
       "source": "dsh",
       "claimed_human": "00:54:08",
-      "age_min": 6,
+      "age_min": 7,
       "full": "что по работе со сканф"
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
       "claimed_human": "00:53:16",
-      "age_min": 6,
+      "age_min": 7,
       "full": "Askold в Telegram Mini App: задержка ответа"
     }
   ],
@@ -2021,40 +2021,8 @@
       "step_label": "Проверка и доставка результата",
       "step": 4,
       "total": 4,
-      "events": 55,
+      "events": 59,
       "trail": [
-        {
-          "ts": 1795557527,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557528,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557542,
-          "label": "BASH · cd /home/nyaka/ov"
-        },
-        {
-          "ts": 1795557545,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557551,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557560,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557576,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557593,
-          "label": "BASH · cd /home/nyaka/ov"
-        },
         {
           "ts": 1795557593,
           "label": "THINK"
@@ -2070,10 +2038,42 @@
         {
           "ts": 1795557603,
           "label": "THINK"
+        },
+        {
+          "ts": 1795557620,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795557620,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557630,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795557639,
+          "label": "BASH · systemctl --user "
+        },
+        {
+          "ts": 1795557639,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557653,
+          "label": "BASH · sha256sum /home/n"
+        },
+        {
+          "ts": 1795557653,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557673,
+          "label": "WRITE · /tmp/opencode/dr"
         }
       ],
       "started_at": 1795556961,
-      "updated_at": 1795557607
+      "updated_at": 1795557673
     },
     {
       "key": "req-20261125-005714-95abe2",
@@ -2083,245 +2083,121 @@
       "step_label": "проверить rich messages в коде",
       "step": 3,
       "total": 4,
-      "events": 12,
+      "events": 18,
       "trail": [
         {
-          "ts": 1795557541,
-          "label": "SYNC · suspicion-gate"
+          "ts": 1795557614,
+          "label": "WRITE · /home/nyaka/over"
         },
         {
-          "ts": 1795557541,
+          "ts": 1795557617,
           "label": "THINK"
         },
         {
-          "ts": 1795557554,
+          "ts": 1795557622,
+          "label": "EDIT · /home/nyaka/overn"
+        },
+        {
+          "ts": 1795557622,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557634,
+          "label": "BASH · sha256sum /home/n"
+        },
+        {
+          "ts": 1795557634,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557643,
+          "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795557659,
           "label": "BASH · python3 /home/nya"
         },
         {
-          "ts": 1795557556,
-          "label": "BASH · pgrep -af 'openco"
-        },
-        {
-          "ts": 1795557556,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557576,
-          "label": "SYNC · answer-integrity"
-        },
-        {
-          "ts": 1795557576,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557587,
-          "label": "SYNC · draft-gate"
-        },
-        {
-          "ts": 1795557587,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557595,
-          "label": "BASH · grep -nE 'САМОИСЧ"
-        },
-        {
-          "ts": 1795557595,
+          "ts": 1795557659,
           "label": "BASH · python3 /home/nya"
         },
         {
-          "ts": 1795557595,
+          "ts": 1795557659,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795557669,
+          "label": "SYNC · progress"
+        },
+        {
+          "ts": 1795557669,
           "label": "THINK"
         }
       ],
       "started_at": 1795557435,
-      "updated_at": 1795557608
+      "updated_at": 1795557670
     },
     {
       "key": "req-20261125-005718-071323",
       "session_id": "",
       "source": "task",
       "label": "задача - описать харнесс и его детальное применение к трем о",
-      "step_label": "Сборка a2a JSON",
-      "step": 3,
+      "step_label": "Проверка и выдача",
+      "step": 4,
       "total": 4,
-      "events": 11,
+      "events": 18,
       "trail": [
         {
-          "ts": 1795557493,
+          "ts": 1795557607,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557620,
+          "label": "BASH · cd /home/nyaka; p"
+        },
+        {
+          "ts": 1795557620,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557631,
           "label": "BASH · cd /home/nyaka; e"
         },
         {
-          "ts": 1795557500,
+          "ts": 1795557631,
           "label": "THINK"
         },
         {
-          "ts": 1795557500,
-          "label": "BASH · cd /home/nyaka; p"
+          "ts": 1795557641,
+          "label": "WRITE · /tmp/opencode/dr"
         },
         {
-          "ts": 1795557500,
+          "ts": 1795557641,
           "label": "THINK"
         },
         {
-          "ts": 1795557503,
-          "label": "BASH · cd /home/nyaka; p"
+          "ts": 1795557648,
+          "label": "BASH · cd /home/nyaka; e"
         },
         {
-          "ts": 1795557504,
+          "ts": 1795557661,
+          "label": "SYNC · answer-integrity"
+        },
+        {
+          "ts": 1795557661,
           "label": "THINK"
         },
         {
-          "ts": 1795557509,
-          "label": "BASH · cd /home/nyaka; p"
+          "ts": 1795557673,
+          "label": "WRITE · /tmp/opencode/dr"
         },
         {
-          "ts": 1795557509,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557536,
-          "label": "BASH · mkdir -p /home/ny"
-        },
-        {
-          "ts": 1795557536,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557596,
-          "label": "WRITE · /home/nyaka/hand"
-        },
-        {
-          "ts": 1795557596,
+          "ts": 1795557674,
           "label": "THINK"
         }
       ],
       "started_at": 1795557440,
-      "updated_at": 1795557606
-    },
-    {
-      "key": "req-20261125-005720-fb32ac",
-      "session_id": "",
-      "source": "task",
-      "label": "\"~/.config/opencode/progress.json; ~/claims.json; ~/.config/",
-      "step_label": "проверить живым артефактом",
-      "step": 5,
-      "total": 5,
-      "events": 15,
-      "trail": [
-        {
-          "ts": 1795557549,
-          "label": "BASH · sha256sum /home/n"
-        },
-        {
-          "ts": 1795557549,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795557549,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557559,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795557561,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557569,
-          "label": "BASH · MAIN=$(systemctl "
-        },
-        {
-          "ts": 1795557569,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557585,
-          "label": "WRITE · /home/nyaka/over"
-        },
-        {
-          "ts": 1795557585,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557592,
-          "label": "EDIT · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795557592,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557602,
-          "label": "WRITE · /tmp/opencode/an"
-        }
-      ],
-      "started_at": 1795557442,
-      "updated_at": 1795557608
-    },
-    {
-      "key": "req-20261125-005722-8cc196",
-      "session_id": "",
-      "source": "task",
-      "label": "\"~/overnight/open_tracks/\"]\n},\n\"current_state\": {\n\"T29.1\": \"",
-      "step_label": "",
-      "step": 0,
-      "total": null,
-      "events": 24,
-      "trail": [
-        {
-          "ts": 1795557568,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795557569,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557577,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795557577,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557581,
-          "label": "BASH · grep -n 'anyon' /"
-        },
-        {
-          "ts": 1795557581,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557586,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795557592,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795557601,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795557602,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557606,
-          "label": "BASH · execute"
-        },
-        {
-          "ts": 1795557606,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795557443,
-      "updated_at": 1795557609
+      "updated_at": 1795557674
     },
     {
       "key": "req-20261125-005723-470bf0",
@@ -2331,121 +2207,59 @@
       "step_label": "формулировка задачи",
       "step": 3,
       "total": 3,
-      "events": 15,
+      "events": 22,
       "trail": [
         {
-          "ts": 1795557558,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557568,
-          "label": "BASH · mkdir -p /home/ny"
-        },
-        {
-          "ts": 1795557568,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795557568,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557573,
-          "label": "SYNC · progress"
-        },
-        {
-          "ts": 1795557573,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557591,
+          "ts": 1795557619,
           "label": "WRITE · /tmp/opencode/dr"
         },
         {
-          "ts": 1795557591,
+          "ts": 1795557621,
           "label": "THINK"
         },
         {
-          "ts": 1795557597,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795557597,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557602,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795557608,
+          "ts": 1795557625,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795557637,
+          "label": "GREP · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795557637,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557643,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795557644,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557655,
+          "label": "GREP · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795557656,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557661,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795557668,
+          "label": "GREP · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795557669,
+          "label": "THINK"
         }
       ],
       "started_at": 1795557443,
-      "updated_at": 1795557609
-    },
-    {
-      "key": "req-20261125-005723-17811f",
-      "session_id": "",
-      "source": "task",
-      "label": "демопарсера\"],\n\"open_questions_for_next_agent\": [\n\"Почему Bo",
-      "step_label": "Выполнить следующий шаг",
-      "step": 4,
-      "total": 5,
-      "events": 14,
-      "trail": [
-        {
-          "ts": 1795557555,
-          "label": "EDIT · /tmp/opencode/han"
-        },
-        {
-          "ts": 1795557555,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557555,
-          "label": "BASH · grep -n '缺\\|规则\\|m"
-        },
-        {
-          "ts": 1795557555,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557568,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795557568,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557587,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795557587,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557599,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795557599,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795557604,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795557604,
-          "label": "BASH · python3 ~/.config"
-        }
-      ],
-      "started_at": 1795557444,
-      "updated_at": 1795557607
+      "updated_at": 1795557672
     }
   ],
   "bars": [
@@ -2494,6 +2308,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 4.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795557610,
-  "fetched_human": "2026-11-25 01:00:10 +0300"
+  "fetched_at": 1795557674,
+  "fetched_human": "2026-11-25 01:01:14 +0300"
 }
