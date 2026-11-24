@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 321,
+      "age_min": 322,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 343,
+      "age_min": 344,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 343,
+      "age_min": 344,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1997,7 +1997,7 @@
       "step_label": "Проверить состояние режима",
       "step": 1,
       "total": 4,
-      "events": 2,
+      "events": 6,
       "trail": [
         {
           "ts": 1795559348,
@@ -2014,36 +2014,104 @@
         {
           "ts": 1795559365,
           "label": "THINK"
+        },
+        {
+          "ts": 1795559380,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795559396,
+          "label": "SYNC · resources"
+        },
+        {
+          "ts": 1795559396,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559414,
+          "label": "BASH · head -80 /home/ny"
+        },
+        {
+          "ts": 1795559414,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795559414,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559431,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795559431,
+          "label": "THINK"
         }
       ],
       "started_at": 1795559331,
-      "updated_at": 1795559377
+      "updated_at": 1795559437
     },
     {
       "key": "req-20261125-012917-edd022",
       "session_id": "",
       "source": "task",
       "label": "Задача: собрать пакет диагностики для внешнего анализа. ТОЛЬ",
-      "step_label": "сводка",
-      "step": 1,
+      "step_label": "стенд",
+      "step": 2,
       "total": 5,
-      "events": 1,
+      "events": 11,
       "trail": [
         {
-          "ts": 1795559373,
-          "label": "SYNC · scanfeed"
-        },
-        {
-          "ts": 1795559373,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795559373,
+          "ts": 1795559403,
           "label": "THINK"
+        },
+        {
+          "ts": 1795559412,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559412,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559416,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559416,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559421,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559422,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559427,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559427,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559433,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795559433,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795559437,
+          "label": "BASH · cd /home/nyaka &&"
         }
       ],
       "started_at": 1795559357,
-      "updated_at": 1795559376
+      "updated_at": 1795559437
     }
   ],
   "bars": [
@@ -2092,6 +2160,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 5.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795559379,
-  "fetched_human": "2026-11-25 01:29:39 +0300"
+  "fetched_at": 1795559440,
+  "fetched_human": "2026-11-25 01:30:40 +0300"
 }
