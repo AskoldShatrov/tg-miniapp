@@ -215,7 +215,8 @@
     if(!d) return {id: key || label, title: label || "задача", source: "live.json",
                    kind: "bar", raw: {}};
     var pools = [
-      d.bot_activity, d.live_trail,          // прогоны ТГ-бота (live-progress.json)
+      d.runs,                                 // прогоны ТГ-бота (live-progress.json)
+      d.bot_activity, d.live_trail,          // те же данные под старыми именами
       d.active,                              // живые сессии/очереди
       d.tasks                                // шаги progress.json
     ];
