@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24 05:30",
+ "generated": "2026-11-24 06:00",
  "window": {
-  "start": "2026-11-23T20:30",
-  "end": "2026-11-24T02:25",
+  "start": "2026-11-23T20:47",
+  "end": "2026-11-24T02:55",
   "sessions": 151,
   "roots": 150
  },
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 394,
+   "median_s": 389,
    "max_s": 3601,
-   "last": "2026-11-24T02:25:34.754000+00:00",
+   "last": "2026-11-24T02:55:51.123000+00:00",
    "outcomes": {
-    "done": 100,
+    "done": 101,
     "cancelled": 13,
-    "error": 37
+    "error": 36
    },
    "example": [
-    "kacx3Uce",
-    "418BbWe7"
+    "418BbWe7",
+    "N3rHXwwh"
    ],
    "actual": [
     {
@@ -56,13 +56,13 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 116 из 150, ≈8 вызовов за раз",
+     "t": "в 115 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 135 из 150, ≈26 вызовов за раз",
+     "t": "в 134 из 150, ≈26 вызовов за раз",
      "d": 1
     },
     {
@@ -80,7 +80,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 118 из 150, ≈8 вызовов за раз",
+     "t": "в 117 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -911,14 +911,14 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 60,
-   "median_s": 601,
+   "runs": 59,
+   "median_s": 594,
    "max_s": 1730,
    "last": "2026-11-24T02:13:41.569000+00:00",
    "outcomes": {
     "done": 38,
     "cancelled": 8,
-    "error": 14
+    "error": 13
    },
    "example": [
     "6yumgsPn",
@@ -928,66 +928,66 @@
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 60"
+     "t": "запусков: 59"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 52 из 60",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 17 из 60",
+     "t": "в 52 из 59",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 55 из 60",
+     "t": "в 55 из 59",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 16 из 59",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 54 из 60, ≈9 вызовов за раз",
+     "t": "в 53 из 59, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 60 из 60, ≈30 вызовов за раз",
+     "t": "в 59 из 59, ≈30 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 25 из 60",
+     "t": "в 25 из 59",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 16 из 60",
+     "t": "в 15 из 59",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 29 из 60",
+     "t": "в 29 из 59",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 56 из 60, ≈9 вызовов за раз",
+     "t": "в 55 из 59, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, code-review, disk-triage, draft-gate, minimal-run-and-audit, progress, resources, subagent-driven-deve",
-     "t": "меньше 12 из 60",
+     "t": "меньше 12 из 59",
      "d": 1
     }
    ],
@@ -1055,7 +1055,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×81, opencode/big-pickle ×29, opencode/nemotron-3.5-super-vl-free ×12",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×81, opencode/big-pickle ×28, opencode/nemotron-3.5-super-vl-free ×12",
    "level": "ok",
    "f": "C13"
   },
@@ -1079,8 +1079,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 6, с файлами 3",
-   "level": "ok",
+   "state": "Владельцев 1, с файлами 0",
+   "level": "warn",
    "f": "C11"
   },
   {
