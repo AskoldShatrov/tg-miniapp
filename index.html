@@ -893,8 +893,10 @@
     <section class="screen" id="screen-live">
       <div class="eyebrow" id="liveEyebrow">План · снимок (см. возраст ниже)</div>
       <div class="live-strip"><span class="dot-live"></span><span id="liveStamp">…</span></div>
+      <!-- @auto:pbar-html:start -->
       <!-- @owner:miniapp-progress @region:pbar: живой прогресс корпуса, источник — live.json:corpus -->
       <div id="liveProgressBar" class="pbar"></div>
+      <!-- @auto:pbar-html:end -->
       <div class="qbox" id="liveQueues"></div>
       <div class="eyebrow" style="margin-top:12px">Активные шаги progress.json</div>
       <div class="live-strip" id="livePlanStamp">…</div>
@@ -2775,6 +2777,7 @@ function renderLive(){
     ps.textContent=planStamp+(planStale?" — план давно не менялся (это не ошибка)":"");
   }
 
+  /* @auto:pbar-js:start */
   /* @owner:miniapp-progress @region:pbar: полоски из live.json:corpus и tasks */
   const bars=$("#liveProgressBar");
   if(bars){
@@ -2794,6 +2797,7 @@ function renderLive(){
     add("Шаги плана",allSteps.filter(s=>s.status==="done").length,allSteps.length,"yellow");
     bars.innerHTML=rows.join("");
   }
+  /* @auto:pbar-js:end */
 
   const q=$("#liveQueues");
   if(q) q.innerHTML=Object.entries(d.queues||{}).map(([name,c])=>
