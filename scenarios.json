@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24 13:30",
+ "generated": "2026-11-24 14:00",
  "window": {
   "start": "2026-11-24T03:15",
-  "end": "2026-11-24T10:26",
+  "end": "2026-11-24T10:35",
   "sessions": 151,
   "roots": 150
  },
@@ -23,18 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 83,
+   "median_s": 89,
    "max_s": 1360,
-   "last": "2026-11-24T10:26:01.958000+00:00",
+   "last": "2026-11-24T10:35:54.892000+00:00",
    "outcomes": {
-    "waiting_user": 1,
+    "done": 79,
     "error": 70,
-    "done": 78,
     "cancelled": 1
    },
    "example": [
-    "zQm45N3G",
-    "9xg7aAwv"
+    "9xg7aAwv",
+    "uGJsoGB7"
    ],
    "actual": [
     {
@@ -57,7 +56,7 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 65 из 150, ≈5 вызовов за раз",
+     "t": "в 66 из 150, ≈5 вызовов за раз",
      "d": 1
     },
     {
@@ -779,8 +778,7 @@
    "max_s": 1135,
    "last": "2026-11-24T10:26:01.958000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "error": 23,
+    "error": 24,
     "done": 7
    },
    "example": [
@@ -918,7 +916,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×54, opencode/big-pickle ×24, opencode/tidepool-alpha-free ×20",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×54, opencode/big-pickle ×24, opencode/tidepool-alpha-free ×21",
    "level": "ok",
    "f": "C13"
   },
@@ -942,8 +940,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 9, с файлами 3",
-   "level": "ok",
+   "state": "Владельцев 3, с файлами 0",
+   "level": "warn",
    "f": "C11"
   },
   {
