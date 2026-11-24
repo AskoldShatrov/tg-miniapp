@@ -1108,12 +1108,16 @@
     <span class="sep"></span>
     <span class="hk"><kbd>6</kbd> Резерв</span>
     <span class="sep"></span>
+    <span class="hk"><kbd>7</kbd> Библио</span>
+    <span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Сброс</span>
   </div>
 
   <div class="toast" id="toast"></div>
 </div>
 
+<!-- @owner:library-tab @region:library-loader: вкладка «Библиотека» монтируется сама из library-tab.js -->
+<script src="library-tab.js?v=20261125-1"></script>
 <script src="scenarios-tab.js?v=20261122-domfix2"></script>
 <!-- @owner:casino-tab @region:casino-loader: вкладка «Казино» монтируется сама из casino-tab.js -->
 <script src="casino-tab.js?v=20261122-casino1"></script>
@@ -1206,6 +1210,7 @@ function setTab(name){
   }
   if(name==="scenarios"&&typeof mountScenarios==="function") mountScenarios();
   if(name==="backup"&&typeof backupLoad==="function") backupLoad();
+  if(name==="library"&&window.LibraryTab) LibraryTab.refresh();
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
@@ -1638,6 +1643,7 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="4"){setTab("atlas"); renderAtlas()}
   else if(e.key==="5"){setTab("chat"); renderChat()}
   else if(e.key==="6"){setTab("backup")}
+  else if(e.key==="7"){setTab("library")}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
