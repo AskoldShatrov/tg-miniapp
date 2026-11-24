@@ -150,6 +150,25 @@
   .pbar-fill.c-mauve{background:var(--mauve)}
   .pbar-fill.c-red{background:var(--red)}
   .pbar:empty{display:none}
+  /* Живые прогоны моста: бар кликабелен, под ним раскрывается дерево задачи */
+  .pbar-live{cursor:pointer;border-radius:var(--radius-sm);padding:4px 6px;margin:0 -6px 12px;
+    transition:background .15s ease}
+  .pbar-live:hover{background:rgba(137,180,250,.08)}
+  .pbar-live .pbar-head b{color:var(--blue)}
+  .pbar-live .pbar-track{height:11px}
+  .pb-caret{font:700 11px/1 var(--fm);color:var(--blue);margin-right:6px}
+  .pbar-branch{margin:6px 0 14px 8px;padding:8px 10px;border-left:2px solid var(--blue);
+    border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:var(--mantle);
+    font:500 11px/1.6 var(--fm)}
+  .pb-row{display:flex;gap:8px;align-items:baseline;color:var(--subtext1)}
+  .pb-row span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pb-row.pb-head{color:var(--text);font-weight:700}
+  .pb-ts{color:var(--overlay1);font-variant-numeric:tabular-nums;flex:0 0 auto}
+  .pb-tool{color:var(--green)}
+  .pb-tool[data-tool="READ"],.pb-tool[data-tool="GREP"],.pb-tool[data-tool="FIND"]{color:var(--sky)}
+  .pb-tool[data-tool="WRITE"],.pb-tool[data-tool="EDIT"]{color:var(--yellow)}
+  .pb-tool[data-tool="SYNC"],.pb-tool[data-tool="PLAN"]{color:var(--lavender)}
+  .pb-empty{color:var(--overlay1);font-style:italic}
   /* @auto:pbar-css:end */
   .qtitle{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
   .qctx{font:600 10px/1.3 var(--fm);color:var(--overlay1);margin:0 0 10px;
@@ -2811,7 +2830,64 @@ function renderLive(){
     if(!hasBar("captions")) add("Английские субтитры",c.captions_done,c.captions_total,"blue");
     const allSteps=d.tasks||[];
     add("Шаги плана",allSteps.filter(s=>s.status==="done").length,allSteps.length,"yellow");
+
+    /* Живые прогоны ТГ-моста. Клик по бару раскрывает ветку активной задачи:
+       шаг + ленту BASH / READ / WRITE / SYNC с реальными таймстемпами.
+       Источник — live.json:runs (бот → stream_progress → miniapp_status). */
+    const runs=(d.runs||[]).filter(r=>r&&(r.key||r.session_id));
+    runs.forEach(r=>{
+      const rawKey=String(r.key||r.session_id), key=esc(rawKey);
+      const n=Number(r.step)||0, N=Number(r.total)||0;
+      const pct=N?Math.max(0,Math.min(100,Math.round(100*n/N))):0;
+      const filled=Math.round(pct/10);
+      const mini=N?"█".repeat(filled)+"░".repeat(10-filled):"·".repeat(10);
+      const open=window.LIVE_EXPANDED===rawKey;
+      rows.unshift(`<div class="pbar pbar-live" data-run-key="${key}"`+
+        ` title="${esc(r.label||rawKey)} — нажми, чтобы раскрыть дерево задачи">`+
+        `<div class="pbar-head"><b><span class="pb-caret">${open?"▾":"▸"}</span>`+
+        `${esc(String(r.label||"Активная задача").slice(0,42))}</b>`+
+        `<span>${N?n+" / "+N+" · "+pct+"%":mini+" · шаг "+n}</span></div>`+
+        `<div class="pbar-track"><div class="pbar-fill c-green" style="width:${N?pct:12}%"></div></div></div>`);
+    });
     bars.innerHTML=rows.join("");
+    if(runs.length){
+      const cur=runs.find(r=>String(r.key||r.session_id)===window.LIVE_EXPANDED);
+      const host=cur&&Array.from(bars.querySelectorAll(".pbar-live"))
+        .find(el=>el.dataset.runKey===String(cur.key||cur.session_id));
+      if(cur&&host){
+        const pad=x=>String(x).padStart(2,"0");
+        const trail=(cur.trail||[]).slice(-12).map(t=>{
+          const ms=(Number(t.ts)||0)*1000, dt=new Date(ms);
+          const clock=dt.getFullYear()>2000
+            ?pad(dt.getHours())+":"+pad(dt.getMinutes())+":"+pad(dt.getSeconds()):"—";
+          const tool=String(t.label||"").toUpperCase();
+          return `<div class="pb-row pb-tool" data-tool="${esc(tool)}">`+
+            `<span class="pb-ts">${clock}</span><span>└─ ${esc(tool)}</span></div>`;
+        }).join("");
+        const stepLine=(Number(cur.step)||0)
+          ?`шаг ${Number(cur.step)}${cur.total?"/"+Number(cur.total):""}`+
+           (cur.label?` · ${esc(String(cur.label).slice(0,40))}`:"")
+          :"составляю план";
+        host.insertAdjacentHTML("afterend",
+          `<div class="pbar-branch">`+
+          `<div class="pb-row pb-head"><span>└─ ${esc(cur.source||"task")}`+
+          `${cur.session_id?" · "+esc(cur.session_id):""}</span></div>`+
+          `<div class="pb-row"><span class="pb-ts">сейчас</span><span>├─ ${stepLine}</span></div>`+
+          (trail||'<div class="pb-row pb-empty"><span>└─ вызовов инструментов пока нет</span></div>')+
+          `<div class="pb-row"><span class="pb-ts">итого</span>`+
+          `<span>└─ событий: ${Number(cur.events)||0}</span></div></div>`);
+      }
+      if(!bars.dataset.liveBound){
+        bars.dataset.liveBound="1";
+        bars.addEventListener("click",(e)=>{
+          const row=e.target&&e.target.closest?e.target.closest(".pbar-live"):null;
+          if(!row) return;
+          const k=row.dataset.runKey||"";
+          window.LIVE_EXPANDED=(window.LIVE_EXPANDED===k?null:k);
+          renderLive();
+        });
+      }
+    }
   }
   /* @auto:pbar-js:end */
 
