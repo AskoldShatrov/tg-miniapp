@@ -899,9 +899,9 @@
 
     <section class="screen" id="screen-atlas">
       <div class="eyebrow">Атлас · конструктор карточек</div>
-      <div class="hint" style="margin:8px 0 4px">Один граф — пять деревьев: авторы, видео, идеи, разбор демопарсера, сигнал/шум/прорыв. Нажми на строку, чтобы раскрыть ветку; на «?» — прочитать карточку прямо под строкой. Повторный тап по той же строке или «?» сворачивает её.</div>
+      <div class="hint" style="margin:8px 0 4px">Один граф — пять деревьев: авторы, видео, идеи, разбор демопарсера, сигнал/шум/прорыв. Нажми на строку, чтобы раскрыть ветку; на «?» — прочитать карточку прямо под строкой. Повторный тап по той же строке или «?» сворачивает её. Клик по <b>автору</b> раскрывает только ветку, карточку автора открывает «?»; кнопка <b>свернуть авторов</b> закрывает все ветки авторов сразу.</div>
       <div class="grid-tabs" id="atlasGrids"></div>
-      <div class="live-strip"><span>узлов <b id="atlasCount">…</b></span><span id="atlasTime" style="margin-left:auto;color:var(--overlay0)">…</span></div>
+      <div class="live-strip"><span>узлов <b id="atlasCount">…</b></span><button id="atlasCollapseAuthors" class="grid-tab" style="margin-left:12px" title="Свернуть все раскрытые ветки авторов">свернуть авторов</button><span id="atlasTime" style="margin-left:auto;color:var(--overlay0)">…</span></div>
       <div id="atlasCards"></div>
     </section>
 
@@ -2669,6 +2669,7 @@ function renderAtlas(){
     const n=ATLAS_LOOKUP[b.dataset.key];
     if(n) atlasDetail(n,b.closest(".trow"));
   }));
+  /* @owner:ses_df2013993ffeyd7Ywu3cNj9xxe @region:atlas-author-card */
   $$("#atlasCards .trow").forEach(row=>row.addEventListener("click",()=>{
     const host=row.closest(".tnode");
     const box=host&&Array.from(host.children).find(el=>el.classList.contains("children"));
@@ -2678,7 +2679,10 @@ function renderAtlas(){
       if(tw) tw.classList.toggle("open");
     }
     const n=ATLAS_LOOKUP[row.dataset.key];
-    if(n) atlasDetail(n,row);
+    // Клик по автору раскрывает только ветку: информационная карточка
+    // открывается явным «?» (a-ask), а не случайным тапом по строке.
+    if(n && n.kind!=="author") atlasDetail(n,row);
+    else if(n && ATLAS_OPEN_KEY===n.__k) atlasCloseDetail();
   }));
   // первый уровень раскрыт сразу: нужная ветка доступна за ≤2 тапа
   $$("#atlasCards > .tree > .tnode > .children").forEach(box=>{
@@ -2687,6 +2691,32 @@ function renderAtlas(){
     const tw=row?row.querySelector(".twist"):null;
     if(tw) tw.classList.add("open");
   });
+  /* @owner:ses_df2013993ffeyd7Ywu3cNj9xxe @region:atlas-author-card */
+  const collapseAuthors=$("#atlasCollapseAuthors");
+  if(collapseAuthors) collapseAuthors.onclick=()=>{
+    let closed=0;
+    $$("#atlasCards .tnode").forEach(host=>{
+      const row=host.firstElementChild;
+      if(!row||!row.classList.contains("trow")) return;
+      const node=ATLAS_LOOKUP[row.dataset.key];
+      if(!node||node.kind!=="author") return;
+      const kids=Array.from(host.children).find(el=>el.classList.contains("children"));
+      if(kids&&kids.classList.contains("open")){
+        kids.classList.remove("open");
+        const tw=row.querySelector(".twist");
+        if(tw) tw.classList.remove("open");
+        closed++;
+      }
+      const detail=Array.from(host.children).find(el=>el.classList.contains("a-inline"));
+      if(detail&&detail.classList.contains("open")){
+        detail.classList.remove("open");
+        detail.innerHTML="";
+        row.classList.remove("expanded");
+        if(ATLAS_OPEN_KEY===node.__k) ATLAS_OPEN_KEY=null;
+      }
+    });
+    toast(closed?`Свёрнуто веток авторов: ${closed}`:"Все авторы уже свёрнуты");
+  };
 }
 
 window.__openAtlasNode = function(nodeId){
