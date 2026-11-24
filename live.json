@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 374,
+      "age_min": 375,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 396,
+      "age_min": 397,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 396,
+      "age_min": 397,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1996,7 +1996,7 @@
       "step_label": "Проверить гейм-мод",
       "step": 1,
       "total": 4,
-      "events": 4,
+      "events": 6,
       "trail": [
         {
           "ts": 1795562437,
@@ -2029,72 +2029,88 @@
         {
           "ts": 1795562524,
           "label": "THINK"
+        },
+        {
+          "ts": 1795562555,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795562555,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562588,
+          "label": "BASH · grep -rln 'librar"
+        },
+        {
+          "ts": 1795562588,
+          "label": "THINK"
         }
       ],
       "started_at": 1795562424,
-      "updated_at": 1795562543
+      "updated_at": 1795562607
     },
     {
       "key": "req-20261125-022146-070fc4",
       "session_id": "",
       "source": "task",
       "label": "Выключи гейм мод и делай сканфид",
-      "step_label": "проверить текущее состояние сканфида",
-      "step": 2,
+      "step_label": "продолжить работу сканфида",
+      "step": 3,
       "total": 4,
-      "events": 6,
+      "events": 14,
       "trail": [
         {
-          "ts": 1795562516,
+          "ts": 1795562555,
+          "label": "READ · /home/nyaka/overn"
+        },
+        {
+          "ts": 1795562555,
           "label": "THINK"
         },
         {
-          "ts": 1795562519,
-          "label": "SYNC · session-handoff"
-        },
-        {
-          "ts": 1795562519,
-          "label": "BASH · echo \"===SKILL.md"
-        },
-        {
-          "ts": 1795562519,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562524,
-          "label": "BASH · ls -la ~/.config/"
-        },
-        {
-          "ts": 1795562524,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562529,
-          "label": "BASH · echo \"===status b"
-        },
-        {
-          "ts": 1795562529,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562535,
-          "label": "BASH · echo \"===scanfeed"
-        },
-        {
-          "ts": 1795562535,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562540,
+          "ts": 1795562566,
           "label": "BASH · echo \"===progress"
         },
         {
-          "ts": 1795562540,
+          "ts": 1795562566,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562571,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795562571,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562580,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795562580,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562589,
+          "label": "BASH · echo \"===unblk1 d"
+        },
+        {
+          "ts": 1795562589,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562594,
+          "label": "BASH · echo \"===truth fi"
+        },
+        {
+          "ts": 1795562595,
           "label": "THINK"
         }
       ],
       "started_at": 1795562506,
-      "updated_at": 1795562543
+      "updated_at": 1795562607
     }
   ],
   "bars": [
@@ -2141,8 +2157,8 @@
   ],
   "updatedAt": "2026-11-24T20:08:01+03:00",
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 6.2,
+  "plan_age_hours": 6.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795562545,
-  "fetched_human": "2026-11-25 02:22:25 +0300"
+  "fetched_at": 1795562609,
+  "fetched_human": "2026-11-25 02:23:29 +0300"
 }
