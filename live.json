@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 375,
+      "age_min": 376,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 397,
+      "age_min": 398,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 397,
+      "age_min": 398,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1996,20 +1996,8 @@
       "step_label": "Проверить гейм-мод",
       "step": 1,
       "total": 4,
-      "events": 6,
+      "events": 8,
       "trail": [
-        {
-          "ts": 1795562437,
-          "label": "BASH · python3 /home/nya"
-        },
-        {
-          "ts": 1795562437,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562468,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795562468,
           "label": "THINK"
@@ -2045,10 +2033,22 @@
         {
           "ts": 1795562588,
           "label": "THINK"
+        },
+        {
+          "ts": 1795562616,
+          "label": "BASH · grep -n 'скилл\\|s"
+        },
+        {
+          "ts": 1795562616,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562646,
+          "label": "SYNC · opencode"
         }
       ],
       "started_at": 1795562424,
-      "updated_at": 1795562607
+      "updated_at": 1795562671
     },
     {
       "key": "req-20261125-022146-070fc4",
@@ -2058,40 +2058,8 @@
       "step_label": "продолжить работу сканфида",
       "step": 3,
       "total": 4,
-      "events": 14,
+      "events": 19,
       "trail": [
-        {
-          "ts": 1795562555,
-          "label": "READ · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795562555,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562566,
-          "label": "BASH · echo \"===progress"
-        },
-        {
-          "ts": 1795562566,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562571,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562571,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562580,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795562580,
-          "label": "THINK"
-        },
         {
           "ts": 1795562589,
           "label": "BASH · echo \"===unblk1 d"
@@ -2107,10 +2075,42 @@
         {
           "ts": 1795562595,
           "label": "THINK"
+        },
+        {
+          "ts": 1795562611,
+          "label": "BASH · grep -rln \"S3-ALI"
+        },
+        {
+          "ts": 1795562611,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562615,
+          "label": "READ · /home/nyaka/overn"
+        },
+        {
+          "ts": 1795562615,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562635,
+          "label": "BASH · echo \"===prereg S"
+        },
+        {
+          "ts": 1795562635,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562640,
+          "label": "READ · /home/nyaka/overn"
+        },
+        {
+          "ts": 1795562647,
+          "label": "BASH · echo \"===coordina"
         }
       ],
       "started_at": 1795562506,
-      "updated_at": 1795562607
+      "updated_at": 1795562663
     }
   ],
   "bars": [
@@ -2159,6 +2159,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 6.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795562609,
-  "fetched_human": "2026-11-25 02:23:29 +0300"
+  "fetched_at": 1795562674,
+  "fetched_human": "2026-11-25 02:24:34 +0300"
 }
