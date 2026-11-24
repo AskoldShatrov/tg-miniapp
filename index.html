@@ -596,6 +596,41 @@
   nav.tabs{flex-wrap:nowrap;gap:5px}
   .tab{flex:1 1 calc(20% - 5px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
   @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
+  /* @owner:library-tab @region:library-tabs-css: 7 вкладок в один ряд без переполнения */
+  nav.tabs .tab{flex:1 1 0;min-width:0}
+  /* @owner:library-tab @region:library-css */
+  #library-tab{padding:14px 14px 30px;max-width:720px;margin:0 auto}
+  #library-tab .lb-head{margin-bottom:12px}
+  #library-tab .lb-title{display:flex;align-items:center;gap:8px;font:800 20px/1.2 var(--ff);color:var(--text)}
+  #library-tab .lb-title span{color:var(--blue)}
+  #library-tab .lb-title small{font:700 11px/1 var(--fm);color:var(--overlay2);background:var(--surface0);border:1px solid var(--surface1);border-radius:9px;padding:4px 7px}
+  #library-tab .lb-sub{margin-top:6px;font:500 12px/1.45 var(--ff);color:var(--subtext0)}
+  #library-tab .lb-search,#library-tab .lb-add input{width:100%;background:var(--mantle);border:1px solid var(--surface1);border-radius:9px;color:var(--text);padding:10px 11px;font:600 13px/1.2 var(--ff)}
+  #library-tab .lb-search{margin-bottom:8px}
+  #library-tab .lb-add{display:grid;grid-template-columns:1fr 1fr auto;gap:7px;margin-bottom:14px}
+  #library-tab .lb-add button{background:var(--blue);color:#11111b;border:0;border-radius:9px;padding:0 12px;font:800 12px/1 var(--ff);cursor:pointer;white-space:nowrap}
+  #library-tab .lb-add button:active{transform:translateY(1px)}
+  #library-tab .lb-empty{padding:22px 14px;text-align:center;color:var(--overlay2);font:600 13px/1.4 var(--ff);border:1px dashed var(--surface1);border-radius:12px}
+  #library-tab .lb-list{display:flex;flex-direction:column;gap:10px}
+  #library-tab .lb-card{background:var(--surface0);border:1px solid var(--surface1);border-radius:13px;padding:12px 13px}
+  #library-tab .lb-meta{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+  #library-tab .lb-src{font:700 10px/1 var(--fm);color:var(--blue);background:rgba(137,180,250,.12);border-radius:6px;padding:4px 7px}
+  #library-tab .lb-date{font:600 11px/1 var(--fm);color:var(--overlay2)}
+  #library-tab .lb-del{margin-left:auto;border:0;background:transparent;color:var(--overlay2);font-size:13px;cursor:pointer;padding:2px 5px;border-radius:6px}
+  #library-tab .lb-del:hover{color:var(--red);background:var(--surface1)}
+  #library-tab .lb-link{display:block;font:700 14px/1.35 var(--ff);color:var(--text);text-decoration:none}
+  #library-tab .lb-link:hover{color:var(--blue)}
+  #library-tab .lb-authors{margin-top:4px;font:600 12px/1.3 var(--ff);color:var(--subtext1)}
+  #library-tab .lb-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  #library-tab .lb-tag{font:700 10px/1 var(--fm);color:var(--lavender);background:rgba(203,166,247,.12);border-radius:6px;padding:4px 6px}
+  #library-tab .lb-abs{margin-top:9px}
+  #library-tab .lb-abs summary{cursor:pointer;font:700 11px/1 var(--ff);color:var(--overlay2);list-style:none}
+  #library-tab .lb-abs summary::-webkit-details-marker{display:none}
+  #library-tab .lb-abs summary::before{content:'▸ ';color:var(--blue)}
+  #library-tab .lb-abs[open] summary::before{content:'▾ '}
+  #library-tab .lb-abs p{margin:8px 0 0;font:500 12px/1.5 var(--ff);color:var(--subtext0)}
+  @media (max-width:420px){ #library-tab .lb-add{grid-template-columns:1fr} }
+  /* @owner:library-tab @region:library-css end */
 
   .stoolbar{display:flex;flex-direction:column;gap:8px;margin-bottom:11px}
   .sstrip{
@@ -763,6 +798,9 @@
     <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">4</span></button>
     <button class="tab" data-tab="chat"><span>✉</span> Чат <span class="key">5</span></button>
     <button class="tab" data-tab="backup"><span>⤓</span> Резерв <span class="key">6</span></button>
+    <!-- @owner:library-tab @region:nav-library: вкладка «Библиотека» статей -->
+    <button class="tab" data-tab="library" title="Библиотека статей"><span>▤</span> Библио <span class="key">7</span></button>
+    <!-- @owner:library-tab @region:nav-library end -->
     <!-- @owner:redesign-2026-11-21 @region:nav-5tabs end -->
       </nav>
 
@@ -784,6 +822,11 @@
       .task-subnav button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
     </style>
     <!-- @owner:redesign-2026-11-21 @region:task-subnav end -->
+    <!-- @owner:library-tab @region:screen-library: вкладка «Библиотека» -->
+    <section class="screen" id="screen-library">
+      <div id="library-tab"></div>
+    </section>
+    <!-- @owner:library-tab @region:screen-library end -->
     <section class="screen" id="screen-chat">
       <div class="chat-head">
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
@@ -1147,7 +1190,7 @@ function toast(msg){
 
 /* ---------- tabs ---------- */
 /* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
-const TAB_IDS=["live","tasks","prompts","atlas","chat","backup"];
+const TAB_IDS=["live","tasks","prompts","atlas","chat","backup","library"];
 
 const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function setTab(name){
