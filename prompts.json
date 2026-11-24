@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T13:08:42+00:00",
-  "generated_human": "24.11 13:08 UTC",
-  "as_of": 1795525721706,
+  "generated": "2026-11-24T13:09:45+00:00",
+  "generated_human": "24.11 13:09 UTC",
+  "as_of": 1795525784379,
   "stale_days": 1,
   "count": 1059,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-DEmtaRN4lr",
      "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n1. Цепочка и бесплатный срез. Выполни grep по ~/.config/opencode/opencode.jsonc. Ожидается: opencode-go/hungerg-free входит в chain, freeCount=12, allowPaidFallback=false. Подтверди, что hungerg-free находится в первых 12 элементах.\n2. Эффективная V2-конфигурация. Выполни opencode api get /api/config и разбери JSON. Ожидается: probeTimeoutSec=attemptTimeoutSec=requestTimeoutSec=70; providers.opencode-go.settings и providers.opencode.settings содержат headerTimeout=60000 и chunkTimeout=60000.\n3. Watchdog-события. Выполни opencode api get /openapi.json и проверь components.schemas.V2Event: session.status и session.step.first-token должны присутствовать. В ~/.config/opencode/failover-plugin/index.js строка message.part.updated должна отсутствовать.\n4. Синтаксис и unit-тест. Выполни node --check ~/.config/opencode/failover-plugin/index.js && node ~/.config/opencode/failover-plugin/selftest.mjs. Ожидается selftest: 28 assertions OK.\n5. Retry-harness. Выполни node /tmp/opencode/hungerg-failover-fix/retry_harness.mjs. Ожидается PASS: HungerG Free -> opencode/nemotron-3.5-super-vl-free.\n6. Watchdog-harness. Выполни node /tmp/opencode/hungerg-failover-fix/watchdog_harness.mjs. Ожидается PASS watchdog и interrupt resume=false.\n7. Свежий smoke. Выполни opencode run --standalone --archived --agent build --model opencode-go/hungerg-free --format json 'Ответь ровно одним словом: OK'. Ожидается rc=0, текст OK, cost=0.\n8. Свежий debug-smoke. Повтори smoke с --print-logs --log-level debug, сохрани stderr во временный файл. Ожидается: строка [free-router] с таймаут ответа: 70с и ноль строк ignoring unknown event types.\n9. Итоговая целостность. Выполни sha256sum ~/.config/opencode/opencode.jsonc ~/.config/opencode/failover-plugin/index.js ~/.config/opencode/failover-plugin/selftest.mjs и приведи значения. PASS, если все три файла существуют и хеши непустые.\n\n\n<file name=\"hungerg-failover-final-20261124-160532-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n1. Цепочка и бесплатный срез. Выполни grep по ~/.config/opencode/opencode.jsonc. Ожидается: opencode-go/hungerg-free входит в chain, freeCount=12, allowPaidFallback=false. Подтверди, что hungerg-free находится в первых 12 элементах.\n2. Эффективная V2-конфигурация. Выполни opencode api get /api/config и разбери JSON. Ожидается: probeTimeoutSec=attemptTimeoutSec=requestTimeoutSec=70; providers.opencode-go.settings и providers.opencode.settings содержат headerTimeout=60000 и chunkTimeout=60000.\n3. Watchdog-события. Выполни opencode api get /openapi.json и проверь components.schemas.V2Event: session.status и session.step.first-token должны присутствовать. В ~/.config/opencode/failover-plugin/index.js строка message.part.updated должна отсутствовать.\n4. Синтаксис и unit-тест. Выполни node --check ~/.config/opencode/failover-plugin/index.js && node ~/.config/opencode/failover-plugin/selftest.mjs. Ожидается selftest: 28 assertions OK.\n5. Retry-harness. Выполни node /tmp/opencode/hungerg-failover-fix/retry_harness.mjs. Ожидается PASS: HungerG Free -> opencode/nemotron-3.5-super-vl-free.\n6. Watchdog-harness. Выполни node /tmp/opencode/hungerg-failover-fix/watchdog_harness.mjs. Ожидается PASS watchdog и interrupt resume=false.\n7. Свежий smoke. Выполни opencode run --standalone --archived --agent build --model opencode-go/hungerg-free --format json 'Ответь ровно одним словом: OK'. Ожидается rc=0, текст OK, cost=0.\n8. Свежий debug-smoke. Повтори smoke с --print-logs --log-level debug, сохрани stderr во временный файл. Ожидается: строка [free-router] с таймаут ответа: 70с и ноль строк ignoring unknown event types.\n9. Итоговая целостность. Выполни sha256sum ~/.config/opencode/opencode.jsonc ~/.config/opencode/failover-plugin/index.js ~/.config/opencode/failover-plugin/selftest.mjs и приведи значения. PASS, если все три файла существуют и хеши непустые.\n\n</file>",
-     "ts": 1795525721000,
+     "ts": 1795525776000,
      "source": "session",
      "title": "verify:hungerg-failover-final:20261124-160532",
      "source_label": "ноут",
@@ -53,7 +53,7 @@
       "w261120005246a1ca",
       "w2611212151519801"
      ],
-     "as_of": 1795525721000,
+     "as_of": 1795525776000,
      "is_stale": false
     },
     {
