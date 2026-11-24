@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T11:18:00+00:00",
-  "generated_human": "24.11 11:18 UTC",
-  "as_of": 1795519080169,
+  "generated": "2026-11-24T11:19:00+00:00",
+  "generated_human": "24.11 11:19 UTC",
+  "as_of": 1795519140514,
   "stale_days": 1,
   "count": 1067,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-cEs18mxqjI",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ ОТЧЁТ. В ~/cs2-transcribe проверь state.db и captions_only.log: сколько роликов ещё без текста, какие каналы, есть ли повторы/429. НЕ скачивай видео и аудио (жёсткое правило пользователя). Напиши новый отчёт ~/evolution-work/artifacts/LR-CAPTIONS-AUDIT-1124-<random>.md с числами, путями и SHA256 исходных файлов. Не меняй state.db и subs.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/longrun-1124-10h/artifacts/LR-CAPTIONS-AUDIT-1124-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795519076000,
+     "ts": 1795519134000,
      "source": "session",
      "title": "lree-LR-CAPTIONS-AUDIT-1124-c4",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795519076000,
+     "as_of": 1795519134000,
      "is_stale": false
     },
     {
@@ -243,7 +243,7 @@
     {
      "id": "ses-mASyzsv871",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795519069000,
+     "ts": 1795519091000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -262,7 +262,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795519069000,
+     "as_of": 1795519091000,
      "is_stale": true
     },
     {
