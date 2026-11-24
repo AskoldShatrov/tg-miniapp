@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 376,
+      "age_min": 377,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 398,
+      "age_min": 399,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 398,
+      "age_min": 399,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1996,16 +1996,8 @@
       "step_label": "Проверить гейм-мод",
       "step": 1,
       "total": 4,
-      "events": 8,
+      "events": 9,
       "trail": [
-        {
-          "ts": 1795562468,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795562495,
-          "label": "BASH · ls /home/nyaka/.c"
-        },
         {
           "ts": 1795562495,
           "label": "THINK"
@@ -2045,10 +2037,18 @@
         {
           "ts": 1795562646,
           "label": "SYNC · opencode"
+        },
+        {
+          "ts": 1795562682,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562705,
+          "label": "BASH · sed -n '1,40p' /h"
         }
       ],
       "started_at": 1795562424,
-      "updated_at": 1795562671
+      "updated_at": 1795562732
     },
     {
       "key": "req-20261125-022146-070fc4",
@@ -2060,14 +2060,6 @@
       "total": 4,
       "events": 19,
       "trail": [
-        {
-          "ts": 1795562589,
-          "label": "BASH · echo \"===unblk1 d"
-        },
-        {
-          "ts": 1795562589,
-          "label": "THINK"
-        },
         {
           "ts": 1795562594,
           "label": "BASH · echo \"===truth fi"
@@ -2107,10 +2099,49 @@
         {
           "ts": 1795562647,
           "label": "BASH · echo \"===coordina"
+        },
+        {
+          "ts": 1795562687,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795562711,
+          "label": "BASH · find ~/ -maxdepth"
         }
       ],
       "started_at": 1795562506,
-      "updated_at": 1795562663
+      "updated_at": 1795562730
+    },
+    {
+      "key": "req-20261125-022425-b73ce7",
+      "session_id": "",
+      "source": "task",
+      "label": "Разрешения пользователя (заполнить перед запуском):\n  БОТ_ПР",
+      "step_label": "разведка",
+      "step": 1,
+      "total": 5,
+      "events": 1,
+      "trail": [
+        {
+          "ts": 1795562718,
+          "label": "SYNC · scanfeed"
+        }
+      ],
+      "started_at": 1795562688,
+      "updated_at": 1795562718
+    },
+    {
+      "key": "req-20261125-022448-81ab3c",
+      "session_id": "",
+      "source": "task",
+      "label": "уведомления\n     по его собственным запросам (владелец берёт",
+      "step_label": "изучить код и окружение",
+      "step": 1,
+      "total": 5,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795562712,
+      "updated_at": 1795562722
     }
   ],
   "bars": [
@@ -2159,6 +2190,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 6.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795562674,
-  "fetched_human": "2026-11-25 02:24:34 +0300"
+  "fetched_at": 1795562739,
+  "fetched_human": "2026-11-25 02:25:39 +0300"
 }
