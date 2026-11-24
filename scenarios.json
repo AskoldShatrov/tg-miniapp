@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24 18:00",
+ "generated": "2026-11-24 18:30",
  "window": {
-  "start": "2026-11-24T09:22",
-  "end": "2026-11-24T14:59",
+  "start": "2026-11-24T09:33",
+  "end": "2026-11-24T15:22",
   "sessions": 177,
   "roots": 150
  },
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 194,
+   "median_s": 221,
    "max_s": 7291,
-   "last": "2026-11-24T14:58:46.779000+00:00",
+   "last": "2026-11-24T15:22:21.735000+00:00",
    "outcomes": {
-    "waiting_user": 9,
-    "done": 95,
-    "error": 46
+    "waiting_user": 5,
+    "error": 51,
+    "done": 94
    },
    "example": [
-    "sSoWZXx5",
-    "TIr0Jvh0"
+    "CNvOThrA",
+    "ZjzC0Lv5"
    ],
    "actual": [
     {
@@ -44,13 +44,13 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 113 из 150, ≈28 вызовов за раз",
+     "t": "в 111 из 150, ≈30 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 90 из 150, ≈8 вызовов за раз",
+     "t": "в 89 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -823,7 +823,8 @@
    "max_s": 7291,
    "last": "2026-11-24T14:20:30.384000+00:00",
    "outcomes": {
-    "done": 4
+    "done": 3,
+    "error": 1
    },
    "example": [
     "PZ0X8JiS",
@@ -1117,12 +1118,13 @@
    "status": "warn",
    "status_text": "На грани лимита",
    "runs": 12,
-   "median_s": 1375,
+   "median_s": 2193,
    "max_s": 7291,
    "last": "2026-11-24T14:58:46.779000+00:00",
    "outcomes": {
-    "waiting_user": 3,
-    "done": 9
+    "waiting_user": 1,
+    "done": 9,
+    "error": 2
    },
    "example": [
     "3cNj9xxe",
@@ -1155,7 +1157,7 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 12 из 12, ≈64 вызовов за раз",
+     "t": "в 12 из 12, ≈76 вызовов за раз",
      "d": 1
     },
     {
@@ -1203,7 +1205,13 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 11 из 12, ≈24 вызовов за раз",
+     "t": "в 12 из 12, ≈23 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "parallel-edit",
+     "t": "в 4 из 12",
      "d": 1
     },
     {
@@ -1216,12 +1224,6 @@
      "k": "skill",
      "n": "systematic-debugging",
      "t": "в 2 из 12",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "parallel-edit",
-     "t": "в 3 из 12",
      "d": 1
     },
     {
@@ -1358,12 +1360,11 @@
    "status": "warn",
    "status_text": "Не ловит",
    "runs": 2,
-   "median_s": 3607,
+   "median_s": 3928,
    "max_s": 5673,
    "last": "2026-11-24T14:33:46.910000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "done": 1
+    "done": 2
    },
    "example": [
     "QwQm8Dz6",
@@ -1408,7 +1409,7 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 2 из 2, ≈145 вызовов за раз",
+     "t": "в 2 из 2, ≈153 вызовов за раз",
      "d": 1
     },
     {
@@ -1616,8 +1617,8 @@
    "max_s": 7291,
    "last": "2026-11-24T14:49:25.527000+00:00",
    "outcomes": {
-    "done": 22,
-    "error": 11
+    "done": 21,
+    "error": 12
    },
    "example": [
     "K2vx22Pb",
@@ -1742,7 +1743,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free → opencode-go/glm-5.3#high → opencode-go/deepseek-v4.1-flash#high → opencode-go/glm-5.3-flash. По факту: opencode-go/hy4-flash-free ×74, opencode/big-pickle ×17, opencode-go/hungerg-free ×16",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free → opencode-go/glm-5.3#high → opencode-go/deepseek-v4.1-flash#high → opencode-go/glm-5.3-flash. По факту: opencode-go/hy4-flash-free ×73, opencode/big-pickle ×17, opencode-go/hungerg-free ×16",
    "level": "ok",
    "f": "C13"
   },
@@ -1766,7 +1767,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 46, с файлами 18",
+   "state": "Владельцев 19, с файлами 1",
    "level": "ok",
    "f": "C11"
   },
