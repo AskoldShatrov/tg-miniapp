@@ -205,11 +205,62 @@
     }
     return null;
   }
+  /* ---------- прогресс-бары «Хода»: клик/Enter разворачивает дерево задачи ----------
+     Полоски рисует index.html (renderLive); здесь только выбор задачи и Drawer. */
+  function barTask(bar){
+    var d = liveJobs();
+    var key = normId(bar.getAttribute("data-bar-key"));
+    var label = (bar.getAttribute("data-bar-label") || "").trim();
+    if(!d) return {id: key || label, title: label || "задача", source: "live.json",
+                   kind: "bar", raw: {}};
+    var pools = [
+      d.bot_activity, d.live_trail,          // прогоны ТГ-бота (live-progress.json)
+      d.active,                              // живые сессии/очереди
+      d.tasks                                // шаги progress.json
+    ];
+    var low = (key + " " + label).toLowerCase();
+    for(var i = 0; i < pools.length; i++){
+      var list = pools[i];
+      if(!Array.isArray(list) || !list.length) continue;
+      var hit = null;
+      list.forEach(function(r){
+        if(hit) return;
+        var id = normId(r.key || r.id || r.task);
+        var t = String(r.label || r.title || r.full || r.name || "");
+        if((id && key && (id === key || id.indexOf(key) >= 0 || key.indexOf(id) >= 0)) ||
+           (t && label && t.toLowerCase().indexOf(label.toLowerCase()) >= 0) ||
+           (id && id.toLowerCase().indexOf(low.replace(/[^a-z0-9а-яё._-]/gi, "")) >= 0 && id.length > 2)){
+          hit = r;
+        }
+      });
+      if(hit){
+        return {id: normId(hit.key || hit.id || key), title: hit.label || hit.title || label,
+                source: hit.source || (hit.task ? "progress.json" : "live.json"),
+                kind: "bar", raw: hit};
+      }
+    }
+    return {id: key || label, title: label || "задача", source: "live.json",
+            kind: "bar", raw: {}};
+  }
+  function barOpen(target){
+    var bar = target.closest ? target.closest("#liveProgressBar .pbar") : null;
+    if(!bar) return false;
+    var t = barTask(bar);
+    if(t) open(t, bar);
+    return true;
+  }
   document.addEventListener("click", function(e){
-    var row = e.target && e.target.closest ? e.target.closest("#liveJobs .live-row,#liveSteps .live-row") : null;
+    var t0 = e.target;
+    if(t0 && t0.closest && barOpen(t0)) return;
+    var row = t0 && t0.closest ? t0.closest("#liveJobs .live-row,#liveSteps .live-row") : null;
     if(!row) return;
     var t = rowTask(row);
     if(t) open(t, row);
+  });
+  document.addEventListener("keydown", function(e){
+    if((e.key !== "Enter" && e.key !== " ") || !panel.classList.contains("open")) return;
+    var bar = e.target && e.target.closest ? e.target.closest("#liveProgressBar .pbar") : null;
+    if(bar){ e.preventDefault(); barOpen(bar); }
   });
 
   /* ---------- chain: API parent_id, else honest static tree.json ---------- */
@@ -313,6 +364,72 @@
         var box = $("#ttEvents"); if(box) box.innerHTML = renderEvents(events);
       });
     });
+  }
+
+  /* ---------- живая лента инструментов: BASH/READ/WRITE/SYNC, как в Harness ---------- */
+  function matchRun(rows, task){
+    var byId = null, byTitle = null;
+    rows.forEach(function(r){
+      var id = normId(r.key || r.id);
+      var title = String(r.title || r.label || "");
+      if(!byId && id && task.id && (id === task.id || id.indexOf(task.id) >= 0 || task.id.indexOf(id) >= 0)) byId = r;
+      if(!byTitle && task.title && title && title.toLowerCase().indexOf(String(task.title).slice(0,40).toLowerCase()) >= 0) byTitle = r;
+    });
+    return byId || byTitle || (rows.length === 1 ? rows[0] : null);
+  }
+  function renderTools(box, row){
+    var head = [];
+    if(row.total) head.push("Шаг " + row.step + "/" + row.total);
+    else if(row.step) head.push("Шаг " + row.step);
+    else if(row.events) head.push("Шаг ~" + row.events);
+    if(row.label) head.push(short(row.label, 40));
+    head.push("источник: " + (row.source || "telegram"));
+    var upd = row.updated_at ? hhmmss(row.updated_at) : "";
+    var trail = (Array.isArray(row.trail) ? row.trail : []).slice(-12);
+    var html = '<div class="tt-toolhead">' + esc(head.join(" · ")) +
+      (upd ? " · обновлено " + esc(upd) : "") + '</div>';
+    if(trail.length){
+      html += trail.map(function(t, i){
+        var lab = String((t && t.label) || "TOOL").toUpperCase().slice(0, 10);
+        var cls = "k-" + lab;
+        return '<div class="tt-tool"><span>' + esc(hhmmss(t.ts)) + '</span>' +
+          '<b class="' + esc(cls) + '">' + esc(lab) + '</b>' +
+          '<span>' + (i === trail.length - 1 ? "текущий" : "") + '</span></div>';
+      }).join("");
+    } else {
+      html += '<div class="tt-empty">Инструментов пока нет — задача только стартовала.</div>';
+    }
+    box.innerHTML = html;
+  }
+  function toolsMsg(box, text){
+    box.innerHTML = '<div class="tt-empty">' + esc(text) + '</div>';
+  }
+  function refreshTools(){
+    var box = $("#ttTools");
+    if(!box || !toolTask || current !== toolTask) return;
+    apiCall("/live/activity").then(function(res){
+      if(!box || !toolTask || current !== toolTask) return;
+      if(!res || !Array.isArray(res.rows)){
+        toolsMsg(box, "process_api недоступен" +
+          (typeof API_LAST_ERROR !== "undefined" && API_LAST_ERROR ? " (" + short(API_LAST_ERROR, 120) + ")" : "") +
+          " — лента придёт, когда связь появится.");
+        return;
+      }
+      var row = matchRun(res.rows, toolTask);
+      if(!row){
+        toolsMsg(box, res.rows.length
+          ? "Эта задача не найдена среди активных прогонов ТГ (или уже завершена)."
+          : "Активных задач ТГ сейчас нет — отправь сообщение боту и лента появится здесь.");
+        return;
+      }
+      renderTools(box, row);
+    });
+  }
+  function startTools(task){
+    if(toolTimer) clearInterval(toolTimer);
+    toolTask = task;
+    refreshTools();
+    toolTimer = setInterval(refreshTools, 2500);   // «реальное время» для ленты инструментов
   }
 
   /* ---------- main load ---------- */
