@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T01:15:08+00:00",
-  "generated_human": "24.11 01:15 UTC",
-  "as_of": 1795482908429,
+  "generated": "2026-11-24T01:16:08+00:00",
+  "generated_human": "24.11 01:16 UTC",
+  "as_of": 1795482968388,
   "stale_days": 1,
   "count": 1066,
   "groups": 9,
@@ -40,22 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-xZ2dC5iO7G",
-     "text": "ЗАДАЧА-ПРОРЫВ. Не пересчитывай старые корпуса C04-2180/t4-full: они дали ECE 0.1367 и вырождение. Работай только с новым проиндексированным REAL-корпусом /home/nyaka/scanfeed/data/realgt_batch/S03GT_REAL_20261123T223801Z/ (1050 кадров, 243 честных cyan FP, allplayers=10, prereg /home/nyaka/overnight/prereg/S03GT-REAL60.json). Построй покадровую GT-таблицу, раздели по матчам (кластер match_id, 3 матча), сделай group-aware holdout, невырождающуюся калибровку dot_quality/prediction, посчитай ECE, Wilson 95% и сравнение с честным константным baseline. НЕ трогай ПК, pc-bridge и защищённые data/. Создай новый JSON-артефакт ровно по пути /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-<суффикс>.json с полями: VERDICT, n, fp, ece_after, honest_baseline_beaten, source, cluster_unit, holdout_matches, limitations. VERDICT=PASS только если n>=60, fp>0, ece_after<0.15, baseline обыгран и есть group-holdout; иначе честно VERDICT=FAIL. Сам запусти verify_cmd и добейся rc=0; выведи PROMISE: DONE и путь файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-c1061.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795482906000,
-     "source": "session",
-     "title": "lree-SFC-S03GT-BREAKTHROUGH-c1061",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795482906000,
-     "is_stale": false
-    },
-    {
      "id": "ses-qTSiog3e1g",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15580. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtxgk7n44j5: S01CB: расширение REAL-набора калибровки confidence (T4). Где: goals.json · Новые дизъюнтные GSI allplayers-запуски + свежий FACEIT dust2 демо-срез; prereg S01CB-REAL60-EXT до прогона; гейт n>=60, FP>0, ECE<0.15; отчёт ~/overn В конце вызови tools.goals.track({action:'done', id:'gmwtxgk7n44j5', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15580_run1795482020.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795482904000,
+     "ts": 1795482961000,
      "source": "session",
      "title": "AU15580 confidence calibration hypothesis",
      "source_label": "ноут",
@@ -74,8 +61,21 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795482904000,
+     "as_of": 1795482961000,
      "is_stale": true
+    },
+    {
+     "id": "ses-xZ2dC5iO7G",
+     "text": "ЗАДАЧА-ПРОРЫВ. Не пересчитывай старые корпуса C04-2180/t4-full: они дали ECE 0.1367 и вырождение. Работай только с новым проиндексированным REAL-корпусом /home/nyaka/scanfeed/data/realgt_batch/S03GT_REAL_20261123T223801Z/ (1050 кадров, 243 честных cyan FP, allplayers=10, prereg /home/nyaka/overnight/prereg/S03GT-REAL60.json). Построй покадровую GT-таблицу, раздели по матчам (кластер match_id, 3 матча), сделай group-aware holdout, невырождающуюся калибровку dot_quality/prediction, посчитай ECE, Wilson 95% и сравнение с честным константным baseline. НЕ трогай ПК, pc-bridge и защищённые data/. Создай новый JSON-артефакт ровно по пути /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-<суффикс>.json с полями: VERDICT, n, fp, ece_after, honest_baseline_beaten, source, cluster_unit, holdout_matches, limitations. VERDICT=PASS только если n>=60, fp>0, ece_after<0.15, baseline обыгран и есть group-holdout; иначе честно VERDICT=FAIL. Сам запусти verify_cmd и добейся rc=0; выведи PROMISE: DONE и путь файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-S03GT-BREAKTHROUGH-c1061.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795482960000,
+     "source": "session",
+     "title": "lree-SFC-S03GT-BREAKTHROUGH-c1061",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795482960000,
+     "is_stale": false
     },
     {
      "id": "ses-4815gn5lls",
