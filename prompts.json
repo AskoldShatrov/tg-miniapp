@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T07:16:58+00:00",
-  "generated_human": "24.11 07:16 UTC",
-  "as_of": 1795504618473,
+  "generated": "2026-11-24T07:17:12+00:00",
+  "generated_human": "24.11 07:17 UTC",
+  "as_of": 1795504632925,
   "stale_days": 1,
   "count": 1071,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-000C5MByWc",
      "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795504612000,
+     "ts": 1795504628000,
      "source": "session",
      "title": "Scanfeed REAL calibration report T4",
      "source_label": "ноут",
@@ -61,7 +61,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795504612000,
+     "as_of": 1795504628000,
      "is_stale": true
     },
     {
@@ -4782,7 +4782,7 @@
     {
      "id": "ses-vxKGobVUNt",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15583. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwud00wr6jml: R02CQ: малый радар в новом FACEIT-демо-корпусе C06-16454 — гейт ПРОВАЛЕН (k=0/3855). Где: goals.json · 24.11.2026 07:08Z, hy4-flash-free. Отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md (mtime 07:14:00Z), JSON R02cq-radar-spectator-newcor В конце вызови tools.goals.track({action:'done', id:'gmwud00wr6jml', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15583_run16666.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795504597000,
+     "ts": 1795504627000,
      "source": "session",
      "title": "Hypothesis AU15583 radar gate check",
      "source_label": "ноут",
@@ -4801,7 +4801,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795504597000,
+     "as_of": 1795504627000,
      "is_stale": true
     },
     {
