@@ -1950,7 +1950,7 @@
       "title": "Скилл для быстрого ревью кода",
       "source": "dsh",
       "claimed_human": "23:41:49",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Скилл для быстрого ревью кода"
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 219,
+      "age_min": 220,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 241,
+      "age_min": 242,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 241,
+      "age_min": 242,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2005,36 +2005,8 @@
       "step_label": "F",
       "step": 1,
       "total": 5,
-      "events": 43,
+      "events": 50,
       "trail": [
-        {
-          "ts": 1795552984,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795552984,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795552984,
-          "label": "BASH · grep -n \"batch_mo"
-        },
-        {
-          "ts": 1795552984,
-          "label": "BASH · python3 -m py_com"
-        },
-        {
-          "ts": 1795552984,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795552993,
-          "label": "BASH · sed -n '3175,3200"
-        },
-        {
-          "ts": 1795553138,
-          "label": "BASH · for i in 1 2 3 4 "
-        },
         {
           "ts": 1795553153,
           "label": "BASH · echo \"=== SERVICE"
@@ -2054,10 +2026,38 @@
         {
           "ts": 1795553249,
           "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795553284,
+          "label": "BASH · echo \"=== DRAFT G"
+        },
+        {
+          "ts": 1795553284,
+          "label": "SYNC · answer-integrity"
+        },
+        {
+          "ts": 1795553284,
+          "label": "BASH · grep -n -E \"artif"
+        },
+        {
+          "ts": 1795553284,
+          "label": "BASH · sed -n '85,125p' "
+        },
+        {
+          "ts": 1795553284,
+          "label": "BASH · sha256sum /home/n"
+        },
+        {
+          "ts": 1795553297,
+          "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795553307,
+          "label": "EDIT · /tmp/opencode/dra"
         }
       ],
       "started_at": 1795552515,
-      "updated_at": 1795553249
+      "updated_at": 1795553312
     },
     {
       "key": "req-20261124-233601-9fa49e",
@@ -2067,20 +2067,8 @@
       "step_label": "проверить что фокус не прыгает",
       "step": 4,
       "total": 4,
-      "events": 44,
+      "events": 47,
       "trail": [
-        {
-          "ts": 1795553001,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795553021,
-          "label": "BASH · date '+%Y-%m-%d %"
-        },
-        {
-          "ts": 1795553030,
-          "label": "WRITE · /tmp/opencode/di"
-        },
         {
           "ts": 1795553102,
           "label": "BASH · cd ~/pc-bridge &&"
@@ -2116,53 +2104,33 @@
         {
           "ts": 1795553195,
           "label": "WRITE · /tmp/opencode/gm"
+        },
+        {
+          "ts": 1795553276,
+          "label": "BASH · cd ~/pc-bridge &&"
+        },
+        {
+          "ts": 1795553291,
+          "label": "BASH · date '+%H:%M:%S';"
+        },
+        {
+          "ts": 1795553300,
+          "label": "WRITE · /tmp/opencode/gm"
         }
       ],
       "started_at": 1795552566,
-      "updated_at": 1795553246
+      "updated_at": 1795553313
     },
     {
       "key": "req-20261124-234533-cab1f6",
       "session_id": "",
       "source": "task",
       "label": "посмотри в аудиты и телеметрию в монго и напиши топ 5 находо",
-      "step_label": "Найти доступ к MongoDB",
-      "step": 1,
+      "step_label": "Сформировать топ-5 находок",
+      "step": 4,
       "total": 4,
-      "events": 11,
+      "events": 20,
       "trail": [
-        {
-          "ts": 1795553143,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795553148,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795553153,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795553157,
-          "label": "BASH · ls -la /home/nyak"
-        },
-        {
-          "ts": 1795553161,
-          "label": "GREP · /home/nyaka/share"
-        },
-        {
-          "ts": 1795553167,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795553177,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795553182,
-          "label": "BASH · cd /home/nyaka &&"
-        },
         {
           "ts": 1795553188,
           "label": "BASH · cd /home/nyaka &&"
@@ -2178,10 +2146,42 @@
         {
           "ts": 1795553237,
           "label": "WRITE · /tmp/opencode/mo"
+        },
+        {
+          "ts": 1795553283,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795553284,
+          "label": "WRITE · /tmp/opencode/ev"
+        },
+        {
+          "ts": 1795553284,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795553284,
+          "label": "WRITE · /tmp/opencode/fi"
+        },
+        {
+          "ts": 1795553284,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795553284,
+          "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795553285,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795553301,
+          "label": "BASH · stat -c '%y' /tmp"
         }
       ],
       "started_at": 1795553133,
-      "updated_at": 1795553246
+      "updated_at": 1795553313
     }
   ],
   "bars": [
@@ -2230,6 +2230,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795553249,
-  "fetched_human": "2026-11-24 23:47:29 +0300"
+  "fetched_at": 1795553314,
+  "fetched_human": "2026-11-24 23:48:34 +0300"
 }
