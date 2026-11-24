@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T11:42:12+00:00",
-  "generated_human": "24.11 11:42 UTC",
-  "as_of": 1795520532855,
+  "generated": "2026-11-24T11:43:13+00:00",
+  "generated_human": "24.11 11:43 UTC",
+  "as_of": 1795520593862,
   "stale_days": 1,
   "count": 1100,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-G0Wjs8L3Ne",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795520518000,
+     "ts": 1795520590000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -60,7 +60,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795520518000,
+     "as_of": 1795520590000,
      "is_stale": true
     },
     {
@@ -5063,14 +5063,14 @@
     {
      "id": "ses-EDpb3vwa6T",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ ОТЧЁТ. Возьми ~/cs2-transcribe/subs/<id>.txt и существующий ~/overnight/research/EN-VIDEO-CLAIMS-FROM-SUBTITLES-20261124.md. Извлеки 10+ НОВЫХ проверяемых утверждений про экономику и правильную игру от авторов jerry/chopper/moreostins, с дословными цитатами и video_id. НЕ скачивай медиа, НЕ меняй subs и state.db. Проверь каждую цитату программно. Новый отчёт ~/evolution-work/artifacts/LR-CLAIMS-EXPAND-1124-<random>.md с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/longrun-1124-10h/artifacts/LR-CLAIMS-EXPAND-1124-c8.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795520508000,
+     "ts": 1795520587000,
      "source": "session",
      "title": "lree-LR-CLAIMS-EXPAND-1124-c8",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795520508000,
+     "as_of": 1795520587000,
      "is_stale": false
     },
     {
