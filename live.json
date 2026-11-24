@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 387,
+      "age_min": 388,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 408,
+      "age_min": 409,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 409,
+      "age_min": 410,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1996,16 +1996,8 @@
       "step_label": "Сверить время и живой фид",
       "step": 1,
       "total": 4,
-      "events": 4,
+      "events": 7,
       "trail": [
-        {
-          "ts": 1795563185,
-          "label": "BASH · date '+%H:%M:%S М"
-        },
-        {
-          "ts": 1795563185,
-          "label": "THINK"
-        },
         {
           "ts": 1795563220,
           "label": "BASH · journalctl --user"
@@ -2033,10 +2025,30 @@
         {
           "ts": 1795563287,
           "label": "THINK"
+        },
+        {
+          "ts": 1795563318,
+          "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795563318,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563331,
+          "label": "BASH · sha256sum /home/n"
+        },
+        {
+          "ts": 1795563361,
+          "label": "BASH · sha256sum '/home/"
+        },
+        {
+          "ts": 1795563361,
+          "label": "THINK"
         }
       ],
       "started_at": 1795563160,
-      "updated_at": 1795563303
+      "updated_at": 1795563365
     },
     {
       "key": "req-20261125-023418-df3023",
@@ -2046,59 +2058,72 @@
       "step_label": "B",
       "step": 1,
       "total": 5,
-      "events": 4,
+      "events": 9,
       "trail": [
         {
-          "ts": 1795563274,
-          "label": "BASH · ls -la /home/nyak"
+          "ts": 1795563311,
+          "label": "BASH · curl -sS --max-ti"
         },
         {
-          "ts": 1795563274,
-          "label": "GREP · /home/nyaka/docs"
-        },
-        {
-          "ts": 1795563274,
-          "label": "GREP · /home/nyaka/overn"
-        },
-        {
-          "ts": 1795563274,
+          "ts": 1795563311,
           "label": "THINK"
         },
         {
-          "ts": 1795563285,
-          "label": "READ · /home/nyaka/docs/"
+          "ts": 1795563319,
+          "label": "BASH · curl -sSL --max-t"
         },
         {
-          "ts": 1795563285,
-          "label": "BASH · python3 ~/.config"
+          "ts": 1795563319,
+          "label": "BASH · ~/bin/invento sta"
         },
         {
-          "ts": 1795563285,
+          "ts": 1795563320,
+          "label": "BASH · ~/bin/smartnet ch"
+        },
+        {
+          "ts": 1795563320,
           "label": "THINK"
         },
         {
-          "ts": 1795563303,
-          "label": "SYNC · network-constrain"
+          "ts": 1795563336,
+          "label": "BASH · mkdir -p /tmp/ope"
         },
         {
-          "ts": 1795563303,
-          "label": "BASH · ls -la ~/bin/inve"
+          "ts": 1795563336,
+          "label": "THINK"
         },
         {
-          "ts": 1795563303,
-          "label": "SUBAGENT · subagent"
+          "ts": 1795563354,
+          "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795563303,
-          "label": "SUBAGENT · subagent"
+          "ts": 1795563354,
+          "label": "THINK"
         },
         {
-          "ts": 1795563303,
+          "ts": 1795563362,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795563362,
           "label": "THINK"
         }
       ],
       "started_at": 1795563259,
-      "updated_at": 1795563304
+      "updated_at": 1795563365
+    },
+    {
+      "key": "req-20261125-023553-4e8062",
+      "session_id": "",
+      "source": "task",
+      "label": "У тебя есть в библиотеке скилл добавь его пж я хочу пройти и",
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795563353,
+      "updated_at": 1795563366
     }
   ],
   "bars": [
@@ -2147,6 +2172,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 6.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795563304,
-  "fetched_human": "2026-11-25 02:35:04 +0300"
+  "fetched_at": 1795563366,
+  "fetched_human": "2026-11-25 02:36:06 +0300"
 }
