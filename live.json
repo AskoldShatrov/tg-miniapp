@@ -1949,32 +1949,32 @@
       "id": "session-d66b31b8",
       "title": "что по работе со сканф",
       "source": "dsh",
-      "claimed_human": "23:03:21",
+      "claimed_human": "23:04:23",
       "age_min": 0,
       "full": "что по работе со сканф"
-    },
-    {
-      "id": "session-68192da3",
-      "title": "Анализ видео и результатов CS2",
-      "source": "dsh",
-      "claimed_human": "23:03:19",
-      "age_min": 0,
-      "full": "Анализ видео и результатов CS2"
     },
     {
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "23:03:01",
+      "claimed_human": "23:04:14",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
+    },
+    {
+      "id": "session-68192da3",
+      "title": "Анализ видео и результатов CS2",
+      "source": "dsh",
+      "claimed_human": "23:03:58",
+      "age_min": 0,
+      "full": "Анализ видео и результатов CS2"
     },
     {
       "id": "T29/T29.4",
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 175,
+      "age_min": 176,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 197,
+      "age_min": 198,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 197,
+      "age_min": 198,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2020,16 +2020,8 @@
       "step_label": "Сравнить реальные ТГ-сообщения с эталоном и выдать вердикт",
       "step": 3,
       "total": 3,
-      "events": 9,
+      "events": 12,
       "trail": [
-        {
-          "ts": 1795550569,
-          "label": "BASH · grep -n -E \"rende"
-        },
-        {
-          "ts": 1795550569,
-          "label": "BASH · echo \"=== DSH sto"
-        },
         {
           "ts": 1795550569,
           "label": "BASH · echo \"=== funcs s"
@@ -2069,10 +2061,18 @@
         {
           "ts": 1795550602,
           "label": "BASH · echo \"=== BROADCA"
+        },
+        {
+          "ts": 1795550614,
+          "label": "BASH · echo \"=== DSH CDP"
+        },
+        {
+          "ts": 1795550623,
+          "label": "BASH · curl -s --max-tim"
         }
       ],
       "started_at": 1795550488,
-      "updated_at": 1795550602
+      "updated_at": 1795550641
     },
     {
       "key": "req-20261124-230128-e91372",
@@ -2082,20 +2082,8 @@
       "step_label": "взять свежие артефакты ленты",
       "step": 2,
       "total": 6,
-      "events": 11,
+      "events": 12,
       "trail": [
-        {
-          "ts": 1795550559,
-          "label": "BASH · grep -n \"🧰\\|SYNC "
-        },
-        {
-          "ts": 1795550559,
-          "label": "BASH · grep -n \"def log_"
-        },
-        {
-          "ts": 1795550559,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795550561,
           "label": "BASH · tail -80 ~/shared"
@@ -2131,10 +2119,22 @@
         {
           "ts": 1795550589,
           "label": "BASH · zstd -dc /home/ny"
+        },
+        {
+          "ts": 1795550613,
+          "label": "BASH · grep -n \"BROADCAS"
+        },
+        {
+          "ts": 1795550613,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795550623,
+          "label": "BASH · cd ~/shared-repo/"
         }
       ],
       "started_at": 1795550488,
-      "updated_at": 1795550601
+      "updated_at": 1795550627
     },
     {
       "key": "req-20261124-230128-6fde8d",
@@ -2144,28 +2144,8 @@
       "step_label": "сверить формат с эталоном",
       "step": 2,
       "total": 4,
-      "events": 7,
+      "events": 10,
       "trail": [
-        {
-          "ts": 1795550559,
-          "label": "BASH · grep -rn \"TOOL\\|S"
-        },
-        {
-          "ts": 1795550559,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795550559,
-          "label": "BASH · for d in /home/ny"
-        },
-        {
-          "ts": 1795550559,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795550559,
-          "label": "BASH · sed -n '70,100p;2"
-        },
         {
           "ts": 1795550559,
           "label": "BASH · ls -d /home/nyaka"
@@ -2193,25 +2173,41 @@
         {
           "ts": 1795550582,
           "label": "BASH · grep -rn \"todo_wr"
+        },
+        {
+          "ts": 1795550598,
+          "label": "BASH · sed -n '200,275p'"
+        },
+        {
+          "ts": 1795550598,
+          "label": "BASH · ls -d /home/nyaka"
+        },
+        {
+          "ts": 1795550605,
+          "label": "BASH · grep -n \"_TRAIL_M"
+        },
+        {
+          "ts": 1795550618,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795550638,
+          "label": "BASH · gh repo list Epic"
         }
       ],
       "started_at": 1795550489,
-      "updated_at": 1795550596
+      "updated_at": 1795550638
     },
     {
       "key": "req-20261124-230129-b1f7b1",
       "session_id": "",
       "source": "task",
       "label": "Ну так сделай restart плюс не шли ничего в резервный канал б",
-      "step_label": "проверить репозитории GitHub",
-      "step": 3,
+      "step_label": "перезапустить мост без резерва",
+      "step": 4,
       "total": 4,
-      "events": 8,
+      "events": 9,
       "trail": [
-        {
-          "ts": 1795550559,
-          "label": "BASH · grep -n \"REMOTE_R"
-        },
         {
           "ts": 1795550559,
           "label": "BASH · journalctl --user"
@@ -2255,10 +2251,14 @@
         {
           "ts": 1795550596,
           "label": "BASH · sed -n '215,280p'"
+        },
+        {
+          "ts": 1795550635,
+          "label": "BASH · grep -n \"Environm"
         }
       ],
       "started_at": 1795550489,
-      "updated_at": 1795550600
+      "updated_at": 1795550650
     },
     {
       "key": "req-20261124-230129-3ef0a1",
@@ -2268,28 +2268,8 @@
       "step_label": "Проверить живой канал и метки",
       "step": 1,
       "total": 4,
-      "events": 6,
+      "events": 8,
       "trail": [
-        {
-          "ts": 1795550561,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795550567,
-          "label": "BASH · for id in suspici"
-        },
-        {
-          "ts": 1795550569,
-          "label": "BASH · ls -1 ~/shared-re"
-        },
-        {
-          "ts": 1795550569,
-          "label": "BASH · for d in ~/shared"
-        },
-        {
-          "ts": 1795550569,
-          "label": "BASH · sed -n '70,100p;2"
-        },
         {
           "ts": 1795550569,
           "label": "BASH · python3 - <<'PY'"
@@ -2317,10 +2297,30 @@
         {
           "ts": 1795550595,
           "label": "BASH · sed -n '598,680p'"
+        },
+        {
+          "ts": 1795550598,
+          "label": "BASH · sed -n '3795,3822"
+        },
+        {
+          "ts": 1795550598,
+          "label": "BASH · echo '=== service"
+        },
+        {
+          "ts": 1795550615,
+          "label": "BASH · echo '=== fresh f"
+        },
+        {
+          "ts": 1795550617,
+          "label": "BASH · echo '=== DSH lab"
+        },
+        {
+          "ts": 1795550628,
+          "label": "BASH · grep -nE 'SYNC|BA"
         }
       ],
       "started_at": 1795550490,
-      "updated_at": 1795550597
+      "updated_at": 1795550628
     }
   ],
   "bars": [
@@ -2369,6 +2369,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 2.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795550603,
-  "fetched_human": "2026-11-24 23:03:23 +0300"
+  "fetched_at": 1795550664,
+  "fetched_human": "2026-11-24 23:04:24 +0300"
 }
