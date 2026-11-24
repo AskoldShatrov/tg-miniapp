@@ -1949,32 +1949,32 @@
       "id": "session-0de35ba9",
       "title": "Анализ видео КС2: экономика и мувы",
       "source": "dsh",
-      "claimed_human": "22:41:56",
+      "claimed_human": "22:43:02",
       "age_min": 0,
       "full": "Анализ видео КС2: экономика и мувы"
+    },
+    {
+      "id": "session-d66b31b8",
+      "title": "что по работе со сканф",
+      "source": "dsh",
+      "claimed_human": "22:42:35",
+      "age_min": 0,
+      "full": "что по работе со сканф"
     },
     {
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
       "claimed_human": "22:41:32",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Askold в Telegram Mini App: задержка ответа"
-    },
-    {
-      "id": "session-d66b31b8",
-      "title": "что по работе со сканф",
-      "source": "dsh",
-      "claimed_human": "22:41:29",
-      "age_min": 0,
-      "full": "что по работе со сканф"
     },
     {
       "id": "T29/T29.4",
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 154,
+      "age_min": 155,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 175,
+      "age_min": 176,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 176,
+      "age_min": 177,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2013,79 +2013,81 @@
   },
   "runs": [
     {
-      "key": "req-20261124-222825-3dd234",
+      "key": "req-20261124-224252-f888b5",
       "session_id": "",
       "source": "task",
       "label": "А какой вывод из этого? Ты вернул функционал? Batch был поле",
-      "step_label": "Восстановить_функционал",
-      "step": 4,
-      "total": 5,
-      "events": 47,
+      "step_label": "Проверить подозрение и блокировку",
+      "step": 1,
+      "total": 3,
+      "events": 1,
       "trail": [
         {
-          "ts": 1795548517,
-          "label": "TOOL"
+          "ts": 1795549384,
+          "label": "SYNC · suspicion-gate"
+        },
+        {
+          "ts": 1795549384,
+          "label": "SYNC · ready-to-deliver"
+        },
+        {
+          "ts": 1795549384,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795549384,
+          "label": "BASH · python3 ~/.config"
         }
       ],
-      "started_at": 1795548506,
-      "updated_at": 1795549324
+      "started_at": 1795549374,
+      "updated_at": 1795549387
     },
     {
-      "key": "req-20261124-223651-b1674f",
+      "key": "req-20261124-224254-9af6e7",
       "session_id": "",
       "source": "task",
       "label": "А ты Тул в итоге починил, ты убедился, что в ТГ-сообщениях, ",
-      "step_label": "B",
-      "step": 2,
-      "total": 4,
-      "events": 34,
-      "trail": [
-        {
-          "ts": 1795549028,
-          "label": "TOOL"
-        }
-      ],
-      "started_at": 1795549012,
-      "updated_at": 1795549325
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795549374,
+      "updated_at": 1795549384
     },
     {
-      "key": "req-20261124-224000-b211e3",
+      "key": "req-20261124-224254-e3b175",
       "session_id": "",
       "source": "task",
       "label": "У меня весь тг миниап находится в приватной репе на гитхабе,",
-      "step_label": "A",
+      "step_label": "ПроверитьПравкуТулаИСвежестьДоказательств",
       "step": 1,
       "total": 4,
-      "events": 9,
+      "events": 1,
       "trail": [
         {
-          "ts": 1795549225,
-          "label": "TOOL"
+          "ts": 1795549385,
+          "label": "SYNC · suspicion-gate"
         }
       ],
-      "started_at": 1795549201,
-      "updated_at": 1795549323
+      "started_at": 1795549375,
+      "updated_at": 1795549386
     },
     {
-      "key": "req-20261124-224049-1445ae",
+      "key": "req-20261124-224255-a01a33",
       "session_id": "",
       "source": "task",
       "label": "Снова tool \"🤖 ⏳ Шаг 1/4 · ██░░░░░░░░ · A · параллельно · 26с",
-      "step_label": "разобраться с tool-спамом",
-      "step": 1,
-      "total": 5,
-      "events": 6,
-      "trail": [
-        {
-          "ts": 1795549275,
-          "label": "TOOL"
-        }
-      ],
-      "started_at": 1795549251,
-      "updated_at": 1795549323
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795549376,
+      "updated_at": 1795549386
     },
     {
-      "key": "req-20261124-224151-f0b1bb",
+      "key": "req-20261124-224256-8a54c5",
       "session_id": "",
       "source": "task",
       "label": "Ну так сделай restart плюс не шли ничего в резервный канал б",
@@ -2094,8 +2096,8 @@
       "total": null,
       "events": 0,
       "trail": [],
-      "started_at": 1795549317,
-      "updated_at": 1795549324
+      "started_at": 1795549376,
+      "updated_at": 1795549386
     }
   ],
   "bars": [
@@ -2144,6 +2146,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 2.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795549325,
-  "fetched_human": "2026-11-24 22:42:05 +0300"
+  "fetched_at": 1795549387,
+  "fetched_human": "2026-11-24 22:43:07 +0300"
 }
