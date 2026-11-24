@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T17:08:40+00:00",
-  "generated_human": "24.11 17:08 UTC",
-  "as_of": 1795540119960,
+  "generated": "2026-11-24T17:09:48+00:00",
+  "generated_human": "24.11 17:09 UTC",
+  "as_of": 1795540185462,
   "stale_days": 1,
   "count": 1045,
   "groups": 9,
@@ -40,26 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-Z4eGDoQu4M",
-     "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795540113000,
-     "source": "session",
-     "title": "Малый радар в новом FACEIT-корпусе",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0",
-      "w2611200052460530",
-      "w2611200052465da0"
-     ],
-     "as_of": 1795540113000,
-     "is_stale": false
-    },
-    {
      "id": "ses-LZLBwmWWca",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15587. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwuxxrsqxwnh: R02CR: малый радар в новых FACEIT-демо-корпусах C06-23318/23350. Где: goals.json · Проверить буквальный гейт small_radar ∧ allplayers>0 на двух корпусах, созданных 14:34Z после R02CQ. Prereg R02CR-23318-23350-NEWCORPUS зафиксирован 1 В конце вызови tools.goals.track({action:'done', id:'gmwuxxrsqxwnh', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15587_run23369.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795540111000,
+     "ts": 1795540183000,
      "source": "session",
      "title": "AU15587: small_radar в C06-23318/23350",
      "source_label": "ноут",
@@ -71,7 +54,24 @@
       "w2611200052460530",
       "w2611200052465da0"
      ],
-     "as_of": 1795540111000,
+     "as_of": 1795540183000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-Z4eGDoQu4M",
+     "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
+     "ts": 1795540145000,
+     "source": "session",
+     "title": "Малый радар в новом FACEIT-корпусе",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200052465da0"
+     ],
+     "as_of": 1795540145000,
      "is_stale": false
     },
     {
