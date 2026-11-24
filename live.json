@@ -1946,11 +1946,19 @@
   ],
   "active": [
     {
+      "id": "session-04e1df5b",
+      "title": "Скилл для быстрого ревью кода",
+      "source": "dsh",
+      "claimed_human": "23:41:49",
+      "age_min": 0,
+      "full": "Скилл для быстрого ревью кода"
+    },
+    {
       "id": "session-d66b31b8",
       "title": "что по работе со сканф",
       "source": "dsh",
       "claimed_human": "23:35:32",
-      "age_min": 5,
+      "age_min": 6,
       "full": "что по работе со сканф"
     },
     {
@@ -1958,7 +1966,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 213,
+      "age_min": 214,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1966,7 +1974,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 234,
+      "age_min": 235,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1974,7 +1982,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 235,
+      "age_min": 236,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2005,12 +2013,8 @@
       "step_label": "РИЧ",
       "step": 3,
       "total": 4,
-      "events": 83,
+      "events": 84,
       "trail": [
-        {
-          "ts": 1795552717,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795552728,
           "label": "EDIT · /home/nyaka/.conf"
@@ -2054,10 +2058,14 @@
         {
           "ts": 1795552869,
           "label": "BASH · systemctl --user "
+        },
+        {
+          "ts": 1795552926,
+          "label": "SYNC · answer-integrity"
         }
       ],
       "started_at": 1795551783,
-      "updated_at": 1795552869
+      "updated_at": 1795552926
     },
     {
       "key": "req-20261124-233514-8b39be",
@@ -2067,12 +2075,8 @@
       "step_label": "E",
       "step": 1,
       "total": 5,
-      "events": 26,
+      "events": 27,
       "trail": [
-        {
-          "ts": 1795552713,
-          "label": "BASH · echo \"=== CONFLIC"
-        },
         {
           "ts": 1795552732,
           "label": "WRITE · /home/nyaka/shar"
@@ -2116,10 +2120,14 @@
         {
           "ts": 1795552857,
           "label": "BASH · echo \"=== PROCS ="
+        },
+        {
+          "ts": 1795552909,
+          "label": "BASH · python3 - <<'PY'"
         }
       ],
       "started_at": 1795552515,
-      "updated_at": 1795552866
+      "updated_at": 1795552924
     },
     {
       "key": "req-20261124-233543-0dd3ca",
@@ -2129,12 +2137,8 @@
       "step_label": "честно ответить",
       "step": 3,
       "total": 3,
-      "events": 14,
+      "events": 15,
       "trail": [
-        {
-          "ts": 1795552683,
-          "label": "BASH · echo \"=== game wa"
-        },
         {
           "ts": 1795552683,
           "label": "BASH · grep -rniE 'SetFo"
@@ -2178,10 +2182,14 @@
         {
           "ts": 1795552826,
           "label": "BASH · echo \"=== synced "
+        },
+        {
+          "ts": 1795552883,
+          "label": "WRITE · /tmp/opencode/dr"
         }
       ],
       "started_at": 1795552543,
-      "updated_at": 1795552858
+      "updated_at": 1795552915
     },
     {
       "key": "req-20261124-233601-9fa49e",
@@ -2191,12 +2199,8 @@
       "step_label": "найти кто крадёт фокус",
       "step": 2,
       "total": 4,
-      "events": 16,
+      "events": 17,
       "trail": [
-        {
-          "ts": 1795552683,
-          "label": "WRITE · /tmp/opencode/di"
-        },
         {
           "ts": 1795552683,
           "label": "BASH · cd ~/pc-bridge &&"
@@ -2240,10 +2244,14 @@
         {
           "ts": 1795552857,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795552909,
+          "label": "BASH · python3 -c \"impor"
         }
       ],
       "started_at": 1795552566,
-      "updated_at": 1795552857
+      "updated_at": 1795552909
     }
   ],
   "bars": [
@@ -2292,6 +2300,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795552871,
-  "fetched_human": "2026-11-24 23:41:11 +0300"
+  "fetched_at": 1795552934,
+  "fetched_human": "2026-11-24 23:42:14 +0300"
 }
