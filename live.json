@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 334,
+      "age_min": 335,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 355,
+      "age_min": 356,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,24 +1966,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 356,
+      "age_min": 357,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
-    },
-    {
-      "id": "AU15590",
-      "title": "ДОВЕСТИ ЦЕЛЬ gmwv9ymhp1g1u: C05-27189: dot_quality под cyan — числовой гейт PASS, свежие кадры OPEN",
-      "source": "ноут",
-      "claimed_human": "01:38:14",
-      "age_min": 3,
-      "full": "ДОВЕСТИ ЦЕЛЬ gmwv9ymhp1g1u: C05-27189: dot_quality под cyan — числовой гейт PASS, свежие кадры OPEN",
-      "autogen": true
     }
   ],
   "queues": {
     "ноут": {
-      "done": 1478,
-      "failed": 151,
-      "doing": 1
+      "done": 1479,
+      "failed": 151
     },
     "ПК": {
       "done": 81,
@@ -2006,16 +1996,8 @@
       "step_label": "стенд",
       "step": 2,
       "total": 5,
-      "events": 70,
+      "events": 71,
       "trail": [
-        {
-          "ts": 1795560026,
-          "label": "EDIT · /home/nyaka/diag_"
-        },
-        {
-          "ts": 1795560035,
-          "label": "EDIT · /home/nyaka/diag_"
-        },
         {
           "ts": 1795560043,
           "label": "EDIT · /home/nyaka/diag_"
@@ -2055,10 +2037,18 @@
         {
           "ts": 1795560129,
           "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795560172,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795560197,
+          "label": "BASH · cd /home/nyaka &&"
         }
       ],
       "started_at": 1795559357,
-      "updated_at": 1795560129
+      "updated_at": 1795560197
     },
     {
       "key": "req-20261125-013600-07ae98",
@@ -2068,16 +2058,8 @@
       "step_label": "Проверка вживую",
       "step": 4,
       "total": 4,
-      "events": 38,
+      "events": 39,
       "trail": [
-        {
-          "ts": 1795560032,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795560045,
-          "label": "BASH · stat -c '%i %s %y"
-        },
         {
           "ts": 1795560045,
           "label": "THINK"
@@ -2117,10 +2099,18 @@
         {
           "ts": 1795560124,
           "label": "BASH · cd /tmp/opencode "
+        },
+        {
+          "ts": 1795560159,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795560183,
+          "label": "BASH · mkdir -p /tmp/ope"
         }
       ],
       "started_at": 1795559760,
-      "updated_at": 1795560131
+      "updated_at": 1795560183
     },
     {
       "key": "req-20261125-013912-18100a",
@@ -2130,16 +2120,8 @@
       "step_label": "Добавить вкладку Библиотека со статьёй",
       "step": 3,
       "total": 4,
-      "events": 11,
+      "events": 12,
       "trail": [
-        {
-          "ts": 1795560081,
-          "label": "BASH · grep -rn \"tg-mini"
-        },
-        {
-          "ts": 1795560082,
-          "label": "THINK"
-        },
         {
           "ts": 1795560093,
           "label": "BASH · ls -la ~/runtime/"
@@ -2179,10 +2161,18 @@
         {
           "ts": 1795560130,
           "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795560172,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795560197,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795559978,
-      "updated_at": 1795560130
+      "updated_at": 1795560197
     }
   ],
   "bars": [
@@ -2231,6 +2221,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 5.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795560134,
-  "fetched_human": "2026-11-25 01:42:14 +0300"
+  "fetched_at": 1795560199,
+  "fetched_human": "2026-11-25 01:43:19 +0300"
 }
