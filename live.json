@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 273,
+      "age_min": 274,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 294,
+      "age_min": 296,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,14 +1966,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 295,
+      "age_min": 296,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
+    },
+    {
+      "id": "session-b73e87b7",
+      "title": "Сессия без названия",
+      "source": "dsh",
+      "claimed_human": "00:42:18",
+      "age_min": 0,
+      "full": "Сессия без названия"
     },
     {
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "00:41:12",
+      "claimed_human": "00:42:15",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
     }
@@ -2007,10 +2015,6 @@
       "total": 4,
       "events": 14,
       "trail": [
-        {
-          "ts": 1795555925,
-          "label": "GREP · /home/nyaka/docs"
-        },
         {
           "ts": 1795555949,
           "label": "BASH · grep -n \"session\\"
@@ -2054,10 +2058,14 @@
         {
           "ts": 1795556431,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795556524,
+          "label": "BASH · python3 - <<'PY'"
         }
       ],
       "started_at": 1795555833,
-      "updated_at": 1795556479
+      "updated_at": 1795556524
     },
     {
       "key": "req-20261125-003308-c1ad42",
@@ -2069,10 +2077,6 @@
       "total": 4,
       "events": 4,
       "trail": [
-        {
-          "ts": 1795556049,
-          "label": "READ · /home/nyaka/.conf"
-        },
         {
           "ts": 1795556074,
           "label": "BASH · python3 ~/.config"
@@ -2116,10 +2120,14 @@
         {
           "ts": 1795556419,
           "label": "BASH · ls -la ~/.config/"
+        },
+        {
+          "ts": 1795556512,
+          "label": "BASH · for f in ~/.confi"
         }
       ],
       "started_at": 1795555997,
-      "updated_at": 1795556476
+      "updated_at": 1795556521
     },
     {
       "key": "req-20261125-003704-651829",
@@ -2146,10 +2154,14 @@
         {
           "ts": 1795556408,
           "label": "BASH · ls -la ~/shared-r"
+        },
+        {
+          "ts": 1795556501,
+          "label": "SYNC · backend-latency-p"
         }
       ],
       "started_at": 1795556242,
-      "updated_at": 1795556455
+      "updated_at": 1795556501
     },
     {
       "key": "req-20261125-003804-57a5a6",
@@ -2159,7 +2171,7 @@
       "step_label": "поиск контекста",
       "step": 1,
       "total": 5,
-      "events": 2,
+      "events": 4,
       "trail": [
         {
           "ts": 1795556397,
@@ -2168,10 +2180,18 @@
         {
           "ts": 1795556438,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795556485,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795556529,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795556312,
-      "updated_at": 1795556447
+      "updated_at": 1795556539
     }
   ],
   "bars": [
@@ -2220,6 +2240,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 4.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795556479,
-  "fetched_human": "2026-11-25 00:41:19 +0300"
+  "fetched_at": 1795556544,
+  "fetched_human": "2026-11-25 00:42:24 +0300"
 }
