@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-24T01:50:30+00:00",
-  "generated_human": "24.11 01:50 UTC",
-  "as_of": 1795485030053,
+  "generated": "2026-11-24T01:51:29+00:00",
+  "generated_human": "24.11 01:51 UTC",
+  "as_of": 1795485089889,
   "stale_days": 1,
   "count": 1066,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-ZhkNfKJWdG",
      "text": "РАДАР. Новый источник: 307 dust2-матчей из 78-top1000-dust2-ingest.md. Построить НОВЫЙ набор кадров (не старые 20/92) и проверить cyan-детектор врагов с GT по spectator-GSI allplayers. Гейт до прогона: recall > 0.50 при FP < 0.10 на n >= 100. Не переоткрывать «красный = враг» и малый радар (64, 89, MASTERPLAN-v2 §2.1). Новый отчёт ~/overnight/cloud_tracks/C01-16449.md: факт/расчёт/интерпретация/неизвестно, n, Wilson CI; отрицательный результат фиксировать так же. Не трогать data/ и чужие отчёты. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795485023000,
+     "ts": 1795485085000,
      "source": "session",
      "title": "Проверка cyan-детектора на Dust2",
      "source_label": "ноут",
@@ -61,13 +61,13 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795485023000,
+     "as_of": 1795485085000,
      "is_stale": true
     },
     {
      "id": "ses-vKN8YYG1Nj",
      "text": "ЗАДАЧА-ПИСАТЕЛЬ. Не меняй pc-bridge и не отправляй задачи на ПК. Проверь логику /home/nyaka/Documents/deepseek-harness/default-workspace/s03gt_capture_watch_v2.py на трёх синтетических объектах в /tmp: (1) allplayers_n=10 → триггер должен сработать; (2) allplayers_n=0 → не сработать; (3) allplayers_n=10 с mtime старше 150 с → не сработать. Импортируй модуль через importlib.util и вызови ap_value/find_trigger с подменённым INBOX на временную директорию; ничего не записывай в ~/pc-bridge. Создай новый JSON-артефакт /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-WATCHER-VERIFY-<суффикс>.json с полями VERDICT (PASS только если все три кейса прошли), cases, commands, paths, limitations. Сам запусти verify_cmd и добейся rc=0; выведи PROMISE: DONE и путь файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-WATCHER-VERIFY-c1067.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795485020000,
+     "ts": 1795485056000,
      "source": "session",
      "title": "lree-SFC-WATCHER-VERIFY-c1067",
      "source_label": "ноут",
@@ -86,7 +86,7 @@
      "answer_text_id": "2cb2745b52dd72e2",
      "answer_source": "replies.json",
      "delivered_ts": 1795396489521,
-     "as_of": 1795485020000,
+     "as_of": 1795485056000,
      "is_stale": true
     },
     {
