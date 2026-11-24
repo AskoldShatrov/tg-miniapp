@@ -1779,7 +1779,7 @@
       "id": "T29.8",
       "title": "S8 CV: 20+ физических кадров (180 из UNBLK1)",
       "status": "done",
-      "note": "180 физических кадров UNBLK1 изолированы в ~/scanfeed/data/realgt_batch/unblk1_frames, манифест sha256 9e46fa20d8f6c13e883a070f82e46fe62f8d6e21e88114d95061b7560ce2201e, архив sha256 b3b41050977a4531cd774392db8dce799e40774f7b6b6f7c42d14f9d3892e7d6; УТОЧНЕНО 25.11: UNBLK1 = 1 уникальное состояние эталона на 180 кадрах (не 180 независимых состояний) — 180 кадров и 900 координат не дают 180 независимых GT-наблюдений; формулировку «180/180 кадров с живыми врагами» понимать как одно состояние, повторённое 180 раз.",
+      "note": "180 физических кадров UNBLK1 изолированы в ~/scanfeed/data/realgt_batch/unblk1_frames, манифест sha256 9e46fa20d8f6c13e883a070f82e46fe62f8d6e21e88114d95061b7560ce2201e, архив sha256 b3b41050977a4531cd774392db8dce799e40774f7b6b6f7c42d14f9d3892e7d6; в truth 180/180 кадров с живыми врагами и координатами, 900 координат. УТОЧНЕНО 25.11: UNBLK1 = 1 уникальное состояние эталона на 180 кадрах (не 180 независимых состояний) — 180 кадров и 900 координат не дают 180 независимых GT-наблюдений; формулировку «180/180 кадров с живыми врагами» понимать как одно состояние, повторённое 180 раз.",
       "startedAt": "2026-11-22T23:02:19+03:00",
       "updatedAt": "2026-11-24T00:54:31+03:00",
       "completedAt": "2026-11-24T00:54:31+03:00"
@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 389,
+      "age_min": 390,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 410,
+      "age_min": 411,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 411,
+      "age_min": 412,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     }
   ],
@@ -1996,32 +1996,8 @@
       "step_label": "Сверить время и живой фид",
       "step": 1,
       "total": 4,
-      "events": 8,
+      "events": 12,
       "trail": [
-        {
-          "ts": 1795563220,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795563221,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563243,
-          "label": "BASH · ps -eo pid,lstart"
-        },
-        {
-          "ts": 1795563244,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795563287,
-          "label": "WRITE · /home/nyaka/docs"
-        },
-        {
-          "ts": 1795563287,
-          "label": "THINK"
-        },
         {
           "ts": 1795563318,
           "label": "EDIT · /home/nyaka/docs/"
@@ -2045,10 +2021,34 @@
         {
           "ts": 1795563394,
           "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795563457,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563488,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795563489,
+          "label": "BASH · mv '/home/nyaka/d"
+        },
+        {
+          "ts": 1795563489,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563489,
+          "label": "EDIT · /tmp/opencode/dra"
+        },
+        {
+          "ts": 1795563489,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795563160,
-      "updated_at": 1795563423
+      "updated_at": 1795563494
     },
     {
       "key": "req-20261125-023418-df3023",
@@ -2058,105 +2058,183 @@
       "step_label": "B",
       "step": 1,
       "total": 5,
-      "events": 10,
+      "events": 22,
       "trail": [
         {
-          "ts": 1795563311,
+          "ts": 1795563490,
           "label": "THINK"
         },
         {
-          "ts": 1795563319,
-          "label": "BASH · curl -sSL --max-t"
+          "ts": 1795563490,
+          "label": "BASH · cd ~/shared-repo/"
         },
         {
-          "ts": 1795563319,
-          "label": "BASH · ~/bin/invento sta"
-        },
-        {
-          "ts": 1795563320,
-          "label": "BASH · ~/bin/smartnet ch"
-        },
-        {
-          "ts": 1795563320,
+          "ts": 1795563490,
           "label": "THINK"
         },
         {
-          "ts": 1795563336,
-          "label": "BASH · mkdir -p /tmp/ope"
+          "ts": 1795563490,
+          "label": "BASH · cd ~/shared-repo/"
         },
         {
-          "ts": 1795563336,
+          "ts": 1795563490,
           "label": "THINK"
         },
         {
-          "ts": 1795563354,
+          "ts": 1795563490,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795563490,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795563490,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563490,
           "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795563354,
+          "ts": 1795563490,
           "label": "THINK"
         },
         {
-          "ts": 1795563362,
-          "label": "BASH · cd /tmp/opencode/"
+          "ts": 1795563491,
+          "label": "BASH · ~/bin/invento sta"
         },
         {
-          "ts": 1795563362,
+          "ts": 1795563491,
           "label": "THINK"
-        },
-        {
-          "ts": 1795563379,
-          "label": "BASH · cd /tmp/opencode/"
         }
       ],
       "started_at": 1795563259,
-      "updated_at": 1795563409
+      "updated_at": 1795563492
     },
     {
       "key": "req-20261125-023553-4e8062",
       "session_id": "",
       "source": "task",
       "label": "У тебя есть в библиотеке скилл добавь его пж я хочу пройти и",
-      "step_label": "Загрузка скиллов и поиск прошлого контекста",
-      "step": 1,
+      "step_label": "Проверка карты фиш Invento по источникам",
+      "step": 2,
       "total": 4,
-      "events": 1,
+      "events": 11,
       "trail": [
         {
-          "ts": 1795563369,
-          "label": "SYNC · invento-rs"
+          "ts": 1795563489,
+          "label": "BASH · sed -n '1031,1090"
         },
         {
-          "ts": 1795563369,
-          "label": "SYNC · strange-question"
+          "ts": 1795563489,
+          "label": "BASH · opencode api sess"
         },
         {
-          "ts": 1795563369,
-          "label": "BASH · ls ~/.config/open"
+          "ts": 1795563489,
+          "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795563369,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795563369,
+          "ts": 1795563489,
           "label": "THINK"
         },
         {
-          "ts": 1795563378,
-          "label": "READ · /home/nyaka/.conf"
+          "ts": 1795563489,
+          "label": "BASH · sed -n '60,130p' "
         },
         {
-          "ts": 1795563395,
-          "label": "BASH · grep -i -n \"inven"
+          "ts": 1795563489,
+          "label": "BASH · sed -n '1143,1195"
         },
         {
-          "ts": 1795563428,
-          "label": "BASH · python3 ~/.config"
+          "ts": 1795563489,
+          "label": "BASH · python3 -c 'impor"
+        },
+        {
+          "ts": 1795563489,
+          "label": "BASH · opencode api sess"
+        },
+        {
+          "ts": 1795563489,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563489,
+          "label": "BASH · opencode api GET "
+        },
+        {
+          "ts": 1795563489,
+          "label": "BASH · ls -la ~/.config/"
+        },
+        {
+          "ts": 1795563489,
+          "label": "THINK"
         }
       ],
       "started_at": 1795563353,
-      "updated_at": 1795563428
+      "updated_at": 1795563494
+    },
+    {
+      "key": "req-20261125-023653-f53b36",
+      "session_id": "",
+      "source": "task",
+      "label": "Выключи гейм мод и делай сканфид",
+      "step_label": "продвинуть задачу",
+      "step": 3,
+      "total": 4,
+      "events": 6,
+      "trail": [
+        {
+          "ts": 1795563490,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563490,
+          "label": "BASH · cd /home/nyaka/sc"
+        },
+        {
+          "ts": 1795563490,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563490,
+          "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795563490,
+          "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795563490,
+          "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795563490,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563490,
+          "label": "SYNC · hypothesis-check"
+        },
+        {
+          "ts": 1795563490,
+          "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795563490,
+          "label": "BASH · find /home/nyaka "
+        },
+        {
+          "ts": 1795563490,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795563492,
+          "label": "READ · /home/nyaka/overn"
+        }
+      ],
+      "started_at": 1795563440,
+      "updated_at": 1795563492
     }
   ],
   "bars": [
@@ -2205,6 +2283,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 6.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795563431,
-  "fetched_human": "2026-11-25 02:37:11 +0300"
+  "fetched_at": 1795563494,
+  "fetched_human": "2026-11-25 02:38:14 +0300"
 }
