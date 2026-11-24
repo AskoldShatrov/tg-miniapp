@@ -1716,10 +1716,11 @@
       "task": "T29",
       "id": "T29.1",
       "title": "S1 Данные: 9 -> >=60 кадров, >3 карты, SHA заморожены",
-      "status": "blocked",
-      "note": "Владелец — конкретная сессия DSH session-69b78e67..., не безличная вахта. Есть свежие REAL-кадры spirit-vs-furia-m2-dust2: 413 пар, allplayers=10, spectator, demo_id и sha в coordination/real_demo_proof_20261124.json; не хватает >3 карт и замороженных SHA. Пороги не двигать.",
+      "status": "done",
+      "note": "PASS по гейту: 4 карты (dust2/anubis/nuke/cache), 60/60/70/70 пар, реальные demo_id, 10 steamid на каждый запуск, SHA демок заморожены; proof-кадры проверены через read_image",
       "startedAt": "2026-11-22T10:24:42+03:00",
-      "updatedAt": "2026-11-24T17:07:27+03:00"
+      "updatedAt": "2026-11-24T18:09:38+03:00",
+      "completedAt": "2026-11-24T18:09:38+03:00"
     },
     {
       "task": "T29",
@@ -1948,7 +1949,7 @@
       "id": "session-0de35ba9",
       "title": "Анализ видео КС2: экономика и мувы",
       "source": "dsh",
-      "claimed_human": "18:08:36",
+      "claimed_human": "18:09:53",
       "age_min": 0,
       "full": "Анализ видео КС2: экономика и мувы"
     },
@@ -1956,17 +1957,9 @@
       "id": "session-69b78e67",
       "title": "продолжи вкладку и це",
       "source": "dsh",
-      "claimed_human": "18:08:24",
+      "claimed_human": "18:09:48",
       "age_min": 0,
       "full": "продолжи вкладку и це"
-    },
-    {
-      "id": "T29/T29.1",
-      "title": "S1 Данные: 9 -> >=60 кадров, >3 карты, SHA заморожены",
-      "source": "progress",
-      "claimed_human": "17:07:27",
-      "age_min": 61,
-      "full": "Владелец — конкретная сессия DSH session-69b78e67..., не безличная вахта. Есть свежие REAL-кадры spirit-vs-furia-m2-dust2: 413 пар, allplayers=10, spectator, demo_id и sha в coordination/real_demo_proof_20261124.json; не хватает >3 карт и замороженных SHA. Пороги не двигать."
     }
   ],
   "queues": {
@@ -1988,16 +1981,6 @@
   },
   "runs": [],
   "bars": [
-    {
-      "key": "task:T29",
-      "label": "T29 · Сканфид",
-      "done": 4,
-      "total": 9,
-      "unit": "шагов",
-      "color": "red",
-      "source": "progress.json",
-      "updated_at": "2026-11-24T17:07:27+03:00"
-    },
     {
       "key": "captions",
       "label": "Английские субтитры",
@@ -2029,10 +2012,10 @@
       "updated_at": "2026-11-24T10:16:32+03:00"
     }
   ],
-  "updatedAt": "2026-11-24T17:07:27+03:00",
-  "progress_updated_at": "2026-11-24T17:07:27+03:00",
-  "plan_age_hours": 1.0,
+  "updatedAt": "2026-11-24T18:09:38+03:00",
+  "progress_updated_at": "2026-11-24T18:09:38+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795532935,
-  "fetched_human": "2026-11-24 18:08:55 +0300"
+  "fetched_at": 1795532995,
+  "fetched_human": "2026-11-24 18:09:55 +0300"
 }
