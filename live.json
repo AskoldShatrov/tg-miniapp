@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 277,
+      "age_min": 278,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 299,
+      "age_min": 300,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,14 +1966,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 299,
+      "age_min": 300,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     },
     {
       "id": "session-b73e87b7",
       "title": "Причина сбоя мини-приложения",
       "source": "dsh",
-      "claimed_human": "00:45:29",
+      "claimed_human": "00:46:29",
       "age_min": 0,
       "full": "Причина сбоя мини-приложения"
     },
@@ -1981,9 +1981,17 @@
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "00:44:43",
+      "claimed_human": "00:46:24",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
+    },
+    {
+      "id": "session-d66b31b8",
+      "title": "что по работе со сканф",
+      "source": "dsh",
+      "claimed_human": "00:46:16",
+      "age_min": 0,
+      "full": "что по работе со сканф"
     }
   ],
   "queues": {
@@ -2015,10 +2023,6 @@
       "total": 4,
       "events": 16,
       "trail": [
-        {
-          "ts": 1795555972,
-          "label": "BASH · head -20 ~/.confi"
-        },
         {
           "ts": 1795555996,
           "label": "BASH · python3 - <<'PY'"
@@ -2062,10 +2066,14 @@
         {
           "ts": 1795556611,
           "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795556733,
+          "label": "BASH · python3 - <<'PY'"
         }
       ],
       "started_at": 1795555833,
-      "updated_at": 1795556708
+      "updated_at": 1795556766
     },
     {
       "key": "req-20261125-003308-c1ad42",
@@ -2077,10 +2085,6 @@
       "total": 4,
       "events": 5,
       "trail": [
-        {
-          "ts": 1795556168,
-          "label": "SYNC · tg-bot-ui"
-        },
         {
           "ts": 1795556193,
           "label": "BASH · grep -rn --includ"
@@ -2124,10 +2128,14 @@
         {
           "ts": 1795556717,
           "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795556777,
+          "label": "READ · /home/nyaka/scanf"
         }
       ],
       "started_at": 1795555997,
-      "updated_at": 1795556717
+      "updated_at": 1795556777
     },
     {
       "key": "req-20261125-003704-651829",
@@ -2166,10 +2174,14 @@
         {
           "ts": 1795556638,
           "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795556758,
+          "label": "BASH · cd ~/shared-repo/"
         }
       ],
       "started_at": 1795556242,
-      "updated_at": 1795556699
+      "updated_at": 1795556758
     },
     {
       "key": "req-20261125-003804-57a5a6",
@@ -2204,10 +2216,14 @@
         {
           "ts": 1795556676,
           "label": "SYNC · tg-bot-ui"
+        },
+        {
+          "ts": 1795556739,
+          "label": "SYNC · dsh-web-tabs"
         }
       ],
       "started_at": 1795556312,
-      "updated_at": 1795556688
+      "updated_at": 1795556749
     },
     {
       "key": "req-20261125-004149-6f349e",
@@ -2217,7 +2233,7 @@
       "step_label": "Проверка свежести лайв-фида",
       "step": 1,
       "total": 5,
-      "events": 2,
+      "events": 3,
       "trail": [
         {
           "ts": 1795556665,
@@ -2226,10 +2242,14 @@
         {
           "ts": 1795556722,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795556784,
+          "label": "BASH · systemctl --user "
         }
       ],
       "started_at": 1795556549,
-      "updated_at": 1795556722
+      "updated_at": 1795556784
     }
   ],
   "bars": [
@@ -2278,6 +2298,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 4.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795556731,
-  "fetched_human": "2026-11-25 00:45:31 +0300"
+  "fetched_at": 1795556792,
+  "fetched_human": "2026-11-25 00:46:32 +0300"
 }
