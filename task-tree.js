@@ -210,7 +210,8 @@
   function barTask(bar){
     var d = liveJobs();
     var key = normId(bar.getAttribute("data-bar-key"));
-    var label = (bar.getAttribute("data-bar-label") || "").trim();
+    var label = (bar.getAttribute("data-bar-label") ||
+                 (bar.querySelector(".pbar-head b") || {}).textContent || "").trim();
     if(!d) return {id: key || label, title: label || "задача", source: "live.json",
                    kind: "bar", raw: {}};
     var pools = [
@@ -536,8 +537,12 @@
       return '<div class="tt-kv"><b>' + esc(p[0]) + '</b><span>' + esc(p[1] || "—") + '</span></div>';
     }).join("") + '</div></section>';
 
+    html += '<section class="tt-sec"><div class="tt-eyebrow">Живая лента инструментов</div>' +
+      '<div class="tt-card" id="ttTools"><div class="tt-empty">Загружаю…</div></div></section>';
+
     html += '<div class="tt-foot">данные: live.json · process_api · tree.json · Esc — закрыть</div>';
     body.innerHTML = html;
     bindFilters(events);
+    startTools(task);
   }
 })();
