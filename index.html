@@ -2785,6 +2785,7 @@ function renderLive(){
   if(bars){
     const c=d.corpus||{};
     const rows=[];
+    const hasBar=(k)=>(d.bars||[]).some(b=>b.key===k);
     const add=(label,done,total,color)=>{
       const n=Number(done)||0, N=Number(total)||0;
       if(!N) return;
@@ -2807,7 +2808,7 @@ function renderLive(){
         `<div class="pbar-track"><div class="pbar-fill c-${color}" style="width:${pct}%"></div></div></div>`);
     });
     add("Транскрипции корпуса",c.done,c.total,"green");
-    add("Английские субтитры",c.captions_done,c.captions_total,"blue");
+    if(!hasBar("captions")) add("Английские субтитры",c.captions_done,c.captions_total,"blue");
     const allSteps=d.tasks||[];
     add("Шаги плана",allSteps.filter(s=>s.status==="done").length,allSteps.length,"yellow");
     bars.innerHTML=rows.join("");
