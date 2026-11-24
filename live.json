@@ -1949,7 +1949,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwud00wr6jml: R02CQ: малый радар в новом FACEIT-демо-корпусе C06-16454 — гейт ПРОВАЛЕН (k=0/3855)",
       "source": "ноут",
       "claimed_human": "10:15:04",
-      "age_min": 0,
+      "age_min": 1,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwud00wr6jml: R02CQ: малый радар в новом FACEIT-демо-корпусе C06-16454 — гейт ПРОВАЛЕН (k=0/3855)",
       "autogen": true
     }
@@ -1966,17 +1966,48 @@
     }
   },
   "corpus": {
-    "done": 425,
+    "done": 427,
     "total": 494,
-    "captions_done": 127,
+    "captions_done": 129,
     "captions_total": 195,
     "source": "cs2-transcribe/state.db"
   },
-  "bars": [],
+  "bars": [
+    {
+      "key": "captions",
+      "label": "Английские субтитры",
+      "done": 127,
+      "total": 195,
+      "unit": "роликов",
+      "color": "blue",
+      "source": "09_captions_only.py",
+      "updated_at": "2026-11-24T10:16:32+03:00"
+    },
+    {
+      "key": "claims",
+      "label": "Утверждения из субтитров",
+      "done": 68,
+      "total": 68,
+      "unit": "проверено",
+      "color": "green",
+      "source": "EN-VIDEO-CLAIMS",
+      "updated_at": "2026-11-24T10:16:32+03:00"
+    },
+    {
+      "key": "ru-fix",
+      "label": "Русские ролики пересняты",
+      "done": 6,
+      "total": 6,
+      "unit": "роликов",
+      "color": "green",
+      "source": "10_retranscribe_ru.py",
+      "updated_at": "2026-11-24T10:16:32+03:00"
+    }
+  ],
   "updatedAt": "2026-11-24T09:14:53+03:00",
   "progress_updated_at": "2026-11-24T09:14:53+03:00",
   "plan_age_hours": 1.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795504546,
-  "fetched_human": "2026-11-24 10:15:46 +0300"
+  "fetched_at": 1795504615,
+  "fetched_human": "2026-11-24 10:16:55 +0300"
 }

@@ -147,6 +147,8 @@
   .pbar-fill.c-green{background:var(--green)}
   .pbar-fill.c-blue{background:var(--blue)}
   .pbar-fill.c-yellow{background:var(--yellow)}
+  .pbar-fill.c-mauve{background:var(--mauve)}
+  .pbar-fill.c-red{background:var(--red)}
   .pbar:empty{display:none}
   /* @auto:pbar-css:end */
   .qtitle{font-size:17px;font-weight:700;line-height:1.35;margin:0 0 8px}
@@ -2791,6 +2793,19 @@ function renderLive(){
         `<span>${n} / ${N} · ${pct}%</span></div>`+
         `<div class="pbar-track"><div class="pbar-fill c-${color}" style="width:${pct}%"></div></div></div>`);
     };
+    // Дешёвый реестр любых задач: miniapp-progress set <key> <label> <done> <total> ...
+    (d.bars||[]).forEach(b=>{
+      const n=Number(b.done)||0, N=Number(b.total)||0;
+      if(!N) return;
+      const pct=Math.max(0,Math.min(100,Math.round(100*n/N)));
+      const allowed=["green","blue","yellow","mauve","red"];
+      const color=allowed.includes(b.color)?b.color:"blue";
+      const unit=b.unit?" "+esc(b.unit):"";
+      rows.push(`<div class="pbar" title="${esc(b.source||b.key||"")}">`+
+        `<div class="pbar-head"><b>${esc(b.label||b.key||"задача")}</b>`+
+        `<span>${n} / ${N}${unit} · ${pct}%</span></div>`+
+        `<div class="pbar-track"><div class="pbar-fill c-${color}" style="width:${pct}%"></div></div></div>`);
+    });
     add("Транскрипции корпуса",c.done,c.total,"green");
     add("Английские субтитры",c.captions_done,c.captions_total,"blue");
     const allSteps=d.tasks||[];
