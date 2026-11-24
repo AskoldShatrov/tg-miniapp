@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24 07:00",
+ "generated": "2026-11-24 07:30",
  "window": {
-  "start": "2026-11-24T00:02",
-  "end": "2026-11-24T03:56",
+  "start": "2026-11-24T00:06",
+  "end": "2026-11-24T04:26",
   "sessions": 150,
   "roots": 150
  },
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 20,
+   "median_s": 18,
    "max_s": 3601,
-   "last": "2026-11-24T03:56:29.683000+00:00",
+   "last": "2026-11-24T04:26:54.955000+00:00",
    "outcomes": {
-    "error": 40,
-    "done": 103,
+    "error": 43,
+    "done": 100,
     "cancelled": 7
    },
    "example": [
-    "XjBs3SRQ",
-    "i8cHJEP2"
+    "BvkPlOsl",
+    "0goDycmS"
    ],
    "actual": [
     {
@@ -44,7 +44,7 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 37 из 150",
+     "t": "в 39 из 150",
      "d": 1
     },
     {
@@ -56,19 +56,19 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 74 из 150, ≈26 вызовов за раз",
+     "t": "в 73 из 150, ≈26 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 63 из 150, ≈8 вызовов за раз",
+     "t": "в 62 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 62 из 150, ≈8 вызовов за раз",
+     "t": "в 61 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -815,83 +815,83 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 33,
-   "median_s": 503,
+   "runs": 34,
+   "median_s": 493,
    "max_s": 1371,
-   "last": "2026-11-24T03:50:05.076000+00:00",
+   "last": "2026-11-24T04:25:07.778000+00:00",
    "outcomes": {
-    "error": 3,
-    "done": 26,
+    "error": 5,
+    "done": 25,
     "cancelled": 4
    },
    "example": [
-    "kacx3Uce",
-    "XjBs3SRQ"
+    "BpogTu2O",
+    "BvkPlOsl"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 33"
+     "t": "запусков: 34"
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 8 из 33",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 30 из 33",
+     "t": "в 10 из 34",
      "d": 1
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 27 из 33",
+     "t": "в 29 из 34",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 30 из 34",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 17 из 33",
+     "t": "в 17 из 34",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 33 из 33, ≈30 вызовов за раз",
+     "t": "в 34 из 34, ≈29 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 30 из 33, ≈9 вызовов за раз",
+     "t": "в 30 из 34, ≈10 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 13 из 33",
+     "t": "в 12 из 34",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 19 из 33",
+     "t": "в 18 из 34",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 31 из 33, ≈9 вызовов за раз",
+     "t": "в 32 из 34, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, code-review, disk-triage, draft-gate, minimal-run-and-audit, progress, resources, subagent-driven-deve",
-     "t": "меньше 7 из 33",
+     "t": "меньше 7 из 34",
      "d": 1
     }
    ],
@@ -959,7 +959,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×43, opencode/iceman-free ×23, opencode/tidepool-alpha-free ×17",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×42, opencode/iceman-free ×23, opencode/tidepool-alpha-free ×17",
    "level": "ok",
    "f": "C13"
   },
@@ -983,7 +983,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 56, с файлами 2",
+   "state": "Владельцев 6, с файлами 2",
    "level": "ok",
    "f": "C11"
   },
