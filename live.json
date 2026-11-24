@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 278,
+      "age_min": 279,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 300,
+      "age_min": 301,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,22 +1966,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 300,
+      "age_min": 301,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
-    },
-    {
-      "id": "session-b73e87b7",
-      "title": "Причина сбоя мини-приложения",
-      "source": "dsh",
-      "claimed_human": "00:46:29",
-      "age_min": 0,
-      "full": "Причина сбоя мини-приложения"
     },
     {
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "00:46:24",
+      "claimed_human": "00:47:29",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
     },
@@ -1989,9 +1981,17 @@
       "id": "session-d66b31b8",
       "title": "что по работе со сканф",
       "source": "dsh",
-      "claimed_human": "00:46:16",
+      "claimed_human": "00:47:28",
       "age_min": 0,
       "full": "что по работе со сканф"
+    },
+    {
+      "id": "session-b73e87b7",
+      "title": "Причина сбоя мини-приложения",
+      "source": "dsh",
+      "claimed_human": "00:47:26",
+      "age_min": 0,
+      "full": "Причина сбоя мини-приложения"
     }
   ],
   "queues": {
@@ -2021,7 +2021,7 @@
       "step_label": "Найти о чём результаты",
       "step": 1,
       "total": 4,
-      "events": 16,
+      "events": 17,
       "trail": [
         {
           "ts": 1795555996,
@@ -2073,7 +2073,7 @@
         }
       ],
       "started_at": 1795555833,
-      "updated_at": 1795556766
+      "updated_at": 1795556826
     },
     {
       "key": "req-20261125-003308-c1ad42",
@@ -2085,10 +2085,6 @@
       "total": 4,
       "events": 5,
       "trail": [
-        {
-          "ts": 1795556193,
-          "label": "BASH · grep -rn --includ"
-        },
         {
           "ts": 1795556241,
           "label": "SUBAGENT · subagent"
@@ -2132,10 +2128,14 @@
         {
           "ts": 1795556777,
           "label": "READ · /home/nyaka/scanf"
+        },
+        {
+          "ts": 1795556837,
+          "label": "READ · /home/nyaka/.conf"
         }
       ],
       "started_at": 1795555997,
-      "updated_at": 1795556777
+      "updated_at": 1795556837
     },
     {
       "key": "req-20261125-003704-651829",
@@ -2145,7 +2145,7 @@
       "step_label": "Проверить подключение MongoDB к харнесу",
       "step": 1,
       "total": 3,
-      "events": 4,
+      "events": 5,
       "trail": [
         {
           "ts": 1795556294,
@@ -2181,7 +2181,7 @@
         }
       ],
       "started_at": 1795556242,
-      "updated_at": 1795556758
+      "updated_at": 1795556818
     },
     {
       "key": "req-20261125-003804-57a5a6",
@@ -2220,10 +2220,14 @@
         {
           "ts": 1795556739,
           "label": "SYNC · dsh-web-tabs"
+        },
+        {
+          "ts": 1795556801,
+          "label": "BASH · ls ~/.config/open"
         }
       ],
       "started_at": 1795556312,
-      "updated_at": 1795556749
+      "updated_at": 1795556810
     },
     {
       "key": "req-20261125-004149-6f349e",
@@ -2233,7 +2237,7 @@
       "step_label": "Проверка свежести лайв-фида",
       "step": 1,
       "total": 5,
-      "events": 3,
+      "events": 1,
       "trail": [
         {
           "ts": 1795556665,
@@ -2249,7 +2253,7 @@
         }
       ],
       "started_at": 1795556549,
-      "updated_at": 1795556784
+      "updated_at": 1795556843
     }
   ],
   "bars": [
@@ -2296,8 +2300,8 @@
   ],
   "updatedAt": "2026-11-24T20:08:01+03:00",
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 4.6,
+  "plan_age_hours": 4.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795556792,
-  "fetched_human": "2026-11-25 00:46:32 +0300"
+  "fetched_at": 1795556852,
+  "fetched_human": "2026-11-25 00:47:32 +0300"
 }
