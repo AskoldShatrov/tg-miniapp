@@ -1949,7 +1949,7 @@
       "id": "session-d66b31b8",
       "title": "что по работе со сканф",
       "source": "dsh",
-      "claimed_human": "23:31:39",
+      "claimed_human": "23:32:36",
       "age_min": 0,
       "full": "что по работе со сканф"
     },
@@ -1958,7 +1958,7 @@
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
       "claimed_human": "23:29:10",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Askold в Telegram Mini App: задержка ответа"
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "Анализ видео и результатов CS2",
       "source": "dsh",
       "claimed_human": "23:26:41",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Анализ видео и результатов CS2"
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 203,
+      "age_min": 204,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 225,
+      "age_min": 226,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 225,
+      "age_min": 226,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2020,12 +2020,8 @@
       "step_label": "Собрать критик-гейт",
       "step": 2,
       "total": 4,
-      "events": 35,
+      "events": 36,
       "trail": [
-        {
-          "ts": 1795551893,
-          "label": "EDIT · /home/nyaka/share"
-        },
         {
           "ts": 1795552029,
           "label": "BASH · cd /home/nyaka &&"
@@ -2069,10 +2065,14 @@
         {
           "ts": 1795552273,
           "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795552326,
+          "label": "EDIT · /home/nyaka/share"
         }
       ],
       "started_at": 1795551635,
-      "updated_at": 1795552300
+      "updated_at": 1795552354
     },
     {
       "key": "req-20261124-232301-a6f0c2",
@@ -2082,16 +2082,8 @@
       "step_label": "НАЙТИ",
       "step": 1,
       "total": 4,
-      "events": 39,
+      "events": 40,
       "trail": [
-        {
-          "ts": 1795552079,
-          "label": "BASH · ps -eo pid,lstart"
-        },
-        {
-          "ts": 1795552095,
-          "label": "BASH · echo \"SESSION=$OP"
-        },
         {
           "ts": 1795552111,
           "label": "BASH · cd ~/shared-repo/"
@@ -2131,10 +2123,18 @@
         {
           "ts": 1795552259,
           "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795552309,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795552361,
+          "label": "BASH · cd ~/shared-repo/"
         }
       ],
       "started_at": 1795551783,
-      "updated_at": 1795552289
+      "updated_at": 1795552361
     },
     {
       "key": "req-20261124-233016-755664",
@@ -2144,7 +2144,7 @@
       "step_label": "Проверить частоту запросов ПауэрШелл",
       "step": 2,
       "total": 3,
-      "events": 4,
+      "events": 5,
       "trail": [
         {
           "ts": 1795552224,
@@ -2189,10 +2189,14 @@
         {
           "ts": 1795552301,
           "label": "BASH · grep -n -iE 'game"
+        },
+        {
+          "ts": 1795552327,
+          "label": "BASH · grep -rn -iE 'gam"
         }
       ],
       "started_at": 1795552216,
-      "updated_at": 1795552301
+      "updated_at": 1795552354
     }
   ],
   "bars": [
@@ -2241,6 +2245,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795552304,
-  "fetched_human": "2026-11-24 23:31:44 +0300"
+  "fetched_at": 1795552365,
+  "fetched_human": "2026-11-24 23:32:45 +0300"
 }
