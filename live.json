@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 281,
+      "age_min": 282,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 303,
+      "age_min": 304,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1966,14 +1966,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 303,
+      "age_min": 304,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
+    },
+    {
+      "id": "session-d66b31b8",
+      "title": "что по работе со сканф",
+      "source": "dsh",
+      "claimed_human": "00:50:24",
+      "age_min": 0,
+      "full": "что по работе со сканф"
     },
     {
       "id": "session-b73e87b7",
       "title": "Причина сбоя мини-приложения",
       "source": "dsh",
-      "claimed_human": "00:49:40",
+      "claimed_human": "00:49:49",
       "age_min": 0,
       "full": "Причина сбоя мини-приложения"
     },
@@ -1982,16 +1990,8 @@
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
       "claimed_human": "00:49:22",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Askold в Telegram Mini App: задержка ответа"
-    },
-    {
-      "id": "session-d66b31b8",
-      "title": "что по работе со сканф",
-      "source": "dsh",
-      "claimed_human": "00:48:58",
-      "age_min": 0,
-      "full": "что по работе со сканф"
     }
   ],
   "queues": {
@@ -2021,36 +2021,8 @@
       "step_label": "Проверить живой фид",
       "step": 1,
       "total": 4,
-      "events": 6,
+      "events": 10,
       "trail": [
-        {
-          "ts": 1795556907,
-          "label": "SYNC · diagnosing-bugs"
-        },
-        {
-          "ts": 1795556907,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795556918,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795556918,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795556932,
-          "label": "GREP · /home/nyaka/share"
-        },
-        {
-          "ts": 1795556932,
-          "label": "GREP · /home/nyaka/share"
-        },
-        {
-          "ts": 1795556932,
-          "label": "THINK"
-        },
         {
           "ts": 1795556944,
           "label": "READ · /home/nyaka/share"
@@ -2070,10 +2042,38 @@
         {
           "ts": 1795556969,
           "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795556983,
+          "label": "GREP · /home/nyaka/share"
+        },
+        {
+          "ts": 1795556986,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557005,
+          "label": "BASH · ls -lt /home/nyak"
+        },
+        {
+          "ts": 1795557017,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795557017,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557029,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795557029,
+          "label": "THINK"
         }
       ],
       "started_at": 1795556891,
-      "updated_at": 1795556980
+      "updated_at": 1795557038
     },
     {
       "key": "req-20261125-004811-0e0e4c",
@@ -2083,59 +2083,59 @@
       "step_label": "Разведкахарнесса",
       "step": 1,
       "total": 5,
-      "events": 5,
+      "events": 9,
       "trail": [
         {
-          "ts": 1795556955,
-          "label": "THINK"
+          "ts": 1795556992,
+          "label": "BASH · grep -n -E 'REMOT"
         },
         {
-          "ts": 1795556962,
-          "label": "BASH · ls -la ~/.config/"
-        },
-        {
-          "ts": 1795556962,
-          "label": "BASH · ls -la ~/.config/"
-        },
-        {
-          "ts": 1795556962,
-          "label": "BASH · ls -la ~/.config/"
-        },
-        {
-          "ts": 1795556963,
-          "label": "BASH · date -u +%FT%TZ; "
-        },
-        {
-          "ts": 1795556963,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795556972,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795556972,
-          "label": "BASH · grep -n -E '\"(plu"
-        },
-        {
-          "ts": 1795556972,
+          "ts": 1795556993,
           "label": "BASH · python3 - <<'PY'"
         },
         {
-          "ts": 1795556972,
-          "label": "BASH · sed -n '1,240p' ~"
+          "ts": 1795556993,
+          "label": "THINK"
         },
         {
-          "ts": 1795556972,
-          "label": "BASH · ls -la ~/scanfeed"
+          "ts": 1795557005,
+          "label": "BASH · journalctl --user"
         },
         {
-          "ts": 1795556972,
+          "ts": 1795557005,
+          "label": "BASH · sed -n '1,120p' ~"
+        },
+        {
+          "ts": 1795557005,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795557005,
+          "label": "BASH · grep -rn -i --inc"
+        },
+        {
+          "ts": 1795557006,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557026,
+          "label": "BASH · sed -n '1,60p' ~/"
+        },
+        {
+          "ts": 1795557026,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795557027,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795557027,
           "label": "THINK"
         }
       ],
       "started_at": 1795556892,
-      "updated_at": 1795556978
+      "updated_at": 1795557038
     },
     {
       "key": "req-20261125-004920-31e32b",
@@ -2145,23 +2145,59 @@
       "step_label": "Диагностика лайв-фида и rich-сообщений",
       "step": 1,
       "total": 4,
-      "events": 1,
+      "events": 6,
       "trail": [
         {
-          "ts": 1795556976,
-          "label": "BASH · cat ~/.config/ope"
+          "ts": 1795556999,
+          "label": "READ · /home/nyaka/share"
         },
         {
-          "ts": 1795556976,
-          "label": "BASH · python3 ~/.config"
+          "ts": 1795556999,
+          "label": "READ · /home/nyaka/share"
         },
         {
-          "ts": 1795556976,
+          "ts": 1795556999,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795556999,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557008,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795557008,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795557008,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557008,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795557021,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557023,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795557023,
+          "label": "BASH · cd ~/shared-repo "
+        },
+        {
+          "ts": 1795557023,
           "label": "THINK"
         }
       ],
       "started_at": 1795556961,
-      "updated_at": 1795556978
+      "updated_at": 1795557037
     }
   ],
   "bars": [
@@ -2210,6 +2246,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 4.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795556981,
-  "fetched_human": "2026-11-25 00:49:41 +0300"
+  "fetched_at": 1795557040,
+  "fetched_human": "2026-11-25 00:50:40 +0300"
 }
