@@ -109,6 +109,19 @@
       "white-space:pre-wrap;word-break:break-word;max-height:150px;overflow:auto}",
     ".tt-answer{font:500 12px/1.6 var(--ff,sans-serif);white-space:pre-wrap;word-break:break-word;" +
       "max-height:240px;overflow:auto;color:var(--text,#cdd6f4)}",
+    "#liveProgressBar .pbar{cursor:pointer;border-radius:9px;padding:5px 6px;margin:0 0 8px}",
+    "#liveProgressBar .pbar:hover{background:rgba(137,180,250,.09)}",
+    "#liveProgressBar .pbar:focus-visible{outline:2px solid var(--blue,#89b4fa)}",
+    ".tt-toolhead{font:600 10px/1.5 var(--fm,monospace);color:var(--overlay2,#9399b2);margin-bottom:9px}",
+    ".tt-tool{display:grid;grid-template-columns:64px 70px 1fr;gap:8px;align-items:center;" +
+      "padding:5px 0;border-bottom:1px solid var(--surface0,#313244)}",
+    ".tt-tool:last-child{border-bottom:0}",
+    ".tt-tool b{font:700 9.5px/1.4 var(--fm,monospace);letter-spacing:.4px;color:var(--sky,#89dceb)}",
+    ".tt-tool b.k-READ{color:var(--blue,#89b4fa)}",
+    ".tt-tool b.k-WRITE,.tt-tool b.k-EDIT{color:var(--green,#a6e3a1)}",
+    ".tt-tool b.k-SYNC{color:var(--lavender,#cba6f7)}",
+    ".tt-tool b.k-BASH{color:var(--yellow,#f9e2af)}",
+    ".tt-tool span{font:600 10px/1.4 var(--fm,monospace);color:var(--subtext1,#bac2de)}",
     ".tt-foot{font:600 9.5px/1.5 var(--fm,monospace);color:var(--overlay0,#6c7086);margin-top:14px;text-align:center}"
   ].join("\n");
   var style = document.createElement("style");
@@ -134,8 +147,15 @@
   document.body.appendChild(panel);
 
   var lastFocus = null, prevOverflow = "", filter = "all", current = null;
+  var toolTimer = null, toolTask = null;
+
+  function stopTools(){
+    if(toolTimer){ clearInterval(toolTimer); toolTimer = null; }
+    toolTask = null;
+  }
 
   function close(){
+    stopTools();
     backdrop.classList.remove("open");
     panel.classList.remove("open");
     document.body.style.overflow = prevOverflow;
