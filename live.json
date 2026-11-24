@@ -1950,7 +1950,7 @@
       "title": "Скилл для быстрого ревью кода",
       "source": "dsh",
       "claimed_human": "23:41:49",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Скилл для быстрого ревью кода"
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 221,
+      "age_min": 222,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 243,
+      "age_min": 244,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 243,
+      "age_min": 244,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -1996,132 +1996,7 @@
     "captions_total": 196,
     "source": "cs2-transcribe/state.db"
   },
-  "runs": [
-    {
-      "key": "req-20261124-233514-8b39be",
-      "session_id": "",
-      "source": "task",
-      "label": "https://github.com/mattpocock/skills накати эти скилы на дип",
-      "step_label": "F",
-      "step": 1,
-      "total": 5,
-      "events": 56,
-      "trail": [
-        {
-          "ts": 1795553284,
-          "label": "SYNC · answer-integrity"
-        },
-        {
-          "ts": 1795553284,
-          "label": "BASH · grep -n -E \"artif"
-        },
-        {
-          "ts": 1795553284,
-          "label": "BASH · sed -n '85,125p' "
-        },
-        {
-          "ts": 1795553284,
-          "label": "BASH · sha256sum /home/n"
-        },
-        {
-          "ts": 1795553297,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795553307,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795553315,
-          "label": "BASH · echo \"=== DRAFT G"
-        },
-        {
-          "ts": 1795553326,
-          "label": "BASH · grep -n -E \"КАНДИ"
-        },
-        {
-          "ts": 1795553335,
-          "label": "BASH · sed -n '124,142p'"
-        },
-        {
-          "ts": 1795553345,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795553358,
-          "label": "BASH · echo \"=== DRAFT ="
-        },
-        {
-          "ts": 1795553371,
-          "label": "EDIT · /tmp/opencode/wai"
-        }
-      ],
-      "started_at": 1795552515,
-      "updated_at": 1795553377
-    },
-    {
-      "key": "req-20261124-233601-9fa49e",
-      "session_id": "",
-      "source": "task",
-      "label": "Типа я сижу с другом в дискорде у меня автофокус на кс таког",
-      "step_label": "проверить что фокус не прыгает",
-      "step": 4,
-      "total": 4,
-      "events": 51,
-      "trail": [
-        {
-          "ts": 1795553173,
-          "label": "WRITE · /tmp/opencode/gm"
-        },
-        {
-          "ts": 1795553183,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795553195,
-          "label": "WRITE · /tmp/opencode/gm"
-        },
-        {
-          "ts": 1795553276,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795553291,
-          "label": "BASH · date '+%H:%M:%S';"
-        },
-        {
-          "ts": 1795553300,
-          "label": "WRITE · /tmp/opencode/gm"
-        },
-        {
-          "ts": 1795553335,
-          "label": "BASH · cd ~/pc-bridge &&"
-        },
-        {
-          "ts": 1795553353,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795553361,
-          "label": "BASH · python3 ~/scripts"
-        },
-        {
-          "ts": 1795553361,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795553361,
-          "label": "BASH · ls ~/.config/open"
-        },
-        {
-          "ts": 1795553370,
-          "label": "EDIT · /tmp/opencode/dra"
-        }
-      ],
-      "started_at": 1795552566,
-      "updated_at": 1795553378
-    }
-  ],
+  "runs": [],
   "bars": [
     {
       "key": "task:T29",
@@ -2168,6 +2043,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 3.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795553379,
-  "fetched_human": "2026-11-24 23:49:39 +0300"
+  "fetched_at": 1795553444,
+  "fetched_human": "2026-11-24 23:50:44 +0300"
 }
