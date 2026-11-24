@@ -1949,7 +1949,7 @@
       "id": "session-7a57624f",
       "title": "Askold в Telegram Mini App: задержка ответа",
       "source": "dsh",
-      "claimed_human": "23:28:34",
+      "claimed_human": "23:29:10",
       "age_min": 0,
       "full": "Askold в Telegram Mini App: задержка ответа"
     },
@@ -1958,7 +1958,7 @@
       "title": "что по работе со сканф",
       "source": "dsh",
       "claimed_human": "23:28:25",
-      "age_min": 0,
+      "age_min": 1,
       "full": "что по работе со сканф"
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "Анализ видео и результатов CS2",
       "source": "dsh",
       "claimed_human": "23:26:41",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Анализ видео и результатов CS2"
     },
     {
@@ -1974,7 +1974,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 200,
+      "age_min": 201,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. Владелец dsh-current; next=другой spectator-HUD с малым радаром или калибровка сопоставления GT; пороги не двигать."
     },
     {
@@ -1982,7 +1982,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 222,
+      "age_min": 223,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). Порог 0.92 не взят. Владелец dsh-current; next=альтернативный способ распознавания имён, не латинский OCR; пороги не двигать."
     },
     {
@@ -1990,7 +1990,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 222,
+      "age_min": 223,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437, пороги провалены; владелец dsh-current; next=S3.2 альтернативная сегментация live (цвет/геометрия), затем повтор на 4 картах; пороги не двигать"
     }
   ],
@@ -2020,16 +2020,8 @@
       "step_label": "Собрать критик-гейт",
       "step": 2,
       "total": 4,
-      "events": 26,
+      "events": 28,
       "trail": [
-        {
-          "ts": 1795551785,
-          "label": "BASH · curl -s --max-tim"
-        },
-        {
-          "ts": 1795551806,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795551829,
           "label": "WRITE · /home/nyaka/shar"
@@ -2069,10 +2061,18 @@
         {
           "ts": 1795552100,
           "label": "BASH · cat /home/nyaka/."
+        },
+        {
+          "ts": 1795552145,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795552173,
+          "label": "EDIT · /home/nyaka/share"
         }
       ],
       "started_at": 1795551635,
-      "updated_at": 1795552121
+      "updated_at": 1795552180
     },
     {
       "key": "req-20261124-232301-a6f0c2",
@@ -2082,20 +2082,8 @@
       "step_label": "НАЙТИ",
       "step": 1,
       "total": 4,
-      "events": 30,
+      "events": 33,
       "trail": [
-        {
-          "ts": 1795552079,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795552079,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795552079,
-          "label": "BASH · cd ~/shared-repo/"
-        },
         {
           "ts": 1795552079,
           "label": "BASH · grep -rln \"ivan_d"
@@ -2131,10 +2119,22 @@
         {
           "ts": 1795552111,
           "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795552130,
+          "label": "BASH · cat ~/shared-repo"
+        },
+        {
+          "ts": 1795552145,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795552161,
+          "label": "BASH · systemctl --user "
         }
       ],
       "started_at": 1795551783,
-      "updated_at": 1795552120
+      "updated_at": 1795552182
     }
   ],
   "bars": [
@@ -2181,8 +2181,8 @@
   ],
   "updatedAt": "2026-11-24T20:08:01+03:00",
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 3.3,
+  "plan_age_hours": 3.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795552125,
-  "fetched_human": "2026-11-24 23:28:45 +0300"
+  "fetched_at": 1795552183,
+  "fetched_human": "2026-11-24 23:29:43 +0300"
 }
