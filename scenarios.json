@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-24 10:00",
+ "generated": "2026-11-24 10:30",
  "window": {
-  "start": "2026-11-24T00:35",
-  "end": "2026-11-24T06:59",
-  "sessions": 150,
+  "start": "2026-11-24T00:41",
+  "end": "2026-11-24T07:29",
+  "sessions": 151,
   "roots": 150
  },
  "summary": {
@@ -25,16 +25,16 @@
    "runs": 150,
    "median_s": 14,
    "max_s": 1371,
-   "last": "2026-11-24T06:59:47.083000+00:00",
+   "last": "2026-11-24T07:29:34.232000+00:00",
    "outcomes": {
-    "error": 54,
     "waiting_user": 2,
-    "done": 88,
-    "cancelled": 6
+    "error": 58,
+    "done": 85,
+    "cancelled": 5
    },
    "example": [
-    "xUeZjU5t",
-    "zWt78UXP"
+    "JuII4t4F",
+    "0fIDQdsj"
    ],
    "actual": [
     {
@@ -45,7 +45,7 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 48 из 150",
+     "t": "в 47 из 150",
      "d": 1
     },
     {
@@ -57,13 +57,13 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 69 из 150, ≈25 вызовов за раз",
+     "t": "в 69 из 150, ≈24 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 61 из 150, ≈8 вызовов за раз",
+     "t": "в 60 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -276,15 +276,73 @@
    "group": "typ",
    "title": "Найти код и разобраться",
    "when": "«где лежит X», «как устроено X»",
-   "status": "idle",
-   "status_text": "Нет запусков за окно",
-   "runs": 0,
-   "median_s": null,
-   "max_s": null,
-   "last": "",
-   "outcomes": {},
-   "example": [],
-   "actual": [],
+   "status": "warn",
+   "status_text": "Работает в обход",
+   "runs": 1,
+   "median_s": 804,
+   "max_s": 804,
+   "last": "2026-11-24T07:16:36.888000+00:00",
+   "outcomes": {
+    "waiting_user": 1
+   },
+   "example": [
+    "0C5MByWc"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 1"
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "≈25 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "≈16 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "explore",
+     "t": "",
+     "d": 2
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "≈4 вызовов за раз",
+     "d": 1
+    }
+   ],
    "declared": [
     {
      "k": "rule",
@@ -753,17 +811,18 @@
    "status": "idle",
    "status_text": "Блок",
    "runs": 39,
-   "median_s": 455,
+   "median_s": 500,
    "max_s": 1371,
-   "last": "2026-11-24T06:45:47.399000+00:00",
+   "last": "2026-11-24T07:25:53.211000+00:00",
    "outcomes": {
-    "done": 21,
-    "error": 14,
-    "cancelled": 4
+    "error": 16,
+    "waiting_user": 1,
+    "done": 19,
+    "cancelled": 3
    },
    "example": [
-    "mnKy1mB3",
-    "xL02Ch7l"
+    "0C5MByWc",
+    "JuII4t4F"
    ],
    "actual": [
     {
@@ -773,8 +832,8 @@
     },
     {
      "k": "skill",
-     "n": "scanfeed",
-     "t": "в 14 из 39",
+     "n": "research-slowdown",
+     "t": "в 36 из 39",
      "d": 1
     },
     {
@@ -785,44 +844,44 @@
     },
     {
      "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 36 из 39",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "show-in-answer",
-     "t": "в 13 из 39",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 39 из 39, ≈29 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "explore",
-     "t": "в 35 из 39, ≈9 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "в 18 из 39",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "pc-bridge-live",
+     "n": "scanfeed",
      "t": "в 14 из 39",
      "d": 1
     },
     {
      "k": "tool",
+     "n": "shell",
+     "t": "в 39 из 39, ≈28 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 35 из 39, ≈10 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "в 16 из 39",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "show-in-answer",
+     "t": "в 10 из 39",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "pc-bridge-live",
+     "t": "в 13 из 39",
+     "d": 1
+    },
+    {
+     "k": "tool",
      "n": "правки",
-     "t": "в 35 из 39, ≈8 вызовов за раз",
+     "t": "в 35 из 39, ≈7 вызовов за раз",
      "d": 1
     },
     {
@@ -880,7 +939,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 2",
+   "state": "Прогонов сейчас: 1",
    "level": "ok",
    "f": "C1"
   },
@@ -896,7 +955,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×35, opencode/big-pickle ×24, opencode/iceman-free ×23",
+   "state": "Цепочка: opencode/mimo-v2.6-flash-free → opencode/deepseek-v4.1-flash-free → opencode/hy4-flash-free → opencode-go/hy4-flash-free → opencode/nemotron-3.5-super-vl-free. По факту: opencode-go/hy4-flash-free ×34, opencode/big-pickle ×23, opencode/iceman-free ×23",
    "level": "ok",
    "f": "C13"
   },
@@ -920,7 +979,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 12, с файлами 7",
+   "state": "Владельцев 9, с файлами 6",
    "level": "ok",
    "f": "C11"
   },
