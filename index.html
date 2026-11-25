@@ -861,9 +861,8 @@
         <button data-q="Кто сейчас в работе?">👥 Кто в работе</button>
         <button data-q="Что сейчас открыто?">📂 Что открыто</button>
         <button data-q="Какие решения приняты?">✅ Решения</button>
-        <button data-q="/grill-me Проведи интервью по всем проектам: задавай вопросы по одному, я отвечаю здесь же">🎤 Интервью</button>
         <button data-q="Подожди, уточняю детали">⏳ Подожди, уточняю</button>
-        <button data-interview="1" title="Открыть интервью по всем проектам (скилл grill-me)">🎙 Интервью</button>
+        <button data-interview="1" title="Интервью по новым штукам и проектам (скилл grill-me): вопросы задаются здесь, ответы — в этом же чате">🎙 Интервью по новинкам</button>
       </div>
     </section>
 
@@ -2158,11 +2157,11 @@ function startInterview(){
   setInterviewSession(sid);
   interviewSub(true);
   var rid = Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-  CHAT.sent.push({text:"🎙 Интервью по всем проектам", t:new Date().toTimeString().slice(0,8), ts:Date.now(), rid:rid});
+  CHAT.sent.push({text:"🎙 Интервью по новинкам", t:new Date().toTimeString().slice(0,8), ts:Date.now(), rid:rid});
   CHAT.sent = CHAT.sent.slice(-50);
   try{ localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT)); }catch(e){}
   renderChat();
-  dshSend({source:"miniapp_interview", text:"Включи скилл grill-me (grilling) и проведи со мной интервью по всем проектам: TG-мини-ап, OpenCode, CS2-сканфид, демопарсер, pc-bridge, студийные проекты. Задай первый вопрос и жди ответа в этом же сеансе.",
+  dshSend({source:"miniapp_interview", text:"Включи скилл grill-me (grilling) и проведи интервью по новым штукам, которые я презентовал в последних ответах (rich-сообщения, цвета и фон, мини-ап, скилл интервью, Inventors), и по всем проектам: TG-мини-ап, OpenCode, CS2-сканфид, демопарсер, pc-bridge. Правила: вопросы — целым frontier раунда с рекомендованным ответом, факты находи сам и проверь каждый пункт реальным тестом, я отвечаю здесь же в этом же сеансе. Первый round задай сейчас и жди ответа.",
     user_id:userID, rid:rid, session_id:sid}, "Интервью начато — отвечай в чате");
 }
 function sendChat(){
