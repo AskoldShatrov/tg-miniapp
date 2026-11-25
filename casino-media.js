@@ -43,7 +43,13 @@
   // Загрузка JSON, если мини-ап открыт по http(s). При ошибке остаются резервные данные.
   function load(name, onDone) {
     if (typeof fetch !== 'function') { onDone(); return; }
-    fetch(name, {cache: 'no-store'}).then(function (r) {
+    var opts={cache:'no-store'};
+    if(typeof AbortController === 'function'){
+      var ctl=new AbortController();
+      opts.signal=ctl.signal;
+      setTimeout(function(){ctl.abort();},5000);
+    }
+    fetch(name, opts).then(function (r) {
       if (!r.ok) throw new Error('http ' + r.status);
       return r.json();
     }).then(function (data) { onDone(data); }).catch(function () { onDone(); });
