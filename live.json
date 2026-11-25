@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 1436,
+      "age_min": 1437,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwwdgucdureh: C12-27628: sort-после-индексации на новом корпусе — гейт 8/8 PASS, эффект статистически OPEN",
       "source": "ноут",
       "claimed_human": "20:04:19",
-      "age_min": 0,
+      "age_min": 1,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwwdgucdureh: C12-27628: sort-после-индексации на новом корпусе — гейт 8/8 PASS, эффект статистически OPEN",
       "autogen": true
     },
@@ -1967,7 +1967,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 1458,
+      "age_min": 1459,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1975,7 +1975,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 1458,
+      "age_min": 1459,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     }
   ],
@@ -2006,48 +2006,8 @@
       "step_label": "Собрать_идеи_прорыва_по_распознаванию",
       "step": 2,
       "total": 3,
-      "events": 10,
+      "events": 15,
       "trail": [
-        {
-          "ts": 1795626178,
-          "label": "SYNC · slow-deliberation"
-        },
-        {
-          "ts": 1795626187,
-          "label": "SYNC · research"
-        },
-        {
-          "ts": 1795626187,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795626197,
-          "label": "SYNC · hypothesis-check"
-        },
-        {
-          "ts": 1795626208,
-          "label": "BASH · wc -l ~/docs/ux-r"
-        },
-        {
-          "ts": 1795626208,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795626218,
-          "label": "BASH · cat ~/docs/method"
-        },
-        {
-          "ts": 1795626218,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795626229,
-          "label": "BASH · SES=${OPENCODE_SE"
-        },
-        {
-          "ts": 1795626229,
-          "label": "THINK"
-        },
         {
           "ts": 1795626240,
           "label": "SUBAGENT · subagent"
@@ -2055,58 +2015,62 @@
         {
           "ts": 1795626253,
           "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795626273,
+          "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795626273,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626284,
+          "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795626284,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626298,
+          "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795626298,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626309,
+          "label": "BASH · ls /home/nyaka/ov"
+        },
+        {
+          "ts": 1795626309,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626320,
+          "label": "BASH · ls /home/nyaka/ov"
+        },
+        {
+          "ts": 1795626326,
+          "label": "THINK"
         }
       ],
       "started_at": 1795626142,
-      "updated_at": 1795626270
+      "updated_at": 1795626332
     },
     {
       "key": "req-20261125-200256-77aea6",
       "session_id": "",
       "source": "task",
       "label": "Какие неотвеченные вопросы как тебе кажутся мешают твоей раб",
-      "step_label": "Собрать контекст сканфида",
-      "step": 1,
+      "step_label": "Сформулировать ответ",
+      "step": 4,
       "total": 4,
-      "events": 6,
+      "events": 12,
       "trail": [
         {
-          "ts": 1795626210,
-          "label": "BASH · cd /home/nyaka/sc"
-        },
-        {
-          "ts": 1795626210,
-          "label": "BASH · cd /home/nyaka/sc"
-        },
-        {
-          "ts": 1795626210,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795626218,
-          "label": "BASH · cd /home/nyaka/sc"
-        },
-        {
-          "ts": 1795626218,
-          "label": "BASH · cd /home/nyaka/sc"
-        },
-        {
-          "ts": 1795626218,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795626228,
-          "label": "BASH · cd /home/nyaka/sc"
-        },
-        {
-          "ts": 1795626228,
-          "label": "BASH · cd /home/nyaka/sc"
-        },
-        {
-          "ts": 1795626228,
-          "label": "THINK"
-        },
-        {
           "ts": 1795626241,
           "label": "BASH · cd /home/nyaka/sc"
         },
@@ -2117,10 +2081,46 @@
         {
           "ts": 1795626241,
           "label": "THINK"
+        },
+        {
+          "ts": 1795626277,
+          "label": "WRITE · /tmp/opencode/an"
+        },
+        {
+          "ts": 1795626277,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626283,
+          "label": "EDIT · /tmp/opencode/ans"
+        },
+        {
+          "ts": 1795626284,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626288,
+          "label": "EDIT · /tmp/opencode/ans"
+        },
+        {
+          "ts": 1795626295,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795626319,
+          "label": "WRITE · /tmp/opencode/an"
+        },
+        {
+          "ts": 1795626319,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795626326,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795626176,
-      "updated_at": 1795626270
+      "updated_at": 1795626333
     }
   ],
   "bars": [
@@ -2137,8 +2137,8 @@
   ],
   "updatedAt": "2026-11-25T08:20:05+03:00",
   "progress_updated_at": "2026-11-25T08:20:05+03:00",
-  "plan_age_hours": 11.7,
+  "plan_age_hours": 11.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795626272,
-  "fetched_human": "2026-11-25 20:04:32 +0300"
+  "fetched_at": 1795626334,
+  "fetched_human": "2026-11-25 20:05:34 +0300"
 }
