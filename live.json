@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 447,
+      "age_min": 448,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 469,
+      "age_min": 470,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,24 +1966,32 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 469,
+      "age_min": 470,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-8c79c0af",
-      "title": "Распознавание не слом",
-      "source": "dsh",
-      "claimed_human": "03:35:19",
-      "age_min": 0,
-      "full": "Распознавание не слом"
     },
     {
       "id": "session-dd85b57f",
       "title": "Почему нечитаемо и скиллы не подключились",
       "source": "dsh",
-      "claimed_human": "03:34:08",
-      "age_min": 1,
+      "claimed_human": "03:36:31",
+      "age_min": 0,
       "full": "Почему нечитаемо и скиллы не подключились"
+    },
+    {
+      "id": "session-8c79c0af",
+      "title": "Распознавание не слом",
+      "source": "dsh",
+      "claimed_human": "03:36:29",
+      "age_min": 0,
+      "full": "Распознавание не слом"
+    },
+    {
+      "id": "c66280a9-20e3-47",
+      "title": "Задача (только чтение,",
+      "source": "dsh",
+      "claimed_human": "03:36:26",
+      "age_min": 0,
+      "full": "Задача (только чтение,"
     }
   ],
   "queues": {
@@ -2012,48 +2020,8 @@
       "step_label": "прочитать прошлое",
       "step": 1,
       "total": 5,
-      "events": 23,
+      "events": 29,
       "trail": [
-        {
-          "ts": 1795566851,
-          "label": "BASH · for d in ~/docs ~"
-        },
-        {
-          "ts": 1795566851,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566870,
-          "label": "WRITE · /home/nyaka/docs"
-        },
-        {
-          "ts": 1795566871,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566880,
-          "label": "EDIT · /home/nyaka/docs/"
-        },
-        {
-          "ts": 1795566880,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566891,
-          "label": "EDIT · /home/nyaka/docs/"
-        },
-        {
-          "ts": 1795566899,
-          "label": "EDIT · /home/nyaka/docs/"
-        },
-        {
-          "ts": 1795566906,
-          "label": "EDIT · /home/nyaka/docs/"
-        },
-        {
-          "ts": 1795566915,
-          "label": "EDIT · /home/nyaka/docs/"
-        },
         {
           "ts": 1795566921,
           "label": "EDIT · /home/nyaka/docs/"
@@ -2061,10 +2029,50 @@
         {
           "ts": 1795566929,
           "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795566938,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795566938,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566948,
+          "label": "READ · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795566948,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566961,
+          "label": "BASH · echo '=== drop-in"
+        },
+        {
+          "ts": 1795566961,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566975,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795566975,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566986,
+          "label": "EDIT · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795566986,
+          "label": "THINK"
         }
       ],
       "started_at": 1795566670,
-      "updated_at": 1795566929
+      "updated_at": 1795566991
     },
     {
       "key": "req-20261125-033210-591d90",
@@ -2074,48 +2082,8 @@
       "step_label": "Разведка",
       "step": 1,
       "total": 4,
-      "events": 10,
+      "events": 13,
       "trail": [
-        {
-          "ts": 1795566820,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566830,
-          "label": "BASH · grep -n \"Проверка"
-        },
-        {
-          "ts": 1795566830,
-          "label": "BASH · grep -n \"^def cal"
-        },
-        {
-          "ts": 1795566830,
-          "label": "BASH · cat ~/.config/sys"
-        },
-        {
-          "ts": 1795566860,
-          "label": "NET · https://core.teleg"
-        },
-        {
-          "ts": 1795566860,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566871,
-          "label": "BASH · grep -n \"api.tele"
-        },
-        {
-          "ts": 1795566871,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566879,
-          "label": "BASH · grep -rn \"def cal"
-        },
-        {
-          "ts": 1795566879,
-          "label": "THINK"
-        },
         {
           "ts": 1795566892,
           "label": "BASH · grep -n \"^from \\|"
@@ -2123,10 +2091,50 @@
         {
           "ts": 1795566892,
           "label": "THINK"
+        },
+        {
+          "ts": 1795566943,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795566943,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566957,
+          "label": "BASH · sed -n '4255,4272"
+        },
+        {
+          "ts": 1795566958,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795566958,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566974,
+          "label": "BASH · cd ~/runtime/tmp-"
+        },
+        {
+          "ts": 1795566974,
+          "label": "BASH · sed -n '3090,3140"
+        },
+        {
+          "ts": 1795566974,
+          "label": "BASH · grep -n \"session_"
+        },
+        {
+          "ts": 1795566974,
+          "label": "BASH · sed -n '380,470p'"
+        },
+        {
+          "ts": 1795566974,
+          "label": "THINK"
         }
       ],
       "started_at": 1795566732,
-      "updated_at": 1795566926
+      "updated_at": 1795566991
     },
     {
       "key": "req-20261125-033355-9e69e7",
@@ -2136,59 +2144,72 @@
       "step_label": "Изучить пример и скилл",
       "step": 1,
       "total": 4,
-      "events": 9,
+      "events": 14,
       "trail": [
         {
-          "ts": 1795566883,
-          "label": "BASH · journalctl --user"
-        },
-        {
-          "ts": 1795566883,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795566883,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566895,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
-          "ts": 1795566895,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566901,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
-          "ts": 1795566901,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566907,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
-          "ts": 1795566907,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566915,
-          "label": "NET · Telegram Bot API 1"
-        },
-        {
-          "ts": 1795566916,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
           "ts": 1795566921,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566934,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795566934,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566949,
+          "label": "BASH · ps -o pid,lstart,"
+        },
+        {
+          "ts": 1795566949,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566968,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795566968,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566977,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795566977,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795566986,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795566987,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795566987,
           "label": "THINK"
         }
       ],
       "started_at": 1795566835,
-      "updated_at": 1795566926
+      "updated_at": 1795566990
+    },
+    {
+      "key": "req-20261125-033612-e08d19",
+      "session_id": "",
+      "source": "task",
+      "label": "Inventors тоже не помешает",
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795566973,
+      "updated_at": 1795566989
     }
   ],
   "bars": [
@@ -2237,6 +2258,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 7.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795566929,
-  "fetched_human": "2026-11-25 03:35:29 +0300"
+  "fetched_at": 1795566992,
+  "fetched_human": "2026-11-25 03:36:32 +0300"
 }
