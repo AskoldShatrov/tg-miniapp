@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 765,
+      "age_min": 766,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 786,
+      "age_min": 787,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,39 +1966,47 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 787,
+      "age_min": 788,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-c8bf43bc",
+      "title": "Автоматическая локализация исследовательс",
+      "source": "dsh",
+      "claimed_human": "08:54:04",
+      "age_min": 0,
+      "full": "Автоматическая локализация исследовательс"
     },
     {
       "id": "session-8c79c0af",
       "title": "Распознавание не слом",
       "source": "dsh",
-      "claimed_human": "08:53:01",
+      "claimed_human": "08:54:01",
       "age_min": 0,
       "full": "Распознавание не слом"
-    },
-    {
-      "id": "session-c8bf43bc",
-      "title": "Сессия без названия",
-      "source": "dsh",
-      "claimed_human": "08:52:46",
-      "age_min": 0,
-      "full": "Сессия без названия"
     },
     {
       "id": "session-fa656706",
       "title": "Замечания по оформлению курсовой работы",
       "source": "dsh",
-      "claimed_human": "08:52:21",
+      "claimed_human": "08:53:54",
       "age_min": 0,
       "full": "Замечания по оформлению курсовой работы"
+    },
+    {
+      "id": "session-e3341a92",
+      "title": "Сессия без названия",
+      "source": "dsh",
+      "claimed_human": "08:53:19",
+      "age_min": 0,
+      "full": "Сессия без названия"
     },
     {
       "id": "fefeff1f-bbef-4c",
       "title": "Самодостаточная зада",
       "source": "dsh",
       "claimed_human": "08:52:16",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Самодостаточная зада"
     },
     {
@@ -2006,7 +2014,7 @@
       "title": "Сравнение ИИ-моделей на экзаменационных за",
       "source": "dsh",
       "claimed_human": "08:51:33",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Сравнение ИИ-моделей на экзаменационных за"
     },
     {
@@ -2014,7 +2022,7 @@
       "title": "You are an independent methodological",
       "source": "dsh",
       "claimed_human": "08:49:51",
-      "age_min": 3,
+      "age_min": 4,
       "full": "You are an independent methodological"
     },
     {
@@ -2022,16 +2030,8 @@
       "title": "Что такое это",
       "source": "dsh",
       "claimed_human": "08:49:10",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Что такое это"
-    },
-    {
-      "id": "2ae2b9a8-45dc-44",
-      "title": "Задача по материалам:",
-      "source": "dsh",
-      "claimed_human": "08:47:41",
-      "age_min": 5,
-      "full": "Задача по материалам:"
     }
   ],
   "queues": {
@@ -2098,6 +2098,6 @@
   "progress_updated_at": "2026-11-25T08:20:05+03:00",
   "plan_age_hours": 0.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795585985,
-  "fetched_human": "2026-11-25 08:53:05 +0300"
+  "fetched_at": 1795586046,
+  "fetched_human": "2026-11-25 08:54:06 +0300"
 }
