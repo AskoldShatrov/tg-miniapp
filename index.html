@@ -2332,6 +2332,7 @@ setInterval(refreshReplies, 5000);
   ];
   const PM_KEY = "miniapp_prompts_manual_v1";
   let PROMPTS = { meta:{}, groups:[] };
+  let PROMPTS_LOADED = false;
   let PMAN = { answers:{}, links:{}, moved:{} };
   try { PMAN = Object.assign(PMAN, JSON.parse(localStorage.getItem(PM_KEY)||"{}")); } catch(e){}
   let pRange = "3", pMode = "group", pQuery = "";
