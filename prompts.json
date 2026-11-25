@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-25T03:29:44+00:00",
-  "generated_human": "25.11 03:29 UTC",
-  "as_of": 1795577381755,
+  "generated": "2026-11-25T03:30:45+00:00",
+  "generated_human": "25.11 03:30 UTC",
+  "as_of": 1795577442804,
   "stale_days": 1,
-  "count": 1020,
+  "count": 1018,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -41,7 +41,7 @@
     {
      "id": "ses-NP4XA0xYx5",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795577378000,
+     "ts": 1795577442000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -53,7 +53,7 @@
       "w2611200052468b4b",
       "w2611200052463b06"
      ],
-     "as_of": 1795577378000,
+     "as_of": 1795577442000,
      "is_stale": false
     },
     {
@@ -14158,56 +14158,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795539374946,
      "as_of": 1795462697000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-otSN5lwirK",
-     "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на расширенном корпусе (320 демо, 7 карт). Честно отделить pooled от contested. Новый отчёт ~/overnight/open_tracks/T05-t1c-coverage.md. Не переоткрывать закрытые T1/wp_v3 (см. MASTERPLAN-v2 §2.1). ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795462653000,
-     "source": "session",
-     "title": "T5/T1c contested AUC gate",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
-     "answer_short": "w261119190741dca0: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
-     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
-     "answer_digest": {
-      "length": 70,
-      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
-     },
-     "answer_text_id": "c4978e85bd68622f",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795539374946,
-     "as_of": 1795462653000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-5j0eQn2mhI",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12172. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ cl-w261122-active: Снять deferred с w261122 и закрыть 30 недоставленных ответов. Где: wants.json · Стоящая хотелка доставки w261122054642905d = deferred. Петля должна её активировать с владельцем и дедлайном.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12172_run15679.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795462559000,
-     "source": "session",
-     "title": "AU12172 hypothesis check",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611200241438cdc"
-     ],
-     "answer": "[w2611200241438cdc] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
-     "answer_short": "w2611200241438cdc: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
-     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
-     "answer_digest": {
-      "length": 70,
-      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
-     },
-     "answer_text_id": "c4978e85bd68622f",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795539374946,
-     "as_of": 1795462559000,
      "is_stale": false
     },
     {
