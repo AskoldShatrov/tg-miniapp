@@ -1283,6 +1283,7 @@ function setTaskSub(name){
   $$(".screen").forEach(s=>s.classList.toggle("active",s.id==="screen-"+name));
   $$("#taskSubNav button").forEach(b=>b.classList.toggle("active",b.dataset.sub===name));
   if(name==="scenarios"&&typeof mountScenarios==="function") mountScenarios();
+  if(name==="studio"&&typeof studioEnsure==="function"){ studioEnsure(); studioRender(); }
   $("#main").scrollTop=0;
 }
 $$(".tab[data-tab]").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
@@ -1894,7 +1895,7 @@ const STATUS_URLS = [
 async function refreshAgentStatus(){
   for(const base of STATUS_URLS){
    try{
-    const r = await fetch(base + "?ts=" + Date.now(), {cache:"no-store"});
+    const r = await fetchTimed(base + "?ts=" + Date.now(), {cache:"no-store"}, 5000);
     if(!r.ok) continue;
     const s = await r.json();
     LATEST_STATUS = s;   // этап 7: отсюда api() берёт process_api_url
@@ -1972,7 +1973,7 @@ const SESSIONS_URLS = [
 async function refreshSessions(){
   for(const base of SESSIONS_URLS){
    try{
-    const r = await fetch(base + "?ts=" + Date.now(), {cache:"no-store"});
+    const r = await fetchTimed(base + "?ts=" + Date.now(), {cache:"no-store"}, 5000);
     if(!r.ok) continue;
     const d = await r.json();
     if(!d || !Array.isArray(d.sessions)) continue;
@@ -2192,7 +2193,7 @@ if(chatJump) chatJump.addEventListener("click",()=>{
 async function refreshReplies(){
   for(const base of DATA_URLS){
     try{
-      const r = await fetch(base + "replies.json?ts=" + Date.now(), {cache:"no-store"});
+      const r = await fetchTimed(base + "replies.json?ts=" + Date.now(), {cache:"no-store"}, 8000);
       if(!r.ok) continue;
       const d = await r.json();
       CHAT.replies = d || {};
@@ -2592,11 +2593,11 @@ setInterval(refreshReplies, 5000);
   async function refreshPrompts(){
     for(const base of PROMPT_URLS){
       try{
-        const r=await fetch(base+"?ts="+Date.now(),{cache:"no-store"});
+        const r=await fetchTimed(base+"?ts="+Date.now(),{cache:"no-store"},10000);
         if(!r.ok) continue;
         const d=await r.json();
         if(!d || !Array.isArray(d.groups)) continue;
-        ok("prompts"); PROMPTS=d; pBuildSegs(); renderPrompts(); return;
+        ok("prompts"); PROMPTS=d; PROMPTS_LOADED=true; pBuildSegs(); renderPrompts(); return;
       }catch(e){}
     }
     bad("prompts", "все источники prompts.json недоступны");
@@ -2668,7 +2669,8 @@ setInterval(refreshReplies, 5000);
   const pReload=$("#pReload"); if(pReload) pReload.addEventListener("click",()=>{
     pReload.classList.add("spin"); refreshPrompts().then(()=>pReload.classList.remove("spin"));
   });
-  refreshPrompts();
+  /* prompts.json весит несколько мегабайт: грузим его только при открытии
+     вкладки «Промпты», чтобы Telegram не ждал тяжёлые данные при старте. */
   /* @auto:poll-prompts:start */
   // Данные обновляются раз в минуту на сервере — подтягиваем их и в открытой
   // апе, но только на вкладке «Промпты», не во время ввода и без сброса
@@ -2699,7 +2701,7 @@ setInterval(refreshReplies, 5000);
 let ATLAS=null, ATLAS_TREE=null, ATLAS_LOOKUP={}, ATLAS_OPEN_KEY=null, ATLAS_VOICE_BY_HYP={}, ATLAS_RAW_CARDS=null, ATLAS_RAW_BY_NODE={}, ATLAS_RAW_BY_IDEA={};
 function atlasLoadRawCards(){
   if(ATLAS_RAW_CARDS) return Promise.resolve(ATLAS_RAW_CARDS);
-  return fetch("atlas-cards.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(d=>{
+  return fetchTimed("atlas-cards.json",{cache:"no-store"},8000).then(r=>r.ok?r.json():null).then(d=>{
     const items = Array.isArray(d) ? d : (Array.isArray(d&&d.items) ? d.items : []);
     ATLAS_RAW_CARDS = items;
     ATLAS_RAW_BY_NODE = {};
@@ -3309,8 +3311,8 @@ async function fetchQuestions(){
   if(apiBase){
     try{
       const init=(typeof tg!=="undefined"&&tg.initData)?tg.initData:"";
-      const r=await fetch(apiBase.replace(/\/$/,"")+"/questions",
-        {headers:init?{"X-Telegram-Init-Data":init}:{},cache:"no-store"});
+      const r=await fetchTimed(apiBase.replace(/\/$/,"")+"/questions",
+        {headers:init?{"X-Telegram-Init-Data":init}:{},cache:"no-store"},6000);
       if(r.ok){
         QUESTIONS=await r.json(); QUESTIONS_FROM_API=true; ok("questions"); renderQuestions();
         setApiBadge($("#questionsApiBadge"), true);
@@ -3322,7 +3324,7 @@ async function fetchQuestions(){
   const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
   for(const base of bases){
     try{
-      const r=await fetch(base+"questions.json?ts="+Date.now(),{cache:"no-store"});
+      const r=await fetchTimed(base+"questions.json?ts="+Date.now(),{cache:"no-store"},6000);
       if(!r.ok) continue;
       QUESTIONS=await r.json(); ok("questions"); renderQuestions(); return;
     }catch(e){ /* фолбэк — пустой список */ }
@@ -3335,15 +3337,18 @@ async function fetchQuestions(){
 }
 
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
+let LIVE_DATA_LOADING=false, LIVE_DATA_LOADED=false;
 async function fetchLiveData(){
+  if(LIVE_DATA_LOADING||LIVE_DATA_LOADED) return;
+  LIVE_DATA_LOADING=true;
   const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
   for(const base of bases){
     try{
       const [t,d,a,l]=await Promise.all([
-        fetch(base+"tree.json?ts="+Date.now(),{cache:"no-store"}),
-        fetch(base+"decisions.json?ts="+Date.now(),{cache:"no-store"}),
-        fetch(base+"atlas.json?ts="+Date.now(),{cache:"no-store"}),
-        fetch(base+"live.json?ts="+Date.now(),{cache:"no-store"})
+        fetchTimed(base+"tree.json?ts="+Date.now(),{cache:"no-store"},8000),
+        fetchTimed(base+"decisions.json?ts="+Date.now(),{cache:"no-store"},8000),
+        fetchTimed(base+"atlas.json?ts="+Date.now(),{cache:"no-store"},12000),
+        fetchTimed(base+"live.json?ts="+Date.now(),{cache:"no-store"},8000)
       ]);
       if(!t.ok||!d.ok) continue;
       const tj=await t.json(), dj=await d.json();
@@ -3352,9 +3357,12 @@ async function fetchLiveData(){
       if(LIVE.tree||LIVE.decisions){ renderTree(); renderDecisions(); }
       if(a.ok){ ATLAS=await a.json(); ok("atlas"); renderAtlas(); }
       if(l.ok){ LIVE_JOBS=await l.json(); ok("live"); renderLive(); }
+      LIVE_DATA_LOADED=true;
+      LIVE_DATA_LOADING=false;
       return;
     }catch(e){ /* фолбэк — захардкоженные DEMO-данные уже показаны */ }
   }
+  LIVE_DATA_LOADING=false;
   bad("tree", "tree.json/decisions.json недоступны");
   bad("atlas", "atlas.json недоступен");
   bad("live", "live.json недоступен");
@@ -3400,7 +3408,7 @@ async function studioEnsure(){
   if(!hasP){
     for(const base of bases){
       try{
-        const r=await fetch(base+"prompts.json?ts="+Date.now(),{cache:"no-store"});
+        const r=await fetchTimed(base+"prompts.json?ts="+Date.now(),{cache:"no-store"},12000);
         if(!r.ok) continue;
         const d=await r.json();
         if(d&&Array.isArray(d.groups)){ PROMPTS=d; break; }
@@ -3411,7 +3419,7 @@ async function studioEnsure(){
   if(!hasA){
     for(const base of bases){
       try{
-        const r=await fetch(base+"atlas.json?ts="+Date.now(),{cache:"no-store"});
+        const r=await fetchTimed(base+"atlas.json?ts="+Date.now(),{cache:"no-store"},12000);
         if(!r.ok) continue;
         ATLAS=await r.json(); break;
       }catch(e){}
@@ -3899,7 +3907,6 @@ const sReload=$("#sReload"); if(sReload) sReload.addEventListener("click",()=>{
 });
 const sMore=$("#sMore"); if(sMore) sMore.addEventListener("click",()=>{ sLimit+=40; studioRender(); });
 $$(".tab[data-tab='studio']").forEach(b=>b.addEventListener("click",()=>{ studioEnsure(); studioRender(); }));
-studioEnsure();
 
 /* ---------- вкладка «Сценарии» ---------- */
 let scenariosMounted=false;
@@ -3915,7 +3922,7 @@ function mountScenarios(){
 
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
-renderAtlas(); renderLive(); fetchLiveData(); fetchQuestions();
+renderAtlas(); renderLive(); fetchQuestions();
 loadProcessTree();                    // этап 7: пробуем живой API; без URL остаётся статический фолбэк
 setInterval(fetchLiveData, 60000);    // статический фолбэк: decisions/atlas/live
 setInterval(fetchQuestions, 5000);    // вопросы: /questions при API, иначе questions.json
