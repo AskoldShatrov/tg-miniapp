@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T10:06:06+00:00",
-  "generated_human": "25.11 10:06 UTC",
-  "as_of": 1795601166011,
+  "generated": "2026-11-25T10:07:07+00:00",
+  "generated_human": "25.11 10:07 UTC",
+  "as_of": 1795601226260,
   "stale_days": 1,
   "count": 1002,
   "groups": 9,
@@ -39,6 +39,24 @@
     "w261120024143491d"
    ],
    "prompts": [
+    {
+     "id": "ses-IEhz1z1yrO",
+     "text": "ПРОРАБОТКА ОВЕРЛЕЯ, P0-1. Проверить через pc-bridge/GSI один кадр реального матча с allplayers>0 и проверить оверлей в кадре: деньги/бай/AWP под иконками. Если allplayers недоступны — честно зафиксировать как блокер с причиной и n попыток. Новый отчёт ~/overnight/open_tracks/O01-overlay-allplayers.md. Не трогать data/ и 44/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
+     "ts": 1795601223000,
+     "source": "session",
+     "title": "P0-1 оверлей allplayers в кадре",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200052465da0",
+      "w261123053459cf23"
+     ],
+     "as_of": 1795601223000,
+     "is_stale": false
+    },
     {
      "id": "ses-GF5OhvtN45",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15596. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwvyb24nr1pl: S02cn: dot_quality под cyan на новых кадрах R01cf+S01DG — формальный гейт PASS, содержательный FAIL. Где: goals.json · 25.11.2026. Отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md (SHA 079aa79d…), результат S02CN-cyan-R01CF-S01DG-results.json (SHA a670c1c1…). Prer В конце вызови tools.goals.track({action:'done', id:'gmwvyb24nr1pl', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15596_run27482.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
@@ -8184,31 +8202,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795547167871,
      "as_of": 1795473754000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-QdFOKHuVSr",
-     "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на расширенном корпусе (320 демо, 7 карт). Честно отделить pooled от contested. Новый отчёт ~/overnight/open_tracks/T05-t1c-coverage.md. Не переоткрывать закрытые T1/wp_v3 (см. MASTERPLAN-v2 §2.1). ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795473629000,
-     "source": "session",
-     "title": "T5 T1c coverage gate and report",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119190741dca0: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795473629000,
      "is_stale": false
     },
     {
