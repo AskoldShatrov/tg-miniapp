@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-25 12:00",
+ "generated": "2026-11-25 12:30",
  "window": {
-  "start": "2026-11-24T23:08",
-  "end": "2026-11-25T08:52",
+  "start": "2026-11-24T23:11",
+  "end": "2026-11-25T09:27",
   "sessions": 164,
   "roots": 150
  },
@@ -25,15 +25,16 @@
    "runs": 150,
    "median_s": 202,
    "max_s": 5404,
-   "last": "2026-11-25T08:52:04.135000+00:00",
+   "last": "2026-11-25T09:27:13.506000+00:00",
    "outcomes": {
+    "waiting_user": 1,
     "done": 118,
-    "error": 30,
+    "error": 29,
     "cancelled": 2
    },
    "example": [
-    "uo8OueWX",
-    "jy6kMazD"
+    "jy6kMazD",
+    "9pE1nfUp"
    ],
    "actual": [
     {
@@ -50,19 +51,19 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 62 из 150",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 88 из 150, ≈30 вызовов за раз",
+     "t": "в 63 из 150",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 30 из 150",
+     "t": "в 31 из 150",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 89 из 150, ≈30 вызовов за раз",
      "d": 1
     },
     {
@@ -74,7 +75,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 85 из 150, ≈9 вызовов за раз",
+     "t": "в 86 из 150, ≈9 вызовов за раз",
      "d": 1
     },
     {
@@ -1073,88 +1074,89 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 34,
-   "median_s": 618,
+   "runs": 35,
+   "median_s": 614,
    "max_s": 1390,
-   "last": "2026-11-25T08:48:09.311000+00:00",
+   "last": "2026-11-25T09:27:13.506000+00:00",
    "outcomes": {
+    "waiting_user": 1,
     "done": 33,
     "error": 1
    },
    "example": [
-    "J9jIdQaG",
-    "uo8OueWX"
+    "uo8OueWX",
+    "9pE1nfUp"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 34"
+     "t": "запусков: 35"
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 10 из 34",
+     "t": "в 11 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 31 из 34",
+     "t": "в 32 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 30 из 34",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "в 7 из 34",
+     "t": "в 31 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 7 из 34",
+     "t": "в 7 из 35",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "в 8 из 35",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 34 из 34, ≈36 вызовов за раз",
+     "t": "в 35 из 35, ≈36 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 28 из 34, ≈8 вызовов за раз",
+     "t": "в 28 из 35, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 12 из 34",
+     "t": "в 12 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 22 из 34",
+     "t": "в 22 из 35",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 34 из 34, ≈12 вызовов за раз",
+     "t": "в 35 из 35, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, anti-autism, blocker-clock, code-review, disk-triage, draft-gate, experimentation-analytics, hidden-au",
-     "t": "меньше 7 из 34",
+     "t": "меньше 7 из 35",
      "d": 1
     }
    ],
@@ -1206,7 +1208,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 0",
+   "state": "Прогонов сейчас: 1",
    "level": "ok",
    "f": "C1"
   },
@@ -1222,7 +1224,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×73, opencode/mimo-v2.6-flash-free ×29, opencode/hy4-flash-free ×16",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×74, opencode/mimo-v2.6-flash-free ×28, opencode/hy4-flash-free ×16",
    "level": "ok",
    "f": "C13"
   },
@@ -1246,8 +1248,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 1, с файлами 0",
-   "level": "warn",
+   "state": "Владельцев 3, с файлами 1",
+   "level": "ok",
    "f": "C11"
   },
   {
