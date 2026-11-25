@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-25T13:55:34+00:00",
-  "generated_human": "25.11 13:55 UTC",
-  "as_of": 1795614934527,
+  "generated": "2026-11-25T13:56:35+00:00",
+  "generated_human": "25.11 13:56 UTC",
+  "as_of": 1795614995530,
   "stale_days": 1,
-  "count": 986,
+  "count": 984,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -42,14 +42,14 @@
     {
      "id": "ses-DODTkrbgMN",
      "text": "ПРАКТИКА/ИССЛЕДОВАНИЕ. Найди рабочий способ получить живое дерево panorama-панелей CS2 в демке. Команды `__mirv_panorama_print_children`, `mirv_panorama` из HLAE 2.193.2, source AdvancedFX, дампы hud.xml/hudteamcounter.xml. Цель — получить реальные panelId/panelClassName для верхних карточек игроков и проверить, можно ли изменить их opacity через HLAE или другую модификацию. Если команда существует — опиши точный вызов и пример вывода; если нет — докажи по исходнику.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-003-c19.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795614926000,
+     "ts": 1795614994000,
      "source": "session",
      "title": "lree-HUDV-003-c19",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795614926000,
+     "as_of": 1795614994000,
      "is_stale": false
     },
     {
@@ -11757,56 +11757,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795548885931,
      "as_of": 1795482231000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-Zp3wt7Ym6J",
-     "text": "ЗАДАЧА-ПИСАТЕЛЬ. Не делай只读 обзор: создай новый файл-результат. Источники только локальные и только чтение: /home/nyaka/overnight/cloud_tracks/C04-16308.md, /home/nyaka/overnight/prereg/C04-16308.json и локальные JSON-корпуса, найденные по ссылкам в этом отчёте. НЕ трогай ~/turngame/data/, ~/scanfeed/data/, pc-bridge и ПК. Сделай невырожденную калибровку dot_quality (например, isotonic или logistic с holdout), сравни с честной константой, посчитай ECE до/после и Wilson 95% CI. Запиши ровно один новый файл /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-T4-WRITER-CALIB-<уникальный_суффикс>.json с полями: VERDICT, n, fp, ece_before, ece_after, honest_baseline_ece, method, source_sha256, limitations. CHESTNO: если гейт ECE<0.15 не достигнут или калибровка вырождается, VERDICT должен быть FAIL с причиной. Сам запусти verify_cmd и добейся rc=0. В конце выведи PROMISE: DONE и путь файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-T4-WRITER-CALIB-c1058.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795481997000,
-     "source": "session",
-     "title": "lree-SFC-T4-WRITER-CALIB-c1058",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261121055339bfc8"
-     ],
-     "answer": "[w261121055339bfc8] Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutError: The read operation timed out",
-     "answer_short": "w261121055339bfc8: Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutErr",
-     "answer_full": "Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutError: The read operation timed out",
-     "answer_digest": {
-      "length": 92,
-      "sha256": "d9632ccda0e8909a937c3ea68c6b481d2b50f02d517ebb4a868a04dc53d22dc0"
-     },
-     "answer_text_id": "d9632ccda0e8909a",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795548885931,
-     "as_of": 1795481997000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-Xk6JStjU5r",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15573. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtokahih1p3: C05-15893: dot_quality под cyan — вложенный 5-fold CV. Где: goals.json · Гейт ECE<0.15 при n>=60; отчёт ~/overnight/cloud_tracks/C05-15893.md; промежуточный вердикт записан до зондов; не перезаписывать существующие отчёты. В конце вызови tools.goals.track({action:'done', id:'gmwtokahih1p3', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15573_run1795481538.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795481956000,
-     "source": "session",
-     "title": "Проверка гипотезы AU15573 о dot_quality",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutError: The read operation timed out",
-     "answer_short": "w261119090518006d: Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutErr",
-     "answer_full": "Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutError: The read operation timed out",
-     "answer_digest": {
-      "length": 92,
-      "sha256": "d9632ccda0e8909a937c3ea68c6b481d2b50f02d517ebb4a868a04dc53d22dc0"
-     },
-     "answer_text_id": "d9632ccda0e8909a",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795548885931,
-     "as_of": 1795481956000,
      "is_stale": false
     },
     {
