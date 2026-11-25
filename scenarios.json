@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-25 05:30",
+ "generated": "2026-11-25 06:00",
  "window": {
-  "start": "2026-11-24T19:35",
-  "end": "2026-11-25T02:25",
+  "start": "2026-11-24T19:42",
+  "end": "2026-11-25T02:47",
   "sessions": 179,
   "roots": 150
  },
@@ -25,15 +25,15 @@
    "runs": 150,
    "median_s": 299,
    "max_s": 14790,
-   "last": "2026-11-25T02:25:02.851000+00:00",
+   "last": "2026-11-25T02:47:37.689000+00:00",
    "outcomes": {
-    "error": 39,
-    "done": 107,
+    "error": 40,
+    "done": 106,
     "cancelled": 4
    },
    "example": [
-    "J4x1zzIr",
-    "sOe2RvA2"
+    "EB6mrG0b",
+    "tEGErP8r"
    ],
    "actual": [
     {
@@ -42,15 +42,15 @@
      "t": "запусков: 150"
     },
     {
-     "k": "skill",
-     "n": "suspicion-gate",
-     "t": "в 32 из 150",
+     "k": "tool",
+     "n": "shell",
+     "t": "в 100 из 150, ≈36 вызовов за раз",
      "d": 1
     },
     {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 101 из 150, ≈36 вызовов за раз",
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 33 из 150",
      "d": 1
     },
     {
@@ -62,7 +62,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 99 из 150, ≈9 вызовов за раз",
+     "t": "в 98 из 150, ≈9 вызовов за раз",
      "d": 1
     },
     {
@@ -1083,88 +1083,88 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 31,
-   "median_s": 476,
+   "runs": 35,
+   "median_s": 509,
    "max_s": 1707,
-   "last": "2026-11-25T01:10:51.955000+00:00",
+   "last": "2026-11-25T02:33:39.657000+00:00",
    "outcomes": {
-    "done": 30,
+    "done": 34,
     "error": 1
    },
    "example": [
-    "7UpAPM5O",
-    "dz419tjC"
+    "ZaceZHuU",
+    "FmZHqXb6"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 31"
+     "t": "запусков: 35"
     },
     {
      "k": "skill",
      "n": "hidden-auditor",
-     "t": "в 7 из 31",
+     "t": "в 7 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 23 из 31",
+     "t": "в 27 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 11 из 31",
+     "t": "в 11 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "work-audit",
-     "t": "в 7 из 31",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 31 из 31, ≈36 вызовов за раз",
+     "t": "в 7 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 22 из 31",
+     "t": "в 26 из 35",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 35 из 35, ≈36 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 24 из 31, ≈7 вызовов за раз",
+     "t": "в 28 из 35, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 8 из 31",
+     "t": "в 9 из 35",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 14 из 31",
+     "t": "в 17 из 35",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 31 из 31, ≈12 вызовов за раз",
+     "t": "в 35 из 35, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, code-review, cs2-demo-capture, disk-triage, draft-gate, minimal-run-and-audit, network-constraints, op",
-     "t": "меньше 6 из 31",
+     "t": "меньше 7 из 35",
      "d": 1
     }
    ],
@@ -1232,7 +1232,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free → opencode-go/glm-5.3#high → opencode-go/deepseek-v4.1-flash#high → opencode-go/glm-5.3-flash. По факту: opencode-go/hy4-flash-free ×102, opencode/mimo-v2.6-flash-free ×41, ? ×4",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free → opencode-go/glm-5.3#high → opencode-go/deepseek-v4.1-flash#high → opencode-go/glm-5.3-flash. По факту: opencode-go/hy4-flash-free ×101, opencode/mimo-v2.6-flash-free ×42, ? ×4",
    "level": "ok",
    "f": "C13"
   },
@@ -1256,7 +1256,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 8, с файлами 1",
+   "state": "Владельцев 11, с файлами 4",
    "level": "ok",
    "f": "C11"
   },
