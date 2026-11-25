@@ -2158,11 +2158,12 @@ function startInterview(){
   interviewSub(true);
   var rid = Date.now().toString(36)+Math.random().toString(36).slice(2,6);
   CHAT.sent.push({text:"🎙 Интервью по новинкам", t:new Date().toTimeString().slice(0,8), ts:Date.now(), rid:rid});
+  CHAT.sent.push({text:"🟦 Путеводитель: вопросы приходят раундами, факты агент проверяет сам; отвечай сюда, в этот чат; «/стоп интервью» завершает. Первый вопрос появится здесь, когда агент ответит.", t:new Date().toTimeString().slice(0,8), ts:Date.now()+1, rid:rid+"-guide"});
   CHAT.sent = CHAT.sent.slice(-50);
   try{ localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT)); }catch(e){}
   renderChat();
   dshSend({source:"miniapp_interview", text:"Включи скилл grill-me (grilling) и проведи интервью по новым штукам, которые я презентовал в последних ответах (rich-сообщения, цвета и фон, мини-ап, скилл интервью, Inventors), и по всем проектам: TG-мини-ап, OpenCode, CS2-сканфид, демопарсер, pc-bridge. Правила: вопросы — целым frontier раунда с рекомендованным ответом, факты находи сам и проверь каждый пункт реальным тестом, я отвечаю здесь же в этом же сеансе. Первый round задай сейчас и жди ответа.",
-    user_id:userID, rid:rid, session_id:sid}, "Интервью начато — отвечай в чате");
+    user_id:userID, rid:rid, session_id:sid}, "Интервью начато — первый вопрос появится в чате");
 }
 function sendChat(){
   const inp = $("#chatInput"); if(!inp) return;
