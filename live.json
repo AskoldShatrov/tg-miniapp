@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 1280,
+      "age_min": 1281,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 1301,
+      "age_min": 1302,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 1302,
+      "age_min": 1303,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     }
   ],
@@ -1996,28 +1996,8 @@
       "step_label": "Собрать для телефона скрипт сбора инфы и логи",
       "step": 7,
       "total": 6,
-      "events": 28,
+      "events": 32,
       "trail": [
-        {
-          "ts": 1795616725,
-          "label": "BASH · python3 ~/scripts"
-        },
-        {
-          "ts": 1795616725,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795616744,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795616744,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795616752,
-          "label": "BASH · mkdir -p ~/.local"
-        },
         {
           "ts": 1795616752,
           "label": "THINK"
@@ -2045,10 +2025,30 @@
         {
           "ts": 1795616880,
           "label": "THINK"
+        },
+        {
+          "ts": 1795616902,
+          "label": "WRITE · /tmp/opencode/fi"
+        },
+        {
+          "ts": 1795616914,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795616931,
+          "label": "BASH · grep -nE 'artifac"
+        },
+        {
+          "ts": 1795616931,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616939,
+          "label": "BASH · sed -n 88,135p ~/"
         }
       ],
       "started_at": 1795616384,
-      "updated_at": 1795616882
+      "updated_at": 1795616943
     },
     {
       "key": "req-20261125-172600-7204f6",
@@ -2058,7 +2058,7 @@
       "step_label": "Найти_конкретные_переключатели",
       "step": 2,
       "total": 3,
-      "events": 4,
+      "events": 6,
       "trail": [
         {
           "ts": 1795616799,
@@ -2087,10 +2087,22 @@
         {
           "ts": 1795616847,
           "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795616889,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795616926,
+          "label": "WRITE · /tmp/opencode/dr"
+        },
+        {
+          "ts": 1795616927,
+          "label": "THINK"
         }
       ],
       "started_at": 1795616760,
-      "updated_at": 1795616879
+      "updated_at": 1795616942
     },
     {
       "key": "req-20261125-172632-f3b238",
@@ -2100,59 +2112,101 @@
       "step_label": "правила сети",
       "step": 2,
       "total": 4,
-      "events": 8,
+      "events": 13,
       "trail": [
         {
-          "ts": 1795616836,
-          "label": "BASH · for d in vk.com w"
+          "ts": 1795616870,
+          "label": "THINK"
         },
         {
-          "ts": 1795616836,
+          "ts": 1795616882,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795616882,
           "label": "THINK"
         },
         {
-          "ts": 1795616845,
-          "label": "BASH · for d in vk.com w"
+          "ts": 1795616895,
+          "label": "NET · v2rayNG \"Домен тол"
         },
         {
-          "ts": 1795616845,
+          "ts": 1795616895,
           "label": "THINK"
         },
         {
-          "ts": 1795616857,
-          "label": "BASH · ls ~/.config/open"
+          "ts": 1795616905,
+          "label": "BASH · for u in https://"
         },
         {
-          "ts": 1795616857,
-          "label": "BASH · grep -n -i -E 'ph"
-        },
-        {
-          "ts": 1795616857,
-          "label": "BASH · ls -la ~/.config/"
-        },
-        {
-          "ts": 1795616857,
+          "ts": 1795616905,
           "label": "THINK"
         },
         {
-          "ts": 1795616870,
-          "label": "BASH · adb devices -l 2>"
+          "ts": 1795616911,
+          "label": "BASH · curl -v --max-tim"
         },
         {
-          "ts": 1795616870,
-          "label": "BASH · cat ~/.config/sma"
-        },
-        {
-          "ts": 1795616870,
-          "label": "BASH · sed -n '1,70p' ~/"
-        },
-        {
-          "ts": 1795616870,
+          "ts": 1795616912,
           "label": "THINK"
+        },
+        {
+          "ts": 1795616919,
+          "label": "BASH · echo | openssl s_"
+        },
+        {
+          "ts": 1795616919,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616939,
+          "label": "NET · https://raw.github"
         }
       ],
       "started_at": 1795616793,
-      "updated_at": 1795616881
+      "updated_at": 1795616939
+    },
+    {
+      "key": "req-20261125-172833-ede6dd",
+      "session_id": "",
+      "source": "task",
+      "label": "Закинь аудио файлы INVENTORS AI:\nhttps://invento.rs/api/file",
+      "step_label": "Проверка схемы обхода блокировок",
+      "step": 2,
+      "total": 4,
+      "events": 2,
+      "trail": [
+        {
+          "ts": 1795616923,
+          "label": "SYNC · network-constrain"
+        },
+        {
+          "ts": 1795616923,
+          "label": "SYNC · invento-rs"
+        },
+        {
+          "ts": 1795616923,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616928,
+          "label": "BASH · for u in \"https:/"
+        },
+        {
+          "ts": 1795616931,
+          "label": "BASH · ~/bin/smartnet ch"
+        },
+        {
+          "ts": 1795616931,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616939,
+          "label": "BASH · echo \"=== 7901 gl"
+        }
+      ],
+      "started_at": 1795616913,
+      "updated_at": 1795616941
     }
   ],
   "bars": [
@@ -2171,6 +2225,6 @@
   "progress_updated_at": "2026-11-25T08:20:05+03:00",
   "plan_age_hours": 9.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795616882,
-  "fetched_human": "2026-11-25 17:28:02 +0300"
+  "fetched_at": 1795616943,
+  "fetched_human": "2026-11-25 17:29:03 +0300"
 }
