@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T09:58:59+00:00",
-  "generated_human": "25.11 09:58 UTC",
-  "as_of": 1795600739120,
+  "generated": "2026-11-25T10:01:01+00:00",
+  "generated_human": "25.11 10:01 UTC",
+  "as_of": 1795600861221,
   "stale_days": 1,
   "count": 1002,
   "groups": 9,
@@ -39,9 +39,27 @@
    ],
    "prompts": [
     {
+     "id": "ses-GF5OhvtN45",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15596. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwvyb24nr1pl: S02cn: dot_quality под cyan на новых кадрах R01cf+S01DG — формальный гейт PASS, содержательный FAIL. Где: goals.json · 25.11.2026. Отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md (SHA 079aa79d…), результат S02CN-cyan-R01CF-S01DG-results.json (SHA a670c1c1…). Prer В конце вызови tools.goals.track({action:'done', id:'gmwvyb24nr1pl', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15596_run27482.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795600851000,
+     "source": "session",
+     "title": "AU15596: dot_quality cyan на R01cf+S01DG",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d",
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200052463b06"
+     ],
+     "as_of": 1795600851000,
+     "is_stale": false
+    },
+    {
      "id": "ses-S26ga4602e",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795600733000,
+     "ts": 1795600831000,
      "source": "session",
      "title": "dot_quality под cyan из R01/S01",
      "source_label": "ноут",
@@ -53,7 +71,7 @@
       "w2611200052468b4b",
       "w2611200052463b06"
      ],
-     "as_of": 1795600733000,
+     "as_of": 1795600831000,
      "is_stale": false
     },
     {
@@ -2778,24 +2796,6 @@
       "w261120005246413c"
      ],
      "as_of": 1795473734000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-iKDa4IVxUU",
-     "text": "ПРОРАБОТКА ОВЕРЛЕЯ, P0-1. Проверить через pc-bridge/GSI один кадр реального матча с allplayers>0 и проверить оверлей в кадре: деньги/бай/AWP под иконками. Если allplayers недоступны — честно зафиксировать как блокер с причиной и n попыток. Новый отчёт ~/overnight/open_tracks/O01-overlay-allplayers.md. Не трогать data/ и 44/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795472955000,
-     "source": "session",
-     "title": "Проверка оверлея при allplayers>0",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0",
-      "w2611200052460530",
-      "w2611200052465da0",
-      "w261123053459cf23"
-     ],
-     "as_of": 1795472955000,
      "is_stale": true
     },
     {
@@ -6100,7 +6100,7 @@
       "w2611200241438cdc"
      ],
      "as_of": 1795514351000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-phFu8hNp1E",
