@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-25T05:44:59+00:00",
-  "generated_human": "25.11 05:44 UTC",
-  "as_of": 1795585497969,
+  "generated": "2026-11-25T05:46:01+00:00",
+  "generated_human": "25.11 05:46 UTC",
+  "as_of": 1795585559348,
   "stale_days": 1,
-  "count": 1017,
+  "count": 1018,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -38,16 +38,42 @@
    ],
    "prompts": [
     {
-     "id": "ses-0HYPRPa1Id",
-     "text": "Find the file named `research-desk-library.json` anywhere under the home directory / current workspace (try `find /home/nyaka -name 'research-desk-library.json'` or search likely research-desk data dirs). Read it and report the full list of paper entries with their exact `id` fields, titles, and source URLs. I specifically need the paper id for the entry titled \"Telegram Mini Apps — Web Apps\". Do not modify anything — read only. Report concisely.",
-     "ts": 1795585493000,
+     "id": "ses-1XI266OBgW",
+     "text": "Задача (read-only по отношения к существующим файлам, можно создать один новый файл): скачай официальную документацию https://core.telegram.org/bots/webapps через curl (попробуй `curl -sL --max-time 30`), преобразуй HTML в чистый Markdown/текст и сохрани в `/tmp/telegram-webapps-doc.md`. Сообщи: размер файла, первые ~40 строк и lista основных разделов/API-методов, которые встретились в тексте (например WebApp API, BackButton, MainButton, safeAreaInsets, close/sendData и т.п.). Если curl не работает — сообщи кратко. Не меняй другие файлы.",
+     "ts": 1795585556000,
      "source": "session",
      "title": "DSH delegation",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795585493000,
+     "as_of": 1795585556000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-0HYPRPa1Id",
+     "text": "Продолжай: найди каталог research-desk с файлом state.json (он точно есть — ты его уже нашёл), прочитай state.json и выведи точные `id` всех записей библиотеки, особенно для «Telegram Mini Apps — Web Apps». Не меняй файлы. Ответь компактно: id, title, url.",
+     "ts": 1795585528000,
+     "source": "session",
+     "title": "DSH delegation",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795585528000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-0HYPRPa1Id-2",
+     "text": "Find the file named `research-desk-library.json` anywhere under the home directory / current workspace (try `find /home/nyaka -name 'research-desk-library.json'` or search likely research-desk data dirs). Read it and report the full list of paper entries with their exact `id` fields, titles, and source URLs. I specifically need the paper id for the entry titled \"Telegram Mini Apps — Web Apps\". Do not modify anything — read only. Report concisely.",
+     "ts": 1795585528000,
+     "source": "session",
+     "title": "DSH delegation",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795585528000,
      "is_stale": false
     },
     {
@@ -14192,31 +14218,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795547167871,
      "as_of": 1795469888000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-xHYCMSZaxO",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12168. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtndk7xfp0x: C11-15499: снять OPEN — свежий парс demoparser v4 на 10 новых демо. Где: goals.json · 23.11.2026. Промежуточный отчёт с вердиктом ~/overnight/cloud_tracks/C11-15499.md записан до pc-bridge зондов. 7 SHA data/ и 02/08/11 целы; мост /heal В конце вызови tools.goals.track({action:'done', id:'gmwtndk7xfp0x', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12168_run16178.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795469738000,
-     "source": "session",
-     "title": "AU12168 demoparser v4 hypothesis check",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795469738000,
      "is_stale": false
     },
     {
