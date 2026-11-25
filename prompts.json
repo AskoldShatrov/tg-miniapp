@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-25T02:13:30+00:00",
-  "generated_human": "25.11 02:13 UTC",
-  "as_of": 1795572807420,
+  "generated": "2026-11-25T02:14:33+00:00",
+  "generated_human": "25.11 02:14 UTC",
+  "as_of": 1795572871188,
   "stale_days": 1,
-  "count": 999,
+  "count": 1017,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -19,11 +19,10 @@
    "inbox.log",
    "opencode.db (сессии ноута)",
    "wants.json",
-   "replies.json"
+   "replies.json",
+   "runtime/tmp-checkpoint/pc_user_msgs.json"
   ],
-  "sources_skipped": [
-   "runtime/tmp-checkpoint/pc_user_msgs.json (выгрузка с ПК ещё не настроена)"
-  ],
+  "sources_skipped": [],
   "note": "группировка по темам; связи с хотелками (минимум 2 слова); ответ — реальная доставка из replies.json с префиксом want_id; as_of — время вопроса, is_stale — возраст доставки; сессии ноута — последние 800 с user-сообщениями из живой БД, до 2 текста на сессию (окно 3 дн), не вся история"
  },
  "groups": [
@@ -42,27 +41,27 @@
     {
      "id": "ses-12Bx4s8m8C",
      "text": "HARNESS\nFailed to load plugins\nweb boot: 2 required entries did not activate\n@deepseek-ai/dsh-client-ui-open-in-app: pending (waiting for services: contextMenus, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar (required): pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-sidebar-right: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-sidebar-documentpreview: pending (waiting for services: sidebarRightTabs, fileDrag)\n@deepseek-ai/dsh-client-ui-sidebar-terminal: pending (waiting for services: sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar-files: pending (waiting for services: sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-conversation: pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-chat (required): pending (waiting for services: uiWorkspace, uiConversation, sidebarRight, fileDrag)\n@deepseek-ai/dsh-client-ui-attachment: pending (waiting for service: fileDrag)\n@deepseek-ai/dsh-client-ui-workspace: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-workflow-run: pending (waiting for services: uiConversation, uiWorkspace)\n@deepseek-ai/dsh-client-ui-skill: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-subagent: pending (waiting for services: uiWorkspace, sidebarRight)\n@deepseek-ai/dsh-client-ui-reference: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-secret-mask: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-schedule: pending (waiting for services: conversation, uiConversation, uiWorkspace, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-goal: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-plan: pending (waiting for services: uiConversation, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-user-questions: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-trajectory: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-session-log-export: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-deliverables: pending (waiting for services: uiConversation, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-directory-picker-native: pending (waiting for service: uiWorkspace)\ndsh-reasoning-distill: pending (waiting for service: uiWorkspace)",
-     "ts": 1795572795000,
+     "ts": 1795572867000,
      "source": "session",
      "title": "Web boot plugin activation failure",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795572795000,
+     "as_of": 1795572867000,
      "is_stale": false
     },
     {
      "id": "ses-12Bx4s8m8C-2",
      "text": "HARNESS\nFailed to load plugins\nweb boot: 2 required entries did not activate\n@deepseek-ai/dsh-client-ui-open-in-app: pending (waiting for services: contextMenus, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar (required): pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-sidebar-right: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-sidebar-documentpreview: pending (waiting for services: sidebarRightTabs, fileDrag)\n@deepseek-ai/dsh-client-ui-sidebar-terminal: pending (waiting for services: sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar-files: pending (waiting for services: sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-conversation: pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-chat (required): pending (waiting for services: uiWorkspace, uiConversation, sidebarRight, fileDrag)\n@deepseek-ai/dsh-client-ui-attachment: pending (waiting for service: fileDrag)\n@deepseek-ai/dsh-client-ui-workspace: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-workflow-run: pending (waiting for services: uiConversation, uiWorkspace)\n@deepseek-ai/dsh-client-ui-skill: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-subagent: pending (waiting for services: uiWorkspace, sidebarRight)\n@deepseek-ai/dsh-client-ui-reference: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-secret-mask: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-schedule: pending (waiting for services: conversation, uiConversation, uiWorkspace, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-goal: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-plan: pending (waiting for services: uiConversation, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-user-questions: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-trajectory: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-session-log-export: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-deliverables: pending (waiting for services: uiConversation, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-directory-picker-native: pending (waiting for service: uiWorkspace)\ndsh-reasoning-distill: pending (waiting for service: uiWorkspace)",
-     "ts": 1795572795000,
+     "ts": 1795572867000,
      "source": "session",
      "title": "Web boot plugin activation failure",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795572795000,
+     "as_of": 1795572867000,
      "is_stale": false
     },
     {
@@ -18716,6 +18715,31 @@
      "is_stale": false
     },
     {
+     "id": "pc-korecDp3XP",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AP074. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtrsvi71bhq: C02-16130: калибровка confidence на REAL-кадрах — числовой гейт 3/3 PASS. Где: goals.json · Отчёт ~/overnight/cloud_tracks/C02-16130.md (промежуточный вердикт записан до зондов). r06: n=90>=60, FP=882>0 (Wilson [0.9060,0.9396]), ECE 0.5188->0 В конце вызови tools.goals.track({action:'done', id:'gmwtrsvi71bhq', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\AP074_run1795468869.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\AP074_run1795468869.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795474979000,
+     "source": "pc",
+     "title": "AP074 confidence calibration gate",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "w261119090518006d: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795474979000,
+     "is_stale": false
+    },
+    {
      "id": "ses-xH1eEAzyUi",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
      "ts": 1795474791000,
@@ -19789,6 +19813,29 @@
      "is_stale": false
     },
     {
+     "id": "pc-qoKYWIPTlt",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H662. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Мираж вариативен / придумывай каждый раунд. Где: `~/turngame/data/los_allmaps.json` — 10 демо de_mirage, разброс сценариев по раундам. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H662_run1795345042.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H662_run1795345042.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795345599000,
+     "source": "pc",
+     "title": "Проверка H662 PC-репликации на de_mirage",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-qoKYWIPTlt] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-qoKYWIPTlt: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795345599000,
+     "is_stale": false
+    },
+    {
      "id": "tg-20261122111945",
      "text": "А еще можно бутырку добавить к контейнеру и паше технику.\nА можешь, я не знаю, сделать так, чтобы во время игры в казино играл какой-нибудь рандомный трек-контейнер, вот, чтобы была быстрая скачка там трека-контейнера, вот, и чтобы, типа, там еще где-нибудь был какой-нибудь там цитатник Паша Техника, чтобы там выигрышем в казино была рандомная цитата Паша Техника.\nПлюс, соответственно, по сканфиду работа идет, калибровка, типа, можешь, пожалуйста, ну, типа, визуально сказать и меня заверить, что, ну, типа, если идет, то будет идти и дальше, типа, там куча часов подряд, потому что, вот, например, я сейчас спать лягу, я хочу, чтобы сканфид, ну, типа, максимально долго делался, потому что, ну, по факту, типа, для сканфида очень важно для, вот, сканфида экономики оверлея обучиться на выборке и прийти, ну, почти гарантированно,\nДля бутырки и паши техника ты можешь сделать какое-нибудь всплывающее окно, нажимая согласно, вы подтверждаете, что будет установлен трек бутырка, аттестат или любой трек паши техника и проигран.",
      "ts": 1795335712000,
@@ -20801,6 +20848,29 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795539374946,
      "as_of": 1795487029000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-bXN5hBHrWg",
+     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
+     "ts": 1795485632000,
+     "source": "pc",
+     "title": "T6 demo downloads and parsing",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-bXN5hBHrWg] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-bXN5hBHrWg: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795485632000,
      "is_stale": false
     },
     {
@@ -21921,6 +21991,29 @@
      "is_stale": false
     },
     {
+     "id": "pc-46at3C5jYW",
+     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
+     "ts": 1795466810000,
+     "source": "pc",
+     "title": "T6 demo downloads and parsing",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-46at3C5jYW] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-46at3C5jYW: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795466810000,
+     "is_stale": false
+    },
+    {
      "id": "ses-kA8YyOluUh",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15577. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtpgym8a7ic: R02BN: гейт малого радара на новых FACEIT-демо-корпусах — отрицательный результат. Где: goals.json · 23.11.2026 20:10Z, hy4-flash-free. Отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. k=0/5884 (C06-15766, Wilson [0,0.00065244]) и k=0/6 В конце вызови tools.goals.track({action:'done', id:'gmwtpgym8a7ic', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15577_run15941.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
      "ts": 1795465156000,
@@ -22121,6 +22214,29 @@
      "is_stale": false
     },
     {
+     "id": "pc-5NAsSQm4Cq",
+     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
+     "ts": 1795395685000,
+     "source": "pc",
+     "title": "T6 demo downloads and parsing",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-5NAsSQm4Cq] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-5NAsSQm4Cq: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795395685000,
+     "is_stale": false
+    },
+    {
      "id": "tg-20261122203548",
      "text": "Разблокируй сам локерв на сканфида это приоритетный проект но вроде ты уже делаешь у тебя есть все ресурсы перепроверь ты уиеешь работать с ПК и тд",
      "ts": 1795368948000,
@@ -22231,6 +22347,190 @@
      "is_stale": false
     },
     {
+     "id": "pc-SB6R67O6YN",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H663. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Инферно как эталон сравнения. Где: `~/turngame/data/los_allmaps.json` — 3 демо de_inferno, сравнение с dust2 по доле killer. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H663_run1795348648.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H663_run1795348648.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795349200000,
+     "source": "pc",
+     "title": "H663: сравнение de_inferno и dust2",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-SB6R67O6YN] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-SB6R67O6YN: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795349200000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-36wk2atOkg",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H664. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Анубис/Эншент = скриптовые карты. Где: `~/turngame/data/los_allmaps.json` — de_anubis/de_ancient, повторяемость ситуаций. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H664_run1795348648.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H664_run1795348648.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795349036000,
+     "source": "pc",
+     "title": "H664: независимая PC-репликация Анубис/Эншент",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-36wk2atOkg] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-36wk2atOkg: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795349036000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-HQ0dctkKEl",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H677. Источник: YOUTUBE_IDEAS.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Меньший aim-offset → больше hit (прицел, стрейф). Где: `shot_hit_model.py`. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H677_run1795346325.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H677_run1795346325.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795346349000,
+     "source": "pc",
+     "title": "",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-HQ0dctkKEl] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-HQ0dctkKEl: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795346349000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-g7spfrogvq",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H676. Источник: YOUTUBE_IDEAS.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: «Увидел первым → победил» / углы и пики. Где: `los_flags.py`, `los_allmaps.py`. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H676_run1795346265.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H676_run1795346265.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795346349000,
+     "source": "pc",
+     "title": "",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-g7spfrogvq] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-g7spfrogvq: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795346349000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-AhliKXCKCP",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H664. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Анубис/Эншент = скриптовые карты. Где: `~/turngame/data/los_allmaps.json` — de_anubis/de_ancient, повторяемость ситуаций. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H664_run1795345042.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H664_run1795345042.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795346345000,
+     "source": "pc",
+     "title": "PC-репликация H664: Анубис/Эншент",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-AhliKXCKCP] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-AhliKXCKCP: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795346345000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-xeE28X4KdY",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H663. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Инферно как эталон сравнения. Где: `~/turngame/data/los_allmaps.json` — 3 демо de_inferno, сравнение с dust2 по доле killer. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H663_run1795345042.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H663_run1795345042.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795346000000,
+     "source": "pc",
+     "title": "H663_run1795345042.md: Inferno против dust2",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-xeE28X4KdY] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-xeE28X4KdY: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795346000000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-dfOX9QiEK5",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H661. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Дуст = одна и та же ротация. Где: `duels_all_v3.jsonl` + engine-GT `~/scanfeed/data/gt_engine_dust2.jsonl` — повторяемость входов/зон на de_dust2. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H661_run1795345042.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H661_run1795345042.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795345728000,
+     "source": "pc",
+     "title": "PC-репликация H661 на de_dust2",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-dfOX9QiEK5] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-dfOX9QiEK5: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795345728000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-SVfyIPP25j",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H660. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Нюк = скрипты, без гранат никуда. Где: `~/turngame/data/los_allmaps.json` — дуэли по 7 картам, доля «увидел первым» и гранатные тайминги на de_nuke. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H660_run1795345042.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H660_run1795345042.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795345660000,
+     "source": "pc",
+     "title": "PC-репликация H660_run1795345042.md на de_nuke",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-SVfyIPP25j] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-SVfyIPP25j: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795345660000,
+     "is_stale": false
+    },
+    {
      "id": "tg-20261122140345",
      "text": "Когда проанализируешь студию игр, все видосы, транскрипции этих видео и обязательно описание под этими видео, потому что он там содержит полезные ссылки, которые ты можешь изучить, изучи его скилл студии игр, скачай с гитхаба и примени этот скилл к вот этому разрабатывалому указику.\nПо сканфиду демка до сих пор стоит на счете 5-7, то есть, ну, типа, осмотр демок не происходит по сканфиду, не знаю, это что-то уже тревожный немного сигнал.",
      "ts": 1795345499000,
@@ -22338,6 +22638,75 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795539374946,
      "as_of": 1795336936000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-PckgI21siz",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H657. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Первый/второй на входе. Где: `contact_allmaps.jsonl` — `lead_ticks`/`lead_seconds` между первым видом и смертью. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H657_run1795317338.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H657_run1795317338.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795317862000,
+     "source": "pc",
+     "title": "Гипотеза H657: lead_ticks и lead_seconds",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-PckgI21siz] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-PckgI21siz: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795317862000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-7oSxYS0111",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H658. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Тайминг и бусты. Где: `contact_allmaps.jsonl` — время первого контакта и бустовые тайминги. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H658_run1795317338.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H658_run1795317338.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795317862000,
+     "source": "pc",
+     "title": "H658: тайминг и бусты PC-репликации",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-7oSxYS0111] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-7oSxYS0111: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795317862000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-N6HX87y0q3",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H659. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Осознай свою роль / доходяга. Где: `behavior_v2.json` — WR по dominant axis, ICC по матчу 0.013–0.081. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H659_run1795317338.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H659_run1795317338.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795317726000,
+     "source": "pc",
+     "title": "PC-репликация гипотезы H659",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-N6HX87y0q3] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-N6HX87y0q3: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795317726000,
      "is_stale": false
     },
     {
@@ -22784,6 +23153,52 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795539374946,
      "as_of": 1795505918000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-Czh0oaTepE",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H667. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Озвучка и скорость чтения карты. Где: `announce.py` — гистерезис голоса; overlay для вывода каллов. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H667_run1795345664.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H667_run1795345664.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795346325000,
+     "source": "pc",
+     "title": "H667: голос, темп чтения карты",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-Czh0oaTepE] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-Czh0oaTepE: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795346325000,
+     "is_stale": false
+    },
+    {
+     "id": "pc-Un5wTmbppA",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ H665. Источник: VOICE_IDEAS_DEEP.md. Гипотеза: НЕЗАВИСИМАЯ PC-РЕПЛИКАЦИЯ: Колим / колить сами себе. Где: радар-детекты + гистерезис озвучки (`radar_belief.py`, `announce.py`). Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\H665_run1795345043.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\H665_run1795345043.md и ничего не пиши в data/ или чужие отчёты.",
+     "ts": 1795346250000,
+     "source": "pc",
+     "title": "H665: radar_belief.py и announce.py",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-Un5wTmbppA] 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_short": "pc-Un5wTmbppA: 🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз чер",
+     "answer_full": "🤖 Сейчас все бесплатные модели заняты — попробуй ещё раз через минуту.",
+     "answer_digest": {
+      "length": 70,
+      "sha256": "c4978e85bd68622fd44d3c56876093cd9be0f03da8a11052ef4cb7781efc56d7"
+     },
+     "answer_text_id": "c4978e85bd68622f",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795539374946,
+     "as_of": 1795346250000,
      "is_stale": false
     },
     {
