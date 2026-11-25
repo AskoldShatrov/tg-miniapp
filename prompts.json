@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T11:09:08+00:00",
-  "generated_human": "25.11 11:09 UTC",
-  "as_of": 1795604948267,
+  "generated": "2026-11-25T11:10:09+00:00",
+  "generated_human": "25.11 11:10 UTC",
+  "as_of": 1795605008562,
   "stale_days": 1,
   "count": 999,
   "groups": 9,
@@ -40,48 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-DB2BGrp4Rn",
-     "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795604946000,
-     "source": "session",
-     "title": "lree-HUDV-001-c4",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795604946000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-26X9S8NdM5",
-     "text": "ВАЖНО: websearch и webfetch в этой сессии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell. raw.githubusercontent.com и api.github.com работают через curl. Продолжай по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
-     "ts": 1795604946000,
-     "source": "session",
-     "title": "CS2 builtin + alternatives",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795604946000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-kHpgOl59WT",
-     "text": "ВАЖНО: websearch и webfetch в этой Seссии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell. raw.githubusercontent.com работает (проверено HTTP 200). Для GitHub-страниц/вики/PR/issue используй GitHub REST API через curl, например:\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/pulls/1174`\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/issues/1174/comments`\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/releases`\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/contents/<path>`\n- для вики: `curl -sS -L -m 25 https://raw.githubusercontent.com/wiki/advancedfx/advancedfx/<Page-Name>.md` (список страниц: `git clone --depth 1 https://github.com/advancedfx/advancedfx.wiki.git /tmp/opencode/afxwiki` если нужно).\nСохраняй ответы в /tmp/opencode/ и читай их. Продолжай исследование по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
-     "ts": 1795604943000,
-     "source": "session",
-     "title": "HLAE 2.193.2 POV/HUD research",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795604943000,
-     "is_stale": false
-    },
-    {
      "id": "ses-v9o2pAl8SN",
      "text": "СКАНФИД. Проверить enemy_model found/lost/unfound и 3-кадровый трек на новом корпусе; найти false positive и зафиксировать их долю. Гейт: доля FP измерима и > 0. Новый отчёт ~/overnight/cloud_tracks/C06-27542.md. Не трогать data/. ОБЯЗАТЕЛЬНО дополнительно запиши машино-читаемый результат в ~/overnight/cloud_tracks/C06-result.json с полями из cloud_gates.json (числа), иначе задача НЕ считается выполненной. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795604942000,
+     "ts": 1795605006000,
      "source": "session",
      "title": "СКАНФИД enemy_model FP в C06-27542",
      "source_label": "ноут",
@@ -93,20 +54,72 @@
       "w261120005246135d",
       "w2611200241438cdc"
      ],
-     "as_of": 1795604942000,
+     "as_of": 1795605006000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-kHpgOl59WT",
+     "text": "ВАЖНО: websearch и webfetch в этой Seссии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell. raw.githubusercontent.com работает (проверено HTTP 200). Для GitHub-страниц/вики/PR/issue используй GitHub REST API через curl, например:\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/pulls/1174`\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/issues/1174/comments`\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/releases`\n- `curl -sS -L -m 25 https://api.github.com/repos/advancedfx/advancedfx/contents/<path>`\n- для вики: `curl -sS -L -m 25 https://raw.githubusercontent.com/wiki/advancedfx/advancedfx/<Page-Name>.md` (список страниц: `git clone --depth 1 https://github.com/advancedfx/advancedfx.wiki.git /tmp/opencode/afxwiki` если нужно).\nСохраняй ответы в /tmp/opencode/ и читай их. Продолжай исследование по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
+     "ts": 1795605003000,
+     "source": "session",
+     "title": "HLAE 2.193.2 POV/HUD research",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795605003000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-26X9S8NdM5",
+     "text": "ВАЖНО: websearch и webfetch в этой сессии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell. raw.githubusercontent.com и api.github.com работают через curl. Продолжай по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
+     "ts": 1795605003000,
+     "source": "session",
+     "title": "CS2 builtin + alternatives",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795605003000,
      "is_stale": false
     },
     {
      "id": "ses-Ae3qTN4bIg",
      "text": "ВАЖНО: websearch и webfetch в этой сессии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell. raw.githubusercontent.com работает (HTTP 200). Для GitHub используй REST API через curl:\n- `curl -sS -L -m 25 https://api.github.com/repos/akiver/cs-demo-manager/contents/<path>`\n- `curl -sS -L -m 25 https://api.github.com/repos/akiver/cs-demo-manager`\n- `curl -sS -L -m 25 https://api.github.com/search/code?q=...` (может требовать авторизацию — тогда клонируй репо: `git clone --depth 1 https://github.com/akiver/cs-demo-manager.git /tmp/opencode/csdm` и ищи grep по коду).\nСохраняй ответы в /tmp/opencode/ и читай их. Продолжай по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
-     "ts": 1795604941000,
+     "ts": 1795605001000,
      "source": "session",
      "title": "CS Demo Manager POV/HUD research",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795604941000,
+     "as_of": 1795605001000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-Mov6PkTsBG",
+     "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795605001000,
+     "source": "session",
+     "title": "lree-HUDV-001-c3",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795605001000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-DB2BGrp4Rn",
+     "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795604982000,
+     "source": "session",
+     "title": "lree-HUDV-001-c4",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795604982000,
      "is_stale": false
     },
     {
@@ -138,19 +151,6 @@
       "w2611200241438cdc"
      ],
      "as_of": 1795604864000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-Mov6PkTsBG",
-     "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795604618000,
-     "source": "session",
-     "title": "lree-HUDV-001-c3",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795604618000,
      "is_stale": false
     },
     {
