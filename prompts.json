@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T11:36:26+00:00",
-  "generated_human": "25.11 11:36 UTC",
-  "as_of": 1795606586215,
+  "generated": "2026-11-25T11:37:27+00:00",
+  "generated_human": "25.11 11:37 UTC",
+  "as_of": 1795606646937,
   "stale_days": 1,
   "count": 997,
   "groups": 9,
@@ -40,55 +40,55 @@
    ],
    "prompts": [
     {
-     "id": "ses-5AMFSY5kn5",
-     "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c6.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795606584000,
-     "source": "session",
-     "title": "lree-HUDV-001-c6",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795606584000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-dKkakxiMHP",
-     "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.html -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue research on Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg using curl on their official sites/docs/FAQ/pricing. Focus: actual demo playback, single-player POV, hiding observer HUD/radar/HP/money/wallhack highlights. Return URLs + exact UI/setting labels + verdict CONFIRMED/CS:GO-only/OPEN. Do NOT write files.",
-     "ts": 1795606584000,
-     "source": "session",
-     "title": "Research web demo viewers",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795606584000,
-     "is_stale": false
-    },
-    {
      "id": "ses-DzB0As3RLY",
      "text": "ВАЖНО: websearch и webfetch в этой сессии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell для прямого获取 сайтов. Сохраняй HTML в /tmp/opencode/ и читай grep-ом. Продолжай по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
-     "ts": 1795606583000,
+     "ts": 1795606645000,
      "source": "session",
      "title": "Web demo viewers research",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795606583000,
+     "as_of": 1795606645000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-5AMFSY5kn5",
+     "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c6.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795606639000,
+     "source": "session",
+     "title": "lree-HUDV-001-c6",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795606639000,
      "is_stale": false
     },
     {
      "id": "ses-vdKB1k55fc",
      "text": "ИССЛЕДОВАНИЕ (per primary sources). Вопрос: какие инструменты просмотра CS2-демок в 2026 году способны показать демку от лица одного игрока (POV/player perspective) и скрыть закрытую информацию observer HUD: чужие HP/деньги/оружие/радар/подсветку через стены. Проверь CS Demo Manager (docs + source), HLAE 2.193.2 (source + wiki + issues/PR), Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg и любые найденные альтернативы. Для каждого: URL, точные команды/настройки, подтверждено ли для CS2 2026, или только CS:GO/OPEN. Ищи именно рабочий способ, а не общие описания.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-001-c5.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795606533000,
+     "ts": 1795606630000,
      "source": "session",
      "title": "lree-HUDV-001-c5",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795606533000,
+     "as_of": 1795606630000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-dKkakxiMHP",
+     "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.html -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue research on Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg using curl on their official sites/docs/FAQ/pricing. Focus: actual demo playback, single-player POV, hiding observer HUD/radar/HP/money/wallhack highlights. Return URLs + exact UI/setting labels + verdict CONFIRMED/CS:GO-only/OPEN. Do NOT write files.",
+     "ts": 1795606613000,
+     "source": "session",
+     "title": "Research web demo viewers",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795606613000,
      "is_stale": false
     },
     {
@@ -4127,7 +4127,7 @@
     {
      "id": "ses-cWOm86CsSK",
      "text": "КРИТИК. Сверить новые отчёты из cloud_tracks/ и hypothesis/ с claims.json и MASTERPLAN-v2: найти расхождения в цифрах и отсутствующие файлы-источники. Гейт: каждое расхождение с подписью источника, без молчаливого исправления. Новый отчёт ~/overnight/cloud_tracks/C15-27551.md. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795606583000,
+     "ts": 1795606633000,
      "source": "session",
      "title": "Расхождения C15-27551.md: claims.json и MASTERPLAN-v2",
      "source_label": "ноут",
@@ -4139,7 +4139,7 @@
       "w2611200241438cdc",
       "w261121055339bfc8"
      ],
-     "as_of": 1795606583000,
+     "as_of": 1795606633000,
      "is_stale": false
     },
     {
