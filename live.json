@@ -256,9 +256,9 @@
       "id": "T6.6",
       "title": "Live: активная закачка прямо сейчас",
       "status": "running",
-      "note": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho… (+1)",
+      "note": "идёт закачка: $o=[ordered]@{ts=(Get-Date).ToUniversalTime().ToString('o')} foreach($r… (+2)",
       "startedAt": "2026-11-19T08:22:05+03:00",
-      "updatedAt": "2026-11-25T03:53:54+03:00",
+      "updatedAt": "2026-11-25T03:55:59+03:00",
       "completedAt": "2026-11-24T15:39:13+03:00"
     },
     {
@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 465,
+      "age_min": 467,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 487,
+      "age_min": 489,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,32 +1966,32 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 487,
+      "age_min": 490,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "T6/T6.6",
       "title": "Live: активная закачка прямо сейчас",
       "source": "progress",
-      "claimed_human": "03:53:54",
+      "claimed_human": "03:55:59",
       "age_min": 0,
-      "full": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho… (+1)"
-    },
-    {
-      "id": "session-8c79c0af",
-      "title": "Распознавание не слом",
-      "source": "dsh",
-      "claimed_human": "03:53:51",
-      "age_min": 0,
-      "full": "Распознавание не слом"
+      "full": "идёт закачка: $o=[ordered]@{ts=(Get-Date).ToUniversalTime().ToString('o')} foreach($r… (+2)"
     },
     {
       "id": "session-dd85b57f",
       "title": "Почему нечитаемо и скиллы не подключились",
       "source": "dsh",
-      "claimed_human": "03:53:47",
+      "claimed_human": "03:55:58",
       "age_min": 0,
       "full": "Почему нечитаемо и скиллы не подключились"
+    },
+    {
+      "id": "session-8c79c0af",
+      "title": "Распознавание не слом",
+      "source": "dsh",
+      "claimed_human": "03:55:49",
+      "age_min": 0,
+      "full": "Распознавание не слом"
     }
   ],
   "queues": {
@@ -2017,13 +2017,62 @@
       "session_id": "ses_defe87134ffendGX1d8OPOTi17",
       "source": "task",
       "label": "А внутри . md открываемого телеграмом ?🤖 Нет, цвет и фон тек",
-      "step_label": "",
-      "step": 0,
-      "total": null,
-      "events": 0,
-      "trail": [],
+      "step_label": "уточнить суть вопроса про md-файл в Телеграме",
+      "step": 1,
+      "total": 3,
+      "events": 10,
+      "trail": [
+        {
+          "ts": 1795568082,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568091,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795568091,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568105,
+          "label": "BASH · adb -s 192.168.31"
+        },
+        {
+          "ts": 1795568105,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568125,
+          "label": "BASH · adb -s 192.168.31"
+        },
+        {
+          "ts": 1795568125,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568132,
+          "label": "BASH · adb -s 192.168.31"
+        },
+        {
+          "ts": 1795568132,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568146,
+          "label": "BASH · adb -s 192.168.31"
+        },
+        {
+          "ts": 1795568146,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568154,
+          "label": "READ · /tmp/opencode/pho"
+        }
+      ],
       "started_at": 1795568032,
-      "updated_at": 1795568032
+      "updated_at": 1795568159
     }
   ],
   "bars": [
@@ -2035,7 +2084,7 @@
       "unit": "шагов",
       "color": "yellow",
       "source": "progress.json",
-      "updated_at": "2026-11-25T03:53:54+03:00"
+      "updated_at": "2026-11-25T03:55:59+03:00"
     },
     {
       "key": "task:T29",
@@ -2045,7 +2094,7 @@
       "unit": "шагов",
       "color": "red",
       "source": "progress.json",
-      "updated_at": "2026-11-25T03:53:54+03:00"
+      "updated_at": "2026-11-25T03:55:59+03:00"
     },
     {
       "key": "captions",
@@ -2078,10 +2127,10 @@
       "updated_at": "2026-11-24T10:16:32+03:00"
     }
   ],
-  "updatedAt": "2026-11-25T03:53:54+03:00",
-  "progress_updated_at": "2026-11-25T03:53:54+03:00",
+  "updatedAt": "2026-11-25T03:55:59+03:00",
+  "progress_updated_at": "2026-11-25T03:55:59+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795568035,
-  "fetched_human": "2026-11-25 03:53:55 +0300"
+  "fetched_at": 1795568159,
+  "fetched_human": "2026-11-25 03:55:59 +0300"
 }
