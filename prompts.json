@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T09:44:42+00:00",
-  "generated_human": "25.11 09:44 UTC",
-  "as_of": 1795599882341,
+  "generated": "2026-11-25T09:45:45+00:00",
+  "generated_human": "25.11 09:45 UTC",
+  "as_of": 1795599944139,
   "stale_days": 1,
   "count": 1020,
   "groups": 9,
@@ -38,6 +38,24 @@
     "w261120024143491d"
    ],
    "prompts": [
+    {
+     "id": "ses-S26ga4602e",
+     "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
+     "ts": 1795599942000,
+     "source": "session",
+     "title": "dot_quality под cyan из R01/S01",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200052468b4b",
+      "w2611200052463b06"
+     ],
+     "as_of": 1795599942000,
+     "is_stale": false
+    },
     {
      "id": "ses-SD9pE1nfUp",
      "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
@@ -14843,29 +14861,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795547167871,
      "as_of": 1795474191000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-Q3zfB81T6R",
-     "text": "Вопрос ожидает ответа в телеграм-миниаппе. Выбери ОДИН вариант и объясни одним предложением.\nID: per_208a127d3001DS3FeTJklhDj53\nЗаголовок: Советчик не ответил на вопрос\nВопрос: Нужно разрешение\nПочему: Ожидает ответа в мини-апе\nВарианты: []\nОтветь первой строкой ровно выбранным вариантом (или «разрешить»/«отклонить» для permission), второй — почему.",
-     "ts": 1795472372000,
-     "source": "session",
-     "title": "Совет по вопросу per_208a127d3001",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-Q3zfB81T6R] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "ses-Q3zfB81T6R: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795472372000,
      "is_stale": false
     },
     {
