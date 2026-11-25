@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25 10:30",
+ "generated": "2026-11-25 11:00",
  "window": {
   "start": "2026-11-24T22:41",
   "end": "2026-11-25T07:22",
@@ -8,7 +8,7 @@
  },
  "summary": {
   "skills": 45,
-  "skills_used": 24,
+  "skills_used": 25,
   "agents": 6,
   "agents_used": 2,
   "autofeed": 0,
@@ -27,8 +27,7 @@
    "max_s": 5404,
    "last": "2026-11-25T07:22:54.579000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "done": 115,
+    "done": 116,
     "error": 32,
     "cancelled": 2
    },
@@ -74,7 +73,7 @@
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, diagnosing-bugs, disk-triage, draft-gate, experimentation-",
+     "n": "реже: answer-integrity, anti-autism, blocker-clock, code-review, cs2-demo-capture, diagnosing-bugs, disk-triage, draft-gate, e",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -1063,12 +1062,11 @@
    "status": "idle",
    "status_text": "Блок",
    "runs": 33,
-   "median_s": 587,
+   "median_s": 591,
    "max_s": 1390,
    "last": "2026-11-25T07:22:54.579000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "done": 31,
+    "done": 32,
     "error": 1
    },
    "example": [
@@ -1126,12 +1124,12 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 33 из 33, ≈11 вызовов за раз",
+     "t": "в 33 из 33, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, code-review, cs2-demo-capture, disk-triage, draft-gate, experimentation-analytics, hidden-auditor, min",
+     "n": "реже: answer-integrity, anti-autism, blocker-clock, code-review, cs2-demo-capture, disk-triage, draft-gate, experimentation-an",
      "t": "меньше 7 из 33",
      "d": 1
     }
@@ -1184,7 +1182,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 1",
+   "state": "Прогонов сейчас: 0",
    "level": "ok",
    "f": "C1"
   },
@@ -1224,7 +1222,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 2, с файлами 0",
+   "state": "Владельцев 1, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
