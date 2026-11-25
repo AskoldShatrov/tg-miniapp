@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 821,
+      "age_min": 822,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 842,
+      "age_min": 843,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,38 +1966,38 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 843,
+      "age_min": 844,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "6d7c54c9-53f7-40",
-      "title": "Исследуй по первоисто",
-      "source": "dsh",
-      "claimed_human": "09:49:07",
-      "age_min": 0,
-      "full": "Исследуй по первоисто"
-    },
-    {
-      "id": "session-8c79c0af",
-      "title": "Распознавание не слом",
-      "source": "dsh",
-      "claimed_human": "09:49:00",
-      "age_min": 0,
-      "full": "Распознавание не слом"
     },
     {
       "id": "session-fa656706",
       "title": "Замечания по оформлению курсовой работы",
       "source": "dsh",
-      "claimed_human": "09:48:54",
+      "claimed_human": "09:50:07",
       "age_min": 0,
       "full": "Замечания по оформлению курсовой работы"
+    },
+    {
+      "id": "session-8c79c0af",
+      "title": "Распознавание не слом",
+      "source": "dsh",
+      "claimed_human": "09:50:03",
+      "age_min": 0,
+      "full": "Распознавание не слом"
+    },
+    {
+      "id": "6d7c54c9-53f7-40",
+      "title": "Исследуй по первоисто",
+      "source": "dsh",
+      "claimed_human": "09:50:00",
+      "age_min": 0,
+      "full": "Исследуй по первоисто"
     },
     {
       "id": "session-6ae01f09",
       "title": "Установка Word на Linux",
       "source": "dsh",
-      "claimed_human": "09:48:19",
+      "claimed_human": "09:49:58",
       "age_min": 0,
       "full": "Установка Word на Linux"
     },
@@ -2006,7 +2006,7 @@
       "title": "сравни данные замечан",
       "source": "dsh",
       "claimed_human": "09:48:04",
-      "age_min": 1,
+      "age_min": 2,
       "full": "сравни данные замечан"
     },
     {
@@ -2014,7 +2014,7 @@
       "title": "Ошибка выбора модели агента",
       "source": "dsh",
       "claimed_human": "09:44:54",
-      "age_min": 4,
+      "age_min": 5,
       "full": "Ошибка выбора модели агента"
     },
     {
@@ -2022,7 +2022,7 @@
       "title": "Извлечь только PDF в папку",
       "source": "dsh",
       "claimed_human": "09:44:15",
-      "age_min": 4,
+      "age_min": 5,
       "full": "Извлечь только PDF в папку"
     },
     {
@@ -2030,7 +2030,7 @@
       "title": "Ты — независимый реви",
       "source": "dsh",
       "claimed_human": "09:42:25",
-      "age_min": 6,
+      "age_min": 7,
       "full": "Ты — независимый реви"
     }
   ],
@@ -2098,6 +2098,6 @@
   "progress_updated_at": "2026-11-25T08:20:05+03:00",
   "plan_age_hours": 1.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795589349,
-  "fetched_human": "2026-11-25 09:49:09 +0300"
+  "fetched_at": 1795589414,
+  "fetched_human": "2026-11-25 09:50:14 +0300"
 }
