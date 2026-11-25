@@ -270,6 +270,21 @@
   .msg.me .bubble{background:linear-gradient(145deg,rgba(137,180,250,.20),rgba(137,180,250,.10));
     border-color:rgba(137,180,250,.32);border-radius:14px 14px 4px 14px}
   .bubble .mtime{display:block;margin-top:4px;font:600 9px/1 var(--fm);color:var(--overlay0);text-align:right}
+  /* Rich-answer: тот же Markdown, что Telegram показывает жирным и кодом.
+     Раньше мини-ап экранировал ответ целиком — ** и ### виднелись буквально. */
+  .bubble b,.sr-rep b{color:var(--blue);font-weight:700}
+  .bubble code,.sr-rep code{font:600 11px/1.4 var(--fm);color:var(--green);
+    background:rgba(166,227,161,.09);border:1px solid rgba(166,227,161,.2);
+    padding:1px 4px;border-radius:4px}
+  .bubble pre,.sr-rep pre{white-space:pre-wrap;background:var(--mantle);
+    border:1px solid var(--surface1);border-radius:6px;padding:6px 8px;margin:4px 0;
+    font:500 11px/1.45 var(--fm);overflow-x:auto}
+  .rh{font-weight:800;color:var(--lavender);margin-top:4px}
+  .rli::before{content:"• ";color:var(--blue)}
+  .bubble blockquote,.sr-rep blockquote{margin:3px 0;padding:3px 8px;
+    border-left:2px solid var(--blue);color:var(--subtext1);
+    background:rgba(137,180,250,.07);border-radius:0 5px 5px 0}
+  .bubble hr,.sr-rep hr{border:0;border-top:1px solid var(--surface1);margin:6px 0}
   /* Запрос и ответ — одна связка: видно, на какой вопрос пришёл ответ. */
   .pair{position:relative;padding:9px 10px 10px 12px;border-radius:14px;
     background:linear-gradient(180deg,rgba(49,50,68,.40),rgba(17,17,27,.16));
@@ -846,7 +861,9 @@
         <button data-q="Кто сейчас в работе?">👥 Кто в работе</button>
         <button data-q="Что сейчас открыто?">📂 Что открыто</button>
         <button data-q="Какие решения приняты?">✅ Решения</button>
+        <button data-q="/grill-me Проведи интервью по всем проектам: задавай вопросы по одному, я отвечаю здесь же">🎤 Интервью</button>
         <button data-q="Подожди, уточняю детали">⏳ Подожди, уточняю</button>
+        <button data-interview="1" title="Открыть интервью по всем проектам (скилл grill-me)">🎙 Интервью</button>
       </div>
     </section>
 
@@ -1948,7 +1965,8 @@ function dshSend(payload, okText){
     method:"POST",
     headers:{"Content-Type":"application/json","X-Telegram-Init-Data":init},
     body:JSON.stringify({source:payload.source||"miniapp",text:text,
-      user_id:payload.user_id||userID,rid:payload.rid||"",surface:payload.surface||"chat"})
+      user_id:payload.user_id||userID,rid:payload.rid||"",surface:payload.surface||"chat",
+      session_id:payload.session_id||""})
   }).then(function(r){ return r.json(); }).then(function(j){
     if(!j || !j.ok) throw new Error("dsh/task rejected");
     if(okText) toast(okText);
@@ -1979,6 +1997,25 @@ let CHAT = {sent:[], replies:{}};
 try { CHAT = JSON.parse(localStorage.getItem(CHAT_KEY) || JSON.stringify(CHAT)); } catch(e){}
 function escHtml(x){
   return String(x).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+/* Rich-ответы в приложении. Telegram рендерит Markdown (Bot API 10.1 Rich
+   Message → entities), а мини-ап раньше показывал тот же текст как обычный:
+   **жирный**, ###, > и `код` виднелись буквально. Сначала экранируем HTML,
+   потом размечаем безопасный поднабор TFM — наружный HTML всё ещё невозможен. */
+function richHtml(text){
+  let s=escHtml(text==null?"":String(text));
+  s=s.replace(/⟦(?:ФАЙЛ|ОДНИМ):[^⟧]*⟧/g,"");       // служебные метки моста в чат не показываем
+  s=s.replace(/```([\s\S]*?)```/g,(_,c)=>"<pre>"+c+"</pre>");
+  s=s.replace(/`([^`\n]+)`/g,"<code>$1</code>");
+  s=s.replace(/\*\*([^*\n]+)\*\*/g,"<b>$1</b>");
+  s=s.replace(/(^|[\s(])\*([^*\n]+)\*/g,"$1<i>$2</i>");
+  return s.split("\n").map(line=>{
+    if(/^#{1,6}\s/.test(line)) return '<div class="rh">'+line.replace(/^#{1,6}\s/,"")+'</div>';
+    if(/^&gt;\s?/.test(line)) return '<blockquote>'+line.replace(/^&gt;\s?/,"")+'</blockquote>';
+    if(/^\s*[-•]\s/.test(line)) return '<div class="rli">'+line.replace(/^\s*[-•]\s/,"")+'</div>';
+    if(/^\s*(?:---|\*\*\*)\s*$/.test(line)) return '<hr>';
+    return line;
+  }).join("<br>");
 }
 /* Связка «запрос → ответ», два прохода (E-34 / G1):
    1) точное совпадение по rid — бот теперь пишет его в replies.json
