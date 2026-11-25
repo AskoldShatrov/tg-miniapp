@@ -3353,8 +3353,8 @@ async function fetchQuestions(){
 
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
 let LIVE_DATA_LOADING=false, LIVE_DATA_LOADED=false;
-async function fetchLiveData(){
-  if(LIVE_DATA_LOADING||LIVE_DATA_LOADED) return;
+async function fetchLiveData(force){
+  if(LIVE_DATA_LOADING||(LIVE_DATA_LOADED&&!force)) return;
   LIVE_DATA_LOADING=true;
   const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
   for(const base of bases){
@@ -3939,7 +3939,7 @@ function mountScenarios(){
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
 renderAtlas(); renderLive(); fetchQuestions();
 loadProcessTree();                    // этап 7: пробуем живой API; без URL остаётся статический фолбэк
-setInterval(fetchLiveData, 60000);    // статический фолбэк: decisions/atlas/live
+setInterval(()=>fetchLiveData(true), 60000); // статический фолбэк: decisions/atlas/live
 setInterval(fetchQuestions, 5000);    // вопросы: /questions при API, иначе questions.json
 setInterval(()=>{                     // этап 7: только API-дерево (5с), без дублирования статических запросов
   if(API_TREE_ON || (LATEST_STATUS && LATEST_STATUS.process_api_url)) loadProcessTree();

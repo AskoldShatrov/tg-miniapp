@@ -503,13 +503,21 @@
       sendYesNo(target, map[k]);
     });
   }
-  function open(){ ensureShell(); $("#vwBack").classList.add("open"); $("#vwPanel").classList.add("open"); }
+  function open(){
+    ensureShell();
+    $("#vwBack").classList.add("open"); $("#vwPanel").classList.add("open");
+    if(V.cur&&currentView()) loadData(currentView(),false);
+    else if(!V.specLoading&&!V.specError) loadSpec();
+  }
   function close(){ var p=$("#vwPanel"), b=$("#vwBack"); if(p) p.classList.remove("open"); if(b) b.classList.remove("open"); }
 
   /* ---------- загрузка спецификации и данных ---------- */
   function loadSpec(){
+    if(V.specLoaded||V.specLoading) return;
     if(INLINE){ applySpec(INLINE); return; }
-    fetchJSON(SRC, false).then(applySpec).catch(function(err){
+    V.specLoading=true;
+    fetchJSON(SRC, false).then(function(spec){ V.specLoading=false; applySpec(spec); }).catch(function(err){
+      V.specLoading=false;
       V.specError = (err && err.message) ? err.message : String(err);
       renderSelector(); renderNoSpec();
     });
@@ -517,14 +525,16 @@
   function applySpec(spec){
     V.views = Array.isArray(spec && spec.views) ? spec.views : [];
     V.specError = null;
+    V.specLoaded = true;
     markLoaded();
-    prefetchAll();
     renderSelector();
     var keep = V.cur, target = null;
     for(var i=0;i<V.views.length;i++) if(viewId(V.views[i]) === keep) target = keep;
     if(!target && V.views.length) target = viewId(V.views[0]);
-    if(target) selectView(target);
-    else { V.cur = null; renderNoSpec(); }
+    if(target){
+      V.cur=target;
+      if($("#vwPanel")&&$("#vwPanel").classList.contains("open")) selectView(target);
+    } else { V.cur = null; renderNoSpec(); }
   }
   function loadData(v, force){
     var id = viewId(v);
@@ -675,7 +685,8 @@
     showOpen(v.title || v.id || id);
     renderSelector();
     loadData(v, false);
-    pfSubmit(pfNeighbours(id), false);  // греем выбранный вид и его соседей
+    if($("#vwPanel")&&$("#vwPanel").classList.contains("open"))
+      pfSubmit(pfNeighbours(id), false);  // греем соседей только в открытой панели
   }
   function setSearch(q){
     V.search = String(q || "");
