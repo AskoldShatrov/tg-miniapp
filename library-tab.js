@@ -6,6 +6,8 @@
   'use strict';
 
   var KEY = 'pairdev.library.articles.v1';
+  var KEY_HIDDEN = 'pairdev.library.hidden.v1';
+  var BASE_URL = 'https://askoldshatrov.github.io/tg-miniapp/';
 
   var SEED = [{
     id: 'arxiv-2610.01471',
@@ -16,6 +18,24 @@
     url: 'https://arxiv.org/abs/2610.01471',
     tags: ['LLM', 'review', 'verification', 'cross-model', 'cs.CL'],
     abstract: 'Large language models now generate code, documentation, and analyses, and are increasingly used to review such output. We ask when a second review by a different model helps. Building on the author\'s earlier preprints, which varied context, repetition, and role structure within one model, we test model independence in a controlled experiment: 30 artifacts with 150 planted errors, 10 review conditions, and 900 review sessions with three reviewer models from two developers. In this experiment, (1) a top-tier cross-model reviewer is not significantly different in F1 from same-model review in a fresh session (CCR), which does not establish equivalence; (2) the two find partly different errors (Jaccard 41.2%); and (3) at two review calls, one CCR plus one cross-model review matches more planted errors than two CCR reviews (56.7% vs. 42.7%; Holm-adjusted p=.006), but not significantly more than two reviews by the top-tier cross-model reviewer, so model difference and reviewer capability are not separated. A lightweight cross-model reviewer scores no higher than same-model review. Withholding requirements from the reviewer raises F1 for the two lower tiers but not the top tier, in untested point estimates whose pattern depends on how failed sessions are scored. Before analysis we audited all session records, excluding one baseline run of uncertain provenance and 14 failed calls; results with all sessions are also reported. A partial check on public detector outputs from another benchmark neither replicates nor contradicts the main comparison.'
+  }, {
+    id: 'study-nir-final-20261123',
+    title: 'НИР · итоговая версия (40 стр · 23.11.2026)',
+    authors: 'Шатров А. И. · группа 4291 · СПбГТИ(ТУ)',
+    source: 'Учёба · PDF',
+    date: '2026-11-23',
+    url: BASE_URL + 'pdfs/nir-final-20261123.pdf',
+    tags: ['НИР', 'компьютерное моделирование', 'практика', '40 стр'],
+    abstract: 'Последняя версия отчёта по научно-исследовательской работе (Б2.О.02.02(Н)), 40 страниц, собрана 23.11.2026 13:22 МСК. Канонический файл на ноуте: /home/nyaka/учеба/учеба/nir_latex/nir_final.pdf; SHA256 612eda10991e86b7bd583f708f2a0cbc2c33609da8c0d0fd4a6c4efb84f277c0.'
+  }, {
+    id: 'study-kp-kmvkh-final-20261123',
+    title: 'Курсовой проект · КМвХиХТ (27 стр · 23.11.2026)',
+    authors: 'Шатров А. И. · группа 4291 · Полосин А. Н., Козлов А. В.',
+    source: 'Учёба · PDF',
+    date: '2026-11-23',
+    url: BASE_URL + 'pdfs/kp-kmvkh-final-20261123.pdf',
+    tags: ['курсовой', 'КМвХиХТ', 'компьютерное моделирование', 'TLS', '27 стр'],
+    abstract: 'Последняя версия пояснительной записки курсового проекта по компьютерному моделированию в химии и химической технологии, 27 страниц, собрана 23.11.2026 10:33 МСК. Канонический файл: /home/nyaka/учеба/учеба/it/kp/current/kp_pz.pdf; SHA256 b51e08144d0dab24d8bbee2596a1c16490db021ac48ab1a339d6d21cf7977575.'
   }];
 
   function esc(s) {
@@ -38,10 +58,39 @@
     return out.length ? out : copySeed();
   }
 
+  function hiddenIds() {
+    try {
+      var raw = global.localStorage.getItem(KEY_HIDDEN);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) { return []; }
+  }
+
+  function saveHidden(ids) {
+    try { global.localStorage.setItem(KEY_HIDDEN, JSON.stringify(ids)); } catch (e) {}
+  }
+
   function load() {
+    var hidden = hiddenIds();
     try {
       var raw = global.localStorage.getItem(KEY);
-      if (raw) return normalList(JSON.parse(raw));
+      if (raw) {
+        var items = normalList(JSON.parse(raw));
+        var have = {};
+        items.forEach(function (a) { have[a.id] = true; });
+        var added = false;
+        // Новые вшитые статьи должны доезжать до устройств, где библиотека
+        // уже сохранена в localStorage. Удалённые пользователем сид-статьи
+        // не воскресают: их id запоминается в KEY_HIDDEN.
+        SEED.forEach(function (s) {
+          if (!have[s.id] && hidden.indexOf(s.id) === -1) {
+            items.push(JSON.parse(JSON.stringify(s)));
+            added = true;
+          }
+        });
+        if (added) save(items);
+        return items;
+      }
     } catch (e) { /* приватный режим / Pages в песочнице — работаем в памяти */ }
     var seeded = copySeed();
     save(seeded);
@@ -168,6 +217,10 @@
 
   function remove(id) {
     save(load().filter(function (a) { return a.id !== id; }));
+    if (SEED.some(function (s) { return s.id === id; })) {
+      var h = hiddenIds();
+      if (h.indexOf(id) === -1) { h.push(id); saveHidden(h); }
+    }
   }
 
   function list() { return load(); }
