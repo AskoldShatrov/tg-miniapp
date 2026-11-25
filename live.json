@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 635,
+      "age_min": 636,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 656,
+      "age_min": 657,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,67 +1966,101 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 657,
+      "age_min": 658,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
-      "id": "session-7286d154",
-      "title": "Почему слетел перевод после настройки",
-      "source": "dsh",
-      "claimed_human": "06:43:02",
+      "id": "AU15591",
+      "title": "ДОВЕСТИ ЦЕЛЬ gmwvkw7kuxlxa: S02cm — dot_quality под cyan: новые кадры GRID149CM + S01DC, гейт ECE<0.15 пройден",
+      "source": "ноут",
+      "claimed_human": "06:44:07",
       "age_min": 0,
-      "full": "Почему слетел перевод после настройки"
+      "full": "ДОВЕСТИ ЦЕЛЬ gmwvkw7kuxlxa: S02cm — dot_quality под cyan: новые кадры GRID149CM + S01DC, гейт ECE<0.15 пройден",
+      "autogen": true
+    },
+    {
+      "id": "session-00c75db2",
+      "title": "Сканфид и расширенный поиск плагинов",
+      "source": "dsh",
+      "claimed_human": "06:44:07",
+      "age_min": 0,
+      "full": "Сканфид и расширенный поиск плагинов"
     },
     {
       "id": "session-e4e07198",
       "title": "причины молчания тг м",
       "source": "dsh",
-      "claimed_human": "06:42:59",
+      "claimed_human": "06:44:06",
       "age_min": 0,
       "full": "причины молчания тг м"
+    },
+    {
+      "id": "session-7286d154",
+      "title": "Почему слетел перевод после настройки",
+      "source": "dsh",
+      "claimed_human": "06:44:03",
+      "age_min": 0,
+      "full": "Почему слетел перевод после настройки"
     },
     {
       "id": "session-8c79c0af",
       "title": "Распознавание не слом",
       "source": "dsh",
-      "claimed_human": "06:42:58",
+      "claimed_human": "06:43:57",
       "age_min": 0,
       "full": "Распознавание не слом"
+    },
+    {
+      "id": "AP077",
+      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261125064309789f: не терять запросы при NameError в запуске задачи бота",
+      "source": "ПК",
+      "claimed_human": "06:43:19",
+      "age_min": 0,
+      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261125064309789f: не терять запросы при NameError в запуске задачи бота"
+    },
+    {
+      "id": "AP075",
+      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112506430968aa: вернуть долг по всем сообщениям, потерянным при рестартах DSH и TG мини-апа",
+      "source": "ПК",
+      "claimed_human": "06:43:18",
+      "age_min": 0,
+      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112506430968aa: вернуть долг по всем сообщениям, потерянным при рестартах DSH и TG мини-апа"
+    },
+    {
+      "id": "AP076",
+      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611250643091307: сделать отдельную вкладку для интервью в TG мини-апе",
+      "source": "ПК",
+      "claimed_human": "06:43:18",
+      "age_min": 0,
+      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611250643091307: сделать отдельную вкладку для интервью в TG мини-апе"
     },
     {
       "id": "81706b16-d6ee-40",
       "title": "Задача: исследование",
       "source": "dsh",
       "claimed_human": "06:41:29",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Задача: исследование"
-    },
-    {
-      "id": "session-00c75db2",
-      "title": "Сканфид и расширенный поиск плагинов",
-      "source": "dsh",
-      "claimed_human": "06:41:10",
-      "age_min": 1,
-      "full": "Сканфид и расширенный поиск плагинов"
     },
     {
       "id": "5d9dd63f-9bd9-44",
       "title": "Ты — независимый крит",
       "source": "dsh",
       "claimed_human": "06:37:56",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Ты — независимый крит"
     }
   ],
   "queues": {
     "ноут": {
       "done": 1481,
-      "failed": 151
+      "failed": 151,
+      "doing": 1
     },
     "ПК": {
       "done": 81,
       "failed": 10,
-      "todo": 3
+      "doing": 3
     }
   },
   "corpus": {
@@ -2083,6 +2117,6 @@
   "progress_updated_at": "2026-11-25T04:36:42+03:00",
   "plan_age_hours": 2.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795578189,
-  "fetched_human": "2026-11-25 06:43:09 +0300"
+  "fetched_at": 1795578250,
+  "fetched_human": "2026-11-25 06:44:10 +0300"
 }
