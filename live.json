@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 676,
+      "age_min": 677,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 697,
+      "age_min": 698,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,14 +1966,30 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 698,
+      "age_min": 699,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-bd278e04",
+      "title": "Проверка работы чата в мини-аппе",
+      "source": "dsh",
+      "claimed_human": "07:25:04",
+      "age_min": 0,
+      "full": "Проверка работы чата в мини-аппе"
+    },
+    {
+      "id": "session-b97e6be8",
+      "title": "Новые версии НИР и курсача",
+      "source": "dsh",
+      "claimed_human": "07:25:03",
+      "age_min": 0,
+      "full": "Новые версии НИР и курсача"
     },
     {
       "id": "session-f5226611",
       "title": "Что такое это",
       "source": "dsh",
-      "claimed_human": "07:23:53",
+      "claimed_human": "07:24:59",
       "age_min": 0,
       "full": "Что такое это"
     },
@@ -1981,7 +1997,7 @@
       "id": "session-8c79c0af",
       "title": "Распознавание не слом",
       "source": "dsh",
-      "claimed_human": "07:23:48",
+      "claimed_human": "07:24:53",
       "age_min": 0,
       "full": "Распознавание не слом"
     },
@@ -1990,23 +2006,15 @@
       "title": "причины молчания тг м",
       "source": "dsh",
       "claimed_human": "07:22:25",
-      "age_min": 1,
+      "age_min": 2,
       "full": "причины молчания тг м"
-    },
-    {
-      "id": "session-bd278e04",
-      "title": "Проверка работы чата в мини-аппе",
-      "source": "dsh",
-      "claimed_human": "07:20:05",
-      "age_min": 3,
-      "full": "Проверка работы чата в мини-аппе"
     },
     {
       "id": "session-b68e8ed8",
       "title": "Проверка точного ответа PONG",
       "source": "dsh",
       "claimed_human": "07:19:12",
-      "age_min": 4,
+      "age_min": 5,
       "full": "Проверка точного ответа PONG"
     }
   ],
@@ -2074,6 +2082,6 @@
   "progress_updated_at": "2026-11-25T06:54:41+03:00",
   "plan_age_hours": 0.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795580641,
-  "fetched_human": "2026-11-25 07:24:01 +0300"
+  "fetched_at": 1795580705,
+  "fetched_human": "2026-11-25 07:25:05 +0300"
 }
