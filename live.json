@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 1279,
+      "age_min": 1280,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 1300,
+      "age_min": 1301,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,7 +1966,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 1301,
+      "age_min": 1302,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     }
   ],
@@ -1994,34 +1994,10 @@
       "source": "task",
       "label": "Работа над сканфидом идет? Если нет то запусти full access .",
       "step_label": "Собрать для телефона скрипт сбора инфы и логи",
-      "step": 6,
+      "step": 7,
       "total": 6,
-      "events": 25,
+      "events": 28,
       "trail": [
-        {
-          "ts": 1795616650,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795616667,
-          "label": "WRITE · /home/nyaka/scri"
-        },
-        {
-          "ts": 1795616667,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795616681,
-          "label": "WRITE · /home/nyaka/repo"
-        },
-        {
-          "ts": 1795616683,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795616717,
-          "label": "BASH · sleep 20; python3"
-        },
         {
           "ts": 1795616725,
           "label": "BASH · python3 ~/scripts"
@@ -2045,20 +2021,44 @@
         {
           "ts": 1795616752,
           "label": "THINK"
+        },
+        {
+          "ts": 1795616836,
+          "label": "BASH · sleep 75; python3"
+        },
+        {
+          "ts": 1795616840,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616859,
+          "label": "BASH · E=~/scripts/backg"
+        },
+        {
+          "ts": 1795616859,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616880,
+          "label": "BASH · sha256sum ~/repor"
+        },
+        {
+          "ts": 1795616880,
+          "label": "THINK"
         }
       ],
       "started_at": 1795616384,
-      "updated_at": 1795616819
+      "updated_at": 1795616882
     },
     {
       "key": "req-20261125-172600-7204f6",
       "session_id": "ses_ded951d49ffeuwT0H0ZzqQOjM8",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "Разобрать_скрины_v2rayNG",
-      "step": 1,
+      "step_label": "Найти_конкретные_переключатели",
+      "step": 2,
       "total": 3,
-      "events": 1,
+      "events": 4,
       "trail": [
         {
           "ts": 1795616799,
@@ -2071,72 +2071,88 @@
         {
           "ts": 1795616799,
           "label": "THINK"
+        },
+        {
+          "ts": 1795616820,
+          "label": "WRITE · /tmp/opencode/ma"
+        },
+        {
+          "ts": 1795616820,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795616832,
+          "label": "BASH · python3 /tmp/open"
+        },
+        {
+          "ts": 1795616847,
+          "label": "WRITE · /tmp/opencode/dr"
         }
       ],
       "started_at": 1795616760,
-      "updated_at": 1795616819
+      "updated_at": 1795616879
     },
     {
       "key": "req-20261125-172632-f3b238",
       "session_id": "",
       "source": "task",
       "label": "У меня не открываются обычные сайты вконтакте сбербанк на мо",
-      "step_label": "смотреть скриншоты",
-      "step": 1,
+      "step_label": "правила сети",
+      "step": 2,
       "total": 4,
-      "events": 3,
+      "events": 8,
       "trail": [
         {
-          "ts": 1795616799,
+          "ts": 1795616836,
+          "label": "BASH · for d in vk.com w"
+        },
+        {
+          "ts": 1795616836,
           "label": "THINK"
         },
         {
-          "ts": 1795616803,
-          "label": "READ · /home/nyaka/local"
+          "ts": 1795616845,
+          "label": "BASH · for d in vk.com w"
         },
         {
-          "ts": 1795616803,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795616803,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795616803,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795616803,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795616803,
+          "ts": 1795616845,
           "label": "THINK"
         },
         {
-          "ts": 1795616808,
-          "label": "READ · /home/nyaka/local"
+          "ts": 1795616857,
+          "label": "BASH · ls ~/.config/open"
         },
         {
-          "ts": 1795616809,
-          "label": "READ · /home/nyaka/local"
+          "ts": 1795616857,
+          "label": "BASH · grep -n -i -E 'ph"
         },
         {
-          "ts": 1795616809,
-          "label": "READ · /home/nyaka/local"
+          "ts": 1795616857,
+          "label": "BASH · ls -la ~/.config/"
         },
         {
-          "ts": 1795616809,
-          "label": "READ · /home/nyaka/local"
+          "ts": 1795616857,
+          "label": "THINK"
         },
         {
-          "ts": 1795616809,
+          "ts": 1795616870,
+          "label": "BASH · adb devices -l 2>"
+        },
+        {
+          "ts": 1795616870,
+          "label": "BASH · cat ~/.config/sma"
+        },
+        {
+          "ts": 1795616870,
+          "label": "BASH · sed -n '1,70p' ~/"
+        },
+        {
+          "ts": 1795616870,
           "label": "THINK"
         }
       ],
       "started_at": 1795616793,
-      "updated_at": 1795616822
+      "updated_at": 1795616881
     }
   ],
   "bars": [
@@ -2155,6 +2171,6 @@
   "progress_updated_at": "2026-11-25T08:20:05+03:00",
   "plan_age_hours": 9.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795616822,
-  "fetched_human": "2026-11-25 17:27:02 +0300"
+  "fetched_at": 1795616882,
+  "fetched_human": "2026-11-25 17:28:02 +0300"
 }
