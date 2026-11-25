@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T22:42:46+00:00",
-  "generated_human": "25.11 22:42 UTC",
-  "as_of": 1795646566245,
+  "generated": "2026-11-25T22:43:49+00:00",
+  "generated_human": "25.11 22:43 UTC",
+  "as_of": 1795646628595,
   "stale_days": 1,
   "count": 985,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-01V9bfdp3q",
      "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на расширенном корпусе (320 демо, 7 карт). Честно отделить pooled от contested. Новый отчёт ~/overnight/open_tracks/T05-t1c-coverage.md. Не переоткрывать закрытые T1/wp_v3 (см. MASTERPLAN-v2 §2.1). ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795646564000,
+     "ts": 1795646621000,
      "source": "session",
      "title": "Покрытие T5 T1c на 320/320",
      "source_label": "ноут",
@@ -54,7 +54,7 @@
       "w2611200052463688",
       "w2611230534591383"
      ],
-     "as_of": 1795646564000,
+     "as_of": 1795646621000,
      "is_stale": false
     },
     {
@@ -3180,14 +3180,14 @@
     {
      "id": "ses-AT80Z2Sy69",
      "text": "ТОЛЬКО ЧТЕНИЕ + один новый артефакт. G4. Возьми 5 отчётов из ~/overnight/hypothesis/, ещё не описанных в artifacts/SF-T05-VERIFY-c*.md. Для каждого запусти python3 ~/.config/opencode/scripts/hypothesis_report.py check <ID>, зафиксируй команду, rc, путь, SHA256 и mtime. Сверь статус с ~/.config/opencode/scripts/background/hypothesis_backlog.jsonl если файл есть, иначе с ~/scripts/background/hypothesis_backlog.jsonl — это единственный живой бэклог. Отдельно выпиши расхождения между отчётом и бэклогом. Отрицательный результат и insufficient data — полноценный исход, не пропускай их. VERDICT по числу реально проверенных отчётов. Маркер SF-T05-VERIFY. Артефакт обязан содержать отдельными строками: КОМАНДА: <реальная команда>, rc: <число>, SHA256: <64 hex>, mtime: <epoch>, VERDICT: PASS|FAIL|OPEN, а также уникальный маркер задачи. Без этих полей гейт вернёт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/scanfeed-8h-1125/artifacts/SF-T05-VERIFY-c52.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795646550000,
+     "ts": 1795646621000,
      "source": "session",
      "title": "lree-SF-T05-VERIFY-c52",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795646550000,
+     "as_of": 1795646621000,
      "is_stale": false
     },
     {
