@@ -1723,7 +1723,9 @@ let LATEST_STATUS = null;      // последний успешно прочит
 let API_LAST_ERROR = "";       // текст последней ошибки — для тостов
 const apiWarned = {};          // логируем сбой каждого эндпоинта только раз
 async function api(path, body, timeoutMs){
-  const raw = (LATEST_STATUS && LATEST_STATUS.process_api_url) ? LATEST_STATUS.process_api_url : "";
+  // Нестабильный localhost.run больше не участвует в открытии: мёртвый адрес
+  // из status.json вешал приложение на 6 секунд на каждом вызове.
+  const raw = "";
   const base = raw ? String(raw).replace(/\/+$/,"") : "";
   if(!base) return null;
   const wa = (typeof window!=="undefined" && window.Telegram && window.Telegram.WebApp) ? window.Telegram.WebApp : null;
@@ -1985,9 +1987,7 @@ function dshFallback(payload){
   return false;
 }
 function dshSend(payload, okText){
-  var base="";
-  try{ base=String((LATEST_STATUS&&LATEST_STATUS.process_api_url)||"").replace(/\/+$/,""); }
-  catch(e){}
+  var base="";   // живой туннель отключён: отправка идёт через Telegram sendData
   var init="";
   try{
     init=(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)||
@@ -2314,8 +2314,7 @@ setInterval(refreshReplies, 5000);
   function roleApiBase(){
     const q = new URLSearchParams(location.search).get("api");
     if(q) return String(q).replace(/\/+$/, "");
-    return (LATEST_STATUS && LATEST_STATUS.process_api_url)
-      ? String(LATEST_STATUS.process_api_url).replace(/\/+$/, "") : "";
+    return "";   // живой туннель отключён — роль остаётся гостевой
   }
   async function fetchServerRole(){
     const base = roleApiBase();
@@ -3729,8 +3728,7 @@ async function voiceFinish(){
     return;
   }
   voiceStatus("отправляю "+dur+" с…");
-  const raw=(LATEST_STATUS && LATEST_STATUS.process_api_url)
-    ? String(LATEST_STATUS.process_api_url).replace(/\/+$/,"") : "";
+  const raw="";   // живой туннель отключён — голос уходит через чат
   const rid="v"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
   const ext=type.indexOf("ogg")>=0 ? "ogg" : "webm";
   const entry={ text:"🎤 Голос "+dur+" с · отправляю…", t:new Date().toTimeString().slice(0,8),
