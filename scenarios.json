@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-25 15:30",
+ "generated": "2026-11-25 16:00",
  "window": {
-  "start": "2026-11-25T01:14",
-  "end": "2026-11-25T12:24",
-  "sessions": 173,
+  "start": "2026-11-25T01:44",
+  "end": "2026-11-25T12:58",
+  "sessions": 174,
   "roots": 150
  },
  "summary": {
@@ -23,9 +23,9 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 340,
+   "median_s": 358,
    "max_s": 3898,
-   "last": "2026-11-25T12:24:21.693000+00:00",
+   "last": "2026-11-25T12:58:33.339000+00:00",
    "outcomes": {
     "waiting_user": 4,
     "done": 126,
@@ -33,8 +33,8 @@
     "error": 19
    },
    "example": [
-    "5J2NwVYO",
-    "68ygqV6P"
+    "WuCrqZcs",
+    "SzEkGmwT"
    ],
    "actual": [
     {
@@ -45,7 +45,7 @@
     {
      "k": "skill",
      "n": "scientific-ergonomics",
-     "t": "в 32 из 150",
+     "t": "в 31 из 150",
      "d": 1
     },
     {
@@ -63,13 +63,13 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 102 из 150, ≈31 вызовов за раз",
+     "t": "в 104 из 150, ≈31 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 84 из 150, ≈7 вызовов за раз",
+     "t": "в 85 из 150, ≈7 вызовов за раз",
      "d": 1
     },
     {
@@ -1097,7 +1097,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×87, opencode/hy4-flash-free ×16, opencode/mimo-v2.6-flash-free ×16",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×90, opencode/hy4-flash-free ×15, opencode/mimo-v2.6-flash-free ×14",
    "level": "ok",
    "f": "C13"
   },
@@ -1121,7 +1121,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 10, с файлами 0",
+   "state": "Владельцев 7, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
