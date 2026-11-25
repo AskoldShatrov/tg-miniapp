@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T08:54:59+00:00",
-  "generated_human": "25.11 08:54 UTC",
-  "as_of": 1795596898166,
+  "generated": "2026-11-25T08:56:00+00:00",
+  "generated_human": "25.11 08:56 UTC",
+  "as_of": 1795596958840,
   "stale_days": 1,
   "count": 1002,
   "groups": 9,
@@ -29,6 +29,1094 @@
  "groups": [
   {
    "id": "g1",
+   "name": "Агенты, модели и лимиты",
+   "wants": [
+    "w261120005246dcbb",
+    "w261120005246c023",
+    "w26112002414331cd",
+    "w261120024143dba6",
+    "w26112107035624ae",
+    "w261121215151ef72"
+   ],
+   "prompts": [
+    {
+     "id": "ses-Amjy6kMazD",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15595. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwvvx6ofc23w: C03-27459: RADAR тепловые карты зон — гейт PASS (5 сигналов, 3 «плохо»). Где: goals.json · 25.11.2026 08:41–08:49 UTC, hy4-flash-free. Промежуточный отчёт с вердиктом записан до зондов; prereg C03-27459 до прогона (11 порогов/4 SHA, check PA В конце вызови tools.goals.track({action:'done', id:'gmwvvx6ofc23w', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15595_run27482.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795596954000,
+     "source": "session",
+     "title": "Гипотеза AU15595: RADAR тепловые карты",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d",
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200241438cdc"
+     ],
+     "as_of": 1795596954000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-jvLmbvXY3X",
+     "text": "Работа по wanted-хотелке w261125064309789f: не терять запросы при NameError в запуске задачи бота. Контекст: . Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/w261125064309789f-1795578954.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
+     "ts": 1795579147000,
+     "source": "session",
+     "title": "w261125064309789f: сохранение запросов при NameError",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] ⚠️ dsh headless rc=1\n{\"type\":\"error\",\"message\":\"session \\\"session-19501522-7755-4611-87d9-4609a0503cab\\\" is already owned by an active write handle\"}",
+     "answer_short": "w261119090518006d: ⚠️ dsh headless rc=1\n{\"type\":\"error\",\"message\":\"session \\\"se",
+     "answer_full": "⚠️ dsh headless rc=1\n{\"type\":\"error\",\"message\":\"session \\\"session-19501522-7755-4611-87d9-4609a0503cab\\\" is already owned by an active write handle\"}",
+     "answer_digest": {
+      "length": 149,
+      "sha256": "87dca4fef95939724a0b46235676f2aae106bf1ae1d06119205b2211ca1d1895"
+     },
+     "answer_text_id": "87dca4fef9593972",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795579156352,
+     "as_of": 1795579147000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-h50OlV1n4L",
+     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n\n<file name=\"go-paid-ban-20261125-062449-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\nПроверь свежим взглядом конфиг OpenCode после запрета платных моделей.\n\n1. `allowPaidFallback` в `~/.config/opencode/opencode.jsonc` (options плагина `./failover-plugin`) равен false.\n   Команда: `grep -n 'allowPaidFallback' ~/.config/opencode/opencode.jsonc`\n2. Автоматическая цепочка содержит только GO free-модели, `freeCount=2`, все агенты на GO free.\n   Команда: `python3 /tmp/opencode/paid-ban-20261125/verify_static.py` — ожидается `9 PASS / 0 FAIL / 0 OPEN`.\n3. Код плагина не даёт auto-paid: `grep -n 'allowPaidFallback' ~/.config/opencode/failover-plugin/index.js`;\n   ожидаются строки `if (!opts.allowPaidFallback && !isFree(chain[i])) continue` и `if (!opts.allowPaidFallback) return undefined`.\n4. Ручной платный выбор пользователя не сбрасывается: `grep -c 'isManuallyChosenPaid' ~/.config/opencode/failover-plugin/index.js` — ожидается ≥4.\n5. Extra Usage не включён ни в `opencode.jsonc`, ни в `cli.json`.\n6. `~/.config/opencode/AGENTS.md` содержит правило: платные модели только по прямому запросу пользователя.\n7. Живая free-модель отвечает: твой собственный запуск идёт на `opencode-go/hy4-flash-free`; если ты ответил — это факт.\n8. Сравни `oc-usage --json` с baseline: `month.cost` ≈ 58.34 USD, новых платных списаний после правки нет.\n\nВыведи по каждому пункту `PASS|FAIL|OPEN <пункт> — <команда> — <факт>` и итог `N PASS / M FAIL / K OPEN`.\nНичего не исправляй, questions пользователю не задавай.\n\n</file>",
+     "ts": 1795577311000,
+     "source": "session",
+     "title": "verify:go-paid-ban:20261125-062449",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w26111909050929f4"
+     ],
+     "answer": "[w26111909050929f4] 🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
+     "answer_short": "w26111909050929f4: 🔁 Проверка возврата: ответ советчика теперь приходит в мини-",
+     "answer_full": "🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
+     "answer_digest": {
+      "length": 81,
+      "sha256": "b719b54cf8484b66f6332b222aac056e295a8b9f92d75cb933e04f12533ea2dd"
+     },
+     "answer_text_id": "b719b54cf8484b66",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795577739022,
+     "as_of": 1795577311000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-12Bx4s8m8C",
+     "text": "HARNESS\nFailed to load plugins\nweb boot: 2 required entries did not activate\n@deepseek-ai/dsh-client-ui-open-in-app: pending (waiting for services: contextMenus, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar (required): pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-sidebar-right: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-sidebar-documentpreview: pending (waiting for services: sidebarRightTabs, fileDrag)\n@deepseek-ai/dsh-client-ui-sidebar-terminal: pending (waiting for services: sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar-files: pending (waiting for services: sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-conversation: pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-chat (required): pending (waiting for services: uiWorkspace, uiConversation, sidebarRight, fileDrag)\n@deepseek-ai/dsh-client-ui-attachment: pending (waiting for service: fileDrag)\n@deepseek-ai/dsh-client-ui-workspace: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-workflow-run: pending (waiting for services: uiConversation, uiWorkspace)\n@deepseek-ai/dsh-client-ui-skill: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-subagent: pending (waiting for services: uiWorkspace, sidebarRight)\n@deepseek-ai/dsh-client-ui-reference: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-secret-mask: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-schedule: pending (waiting for services: conversation, uiConversation, uiWorkspace, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-goal: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-plan: pending (waiting for services: uiConversation, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-user-questions: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-trajectory: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-session-log-export: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-deliverables: pending (waiting for services: uiConversation, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-directory-picker-native: pending (waiting for service: uiWorkspace)\ndsh-reasoning-distill: pending (waiting for service: uiWorkspace)",
+     "ts": 1795573315000,
+     "source": "session",
+     "title": "Web boot plugin activation failure",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-12Bx4s8m8C] 🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
+     "answer_short": "ses-12Bx4s8m8C: 🔁 Проверка возврата: ответ советчика теперь приходит в мини-",
+     "answer_full": "🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
+     "answer_digest": {
+      "length": 81,
+      "sha256": "b719b54cf8484b66f6332b222aac056e295a8b9f92d75cb933e04f12533ea2dd"
+     },
+     "answer_text_id": "b719b54cf8484b66",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795577739022,
+     "as_of": 1795573315000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-12Bx4s8m8C-2",
+     "text": "HARNESS\nFailed to load plugins\nweb boot: 2 required entries did not activate\n@deepseek-ai/dsh-client-ui-open-in-app: pending (waiting for services: contextMenus, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar (required): pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-sidebar-right: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-sidebar-documentpreview: pending (waiting for services: sidebarRightTabs, fileDrag)\n@deepseek-ai/dsh-client-ui-sidebar-terminal: pending (waiting for services: sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar-files: pending (waiting for services: sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-conversation: pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-chat (required): pending (waiting for services: uiWorkspace, uiConversation, sidebarRight, fileDrag)\n@deepseek-ai/dsh-client-ui-attachment: pending (waiting for service: fileDrag)\n@deepseek-ai/dsh-client-ui-workspace: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-workflow-run: pending (waiting for services: uiConversation, uiWorkspace)\n@deepseek-ai/dsh-client-ui-skill: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-subagent: pending (waiting for services: uiWorkspace, sidebarRight)\n@deepseek-ai/dsh-client-ui-reference: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-secret-mask: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-schedule: pending (waiting for services: conversation, uiConversation, uiWorkspace, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-goal: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-plan: pending (waiting for services: uiConversation, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-user-questions: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-trajectory: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-session-log-export: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-deliverables: pending (waiting for services: uiConversation, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-directory-picker-native: pending (waiting for service: uiWorkspace)\ndsh-reasoning-distill: pending (waiting for service: uiWorkspace)",
+     "ts": 1795573315000,
+     "source": "session",
+     "title": "Web boot plugin activation failure",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-12Bx4s8m8C-2] 🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
+     "answer_short": "ses-12Bx4s8m8C-2: 🔁 Проверка возврата: ответ советчика теперь приходит в мини-",
+     "answer_full": "🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
+     "answer_digest": {
+      "length": 81,
+      "sha256": "b719b54cf8484b66f6332b222aac056e295a8b9f92d75cb933e04f12533ea2dd"
+     },
+     "answer_text_id": "b719b54cf8484b66",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795577739022,
+     "as_of": 1795573315000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-o0p8oqWuOj-2",
+     "text": "ЕСТЬ GO МОДЕЛИ НА КОТОРЫЕ У МЕНЯ РАСШИРЕННЫЙ ЛИМИТ И ЕСТЬ МОДЕЛИ ИЗ PERSONAL НА КОТОРЫЕ БЫСТРЕЕ ИСЧЕРПЫВАЕТСЯ",
+     "ts": 1795571672000,
+     "source": "session",
+     "title": "Память скиллов и архитектура DSH",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-o0p8oqWuOj-2] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
+     "answer_short": "ses-o0p8oqWuOj-2: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
+     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
+     "answer_digest": {
+      "length": 2501,
+      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
+     },
+     "answer_text_id": "3d465e048325dc16",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795572241876,
+     "as_of": 1795571672000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-pybQNbA53o",
+     "text": "ТЫ СЛИШКОМ РАНО СТАЛ СВИЧИТЬ МОДЕЛЬ ИСПРАВЬ ЭТО Это уже другой слой: `Timed out waiting for response data` — таймаут OpenCode CLI между чанками, а не `pi-ai` из DSH. При `22.4 tok/s` поток шёл, но потом был простой дольше 10 секунд; дальше сработал переключатель моделей. Это ровно тот случай, который я разбираю. Продолжаю собирать итог\n⚠ Retry due · attempt 2 · Timed out waiting for response data\nBuild · HungerG Free · 16.3s\n+15 commands, 3 edits, 19 thoughts, 4 reads, 2 tools\nSwitched model to Beam Free\nError: This model is not available in your country\nBuild · Beam Free · 5m 12s",
+     "ts": 1795571672000,
+     "source": "session",
+     "title": "Сбои dsh harness и таймауты стрима",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-pybQNbA53o] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
+     "answer_short": "ses-pybQNbA53o: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
+     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
+     "answer_digest": {
+      "length": 2501,
+      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
+     },
+     "answer_text_id": "3d465e048325dc16",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795572241876,
+     "as_of": 1795571672000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-qa2WhLGriA",
+     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n1. Скилл grill-me зарегистрирован в OpenCode.\nПроверка: /home/nyaka/.opencode/bin/opencode api get /api/skill | python3 -c \"import json,sys; d=json.load(sys.stdin); print(any(s.get('name')=='grill-me' for s in d['data']))\" — ожидается True.\n2. Файл скилла существует и содержит инструкцию.\nПроверка: test -f /home/nyaka/.config/opencode/skills/grill-me/SKILL.md && grep -c 'grilling' /home/nyaka/.config/opencode/skills/grill-me/SKILL.md — ожидается 1.\n3. Гейм-мод выключен.\nПроверка: python3 /home/nyaka/.config/opencode/skills/game-mode/scripts/game_guard.py status | grep '\"active\": false' — ожидается строка.\n\n\n<file name=\"selfcheck-grill-20261125-022732-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n1. Скилл grill-me зарегистрирован в OpenCode.\nПроверка: /home/nyaka/.opencode/bin/opencode api get /api/skill | python3 -c \"import json,sys; d=json.load(sys.stdin); print(any(s.get('name')=='grill-me' for s in d['data']))\" — ожидается True.\n2. Файл скилла существует и содержит инструкцию.\nПроверка: test -f /home/nyaka/.config/opencode/skills/grill-me/SKILL.md && grep -c 'grilling' /home/nyaka/.config/opencode/skills/grill-me/SKILL.md — ожидается 1.\n3. Гейм-мод выключен.\nПроверка: python3 /home/nyaka/.config/opencode/skills/game-mode/scripts/game_guard.py status | grep '\"active\": false' — ожидается строка.\n\n</file>",
+     "ts": 1795562852000,
+     "source": "session",
+     "title": "verify:selfcheck-grill:20261125-022732",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w26111909050929f4"
+     ],
+     "answer": "[w26111909050929f4] ПРОВЕРКА-КАнала-только-владельцу-20261125-0245",
+     "answer_short": "w26111909050929f4: ПРОВЕРКА-КАнала-только-владельцу-20261125-0245",
+     "answer_full": "ПРОВЕРКА-КАнала-только-владельцу-20261125-0245",
+     "answer_digest": {
+      "length": 46,
+      "sha256": "826644485a45a8f2c4717a8963dbe6a2101d151766f0256d5a62a0424b604e3b"
+     },
+     "answer_text_id": "826644485a45a8f2",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795562957869,
+     "as_of": 1795562852000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-hC108ow7n3",
+     "text": "Ты — бесплатный модель-оценщик в OpenCode. Реши, хватает ли бесплатной модели для задачи ниже или стоит подключать платную. Отвечай строго по-русски, 4 строками:\nРЕШЕНИЕ: FREE или PAID\nМОДЕЛЬ: конкретный id модели (только если PAID)\nПРИЧИНА: одно предложение\nОЦЕНКА: сколько % месячного allowance съест задача, число\n\nПравила:\n1. Рутина, чтение, черновики, массовые замены, исследование — FREE, всегда.\n2. PAID только если нужны сложные рассуждения, длинный агентный прогон или бесплатная модель уже отказала/уперлась в лимит.\n3. Из платных бери самый дешёвый адекватный вариант с лимитом ≥$60; модели с лимитом $15 — только при реальной необходимости.\n4. Никогда не предлагай модель с активным множителем и не расширяй контекст без нужды.\n5. Акция GLM-5.3 $500 действует только до 22.11.2026 — после неё не рассчитывай на $500.\n\nЖивые данные квот:\nмесяц: 88.7%\n5ч: 0.5%\nнеделя: 22.4%\nпрогноз месяца: 301%\nрасход deepseek-v4-pro: 52.0% allowance\nрасход deepseek-v4.1-flash: 16.0% allowance\nрасход glm-5.3: 15.8% allowance\nрасход glm-5.3-flash: 3.4% allowance\nрасход kimi-k2.7-code: 1.4% allowance\nлимиты Go: glm-5.3=$200, deepseek-v4.1-flash=$100, muse-spark-1.2-contributor=$60, muse-spark-1.3-contributor=$60, glm-5.3-flash=$60, hy3=$60, kimi-k2.7-code=$60, mimo-v2.6-flash=$60\nакция gemini-4-argon: до 2026-11-30, осталось 6 дн.\nбесплатные модели: beam-free, iceman-contributor-free, hy4-flash-free, hungerg-free\n\nЗадача:\nпересобрать карточки из цитат иREVка",
+     "ts": 1795551896000,
+     "source": "session",
+     "title": "quota-radar gate",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-hC108ow7n3] Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунд",
+     "answer_short": "ses-hC108ow7n3: Да, гейм-мод на ПК включён по-настоящему — это подтверждено ",
+     "answer_full": "Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунду, причина — «пользователь играет в CS2»; та же метка лежит в общем файле, который видит ПК.\n\nПОНЯТНО: пока гейм-мод включён, любые задания на твой ПК автоматически отклоняются, поэтому твою игру ничего не дёргает и не отвлекает.\n\nПо частым запросам: с момента включения ни одна команда на ПК не ушла. Мост отклонил все попытки — в журнале за это время почти сотня отказов с пометкой о блокировке на время игры, успешных отправок и запусков нет. Сторож связи раз в две минуты пробует короткий зонд «жив ли ПК», но он тоже блокируется и до ПК не доходит; самовосстановление теперь только пишет тревогу, а не дёргает ПК перезапусками.\n\nОдна честная оговорка: в мосте остался узкий служебный ключ, который теоретически разрешает одну особо помеченную задачу во время игры. За всю историю по нему не прошла ни одна задача, я его не применял и применять не буду.\n\nГейм-мод снимется только когда ты скажешь, что перестал играть; сам по себе он не выключится. Проверено по файлу состояния, журналу моста и коду блокировки.",
+     "answer_digest": {
+      "length": 1215,
+      "sha256": "ad62f7e7b99f3f04de7ef17cee1411e1f0d3d51985e10855fae2dc4c4e577571"
+     },
+     "answer_text_id": "ad62f7e7b99f3f04",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795552467350,
+     "as_of": 1795551896000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-rbaUI5E8K5",
+     "text": "Ты — бесплатный модель-оценщик в OpenCode. Реши, хватает ли бесплатной модели для задачи ниже или стоит подключать платную. Отвечай строго по-русски, 4 строками:\nРЕШЕНИЕ: FREE или PAID\nМОДЕЛЬ: конкретный id модели (только если PAID)\nПРИЧИНА: одно предложение\nОЦЕНКА: сколько % месячного allowance съест задача, число\n\nПравила:\n1. Рутина, чтение, черновики, массовые замены, исследование — FREE, всегда.\n2. PAID только если нужны сложные рассуждения, длинный агентный прогон или бесплатная модель уже отказала/уперлась в лимит.\n3. Из платных бери самый дешёвый адекватный вариант с лимитом ≥$60; модели с лимитом $15 — только при реальной необходимости.\n4. Никогда не предлагай модель с активным множителем и не расширяй контекст без нужды.\n5. Акция GLM-5.3 $500 действует только до 22.11.2026 — после неё не рассчитывай на $500.\n\nЖивые данные квот:\nмесяц: 88.7%\n5ч: 0.5%\nнеделя: 22.4%\nпрогноз месяца: 301%\nрасход deepseek-v4-pro: 52.0% allowance\nрасход deepseek-v4.1-flash: 16.0% allowance\nрасход glm-5.3: 15.8% allowance\nрасход glm-5.3-flash: 3.4% allowance\nрасход kimi-k2.7-code: 1.4% allowance\nлимиты Go: glm-5.3=$200, deepseek-v4.1-flash=$100, muse-spark-1.2-contributor=$60, muse-spark-1.3-contributor=$60, glm-5.3-flash=$60, hy3=$60, kimi-k2.7-code=$60, mimo-v2.6-flash=$60\nакция gemini-4-argon: до 2026-11-30, осталось 6 дн.\nбесплатные модели: beam-free, iceman-contributor-free, hy4-flash-free, hungerg-free\n\nЗадача:\nпересобрать карточки из 84 английских цитат и русских переводов, добавить просмотр полного текста",
+     "ts": 1795551733000,
+     "source": "session",
+     "title": "quota-radar gate",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-rbaUI5E8K5] Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунд",
+     "answer_short": "ses-rbaUI5E8K5: Да, гейм-мод на ПК включён по-настоящему — это подтверждено ",
+     "answer_full": "Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунду, причина — «пользователь играет в CS2»; та же метка лежит в общем файле, который видит ПК.\n\nПОНЯТНО: пока гейм-мод включён, любые задания на твой ПК автоматически отклоняются, поэтому твою игру ничего не дёргает и не отвлекает.\n\nПо частым запросам: с момента включения ни одна команда на ПК не ушла. Мост отклонил все попытки — в журнале за это время почти сотня отказов с пометкой о блокировке на время игры, успешных отправок и запусков нет. Сторож связи раз в две минуты пробует короткий зонд «жив ли ПК», но он тоже блокируется и до ПК не доходит; самовосстановление теперь только пишет тревогу, а не дёргает ПК перезапусками.\n\nОдна честная оговорка: в мосте остался узкий служебный ключ, который теоретически разрешает одну особо помеченную задачу во время игры. За всю историю по нему не прошла ни одна задача, я его не применял и применять не буду.\n\nГейм-мод снимется только когда ты скажешь, что перестал играть; сам по себе он не выключится. Проверено по файлу состояния, журналу моста и коду блокировки.",
+     "answer_digest": {
+      "length": 1215,
+      "sha256": "ad62f7e7b99f3f04de7ef17cee1411e1f0d3d51985e10855fae2dc4c4e577571"
+     },
+     "answer_text_id": "ad62f7e7b99f3f04",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795552467350,
+     "as_of": 1795551733000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261124175845",
+     "text": "Меня не устраивают такие ответы исправь механизм мб он вообще смысла не имеет ⏱ Превышен лимит времени (1800с). Задача, возможно, ещё выполняется — напиши /status.",
+     "ts": 1795532325000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261124175845] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261124175845: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795532325000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-DEmtaRN4lr",
+     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n1. Цепочка и бесплатный срез. Выполни grep по ~/.config/opencode/opencode.jsonc. Ожидается: opencode-go/hungerg-free входит в chain, freeCount=12, allowPaidFallback=false. Подтверди, что hungerg-free находится в первых 12 элементах.\n2. Эффективная V2-конфигурация. Выполни opencode api get /api/config и разбери JSON. Ожидается: probeTimeoutSec=attemptTimeoutSec=requestTimeoutSec=70; providers.opencode-go.settings и providers.opencode.settings содержат headerTimeout=60000 и chunkTimeout=60000.\n3. Watchdog-события. Выполни opencode api get /openapi.json и проверь components.schemas.V2Event: session.status и session.step.first-token должны присутствовать. В ~/.config/opencode/failover-plugin/index.js строка message.part.updated должна отсутствовать.\n4. Синтаксис и unit-тест. Выполни node --check ~/.config/opencode/failover-plugin/index.js && node ~/.config/opencode/failover-plugin/selftest.mjs. Ожидается selftest: 28 assertions OK.\n5. Retry-harness. Выполни node /tmp/opencode/hungerg-failover-fix/retry_harness.mjs. Ожидается PASS: HungerG Free -> opencode/nemotron-3.5-super-vl-free.\n6. Watchdog-harness. Выполни node /tmp/opencode/hungerg-failover-fix/watchdog_harness.mjs. Ожидается PASS watchdog и interrupt resume=false.\n7. Свежий smoke. Выполни opencode run --standalone --archived --agent build --model opencode-go/hungerg-free --format json 'Ответь ровно одним словом: OK'. Ожидается rc=0, текст OK, cost=0.\n8. Свежий debug-smoke. Повтори smoke с --print-logs --log-level debug, сохрани stderr во временный файл. Ожидается: строка [free-router] с таймаут ответа: 70с и ноль строк ignoring unknown event types.\n9. Итоговая целостность. Выполни sha256sum ~/.config/opencode/opencode.jsonc ~/.config/opencode/failover-plugin/index.js ~/.config/opencode/failover-plugin/selftest.mjs и приведи значения. PASS, если все три файла существуют и хеши непустые.\n\n\n<file name=\"hungerg-failover-final-20261124-160532-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n1. Цепочка и бесплатный срез. Выполни grep по ~/.config/opencode/opencode.jsonc. Ожидается: opencode-go/hungerg-free входит в chain, freeCount=12, allowPaidFallback=false. Подтверди, что hungerg-free находится в первых 12 элементах.\n2. Эффективная V2-конфигурация. Выполни opencode api get /api/config и разбери JSON. Ожидается: probeTimeoutSec=attemptTimeoutSec=requestTimeoutSec=70; providers.opencode-go.settings и providers.opencode.settings содержат headerTimeout=60000 и chunkTimeout=60000.\n3. Watchdog-события. Выполни opencode api get /openapi.json и проверь components.schemas.V2Event: session.status и session.step.first-token должны присутствовать. В ~/.config/opencode/failover-plugin/index.js строка message.part.updated должна отсутствовать.\n4. Синтаксис и unit-тест. Выполни node --check ~/.config/opencode/failover-plugin/index.js && node ~/.config/opencode/failover-plugin/selftest.mjs. Ожидается selftest: 28 assertions OK.\n5. Retry-harness. Выполни node /tmp/opencode/hungerg-failover-fix/retry_harness.mjs. Ожидается PASS: HungerG Free -> opencode/nemotron-3.5-super-vl-free.\n6. Watchdog-harness. Выполни node /tmp/opencode/hungerg-failover-fix/watchdog_harness.mjs. Ожидается PASS watchdog и interrupt resume=false.\n7. Свежий smoke. Выполни opencode run --standalone --archived --agent build --model opencode-go/hungerg-free --format json 'Ответь ровно одним словом: OK'. Ожидается rc=0, текст OK, cost=0.\n8. Свежий debug-smoke. Повтори smoke с --print-logs --log-level debug, сохрани stderr во временный файл. Ожидается: строка [free-router] с таймаут ответа: 70с и ноль строк ignoring unknown event types.\n9. Итоговая целостность. Выполни sha256sum ~/.config/opencode/opencode.jsonc ~/.config/opencode/failover-plugin/index.js ~/.config/opencode/failover-plugin/selftest.mjs и приведи значения. PASS, если все три файла существуют и хеши непустые.\n\n</file>",
+     "ts": 1795530516000,
+     "source": "session",
+     "title": "verify:hungerg-failover-final:20261124-160532",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w26111909050929f4"
+     ],
+     "answer": "[w26111909050929f4] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w26111909050929f4: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795530516000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-wtKJ6CYfAu",
+     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n\n<file name=\"go-routing-20261124-162024-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n# GO-only routing checklist (fixed BEFORE edits, 2026-11-24T16:20+03:00)\n\nVerifier: fresh `opencode run` session on a free GO model, empty context, only this checklist.\nDo not trust any prose claim — run the command and quote the fact.\n\n1. Beam excluded from failover chain.\n   Check: extract `options.chain` from ~/.config/opencode/opencode.jsonc; `grep -i beam` on it must be empty.\n   Expected: 0 Beam entries (both opencode/beam-free and opencode-go/beam-free removed).\n\n2. Routing is GO-only (Personal free models removed).\n   Check: every selector in `options.chain` starts with `opencode-go/`.\n   Expected: 0 entries starting with `opencode/`.\n\n3. Iceman (training=true) excluded.\n   Check: `grep -i iceman` on chain must be empty.\n\n4. freeCount matches the free prefix.\n   Check: read `freeCount` and count `*-free` selectors in the first `freeCount` positions.\n   Expected: freeCount = 2, both are opencode-go/hy4-flash-free and opencode-go/hungerg-free.\n\n5. Paid fallbacks use extended GO limits only.\n   Check: for each non-free selector, look up `limit_go` in live radar JSON (/tmp/opencode/radar-go.json is a hint, but re-fetch if stale).\n   Expected: limit_go >= 60 for every paid selector; no 15-limit models.\n\n6. Objective chain gate passes.\n   Check: `python3 ~/.config/opencode/scripts/chain_gate.py`; expected CHAIN_GATE PASS, exit 0.\n\n7. Router selftest passes.\n   Check: `cd ~/.config/opencode/failover-plugin && node selftest.mjs`; expected exit 0.\n\n8. Config parses and server sees it.\n   Check: `opencode debug paths config` and `opencode api get /api/info`; expected no parse error.\n\n9. Live smoke: a fresh archived `opencode run` on opencode-go/hy4-flash-free answers a trivial question without \"not available in your country\".\n   Check: run verifier; expected answer text + no Beam error.\n\n10. No manual model switching was used to make any of the above pass.\n\n</file>",
+     "ts": 1795526737000,
+     "source": "session",
+     "title": "verify:go-routing:20261124-162024",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w26111909050929f4"
+     ],
+     "answer": "[w26111909050929f4] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w26111909050929f4: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795526737000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-SRXtbC5Ev9",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15584. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwunwvj3gmaz: Курировать DSH: web и рабочие вкладки без ошибок модели. Где: goals.json · Держать DeepSeek Harness на 127.0.0.1:3080 и две рабочие сессии под наблюдением. Разбирать TIMEOUT/429/TRANSPORT, проверять автофейловер и восстановле В конце вызови tools.goals.track({action:'done', id:'gmwunwvj3gmaz', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15584_run16745.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795523405000,
+     "source": "session",
+     "title": "Проверка гипотезы AU15584: DeepSeek Harness",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795523405000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261124144523",
+     "text": "Осуждаю \"⏱ Превышен лимит времени (1800с). Задача, возможно, ещё выполняется — напиши /status.\"",
+     "ts": 1795520723000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261124144523] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261124144523: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795520723000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-ivOpZFg8L7",
+     "text": "ТОЛЬКО чтение, модель не меняй: opencode-go/hy4-flash-free. Перепроверь исправленную выборку после самооценки VERDICT FAIL: /home/nyaka/Documents/deepseek-harness/default-workspace/s03gt_label_sample_fixed.jsonl, s03gt_label_sample_fixed_sheet.png, s03gt_label_spec.md, s03gt_label_self_eval_hy4.md. Проверь, закрыты ли пять дефектов: 1) вырождение/стратификация, 2) конфликт ECE помечен, 3) run_id в подписях листа, 4) включены fp=2 и tp>0, 5) семантика FP_ZERO документирована. Создай ровно один новый файл /home/nyaka/Documents/deepseek-harness/default-workspace/s03gt_label_self_eval_fixed.md с VERDICT PASS/FAIL/OPEN, списком закрытых/открытых дефектов и одной командой проверки с rc. Не трогай pc-bridge, ПК, data/ и чужие файлы.",
+     "ts": 1795483700000,
+     "source": "session",
+     "title": "Проверка исправленной выборки S03GT",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[ses-ivOpZFg8L7] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "ses-ivOpZFg8L7: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795483700000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-flL9yhbY1V",
+     "text": "Работа по wanted-хотелке cl-subagent-visibility: Видимость субагентов: тег parentId/children в wants/goals. Контекст: Инспекция нашла, что работа субагентов/движков невидима в треке (G4). Петля должна шить parentId.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-subagent-visibility-1795478189.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
+     "ts": 1795478385000,
+     "source": "session",
+     "title": "Видимость субагентов в wants/goals",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795478385000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-8eRWzrkUFm",
+     "text": "Работа по wanted-хотелке cl-claims-weekly: Еженедельный claims-audit с авто-миграцией гибридных записей. Контекст: claims.json был 100% гибрид; миграция сняла топ-уровневый гибрид, но нужен регулярный контроль рецидива.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-claims-weekly-1795478043.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
+     "ts": 1795478188000,
+     "source": "session",
+     "title": "Еженедельный claims-audit cl-claims-weekly",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795478188000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-AQzPrpcIZN",
+     "text": "Работа по wanted-хотелке cl-pc-curator-cron: Повесить pc-curator-assist на cron каждые 15 мин с алертом при затупе. Контекст: Мост ПК здоров, но нет регулярного детектора затупов (running>timeout, очередь, unclean restart).. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-pc-curator-cron-1795477694.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
+     "ts": 1795477884000,
+     "source": "session",
+     "title": "Cron-мониторинг pc-curator-assist",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795477884000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-EVCZOfTGHi",
+     "text": "Работа по wanted-хотелке cl-w261122-active: Снять deferred с w261122 и закрыть 30 недоставленных ответов. Контекст: Стоящая хотелка доставки w261122054642905d = deferred. Петля должна её активировать с владельцем и дедлайном.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-w261122-active-1795477501.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
+     "ts": 1795477693000,
+     "source": "session",
+     "title": "Активация wanted-хотелки w261122",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795477693000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-0bVA1DqvvI",
+     "text": "Работа по wanted-хотелке cl-delivered-gate-nightly: Внедрить гейт «delivered ≠ status done» в ночной аудит. Контекст: Поле delivered добавлено миграцией, но gap не виден ежедневно. Ночной work-audit должен поднимать gap как OPEN.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-delivered-gate-nightly-1795477320.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
+     "ts": 1795477501000,
+     "source": "session",
+     "title": "Ночной гейт delivered ≠ done",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d"
+     ],
+     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795477501000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122133916",
+     "text": "Но почему, если ресурсы разблокированы, а агентов всего 4 работают?",
+     "ts": 1795343956000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261122133916] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261122133916: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795343956000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122133346",
+     "text": "Окей, ты освободил 11 гигабайтов, сейчас ведь ты не будешь упираться, сейчас ты сможешь разблокировать все эти процессы, проекты, агентов, которые до этого упирались, разблокируй, пожалуйста, сейчас должна быть нормальная производительность, нормальная работа.",
+     "ts": 1795343626000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261122133346] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261122133346: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795343626000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122124108",
+     "text": "ограничение по памяти по большей части искусственно типа мы там задали лимит это просто ну типа на",
+     "ts": 1795340468000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261122124108] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261122124108: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795340468000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122120908",
+     "text": "МД файлы ведь могут содержать в себе картинки, то есть туда можно типа скриншоты загружать.\nНесколько раз в ответах ⏱ Превышен лимит времени (1800с). Задача, возможно, ещё выполняется — напиши /status.",
+     "ts": 1795338631000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261122120908] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261122120908: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795338631000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122114508",
+     "text": "А может есть возможность договориться насчет тишины с другими агентами? Такой возможности может и не быть. Это может быть предельно критичным, проанализируй. А может быть можно перезапустить, и никто не пострадает от этого, и все агенты смогут разобраться с этим. Надо как-то узнать это.",
+     "ts": 1795337108000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w2611212151519801"
+     ],
+     "answer": "[w2611212151519801] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w2611212151519801: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795337108000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122112405",
+     "text": "Кстати, вкладка ход по-прежнему будто бы сломана, непонятно почему там всего две задачи по-прежнему, типа у меня вот 40 агентов, там ну тысяча запросов и так далее, и типа тысяча ответов, типа непонятно вот вообще типа чему ход служит, там параноидальный критик это мог бы обработать как-то.",
+     "ts": 1795335845000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261122112405] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261122112405: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795335845000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122104833",
+     "text": "Заведи агента, который анализирует юзер-экспириенс в тг-боте.",
+     "ts": 1795333713000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w2611212151519801"
+     ],
+     "answer": "[w2611212151519801] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "w2611212151519801: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795333713000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261122034308",
+     "text": "Да хотел другого параноика\nОпиши свою текущую конфигурацию, чтобы её можно было сравнить с другой агентской системой.",
+     "ts": 1795308225000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261122034308] **1. Задача**\n\n- Я — локальный агент OpenCode: читаю и меняю проекты владельца на ноуте (и через `pc-bridge` на Windows‑ПК), веду прогресс/гипотезы/цели и отвечаю на запросы из TUI и Telegram.\n- Польз",
+     "answer_short": "tg-20261122034308: **1. Задача**\n\n- Я — локальный агент OpenCode: читаю и меняю",
+     "answer_full": "**1. Задача**\n\n- Я — локальный агент OpenCode: читаю и меняю проекты владельца на ноуте (и через `pc-bridge` на Windows‑ПК), веду прогресс/гипотезы/цели и отвечаю на запросы из TUI и Telegram.\n- Пользователи: владелец (`bots/config.json` → `chat_id: 1869196044`), гости из списка `guests` в `remote_agent_bot.py`, текущий чат — `435824119`.\n\n**2. Модели**\n\n| Кто | provider/model-id | Доступ | Подтверждение |\n|---|---|---|---|\n| Я, текущая сессия | `opencode-go/hy4-flash-free` | free-тир; точный механизм аутентификации не знаю | системный промпт + живой процесс `opencode run --model opencode-go/hy4-flash-free` |\n| build (primary) | `opencode/deepseek-v4.1-flash-free#high` | free | `opencode.jsonc:39-41` |\n| plan | `opencode-go/deepseek-v4.1-flash#max` | allowance OpenCode Go ($100, по `AGENTS.md`) | `opencode.jsonc:44-46` |\n| architect | `opencode-go/deepseek-v4-pro#high` | allowance $15 | `opencode.jsonc:50-53`, команда `/plan-deep` |\n| explore | `opencode/deepseek-v4.1-flash-free#low` | free | `opencode.jsonc:56-58` |\n| general | `opencode/deepseek-v4.1-flash-free#high` | free | `opencode.jsonc:59-61` |\n| deep | `opencode-go/deepseek-v4-pro#high` | allowance $15 | `opencode.jsonc:64-68` |\n| cheap | `opencode-go/hy4-flash-free` | free | `opencode.jsonc:71-75` |\n| critic | `opencode/deepseek-v4.1-flash-free#max` | free | `opencode.jsonc:79-86` и `agents/critic.md` |\n| reviewer | `opencode-go/kimi-k2.7-code` | allowance $60 | `opencode.jsonc:89-96` |\n| advisor | `opencode/deepseek-v4.1-flash-free#high` | free | `agents/advisor.md` |\n| conflict-keeper | `opencode/deepseek-v4.1-flash-free#low` | free | `agents/conflict-keeper.md` |\n| housekeeper | `opencode/deepseek-v4.1-flash-free#low` | free | `agents/housekeeper.md` |\n| unblocker | `opencode-go/hy4-flash-free` | free | `agents/unblocker.md` |\n\nПровайдеры `opencode` и `opencode-go` объявлены в `opencode.jsonc:147-152` (добавлены плагином `opencode-quota`); API-ключей в окружении не вижу — только `OPENCODE*`, `AI_AGENT`.\n\n**3. Агенты**\n\n| Имя | Тип | Роль | Вызов |\n|---|---|---|---|\n| build | primary, `default_agent` | Основной агент с полным доступом | пользователь / TUI |\n| plan | primary (без `mode`) | Планирование | пользователь |\n| architect | primary (без `mode`) | Архитектура на дорогой модели | `/plan-deep`, по запросу |\n| general, explore | в `opencode.jsonc` `mode` не указан; в моём списке — subagent | Рутина и разведка кода | я через `subagent` |\n| deep, cheap, critic, reviewer | `mode: subagent` | Тяжёлый reasoning, черновики, критика, код-ревью | я через `subagent` |\n| advisor, conflict-keeper, housekeeper, unblocker | `mode: subagent` (`agents/*.md`) | Советник, карта конфликтов, карта каталогов, разбор блоков | я через `subagent` |\n| hidden | — | Явного `hidden: true` ни в `opencode.jsonc`, ни в `agents/*.md` нет; агенты с `mode: subagent` не выбираются напрямую | — |\n\nКто кого может вызывать: я могу вызвать любого из перечисленных субагентов. В конфиге только `advisor` явно запрещает `",
+     "answer_digest": {
+      "length": 3000,
+      "sha256": "6354792d68d94a382a5fad8df588fd77c44f46dfef625aca217e9928f41b46a4"
+     },
+     "answer_text_id": "6354792d68d94a38",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795308370965,
+     "as_of": 1795308225000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261121192737",
+     "text": "Последняя проверка встала. Запусти агента узнать почему а сам расскажи результат последнего смс\n/tabs",
+     "ts": 1795278469000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261121192737] Запустил агента разбирать, почему встала проверка. Сам по последнему сообщению («ни вкладки, ни атлас — почини») доложу:\n\n**Что нашёл и сделал:**\n- Проверил через ADB на подключённом телефоне: вкладки",
+     "answer_short": "tg-20261121192737: Запустил агента разбирать, почему встала проверка. Сам по по",
+     "answer_full": "Запустил агента разбирать, почему встала проверка. Сам по последнему сообщению («ни вкладки, ни атлас — почини») доложу:\n\n**Что нашёл и сделал:**\n- Проверил через ADB на подключённом телефоне: вкладки «Ход/Задачи/Промпты/Атлас/Чат» есть, «Сценарии» присутствует в подменю «Задачи», но **тап по нему ничего не открывал**. Атлас по тапу открывался и показывал данные (389 узлов, 5 сеток).\n- Причина: в `setTaskSub()` не вызывался `mountScenarios()` — экран переключался, но содержимое не монтировалось.\n- Починил: добавил вызовы `mountScenarios()` и `studioEnsure()`, запушил в Pages (`e9b9cc3`), обновил URL на `?v=20261121-1920`, инициировал рестарт бота — но команда была прервана.\n\nЖду заключения агента по зависшей проверке, затем дам полный итог.\n\nАгент разобрался: **ничего не зависло** — прервался только мой tool-вызов (`Step interrupted` по твоему действию). К моменту прерывания патч, коммит, пуш и запись URL уже выполнились, а рестарт бота реально прошёл в 19:20:08. Хвост команды (`sleep` + проверка) просто не успел дать вывод — отсюда ощущение «встало».\n\n**Результат по последнему сообщению («ни вкладки, ни атлас — почини»):**\n- Через ADB на телефоне подтвердил: вкладка «Атлас» **работает** (389 узлов, 5 сеток), а «Сценарии» в подменю «Задачи» была мёртвой — `setTaskSub()` не вызывал `mountScenarios()`, экран переключался пустым.\n- Починил, запушил `e9b9cc3`. Агент проверил: фикс вживую — HEAD `8e585de`, автопуши `live:` его не затёрли, публичная страница отдаёт 200 и содержит `mountScenarios()`; URL `?v=20261121-1920` совпадает с кнопкой в логе; бот active, перезапуск состоялся.\n\n**Что сделать тебе:** открой мини-ап заново через кнопку меню (новый `?v=`) и жми **«Задачи» → «Сценарии»**. В текущем редизайне «Ещё» больше нет — «Сценарии» живут подпунктом в «Задачах».\n\nОстаточный риск: фоновый redesign-агент уже дважды перезаписывал `index.html` без «Сценариев». Если вкладка снова исчезнет — буду закреплять правку в его источнике, а не только в Pages.",
+     "answer_digest": {
+      "length": 1980,
+      "sha256": "a1d493afbf5afa9ae6834ed64819bbb576e47f6707d9e376864b1657116ab2f9"
+     },
+     "answer_text_id": "a1d493afbf5afa9a",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795278731663,
+     "as_of": 1795278469000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261121155358",
+     "text": "А почему задачи в ожидании и 0 doing? Плюс почему так мало агентов если так много задач? Плюс проверки таймера бомбы в КС 2 самое важное странно что ты не проверил\nУ тебя КС 2 на ПК есть для всех тестов",
+     "ts": 1795265681000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261121155358] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261121155358: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795265681000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120193628",
+     "text": "Переключись на бесплатную модель",
+     "ts": 1795192588000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120193628] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120193628: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795192588000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120193131",
+     "text": "Используй бесплатную модель\n/solo\nУ тебя же доступны бесплатные модели?\n/multi\n/help",
+     "ts": 1795192445000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120193131] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120193131: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795192445000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120171048",
+     "text": "Хочу до 30 проблема же была не в том что каждый агент плодит субагента а в чем то более глубоком разберись и исправь",
+     "ts": 1795183848000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120171048] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120171048: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795183848000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120170857",
+     "text": "Плюс почему так мало агентов по прежнему",
+     "ts": 1795183737000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120170857] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120170857: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795183737000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120163436",
+     "text": "Ну а больше агентов почему по прежнему 3 агента всего а не я30?",
+     "ts": 1795181676000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120163436] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120163436: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795181676000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120161804",
+     "text": "Ты применил кучу мер предосторожности можешь ли ты попробовать запуститься на 30 агентах сейчас?\nАскольд:",
+     "ts": 1795180753000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120161804] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120161804: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795180753000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120160206",
+     "text": "сделай так чтоб возвращался айди каждой сессии после запроса чтоб легче было обращаться. если в запросе указан айди сессии то агент должен работать с ней и быстро ее находить\nРЕЖИМ: только чтение. Ничего не меняй и не запускай подагентов.",
+     "ts": 1795179772000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261120160206] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
+     "answer_short": "tg-20261120160206: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
+     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
+     "answer_digest": {
+      "length": 327,
+      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
+     },
+     "answer_text_id": "935ef42fe2d91973",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795269101635,
+     "as_of": 1795179772000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261120153352",
+     "text": "Создай еще одного агента хаускипера который бы следил за тем чтобы агенты не работали одновременно над изменениями одной области или один из и тех же файлов. Для теста используй процессы по задачам telegram app",
+     "ts": 1795178032000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261120153352] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
+     "answer_short": "tg-20261120153352: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
+     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
+     "answer_digest": {
+      "length": 327,
+      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
+     },
+     "answer_text_id": "935ef42fe2d91973",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795269101635,
+     "as_of": 1795178032000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261120151341",
+     "text": "Возобнови работу над исполнением плану /home/nyaka/docs/process-plan.md. Продолжи там где остановился последний агент и доведи план поэтапно до конца. Ответь мне  принял в работу после того как он запустится и ты убедишься что прогресс доступен в апке",
+     "ts": 1795176821000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261120151341] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
+     "answer_short": "tg-20261120151341: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
+     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
+     "answer_digest": {
+      "length": 327,
+      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
+     },
+     "answer_text_id": "935ef42fe2d91973",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795269101635,
+     "as_of": 1795176821000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261120150350",
+     "text": "Для 10% входящих запросов (каждый 10й строго ) записывай телеметрию бенчамаркинг обращений к хакскиперу или рид-онли индексу, сколько это заняло в ожидании. Если агенты туда не обращались и сами что-то искали в обоход тоже записывай в аудит. Сохраняю как и другую телеметрию в mongodb",
+     "ts": 1795176230000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261120150350] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
+     "answer_short": "tg-20261120150350: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
+     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
+     "answer_digest": {
+      "length": 327,
+      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
+     },
+     "answer_text_id": "935ef42fe2d91973",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795269101635,
+     "as_of": 1795176230000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261120145342",
+     "text": "Запрети агентам рекурсивно искать из home и рута. Пусть агент-хаускипер периодически обновляет индекс где что есть по каким группам потребностей агентов и говорил бы им где искать, может вел бы какой-то файл который для всех ридонли и только агент-хаускипер мог бы его изменять",
+     "ts": 1795175622000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "435824119",
+     "user": "Иван",
+     "wants": [],
+     "answer": "[tg-20261120145342] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
+     "answer_short": "tg-20261120145342: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
+     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
+     "answer_digest": {
+      "length": 327,
+      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
+     },
+     "answer_text_id": "935ef42fe2d91973",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795269101635,
+     "as_of": 1795175622000,
+     "is_stale": true
+    },
+    {
+     "id": "tg-20261120140359",
+     "text": "Ты можешь мне ответить без подключения агентов без лишней сложности просто сказать привет в ответ и все",
+     "ts": 1795172639000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120140359] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120140359: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795172639000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120105806",
+     "text": "Типа, если OpenCode меня не ограничивает по бесплатным моделям никак,\nПлюс насчет большого количества агентов и подключения их к задачам, здесь, наверное, единственный риск это какие-то шедоу-баны, шедоу-ограничения в этом плане.",
+     "ts": 1795161519000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120105806] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120105806: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795161519000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120071024",
+     "text": "🤖 TurnGame · Оператор ⚡ Параллельный ответ (новая вкладка)\nМне не нравится turn game operator это будто мусор",
+     "ts": 1795147861000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120071024] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120071024: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795147861000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261120004912",
+     "text": "Вот сейчас ты снова выдал сложный ответ, в нем очень много рефлексии, но мне очень мало понятно, что я могу с этим сделать, то есть представь человека, которому надо как-то визуально оценивать, движется ли работа, то есть вот в тех проектах, которые мы делаем, есть пример того, что надо просто делать какую-то безостановочную работу, постоянно напоминать модели, проводить исследования и так далее, постоянно разбирать разные видео, теорию, пытаться излечь.\nПлюс, вот пример, ты мне сказал, что про конфиденциальность поднималась тема куча раз, но до сих пор не отвечена.\nPairDevBot:",
+     "ts": 1795125032000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261120004912] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261120004912: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795125032000,
+     "is_stale": false
+    },
+    {
+     "id": "tg-20261118192827",
+     "text": "Плюс хочется сделать так чтобы на ответы не было очереди. Вот я задал сложный пвопрос ты думаешь долго . Потом параллельно  лёгкий ты отвечаешь параллельно на него в новй сессии пока старый тупит и тд. У меня скачка демок идёт? Плюс пришли скриншот",
+     "ts": 1795019307000,
+     "source": "telegram",
+     "source_label": "ТГ бот",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[tg-20261118192827] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_short": "tg-20261118192827: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
+     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
+     "answer_digest": {
+      "length": 80,
+      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
+     },
+     "answer_text_id": "bcafdc549cd035c9",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795547167871,
+     "as_of": 1795019307000,
+     "is_stale": false
+    }
+   ]
+  },
+  {
+   "id": "g2",
    "name": "Прогресс, гейты и claims",
    "wants": [
     "w261119204754d1f3",
@@ -42,7 +1130,7 @@
     {
      "id": "ses-qyuo8OueWX",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15594. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwvvrhtk0wvl: C11-27467 — demoparser v4 на новых демо: гейт OPEN (вердикт записан до зондов). Где: goals.json · Отчёт ~/overnight/cloud_tracks/C11-27467.md с вердиктом записан в 11:43 MSK до медленных зондов; зонды pc_live (DEGRADED=ПК жив), инвентарь демо (новы В конце вызови tools.goals.track({action:'done', id:'gmwvvrhtk0wvl', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15594_run27482.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795596892000,
+     "ts": 1795596941000,
      "source": "session",
      "title": "AU15594: demoparser v4",
      "source_label": "ноут",
@@ -54,7 +1142,7 @@
       "w2611200052460530",
       "w2611200241438cdc"
      ],
-     "as_of": 1795596892000,
+     "as_of": 1795596941000,
      "is_stale": false
     },
     {
@@ -3068,1094 +4156,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795547167871,
      "as_of": 1795095651000,
-     "is_stale": false
-    }
-   ]
-  },
-  {
-   "id": "g2",
-   "name": "Агенты, модели и лимиты",
-   "wants": [
-    "w261120005246dcbb",
-    "w261120005246c023",
-    "w26112002414331cd",
-    "w261120024143dba6",
-    "w26112107035624ae",
-    "w261121215151ef72"
-   ],
-   "prompts": [
-    {
-     "id": "ses-Amjy6kMazD",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15595. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwvvx6ofc23w: C03-27459: RADAR тепловые карты зон — гейт PASS (5 сигналов, 3 «плохо»). Где: goals.json · 25.11.2026 08:41–08:49 UTC, hy4-flash-free. Промежуточный отчёт с вердиктом записан до зондов; prereg C03-27459 до прогона (11 порогов/4 SHA, check PA В конце вызови tools.goals.track({action:'done', id:'gmwvvx6ofc23w', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15595_run27482.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795596891000,
-     "source": "session",
-     "title": "Гипотеза AU15595: RADAR тепловые карты",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d",
-      "w261119190741dca0",
-      "w2611200052460530",
-      "w2611200241438cdc"
-     ],
-     "as_of": 1795596891000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-jvLmbvXY3X",
-     "text": "Работа по wanted-хотелке w261125064309789f: не терять запросы при NameError в запуске задачи бота. Контекст: . Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/w261125064309789f-1795578954.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795579147000,
-     "source": "session",
-     "title": "w261125064309789f: сохранение запросов при NameError",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] ⚠️ dsh headless rc=1\n{\"type\":\"error\",\"message\":\"session \\\"session-19501522-7755-4611-87d9-4609a0503cab\\\" is already owned by an active write handle\"}",
-     "answer_short": "w261119090518006d: ⚠️ dsh headless rc=1\n{\"type\":\"error\",\"message\":\"session \\\"se",
-     "answer_full": "⚠️ dsh headless rc=1\n{\"type\":\"error\",\"message\":\"session \\\"session-19501522-7755-4611-87d9-4609a0503cab\\\" is already owned by an active write handle\"}",
-     "answer_digest": {
-      "length": 149,
-      "sha256": "87dca4fef95939724a0b46235676f2aae106bf1ae1d06119205b2211ca1d1895"
-     },
-     "answer_text_id": "87dca4fef9593972",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795579156352,
-     "as_of": 1795579147000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-h50OlV1n4L",
-     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n\n<file name=\"go-paid-ban-20261125-062449-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\nПроверь свежим взглядом конфиг OpenCode после запрета платных моделей.\n\n1. `allowPaidFallback` в `~/.config/opencode/opencode.jsonc` (options плагина `./failover-plugin`) равен false.\n   Команда: `grep -n 'allowPaidFallback' ~/.config/opencode/opencode.jsonc`\n2. Автоматическая цепочка содержит только GO free-модели, `freeCount=2`, все агенты на GO free.\n   Команда: `python3 /tmp/opencode/paid-ban-20261125/verify_static.py` — ожидается `9 PASS / 0 FAIL / 0 OPEN`.\n3. Код плагина не даёт auto-paid: `grep -n 'allowPaidFallback' ~/.config/opencode/failover-plugin/index.js`;\n   ожидаются строки `if (!opts.allowPaidFallback && !isFree(chain[i])) continue` и `if (!opts.allowPaidFallback) return undefined`.\n4. Ручной платный выбор пользователя не сбрасывается: `grep -c 'isManuallyChosenPaid' ~/.config/opencode/failover-plugin/index.js` — ожидается ≥4.\n5. Extra Usage не включён ни в `opencode.jsonc`, ни в `cli.json`.\n6. `~/.config/opencode/AGENTS.md` содержит правило: платные модели только по прямому запросу пользователя.\n7. Живая free-модель отвечает: твой собственный запуск идёт на `opencode-go/hy4-flash-free`; если ты ответил — это факт.\n8. Сравни `oc-usage --json` с baseline: `month.cost` ≈ 58.34 USD, новых платных списаний после правки нет.\n\nВыведи по каждому пункту `PASS|FAIL|OPEN <пункт> — <команда> — <факт>` и итог `N PASS / M FAIL / K OPEN`.\nНичего не исправляй, questions пользователю не задавай.\n\n</file>",
-     "ts": 1795577311000,
-     "source": "session",
-     "title": "verify:go-paid-ban:20261125-062449",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w26111909050929f4"
-     ],
-     "answer": "[w26111909050929f4] 🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
-     "answer_short": "w26111909050929f4: 🔁 Проверка возврата: ответ советчика теперь приходит в мини-",
-     "answer_full": "🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
-     "answer_digest": {
-      "length": 81,
-      "sha256": "b719b54cf8484b66f6332b222aac056e295a8b9f92d75cb933e04f12533ea2dd"
-     },
-     "answer_text_id": "b719b54cf8484b66",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795577739022,
-     "as_of": 1795577311000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-12Bx4s8m8C",
-     "text": "HARNESS\nFailed to load plugins\nweb boot: 2 required entries did not activate\n@deepseek-ai/dsh-client-ui-open-in-app: pending (waiting for services: contextMenus, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar (required): pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-sidebar-right: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-sidebar-documentpreview: pending (waiting for services: sidebarRightTabs, fileDrag)\n@deepseek-ai/dsh-client-ui-sidebar-terminal: pending (waiting for services: sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar-files: pending (waiting for services: sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-conversation: pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-chat (required): pending (waiting for services: uiWorkspace, uiConversation, sidebarRight, fileDrag)\n@deepseek-ai/dsh-client-ui-attachment: pending (waiting for service: fileDrag)\n@deepseek-ai/dsh-client-ui-workspace: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-workflow-run: pending (waiting for services: uiConversation, uiWorkspace)\n@deepseek-ai/dsh-client-ui-skill: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-subagent: pending (waiting for services: uiWorkspace, sidebarRight)\n@deepseek-ai/dsh-client-ui-reference: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-secret-mask: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-schedule: pending (waiting for services: conversation, uiConversation, uiWorkspace, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-goal: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-plan: pending (waiting for services: uiConversation, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-user-questions: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-trajectory: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-session-log-export: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-deliverables: pending (waiting for services: uiConversation, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-directory-picker-native: pending (waiting for service: uiWorkspace)\ndsh-reasoning-distill: pending (waiting for service: uiWorkspace)",
-     "ts": 1795573315000,
-     "source": "session",
-     "title": "Web boot plugin activation failure",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-12Bx4s8m8C] 🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
-     "answer_short": "ses-12Bx4s8m8C: 🔁 Проверка возврата: ответ советчика теперь приходит в мини-",
-     "answer_full": "🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
-     "answer_digest": {
-      "length": 81,
-      "sha256": "b719b54cf8484b66f6332b222aac056e295a8b9f92d75cb933e04f12533ea2dd"
-     },
-     "answer_text_id": "b719b54cf8484b66",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795577739022,
-     "as_of": 1795573315000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-12Bx4s8m8C-2",
-     "text": "HARNESS\nFailed to load plugins\nweb boot: 2 required entries did not activate\n@deepseek-ai/dsh-client-ui-open-in-app: pending (waiting for services: contextMenus, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar (required): pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-sidebar-right: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-sidebar-documentpreview: pending (waiting for services: sidebarRightTabs, fileDrag)\n@deepseek-ai/dsh-client-ui-sidebar-terminal: pending (waiting for services: sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-sidebar-files: pending (waiting for services: sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-conversation: pending (waiting for service: uiWorkspace)\n@deepseek-ai/dsh-client-ui-chat (required): pending (waiting for services: uiWorkspace, uiConversation, sidebarRight, fileDrag)\n@deepseek-ai/dsh-client-ui-attachment: pending (waiting for service: fileDrag)\n@deepseek-ai/dsh-client-ui-workspace: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-workflow-run: pending (waiting for services: uiConversation, uiWorkspace)\n@deepseek-ai/dsh-client-ui-skill: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-subagent: pending (waiting for services: uiWorkspace, sidebarRight)\n@deepseek-ai/dsh-client-ui-reference: pending (waiting for services: sidebarRight, uiConversation)\n@deepseek-ai/dsh-client-ui-secret-mask: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-schedule: pending (waiting for services: conversation, uiConversation, uiWorkspace, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-goal: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-plan: pending (waiting for services: uiConversation, sidebarRight, sidebarRightTabs)\n@deepseek-ai/dsh-client-ui-user-questions: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-client-ui-trajectory: pending (waiting for service: uiConversation)\n@deepseek-ai/dsh-session-log-export: pending (waiting for service: contextMenus)\n@deepseek-ai/dsh-client-ui-deliverables: pending (waiting for services: uiConversation, sidebarRightTabs, sidebarRight)\n@deepseek-ai/dsh-client-ui-directory-picker-native: pending (waiting for service: uiWorkspace)\ndsh-reasoning-distill: pending (waiting for service: uiWorkspace)",
-     "ts": 1795573315000,
-     "source": "session",
-     "title": "Web boot plugin activation failure",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-12Bx4s8m8C-2] 🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
-     "answer_short": "ses-12Bx4s8m8C-2: 🔁 Проверка возврата: ответ советчика теперь приходит в мини-",
-     "answer_full": "🔁 Проверка возврата: ответ советчика теперь приходит в мини-ап через replies.json",
-     "answer_digest": {
-      "length": 81,
-      "sha256": "b719b54cf8484b66f6332b222aac056e295a8b9f92d75cb933e04f12533ea2dd"
-     },
-     "answer_text_id": "b719b54cf8484b66",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795577739022,
-     "as_of": 1795573315000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-o0p8oqWuOj-2",
-     "text": "ЕСТЬ GO МОДЕЛИ НА КОТОРЫЕ У МЕНЯ РАСШИРЕННЫЙ ЛИМИТ И ЕСТЬ МОДЕЛИ ИЗ PERSONAL НА КОТОРЫЕ БЫСТРЕЕ ИСЧЕРПЫВАЕТСЯ",
-     "ts": 1795571672000,
-     "source": "session",
-     "title": "Память скиллов и архитектура DSH",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-o0p8oqWuOj-2] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
-     "answer_short": "ses-o0p8oqWuOj-2: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
-     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
-     "answer_digest": {
-      "length": 2501,
-      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
-     },
-     "answer_text_id": "3d465e048325dc16",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795572241876,
-     "as_of": 1795571672000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-pybQNbA53o",
-     "text": "ТЫ СЛИШКОМ РАНО СТАЛ СВИЧИТЬ МОДЕЛЬ ИСПРАВЬ ЭТО Это уже другой слой: `Timed out waiting for response data` — таймаут OpenCode CLI между чанками, а не `pi-ai` из DSH. При `22.4 tok/s` поток шёл, но потом был простой дольше 10 секунд; дальше сработал переключатель моделей. Это ровно тот случай, который я разбираю. Продолжаю собирать итог\n⚠ Retry due · attempt 2 · Timed out waiting for response data\nBuild · HungerG Free · 16.3s\n+15 commands, 3 edits, 19 thoughts, 4 reads, 2 tools\nSwitched model to Beam Free\nError: This model is not available in your country\nBuild · Beam Free · 5m 12s",
-     "ts": 1795571672000,
-     "source": "session",
-     "title": "Сбои dsh harness и таймауты стрима",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-pybQNbA53o] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
-     "answer_short": "ses-pybQNbA53o: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
-     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
-     "answer_digest": {
-      "length": 2501,
-      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
-     },
-     "answer_text_id": "3d465e048325dc16",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795572241876,
-     "as_of": 1795571672000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-qa2WhLGriA",
-     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n1. Скилл grill-me зарегистрирован в OpenCode.\nПроверка: /home/nyaka/.opencode/bin/opencode api get /api/skill | python3 -c \"import json,sys; d=json.load(sys.stdin); print(any(s.get('name')=='grill-me' for s in d['data']))\" — ожидается True.\n2. Файл скилла существует и содержит инструкцию.\nПроверка: test -f /home/nyaka/.config/opencode/skills/grill-me/SKILL.md && grep -c 'grilling' /home/nyaka/.config/opencode/skills/grill-me/SKILL.md — ожидается 1.\n3. Гейм-мод выключен.\nПроверка: python3 /home/nyaka/.config/opencode/skills/game-mode/scripts/game_guard.py status | grep '\"active\": false' — ожидается строка.\n\n\n<file name=\"selfcheck-grill-20261125-022732-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n1. Скилл grill-me зарегистрирован в OpenCode.\nПроверка: /home/nyaka/.opencode/bin/opencode api get /api/skill | python3 -c \"import json,sys; d=json.load(sys.stdin); print(any(s.get('name')=='grill-me' for s in d['data']))\" — ожидается True.\n2. Файл скилла существует и содержит инструкцию.\nПроверка: test -f /home/nyaka/.config/opencode/skills/grill-me/SKILL.md && grep -c 'grilling' /home/nyaka/.config/opencode/skills/grill-me/SKILL.md — ожидается 1.\n3. Гейм-мод выключен.\nПроверка: python3 /home/nyaka/.config/opencode/skills/game-mode/scripts/game_guard.py status | grep '\"active\": false' — ожидается строка.\n\n</file>",
-     "ts": 1795562852000,
-     "source": "session",
-     "title": "verify:selfcheck-grill:20261125-022732",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w26111909050929f4"
-     ],
-     "answer": "[w26111909050929f4] ПРОВЕРКА-КАнала-только-владельцу-20261125-0245",
-     "answer_short": "w26111909050929f4: ПРОВЕРКА-КАнала-только-владельцу-20261125-0245",
-     "answer_full": "ПРОВЕРКА-КАнала-только-владельцу-20261125-0245",
-     "answer_digest": {
-      "length": 46,
-      "sha256": "826644485a45a8f2c4717a8963dbe6a2101d151766f0256d5a62a0424b604e3b"
-     },
-     "answer_text_id": "826644485a45a8f2",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795562957869,
-     "as_of": 1795562852000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-hC108ow7n3",
-     "text": "Ты — бесплатный модель-оценщик в OpenCode. Реши, хватает ли бесплатной модели для задачи ниже или стоит подключать платную. Отвечай строго по-русски, 4 строками:\nРЕШЕНИЕ: FREE или PAID\nМОДЕЛЬ: конкретный id модели (только если PAID)\nПРИЧИНА: одно предложение\nОЦЕНКА: сколько % месячного allowance съест задача, число\n\nПравила:\n1. Рутина, чтение, черновики, массовые замены, исследование — FREE, всегда.\n2. PAID только если нужны сложные рассуждения, длинный агентный прогон или бесплатная модель уже отказала/уперлась в лимит.\n3. Из платных бери самый дешёвый адекватный вариант с лимитом ≥$60; модели с лимитом $15 — только при реальной необходимости.\n4. Никогда не предлагай модель с активным множителем и не расширяй контекст без нужды.\n5. Акция GLM-5.3 $500 действует только до 22.11.2026 — после неё не рассчитывай на $500.\n\nЖивые данные квот:\nмесяц: 88.7%\n5ч: 0.5%\nнеделя: 22.4%\nпрогноз месяца: 301%\nрасход deepseek-v4-pro: 52.0% allowance\nрасход deepseek-v4.1-flash: 16.0% allowance\nрасход glm-5.3: 15.8% allowance\nрасход glm-5.3-flash: 3.4% allowance\nрасход kimi-k2.7-code: 1.4% allowance\nлимиты Go: glm-5.3=$200, deepseek-v4.1-flash=$100, muse-spark-1.2-contributor=$60, muse-spark-1.3-contributor=$60, glm-5.3-flash=$60, hy3=$60, kimi-k2.7-code=$60, mimo-v2.6-flash=$60\nакция gemini-4-argon: до 2026-11-30, осталось 6 дн.\nбесплатные модели: beam-free, iceman-contributor-free, hy4-flash-free, hungerg-free\n\nЗадача:\nпересобрать карточки из цитат иREVка",
-     "ts": 1795551896000,
-     "source": "session",
-     "title": "quota-radar gate",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-hC108ow7n3] Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунд",
-     "answer_short": "ses-hC108ow7n3: Да, гейм-мод на ПК включён по-настоящему — это подтверждено ",
-     "answer_full": "Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунду, причина — «пользователь играет в CS2»; та же метка лежит в общем файле, который видит ПК.\n\nПОНЯТНО: пока гейм-мод включён, любые задания на твой ПК автоматически отклоняются, поэтому твою игру ничего не дёргает и не отвлекает.\n\nПо частым запросам: с момента включения ни одна команда на ПК не ушла. Мост отклонил все попытки — в журнале за это время почти сотня отказов с пометкой о блокировке на время игры, успешных отправок и запусков нет. Сторож связи раз в две минуты пробует короткий зонд «жив ли ПК», но он тоже блокируется и до ПК не доходит; самовосстановление теперь только пишет тревогу, а не дёргает ПК перезапусками.\n\nОдна честная оговорка: в мосте остался узкий служебный ключ, который теоретически разрешает одну особо помеченную задачу во время игры. За всю историю по нему не прошла ни одна задача, я его не применял и применять не буду.\n\nГейм-мод снимется только когда ты скажешь, что перестал играть; сам по себе он не выключится. Проверено по файлу состояния, журналу моста и коду блокировки.",
-     "answer_digest": {
-      "length": 1215,
-      "sha256": "ad62f7e7b99f3f04de7ef17cee1411e1f0d3d51985e10855fae2dc4c4e577571"
-     },
-     "answer_text_id": "ad62f7e7b99f3f04",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795552467350,
-     "as_of": 1795551896000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-rbaUI5E8K5",
-     "text": "Ты — бесплатный модель-оценщик в OpenCode. Реши, хватает ли бесплатной модели для задачи ниже или стоит подключать платную. Отвечай строго по-русски, 4 строками:\nРЕШЕНИЕ: FREE или PAID\nМОДЕЛЬ: конкретный id модели (только если PAID)\nПРИЧИНА: одно предложение\nОЦЕНКА: сколько % месячного allowance съест задача, число\n\nПравила:\n1. Рутина, чтение, черновики, массовые замены, исследование — FREE, всегда.\n2. PAID только если нужны сложные рассуждения, длинный агентный прогон или бесплатная модель уже отказала/уперлась в лимит.\n3. Из платных бери самый дешёвый адекватный вариант с лимитом ≥$60; модели с лимитом $15 — только при реальной необходимости.\n4. Никогда не предлагай модель с активным множителем и не расширяй контекст без нужды.\n5. Акция GLM-5.3 $500 действует только до 22.11.2026 — после неё не рассчитывай на $500.\n\nЖивые данные квот:\nмесяц: 88.7%\n5ч: 0.5%\nнеделя: 22.4%\nпрогноз месяца: 301%\nрасход deepseek-v4-pro: 52.0% allowance\nрасход deepseek-v4.1-flash: 16.0% allowance\nрасход glm-5.3: 15.8% allowance\nрасход glm-5.3-flash: 3.4% allowance\nрасход kimi-k2.7-code: 1.4% allowance\nлимиты Go: glm-5.3=$200, deepseek-v4.1-flash=$100, muse-spark-1.2-contributor=$60, muse-spark-1.3-contributor=$60, glm-5.3-flash=$60, hy3=$60, kimi-k2.7-code=$60, mimo-v2.6-flash=$60\nакция gemini-4-argon: до 2026-11-30, осталось 6 дн.\nбесплатные модели: beam-free, iceman-contributor-free, hy4-flash-free, hungerg-free\n\nЗадача:\nпересобрать карточки из 84 английских цитат и русских переводов, добавить просмотр полного текста",
-     "ts": 1795551733000,
-     "source": "session",
-     "title": "quota-radar gate",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-rbaUI5E8K5] Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунд",
-     "answer_short": "ses-rbaUI5E8K5: Да, гейм-мод на ПК включён по-настоящему — это подтверждено ",
-     "answer_full": "Да, гейм-мод на ПК включён по-настоящему — это подтверждено файлом состояния, а не только зелёным статусом сервиса. Переключатель сработал в 23:28 по московскому времени, запись сделана в ту же секунду, причина — «пользователь играет в CS2»; та же метка лежит в общем файле, который видит ПК.\n\nПОНЯТНО: пока гейм-мод включён, любые задания на твой ПК автоматически отклоняются, поэтому твою игру ничего не дёргает и не отвлекает.\n\nПо частым запросам: с момента включения ни одна команда на ПК не ушла. Мост отклонил все попытки — в журнале за это время почти сотня отказов с пометкой о блокировке на время игры, успешных отправок и запусков нет. Сторож связи раз в две минуты пробует короткий зонд «жив ли ПК», но он тоже блокируется и до ПК не доходит; самовосстановление теперь только пишет тревогу, а не дёргает ПК перезапусками.\n\nОдна честная оговорка: в мосте остался узкий служебный ключ, который теоретически разрешает одну особо помеченную задачу во время игры. За всю историю по нему не прошла ни одна задача, я его не применял и применять не буду.\n\nГейм-мод снимется только когда ты скажешь, что перестал играть; сам по себе он не выключится. Проверено по файлу состояния, журналу моста и коду блокировки.",
-     "answer_digest": {
-      "length": 1215,
-      "sha256": "ad62f7e7b99f3f04de7ef17cee1411e1f0d3d51985e10855fae2dc4c4e577571"
-     },
-     "answer_text_id": "ad62f7e7b99f3f04",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795552467350,
-     "as_of": 1795551733000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261124175845",
-     "text": "Меня не устраивают такие ответы исправь механизм мб он вообще смысла не имеет ⏱ Превышен лимит времени (1800с). Задача, возможно, ещё выполняется — напиши /status.",
-     "ts": 1795532325000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261124175845] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261124175845: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795532325000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-DEmtaRN4lr",
-     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n1. Цепочка и бесплатный срез. Выполни grep по ~/.config/opencode/opencode.jsonc. Ожидается: opencode-go/hungerg-free входит в chain, freeCount=12, allowPaidFallback=false. Подтверди, что hungerg-free находится в первых 12 элементах.\n2. Эффективная V2-конфигурация. Выполни opencode api get /api/config и разбери JSON. Ожидается: probeTimeoutSec=attemptTimeoutSec=requestTimeoutSec=70; providers.opencode-go.settings и providers.opencode.settings содержат headerTimeout=60000 и chunkTimeout=60000.\n3. Watchdog-события. Выполни opencode api get /openapi.json и проверь components.schemas.V2Event: session.status и session.step.first-token должны присутствовать. В ~/.config/opencode/failover-plugin/index.js строка message.part.updated должна отсутствовать.\n4. Синтаксис и unit-тест. Выполни node --check ~/.config/opencode/failover-plugin/index.js && node ~/.config/opencode/failover-plugin/selftest.mjs. Ожидается selftest: 28 assertions OK.\n5. Retry-harness. Выполни node /tmp/opencode/hungerg-failover-fix/retry_harness.mjs. Ожидается PASS: HungerG Free -> opencode/nemotron-3.5-super-vl-free.\n6. Watchdog-harness. Выполни node /tmp/opencode/hungerg-failover-fix/watchdog_harness.mjs. Ожидается PASS watchdog и interrupt resume=false.\n7. Свежий smoke. Выполни opencode run --standalone --archived --agent build --model opencode-go/hungerg-free --format json 'Ответь ровно одним словом: OK'. Ожидается rc=0, текст OK, cost=0.\n8. Свежий debug-smoke. Повтори smoke с --print-logs --log-level debug, сохрани stderr во временный файл. Ожидается: строка [free-router] с таймаут ответа: 70с и ноль строк ignoring unknown event types.\n9. Итоговая целостность. Выполни sha256sum ~/.config/opencode/opencode.jsonc ~/.config/opencode/failover-plugin/index.js ~/.config/opencode/failover-plugin/selftest.mjs и приведи значения. PASS, если все три файла существуют и хеши непустые.\n\n\n<file name=\"hungerg-failover-final-20261124-160532-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n1. Цепочка и бесплатный срез. Выполни grep по ~/.config/opencode/opencode.jsonc. Ожидается: opencode-go/hungerg-free входит в chain, freeCount=12, allowPaidFallback=false. Подтверди, что hungerg-free находится в первых 12 элементах.\n2. Эффективная V2-конфигурация. Выполни opencode api get /api/config и разбери JSON. Ожидается: probeTimeoutSec=attemptTimeoutSec=requestTimeoutSec=70; providers.opencode-go.settings и providers.opencode.settings содержат headerTimeout=60000 и chunkTimeout=60000.\n3. Watchdog-события. Выполни opencode api get /openapi.json и проверь components.schemas.V2Event: session.status и session.step.first-token должны присутствовать. В ~/.config/opencode/failover-plugin/index.js строка message.part.updated должна отсутствовать.\n4. Синтаксис и unit-тест. Выполни node --check ~/.config/opencode/failover-plugin/index.js && node ~/.config/opencode/failover-plugin/selftest.mjs. Ожидается selftest: 28 assertions OK.\n5. Retry-harness. Выполни node /tmp/opencode/hungerg-failover-fix/retry_harness.mjs. Ожидается PASS: HungerG Free -> opencode/nemotron-3.5-super-vl-free.\n6. Watchdog-harness. Выполни node /tmp/opencode/hungerg-failover-fix/watchdog_harness.mjs. Ожидается PASS watchdog и interrupt resume=false.\n7. Свежий smoke. Выполни opencode run --standalone --archived --agent build --model opencode-go/hungerg-free --format json 'Ответь ровно одним словом: OK'. Ожидается rc=0, текст OK, cost=0.\n8. Свежий debug-smoke. Повтори smoke с --print-logs --log-level debug, сохрани stderr во временный файл. Ожидается: строка [free-router] с таймаут ответа: 70с и ноль строк ignoring unknown event types.\n9. Итоговая целостность. Выполни sha256sum ~/.config/opencode/opencode.jsonc ~/.config/opencode/failover-plugin/index.js ~/.config/opencode/failover-plugin/selftest.mjs и приведи значения. PASS, если все три файла существуют и хеши непустые.\n\n</file>",
-     "ts": 1795530516000,
-     "source": "session",
-     "title": "verify:hungerg-failover-final:20261124-160532",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w26111909050929f4"
-     ],
-     "answer": "[w26111909050929f4] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w26111909050929f4: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795530516000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-wtKJ6CYfAu",
-     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n\n<file name=\"go-routing-20261124-162024-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n# GO-only routing checklist (fixed BEFORE edits, 2026-11-24T16:20+03:00)\n\nVerifier: fresh `opencode run` session on a free GO model, empty context, only this checklist.\nDo not trust any prose claim — run the command and quote the fact.\n\n1. Beam excluded from failover chain.\n   Check: extract `options.chain` from ~/.config/opencode/opencode.jsonc; `grep -i beam` on it must be empty.\n   Expected: 0 Beam entries (both opencode/beam-free and opencode-go/beam-free removed).\n\n2. Routing is GO-only (Personal free models removed).\n   Check: every selector in `options.chain` starts with `opencode-go/`.\n   Expected: 0 entries starting with `opencode/`.\n\n3. Iceman (training=true) excluded.\n   Check: `grep -i iceman` on chain must be empty.\n\n4. freeCount matches the free prefix.\n   Check: read `freeCount` and count `*-free` selectors in the first `freeCount` positions.\n   Expected: freeCount = 2, both are opencode-go/hy4-flash-free and opencode-go/hungerg-free.\n\n5. Paid fallbacks use extended GO limits only.\n   Check: for each non-free selector, look up `limit_go` in live radar JSON (/tmp/opencode/radar-go.json is a hint, but re-fetch if stale).\n   Expected: limit_go >= 60 for every paid selector; no 15-limit models.\n\n6. Objective chain gate passes.\n   Check: `python3 ~/.config/opencode/scripts/chain_gate.py`; expected CHAIN_GATE PASS, exit 0.\n\n7. Router selftest passes.\n   Check: `cd ~/.config/opencode/failover-plugin && node selftest.mjs`; expected exit 0.\n\n8. Config parses and server sees it.\n   Check: `opencode debug paths config` and `opencode api get /api/info`; expected no parse error.\n\n9. Live smoke: a fresh archived `opencode run` on opencode-go/hy4-flash-free answers a trivial question without \"not available in your country\".\n   Check: run verifier; expected answer text + no Beam error.\n\n10. No manual model switching was used to make any of the above pass.\n\n</file>",
-     "ts": 1795526737000,
-     "source": "session",
-     "title": "verify:go-routing:20261124-162024",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w26111909050929f4"
-     ],
-     "answer": "[w26111909050929f4] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w26111909050929f4: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795526737000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-SRXtbC5Ev9",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15584. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwunwvj3gmaz: Курировать DSH: web и рабочие вкладки без ошибок модели. Где: goals.json · Держать DeepSeek Harness на 127.0.0.1:3080 и две рабочие сессии под наблюдением. Разбирать TIMEOUT/429/TRANSPORT, проверять автофейловер и восстановле В конце вызови tools.goals.track({action:'done', id:'gmwunwvj3gmaz', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15584_run16745.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795523405000,
-     "source": "session",
-     "title": "Проверка гипотезы AU15584: DeepSeek Harness",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795523405000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261124144523",
-     "text": "Осуждаю \"⏱ Превышен лимит времени (1800с). Задача, возможно, ещё выполняется — напиши /status.\"",
-     "ts": 1795520723000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261124144523] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261124144523: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795520723000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-ivOpZFg8L7",
-     "text": "ТОЛЬКО чтение, модель не меняй: opencode-go/hy4-flash-free. Перепроверь исправленную выборку после самооценки VERDICT FAIL: /home/nyaka/Documents/deepseek-harness/default-workspace/s03gt_label_sample_fixed.jsonl, s03gt_label_sample_fixed_sheet.png, s03gt_label_spec.md, s03gt_label_self_eval_hy4.md. Проверь, закрыты ли пять дефектов: 1) вырождение/стратификация, 2) конфликт ECE помечен, 3) run_id в подписях листа, 4) включены fp=2 и tp>0, 5) семантика FP_ZERO документирована. Создай ровно один новый файл /home/nyaka/Documents/deepseek-harness/default-workspace/s03gt_label_self_eval_fixed.md с VERDICT PASS/FAIL/OPEN, списком закрытых/открытых дефектов и одной командой проверки с rc. Не трогай pc-bridge, ПК, data/ и чужие файлы.",
-     "ts": 1795483700000,
-     "source": "session",
-     "title": "Проверка исправленной выборки S03GT",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-ivOpZFg8L7] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "ses-ivOpZFg8L7: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795483700000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-flL9yhbY1V",
-     "text": "Работа по wanted-хотелке cl-subagent-visibility: Видимость субагентов: тег parentId/children в wants/goals. Контекст: Инспекция нашла, что работа субагентов/движков невидима в треке (G4). Петля должна шить parentId.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-subagent-visibility-1795478189.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795478385000,
-     "source": "session",
-     "title": "Видимость субагентов в wants/goals",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795478385000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-8eRWzrkUFm",
-     "text": "Работа по wanted-хотелке cl-claims-weekly: Еженедельный claims-audit с авто-миграцией гибридных записей. Контекст: claims.json был 100% гибрид; миграция сняла топ-уровневый гибрид, но нужен регулярный контроль рецидива.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-claims-weekly-1795478043.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795478188000,
-     "source": "session",
-     "title": "Еженедельный claims-audit cl-claims-weekly",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795478188000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-AQzPrpcIZN",
-     "text": "Работа по wanted-хотелке cl-pc-curator-cron: Повесить pc-curator-assist на cron каждые 15 мин с алертом при затупе. Контекст: Мост ПК здоров, но нет регулярного детектора затупов (running>timeout, очередь, unclean restart).. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-pc-curator-cron-1795477694.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795477884000,
-     "source": "session",
-     "title": "Cron-мониторинг pc-curator-assist",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795477884000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-EVCZOfTGHi",
-     "text": "Работа по wanted-хотелке cl-w261122-active: Снять deferred с w261122 и закрыть 30 недоставленных ответов. Контекст: Стоящая хотелка доставки w261122054642905d = deferred. Петля должна её активировать с владельцем и дедлайном.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-w261122-active-1795477501.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795477693000,
-     "source": "session",
-     "title": "Активация wanted-хотелки w261122",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795477693000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-0bVA1DqvvI",
-     "text": "Работа по wanted-хотелке cl-delivered-gate-nightly: Внедрить гейт «delivered ≠ status done» в ночной аудит. Контекст: Поле delivered добавлено миграцией, но gap не виден ежедневно. Ночной work-audit должен поднимать gap как OPEN.. Гейт/апгрейд: гейт не задан — сформулируй проверяемый критерий сам. Сделай ОДИН проверяемый шаг прямо сейчас. Создай НОВЫЙ отчёт ровно по пути /home/nyaka/overnight/wants/cl-delivered-gate-nightly-1795477320.md: факт / что сделано / гейт пройден или нет / неизвестно. Не перезаписывай чужие отчёты и data/. НЕ меняй статус в wants.json — это делает воркер. Если нужен человек или Windows-ПК — честно напиши БЛОКЕР и причину. Коротко доложи. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: wants-radar для хотелок, research-slowdown для глубоких тем, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему.",
-     "ts": 1795477501000,
-     "source": "session",
-     "title": "Ночной гейт delivered ≠ done",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w261119090518006d: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795477501000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122133916",
-     "text": "Но почему, если ресурсы разблокированы, а агентов всего 4 работают?",
-     "ts": 1795343956000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261122133916] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261122133916: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795343956000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122133346",
-     "text": "Окей, ты освободил 11 гигабайтов, сейчас ведь ты не будешь упираться, сейчас ты сможешь разблокировать все эти процессы, проекты, агентов, которые до этого упирались, разблокируй, пожалуйста, сейчас должна быть нормальная производительность, нормальная работа.",
-     "ts": 1795343626000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261122133346] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261122133346: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795343626000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122124108",
-     "text": "ограничение по памяти по большей части искусственно типа мы там задали лимит это просто ну типа на",
-     "ts": 1795340468000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261122124108] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261122124108: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795340468000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122120908",
-     "text": "МД файлы ведь могут содержать в себе картинки, то есть туда можно типа скриншоты загружать.\nНесколько раз в ответах ⏱ Превышен лимит времени (1800с). Задача, возможно, ещё выполняется — напиши /status.",
-     "ts": 1795338631000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261122120908] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261122120908: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795338631000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122114508",
-     "text": "А может есть возможность договориться насчет тишины с другими агентами? Такой возможности может и не быть. Это может быть предельно критичным, проанализируй. А может быть можно перезапустить, и никто не пострадает от этого, и все агенты смогут разобраться с этим. Надо как-то узнать это.",
-     "ts": 1795337108000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611212151519801"
-     ],
-     "answer": "[w2611212151519801] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w2611212151519801: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795337108000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122112405",
-     "text": "Кстати, вкладка ход по-прежнему будто бы сломана, непонятно почему там всего две задачи по-прежнему, типа у меня вот 40 агентов, там ну тысяча запросов и так далее, и типа тысяча ответов, типа непонятно вот вообще типа чему ход служит, там параноидальный критик это мог бы обработать как-то.",
-     "ts": 1795335845000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261122112405] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261122112405: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795335845000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122104833",
-     "text": "Заведи агента, который анализирует юзер-экспириенс в тг-боте.",
-     "ts": 1795333713000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611212151519801"
-     ],
-     "answer": "[w2611212151519801] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "w2611212151519801: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795333713000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261122034308",
-     "text": "Да хотел другого параноика\nОпиши свою текущую конфигурацию, чтобы её можно было сравнить с другой агентской системой.",
-     "ts": 1795308225000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261122034308] **1. Задача**\n\n- Я — локальный агент OpenCode: читаю и меняю проекты владельца на ноуте (и через `pc-bridge` на Windows‑ПК), веду прогресс/гипотезы/цели и отвечаю на запросы из TUI и Telegram.\n- Польз",
-     "answer_short": "tg-20261122034308: **1. Задача**\n\n- Я — локальный агент OpenCode: читаю и меняю",
-     "answer_full": "**1. Задача**\n\n- Я — локальный агент OpenCode: читаю и меняю проекты владельца на ноуте (и через `pc-bridge` на Windows‑ПК), веду прогресс/гипотезы/цели и отвечаю на запросы из TUI и Telegram.\n- Пользователи: владелец (`bots/config.json` → `chat_id: 1869196044`), гости из списка `guests` в `remote_agent_bot.py`, текущий чат — `435824119`.\n\n**2. Модели**\n\n| Кто | provider/model-id | Доступ | Подтверждение |\n|---|---|---|---|\n| Я, текущая сессия | `opencode-go/hy4-flash-free` | free-тир; точный механизм аутентификации не знаю | системный промпт + живой процесс `opencode run --model opencode-go/hy4-flash-free` |\n| build (primary) | `opencode/deepseek-v4.1-flash-free#high` | free | `opencode.jsonc:39-41` |\n| plan | `opencode-go/deepseek-v4.1-flash#max` | allowance OpenCode Go ($100, по `AGENTS.md`) | `opencode.jsonc:44-46` |\n| architect | `opencode-go/deepseek-v4-pro#high` | allowance $15 | `opencode.jsonc:50-53`, команда `/plan-deep` |\n| explore | `opencode/deepseek-v4.1-flash-free#low` | free | `opencode.jsonc:56-58` |\n| general | `opencode/deepseek-v4.1-flash-free#high` | free | `opencode.jsonc:59-61` |\n| deep | `opencode-go/deepseek-v4-pro#high` | allowance $15 | `opencode.jsonc:64-68` |\n| cheap | `opencode-go/hy4-flash-free` | free | `opencode.jsonc:71-75` |\n| critic | `opencode/deepseek-v4.1-flash-free#max` | free | `opencode.jsonc:79-86` и `agents/critic.md` |\n| reviewer | `opencode-go/kimi-k2.7-code` | allowance $60 | `opencode.jsonc:89-96` |\n| advisor | `opencode/deepseek-v4.1-flash-free#high` | free | `agents/advisor.md` |\n| conflict-keeper | `opencode/deepseek-v4.1-flash-free#low` | free | `agents/conflict-keeper.md` |\n| housekeeper | `opencode/deepseek-v4.1-flash-free#low` | free | `agents/housekeeper.md` |\n| unblocker | `opencode-go/hy4-flash-free` | free | `agents/unblocker.md` |\n\nПровайдеры `opencode` и `opencode-go` объявлены в `opencode.jsonc:147-152` (добавлены плагином `opencode-quota`); API-ключей в окружении не вижу — только `OPENCODE*`, `AI_AGENT`.\n\n**3. Агенты**\n\n| Имя | Тип | Роль | Вызов |\n|---|---|---|---|\n| build | primary, `default_agent` | Основной агент с полным доступом | пользователь / TUI |\n| plan | primary (без `mode`) | Планирование | пользователь |\n| architect | primary (без `mode`) | Архитектура на дорогой модели | `/plan-deep`, по запросу |\n| general, explore | в `opencode.jsonc` `mode` не указан; в моём списке — subagent | Рутина и разведка кода | я через `subagent` |\n| deep, cheap, critic, reviewer | `mode: subagent` | Тяжёлый reasoning, черновики, критика, код-ревью | я через `subagent` |\n| advisor, conflict-keeper, housekeeper, unblocker | `mode: subagent` (`agents/*.md`) | Советник, карта конфликтов, карта каталогов, разбор блоков | я через `subagent` |\n| hidden | — | Явного `hidden: true` ни в `opencode.jsonc`, ни в `agents/*.md` нет; агенты с `mode: subagent` не выбираются напрямую | — |\n\nКто кого может вызывать: я могу вызвать любого из перечисленных субагентов. В конфиге только `advisor` явно запрещает `",
-     "answer_digest": {
-      "length": 3000,
-      "sha256": "6354792d68d94a382a5fad8df588fd77c44f46dfef625aca217e9928f41b46a4"
-     },
-     "answer_text_id": "6354792d68d94a38",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795308370965,
-     "as_of": 1795308225000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261121192737",
-     "text": "Последняя проверка встала. Запусти агента узнать почему а сам расскажи результат последнего смс\n/tabs",
-     "ts": 1795278469000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261121192737] Запустил агента разбирать, почему встала проверка. Сам по последнему сообщению («ни вкладки, ни атлас — почини») доложу:\n\n**Что нашёл и сделал:**\n- Проверил через ADB на подключённом телефоне: вкладки",
-     "answer_short": "tg-20261121192737: Запустил агента разбирать, почему встала проверка. Сам по по",
-     "answer_full": "Запустил агента разбирать, почему встала проверка. Сам по последнему сообщению («ни вкладки, ни атлас — почини») доложу:\n\n**Что нашёл и сделал:**\n- Проверил через ADB на подключённом телефоне: вкладки «Ход/Задачи/Промпты/Атлас/Чат» есть, «Сценарии» присутствует в подменю «Задачи», но **тап по нему ничего не открывал**. Атлас по тапу открывался и показывал данные (389 узлов, 5 сеток).\n- Причина: в `setTaskSub()` не вызывался `mountScenarios()` — экран переключался, но содержимое не монтировалось.\n- Починил: добавил вызовы `mountScenarios()` и `studioEnsure()`, запушил в Pages (`e9b9cc3`), обновил URL на `?v=20261121-1920`, инициировал рестарт бота — но команда была прервана.\n\nЖду заключения агента по зависшей проверке, затем дам полный итог.\n\nАгент разобрался: **ничего не зависло** — прервался только мой tool-вызов (`Step interrupted` по твоему действию). К моменту прерывания патч, коммит, пуш и запись URL уже выполнились, а рестарт бота реально прошёл в 19:20:08. Хвост команды (`sleep` + проверка) просто не успел дать вывод — отсюда ощущение «встало».\n\n**Результат по последнему сообщению («ни вкладки, ни атлас — почини»):**\n- Через ADB на телефоне подтвердил: вкладка «Атлас» **работает** (389 узлов, 5 сеток), а «Сценарии» в подменю «Задачи» была мёртвой — `setTaskSub()` не вызывал `mountScenarios()`, экран переключался пустым.\n- Починил, запушил `e9b9cc3`. Агент проверил: фикс вживую — HEAD `8e585de`, автопуши `live:` его не затёрли, публичная страница отдаёт 200 и содержит `mountScenarios()`; URL `?v=20261121-1920` совпадает с кнопкой в логе; бот active, перезапуск состоялся.\n\n**Что сделать тебе:** открой мини-ап заново через кнопку меню (новый `?v=`) и жми **«Задачи» → «Сценарии»**. В текущем редизайне «Ещё» больше нет — «Сценарии» живут подпунктом в «Задачах».\n\nОстаточный риск: фоновый redesign-агент уже дважды перезаписывал `index.html` без «Сценариев». Если вкладка снова исчезнет — буду закреплять правку в его источнике, а не только в Pages.",
-     "answer_digest": {
-      "length": 1980,
-      "sha256": "a1d493afbf5afa9ae6834ed64819bbb576e47f6707d9e376864b1657116ab2f9"
-     },
-     "answer_text_id": "a1d493afbf5afa9a",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795278731663,
-     "as_of": 1795278469000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261121155358",
-     "text": "А почему задачи в ожидании и 0 doing? Плюс почему так мало агентов если так много задач? Плюс проверки таймера бомбы в КС 2 самое важное странно что ты не проверил\nУ тебя КС 2 на ПК есть для всех тестов",
-     "ts": 1795265681000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261121155358] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261121155358: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795265681000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120193628",
-     "text": "Переключись на бесплатную модель",
-     "ts": 1795192588000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120193628] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120193628: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795192588000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120193131",
-     "text": "Используй бесплатную модель\n/solo\nУ тебя же доступны бесплатные модели?\n/multi\n/help",
-     "ts": 1795192445000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120193131] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120193131: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795192445000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120171048",
-     "text": "Хочу до 30 проблема же была не в том что каждый агент плодит субагента а в чем то более глубоком разберись и исправь",
-     "ts": 1795183848000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120171048] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120171048: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795183848000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120170857",
-     "text": "Плюс почему так мало агентов по прежнему",
-     "ts": 1795183737000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120170857] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120170857: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795183737000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120163436",
-     "text": "Ну а больше агентов почему по прежнему 3 агента всего а не я30?",
-     "ts": 1795181676000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120163436] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120163436: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795181676000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120161804",
-     "text": "Ты применил кучу мер предосторожности можешь ли ты попробовать запуститься на 30 агентах сейчас?\nАскольд:",
-     "ts": 1795180753000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120161804] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120161804: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795180753000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120160206",
-     "text": "сделай так чтоб возвращался айди каждой сессии после запроса чтоб легче было обращаться. если в запросе указан айди сессии то агент должен работать с ней и быстро ее находить\nРЕЖИМ: только чтение. Ничего не меняй и не запускай подагентов.",
-     "ts": 1795179772000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261120160206] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
-     "answer_short": "tg-20261120160206: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
-     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
-     "answer_digest": {
-      "length": 327,
-      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
-     },
-     "answer_text_id": "935ef42fe2d91973",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795269101635,
-     "as_of": 1795179772000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261120153352",
-     "text": "Создай еще одного агента хаускипера который бы следил за тем чтобы агенты не работали одновременно над изменениями одной области или один из и тех же файлов. Для теста используй процессы по задачам telegram app",
-     "ts": 1795178032000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261120153352] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
-     "answer_short": "tg-20261120153352: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
-     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
-     "answer_digest": {
-      "length": 327,
-      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
-     },
-     "answer_text_id": "935ef42fe2d91973",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795269101635,
-     "as_of": 1795178032000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261120151341",
-     "text": "Возобнови работу над исполнением плану /home/nyaka/docs/process-plan.md. Продолжи там где остановился последний агент и доведи план поэтапно до конца. Ответь мне  принял в работу после того как он запустится и ты убедишься что прогресс доступен в апке",
-     "ts": 1795176821000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261120151341] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
-     "answer_short": "tg-20261120151341: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
-     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
-     "answer_digest": {
-      "length": 327,
-      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
-     },
-     "answer_text_id": "935ef42fe2d91973",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795269101635,
-     "as_of": 1795176821000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261120150350",
-     "text": "Для 10% входящих запросов (каждый 10й строго ) записывай телеметрию бенчамаркинг обращений к хакскиперу или рид-онли индексу, сколько это заняло в ожидании. Если агенты туда не обращались и сами что-то искали в обоход тоже записывай в аудит. Сохраняю как и другую телеметрию в mongodb",
-     "ts": 1795176230000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261120150350] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
-     "answer_short": "tg-20261120150350: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
-     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
-     "answer_digest": {
-      "length": 327,
-      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
-     },
-     "answer_text_id": "935ef42fe2d91973",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795269101635,
-     "as_of": 1795176230000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261120145342",
-     "text": "Запрети агентам рекурсивно искать из home и рута. Пусть агент-хаускипер периодически обновляет индекс где что есть по каким группам потребностей агентов и говорил бы им где искать, может вел бы какой-то файл который для всех ридонли и только агент-хаускипер мог бы его изменять",
-     "ts": 1795175622000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "435824119",
-     "user": "Иван",
-     "wants": [],
-     "answer": "[tg-20261120145342] Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `",
-     "answer_short": "tg-20261120145342: Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n",
-     "answer_full": "Очередь работает. Вывод команды `~/qrun/q answer hello да`:\n\n```\nhello: ответ на h3 записан: «да». Очередь продолжит в течение минуты.\n```\n\nИтог: раннер подхватил ответ сам, очередь дошла до конца — `✓h1 ✓h2 ✓h3 ✓h4`, статус `FINISHED`, пропущено 0. Последнее уведомление: `[hello] очередь завершена: выполнено 4, пропущено 0`.",
-     "answer_digest": {
-      "length": 327,
-      "sha256": "935ef42fe2d9197340d617eb37dfd5160acbf5af853f20b66e184eeb00a67836"
-     },
-     "answer_text_id": "935ef42fe2d91973",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795269101635,
-     "as_of": 1795175622000,
-     "is_stale": true
-    },
-    {
-     "id": "tg-20261120140359",
-     "text": "Ты можешь мне ответить без подключения агентов без лишней сложности просто сказать привет в ответ и все",
-     "ts": 1795172639000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120140359] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120140359: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795172639000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120105806",
-     "text": "Типа, если OpenCode меня не ограничивает по бесплатным моделям никак,\nПлюс насчет большого количества агентов и подключения их к задачам, здесь, наверное, единственный риск это какие-то шедоу-баны, шедоу-ограничения в этом плане.",
-     "ts": 1795161519000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120105806] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120105806: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795161519000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120071024",
-     "text": "🤖 TurnGame · Оператор ⚡ Параллельный ответ (новая вкладка)\nМне не нравится turn game operator это будто мусор",
-     "ts": 1795147861000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120071024] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120071024: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795147861000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261120004912",
-     "text": "Вот сейчас ты снова выдал сложный ответ, в нем очень много рефлексии, но мне очень мало понятно, что я могу с этим сделать, то есть представь человека, которому надо как-то визуально оценивать, движется ли работа, то есть вот в тех проектах, которые мы делаем, есть пример того, что надо просто делать какую-то безостановочную работу, постоянно напоминать модели, проводить исследования и так далее, постоянно разбирать разные видео, теорию, пытаться излечь.\nПлюс, вот пример, ты мне сказал, что про конфиденциальность поднималась тема куча раз, но до сих пор не отвечена.\nPairDevBot:",
-     "ts": 1795125032000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261120004912] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261120004912: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795125032000,
-     "is_stale": false
-    },
-    {
-     "id": "tg-20261118192827",
-     "text": "Плюс хочется сделать так чтобы на ответы не было очереди. Вот я задал сложный пвопрос ты думаешь долго . Потом параллельно  лёгкий ты отвечаешь параллельно на него в новй сессии пока старый тупит и тд. У меня скачка демок идёт? Плюс пришли скриншот",
-     "ts": 1795019307000,
-     "source": "telegram",
-     "source_label": "ТГ бот",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[tg-20261118192827] 🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_short": "tg-20261118192827: 🤖 Ни одна модель не вернула ответа. Причина записана в журна",
-     "answer_full": "🤖 Ни одна модель не вернула ответа. Причина записана в журнал; попробуй ещё раз.",
-     "answer_digest": {
-      "length": 80,
-      "sha256": "bcafdc549cd035c9e56dec90ef171f46a198a903ff01cc7ac8862ee91a2a2c7c"
-     },
-     "answer_text_id": "bcafdc549cd035c9",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547167871,
-     "as_of": 1795019307000,
      "is_stale": false
     }
    ]
