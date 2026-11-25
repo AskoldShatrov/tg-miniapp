@@ -256,9 +256,9 @@
       "id": "T6.6",
       "title": "Live: активная закачка прямо сейчас",
       "status": "running",
-      "note": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho… (+3)",
+      "note": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho… (+4)",
       "startedAt": "2026-11-19T08:22:05+03:00",
-      "updatedAt": "2026-11-25T03:57:59+03:00",
+      "updatedAt": "2026-11-25T03:59:59+03:00",
       "completedAt": "2026-11-24T15:39:13+03:00"
     },
     {
@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 471,
+      "age_min": 473,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 492,
+      "age_min": 494,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,32 +1966,40 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 493,
+      "age_min": 495,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-dd85b57f",
-      "title": "Почему нечитаемо и скиллы не подключились",
-      "source": "dsh",
-      "claimed_human": "03:59:02",
-      "age_min": 0,
-      "full": "Почему нечитаемо и скиллы не подключились"
     },
     {
       "id": "session-8c79c0af",
       "title": "Распознавание не слом",
       "source": "dsh",
-      "claimed_human": "03:59:01",
+      "claimed_human": "04:00:59",
       "age_min": 0,
       "full": "Распознавание не слом"
+    },
+    {
+      "id": "session-19501522",
+      "title": "Интервью по всем моим проектам",
+      "source": "dsh",
+      "claimed_human": "04:00:42",
+      "age_min": 0,
+      "full": "Интервью по всем моим проектам"
     },
     {
       "id": "T6/T6.6",
       "title": "Live: активная закачка прямо сейчас",
       "source": "progress",
-      "claimed_human": "03:57:59",
+      "claimed_human": "03:59:59",
       "age_min": 1,
-      "full": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho… (+3)"
+      "full": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho… (+4)"
+    },
+    {
+      "id": "session-dd85b57f",
+      "title": "Почему нечитаемо и скиллы не подключились",
+      "source": "dsh",
+      "claimed_human": "03:59:20",
+      "age_min": 1,
+      "full": "Почему нечитаемо и скиллы не подключились"
     }
   ],
   "queues": {
@@ -2017,62 +2025,100 @@
       "session_id": "",
       "source": "task",
       "label": "Не вижу возможности пройти интервью при презентации новых шт",
-      "step_label": "Подключить интервью к мини-апу",
-      "step": 2,
+      "step_label": "Прогнать интервью самому и зафиксировать доказательства",
+      "step": 3,
       "total": 4,
-      "events": 8,
+      "events": 19,
       "trail": [
         {
-          "ts": 1795568305,
-          "label": "BASH · ls -la ~/shared-r"
+          "ts": 1795568393,
+          "label": "BASH · python3 ~/shared-"
         },
         {
-          "ts": 1795568305,
+          "ts": 1795568393,
+          "label": "BASH · which python3; py"
+        },
+        {
+          "ts": 1795568393,
           "label": "THINK"
         },
         {
-          "ts": 1795568317,
-          "label": "GREP · /home/nyaka/share"
+          "ts": 1795568406,
+          "label": "BASH · ls -la ~/camoufox"
         },
         {
-          "ts": 1795568317,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795568317,
-          "label": "BASH · cat ~/shared-repo"
-        },
-        {
-          "ts": 1795568318,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795568318,
+          "ts": 1795568406,
           "label": "THINK"
         },
         {
-          "ts": 1795568329,
-          "label": "READ · /home/nyaka/share"
+          "ts": 1795568415,
+          "label": "BASH · ls ~/.config/open"
         },
         {
-          "ts": 1795568329,
-          "label": "BASH · grep -rn \"mirror_"
+          "ts": 1795568416,
+          "label": "BASH · ss -ltnp 2>/dev/n"
         },
         {
-          "ts": 1795568329,
-          "label": "BASH · head -30 ~/.confi"
+          "ts": 1795568416,
+          "label": "THINK"
         },
         {
-          "ts": 1795568329,
-          "label": "BASH · python3 -c \"impor"
+          "ts": 1795568423,
+          "label": "BASH · grep -n \"websocke"
         },
         {
-          "ts": 1795568329,
+          "ts": 1795568423,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568447,
+          "label": "WRITE · /home/nyaka/shar"
+        },
+        {
+          "ts": 1795568447,
           "label": "THINK"
         }
       ],
       "started_at": 1795568237,
-      "updated_at": 1795568341
+      "updated_at": 1795568462
+    },
+    {
+      "key": "req-20261125-040036-60058a",
+      "session_id": "",
+      "source": "photo",
+      "label": "Говорит интервью начато отвечай в чате а в чате вкладка с пт",
+      "step_label": "Разобраться",
+      "step": 1,
+      "total": 5,
+      "events": 3,
+      "trail": [
+        {
+          "ts": 1795568449,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795568449,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568455,
+          "label": "BASH · ls ~/.config/open"
+        },
+        {
+          "ts": 1795568455,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795568461,
+          "label": "BASH · head -40 ~/.confi"
+        },
+        {
+          "ts": 1795568461,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795568437,
+      "updated_at": 1795568462
     }
   ],
   "bars": [
@@ -2084,7 +2130,7 @@
       "unit": "шагов",
       "color": "yellow",
       "source": "progress.json",
-      "updated_at": "2026-11-25T03:57:59+03:00"
+      "updated_at": "2026-11-25T03:59:59+03:00"
     },
     {
       "key": "task:T29",
@@ -2094,7 +2140,7 @@
       "unit": "шагов",
       "color": "red",
       "source": "progress.json",
-      "updated_at": "2026-11-25T03:57:59+03:00"
+      "updated_at": "2026-11-25T03:59:59+03:00"
     },
     {
       "key": "captions",
@@ -2127,10 +2173,10 @@
       "updated_at": "2026-11-24T10:16:32+03:00"
     }
   ],
-  "updatedAt": "2026-11-25T03:57:59+03:00",
-  "progress_updated_at": "2026-11-25T03:57:59+03:00",
+  "updatedAt": "2026-11-25T03:59:59+03:00",
+  "progress_updated_at": "2026-11-25T03:59:59+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795568342,
-  "fetched_human": "2026-11-25 03:59:02 +0300"
+  "fetched_at": 1795568463,
+  "fetched_human": "2026-11-25 04:01:03 +0300"
 }

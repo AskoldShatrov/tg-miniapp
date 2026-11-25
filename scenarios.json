@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-25 03:30",
+ "generated": "2026-11-25 04:00",
  "window": {
-  "start": "2026-11-24T18:21",
-  "end": "2026-11-25T00:26",
-  "sessions": 178,
+  "start": "2026-11-24T18:58",
+  "end": "2026-11-25T00:57",
+  "sessions": 182,
   "roots": 150
  },
  "summary": {
@@ -25,15 +25,16 @@
    "runs": 150,
    "median_s": 307,
    "max_s": 14790,
-   "last": "2026-11-25T00:26:19.193000+00:00",
+   "last": "2026-11-25T00:57:17.204000+00:00",
    "outcomes": {
-    "error": 41,
-    "done": 105,
+    "waiting_user": 1,
+    "done": 107,
+    "error": 38,
     "cancelled": 4
    },
    "example": [
-    "8OPOTi17",
-    "VdfIpYvM"
+    "TUuoOEoX",
+    "JIlRN5YY"
    ],
    "actual": [
     {
@@ -44,31 +45,25 @@
     {
      "k": "skill",
      "n": "suspicion-gate",
-     "t": "в 31 из 150",
+     "t": "в 32 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 107 из 150, ≈34 вызовов за раз",
+     "t": "в 107 из 150, ≈35 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 87 из 150, ≈7 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "hypothesis-check",
-     "t": "в 30 из 150",
+     "t": "в 88 из 150, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 105 из 150, ≈8 вызовов за раз",
+     "t": "в 106 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -277,94 +272,106 @@
    "when": "«где лежит X», «как устроено X»",
    "status": "warn",
    "status_text": "Работает в обход",
-   "runs": 8,
-   "median_s": 429,
+   "runs": 9,
+   "median_s": 496,
    "max_s": 722,
-   "last": "2026-11-25T00:20:36.613000+00:00",
+   "last": "2026-11-25T00:31:10.660000+00:00",
    "outcomes": {
-    "cancelled": 1,
-    "done": 7
+    "done": 8,
+    "cancelled": 1
    },
    "example": [
-    "MPYfw3az",
-    "rXaYPcdF"
+    "rXaYPcdF",
+    "ruPmHxIL"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 8"
-    },
-    {
-     "k": "skill",
-     "n": "invento-rs",
-     "t": "в 3 из 8",
-     "d": 1
+     "t": "запусков: 9"
     },
     {
      "k": "skill",
      "n": "suspicion-gate",
-     "t": "в 2 из 8",
+     "t": "в 3 из 9",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 8 из 8, ≈36 вызовов за раз",
+     "t": "в 9 из 9, ≈36 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "invento-rs",
+     "t": "в 4 из 9",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 8 из 8, ≈5 вызовов за раз",
+     "t": "в 9 из 9, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 2 из 8",
+     "t": "в 2 из 9",
      "d": 1
     },
     {
      "k": "skill",
      "n": "tg-bot-ui",
-     "t": "в 3 из 8",
+     "t": "в 4 из 9",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 2 из 8",
+     "t": "в 3 из 9",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 8 из 8",
+     "t": "в 9 из 9",
      "d": 2
     },
     {
      "k": "skill",
-     "n": "answer-integrity",
-     "t": "в 3 из 8",
+     "n": "grilling",
+     "t": "в 2 из 9",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "draft-gate",
+     "t": "в 2 из 9",
      "d": 1
     },
     {
      "k": "sub",
      "n": "cheap",
-     "t": "в 2 из 8",
+     "t": "в 2 из 9",
      "d": 2
+    },
+    {
+     "k": "skill",
+     "n": "answer-integrity",
+     "t": "в 4 из 9",
+     "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 8 из 8, ≈7 вызовов за раз",
+     "t": "в 9 из 9, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: anti-autism, cs2-demo-capture, draft-gate, grilling, network-constraints, opencode, request-confidentiality, strange-que",
-     "t": "меньше 2 из 8",
+     "n": "реже: anti-autism, cs2-demo-capture, network-constraints, opencode, request-confidentiality, strange-question, work-until-done",
+     "t": "меньше 2 из 9",
      "d": 1
     }
    ],
@@ -763,88 +770,88 @@
    "when": "«продолжи план по этапам», process-plan.md",
    "status": "warn",
    "status_text": "На грани лимита",
-   "runs": 9,
-   "median_s": 357,
+   "runs": 10,
+   "median_s": 387,
    "max_s": 734,
-   "last": "2026-11-24T22:30:53.295000+00:00",
+   "last": "2026-11-25T00:33:56.209000+00:00",
    "outcomes": {
-    "done": 8,
+    "done": 9,
     "cancelled": 1
    },
    "example": [
-    "63xOfUNz",
-    "M61MGA7D"
+    "M61MGA7D",
+    "0wVjTv6i"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 9"
+     "t": "запусков: 10"
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 9 из 9, ≈34 вызовов за раз",
+     "t": "в 10 из 10, ≈33 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "strange-question",
-     "t": "в 3 из 9",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 2 из 9",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "explore",
-     "t": "в 7 из 9, ≈9 вызовов за раз",
+     "t": "в 3 из 10",
      "d": 1
     },
     {
      "k": "skill",
      "n": "tg-bot-ui",
-     "t": "в 2 из 9",
+     "t": "в 3 из 10",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 2 из 10",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 8 из 10, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "progress",
-     "t": "в 9 из 9",
+     "t": "в 10 из 10",
      "d": 1
     },
     {
      "k": "skill",
      "n": "suspicion-gate",
-     "t": "в 3 из 9",
+     "t": "в 3 из 10",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 9 из 9, ≈7 вызовов за раз",
+     "t": "в 10 из 10, ≈8 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "draft-gate",
-     "t": "в 2 из 9",
+     "t": "в 2 из 10",
      "d": 1
     },
     {
      "k": "skill",
      "n": "parallel-edit",
-     "t": "в 2 из 9",
+     "t": "в 2 из 10",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, anti-autism, conflict-keeper, dsh-web-tabs, hypothesis-check, opencode, pc-bridge-live, research-slowd",
-     "t": "меньше 2 из 9",
+     "t": "меньше 2 из 10",
      "d": 1
     }
    ],
@@ -926,111 +933,153 @@
    "when": "Не искать по всему дому, не править один файл вдвоём",
    "status": "warn",
    "status_text": "Не ловит",
-   "runs": 3,
-   "median_s": 881,
+   "runs": 4,
+   "median_s": 720,
    "max_s": 1082,
-   "last": "2026-11-24T20:35:15.295000+00:00",
+   "last": "2026-11-25T00:31:10.660000+00:00",
    "outcomes": {
-    "done": 3
+    "done": 4
    },
    "example": [
-    "siTl0CF4",
-    "Zyafpd4f"
+    "Zyafpd4f",
+    "ruPmHxIL"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 3"
+     "t": "запусков: 4"
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 3 из 3, ≈48 вызовов за раз",
+     "t": "в 4 из 4, ≈44 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 2 из 3, ≈7 вызовов за раз",
+     "t": "в 3 из 4, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "work-until-done",
-     "t": "в 1 из 3",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "dsh-web-tabs",
-     "t": "в 1 из 3",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "ready-to-deliver",
-     "t": "в 1 из 3",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "strange-question",
-     "t": "в 1 из 3",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "tg-bot-ui",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "opencode",
-     "t": "в 1 из 3",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "parallel-edit",
-     "t": "в 2 из 3",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "pc-bridge-live",
-     "t": "в 1 из 3",
-     "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "unblocker",
-     "t": "в 2 из 3",
-     "d": 2
-    },
-    {
-     "k": "tool",
-     "n": "правки",
-     "t": "в 3 из 3, ≈11 вызовов за раз",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "suspicion-gate",
-     "t": "в 2 из 3",
+     "t": "в 3 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "invento-rs",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "show-in-answer",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "parallel-edit",
+     "t": "в 2 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "writing-for-agents",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "pc-bridge-live",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "explore",
+     "t": "в 1 из 4",
+     "d": 2
+    },
+    {
+     "k": "sub",
+     "n": "unblocker",
+     "t": "в 2 из 4",
+     "d": 2
+    },
+    {
+     "k": "skill",
+     "n": "grilling",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "в 4 из 4, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "sub",
      "n": "conflict-keeper",
-     "t": "в 3 из 3",
+     "t": "в 4 из 4",
      "d": 2
     },
     {
      "k": "skill",
+     "n": "draft-gate",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
      "n": "progress",
-     "t": "в 1 из 3",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "answer-integrity",
-     "t": "в 1 из 3",
+     "t": "в 2 из 4",
      "d": 1
     }
    ],
@@ -1262,7 +1311,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 11, с файлами 2",
+   "state": "Владельцев 18, с файлами 4",
    "level": "ok",
    "f": "C11"
   },
