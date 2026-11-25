@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T11:30:22+00:00",
-  "generated_human": "25.11 11:30 UTC",
-  "as_of": 1795606221812,
+  "generated": "2026-11-25T11:31:24+00:00",
+  "generated_human": "25.11 11:31 UTC",
+  "as_of": 1795606282716,
   "stale_days": 1,
   "count": 1011,
   "groups": 9,
@@ -39,6 +39,45 @@
    ],
    "prompts": [
     {
+     "id": "ses-gUl9458Lhq",
+     "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.md -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue CS Demo Manager research using curl on PRIMARY sources: docs.cs-demo-manager.com, github.com/cs-demo-manager/cs-demo-manager README/changelog/issues/releases; cs-demo-manager.com. Focus on POV playback and hiding HUD (HP/money/weapons/radar/wallhack outlines), and CS2-2026 confirmation. Return exact URLs, exact setting/command strings, verdict. Do NOT write files.",
+     "ts": 1795606281000,
+     "source": "session",
+     "title": "Research CS Demo Manager HUD",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795606281000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-dKkakxiMHP",
+     "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.html -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue research on Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg using curl on their official sites/docs/FAQ/pricing. Focus: actual demo playback, single-player POV, hiding observer HUD/radar/HP/money/wallhack highlights. Return URLs + exact UI/setting labels + verdict CONFIRMED/CS:GO-only/OPEN. Do NOT write files.",
+     "ts": 1795606278000,
+     "source": "session",
+     "title": "Research web demo viewers",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795606278000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-DzB0As3RLY",
+     "text": "ВАЖНО: websearch и webfetch в этой сессии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell для прямого获取 сайтов. Сохраняй HTML в /tmp/opencode/ и читай grep-ом. Продолжай по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
+     "ts": 1795606274000,
+     "source": "session",
+     "title": "Web demo viewers research",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795606274000,
+     "is_stale": false
+    },
+    {
      "id": "ses-2wEqXhUkH5",
      "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.md -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue research on CS2 console commands to hide observer HUD and enable POV playback using curl on primary sources: Valve CS2 update notes (counter-strike.net/newsentry, store.steampowered.com/news/app/730), GitHub command lists, totalcsgo.com is secondary (mark as such). Verify exact strings: cl_draw_only_deathnotices, cl_hud_*, spec_player, mirv_panorama, mirv_streams, and HUDless methods. Return URLs + exact commands + verdict. Do NOT write files.",
      "ts": 1795606219000,
@@ -49,75 +88,6 @@
      "user": "Аскольд",
      "wants": [],
      "as_of": 1795606219000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-gUl9458Lhq",
-     "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.md -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue CS Demo Manager research using curl on PRIMARY sources: docs.cs-demo-manager.com, github.com/cs-demo-manager/cs-demo-manager README/changelog/issues/releases; cs-demo-manager.com. Focus on POV playback and hiding HUD (HP/money/weapons/radar/wallhack outlines), and CS2-2026 confirmation. Return exact URLs, exact setting/command strings, verdict. Do NOT write files.",
-     "ts": 1795606213000,
-     "source": "session",
-     "title": "Research CS Demo Manager HUD",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-gUl9458Lhq] Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляет",
-     "answer_short": "ses-gUl9458Lhq: Приложение снова открывается, я убрал задержку при его запус",
-     "answer_full": "Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляется сразу.\n\n🟩 Найденная причина — внешний скрипт, который в этой сети отвечает более двенадцати секунд и блокировал запуск. Заменён на локальный файл, страница опубликована, адрес кнопки обновлён с новой версией. Живой гейт страницы прошёл: карточки есть, лишних запросов нет.\n\n🔴 Причина молчания — ограничение Telegram на отправку: ответ возвращает 429, пауза до 16:45 по Москве. Пять готовых отчётов уже лежат в очереди доставки; таймер разошлёт их сам, когда лимит кончится. Повторные отправки сейчас только продлят паузу.\n\n📋 Переписка с Аскольдом сверена: отдельная вкладка интервью и скилл интервью на месте, карта возможностей сервиса — в /home/nyaka/overnight/inventors-functionality-map.md, отчёты по сканфиду и гипотезам вошли в пять сообщений очереди.\n\nАРТЕФАКТ: /home/nyaka/shared-repo/bots/miniapp/index.html 2026-11-25T14:19:52 живой гейт страницы пройден\nАРТЕФАКТ: /home/nyaka/.local/state/delivery/outbox/tgdebt-20261125-05.json 2026-11-25T14:10:34 пять отчётов в очереди доставки",
-     "answer_digest": {
-      "length": 1194,
-      "sha256": "d7606e603a1ee708e308eeb23439b63260e62c8fc7f9c13471bd9522eec0b3dd"
-     },
-     "answer_text_id": "d7606e603a1ee708",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795606216729,
-     "as_of": 1795606213000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-dKkakxiMHP",
-     "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use shell tool with `curl -sSL --max-time 25 -o /tmp/x.html -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then grep/sed. Network works via curl.\n\nContinue research on Leetify, cs2.app, csdemo.tv, cs2replays.com, bo3.gg/killcam.gg using curl on their official sites/docs/FAQ/pricing. Focus: actual demo playback, single-player POV, hiding observer HUD/radar/HP/money/wallhack highlights. Return URLs + exact UI/setting labels + verdict CONFIRMED/CS:GO-only/OPEN. Do NOT write files.",
-     "ts": 1795606151000,
-     "source": "session",
-     "title": "Research web demo viewers",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-dKkakxiMHP] Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляет",
-     "answer_short": "ses-dKkakxiMHP: Приложение снова открывается, я убрал задержку при его запус",
-     "answer_full": "Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляется сразу.\n\n🟩 Найденная причина — внешний скрипт, который в этой сети отвечает более двенадцати секунд и блокировал запуск. Заменён на локальный файл, страница опубликована, адрес кнопки обновлён с новой версией. Живой гейт страницы прошёл: карточки есть, лишних запросов нет.\n\n🔴 Причина молчания — ограничение Telegram на отправку: ответ возвращает 429, пауза до 16:45 по Москве. Пять готовых отчётов уже лежат в очереди доставки; таймер разошлёт их сам, когда лимит кончится. Повторные отправки сейчас только продлят паузу.\n\n📋 Переписка с Аскольдом сверена: отдельная вкладка интервью и скилл интервью на месте, карта возможностей сервиса — в /home/nyaka/overnight/inventors-functionality-map.md, отчёты по сканфиду и гипотезам вошли в пять сообщений очереди.\n\nАРТЕФАКТ: /home/nyaka/shared-repo/bots/miniapp/index.html 2026-11-25T14:19:52 живой гейт страницы пройден\nАРТЕФАКТ: /home/nyaka/.local/state/delivery/outbox/tgdebt-20261125-05.json 2026-11-25T14:10:34 пять отчётов в очереди доставки",
-     "answer_digest": {
-      "length": 1194,
-      "sha256": "d7606e603a1ee708e308eeb23439b63260e62c8fc7f9c13471bd9522eec0b3dd"
-     },
-     "answer_text_id": "d7606e603a1ee708",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795606216729,
-     "as_of": 1795606151000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-DzB0As3RLY",
-     "text": "ВАЖНО: websearch и webfetch в этой сессии заблокированы (HTTP 403 / permission.rejected). Используй `curl -sS -L -m 25 <url>` через shell для прямого获取 сайтов. Сохраняй HTML в /tmp/opencode/ и читай grep-ом. Продолжай по прежнему промпту, НЕ пиши файлы в evolution-work-hud-hide.",
-     "ts": 1795606115000,
-     "source": "session",
-     "title": "Web demo viewers research",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-DzB0As3RLY] Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляет",
-     "answer_short": "ses-DzB0As3RLY: Приложение снова открывается, я убрал задержку при его запус",
-     "answer_full": "Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляется сразу.\n\n🟩 Найденная причина — внешний скрипт, который в этой сети отвечает более двенадцати секунд и блокировал запуск. Заменён на локальный файл, страница опубликована, адрес кнопки обновлён с новой версией. Живой гейт страницы прошёл: карточки есть, лишних запросов нет.\n\n🔴 Причина молчания — ограничение Telegram на отправку: ответ возвращает 429, пауза до 16:45 по Москве. Пять готовых отчётов уже лежат в очереди доставки; таймер разошлёт их сам, когда лимит кончится. Повторные отправки сейчас только продлят паузу.\n\n📋 Переписка с Аскольдом сверена: отдельная вкладка интервью и скилл интервью на месте, карта возможностей сервиса — в /home/nyaka/overnight/inventors-functionality-map.md, отчёты по сканфиду и гипотезам вошли в пять сообщений очереди.\n\nАРТЕФАКТ: /home/nyaka/shared-repo/bots/miniapp/index.html 2026-11-25T14:19:52 живой гейт страницы пройден\nАРТЕФАКТ: /home/nyaka/.local/state/delivery/outbox/tgdebt-20261125-05.json 2026-11-25T14:10:34 пять отчётов в очереди доставки",
-     "answer_digest": {
-      "length": 1194,
-      "sha256": "d7606e603a1ee708e308eeb23439b63260e62c8fc7f9c13471bd9522eec0b3dd"
-     },
-     "answer_text_id": "d7606e603a1ee708",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795606216729,
-     "as_of": 1795606115000,
      "is_stale": false
     },
     {
@@ -4048,29 +4018,6 @@
      "is_stale": false
     },
     {
-     "id": "ses-riiDejLFx5",
-     "text": "T4 FP>0 data audit. Проведи аудит доступных REAL/DEMO-REAL источников с FP>0. Честно отдели OBS-REAL от DEMO-REAL по критерию G12, не смешивай их и не выдавай демо-реальные данные за наблюдаемые. Для каждого источника: путь, SHA256, mtime, число кадров, FP, классификация по G12 и обоснование. Итог — VERDICT о наличии пригодных для T4/P0-3 данных FP>0. В артефакте укажи команду проверки, её rc, путь, mtime, SHA256 и дату. VERIFY через /home/nyaka/scripts/background/evolution_engine/verify_artifact.py. Запиши артефакт ровно по пути /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-T4-FP-AUDIT-*.md. Не двигай пороги гейта T4 и не переоткрывай закрытые гейты T1/T2. SCOUT OPEN означает следующий виток, не STOP. PROMISE: DONE только после записи файла и rc==0 проверки. \n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-scanfeed-c/artifacts/SFC-T4-FP-AUDIT-c1047.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795479415000,
-     "source": "session",
-     "title": "lree-SFC-T4-FP-AUDIT-c1047",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-riiDejLFx5] Команды никуда не делись —.checks\n\n🟩 **Все команды из вашей цитаты на месте.** В `~/shared-repo/bots/remote_agent_bot.py:993–1026` справка содержит те же 25 строк: `/help`, `/invite`, `/access`, `/rev",
-     "answer_short": "ses-riiDejLFx5: Команды никуда не делись —.checks\n\n🟩 **Все команды из вашей ",
-     "answer_full": "Команды никуда не делись —.checks\n\n🟩 **Все команды из вашей цитаты на месте.** В `~/shared-repo/bots/remote_agent_bot.py:993–1026` справка содержит те же 25 строк: `/help`, `/invite`, `/access`, `/revoke`, `/new`, `/status`, `/timeout`, `/find`, `/remember`, `/memory`, `/prompts`, `/prompts-clean`, `/app`, `/phone`, `/deploy`, `/run`, `/shot`, `/bundle`, `/fix`, `/solo`, `/multi`, `/tabs`, `/vpn`, `/digest`. `git diff` по файлу не трогал `HELP` вообще, сервис запущен 22:11:14 из этого же файла.\n\n🟦 **Короткий список, похожий на «новую справку», — это не `/help`.** Блок `[последние сообщения]` в промпте агента строится функцией `context_block()` через `_tail(LOG, 13)[:-1]`, где `LOG = bots/inbox.log` — то есть последние 12 строк входящего лога. Когда вы 22:16:07 вставили в сообщение цитату полной справки, в хвост попали только её последние строки: от `/fix` до «Вкладки: 5 последних сессий…». Отсюда впечатление, что команды делись.\n\n🟦 **Реально пропадали только три команды** — `/batch`, `/done`, `/batch-cancel`: они были в бэкапе от 22.11 (28 строк), к 24.11 18:18 их уже нет (25). В вашей цитате их нет, так что речь не о них.\n\n🟨 Если в самом Telegram ответ на `/help` пришёл коротким — это отдельный факт: обработчик шлёт `send(token, chat_id, HELP)` без обрезки. Наберите `/help` ещё раз — сверю, что именно пришло в чат.\n\nАРТЕФАКТ: /home/nyaka/shared-repo/bots/remote_agent_bot.py 4e89d9eedaa70970880081a29b7645efd2d7d5655447a57673d92b01889154af mtime 2026-11-24 22:15:46 +0300",
-     "answer_digest": {
-      "length": 1494,
-      "sha256": "88a8d7b812df70ba9cc2e6184d33316903ba94af7a5102a3fc8065248499d7cf"
-     },
-     "answer_text_id": "88a8d7b812df70ba",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795547998681,
-     "as_of": 1795479415000,
-     "is_stale": false
-    },
-    {
      "id": "pc-korecDp3XP",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AP074. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtrsvi71bhq: C02-16130: калибровка confidence на REAL-кадрах — числовой гейт 3/3 PASS. Где: goals.json · Отчёт ~/overnight/cloud_tracks/C02-16130.md (промежуточный вердикт записан до зондов). r06: n=90>=60, FP=882>0 (Wilson [0.9060,0.9396]), ECE 0.5188->0 В конце вызови tools.goals.track({action:'done', id:'gmwtrsvi71bhq', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. Запиши НОВЫЙ отчёт C:\\scanfeed\\pc_agents\\reports\\AP074_run1795468869.md (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/.\r\n\r\nОтчёт ОБЯЗАТЕЛЬНО запиши по пути C:\\scanfeed\\pc_agents\\reports\\AP074_run1795468869.md и ничего не пиши в data/ или чужие отчёты.",
      "ts": 1795474979000,
@@ -4222,24 +4169,14 @@
     {
      "id": "ses-S69faXxzyp",
      "text": "UPDATE: webfetch/websearch are BLOCKED in this non-interactive run. Use the shell tool with `curl -sSL --max-time 25 -o /tmp/x.md -w \"rc=%{http_code} size=%{size_download}\\n\" <URL>` then `grep`/`sed` on the downloaded file. Network works via curl. raw.githubusercontent.com and github.com both work.\n\nContinue the HLAE 2.193.2 research using curl on primary sources: advancedfx/advancedfx wiki, README, docs, releases, issues. Key known hint to verify: HLAE CLI `-customLoader -noGui -autoStart -hookDllPath <AfxHookSource2.dll> -programPath <cs2.exe> -cmdLine \"... +playdemo <demo.dem> +exec sf_clean.cfg\"` and cfg with `sv_cheats 1`, `cl_draw_only_deathnotices 1`, `mirv_panorama panelStyle panelId=Scoreboard opacity=0`, `mirv_streams`. Verify exact strings from primary sources and the CS2/2026 confirmation. Return URLs + exact commands + verdict. Do NOT write files.",
-     "ts": 1795606216000,
+     "ts": 1795606278000,
      "source": "session",
      "title": "Research HLAE HUD hiding",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "answer": "[ses-S69faXxzyp] Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляет",
-     "answer_short": "ses-S69faXxzyp: Приложение снова открывается, я убрал задержку при его запус",
-     "answer_full": "Приложение снова открывается, я убрал задержку при его запуске.\n\nПОНЯТНО: телефон долго ждал внешний скрипт и не дожидался показа окна; теперь скрипт лежит внутри самой страницы, поэтому окно появляется сразу.\n\n🟩 Найденная причина — внешний скрипт, который в этой сети отвечает более двенадцати секунд и блокировал запуск. Заменён на локальный файл, страница опубликована, адрес кнопки обновлён с новой версией. Живой гейт страницы прошёл: карточки есть, лишних запросов нет.\n\n🔴 Причина молчания — ограничение Telegram на отправку: ответ возвращает 429, пауза до 16:45 по Москве. Пять готовых отчётов уже лежат в очереди доставки; таймер разошлёт их сам, когда лимит кончится. Повторные отправки сейчас только продлят паузу.\n\n📋 Переписка с Аскольдом сверена: отдельная вкладка интервью и скилл интервью на месте, карта возможностей сервиса — в /home/nyaka/overnight/inventors-functionality-map.md, отчёты по сканфиду и гипотезам вошли в пять сообщений очереди.\n\nАРТЕФАКТ: /home/nyaka/shared-repo/bots/miniapp/index.html 2026-11-25T14:19:52 живой гейт страницы пройден\nАРТЕФАКТ: /home/nyaka/.local/state/delivery/outbox/tgdebt-20261125-05.json 2026-11-25T14:10:34 пять отчётов в очереди доставки",
-     "answer_digest": {
-      "length": 1194,
-      "sha256": "d7606e603a1ee708e308eeb23439b63260e62c8fc7f9c13471bd9522eec0b3dd"
-     },
-     "answer_text_id": "d7606e603a1ee708",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795606216729,
-     "as_of": 1795606216000,
+     "as_of": 1795606278000,
      "is_stale": false
     },
     {
@@ -10103,6 +10040,24 @@
     "w2611230534591261"
    ],
    "prompts": [
+    {
+     "id": "ses-cWOm86CsSK",
+     "text": "КРИТИК. Сверить новые отчёты из cloud_tracks/ и hypothesis/ с claims.json и MASTERPLAN-v2: найти расхождения в цифрах и отсутствующие файлы-источники. Гейт: каждое расхождение с подписью источника, без молчаливого исправления. Новый отчёт ~/overnight/cloud_tracks/C15-27551.md. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795606275000,
+     "source": "session",
+     "title": "",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200241438cdc",
+      "w261121055339bfc8"
+     ],
+     "as_of": 1795606275000,
+     "is_stale": false
+    },
     {
      "id": "ses-3FFxWJhazc",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15607. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmww18vquvmp2: AU15599 — хотелка w2611251411007517 объяснена: почему в Telegram-боте один чат. Где: goals.json · Вердикт подтверждена. Отчёт ~/overnight/hypothesis/AU15599_run27542.md (check OK, sha ae94700c843d53f142f3c5066bea46e005c46e01deb552a2a1d86107002f47e8 В конце вызови tools.goals.track({action:'done', id:'gmww18vquvmp2', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15607_run27542.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
