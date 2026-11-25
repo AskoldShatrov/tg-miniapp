@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T14:21:58+00:00",
-  "generated_human": "25.11 14:21 UTC",
-  "as_of": 1795616517808,
+  "generated": "2026-11-25T14:22:59+00:00",
+  "generated_human": "25.11 14:22 UTC",
+  "as_of": 1795616579572,
   "stale_days": 1,
   "count": 983,
   "groups": 9,
@@ -39,6 +39,19 @@
     "w261120024143491d"
    ],
    "prompts": [
+    {
+     "id": "ses-naHh0NtSVh",
+     "text": "ПРАКТИКА/ИССЛЕДОВАНИЕ. Найди рабочий способ получить живое дерево panorama-панелей CS2 в демке. Команды `__mirv_panorama_print_children`, `mirv_panorama` из HLAE 2.193.2, source AdvancedFX, дампы hud.xml/hudteamcounter.xml. Цель — получить реальные panelId/panelClassName для верхних карточек игроков и проверить, можно ли изменить их opacity через HLAE или другую модификацию. Если команда существует — опиши точный вызов и пример вывода; если нет — докажи по исходнику.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-003-c23.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795616577000,
+     "source": "session",
+     "title": "lree-HUDV-003-c23",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795616577000,
+     "is_stale": false
+    },
     {
      "id": "ses-N0sQk46Wv0",
      "text": "ПРАКТИКА/ИССЛЕДОВАНИЕ. Найди рабочий способ получить живое дерево panorama-панелей CS2 в демке. Команды `__mirv_panorama_print_children`, `mirv_panorama` из HLAE 2.193.2, source AdvancedFX, дампы hud.xml/hudteamcounter.xml. Цель — получить реальные panelId/panelClassName для верхних карточек игроков и проверить, можно ли изменить их opacity через HLAE или другую модификацию. Если команда существует — опиши точный вызов и пример вывода; если нет — докажи по исходнику.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-003-c22.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
@@ -15003,31 +15016,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795548885931,
      "as_of": 1795483611000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-YjjWeDlMNu",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU12168. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwtndk7xfp0x: C11-15499: снять OPEN — свежий парс demoparser v4 на 10 новых демо. Где: goals.json · 23.11.2026. Промежуточный отчёт с вердиктом ~/overnight/cloud_tracks/C11-15499.md записан до pc-bridge зондов. 7 SHA data/ и 02/08/11 целы; мост /heal В конце вызови tools.goals.track({action:'done', id:'gmwtndk7xfp0x', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU12168_run1795479973.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}.  ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: hypothesis-check для проверки гипотез, research-slowdown для глубоких тем. Если ни один не подходит — скажи почему.",
-     "ts": 1795483573000,
-     "source": "session",
-     "title": "AU12168: свежий парс demoparser v4",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutError: The read operation timed out",
-     "answer_short": "w261119090518006d: Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutErr",
-     "answer_full": "Ответ по резервному каналу:\n\nнет ответа: invento: TimeoutError: The read operation timed out",
-     "answer_digest": {
-      "length": 92,
-      "sha256": "d9632ccda0e8909a937c3ea68c6b481d2b50f02d517ebb4a868a04dc53d22dc0"
-     },
-     "answer_text_id": "d9632ccda0e8909a",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795548885931,
-     "as_of": 1795483573000,
      "is_stale": false
     },
     {
