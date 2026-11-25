@@ -2090,7 +2090,7 @@ function renderChat(){
       out.push('<div class="pair stray"><div class="pair-head"><span class="pair-no">ВХОДЯЩЕЕ</span>'+
         '<span class="pair-state">из чата</span><span class="pair-time">'+escHtml(p.rep.t)+'</span></div>'+
         '<div class="pair-body"><div class="msg"><div class="mava">🤖</div><div class="bubble">'+
-        escHtml(p.rep.text)+'<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div></div></div>');
+        richHtml(p.rep.text)+'<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div></div></div>');
       return;
     }
     const state=p.pending?'<span class="pair-state">ожидание</span>'
@@ -2100,7 +2100,7 @@ function renderChat(){
       '<span class="mtime">'+escHtml(p.t)+'</span></div></div>';
     const rep=p.pending
       ? '<div class="pair-wait">⏳ запрос агенту · ответ подтянется сам</div>'
-      : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+escHtml(p.rep.text)+
+      : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+richHtml(p.rep.text)+
         '<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div>';
     out.push('<div class="pair '+(p.pending?'pending':'done')+'">'+
       '<div class="pair-head"><span class="pair-no">#'+(i+1)+' · ЗАПРОС</span>'+state+
@@ -2141,9 +2141,39 @@ async function refreshReplies(){
   }
   bad("replies", "replies.json недоступен");
 }
+/* Интервью по всем проектам: один сеанс DSH на все ответы из мини-апа. */
+var IV_KEY = "pairdev.interview.session.v1";
+function interviewSession(){
+  try{ return localStorage.getItem(IV_KEY)||""; }catch(e){ return ""; }
+}
+function setInterviewSession(v){
+  try{ if(v) localStorage.setItem(IV_KEY,v); else localStorage.removeItem(IV_KEY); }catch(e){}
+}
+function interviewSub(on){
+  var sub=$("#chatSub");
+  if(sub) sub.textContent = on ? "интервью активно · отвечай сюда" : "агент · подключение…";
+}
+function startInterview(){
+  var sid = "iv-"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  setInterviewSession(sid);
+  interviewSub(true);
+  var rid = Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  CHAT.sent.push({text:"🎙 Интервью по всем проектам", t:new Date().toTimeString().slice(0,8), ts:Date.now(), rid:rid});
+  CHAT.sent = CHAT.sent.slice(-50);
+  try{ localStorage.setItem(CHAT_KEY, JSON.stringify(CHAT)); }catch(e){}
+  renderChat();
+  dshSend({source:"miniapp_interview", text:"Включи скилл grill-me (grilling) и проведи со мной интервью по всем проектам: TG-мини-ап, OpenCode, CS2-сканфид, демопарсер, pc-bridge, студийные проекты. Задай первый вопрос и жди ответа в этом же сеансе.",
+    user_id:userID, rid:rid, session_id:sid}, "Интервью начато — отвечай в чате");
+}
 function sendChat(){
   const inp = $("#chatInput"); if(!inp) return;
   const text = (inp.value||"").trim(); if(!text) return;
+  if(text === "/стоп интервью" || text === "/stop interview"){
+    setInterviewSession(""); interviewSub(false);
+    inp.value = "";
+    toast("Интервью остановлено");
+    return;
+  }
   const rid = Date.now().toString(36)+Math.random().toString(36).slice(2,6);
   CHAT.sent.push({text:text, t:new Date().toTimeString().slice(0,8), ts:Date.now(), rid:rid});
   CHAT.sent = CHAT.sent.slice(-50);
@@ -2151,7 +2181,8 @@ function sendChat(){
   chatPinned=true; chatUnread=0;
   renderChat(); inp.value = "";
   /* rid уходит в payload: replies.json возвращает его, pairing точный. */
-  dshSend({source:"miniapp_chat", text:text, user_id:userID, rid:rid},
+  dshSend({source:"miniapp_chat", text:text, user_id:userID, rid:rid,
+           session_id:interviewSession()},
           "Отправлено в DeepSeek Harness");
 }
 const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", sendChat);
@@ -3683,7 +3714,7 @@ function renderStudioReplies(){
   const pairs=all.slice(-5).reverse();
   box.innerHTML=pairs.map(p=>{
     const when=escHtml(p.rep?p.rep.t:p.t);
-    const body=p.rep?escHtml(p.rep.text):"⏳ ответ подтянется сам";
+    const body=p.rep?richHtml(p.rep.text):"⏳ ответ подтянется сам";
     const tag=p.stray?"◈ входящее":(p.pending?"◈ ожидание":
       (p.rid_match?"◈ ответ · по ID":"◈ ответ · по времени"));
     return '<div class="sr-item '+(p.pending?"wait":"done")+'">'+
