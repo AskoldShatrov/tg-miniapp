@@ -1,16 +1,16 @@
 {
- "generated": "2026-11-25 21:00",
+ "generated": "2026-11-25 21:30",
  "window": {
-  "start": "2026-11-25T05:29",
-  "end": "2026-11-25T17:57",
+  "start": "2026-11-25T05:42",
+  "end": "2026-11-25T18:27",
   "sessions": 183,
   "roots": 150
  },
  "summary": {
   "skills": 45,
   "skills_used": 28,
-  "agents": 6,
-  "agents_used": 0,
+  "agents": 7,
+  "agents_used": 1,
   "autofeed": 0,
   "roots": 150
  },
@@ -25,16 +25,16 @@
    "runs": 150,
    "median_s": 498,
    "max_s": 22740,
-   "last": "2026-11-25T17:57:21.789000+00:00",
+   "last": "2026-11-25T18:27:07.776000+00:00",
    "outcomes": {
-    "done": 138,
-    "waiting_user": 8,
-    "error": 3,
+    "done": 140,
+    "waiting_user": 7,
+    "error": 2,
     "cancelled": 1
    },
    "example": [
-    "CNC62GAB",
-    "SlvALndW"
+    "Lppkikh4",
+    "EdoOzh50"
    ],
    "actual": [
     {
@@ -51,7 +51,7 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 135 из 150, ≈41 вызовов за раз",
+     "t": "в 136 из 150, ≈41 вызовов за раз",
      "d": 1
     },
     {
@@ -87,7 +87,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 124 из 150, ≈10 вызовов за раз",
+     "t": "в 125 из 150, ≈10 вызовов за раз",
      "d": 1
     },
     {
@@ -1172,7 +1172,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×126, opencode/hy4-flash-free ×9, opencode-go/hungerg-free ×8",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×128, opencode-go/hungerg-free ×8, opencode/hy4-flash-free ×8",
    "level": "ok",
    "f": "C13"
   },
@@ -1196,8 +1196,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 12, с файлами 0",
-   "level": "warn",
+   "state": "Владельцев 13, с файлами 1",
+   "level": "ok",
    "f": "C11"
   },
   {
