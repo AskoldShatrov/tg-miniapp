@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T22:01:18+00:00",
-  "generated_human": "25.11 22:01 UTC",
-  "as_of": 1795644077677,
+  "generated": "2026-11-25T22:02:19+00:00",
+  "generated_human": "25.11 22:02 UTC",
+  "as_of": 1795644139422,
   "stale_days": 1,
   "count": 984,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-FAIE72rodl",
      "text": "ТОЛЬКО ЧТЕНИЕ + один новый артефакт. G4. Возьми 5 отчётов из ~/overnight/hypothesis/, ещё не описанных в artifacts/SF-T05-VERIFY-c*.md. Для каждого запусти python3 ~/.config/opencode/scripts/hypothesis_report.py check <ID>, зафиксируй команду, rc, путь, SHA256 и mtime. Сверь статус с ~/.config/opencode/scripts/background/hypothesis_backlog.jsonl если файл есть, иначе с ~/scripts/background/hypothesis_backlog.jsonl — это единственный живой бэклог. Отдельно выпиши расхождения между отчётом и бэклогом. Отрицательный результат и insufficient data — полноценный исход, не пропускай их. VERDICT по числу реально проверенных отчётов. Маркер SF-T05-VERIFY. Артефакт обязан содержать отдельными строками: КОМАНДА: <реальная команда>, rc: <число>, SHA256: <64 hex>, mtime: <epoch>, VERDICT: PASS|FAIL|OPEN, а также уникальный маркер задачи. Без этих полей гейт вернёт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/scanfeed-8h-1125/artifacts/SF-T05-VERIFY-c43.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795644076000,
+     "ts": 1795644138000,
      "source": "session",
      "title": "lree-SF-T05-VERIFY-c43",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795644076000,
+     "as_of": 1795644138000,
      "is_stale": false
     },
     {
@@ -2322,7 +2322,7 @@
     {
      "id": "ses-W1DaEXLqiC",
      "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795644075000,
+     "ts": 1795644118000,
      "source": "session",
      "title": "Scanfeed T4 OPEN: REAL-60",
      "source_label": "ноут",
@@ -2334,7 +2334,7 @@
       "w2611200052468b4b",
       "w261120005246135d"
      ],
-     "as_of": 1795644075000,
+     "as_of": 1795644118000,
      "is_stale": false
     },
     {
