@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-25T22:27:41+00:00",
-  "generated_human": "25.11 22:27 UTC",
-  "as_of": 1795645660713,
+  "generated": "2026-11-25T22:28:40+00:00",
+  "generated_human": "25.11 22:28 UTC",
+  "as_of": 1795645720520,
   "stale_days": 1,
   "count": 985,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-4FfUb2KPQp",
      "text": "ТОЛЬКО ЧТЕНИЕ + один новый артефакт. G4. Возьми 5 отчётов из ~/overnight/hypothesis/, ещё не описанных в artifacts/SF-T05-VERIFY-c*.md. Для каждого запусти python3 ~/.config/opencode/scripts/hypothesis_report.py check <ID>, зафиксируй команду, rc, путь, SHA256 и mtime. Сверь статус с ~/.config/opencode/scripts/background/hypothesis_backlog.jsonl если файл есть, иначе с ~/scripts/background/hypothesis_backlog.jsonl — это единственный живой бэклог. Отдельно выпиши расхождения между отчётом и бэклогом. Отрицательный результат и insufficient data — полноценный исход, не пропускай их. VERDICT по числу реально проверенных отчётов. Маркер SF-T05-VERIFY. Артефакт обязан содержать отдельными строками: КОМАНДА: <реальная команда>, rc: <число>, SHA256: <64 hex>, mtime: <epoch>, VERDICT: PASS|FAIL|OPEN, а также уникальный маркер задачи. Без этих полей гейт вернёт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/scanfeed-8h-1125/artifacts/SF-T05-VERIFY-c49.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795645658000,
+     "ts": 1795645713000,
      "source": "session",
      "title": "lree-SF-T05-VERIFY-c49",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795645658000,
+     "as_of": 1795645713000,
      "is_stale": false
     },
     {
@@ -2325,7 +2325,7 @@
     {
      "id": "ses-AEU2CoQ6vW",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795645646000,
+     "ts": 1795645700000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan-сигнал",
      "source_label": "ноут",
@@ -2337,7 +2337,7 @@
       "w2611200052468b4b",
       "w2611200052463b06"
      ],
-     "as_of": 1795645646000,
+     "as_of": 1795645700000,
      "is_stale": false
     },
     {
