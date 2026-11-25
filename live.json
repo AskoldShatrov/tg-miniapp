@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 441,
+      "age_min": 442,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 463,
+      "age_min": 464,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,14 +1966,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 463,
+      "age_min": 464,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "session-8c79c0af",
       "title": "Распознавание не слом",
       "source": "dsh",
-      "claimed_human": "03:29:21",
+      "claimed_human": "03:30:21",
       "age_min": 0,
       "full": "Распознавание не слом"
     },
@@ -1982,7 +1982,7 @@
       "title": "Почему нечитаемо и скиллы не подключились",
       "source": "dsh",
       "claimed_human": "03:28:12",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Почему нечитаемо и скиллы не подключились"
     }
   ],
@@ -2003,70 +2003,7 @@
     "captions_total": 196,
     "source": "cs2-transcribe/state.db"
   },
-  "runs": [
-    {
-      "key": "req-20261125-032508-8bdc77",
-      "session_id": "",
-      "source": "task",
-      "label": "Разве это весь функционал рич сообщкний \"\n🟩 Проверка rich-со",
-      "step_label": "разобрать код rich-сообщений и sendRichMessage",
-      "step": 1,
-      "total": 3,
-      "events": 25,
-      "trail": [
-        {
-          "ts": 1795566490,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566495,
-          "label": "BASH · cd /tmp/opencode "
-        },
-        {
-          "ts": 1795566513,
-          "label": "BASH · sha256sum /tmp/op"
-        },
-        {
-          "ts": 1795566513,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566519,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795566524,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795566537,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795566537,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566546,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795566546,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795566553,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795566563,
-          "label": "BASH · python3 ~/.config"
-        }
-      ],
-      "started_at": 1795566308,
-      "updated_at": 1795566563
-    }
-  ],
+  "runs": [],
   "bars": [
     {
       "key": "task:T29",
@@ -2113,6 +2050,6 @@
   "progress_updated_at": "2026-11-24T20:08:01+03:00",
   "plan_age_hours": 7.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795566565,
-  "fetched_human": "2026-11-25 03:29:25 +0300"
+  "fetched_at": 1795566626,
+  "fetched_human": "2026-11-25 03:30:26 +0300"
 }
