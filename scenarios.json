@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-25 21:30",
+ "generated": "2026-11-25 22:00",
  "window": {
-  "start": "2026-11-25T05:42",
-  "end": "2026-11-25T18:27",
+  "start": "2026-11-25T05:43",
+  "end": "2026-11-25T18:55",
   "sessions": 183,
   "roots": 150
  },
@@ -25,16 +25,16 @@
    "runs": 150,
    "median_s": 498,
    "max_s": 22740,
-   "last": "2026-11-25T18:27:07.776000+00:00",
+   "last": "2026-11-25T18:55:36.670000+00:00",
    "outcomes": {
-    "done": 140,
-    "waiting_user": 7,
+    "waiting_user": 9,
+    "done": 138,
     "error": 2,
     "cancelled": 1
    },
    "example": [
-    "Lppkikh4",
-    "EdoOzh50"
+    "VRiWpfvw",
+    "BlkxBBBm"
    ],
    "actual": [
     {
@@ -51,7 +51,7 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 136 из 150, ≈41 вызовов за раз",
+     "t": "в 141 из 150, ≈40 вызовов за раз",
      "d": 1
     },
     {
@@ -61,15 +61,15 @@
      "d": 1
     },
     {
-     "k": "skill",
-     "n": "cs2-demo-capture",
-     "t": "в 33 из 150",
+     "k": "tool",
+     "n": "explore",
+     "t": "в 118 из 150, ≈7 вызовов за раз",
      "d": 1
     },
     {
-     "k": "tool",
-     "n": "explore",
-     "t": "в 113 из 150, ≈7 вызовов за раз",
+     "k": "skill",
+     "n": "cs2-demo-capture",
+     "t": "в 33 из 150",
      "d": 1
     },
     {
@@ -79,15 +79,15 @@
      "d": 1
     },
     {
-     "k": "skill",
-     "n": "pc-bridge-live",
-     "t": "в 42 из 150",
+     "k": "tool",
+     "n": "правки",
+     "t": "в 130 из 150, ≈10 вызовов за раз",
      "d": 1
     },
     {
-     "k": "tool",
-     "n": "правки",
-     "t": "в 125 из 150, ≈10 вызовов за раз",
+     "k": "skill",
+     "n": "pc-bridge-live",
+     "t": "в 42 из 150",
      "d": 1
     },
     {
@@ -1172,7 +1172,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×128, opencode-go/hungerg-free ×8, opencode/hy4-flash-free ×8",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×133, opencode-go/hungerg-free ×8, opencode/hy4-flash-free ×4",
    "level": "ok",
    "f": "C13"
   },
@@ -1196,8 +1196,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 13, с файлами 1",
-   "level": "ok",
+   "state": "Владельцев 13, с файлами 0",
+   "level": "warn",
    "f": "C11"
   },
   {
