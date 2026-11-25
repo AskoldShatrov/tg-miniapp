@@ -2191,9 +2191,11 @@ const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown",
 });
 /* Быстрые действия: заполняют поле и сразу отправляют — чат как панель задач. */
 $$(".quick button").forEach(b=>b.addEventListener("click",()=>{
+  if(b.dataset.interview){ startInterview(); return; }
   if(chatInp) chatInp.value = b.dataset.q || "";
   sendChat();
 }));
+interviewSub(!!interviewSession());
 refreshReplies();
 setInterval(refreshReplies, 5000);
 
