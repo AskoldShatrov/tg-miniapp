@@ -108,8 +108,9 @@
     // Приватные/API-источники с ведущим '/' — это эндпоинты process_api,
     // а не файлы на GitHub Pages. Без этого /private/review давал 404.
     if(s.charAt(0) === "/"){
-      var base = (window.LATEST_STATUS && LATEST_STATUS.process_api_url) || "";
-      return String(base).replace(/\/+$/, "") + s;
+      /* Приватный process_api отключён для публичного Pages. Не превращаем
+         endpoint в относительный URL, который гарантированно даёт 404/зависает. */
+      return null;
     }
     if(!/\.(json|js)($|\?)/.test(s) && s.indexOf("/") < 0) s += ".json";
     return s;
@@ -123,11 +124,14 @@
   function fetchJSON(url, bust){
     var u = String(url);
     if(bust) u += (u.indexOf("?") >= 0 ? "&" : "?") + "_=" + Date.now();
-    // Приватный слой требует подпись initData: без заголовка process_api вернёт 401.
     var headers = {};
-    if(String(url).indexOf("/private/") >= 0 && window.Telegram && Telegram.WebApp && Telegram.WebApp.initData)
-      headers["X-Telegram-Init-Data"] = Telegram.WebApp.initData;
-    return fetch(u, {cache:"no-store", headers:headers}).then(function(r){
+    var opts={cache:"no-store", headers:headers};
+    if(typeof AbortController === "function"){
+      var ctl=new AbortController();
+      opts.signal=ctl.signal;
+      setTimeout(function(){ctl.abort();},10000);
+    }
+    return fetch(u, opts).then(function(r){
       if(!r.ok) throw new Error("HTTP " + r.status);
       return r.json();
     });

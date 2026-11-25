@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1e1e2e">
+<script>
+/* Нативный мост Telegram существует даже если внешний SDK не загрузился.
+   Сам отправляем ready/expand, чтобы WebView не ждал сеть и не показывал
+   «error time out». Официальный SDK ниже повторит те же события. */
+(function(){
+  try{
+    var p=window.TelegramWebviewProxy;
+    if(p&&typeof p.postEvent==="function"){
+      p.postEvent("web_app_ready");
+      p.postEvent("web_app_expand");
+    }
+  }catch(e){}
+})();
+</script>
 <script src="telegram-web-app.js?v=20261125-1"></script>
 <script>
 /* Telegram ждёт web_app_ready до показа WebView. Сообщаем готовность сразу
@@ -3416,7 +3430,7 @@ async function studioEnsure(){
       }catch(e){}
     }
   }
-  const hasA=await studioWait(()=>ATLAS&&Array.isArray(ATLAS.nodes),6000);
+  const hasA=await studioWait(()=>ATLAS&&(Array.isArray(ATLAS.nodes)||Array.isArray(ATLAS.trees)),6000);
   if(!hasA){
     for(const base of bases){
       try{

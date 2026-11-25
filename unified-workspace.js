@@ -203,12 +203,10 @@
     renderTracks();
 
     var payload={source:"miniapp_chat",text:text,user_id:uid(),rid:rid,engine:"dsh"};
+    /* Публичный Mini App работает через Telegram sendData. process_api_url
+       намеренно не используется: старый кеш Pages мог вернуть мёртвый туннель,
+       а fetch без таймаута тогда навсегда уходил в ожидание. */
     var apiBase="";
-    try{
-      /* LATEST_STATUS — глобальная lexical-переменная index.html, не свойство window. */
-      var st=(typeof LATEST_STATUS!=="undefined"&&LATEST_STATUS)||{};
-      apiBase=String(st.process_api_url||"").replace(/\/+$/,"");
-    }catch(e){}
     var initData="";
     try{
       initData=(window.Telegram && window.Telegram.WebApp &&
