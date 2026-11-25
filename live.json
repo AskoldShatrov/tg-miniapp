@@ -255,10 +255,10 @@
       "task": "T6",
       "id": "T6.6",
       "title": "Live: активная закачка прямо сейчас",
-      "status": "done",
-      "note": "опрос pc-bridge :8898 каждые 2 мин",
+      "status": "running",
+      "note": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho…",
       "startedAt": "2026-11-19T08:22:05+03:00",
-      "updatedAt": "2026-11-24T15:39:13+03:00",
+      "updatedAt": "2026-11-25T03:41:39+03:00",
       "completedAt": "2026-11-24T15:39:13+03:00"
     },
     {
@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 452,
+      "age_min": 453,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 474,
+      "age_min": 475,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,14 +1966,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 474,
+      "age_min": 475,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "T6/T6.6",
+      "title": "Live: активная закачка прямо сейчас",
+      "source": "progress",
+      "claimed_human": "03:41:39",
+      "age_min": 0,
+      "full": "идёт закачка: New-Item -ItemType Directory -Force C:/scanfeed/diag2 | Out-Null; pytho…"
     },
     {
       "id": "session-8c79c0af",
       "title": "Распознавание не слом",
       "source": "dsh",
-      "claimed_human": "03:40:35",
+      "claimed_human": "03:41:35",
       "age_min": 0,
       "full": "Распознавание не слом"
     },
@@ -1982,7 +1990,7 @@
       "title": "Задача (только чтение,",
       "source": "dsh",
       "claimed_human": "03:40:30",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Задача (только чтение,"
     },
     {
@@ -1990,7 +1998,7 @@
       "title": "Почему нечитаемо и скиллы не подключились",
       "source": "dsh",
       "claimed_human": "03:38:01",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Почему нечитаемо и скиллы не подключились"
     }
   ],
@@ -2013,117 +2021,15 @@
   },
   "runs": [
     {
-      "key": "req-20261125-033109-8dc0b2",
-      "session_id": "",
-      "source": "task",
-      "label": "Подключи скилл по интервью и дай возможность через приложени",
-      "step_label": "проверить рич-сообщения",
-      "step": 2,
-      "total": 5,
-      "events": 47,
-      "trail": [
-        {
-          "ts": 1795567142,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795567142,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567152,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795567162,
-          "label": "BASH · echo '=== draft-g"
-        },
-        {
-          "ts": 1795567173,
-          "label": "BASH · sha256sum ~/docs/"
-        },
-        {
-          "ts": 1795567173,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567185,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795567194,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795567207,
-          "label": "EDIT · /tmp/opencode/dra"
-        },
-        {
-          "ts": 1795567207,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567216,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795567230,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795566670,
-      "updated_at": 1795567234
-    },
-    {
       "key": "req-20261125-033210-591d90",
       "session_id": "",
       "source": "task",
       "label": "Такое ощущение что рич сообщения так и не подключались ты же",
-      "step_label": "Подключение",
-      "step": 2,
+      "step_label": "Визуальная проверка",
+      "step": 3,
       "total": 4,
-      "events": 29,
+      "events": 34,
       "trail": [
-        {
-          "ts": 1795567163,
-          "label": "BASH · cd ~/runtime/tmp-"
-        },
-        {
-          "ts": 1795567163,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567181,
-          "label": "BASH · cat /proc/$(pgrep"
-        },
-        {
-          "ts": 1795567181,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567196,
-          "label": "BASH · cd ~/shared-repo/"
-        },
-        {
-          "ts": 1795567196,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567208,
-          "label": "BASH · grep -n '\"/fix\"\\|"
-        },
-        {
-          "ts": 1795567208,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567219,
-          "label": "BASH · systemctl --user "
-        },
-        {
-          "ts": 1795567219,
-          "label": "THINK"
-        },
         {
           "ts": 1795567227,
           "label": "BASH · cat ~/scripts/res"
@@ -2131,72 +2037,50 @@
         {
           "ts": 1795567229,
           "label": "THINK"
+        },
+        {
+          "ts": 1795567237,
+          "label": "BASH · ls -la /tmp/openc"
+        },
+        {
+          "ts": 1795567237,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795567249,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795567249,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795567262,
+          "label": "BASH · cd ~/shared-repo/"
+        },
+        {
+          "ts": 1795567262,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795567274,
+          "label": "BASH · adb shell dumpsys"
+        },
+        {
+          "ts": 1795567275,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795567293,
+          "label": "READ · /tmp/opencode/tel"
+        },
+        {
+          "ts": 1795567293,
+          "label": "THINK"
         }
       ],
       "started_at": 1795566732,
-      "updated_at": 1795567235
-    },
-    {
-      "key": "req-20261125-033355-9e69e7",
-      "session_id": "",
-      "source": "task",
-      "label": "Можешь реализовать \"🤖 Начинаю аудит — отвечу по фактам, а не",
-      "step_label": "Реализовать rich-формат",
-      "step": 3,
-      "total": 4,
-      "events": 35,
-      "trail": [
-        {
-          "ts": 1795567141,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567151,
-          "label": "EDIT · /tmp/opencode/fin"
-        },
-        {
-          "ts": 1795567151,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567163,
-          "label": "EDIT · /tmp/opencode/fin"
-        },
-        {
-          "ts": 1795567171,
-          "label": "BASH · cp /home/nyaka/do"
-        },
-        {
-          "ts": 1795567182,
-          "label": "EDIT · /tmp/opencode/fin"
-        },
-        {
-          "ts": 1795567182,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567190,
-          "label": "EDIT · /tmp/opencode/fin"
-        },
-        {
-          "ts": 1795567197,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795567214,
-          "label": "EDIT · /tmp/opencode/fin"
-        },
-        {
-          "ts": 1795567214,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567228,
-          "label": "BASH · python3 ~/.config"
-        }
-      ],
-      "started_at": 1795566835,
-      "updated_at": 1795567234
+      "updated_at": 1795567298
     },
     {
       "key": "req-20261125-033612-e08d19",
@@ -2206,32 +2090,8 @@
       "step_label": "INVENTORS",
       "step": 5,
       "total": 6,
-      "events": 19,
+      "events": 24,
       "trail": [
-        {
-          "ts": 1795567147,
-          "label": "READ · /tmp/opencode/ric"
-        },
-        {
-          "ts": 1795567147,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567155,
-          "label": "BASH · adb shell input t"
-        },
-        {
-          "ts": 1795567156,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567166,
-          "label": "BASH · adb exec-out scre"
-        },
-        {
-          "ts": 1795567174,
-          "label": "READ · /tmp/opencode/ric"
-        },
         {
           "ts": 1795567183,
           "label": "BASH · adb shell input t"
@@ -2255,75 +2115,47 @@
         {
           "ts": 1795567224,
           "label": "THINK"
+        },
+        {
+          "ts": 1795567239,
+          "label": "BASH · adb exec-out scre"
+        },
+        {
+          "ts": 1795567248,
+          "label": "READ · /tmp/opencode/ric"
+        },
+        {
+          "ts": 1795567259,
+          "label": "BASH · adb shell input t"
+        },
+        {
+          "ts": 1795567259,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795567278,
+          "label": "BASH · adb exec-out scre"
+        },
+        {
+          "ts": 1795567287,
+          "label": "READ · /tmp/opencode/ric"
         }
       ],
       "started_at": 1795566973,
-      "updated_at": 1795567235
-    },
-    {
-      "key": "req-20261125-033657-e7cfe6",
-      "session_id": "",
-      "source": "task",
-      "label": "А цвета и фон рич сообщениям не задаются???\nПроверка rich-со",
-      "step_label": "Собрать ответ и пример",
-      "step": 4,
-      "total": 4,
-      "events": 21,
-      "trail": [
-        {
-          "ts": 1795567191,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567198,
-          "label": "WRITE · /tmp/opencode/dr"
-        },
-        {
-          "ts": 1795567198,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567205,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795567205,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795567211,
-          "label": "BASH · grep -nE 'DONE_WO"
-        },
-        {
-          "ts": 1795567211,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567217,
-          "label": "BASH · grep -nE 'add_arg"
-        },
-        {
-          "ts": 1795567217,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567224,
-          "label": "BASH · printf '%s\\n' 'А "
-        },
-        {
-          "ts": 1795567224,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795567230,
-          "label": "EDIT · /tmp/opencode/dra"
-        }
-      ],
-      "started_at": 1795567018,
-      "updated_at": 1795567235
+      "updated_at": 1795567298
     }
   ],
   "bars": [
+    {
+      "key": "task:T6",
+      "label": "T6 · Закачка и разбор демок (Windows-ПК)",
+      "done": 6,
+      "total": 7,
+      "unit": "шагов",
+      "color": "yellow",
+      "source": "progress.json",
+      "updated_at": "2026-11-25T03:41:39+03:00"
+    },
     {
       "key": "task:T29",
       "label": "T29 · Сканфид",
@@ -2332,7 +2164,7 @@
       "unit": "шагов",
       "color": "red",
       "source": "progress.json",
-      "updated_at": "2026-11-24T20:08:01+03:00"
+      "updated_at": "2026-11-25T03:41:39+03:00"
     },
     {
       "key": "captions",
@@ -2365,10 +2197,10 @@
       "updated_at": "2026-11-24T10:16:32+03:00"
     }
   ],
-  "updatedAt": "2026-11-24T20:08:01+03:00",
-  "progress_updated_at": "2026-11-24T20:08:01+03:00",
-  "plan_age_hours": 7.5,
+  "updatedAt": "2026-11-25T03:41:39+03:00",
+  "progress_updated_at": "2026-11-25T03:41:39+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795567235,
-  "fetched_human": "2026-11-25 03:40:35 +0300"
+  "fetched_at": 1795567300,
+  "fetched_human": "2026-11-25 03:41:40 +0300"
 }
