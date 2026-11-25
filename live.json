@@ -1949,15 +1949,23 @@
       "id": "session-511dc3e7",
       "title": "Имитация натуральной игры на демках КС2",
       "source": "dsh",
-      "claimed_human": "21:14:11",
+      "claimed_human": "21:15:10",
       "age_min": 0,
       "full": "Имитация натуральной игры на демках КС2"
+    },
+    {
+      "id": "session-f7fce3fb",
+      "title": "Сессия без названия",
+      "source": "dsh",
+      "claimed_human": "21:15:04",
+      "age_min": 0,
+      "full": "Сессия без названия"
     },
     {
       "id": "session-62538614",
       "title": "Проверка скилов, гейтов и обвязки",
       "source": "dsh",
-      "claimed_human": "21:14:04",
+      "claimed_human": "21:14:49",
       "age_min": 0,
       "full": "Проверка скилов, гейтов и обвязки"
     },
@@ -1966,7 +1974,7 @@
       "title": "Ты — слепой ревизор. У",
       "source": "dsh",
       "claimed_human": "21:11:10",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Ты — слепой ревизор. У"
     },
     {
@@ -1974,7 +1982,7 @@
       "title": "Отладка совместной работы и эффективности",
       "source": "dsh",
       "claimed_human": "21:07:59",
-      "age_min": 6,
+      "age_min": 7,
       "full": "Отладка совместной работы и эффективности"
     },
     {
@@ -1982,7 +1990,7 @@
       "title": "Ты — агент DSH с",
       "source": "dsh",
       "claimed_human": "21:07:44",
-      "age_min": 6,
+      "age_min": 7,
       "full": "Ты — агент DSH с"
     },
     {
@@ -1990,7 +1998,7 @@
       "title": "медленный ресерч прим",
       "source": "dsh",
       "claimed_human": "21:06:42",
-      "age_min": 7,
+      "age_min": 8,
       "full": "медленный ресерч прим"
     },
     {
@@ -1998,23 +2006,15 @@
       "title": "Бенчмарк модели: плюсы, минусы, деградация",
       "source": "dsh",
       "claimed_human": "21:06:34",
-      "age_min": 7,
-      "full": "Бенчмарк модели: плюсы, минусы, деградация"
-    },
-    {
-      "id": "b8a1f5de-795f-47",
-      "title": "Ты — обычный ассистен",
-      "source": "dsh",
-      "claimed_human": "21:06:01",
       "age_min": 8,
-      "full": "Ты — обычный ассистен"
+      "full": "Бенчмарк модели: плюсы, минусы, деградация"
     },
     {
       "id": "T29/T29.4",
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 1506,
+      "age_min": 1507,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2022,7 +2022,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 1527,
+      "age_min": 1528,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2030,7 +2030,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 1528,
+      "age_min": 1529,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     }
   ],
@@ -2068,6 +2068,6 @@
   "progress_updated_at": "2026-11-25T08:20:05+03:00",
   "plan_age_hours": 12.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795630452,
-  "fetched_human": "2026-11-25 21:14:12 +0300"
+  "fetched_at": 1795630515,
+  "fetched_human": "2026-11-25 21:15:15 +0300"
 }
