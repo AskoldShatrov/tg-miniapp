@@ -1274,6 +1274,8 @@ function setTab(name){
   if(name==="backup"&&typeof backupLoad==="function") backupLoad();
   if(name==="library"&&window.LibraryTab) LibraryTab.refresh();
   if(name==="interview"&&typeof renderInterview==="function") renderInterview();
+  if(name==="prompts"&&typeof refreshPrompts==="function"&&!PROMPTS_LOADED) refreshPrompts();
+  if(name==="live"&&typeof fetchLiveData==="function") fetchLiveData();
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
@@ -1734,6 +1736,21 @@ if (tg) {
 let LATEST_STATUS = null;      // последний успешно прочитанный status.json
 let API_LAST_ERROR = "";       // текст последней ошибки — для тостов
 const apiWarned = {};          // логируем сбой каждого эндпоинта только раз
+/* Любой сетевой запрос мини-апа обязан завершаться. Без AbortController
+   зависший CDN/туннель никогда не попадает в catch и Telegram показывает
+   «error time out». Для UI достаточно 8 секунд; тяжёлые действия имеют
+   собственные более длинные лимиты. */
+async function fetchTimed(url, options, timeoutMs){
+  var ms=Number(timeoutMs)||8000;
+  if(typeof AbortController!=="function") return fetch(url, options);
+  var ctl=new AbortController();
+  var timer=setTimeout(function(){ctl.abort();}, ms);
+  try{
+    var opts=Object.assign({}, options||{});
+    opts.signal=ctl.signal;
+    return await fetch(url, opts);
+  }finally{ clearTimeout(timer); }
+}
 async function api(path, body, timeoutMs){
   // Нестабильный localhost.run больше не участвует в открытии: мёртвый адрес
   // из status.json вешал приложение на 6 секунд на каждом вызове.
