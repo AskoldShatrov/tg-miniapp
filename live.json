@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2245,
+      "age_min": 2246,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2267,
+      "age_min": 2268,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,14 +2068,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2267,
+      "age_min": 2268,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "09:33:33",
+      "claimed_human": "09:34:36",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
     },
@@ -2084,24 +2084,14 @@
       "title": "Большое интервью и развитие мини-приложени",
       "source": "dsh",
       "claimed_human": "09:32:05",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Большое интервью и развитие мини-приложени"
-    },
-    {
-      "id": "AU15638",
-      "title": "ДОВЕСТИ ЦЕЛЬ gmwx3kmavz1oh: C14-28286: T5/T1c на 320/320 — гейт НЕ ВЗЯТ",
-      "source": "ноут",
-      "claimed_human": "09:15:15",
-      "age_min": 18,
-      "full": "ДОВЕСТИ ЦЕЛЬ gmwx3kmavz1oh: C14-28286: T5/T1c на 320/320 — гейт НЕ ВЗЯТ",
-      "autogen": true
     }
   ],
   "queues": {
     "ноут": {
-      "done": 1529,
-      "failed": 154,
-      "doing": 1
+      "done": 1530,
+      "failed": 154
     },
     "ПК": {
       "done": 84,
@@ -2115,132 +2105,7 @@
     "captions_total": 196,
     "source": "cs2-transcribe/state.db"
   },
-  "runs": [
-    {
-      "key": "req-20261126-091924-bc400e",
-      "session_id": "ses_dea4eef77ffeYNCKXbhYZ1VLEB",
-      "source": "task",
-      "label": "Перестань писать результат за ночь как аутист \"📋 Результаты ",
-      "step_label": "проверить доступ Ивана и последние задачи",
-      "step": 1,
-      "total": 3,
-      "events": 23,
-      "trail": [
-        {
-          "ts": 1795674642,
-          "label": "WRITE · /tmp/opencode/st"
-        },
-        {
-          "ts": 1795674642,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674672,
-          "label": "WRITE · /tmp/opencode/st"
-        },
-        {
-          "ts": 1795674672,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674703,
-          "label": "BASH · echo \"--- human -"
-        },
-        {
-          "ts": 1795674703,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674732,
-          "label": "BASH · grep -n \"ПОПЫТКА\\"
-        },
-        {
-          "ts": 1795674732,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674762,
-          "label": "BASH · sed -n '135,150p'"
-        },
-        {
-          "ts": 1795674762,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674794,
-          "label": "EDIT · /tmp/opencode/sty"
-        },
-        {
-          "ts": 1795674794,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795673964,
-      "updated_at": 1795674820
-    },
-    {
-      "key": "req-20261126-091952-6d36b1",
-      "session_id": "ses_dea4eef77ffeYNCKXbhYZ1VLEB",
-      "source": "task",
-      "label": "Иван может с тобой нормально работать?",
-      "step_label": "проверить доступ Ивана и последние задачи",
-      "step": 1,
-      "total": 3,
-      "events": 21,
-      "trail": [
-        {
-          "ts": 1795674642,
-          "label": "WRITE · /tmp/opencode/st"
-        },
-        {
-          "ts": 1795674643,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674672,
-          "label": "WRITE · /tmp/opencode/st"
-        },
-        {
-          "ts": 1795674672,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674703,
-          "label": "BASH · echo \"--- human -"
-        },
-        {
-          "ts": 1795674703,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674732,
-          "label": "BASH · grep -n \"ПОПЫТКА\\"
-        },
-        {
-          "ts": 1795674732,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674762,
-          "label": "BASH · sed -n '135,150p'"
-        },
-        {
-          "ts": 1795674762,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795674794,
-          "label": "EDIT · /tmp/opencode/sty"
-        },
-        {
-          "ts": 1795674794,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795673993,
-      "updated_at": 1795674820
-    }
-  ],
+  "runs": [],
   "bars": [
     {
       "key": "task:T29",
@@ -2257,6 +2122,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 2.2,
   "plan_source": "progress.json",
-  "fetched_at": 1795674822,
-  "fetched_human": "2026-11-26 09:33:42 +0300"
+  "fetched_at": 1795674883,
+  "fetched_human": "2026-11-26 09:34:43 +0300"
 }
