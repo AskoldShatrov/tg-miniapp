@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.0,
-      "remaining_hours": 7.0,
+      "elapsed_hours": 1.02,
+      "remaining_hours": 6.98,
       "progress_pct": 13,
       "cycles": 8,
-      "heartbeat_human": "01:05:37",
+      "heartbeat_human": "01:06:37",
       "tree": {
         "phases": [
           {
@@ -183,11 +183,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.0,
-      "remaining_hours": 7.0,
+      "elapsed_hours": 1.02,
+      "remaining_hours": 6.98,
       "progress_pct": 13,
       "cycles": 4,
-      "heartbeat_human": "01:05:37",
+      "heartbeat_human": "01:06:37",
       "tree": {
         "phases": [
           {
@@ -356,11 +356,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.0,
-      "remaining_hours": 7.0,
+      "elapsed_hours": 1.02,
+      "remaining_hours": 6.98,
       "progress_pct": 13,
-      "cycles": 8,
-      "heartbeat_human": "01:05:37",
+      "cycles": 9,
+      "heartbeat_human": "01:06:37",
       "tree": {
         "phases": [
           {
@@ -375,11 +375,11 @@
           {
             "id": "UNI-MVS-WINE",
             "title": "Моделирование систем: MvStudium под Wine",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
             "last": "WARMUP",
             "score": 4,
-            "verified": false
+            "verified": true
           },
           {
             "id": "UNI-PID-CALIB",
@@ -536,19 +536,27 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=1: t-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-c5.md age 37518"
+          },
+          {
+            "clock": "01:06:22",
+            "cycle": 9,
+            "task": "UNI-MVS-WINE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 17,
           "mutations": 16
         },
-        "events": 8,
+        "events": 9,
         "avg_score": 4.8,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795730758,
-  "fetched_human": "2026-11-27 01:05:58 +0300"
+  "fetched_at": 1795730817,
+  "fetched_human": "2026-11-27 01:06:57 +0300"
 }
