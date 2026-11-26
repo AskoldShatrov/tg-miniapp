@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.47,
-      "remaining_hours": 6.53,
-      "progress_pct": 18,
+      "elapsed_hours": 1.49,
+      "remaining_hours": 6.51,
+      "progress_pct": 19,
       "cycles": 13,
-      "heartbeat_human": "01:34:07",
+      "heartbeat_human": "01:35:07",
       "tree": {
         "phases": [
           {
@@ -223,11 +223,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.47,
-      "remaining_hours": 6.53,
-      "progress_pct": 18,
+      "elapsed_hours": 1.49,
+      "remaining_hours": 6.51,
+      "progress_pct": 19,
       "cycles": 7,
-      "heartbeat_human": "01:34:07",
+      "heartbeat_human": "01:35:07",
       "tree": {
         "phases": [
           {
@@ -420,11 +420,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.47,
-      "remaining_hours": 6.53,
-      "progress_pct": 18,
-      "cycles": 13,
-      "heartbeat_human": "01:34:07",
+      "elapsed_hours": 1.49,
+      "remaining_hours": 6.51,
+      "progress_pct": 19,
+      "cycles": 14,
+      "heartbeat_human": "01:35:07",
       "tree": {
         "phases": [
           {
@@ -448,11 +448,11 @@
           {
             "id": "UNI-PID-CALIB",
             "title": "ПИ-регулятор Kp=2 Ти=20",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
             "last": "PROMOTE",
-            "score": 7,
-            "verified": true
+            "score": 5,
+            "verified": false
           },
           {
             "id": "UNI-HYPOTHESIS-DIVERGE",
@@ -640,19 +640,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "01:35:10",
+            "cycle": 14,
+            "task": "UNI-PID-CALIB",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 13,
+        "events": 14,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795732454,
-  "fetched_human": "2026-11-27 01:34:14 +0300"
+  "fetched_at": 1795732513,
+  "fetched_human": "2026-11-27 01:35:13 +0300"
 }
