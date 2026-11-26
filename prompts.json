@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T12:52:46+00:00",
-  "generated_human": "26.11 12:52 UTC",
-  "as_of": 1795697565838,
+  "generated": "2026-11-26T12:53:51+00:00",
+  "generated_human": "26.11 12:53 UTC",
+  "as_of": 1795697630792,
   "stale_days": 1,
   "count": 1107,
   "groups": 9,
@@ -40,9 +40,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-izoTO7j5LI",
+     "text": "Вход — не чистый лист; прочитай ~/overnight/nir-night-mandate-20261126.md, STATE.md и gost-oformlenie-NIR-KP-20261125.md. Прогнай check-tex.sh и check-pdf.py на живом каноне ~/учеба/учеба/nir_latex/nir_final.pdf (SHA256 2209b80a7168039833e119beab3e995ed0d9585db24eebe4a9e4d77dc724755a). Явно сверить draft_nir.md: 40 страниц и 612eda против живого файла 36 страниц и 2209b80a. Не выдумывать подписи, публикации и акт внедрения. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-NIR-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-NIR-c22.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795697629000,
+     "source": "session",
+     "title": "lree-UNI-NIR-c22",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795697629000,
+     "is_stale": false
+    },
+    {
      "id": "ses-0v8hi6gxE2",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. CRITERIA_SOURCE user/test, CRITERIA_THRESHOLD, QUESTIONS_TO_TASK. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-CRITERIA-REVIEW-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-CRITERIA-REVIEW-c19.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795697564000,
+     "ts": 1795697628000,
      "source": "session",
      "title": "lree-IMP-CRITERIA-REVIEW-c19",
      "source_label": "ноут",
@@ -51,7 +64,7 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795697564000,
+     "as_of": 1795697628000,
      "is_stale": false
     },
     {
@@ -4501,7 +4514,7 @@
     {
      "id": "ses-77Blskn0bv",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Полоса экономики в игровой/HLAE-поверхности, BROWSER_OVERLAY: absent, kill feed не перекрыт. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: перед приёмкой кадра загрузи через tool skill `image-read` и `cs2-demo-capture`; запусти describe_image.py и read_image по выбранному PNG; затем vision_gate.py с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent и запиши путь в поле VISION_GATE. Без VISION_GATE и совпадения image_sha со SCREEN_SHA256 гейт FAIL. ПОЛНАЯ АВТОНОМИЯ ПО ПК: вам разрешено через pc-bridge управлять состоянием демки и CS2: сначала диагностика (Get-CimInstance cs2.exe, console.log, GSI, pc_live), при паузе — перезапуск CS2 через ASCII cfg и +exec, ожидание готовности до пяти минут, асинхронный зонд хэша вместо синхронного Get-FileHash на 301 МБ. Не трогать bots/config.json, ключи и chat_id; всё сделанное зафиксировать в артефакте с командами, rc и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-c9.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795697560000,
+     "ts": 1795697620000,
      "source": "session",
      "title": "lree-SF-ECONOMY-STRIP-c9",
      "source_label": "ноут",
@@ -4510,7 +4523,7 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795697560000,
+     "as_of": 1795697620000,
      "is_stale": false
     },
     {
@@ -14332,31 +14345,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795551828642,
      "as_of": 1795551781000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-yF7dPLVm6k",
-     "text": "Вопрос ожидает ответа в телеграм-миниаппе. Выбери ОДИН вариант и объясни одним предложением.\nID: per_20df6c32e001e11wXzzjSZoT64\nЗаголовок: Вопрос без владельца Telegram\nВопрос: Нужно разрешение\nПочему: Ожидает ответа в мини-апе\nВарианты: []\nОтветь первой строкой ровно выбранным вариантом (или «разрешить»/«отклонить» для permission), второй — почему.",
-     "ts": 1795551759000,
-     "source": "session",
-     "title": "Совет по вопросу per_20df6c32e001",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611251411007517"
-     ],
-     "answer": "[w2611251411007517] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
-     "answer_short": "w2611251411007517: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
-     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
-     "answer_digest": {
-      "length": 2501,
-      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
-     },
-     "answer_text_id": "3d465e048325dc16",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795572241876,
-     "as_of": 1795551759000,
      "is_stale": true
     },
     {
