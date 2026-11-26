@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.56,
-      "remaining_hours": 4.44,
-      "progress_pct": 44,
+      "elapsed_hours": 3.57,
+      "remaining_hours": 4.43,
+      "progress_pct": 45,
       "cycles": 35,
-      "heartbeat_human": "12:37:00",
+      "heartbeat_human": "12:38:00",
       "tree": {
         "phases": [
           {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.27,
-      "remaining_hours": 7.88,
+      "elapsed_hours": 3.29,
+      "remaining_hours": 7.86,
       "progress_pct": 29,
-      "cycles": 28,
-      "heartbeat_human": "12:37:15",
+      "cycles": 29,
+      "heartbeat_human": "12:38:15",
       "tree": {
         "phases": [
           {
@@ -229,22 +229,14 @@
           {
             "id": "SF-OVERLAY-ADR",
             "title": "ADR: точная причина, почему внутриигровой оверлей не закрыт",
-            "cycles": 0,
+            "cycles": 1,
             "max": 2,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 2,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "12:09:44",
-            "cycle": 21,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос killfeed"
-          },
           {
             "clock": "12:10:45",
             "cycle": 22,
@@ -300,19 +292,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос cards"
+          },
+          {
+            "clock": "12:38:05",
+            "cycle": 29,
+            "task": "SF-OVERLAY-ADR",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-ADR-*.md"
           }
         ],
         "strategy": {
-          "version": 22,
-          "mutations": 21
+          "version": 23,
+          "mutations": 22
         },
-        "events": 28,
+        "events": 29,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795685838,
-  "fetched_human": "2026-11-26 12:37:18 +0300"
+  "fetched_at": 1795685902,
+  "fetched_human": "2026-11-26 12:38:22 +0300"
 }
