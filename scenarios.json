@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-26 04:30",
+ "generated": "2026-11-26 05:00",
  "window": {
-  "start": "2026-11-25T16:54",
-  "end": "2026-11-26T01:27",
+  "start": "2026-11-25T17:22",
+  "end": "2026-11-26T01:58",
   "sessions": 155,
   "roots": 150
  },
  "summary": {
-  "skills": 45,
-  "skills_used": 19,
+  "skills": 47,
+  "skills_used": 17,
   "agents": 7,
   "agents_used": 1,
   "autofeed": 0,
@@ -25,14 +25,14 @@
    "runs": 150,
    "median_s": 321,
    "max_s": 1049,
-   "last": "2026-11-26T01:27:12.044000+00:00",
+   "last": "2026-11-26T01:58:46.366000+00:00",
    "outcomes": {
-    "waiting_user": 11,
-    "done": 139
+    "waiting_user": 13,
+    "done": 137
    },
    "example": [
-    "EqFLc3jN",
-    "PIIyYh64"
+    "MwVYCh8S",
+    "ZeZGBOWL"
    ],
    "actual": [
     {
@@ -43,7 +43,13 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 61 из 150",
+     "t": "в 58 из 150",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 112 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
@@ -53,21 +59,15 @@
      "d": 1
     },
     {
-     "k": "tool",
-     "n": "explore",
-     "t": "в 110 из 150, ≈6 вызовов за раз",
-     "d": 1
-    },
-    {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 49 из 150",
+     "t": "в 48 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 141 из 150, ≈5 вызовов за раз",
+     "t": "в 143 из 150, ≈5 вызовов за раз",
      "d": 1
     },
     {
@@ -78,7 +78,7 @@
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, blocker-clock, code-review, cs2-demo-capture, cs2-demo-manager, disk-triage, draft-gate, game-mode, hi",
+     "n": "реже: answer-integrity, blocker-clock, code-review, criterion-gate, cs2-demo-capture, disk-triage, draft-gate, game-mode, hidd",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -473,82 +473,76 @@
    "when": "«статус», «что я просил», «что сделано»",
    "status": "warn",
    "status_text": "Мимо единого входа",
-   "runs": 11,
-   "median_s": 407,
+   "runs": 15,
+   "median_s": 396,
    "max_s": 868,
-   "last": "2026-11-26T01:22:04.424000+00:00",
+   "last": "2026-11-26T01:57:22.485000+00:00",
    "outcomes": {
     "waiting_user": 1,
-    "done": 10
+    "done": 14
    },
    "example": [
-    "1kkaUx8O",
-    "SambNeiu"
+    "OdAjYgSD",
+    "MwVYCh8S"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 11"
+     "t": "запусков: 15"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 11 из 11",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 4 из 11",
+     "t": "в 15 из 15",
      "d": 1
     },
     {
      "k": "skill",
      "n": "work-audit",
-     "t": "в 11 из 11",
+     "t": "в 15 из 15",
      "d": 1
     },
     {
      "k": "skill",
      "n": "hidden-auditor",
-     "t": "в 11 из 11",
+     "t": "в 15 из 15",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 8 из 15",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 11 из 11, ≈26 вызовов за раз",
+     "t": "в 15 из 15, ≈27 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 10 из 11, ≈6 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "network-constraints",
-     "t": "в 2 из 11",
+     "t": "в 13 из 15, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 11 из 11, ≈10 вызовов за раз",
+     "t": "в 15 из 15, ≈10 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 7 из 11",
+     "t": "в 10 из 15",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, suspicion-gate",
-     "t": "меньше 2 из 11",
+     "n": "реже: answer-integrity, criterion-gate, network-constraints, show-in-answer, suspicion-gate",
+     "t": "меньше 3 из 15",
      "d": 1
     }
    ],
@@ -614,78 +608,20 @@
    "group": "big",
    "title": "Большая задача по этапам",
    "when": "«продолжи план по этапам», process-plan.md",
-   "status": "warn",
-   "status_text": "На грани лимита",
-   "runs": 1,
-   "median_s": 885,
-   "max_s": 885,
-   "last": "2026-11-25T17:18:24.761000+00:00",
-   "outcomes": {
-    "done": 1
-   },
-   "example": [
-    "mT2i7eKm"
-   ],
-   "actual": [
-    {
-     "k": "agent",
-     "n": "build",
-     "t": "запусков: 1"
-    },
-    {
-     "k": "skill",
-     "n": "hypothesis-check",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "≈45 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "правки",
-     "t": "≈9 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "pc-bridge-live",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "progress",
-     "t": "",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "explore",
-     "t": "≈1 вызовов за раз",
-     "d": 1
-    }
-   ],
+   "status": "idle",
+   "status_text": "Нет запусков за окно",
+   "runs": 0,
+   "median_s": null,
+   "max_s": null,
+   "last": "",
+   "outcomes": {},
+   "example": [],
+   "actual": [],
    "declared": [
     {
      "k": "skill",
      "n": "progress",
-     "u": false
+     "u": true
     },
     {
      "k": "agent",
@@ -821,76 +757,76 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 56,
-   "median_s": 437,
+   "runs": 50,
+   "median_s": 418,
    "max_s": 1049,
-   "last": "2026-11-26T01:26:57.582000+00:00",
+   "last": "2026-11-26T01:57:22.485000+00:00",
    "outcomes": {
     "waiting_user": 3,
-    "done": 53
+    "done": 47
    },
    "example": [
-    "SambNeiu",
-    "EqFLc3jN"
+    "VHltAZyo",
+    "MwVYCh8S"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 56"
+     "t": "запусков: 50"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 38 из 56",
+     "t": "в 36 из 50",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 49 из 56",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 18 из 56",
+     "t": "в 48 из 50",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 56 из 56, ≈29 вызовов за раз",
+     "t": "в 50 из 50, ≈30 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "cs2-demo-capture",
-     "t": "в 13 из 56",
+     "n": "scanfeed",
+     "t": "в 11 из 50",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hidden-auditor",
+     "t": "в 10 из 50",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 41 из 56, ≈7 вызовов за раз",
+     "t": "в 37 из 50, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 52 из 56, ≈9 вызовов за раз",
+     "t": "в 48 из 50, ≈10 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 22 из 56",
+     "t": "в 23 из 50",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, blocker-clock, code-review, cs2-demo-manager, disk-triage, draft-gate, game-mode, hidden-auditor, long",
-     "t": "меньше 11 из 56",
+     "n": "реже: answer-integrity, blocker-clock, code-review, criterion-gate, cs2-demo-capture, disk-triage, draft-gate, game-mode, long",
+     "t": "меньше 10 из 50",
      "d": 1
     }
    ],
@@ -982,8 +918,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 22, с файлами 0",
-   "level": "warn",
+   "state": "Владельцев 25, с файлами 1",
+   "level": "ok",
    "f": "C11"
   },
   {
@@ -1050,7 +986,7 @@
     },
     {
      "n": "progress",
-     "used": true,
+     "used": false,
      "merged": false
     },
     {
