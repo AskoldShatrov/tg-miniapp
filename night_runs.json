@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.77,
-      "remaining_hours": 4.23,
+      "elapsed_hours": 3.79,
+      "remaining_hours": 4.21,
       "progress_pct": 47,
-      "cycles": 30,
-      "heartbeat_human": "17:56:19",
+      "cycles": 31,
+      "heartbeat_human": "17:57:19",
       "tree": {
         "phases": [
           {
@@ -76,6 +76,15 @@
             "verified": false
           },
           {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "SF-DEATHTICK-INDEP",
             "title": "Death-tick: независимый эталон",
             "cycles": 2,
@@ -101,15 +110,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "SF-META-REFLECT",
-            "title": "Метарефлексия трёх уровней",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "SF-CRITERIA-REVIEW",
@@ -370,19 +370,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "17:57:29",
+            "cycle": 31,
+            "task": "SF-META-REFLECT",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: eek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-META-R"
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 30,
+        "events": 31,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795704988,
-  "fetched_human": "2026-11-26 17:56:28 +0300"
+  "fetched_at": 1795705051,
+  "fetched_human": "2026-11-26 17:57:31 +0300"
 }
