@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 1988,
+      "age_min": 1989,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2010,
+      "age_min": 2011,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,38 +1966,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2011,
+      "age_min": 2012,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "session-ad7c73c8",
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
-      "claimed_human": "05:16:56",
+      "claimed_human": "05:17:57",
       "age_min": 0,
       "full": "Остановка непрерывной работы над CS2"
-    },
-    {
-      "id": "session-438c75cc",
-      "title": "Полноэкранный режим КС 2 и блэкбары",
-      "source": "dsh",
-      "claimed_human": "05:16:54",
-      "age_min": 0,
-      "full": "Полноэкранный режим КС 2 и блэкбары"
-    },
-    {
-      "id": "session-d18e8af1",
-      "title": "у мэтпока есть скилл и",
-      "source": "dsh",
-      "claimed_human": "05:16:52",
-      "age_min": 0,
-      "full": "у мэтпока есть скилл и"
     },
     {
       "id": "session-5989fdd2",
       "title": "Почему полный доступ не выбирается",
       "source": "dsh",
-      "claimed_human": "05:16:47",
+      "claimed_human": "05:17:53",
       "age_min": 0,
       "full": "Почему полный доступ не выбирается"
     },
@@ -2005,16 +1989,32 @@
       "id": "session-447c0873",
       "title": "Почему инструмент не показывает демки",
       "source": "dsh",
-      "claimed_human": "05:15:49",
-      "age_min": 1,
+      "claimed_human": "05:17:35",
+      "age_min": 0,
       "full": "Почему инструмент не показывает демки"
+    },
+    {
+      "id": "session-d18e8af1",
+      "title": "у мэтпока есть скилл и",
+      "source": "dsh",
+      "claimed_human": "05:17:29",
+      "age_min": 0,
+      "full": "у мэтпока есть скилл и"
+    },
+    {
+      "id": "session-438c75cc",
+      "title": "Полноэкранный режим КС 2 и блэкбары",
+      "source": "dsh",
+      "claimed_human": "05:17:25",
+      "age_min": 0,
+      "full": "Полноэкранный режим КС 2 и блэкбары"
     },
     {
       "id": "ae693fd1-e279-4e",
       "title": "Задача: ТОЛЬКО ЧТЕНИЕ",
       "source": "dsh",
       "claimed_human": "05:15:32",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Задача: ТОЛЬКО ЧТЕНИЕ"
     },
     {
@@ -2022,7 +2022,7 @@
       "title": "Сессия без названия",
       "source": "dsh",
       "claimed_human": "05:15:17",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Сессия без названия"
     },
     {
@@ -2030,7 +2030,7 @@
       "title": "Непрерывная ночная работа со сканфидом",
       "source": "dsh",
       "claimed_human": "05:14:34",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Непрерывная ночная работа со сканфидом"
     }
   ],
@@ -2068,6 +2068,6 @@
   "progress_updated_at": "2026-11-26T03:55:52+03:00",
   "plan_age_hours": 1.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795659418,
-  "fetched_human": "2026-11-26 05:16:58 +0300"
+  "fetched_at": 1795659478,
+  "fetched_human": "2026-11-26 05:17:58 +0300"
 }
