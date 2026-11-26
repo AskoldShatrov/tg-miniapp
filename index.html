@@ -1296,6 +1296,7 @@ function setTab(name){
   if(name==="interview"&&typeof renderInterview==="function") renderInterview();
   if(name==="prompts"&&typeof refreshPrompts==="function"&&!PROMPTS_LOADED) refreshPrompts();
   if(name==="live"&&typeof fetchLiveData==="function") fetchLiveData();
+  if(name==="night"&&typeof fetchNightRuns==="function") fetchNightRuns();
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
