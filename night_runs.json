@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.61,
-      "remaining_hours": 4.39,
+      "elapsed_hours": 3.62,
+      "remaining_hours": 4.38,
       "progress_pct": 45,
       "cycles": 35,
-      "heartbeat_human": "12:40:00",
+      "heartbeat_human": "12:41:00",
       "tree": {
         "phases": [
           {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.32,
-      "remaining_hours": 7.83,
+      "elapsed_hours": 3.34,
+      "remaining_hours": 7.81,
       "progress_pct": 30,
-      "cycles": 29,
-      "heartbeat_human": "12:40:15",
+      "cycles": 30,
+      "heartbeat_human": "12:41:15",
       "tree": {
         "phases": [
           {
@@ -218,6 +218,15 @@
             "verified": false
           },
           {
+            "id": "SF-OVERLAY-ADR",
+            "title": "ADR: точная причина, почему внутриигровой оверлей не закрыт",
+            "cycles": 2,
+            "max": 2,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "SF-CARDS-GUARD",
             "title": "Карточки как защитный механизм — концепция и практика",
             "cycles": 1,
@@ -225,26 +234,9 @@
             "last": "MUTATE",
             "score": 4,
             "verified": true
-          },
-          {
-            "id": "SF-OVERLAY-ADR",
-            "title": "ADR: точная причина, почему внутриигровой оверлей не закрыт",
-            "cycles": 1,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "12:10:45",
-            "cycle": 22,
-            "task": "SF-OVERLAY-FINAL",
-            "action": "MUTATE",
-            "score": 0,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
-          },
           {
             "clock": "12:11:45",
             "cycle": 23,
@@ -300,19 +292,27 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-ADR-*.md"
+          },
+          {
+            "clock": "12:41:14",
+            "cycle": 30,
+            "task": "SF-OVERLAY-ADR",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-ADR-*.md"
           }
         ],
         "strategy": {
-          "version": 23,
-          "mutations": 22
+          "version": 24,
+          "mutations": 23
         },
-        "events": 29,
+        "events": 30,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795686016,
-  "fetched_human": "2026-11-26 12:40:16 +0300"
+  "fetched_at": 1795686078,
+  "fetched_human": "2026-11-26 12:41:18 +0300"
 }
