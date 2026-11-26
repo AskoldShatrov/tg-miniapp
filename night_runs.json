@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.72,
-      "remaining_hours": 4.28,
+      "elapsed_hours": 3.74,
+      "remaining_hours": 4.26,
       "progress_pct": 47,
       "cycles": 36,
-      "heartbeat_human": "12:47:00",
+      "heartbeat_human": "12:48:00",
       "tree": {
         "phases": [
           {
@@ -141,178 +141,9 @@
         "avg_score": 2.0,
         "fail_streak": 0
       }
-    },
-    {
-      "id": "scanfeed-12h-1126-live",
-      "label": "Сканфид-мандат",
-      "status": "идёт",
-      "budget_hours": 11.147,
-      "elapsed_hours": 3.44,
-      "remaining_hours": 7.71,
-      "progress_pct": 31,
-      "cycles": 36,
-      "heartbeat_human": "12:47:15",
-      "tree": {
-        "phases": [
-          {
-            "id": "SF-PRESENT-DECK",
-            "title": "Презентация: 6–8 слайдов, постер, лучший кейс — видео",
-            "cycles": 4,
-            "max": 4,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "SF-KF-ROSTER",
-            "title": "Kill feed: покрытие ников и счёт выживших",
-            "cycles": 3,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-KF-DEATHTICK",
-            "title": "Парсер сверяет death-tick kill feed",
-            "cycles": 3,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-OVERLAY-STRICT",
-            "title": "Строгий кадр оверлея G3+G4",
-            "cycles": 3,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-OVERLAY-REDESIGN",
-            "title": "Внутриигровой оверлей: экономика под карточками врагов без перекрытия ",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
-          },
-          {
-            "id": "SF-OVERLAY-FINAL",
-            "title": "Финальный строгий кадр: экономика под карточками противников в окне CS",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-MORNING-DIGEST",
-            "title": "Утренний дайджест: N PASS / M FAIL / K OPEN",
-            "cycles": 2,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "SF-OVERLAY-ADR",
-            "title": "ADR: точная причина, почему внутриигровой оверлей не закрыт",
-            "cycles": 2,
-            "max": 2,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "SF-CARDS-GUARD",
-            "title": "Карточки как защитный механизм — концепция и практика",
-            "cycles": 1,
-            "max": 1,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
-          }
-        ],
-        "trail": [
-          {
-            "clock": "12:38:05",
-            "cycle": 29,
-            "task": "SF-OVERLAY-ADR",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-ADR-*.md"
-          },
-          {
-            "clock": "12:41:14",
-            "cycle": 30,
-            "task": "SF-OVERLAY-ADR",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-ADR-*.md"
-          },
-          {
-            "clock": "12:42:14",
-            "cycle": 31,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос research"
-          },
-          {
-            "clock": "12:43:14",
-            "cycle": 32,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос overlay"
-          },
-          {
-            "clock": "12:44:14",
-            "cycle": 33,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос gsi"
-          },
-          {
-            "clock": "12:45:14",
-            "cycle": 34,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос hlae"
-          },
-          {
-            "clock": "12:46:14",
-            "cycle": 35,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос presentation"
-          },
-          {
-            "clock": "12:47:14",
-            "cycle": 36,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE",
-            "score": 0,
-            "note": ""
-          }
-        ],
-        "strategy": {
-          "version": 29,
-          "mutations": 28
-        },
-        "events": 36,
-        "avg_score": 0.0,
-        "fail_streak": 0
-      }
     }
   ],
-  "count": 2,
-  "fetched_at": 1795686445,
-  "fetched_human": "2026-11-26 12:47:25 +0300"
+  "count": 1,
+  "fetched_at": 1795686510,
+  "fetched_human": "2026-11-26 12:48:30 +0300"
 }
