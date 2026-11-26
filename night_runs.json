@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.82,
-      "remaining_hours": 7.18,
+      "elapsed_hours": 0.84,
+      "remaining_hours": 7.16,
       "progress_pct": 10,
       "cycles": 5,
-      "heartbeat_human": "00:54:23",
+      "heartbeat_human": "00:55:53",
       "tree": {
         "phases": [
           {
@@ -159,20 +159,20 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.82,
-      "remaining_hours": 7.18,
+      "elapsed_hours": 0.84,
+      "remaining_hours": 7.16,
       "progress_pct": 10,
-      "cycles": 3,
-      "heartbeat_human": "00:54:38",
+      "cycles": 4,
+      "heartbeat_human": "00:55:38",
       "tree": {
         "phases": [
           {
             "id": "SF-HLAE-POV-CAPTURE",
             "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 5,
+            "last": "WARMUP",
+            "score": 4,
             "verified": false
           },
           {
@@ -308,15 +308,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 5,
             "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:55:30",
+            "cycle": 4,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: me/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-"
           }
         ],
         "strategy": {
           "version": 20,
           "mutations": 19
         },
-        "events": 3,
+        "events": 4,
         "avg_score": 3.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -324,11 +332,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.82,
-      "remaining_hours": 7.18,
+      "elapsed_hours": 0.84,
+      "remaining_hours": 7.16,
       "progress_pct": 10,
       "cycles": 7,
-      "heartbeat_human": "00:54:38",
+      "heartbeat_human": "00:55:38",
       "tree": {
         "phases": [
           {
@@ -509,6 +517,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795730092,
-  "fetched_human": "2026-11-27 00:54:52 +0300"
+  "fetched_at": 1795730156,
+  "fetched_human": "2026-11-27 00:55:56 +0300"
 }
