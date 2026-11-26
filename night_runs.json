@@ -1,299 +1,15 @@
 {
   "runs": [
     {
-      "id": "scanfeed-v2-1126",
-      "label": "Сканфид-мандат",
-      "status": "идёт",
-      "budget_hours": 8.0,
-      "elapsed_hours": 0.69,
-      "remaining_hours": 7.31,
-      "progress_pct": 9,
-      "cycles": 1,
-      "heartbeat_human": "14:50:49",
-      "tree": {
-        "phases": [
-          {
-            "id": "SF-HLAE-POV-CAPTURE",
-            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
-            "cycles": 1,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-KF-MAIN-GATE",
-            "title": "Kill feed как главный гейт",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-ECONOMY-STRIP",
-            "title": "Компактная экономия под карточками противников",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-DEATHTICK-INDEP",
-            "title": "Death-tick: независимый эталон",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-T4-CALIB",
-            "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-PRESENT-DECK",
-            "title": "Презентация: 6-8 слайдов и постер",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-HLAE-WRITER",
-            "title": "Writer: сделай + доставь + проверь доставку",
-            "cycles": 0,
-            "max": 4,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-DIGEST",
-            "title": "Итоговый дайджест",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-PRIOR-WORK-INTAKE",
-            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-HYPOTHESIS-DIVERGE",
-            "title": "Перебор гипотез до критики",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-META-REFLECT",
-            "title": "Метарефлексия трёх уровней",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-CRITERIA-REVIEW",
-            "title": "Пересмотр критериев и вопросы к задаче",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          }
-        ],
-        "trail": [
-          {
-            "clock": "14:25:05",
-            "cycle": 1,
-            "task": "SF-HLAE-POV-CAPTURE",
-            "action": "MUTATE",
-            "score": 0,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          }
-        ],
-        "strategy": {
-          "version": 1,
-          "mutations": 0
-        },
-        "events": 1,
-        "avg_score": 0.0,
-        "fail_streak": 1
-      }
-    },
-    {
-      "id": "university-1126",
-      "label": "university 1126",
-      "status": "идёт",
-      "budget_hours": 8.0,
-      "elapsed_hours": 0.69,
-      "remaining_hours": 7.31,
-      "progress_pct": 9,
-      "cycles": 6,
-      "heartbeat_human": "14:50:49",
-      "tree": {
-        "phases": [
-          {
-            "id": "UNI-MVS-WINE",
-            "title": "Моделирование систем: MvStudium под Wine",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
-          },
-          {
-            "id": "UNI-PRIOR-INTAKE",
-            "title": "Приём учебных наработок",
-            "cycles": 2,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "UNI-PID-CALIB",
-            "title": "ПИ-регулятор Kp=2 Ти=20",
-            "cycles": 1,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-HYPOTHESIS-DIVERGE",
-            "title": "Перебор гипотез учебного трека",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "UNI-META-REFLECT",
-            "title": "Метарефлексия трёх уровней",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "UNI-CRITERIA-REVIEW",
-            "title": "Пересмотр критериев учебного трека",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "UNI-WRITER",
-            "title": "Writer учебного трека",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "UNI-DIGEST",
-            "title": "Итог учебного трека",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          }
-        ],
-        "trail": [
-          {
-            "clock": "14:15:18",
-            "cycle": 1,
-            "task": "UNI-PRIOR-INTAKE",
-            "action": "MUTATE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "14:18:34",
-            "cycle": 2,
-            "task": "UNI-PRIOR-INTAKE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/univ"
-          },
-          {
-            "clock": "14:23:15",
-            "cycle": 3,
-            "task": "UNI-MVS-WINE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
-          {
-            "clock": "14:28:32",
-            "cycle": 4,
-            "task": "UNI-MVS-WINE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
-          {
-            "clock": "14:32:18",
-            "cycle": 5,
-            "task": "UNI-MVS-WINE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
-          {
-            "clock": "14:51:03",
-            "cycle": 6,
-            "task": "UNI-PID-CALIB",
-            "action": "MUTATE",
-            "score": 7,
-            "note": ""
-          }
-        ],
-        "strategy": {
-          "version": 4,
-          "mutations": 3
-        },
-        "events": 6,
-        "avg_score": 0.0,
-        "fail_streak": 0
-      }
-    },
-    {
       "id": "complex-improvement-1126",
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.68,
-      "remaining_hours": 7.32,
+      "elapsed_hours": 0.7,
+      "remaining_hours": 7.3,
       "progress_pct": 9,
       "cycles": 8,
-      "heartbeat_human": "14:50:49",
+      "heartbeat_human": "14:51:49",
       "tree": {
         "phases": [
           {
@@ -452,9 +168,293 @@
         "avg_score": 0.0,
         "fail_streak": 0
       }
+    },
+    {
+      "id": "scanfeed-v2-1126",
+      "label": "Сканфид-мандат",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.7,
+      "remaining_hours": 7.3,
+      "progress_pct": 9,
+      "cycles": 1,
+      "heartbeat_human": "14:51:49",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-HLAE-POV-CAPTURE",
+            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
+            "cycles": 1,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-MAIN-GATE",
+            "title": "Kill feed как главный гейт",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-ECONOMY-STRIP",
+            "title": "Компактная экономия под карточками противников",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DEATHTICK-INDEP",
+            "title": "Death-tick: независимый эталон",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6-8 слайдов и постер",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DIGEST",
+            "title": "Итоговый дайджест",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRIOR-WORK-INTAKE",
+            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез до критики",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев и вопросы к задаче",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "14:25:05",
+            "cycle": 1,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          }
+        ],
+        "strategy": {
+          "version": 1,
+          "mutations": 0
+        },
+        "events": 1,
+        "avg_score": 0.0,
+        "fail_streak": 1
+      }
+    },
+    {
+      "id": "university-1126",
+      "label": "university 1126",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.7,
+      "remaining_hours": 7.3,
+      "progress_pct": 9,
+      "cycles": 6,
+      "heartbeat_human": "14:51:49",
+      "tree": {
+        "phases": [
+          {
+            "id": "UNI-MVS-WINE",
+            "title": "Моделирование систем: MvStudium под Wine",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          },
+          {
+            "id": "UNI-PRIOR-INTAKE",
+            "title": "Приём учебных наработок",
+            "cycles": 2,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "UNI-PID-CALIB",
+            "title": "ПИ-регулятор Kp=2 Ти=20",
+            "cycles": 1,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "UNI-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез учебного трека",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев учебного трека",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-WRITER",
+            "title": "Writer учебного трека",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-DIGEST",
+            "title": "Итог учебного трека",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "14:15:18",
+            "cycle": 1,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "14:18:34",
+            "cycle": 2,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/univ"
+          },
+          {
+            "clock": "14:23:15",
+            "cycle": 3,
+            "task": "UNI-MVS-WINE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "14:28:32",
+            "cycle": 4,
+            "task": "UNI-MVS-WINE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "14:32:18",
+            "cycle": 5,
+            "task": "UNI-MVS-WINE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "14:51:03",
+            "cycle": 6,
+            "task": "UNI-PID-CALIB",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
+          }
+        ],
+        "strategy": {
+          "version": 4,
+          "mutations": 3
+        },
+        "events": 6,
+        "avg_score": 0.0,
+        "fail_streak": 0
+      }
     }
   ],
   "count": 3,
-  "fetched_at": 1795693871,
-  "fetched_human": "2026-11-26 14:51:11 +0300"
+  "fetched_at": 1795693930,
+  "fetched_human": "2026-11-26 14:52:10 +0300"
 }
