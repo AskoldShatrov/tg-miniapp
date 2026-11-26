@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26 11:30",
+ "generated": "2026-11-26 12:00",
  "window": {
   "start": "2026-11-26T01:02",
   "end": "2026-11-26T08:25",
@@ -23,14 +23,14 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 356,
-   "max_s": 21484,
+   "median_s": 358,
+   "max_s": 22075,
    "last": "2026-11-26T08:25:03.300000+00:00",
    "outcomes": {
-    "waiting_user": 3,
-    "done": 128,
-    "error": 17,
-    "cancelled": 2
+    "done": 130,
+    "error": 16,
+    "cancelled": 2,
+    "waiting_user": 2
    },
    "example": [
     "TwEL1lbA",
@@ -63,13 +63,13 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 119 из 150, ≈30 вызовов за раз",
+     "t": "в 119 из 150, ≈31 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 113 из 150, ≈8 вызовов за раз",
+     "t": "в 114 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -945,7 +945,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×93, opencode/hy4-flash-free ×9, opencode/iceman-free ×7",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×92, opencode/hy4-flash-free ×9, opencode/iceman-free ×7",
    "level": "ok",
    "f": "C13"
   },
@@ -969,7 +969,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 23, с файлами 0",
+   "state": "Владельцев 21, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
