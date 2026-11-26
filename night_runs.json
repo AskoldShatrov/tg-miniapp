@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 4.34,
+      "elapsed_hours": 4.36,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.36,
-      "remaining_hours": 7.64,
-      "progress_pct": 4,
-      "cycles": 6,
-      "heartbeat_human": "13:23:46",
+      "elapsed_hours": 0.37,
+      "remaining_hours": 7.63,
+      "progress_pct": 5,
+      "cycles": 7,
+      "heartbeat_human": "13:25:17",
       "tree": {
         "phases": [
           {
@@ -175,10 +175,10 @@
           {
             "id": "SF-ECONOMY-STRIP",
             "title": "Компактная экономия под карточками противников",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 4,
             "verified": false
           },
           {
@@ -311,19 +311,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c6.md size 444 < 500; missing SOURCE: H"
+          },
+          {
+            "clock": "13:25:04",
+            "cycle": 7,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-c"
           }
         ],
         "strategy": {
           "version": 3,
           "mutations": 2
         },
-        "events": 6,
+        "events": 7,
         "avg_score": 4.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795688651,
-  "fetched_human": "2026-11-26 13:24:11 +0300"
+  "fetched_at": 1795688717,
+  "fetched_human": "2026-11-26 13:25:17 +0300"
 }
