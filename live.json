@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2400,
+      "age_min": 2401,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2422,
+      "age_min": 2423,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,47 +2068,47 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2422,
+      "age_min": 2423,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "session-17e00542",
       "title": "Эффективность затрат ресурсов ночных прого",
       "source": "dsh",
-      "claimed_human": "12:08:47",
+      "claimed_human": "12:09:48",
       "age_min": 0,
       "full": "Эффективность затрат ресурсов ночных прого"
-    },
-    {
-      "id": "session-23b4bb42",
-      "title": "Ночная автономная работа над сканфидом",
-      "source": "dsh",
-      "claimed_human": "12:08:46",
-      "age_min": 0,
-      "full": "Ночная автономная работа над сканфидом"
-    },
-    {
-      "id": "session-55d1a039",
-      "title": "Проверка эргономики мини-апа T04",
-      "source": "dsh",
-      "claimed_human": "12:08:44",
-      "age_min": 0,
-      "full": "Проверка эргономики мини-апа T04"
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
-      "claimed_human": "12:08:04",
+      "claimed_human": "12:09:45",
       "age_min": 0,
       "full": "Активный сеанс DSH с проверками"
+    },
+    {
+      "id": "session-55d1a039",
+      "title": "Проверка эргономики мини-апа T04",
+      "source": "dsh",
+      "claimed_human": "12:09:38",
+      "age_min": 0,
+      "full": "Проверка эргономики мини-апа T04"
+    },
+    {
+      "id": "session-23b4bb42",
+      "title": "Ночная автономная работа над сканфидом",
+      "source": "dsh",
+      "claimed_human": "12:09:34",
+      "age_min": 0,
+      "full": "Ночная автономная работа над сканфидом"
     },
     {
       "id": "session-ddc10eb6",
       "title": "Сводный утренний отчёт с верификацией",
       "source": "dsh",
       "claimed_human": "12:07:44",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Сводный утренний отчёт с верификацией"
     },
     {
@@ -2116,7 +2116,7 @@
       "title": "Проверка эргономики чата и мини-апа",
       "source": "dsh",
       "claimed_human": "12:05:42",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Проверка эргономики чата и мини-апа"
     },
     {
@@ -2124,16 +2124,8 @@
       "title": "Проверка двух ночных прогонов",
       "source": "dsh",
       "claimed_human": "12:01:14",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Проверка двух ночных прогонов"
-    },
-    {
-      "id": "session-41b44bf1",
-      "title": "Проверка ночного прогона Scanfid",
-      "source": "dsh",
-      "claimed_human": "11:59:32",
-      "age_min": 9,
-      "full": "Проверка ночного прогона Scanfid"
     }
   ],
   "queues": {
@@ -2162,32 +2154,8 @@
       "step_label": "Подключить скиллы и вскрыть архивы",
       "step": 1,
       "total": 5,
-      "events": 16,
+      "events": 19,
       "trail": [
-        {
-          "ts": 1795684029,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795684029,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684049,
-          "label": "BASH · echo \"=== display"
-        },
-        {
-          "ts": 1795684049,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684058,
-          "label": "SYNC · openai-whisper"
-        },
-        {
-          "ts": 1795684058,
-          "label": "THINK"
-        },
         {
           "ts": 1795684075,
           "label": "BASH · echo \"=== whisper"
@@ -2211,10 +2179,34 @@
         {
           "ts": 1795684110,
           "label": "THINK"
+        },
+        {
+          "ts": 1795684130,
+          "label": "BASH · cat > /home/nyaka"
+        },
+        {
+          "ts": 1795684130,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684165,
+          "label": "BASH · export WINEPREFIX"
+        },
+        {
+          "ts": 1795684165,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684186,
+          "label": "BASH · export WINEPREFIX"
+        },
+        {
+          "ts": 1795684186,
+          "label": "THINK"
         }
       ],
       "started_at": 1795683912,
-      "updated_at": 1795684125
+      "updated_at": 1795684190
     },
     {
       "key": "req-20261126-120732-280492",
@@ -2224,59 +2216,59 @@
       "step_label": "Найти код вкладок мини-апа",
       "step": 1,
       "total": 3,
-      "events": 9,
+      "events": 17,
       "trail": [
         {
-          "ts": 1795684074,
+          "ts": 1795684135,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795684142,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795684142,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684155,
           "label": "BASH · cd /home/nyaka/sh"
         },
         {
-          "ts": 1795684074,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795684074,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684085,
+          "ts": 1795684155,
           "label": "BASH · cd /home/nyaka/sh"
         },
         {
-          "ts": 1795684085,
+          "ts": 1795684155,
+          "label": "BASH · cd /home/nyaka/sc"
+        },
+        {
+          "ts": 1795684155,
           "label": "THINK"
         },
         {
-          "ts": 1795684094,
-          "label": "READ · /home/nyaka/share"
+          "ts": 1795684162,
+          "label": "BASH · cd /home/nyaka/sc"
         },
         {
-          "ts": 1795684100,
-          "label": "READ · /home/nyaka/share"
+          "ts": 1795684170,
+          "label": "READ · /home/nyaka/scrip"
         },
         {
-          "ts": 1795684107,
-          "label": "READ · /home/nyaka/share"
+          "ts": 1795684178,
+          "label": "BASH · ls -la /home/nyak"
         },
         {
-          "ts": 1795684107,
+          "ts": 1795684178,
           "label": "THINK"
         },
         {
-          "ts": 1795684113,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795684125,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
-          "ts": 1795684125,
-          "label": "THINK"
+          "ts": 1795684185,
+          "label": "BASH · ls -la /home/nyak"
         }
       ],
       "started_at": 1795684052,
-      "updated_at": 1795684128
+      "updated_at": 1795684190
     }
   ],
   "bars": [
@@ -2295,6 +2287,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 4.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795684128,
-  "fetched_human": "2026-11-26 12:08:48 +0300"
+  "fetched_at": 1795684191,
+  "fetched_human": "2026-11-26 12:09:51 +0300"
 }
