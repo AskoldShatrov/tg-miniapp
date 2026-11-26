@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T16:24:42+00:00",
-  "generated_human": "26.11 16:24 UTC",
-  "as_of": 1795710281081,
+  "generated": "2026-11-26T16:25:45+00:00",
+  "generated_human": "26.11 16:25 UTC",
+  "as_of": 1795710345214,
   "stale_days": 1,
   "count": 1146,
   "groups": 9,
@@ -42,14 +42,32 @@
     {
      "id": "ses-mNxXm9ZcWS",
      "text": "Дежурная writer-задача для выхода из SCOUT_OPEN. Вход — не чистый лист; прочитай последние артефакты и леджер. Обязательные поля: DELIVERED с путём, TG_MESSAGE_ID, DELIVERY_LOG, VERIFY_CMD, SHA256, MTIME, VERDICT: PASS. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-*.md и выведи PROMISE: DONE после реальной записи.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-c50.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795710277000,
+     "ts": 1795710342000,
      "source": "session",
      "title": "lree-SF-WRITER-STANDING-c50",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795710277000,
+     "as_of": 1795710342000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-V8zPrFbpG3",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15647. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwxpe9bxuz69: C10-28490: закачка top1000 только по dust2 — гейты посчитаны. Где: goals.json · Отчёт ~/overnight/cloud_tracks/C10-28490.md: промежуточный вердикт записан 18:16:24 до зондов; приоритет only-dust2 PASS; 100 демо ~19–20.8 ГБ по заме В конце вызови tools.goals.track({action:'done', id:'gmwxpe9bxuz69', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15647_run28559.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795710332000,
+     "source": "session",
+     "title": "",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d",
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w261120005246de62"
+     ],
+     "as_of": 1795710332000,
      "is_stale": false
     },
     {
@@ -19766,31 +19784,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795572241876,
      "as_of": 1795571672000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-qa2WhLGriA",
-     "text": "Прочитай приложенный файл и проверь каждый пункт чек-листа по правилам в нём. Не спрашивай пользователя, не исправляй файлы.\n1. Скилл grill-me зарегистрирован в OpenCode.\nПроверка: /home/nyaka/.opencode/bin/opencode api get /api/skill | python3 -c \"import json,sys; d=json.load(sys.stdin); print(any(s.get('name')=='grill-me' for s in d['data']))\" — ожидается True.\n2. Файл скилла существует и содержит инструкцию.\nПроверка: test -f /home/nyaka/.config/opencode/skills/grill-me/SKILL.md && grep -c 'grilling' /home/nyaka/.config/opencode/skills/grill-me/SKILL.md — ожидается 1.\n3. Гейм-мод выключен.\nПроверка: python3 /home/nyaka/.config/opencode/skills/game-mode/scripts/game_guard.py status | grep '\"active\": false' — ожидается строка.\n\n\n<file name=\"selfcheck-grill-20261125-022732-prompt.md\">\nТы — независимый верификатор изменений OpenCode. Работай только по приложенному чек-листу.\n\nПравила:\n- Не верь описанию правок от другого агента. Проверяй файлы, команды и API сам.\n- По каждому пункту выполни реальную проверку и выведи строку:\n  `PASS|FAIL|OPEN <пункт> — <команда или путь> — <факт: значение/ошибка>`.\n- PASS — проверка подтверждена; FAIL — подтверждено расхождение;\n  OPEN — проверить объективно нельзя, и ты назвал причину.\n- Ничего не исправляй, не перезапускай сервис, не задавай вопросов пользователю.\n- В конце выведи `ИТОГ: N PASS / M FAIL / K OPEN`. Ответ не длиннее 40 строк.\n\n--- ЧЕК-ЛИСТ (проверь каждый пункт) ---\n1. Скилл grill-me зарегистрирован в OpenCode.\nПроверка: /home/nyaka/.opencode/bin/opencode api get /api/skill | python3 -c \"import json,sys; d=json.load(sys.stdin); print(any(s.get('name')=='grill-me' for s in d['data']))\" — ожидается True.\n2. Файл скилла существует и содержит инструкцию.\nПроверка: test -f /home/nyaka/.config/opencode/skills/grill-me/SKILL.md && grep -c 'grilling' /home/nyaka/.config/opencode/skills/grill-me/SKILL.md — ожидается 1.\n3. Гейм-мод выключен.\nПроверка: python3 /home/nyaka/.config/opencode/skills/game-mode/scripts/game_guard.py status | grep '\"active\": false' — ожидается строка.\n\n</file>",
-     "ts": 1795562852000,
-     "source": "session",
-     "title": "verify:selfcheck-grill:20261125-022732",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w26111909050929f4"
-     ],
-     "answer": "[w26111909050929f4] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
-     "answer_short": "w26111909050929f4: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
-     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
-     "answer_digest": {
-      "length": 2501,
-      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
-     },
-     "answer_text_id": "3d465e048325dc16",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795572241876,
-     "as_of": 1795562852000,
      "is_stale": true
     },
     {
