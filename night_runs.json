@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.24,
-      "remaining_hours": 5.76,
+      "elapsed_hours": 2.26,
+      "remaining_hours": 5.74,
       "progress_pct": 28,
       "cycles": 19,
-      "heartbeat_human": "02:20:04",
+      "heartbeat_human": "02:21:04",
       "tree": {
         "phases": [
           {
@@ -271,11 +271,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.24,
-      "remaining_hours": 5.76,
+      "elapsed_hours": 2.26,
+      "remaining_hours": 5.74,
       "progress_pct": 28,
-      "cycles": 27,
-      "heartbeat_human": "02:20:03",
+      "cycles": 28,
+      "heartbeat_human": "02:21:03",
       "tree": {
         "phases": [
           {
@@ -326,9 +326,9 @@
           {
             "id": "SF-PRESENT-DECK",
             "title": "Презентация: 6-8 слайдов и постер",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 0,
             "verified": false
           },
@@ -612,15 +612,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:20:34",
+            "cycle": 28,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 37,
-          "mutations": 36
+          "version": 38,
+          "mutations": 37
         },
-        "events": 27,
+        "events": 28,
         "avg_score": 3.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -628,11 +636,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.24,
-      "remaining_hours": 5.76,
+      "elapsed_hours": 2.26,
+      "remaining_hours": 5.74,
       "progress_pct": 28,
-      "cycles": 21,
-      "heartbeat_human": "02:20:03",
+      "cycles": 22,
+      "heartbeat_human": "02:21:03",
       "tree": {
         "phases": [
           {
@@ -674,9 +682,9 @@
           {
             "id": "UNI-META-REFLECT",
             "title": "Метарефлексия трёх уровней",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "WARMUP",
+            "last": "PROMOTE",
             "score": 5,
             "verified": false
           },
@@ -912,19 +920,27 @@
             "action": "WARMUP",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:21:11",
+            "cycle": 22,
+            "task": "UNI-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 21,
+        "events": 22,
         "avg_score": 4.8,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795735211,
-  "fetched_human": "2026-11-27 02:20:11 +0300"
+  "fetched_at": 1795735278,
+  "fetched_human": "2026-11-27 02:21:18 +0300"
 }
