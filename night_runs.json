@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.41,
-      "remaining_hours": 6.59,
+      "elapsed_hours": 1.42,
+      "remaining_hours": 6.58,
       "progress_pct": 18,
-      "cycles": 12,
-      "heartbeat_human": "01:30:07",
+      "cycles": 13,
+      "heartbeat_human": "01:31:07",
       "tree": {
         "phases": [
           {
@@ -33,10 +33,10 @@
           {
             "id": "IMP-SYS-DSH",
             "title": "Инспекция DSH за 7 дней",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
             "last": "PROMOTE",
-            "score": 4,
+            "score": 5,
             "verified": false
           },
           {
@@ -199,15 +199,23 @@
             "action": "PROMOTE",
             "score": 4,
             "note": "verify rc=1: match: declared=cab5b8f8a5ee actual=b540ac9597ef; MTIME unparseable; missing "
+          },
+          {
+            "clock": "01:31:03",
+            "cycle": 13,
+            "task": "IMP-SYS-DSH",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 12,
+        "events": 13,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -215,11 +223,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.41,
-      "remaining_hours": 6.59,
+      "elapsed_hours": 1.42,
+      "remaining_hours": 6.58,
       "progress_pct": 18,
-      "cycles": 6,
-      "heartbeat_human": "01:30:07",
+      "cycles": 7,
+      "heartbeat_human": "01:31:07",
       "tree": {
         "phases": [
           {
@@ -234,11 +242,11 @@
           {
             "id": "SF-KF-MAIN-GATE",
             "title": "Kill feed как главный гейт",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "WARMUP",
-            "score": 7,
-            "verified": true
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
           },
           {
             "id": "SF-ECONOMY-STRIP",
@@ -388,15 +396,23 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "01:30:58",
+            "cycle": 7,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "verify rc=1: 26/artifacts/SF-KF-MAIN-GATE-c7.md MTIME unparseable; missing SOURCE: HLAE_De"
           }
         ],
         "strategy": {
-          "version": 20,
-          "mutations": 19
+          "version": 21,
+          "mutations": 20
         },
-        "events": 6,
+        "events": 7,
         "avg_score": 3.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -404,11 +420,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.41,
-      "remaining_hours": 6.59,
+      "elapsed_hours": 1.42,
+      "remaining_hours": 6.58,
       "progress_pct": 18,
       "cycles": 13,
-      "heartbeat_human": "01:30:07",
+      "heartbeat_human": "01:31:07",
       "tree": {
         "phases": [
           {
@@ -637,6 +653,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795732211,
-  "fetched_human": "2026-11-27 01:30:11 +0300"
+  "fetched_at": 1795732274,
+  "fetched_human": "2026-11-27 01:31:14 +0300"
 }
