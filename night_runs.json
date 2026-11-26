@@ -5,27 +5,27 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.36,
-      "remaining_hours": 7.64,
-      "progress_pct": 4,
-      "cycles": 4,
-      "heartbeat_human": "14:31:05",
+      "elapsed_hours": 0.37,
+      "remaining_hours": 7.63,
+      "progress_pct": 5,
+      "cycles": 5,
+      "heartbeat_human": "14:32:05",
       "tree": {
         "phases": [
           {
-            "id": "IMP-PRIOR-INTAKE",
-            "title": "Приём интервью и наработок по улучшению",
-            "cycles": 2,
-            "max": 2,
+            "id": "IMP-UX-AUDIT",
+            "title": "Эргономика чата и мини-апа",
+            "cycles": 3,
+            "max": 3,
             "last": "MUTATE",
             "score": 7,
             "verified": true
           },
           {
-            "id": "IMP-UX-AUDIT",
-            "title": "Эргономика чата и мини-апа",
+            "id": "IMP-PRIOR-INTAKE",
+            "title": "Приём интервью и наработок по улучшению",
             "cycles": 2,
-            "max": 3,
+            "max": 2,
             "last": "MUTATE",
             "score": 7,
             "verified": true
@@ -126,13 +126,21 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "14:32:04",
+            "cycle": 5,
+            "task": "IMP-UX-AUDIT",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 4,
+        "events": 5,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -142,11 +150,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.36,
-      "remaining_hours": 7.64,
-      "progress_pct": 4,
+      "elapsed_hours": 0.37,
+      "remaining_hours": 7.63,
+      "progress_pct": 5,
       "cycles": 1,
-      "heartbeat_human": "14:31:05",
+      "heartbeat_human": "14:32:05",
       "tree": {
         "phases": [
           {
@@ -282,13 +290,22 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.36,
-      "remaining_hours": 7.64,
-      "progress_pct": 4,
-      "cycles": 4,
-      "heartbeat_human": "14:31:05",
+      "elapsed_hours": 0.37,
+      "remaining_hours": 7.63,
+      "progress_pct": 5,
+      "cycles": 5,
+      "heartbeat_human": "14:32:05",
       "tree": {
         "phases": [
+          {
+            "id": "UNI-MVS-WINE",
+            "title": "Моделирование систем: MvStudium под Wine",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          },
           {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
@@ -297,15 +314,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-MVS-WINE",
-            "title": "Моделирование систем: MvStudium под Wine",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
           },
           {
             "id": "UNI-PID-CALIB",
@@ -394,19 +402,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "14:32:18",
+            "cycle": 5,
+            "task": "UNI-MVS-WINE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 3,
-          "mutations": 2
+          "version": 4,
+          "mutations": 3
         },
-        "events": 4,
+        "events": 5,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795692694,
-  "fetched_human": "2026-11-26 14:31:34 +0300"
+  "fetched_at": 1795692754,
+  "fetched_human": "2026-11-26 14:32:34 +0300"
 }
