@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2310,
+      "age_min": 2311,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2332,
+      "age_min": 2333,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,39 +2068,47 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2332,
+      "age_min": 2333,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-df0bb405",
-      "title": "Сводка вопросов и проблем за неделю",
-      "source": "dsh",
-      "claimed_human": "10:38:40",
-      "age_min": 0,
-      "full": "Сводка вопросов и проблем за неделю"
-    },
-    {
-      "id": "session-23b4bb42",
-      "title": "Ночная автономная работа над сканфидом",
-      "source": "dsh",
-      "claimed_human": "10:38:39",
-      "age_min": 0,
-      "full": "Ночная автономная работа над сканфидом"
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
-      "claimed_human": "10:38:32",
+      "claimed_human": "10:39:40",
       "age_min": 0,
       "full": "Активный сеанс DSH с проверками"
+    },
+    {
+      "id": "session-23b4bb42",
+      "title": "Ночная автономная работа над сканфидом",
+      "source": "dsh",
+      "claimed_human": "10:39:38",
+      "age_min": 0,
+      "full": "Ночная автономная работа над сканфидом"
+    },
+    {
+      "id": "session-74b6facf",
+      "title": "Строгий захват кадра матча CS2",
+      "source": "dsh",
+      "claimed_human": "10:39:38",
+      "age_min": 0,
+      "full": "Строгий захват кадра матча CS2"
+    },
+    {
+      "id": "session-df0bb405",
+      "title": "Сводка вопросов и проблем за неделю",
+      "source": "dsh",
+      "claimed_human": "10:39:37",
+      "age_min": 0,
+      "full": "Сводка вопросов и проблем за неделю"
     },
     {
       "id": "session-0cb1409a",
       "title": "Строгий артефакт оверлея реального матча",
       "source": "dsh",
       "claimed_human": "10:38:20",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Строгий артефакт оверлея реального матча"
     },
     {
@@ -2108,7 +2116,7 @@
       "title": "Проверка двух ночных прогонов",
       "source": "dsh",
       "claimed_human": "10:38:18",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Проверка двух ночных прогонов"
     }
   ],
@@ -2138,7 +2146,7 @@
       "step_label": "собрать данные ночных прогонов",
       "step": 1,
       "total": 3,
-      "events": 4,
+      "events": 6,
       "trail": [
         {
           "ts": 1795678552,
@@ -2167,10 +2175,22 @@
         {
           "ts": 1795678683,
           "label": "THINK"
+        },
+        {
+          "ts": 1795678720,
+          "label": "EDIT · /home/nyaka/share"
+        },
+        {
+          "ts": 1795678720,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795678765,
+          "label": "EDIT · /home/nyaka/share"
         }
       ],
       "started_at": 1795678517,
-      "updated_at": 1795678719
+      "updated_at": 1795678782
     }
   ],
   "bars": [
@@ -2189,6 +2209,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 3.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795678721,
-  "fetched_human": "2026-11-26 10:38:41 +0300"
+  "fetched_at": 1795678782,
+  "fetched_human": "2026-11-26 10:39:42 +0300"
 }
