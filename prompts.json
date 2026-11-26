@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T12:11:00+00:00",
-  "generated_human": "26.11 12:11 UTC",
-  "as_of": 1795695060268,
+  "generated": "2026-11-26T12:12:05+00:00",
+  "generated_human": "26.11 12:12 UTC",
+  "as_of": 1795695125323,
   "stale_days": 1,
   "count": 1092,
   "groups": 9,
@@ -40,24 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-1tPnJYYkvJ",
-     "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Покрытие ников и совпадение раундов; поля KF_NAMES и KF_ROUNDS с числами и источником. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: загрузи skill image-read, выполни describe_image.py + read_image по кадру и запиши VISION_GATE с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent через vision_gate.py; без VISION_GATE гейт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695053000,
-     "source": "session",
-     "title": "lree-SF-KF-MAIN-GATE-c4",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w2611200052460530"
-     ],
-     "as_of": 1795695053000,
-     "is_stale": false
-    },
-    {
      "id": "ses-7Fe84oLxlJ",
      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795695043000,
+     "ts": 1795695122000,
      "source": "session",
      "title": "Малый радар spectator/overview в FACEIT-демо",
      "source_label": "ноут",
@@ -68,7 +53,22 @@
       "w2611200052460530",
       "w2611200052465da0"
      ],
-     "as_of": 1795695043000,
+     "as_of": 1795695122000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-1tPnJYYkvJ",
+     "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Покрытие ников и совпадение раундов; поля KF_NAMES и KF_ROUNDS с числами и источником. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: загрузи skill image-read, выполни describe_image.py + read_image по кадру и запиши VISION_GATE с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent через vision_gate.py; без VISION_GATE гейт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795695116000,
+     "source": "session",
+     "title": "lree-SF-KF-MAIN-GATE-c4",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w2611200052460530"
+     ],
+     "as_of": 1795695116000,
      "is_stale": false
     },
     {
@@ -4036,29 +4036,6 @@
      "is_stale": true
     },
     {
-     "id": "ses-i1j0VQJRjn",
-     "text": "Шаг S4 плана /home/nyaka/overnight/SCANFEED-RECOGNITION-PLAN.md. Дождаться вердикта гейта P0-3, получить REAL кадры с FP>0 (SYNTHETIC в REAL агрегат не пускать), провести Platt/изотоническую калибровку с holdout по match_id. В артефакт: FP, ECE до/после, CI, утечки, VERDICT с порогом 0.05.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/longrun-1124-10h/artifacts/SF-S4-ECE-c67.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795550346000,
-     "source": "session",
-     "title": "lree-SF-S4-ECE-c67",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-i1j0VQJRjn] ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чин",
-     "answer_short": "ses-i1j0VQJRjn: ❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMO",
-     "answer_full": "❓ **Q1** - **Rich-сообщения**: код `sendRichMessage` и `REMOTE_RICH` есть, но в живых логах `HTTP 400` и `429` с откатом на plain, успешной rich-доставки нет. Оставляем rich режимом по умолчанию и чиним fallback отдельной задачей после интервью? Либо ставим `REMOTE_RICH=0` до починки, либо убираем rich совсем.\n\n➡️ Оставляем rich по умолчанию, чиним fallback отдельной задачей.\n\n---\n\n❓ **Q2** - **Цвета и фон**: палитра Catppuccin Mocha есть и в мини-апе, и в `show-in-answer`, рендерер `human_answer.py` работает. Объявляем её единым стандартом для мини-апа, ответов и бота? Либо оставляем каждой поверхности свою палитру.\n\n➡️ Единый стандарт — Catppuccin Mocha.\n\n---\n\n❓ **Q3** - **Мини-ап и статус игры**: локально и на Pages `HTTP 200`, данные свежие, но `status.json` одновременно содержит `game_mode: false` и `game_reason` про игру. Считаем это устаревшим полем и правим отдельно? Либо блокируем интервью до исправления, либо меняем смысл полей.\n\n➡️ Считаем устаревшим полем; формулировку «игра идёт» не используем.\n\n---\n\n❓ **Q4** - **Inventors**: `401 Invalid or expired session`, ключа и cookies нет. Держим как замороженную идею без активных решений до восстановления доступа? Либо восстанавливаем доступ сейчас (нужна твоя авторизация в браузере), либо убираем из скоупа.\n\n➡️ Заморозить до восстановления доступа.\n\n---\n\n❓ **Q5** - **OpenCode**: через мост `:8907` вызов вернул `200 OK`, но CLI в PATH отсутствует и MCP-мост падает. После интервью чиним CLI и MCP-мост? Либо работаем только через `:8907`, либо не трогаем.\n\n➡️ Починить CLI и MCP-мост отдельной задачей.\n\n---\n\n❓ **Q6** - **Сканфид и демопарсер**: у сканфида свежий отчёт 03:41:47 и валидный JSON, у демопарсера 141 + 37 демок, но новейший демо-артефакт от 19.11. Фиксируем OPEN и возобновляем парсинг на ПК отдельной задачей? Либо считать инвентарь достаточным, либо закрыть пункты как сделанные.\n\n➡️ Зафиксировать OPEN, парсинг возобновить отдельной задачей.\n\n---\n\n❓ **Q7** - **pc-bridge**: round-trip прошёл, `done 5451→5453`, состояние DEGRADED по доктрине норма. Принимаем как рабочее состояние и воркер не трогаем? Либо чиним телеметрию.\n\n➡️ Принимаем DEGRADED, ничего не перезапускаем.\n\n---\n\n❓ **Q8** - **Фиксация**: отдельный файл-итог в папке сессии — таблица «пункт → факт → решение → владелец → OPEN»? Либо обновляем `CURRENT-HANDOFF.md`, либо فقط чат.\n\n➡️ Отдельный файл-итог, handoff не перезаписываем.\n\n---\n\nОтветь здесь же: «да» по всем принимает рекомендации, или дай свой вариант по любому пункту. Жду ответа.",
-     "answer_digest": {
-      "length": 2501,
-      "sha256": "3d465e048325dc16390c50b828b6928c100c46c0af78174b82ac6b928ac94394"
-     },
-     "answer_text_id": "3d465e048325dc16",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795572241876,
-     "as_of": 1795550346000,
-     "is_stale": true
-    },
-    {
      "id": "tg-20261122111945",
      "text": "А еще можно бутырку добавить к контейнеру и паше технику.\nА можешь, я не знаю, сделать так, чтобы во время игры в казино играл какой-нибудь рандомный трек-контейнер, вот, чтобы была быстрая скачка там трека-контейнера, вот, и чтобы, типа, там еще где-нибудь был какой-нибудь там цитатник Паша Техника, чтобы там выигрышем в казино была рандомная цитата Паша Техника.\nПлюс, соответственно, по сканфиду работа идет, калибровка, типа, можешь, пожалуйста, ну, типа, визуально сказать и меня заверить, что, ну, типа, если идет, то будет идти и дальше, типа, там куча часов подряд, потому что, вот, например, я сейчас спать лягу, я хочу, чтобы сканфид, ну, типа, максимально долго делался, потому что, ну, по факту, типа, для сканфида очень важно для, вот, сканфида экономики оверлея обучиться на выборке и прийти, ну, почти гарантированно,\nДля бутырки и паши техника ты можешь сделать какое-нибудь всплывающее окно, нажимая согласно, вы подтверждаете, что будет установлен трек бутырка, аттестат или любой трек паши техника и проигран.",
      "ts": 1795335712000,
@@ -4189,7 +4166,7 @@
     {
      "id": "ses-4Qq9GkxvX0",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. IDEAS>=30, HYPOTHESES>=3, THRESHOLD и HOLDOUT. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-c12.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695049000,
+     "ts": 1795695120000,
      "source": "session",
      "title": "lree-IMP-HYPOTHESIS-DIVERGE-c12",
      "source_label": "ноут",
@@ -4198,7 +4175,22 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795695049000,
+     "as_of": 1795695120000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-s4GK2XXQpM",
+     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. IDEAS>=30, HYPOTHESES>=3, THRESHOLD и HOLDOUT до критики. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-HYPOTHESIS-DIVERGE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-HYPOTHESIS-DIVERGE-c11.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795695119000,
+     "source": "session",
+     "title": "lree-UNI-HYPOTHESIS-DIVERGE-c11",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261121055339bfc8"
+     ],
+     "as_of": 1795695119000,
      "is_stale": false
     },
     {
