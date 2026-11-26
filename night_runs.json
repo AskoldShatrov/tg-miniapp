@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.32,
-      "remaining_hours": 3.68,
+      "elapsed_hours": 4.33,
+      "remaining_hours": 3.67,
       "progress_pct": 54,
-      "cycles": 36,
-      "heartbeat_human": "18:28:49",
+      "cycles": 37,
+      "heartbeat_human": "18:29:49",
       "tree": {
         "phases": [
           {
@@ -17,6 +17,15 @@
             "title": "Writer: сделай + доставь + проверь доставку",
             "cycles": 4,
             "max": 4,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "SF-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 4,
+            "max": 20,
             "last": "MUTATE",
             "score": 7,
             "verified": true
@@ -83,15 +92,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 3,
-            "max": 20,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "SF-DEATHTICK-INDEP",
@@ -418,19 +418,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "18:29:30",
+            "cycle": 37,
+            "task": "SF-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 36,
+        "events": 37,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795706946,
-  "fetched_human": "2026-11-26 18:29:06 +0300"
+  "fetched_at": 1795707011,
+  "fetched_human": "2026-11-26 18:30:11 +0300"
 }

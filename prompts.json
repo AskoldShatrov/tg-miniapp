@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T15:29:05+00:00",
-  "generated_human": "26.11 15:29 UTC",
-  "as_of": 1795706945205,
+  "generated": "2026-11-26T15:30:10+00:00",
+  "generated_human": "26.11 15:30 UTC",
+  "as_of": 1795707010209,
   "stale_days": 1,
   "count": 1144,
   "groups": 9,
@@ -40,22 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-vC4q60A2v8",
-     "text": "Дежурная writer-задача для выхода из SCOUT_OPEN. Вход — не чистый лист; прочитай последние артефакты и леджер. Обязательные поля: DELIVERED с путём, TG_MESSAGE_ID, DELIVERY_LOG, VERIFY_CMD, SHA256, MTIME, VERDICT: PASS. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-*.md и выведи PROMISE: DONE после реальной записи.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-c37.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795706940000,
-     "source": "session",
-     "title": "lree-SF-WRITER-STANDING-c37",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795706940000,
-     "is_stale": false
-    },
-    {
      "id": "ses-sZ9tjpO4vO",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15647. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwxpe9bxuz69: C10-28490: закачка top1000 только по dust2 — гейты посчитаны. Где: goals.json · Отчёт ~/overnight/cloud_tracks/C10-28490.md: промежуточный вердикт записан 18:16:24 до зондов; приоритет only-dust2 PASS; 100 демо ~19–20.8 ГБ по заме В конце вызови tools.goals.track({action:'done', id:'gmwxpe9bxuz69', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15647_run28515.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795706904000,
+     "ts": 1795706976000,
      "source": "session",
      "title": "",
      "source_label": "ноут",
@@ -67,7 +54,20 @@
       "w2611200052460530",
       "w261120005246de62"
      ],
-     "as_of": 1795706904000,
+     "as_of": 1795706976000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-vC4q60A2v8",
+     "text": "Дежурная writer-задача для выхода из SCOUT_OPEN. Вход — не чистый лист; прочитай последние артефакты и леджер. Обязательные поля: DELIVERED с путём, TG_MESSAGE_ID, DELIVERY_LOG, VERIFY_CMD, SHA256, MTIME, VERDICT: PASS. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-*.md и выведи PROMISE: DONE после реальной записи.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-c37.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795706970000,
+     "source": "session",
+     "title": "lree-SF-WRITER-STANDING-c37",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795706970000,
      "is_stale": false
     },
     {
