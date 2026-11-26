@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-26T17:10:47+00:00",
-  "generated_human": "26.11 17:10 UTC",
-  "as_of": 1795713046079,
+  "generated": "2026-11-26T17:11:45+00:00",
+  "generated_human": "26.11 17:11 UTC",
+  "as_of": 1795713105193,
   "stale_days": 1,
-  "count": 1149,
+  "count": 1150,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -42,7 +42,7 @@
     {
      "id": "ses-8wBnMmWioU",
      "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795713029000,
+     "ts": 1795713101000,
      "source": "session",
      "title": "Калибровка confidence в S01-scanfeed-real60.md",
      "source_label": "ноут",
@@ -54,7 +54,25 @@
       "w2611200052468b4b",
       "w261120005246135d"
      ],
-     "as_of": 1795713029000,
+     "as_of": 1795713101000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-MUlSWTjIyF",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15648. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwxt5nebk7cp: S01SL-REAL60-R4: REAL-60, 12/12 гейтов PASS, T4-BRK OPEN. Где: goals.json · 26.11.2026. Отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md, артефакт S01SL-results.json. 200 новых кадров / 20 dust2 матчей, FP=258, ECE quality В конце вызови tools.goals.track({action:'done', id:'gmwxt5nebk7cp', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15648_run28559.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795713100000,
+     "source": "session",
+     "title": "Проверка гипотезы AU15648",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d",
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w261120005246413c"
+     ],
+     "as_of": 1795713100000,
      "is_stale": false
     },
     {
