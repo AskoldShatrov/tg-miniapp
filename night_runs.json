@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.44,
-      "remaining_hours": 4.56,
+      "elapsed_hours": 3.45,
+      "remaining_hours": 4.55,
       "progress_pct": 43,
-      "cycles": 33,
-      "heartbeat_human": "12:30:00",
+      "cycles": 34,
+      "heartbeat_human": "12:31:00",
       "tree": {
         "phases": [
           {
@@ -42,9 +42,9 @@
           {
             "id": "T04-MINIAPP-UX",
             "title": "Эргономика чата и мини-апа",
-            "cycles": 7,
+            "cycles": 8,
             "max": 10,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 2,
             "verified": false
           },
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:35:05",
-            "cycle": 26,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
           {
             "clock": "08:42:06",
             "cycle": 27,
@@ -131,15 +123,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 2,
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "09:30:53",
+            "cycle": 34,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           }
         ],
         "strategy": {
-          "version": 28,
-          "mutations": 27
+          "version": 29,
+          "mutations": 28
         },
-        "events": 33,
+        "events": 34,
         "avg_score": 2.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.15,
-      "remaining_hours": 8.0,
+      "elapsed_hours": 3.17,
+      "remaining_hours": 7.98,
       "progress_pct": 28,
-      "cycles": 26,
-      "heartbeat_human": "12:29:45",
+      "cycles": 27,
+      "heartbeat_human": "12:30:45",
       "tree": {
         "phases": [
           {
@@ -229,14 +229,6 @@
         ],
         "trail": [
           {
-            "clock": "09:07:44",
-            "cycle": 19,
-            "task": "SF-MORNING-DIGEST",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-MORNING-DIGEST-*.md"
-          },
-          {
             "clock": "09:08:44",
             "cycle": 20,
             "task": "SCOUT_OPEN",
@@ -291,19 +283,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос parser"
+          },
+          {
+            "clock": "09:30:45",
+            "cycle": 27,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
           }
         ],
         "strategy": {
-          "version": 20,
-          "mutations": 19
+          "version": 21,
+          "mutations": 20
         },
-        "events": 26,
+        "events": 27,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795685411,
-  "fetched_human": "2026-11-26 12:30:11 +0300"
+  "fetched_at": 1795685471,
+  "fetched_human": "2026-11-26 12:31:11 +0300"
 }
