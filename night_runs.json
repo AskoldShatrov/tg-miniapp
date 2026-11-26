@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.26,
-      "remaining_hours": 5.74,
+      "elapsed_hours": 2.27,
+      "remaining_hours": 5.73,
       "progress_pct": 28,
-      "cycles": 29,
-      "heartbeat_human": "16:25:19",
+      "cycles": 30,
+      "heartbeat_human": "16:26:19",
       "tree": {
         "phases": [
           {
@@ -326,13 +326,21 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос inspection"
+          },
+          {
+            "clock": "16:25:49",
+            "cycle": 30,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 6,
           "mutations": 5
         },
-        "events": 29,
+        "events": 30,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -342,11 +350,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.26,
-      "remaining_hours": 5.74,
+      "elapsed_hours": 2.27,
+      "remaining_hours": 5.73,
       "progress_pct": 28,
       "cycles": 15,
-      "heartbeat_human": "16:25:19",
+      "heartbeat_human": "16:26:19",
       "tree": {
         "phases": [
           {
@@ -594,11 +602,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.26,
-      "remaining_hours": 5.74,
+      "elapsed_hours": 2.27,
+      "remaining_hours": 5.73,
       "progress_pct": 28,
-      "cycles": 26,
-      "heartbeat_human": "16:25:19",
+      "cycles": 27,
+      "heartbeat_human": "16:26:19",
       "tree": {
         "phases": [
           {
@@ -656,6 +664,15 @@
             "verified": false
           },
           {
+            "id": "UNI-KP",
+            "title": "Курсовая: LaTeX и блок-схема",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
             "cycles": 2,
@@ -681,15 +698,6 @@
             "last": "MUTATE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "UNI-KP",
-            "title": "Курсовая: LaTeX и блок-схема",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
           },
           {
             "id": "UNI-VOICE",
@@ -909,19 +917,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: ness/default-workspace/night-runs/university-1126/artifacts/UNI-KP-c26.md mis"
+          },
+          {
+            "clock": "16:25:56",
+            "cycle": 27,
+            "task": "UNI-KP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: ness/default-workspace/night-runs/university-1126/artifacts/UNI-KP-c27.md mis"
           }
         ],
         "strategy": {
-          "version": 8,
-          "mutations": 7
+          "version": 9,
+          "mutations": 8
         },
-        "events": 26,
+        "events": 27,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795699524,
-  "fetched_human": "2026-11-26 16:25:24 +0300"
+  "fetched_at": 1795699586,
+  "fetched_human": "2026-11-26 16:26:26 +0300"
 }
