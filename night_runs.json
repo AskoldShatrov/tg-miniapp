@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.68,
-      "remaining_hours": 6.32,
+      "elapsed_hours": 1.69,
+      "remaining_hours": 6.31,
       "progress_pct": 21,
       "cycles": 15,
-      "heartbeat_human": "01:46:07",
+      "heartbeat_human": "01:47:07",
       "tree": {
         "phases": [
           {
@@ -239,11 +239,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.68,
-      "remaining_hours": 6.32,
+      "elapsed_hours": 1.69,
+      "remaining_hours": 6.31,
       "progress_pct": 21,
-      "cycles": 7,
-      "heartbeat_human": "01:46:07",
+      "cycles": 8,
+      "heartbeat_human": "01:47:07",
       "tree": {
         "phases": [
           {
@@ -258,10 +258,10 @@
           {
             "id": "SF-KF-MAIN-GATE",
             "title": "Kill feed как главный гейт",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
             "last": "MUTATE",
-            "score": 2,
+            "score": 3,
             "verified": false
           },
           {
@@ -420,15 +420,23 @@
             "action": "MUTATE",
             "score": 2,
             "note": "verify rc=1: 26/artifacts/SF-KF-MAIN-GATE-c7.md MTIME unparseable; missing SOURCE: HLAE_De"
+          },
+          {
+            "clock": "01:46:58",
+            "cycle": 8,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 3,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
-          "version": 21,
-          "mutations": 20
+          "version": 22,
+          "mutations": 21
         },
-        "events": 7,
+        "events": 8,
         "avg_score": 3.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -436,11 +444,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.68,
-      "remaining_hours": 6.32,
+      "elapsed_hours": 1.69,
+      "remaining_hours": 6.31,
       "progress_pct": 21,
       "cycles": 16,
-      "heartbeat_human": "01:46:07",
+      "heartbeat_human": "01:47:07",
       "tree": {
         "phases": [
           {
@@ -693,6 +701,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795733182,
-  "fetched_human": "2026-11-27 01:46:22 +0300"
+  "fetched_at": 1795733246,
+  "fetched_human": "2026-11-27 01:47:26 +0300"
 }
