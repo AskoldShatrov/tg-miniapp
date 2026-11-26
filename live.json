@@ -2075,19 +2075,11 @@
   ],
   "active": [
     {
-      "id": "AU15677",
-      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611242241110144: Заменить бредовый ответ с traceback нормальным ответом стрелкой",
-      "source": "ноут",
-      "claimed_human": "23:09:51",
-      "age_min": 59,
-      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611242241110144: Заменить бредовый ответ с traceback нормальным ответом стрелкой"
-    },
-    {
       "id": "T29/T29.4",
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 3121,
+      "age_min": 3122,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2095,7 +2087,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 3143,
+      "age_min": 3144,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2103,7 +2095,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 3143,
+      "age_min": 3144,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
@@ -2111,7 +2103,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 591,
+      "age_min": 592,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2119,7 +2111,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 591,
+      "age_min": 592,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2127,31 +2119,39 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 591,
+      "age_min": 592,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
+    },
+    {
+      "id": "AU15676",
+      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611242240251e66: Заменить сырой traceback резервного канала нормальным ответом",
+      "source": "ноут",
+      "claimed_human": "00:10:45",
+      "age_min": 0,
+      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611242240251e66: Заменить сырой traceback резервного канала нормальным ответом"
+    },
+    {
+      "id": "2e286f90-4780-49",
+      "title": "Ты — свежий куратор т",
+      "source": "dsh",
+      "claimed_human": "00:10:07",
+      "age_min": 0,
+      "full": "Ты — свежий куратор т"
     },
     {
       "id": "AU15675",
       "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124223747ba64: Ответить на вопрос о починке тулов и состоянии batch",
       "source": "ноут",
       "claimed_human": "00:09:45",
-      "age_min": 0,
+      "age_min": 1,
       "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124223747ba64: Ответить на вопрос о починке тулов и состоянии batch"
-    },
-    {
-      "id": "2e286f90-4780-49",
-      "title": "Ты — свежий куратор т",
-      "source": "dsh",
-      "claimed_human": "00:09:44",
-      "age_min": 0,
-      "full": "Ты — свежий куратор т"
     },
     {
       "id": "AU15674",
       "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124221213a583: Исправить TypeError при ответе на сообщение 22:05 и доставить ответ по INVENTO",
       "source": "ноут",
       "claimed_human": "00:09:34",
-      "age_min": 0,
+      "age_min": 1,
       "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124221213a583: Исправить TypeError при ответе на сообщение 22:05 и доставить ответ по INVENTO"
     },
     {
@@ -2159,7 +2159,7 @@
       "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124214938bbad: Ответить на сообщение 21:35: старый ответ был не реплай, исправлено",
       "source": "ноут",
       "claimed_human": "00:08:45",
-      "age_min": 1,
+      "age_min": 2,
       "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124214938bbad: Ответить на сообщение 21:35: старый ответ был не реплай, исправлено"
     },
     {
@@ -2167,41 +2167,24 @@
       "title": "Ночной прогон без прогресса демки",
       "source": "dsh",
       "claimed_human": "00:07:37",
-      "age_min": 2,
-      "full": "Ночной прогон без прогресса демки"
-    },
-    {
-      "id": "AU15687",
-      "title": "ДОВЕСТИ ЦЕЛЬ gmwy1lz1tr4dy: AU15658 — хотелка w2611200241431d95: деплой подтверждён, доставка OPEN",
-      "source": "ноут",
-      "claimed_human": "00:07:05",
-      "age_min": 2,
-      "full": "ДОВЕСТИ ЦЕЛЬ gmwy1lz1tr4dy: AU15658 — хотелка w2611200241431d95: деплой подтверждён, доставка OPEN",
-      "autogen": true
-    },
-    {
-      "id": "AU15668",
-      "title": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112002435610ee: Запускать агента-критика для проверки ответа перед отправкой в TG",
-      "source": "ноут",
-      "claimed_human": "00:06:41",
       "age_min": 3,
-      "full": "РЕАЛИЗОВАТЬ ХОТЕЛКУ w26112002435610ee: Запускать агента-критика для проверки ответа перед отправкой в TG"
+      "full": "Ночной прогон без прогресса демки"
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
       "claimed_human": "00:01:33",
-      "age_min": 8,
+      "age_min": 9,
       "full": "Активный сеанс DSH с проверками"
     }
   ],
   "queues": {
     "ноут": {
-      "done": 1567,
+      "done": 1569,
       "failed": 159,
       "unknown": 1,
-      "doing": 6,
+      "doing": 4,
       "todo": 1
     },
     "ПК": {
@@ -2225,32 +2208,8 @@
       "step_label": "СВЯЗАТЬ_С_СИСТЕМОЙ_И_ПОЛЬЗА",
       "step": 3,
       "total": 5,
-      "events": 67,
+      "events": 72,
       "trail": [
-        {
-          "ts": 1795727006,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795727016,
-          "label": "BASH · sha256sum /tmp/op"
-        },
-        {
-          "ts": 1795727017,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795727046,
-          "label": "WRITE · /home/nyaka/docs"
-        },
-        {
-          "ts": 1795727048,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795727055,
-          "label": "BASH · cat /tmp/opencode"
-        },
         {
           "ts": 1795727055,
           "label": "THINK"
@@ -2418,10 +2377,34 @@
         {
           "ts": 1795727385,
           "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795727395,
+          "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795727405,
+          "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795727420,
+          "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795727420,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795727440,
+          "label": "EDIT · /home/nyaka/docs/"
+        },
+        {
+          "ts": 1795727440,
+          "label": "THINK"
         }
       ],
       "started_at": 1795726527,
-      "updated_at": 1795727385
+      "updated_at": 1795727444
     }
   ],
   "bars": [
@@ -2470,6 +2453,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 9.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795727386,
-  "fetched_human": "2026-11-27 00:09:46 +0300"
+  "fetched_at": 1795727446,
+  "fetched_human": "2026-11-27 00:10:46 +0300"
 }
