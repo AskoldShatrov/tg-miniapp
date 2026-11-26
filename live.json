@@ -1950,7 +1950,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2017,
+      "age_min": 2018,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -1958,7 +1958,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2038,
+      "age_min": 2039,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -1966,15 +1966,23 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2039,
+      "age_min": 2040,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-b74f203c",
+      "title": "Запуск демки сканфида без остановки",
+      "source": "dsh",
+      "claimed_human": "05:46:10",
+      "age_min": 0,
+      "full": "Запуск демки сканфида без остановки"
     },
     {
       "id": "session-aca1061f",
       "title": "я просил проанализири",
       "source": "dsh",
       "claimed_human": "05:41:55",
-      "age_min": 3,
+      "age_min": 4,
       "full": "я просил проанализири"
     },
     {
@@ -1982,7 +1990,7 @@
       "title": "Полноэкранный режим КС 2 и блэкбары",
       "source": "dsh",
       "claimed_human": "05:41:38",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Полноэкранный режим КС 2 и блэкбары"
     },
     {
@@ -1990,7 +1998,7 @@
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
       "claimed_human": "05:37:23",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Остановка непрерывной работы над CS2"
     },
     {
@@ -1998,24 +2006,8 @@
       "title": "Непрерывная ночная работа со сканфидом",
       "source": "dsh",
       "claimed_human": "05:37:20",
-      "age_min": 7,
-      "full": "Непрерывная ночная работа со сканфидом"
-    },
-    {
-      "id": "session-b74f203c",
-      "title": "Запуск демки сканфида без остановки",
-      "source": "dsh",
-      "claimed_human": "05:37:10",
-      "age_min": 8,
-      "full": "Запуск демки сканфида без остановки"
-    },
-    {
-      "id": "session-d18e8af1",
-      "title": "у мэтпока есть скилл и",
-      "source": "dsh",
-      "claimed_human": "05:36:17",
       "age_min": 9,
-      "full": "у мэтпока есть скилл и"
+      "full": "Непрерывная ночная работа со сканфидом"
     }
   ],
   "queues": {
@@ -2044,24 +2036,8 @@
       "step_label": "показать постером в чат",
       "step": 4,
       "total": 4,
-      "events": 62,
+      "events": 65,
       "trail": [
-        {
-          "ts": 1795661015,
-          "label": "BASH · echo \"TG_REQUEST_"
-        },
-        {
-          "ts": 1795661015,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795661037,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
-          "ts": 1795661037,
-          "label": "THINK"
-        },
         {
           "ts": 1795661049,
           "label": "READ · /home/nyaka/share"
@@ -2093,10 +2069,26 @@
         {
           "ts": 1795661107,
           "label": "THINK"
+        },
+        {
+          "ts": 1795661121,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795661145,
+          "label": "EDIT · /tmp/opencode/sty"
+        },
+        {
+          "ts": 1795661145,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795661164,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795660255,
-      "updated_at": 1795661116
+      "updated_at": 1795661178
     }
   ],
   "bars": [
@@ -2115,6 +2107,6 @@
   "progress_updated_at": "2026-11-26T03:55:52+03:00",
   "plan_age_hours": 1.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795661119,
-  "fetched_human": "2026-11-26 05:45:19 +0300"
+  "fetched_at": 1795661180,
+  "fetched_human": "2026-11-26 05:46:20 +0300"
 }
