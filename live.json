@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2164,
+      "age_min": 2165,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2186,
+      "age_min": 2187,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,14 +2068,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2186,
+      "age_min": 2187,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "session-438c75cc",
       "title": "ПРОВЕРИТЬ ВРОДЕ ЗБС",
       "source": "dsh",
-      "claimed_human": "08:12:23",
+      "claimed_human": "08:13:13",
       "age_min": 0,
       "full": "ПРОВЕРИТЬ ВРОДЕ ЗБС"
     },
@@ -2084,7 +2084,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации",
       "source": "ноут",
       "claimed_human": "07:54:29",
-      "age_min": 17,
+      "age_min": 18,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации"
     },
     {
@@ -2092,7 +2092,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwx2cbstfv9g: S02dq: dot_quality под cyan на R01nx + S01DJ — строгий гейт FAIL",
       "source": "ноут",
       "claimed_human": "07:40:27",
-      "age_min": 31,
+      "age_min": 33,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwx2cbstfv9g: S02dq: dot_quality под cyan на R01nx + S01DJ — строгий гейт FAIL",
       "autogen": true
     }
@@ -2132,6 +2132,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 0.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795669947,
-  "fetched_human": "2026-11-26 08:12:27 +0300"
+  "fetched_at": 1795670007,
+  "fetched_human": "2026-11-26 08:13:27 +0300"
 }
