@@ -2006,7 +2006,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2079,
+      "age_min": 2080,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2014,7 +2014,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2101,
+      "age_min": 2102,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2022,47 +2022,47 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2101,
+      "age_min": 2102,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-b74f203c",
-      "title": "Запуск демки сканфида без остановки",
-      "source": "dsh",
-      "claimed_human": "06:47:20",
-      "age_min": 0,
-      "full": "Запуск демки сканфида без остановки"
     },
     {
       "id": "session-d18e8af1",
       "title": "у мэтпока есть скилл и",
       "source": "dsh",
-      "claimed_human": "06:47:19",
+      "claimed_human": "06:48:22",
       "age_min": 0,
       "full": "у мэтпока есть скилл и"
-    },
-    {
-      "id": "session-f7fce3fb",
-      "title": "Непрерывная ночная работа со сканфидом",
-      "source": "dsh",
-      "claimed_human": "06:47:08",
-      "age_min": 0,
-      "full": "Непрерывная ночная работа со сканфидом"
     },
     {
       "id": "session-aca1061f",
       "title": "я просил проанализири",
       "source": "dsh",
-      "claimed_human": "06:43:48",
-      "age_min": 3,
+      "claimed_human": "06:48:19",
+      "age_min": 0,
       "full": "я просил проанализири"
+    },
+    {
+      "id": "session-b74f203c",
+      "title": "Запуск демки сканфида без остановки",
+      "source": "dsh",
+      "claimed_human": "06:48:18",
+      "age_min": 0,
+      "full": "Запуск демки сканфида без остановки"
+    },
+    {
+      "id": "session-f7fce3fb",
+      "title": "Непрерывная ночная работа со сканфидом",
+      "source": "dsh",
+      "claimed_human": "06:47:42",
+      "age_min": 0,
+      "full": "Непрерывная ночная работа со сканфидом"
     },
     {
       "id": "session-ad7c73c8",
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
       "claimed_human": "06:42:55",
-      "age_min": 4,
+      "age_min": 5,
       "full": "Остановка непрерывной работы над CS2"
     },
     {
@@ -2070,7 +2070,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwwz8zhhg4xp: C03-28211: пересчёт adjusted winrate по корпусу 7 карт/320 демо",
       "source": "ноут",
       "claimed_human": "06:13:17",
-      "age_min": 34,
+      "age_min": 35,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwwz8zhhg4xp: C03-28211: пересчёт adjusted winrate по корпусу 7 карт/320 демо",
       "autogen": true
     },
@@ -2079,7 +2079,7 @@
       "title": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых",
       "source": "ноут",
       "claimed_human": "05:55:31",
-      "age_min": 51,
+      "age_min": 52,
       "full": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых"
     }
   ],
@@ -2118,6 +2118,6 @@
   "progress_updated_at": "2026-11-26T05:53:31+03:00",
   "plan_age_hours": 0.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795664844,
-  "fetched_human": "2026-11-26 06:47:24 +0300"
+  "fetched_at": 1795664906,
+  "fetched_human": "2026-11-26 06:48:26 +0300"
 }
