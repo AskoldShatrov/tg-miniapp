@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.88,
-      "remaining_hours": 4.12,
-      "progress_pct": 48,
-      "cycles": 38,
-      "heartbeat_human": "12:56:30",
+      "elapsed_hours": 3.89,
+      "remaining_hours": 4.11,
+      "progress_pct": 49,
+      "cycles": 39,
+      "heartbeat_human": "12:57:30",
       "tree": {
         "phases": [
           {
@@ -51,9 +51,9 @@
           {
             "id": "T05-UNIFY-POINT",
             "title": "Единая точка оценки",
-            "cycles": 2,
+            "cycles": 3,
             "max": 8,
-            "last": "MUTATE",
+            "last": "MUTATED_AFTER_3_FAIL",
             "score": 2,
             "verified": false
           },
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:11:58",
-            "cycle": 31,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
           {
             "clock": "12:19:23",
             "cycle": 32,
@@ -131,19 +123,27 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
+          },
+          {
+            "clock": "12:56:57",
+            "cycle": 39,
+            "task": "T05-UNIFY-POINT",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
           }
         ],
         "strategy": {
-          "version": 33,
-          "mutations": 32
+          "version": 34,
+          "mutations": 33
         },
-        "events": 38,
+        "events": 39,
         "avg_score": 2.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795686992,
-  "fetched_human": "2026-11-26 12:56:32 +0300"
+  "fetched_at": 1795687053,
+  "fetched_human": "2026-11-26 12:57:33 +0300"
 }
