@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2396,
+      "age_min": 2397,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2418,
+      "age_min": 2419,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,14 +2068,30 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2418,
+      "age_min": 2419,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-ddc10eb6",
+      "title": "Сводный утренний отчёт с верификацией",
+      "source": "dsh",
+      "claimed_human": "12:05:43",
+      "age_min": 0,
+      "full": "Сводный утренний отчёт с верификацией"
+    },
+    {
+      "id": "session-04c25184",
+      "title": "Проверка эргономики чата и мини-апа",
+      "source": "dsh",
+      "claimed_human": "12:05:42",
+      "age_min": 0,
+      "full": "Проверка эргономики чата и мини-апа"
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
-      "claimed_human": "12:04:41",
+      "claimed_human": "12:05:33",
       "age_min": 0,
       "full": "Активный сеанс DSH с проверками"
     },
@@ -2083,32 +2099,16 @@
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "12:04:38",
+      "claimed_human": "12:05:33",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
-    },
-    {
-      "id": "session-04c25184",
-      "title": "Проверка эргономики чата и мини-апа",
-      "source": "dsh",
-      "claimed_human": "12:04:36",
-      "age_min": 0,
-      "full": "Проверка эргономики чата и мини-апа"
-    },
-    {
-      "id": "session-ddc10eb6",
-      "title": "Сводный утренний отчёт с верификацией",
-      "source": "dsh",
-      "claimed_human": "12:04:17",
-      "age_min": 0,
-      "full": "Сводный утренний отчёт с верификацией"
     },
     {
       "id": "session-cc75a49b",
       "title": "Проверка двух ночных прогонов",
       "source": "dsh",
       "claimed_human": "12:01:14",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Проверка двух ночных прогонов"
     },
     {
@@ -2116,7 +2116,7 @@
       "title": "Проверка ночного прогона Scanfid",
       "source": "dsh",
       "claimed_human": "11:59:32",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Проверка ночного прогона Scanfid"
     },
     {
@@ -2124,7 +2124,7 @@
       "title": "Утренний дайджест с верификацией артефакта",
       "source": "dsh",
       "claimed_human": "11:59:24",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Утренний дайджест с верификацией артефакта"
     },
     {
@@ -2132,7 +2132,7 @@
       "title": "独立批判者，空上下文，只读+",
       "source": "dsh",
       "claimed_human": "11:58:04",
-      "age_min": 6,
+      "age_min": 7,
       "full": "独立批判者，空上下文，只读+"
     }
   ],
@@ -2153,7 +2153,38 @@
     "captions_total": 196,
     "source": "cs2-transcribe/state.db"
   },
-  "runs": [],
+  "runs": [
+    {
+      "key": "req-20261126-120512-c30b9e",
+      "session_id": "",
+      "source": "photo",
+      "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
+      "step_label": "Подключить скиллы и вскрыть архивы",
+      "step": 1,
+      "total": 5,
+      "events": 2,
+      "trail": [
+        {
+          "ts": 1795683933,
+          "label": "SYNC · show-in-answer"
+        },
+        {
+          "ts": 1795683933,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795683939,
+          "label": "SYNC · anti-autism"
+        },
+        {
+          "ts": 1795683939,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795683912,
+      "updated_at": 1795683945
+    }
+  ],
   "bars": [
     {
       "key": "task:T29",
@@ -2170,6 +2201,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 4.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795683885,
-  "fetched_human": "2026-11-26 12:04:45 +0300"
+  "fetched_at": 1795683946,
+  "fetched_human": "2026-11-26 12:05:46 +0300"
 }
