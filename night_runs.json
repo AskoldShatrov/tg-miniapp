@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.34,
-      "remaining_hours": 5.66,
+      "elapsed_hours": 2.36,
+      "remaining_hours": 5.64,
       "progress_pct": 29,
       "cycles": 20,
-      "heartbeat_human": "02:26:04",
+      "heartbeat_human": "02:27:04",
       "tree": {
         "phases": [
           {
@@ -279,11 +279,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.34,
-      "remaining_hours": 5.66,
+      "elapsed_hours": 2.36,
+      "remaining_hours": 5.64,
       "progress_pct": 29,
-      "cycles": 33,
-      "heartbeat_human": "02:26:03",
+      "cycles": 34,
+      "heartbeat_human": "02:27:03",
       "tree": {
         "phases": [
           {
@@ -343,9 +343,9 @@
           {
             "id": "SF-HLAE-WRITER",
             "title": "Writer: сделай + доставь + проверь доставку",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 0,
             "verified": false
           },
@@ -668,15 +668,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:26:35",
+            "cycle": 34,
+            "task": "SF-HLAE-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 43,
-          "mutations": 42
+          "version": 44,
+          "mutations": 43
         },
-        "events": 33,
+        "events": 34,
         "avg_score": 3.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -684,11 +692,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.34,
-      "remaining_hours": 5.66,
+      "elapsed_hours": 2.36,
+      "remaining_hours": 5.64,
       "progress_pct": 29,
-      "cycles": 22,
-      "heartbeat_human": "02:26:03",
+      "cycles": 23,
+      "heartbeat_human": "02:27:03",
       "tree": {
         "phases": [
           {
@@ -730,7 +738,7 @@
           {
             "id": "UNI-META-REFLECT",
             "title": "Метарефлексия трёх уровней",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
             "last": "PROMOTE",
             "score": 5,
@@ -976,19 +984,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:27:02",
+            "cycle": 23,
+            "task": "UNI-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 22,
+        "events": 23,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795735583,
-  "fetched_human": "2026-11-27 02:26:23 +0300"
+  "fetched_at": 1795735642,
+  "fetched_human": "2026-11-27 02:27:23 +0300"
 }
