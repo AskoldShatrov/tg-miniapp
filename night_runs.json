@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.43,
-      "remaining_hours": 5.57,
-      "progress_pct": 30,
+      "elapsed_hours": 2.44,
+      "remaining_hours": 5.56,
+      "progress_pct": 31,
       "cycles": 21,
-      "heartbeat_human": "02:31:04",
+      "heartbeat_human": "02:32:04",
       "tree": {
         "phases": [
           {
@@ -287,11 +287,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.43,
-      "remaining_hours": 5.57,
-      "progress_pct": 30,
-      "cycles": 38,
-      "heartbeat_human": "02:31:03",
+      "elapsed_hours": 2.44,
+      "remaining_hours": 5.56,
+      "progress_pct": 31,
+      "cycles": 39,
+      "heartbeat_human": "02:32:03",
       "tree": {
         "phases": [
           {
@@ -360,9 +360,9 @@
           {
             "id": "SF-DIGEST",
             "title": "Итоговый дайджест",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "MUTATE",
+            "last": "MUTATED_AFTER_3_FAIL",
             "score": 0,
             "verified": false
           },
@@ -716,15 +716,23 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:31:35",
+            "cycle": 39,
+            "task": "SF-DIGEST",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 48,
-          "mutations": 47
+          "version": 49,
+          "mutations": 48
         },
-        "events": 38,
+        "events": 39,
         "avg_score": 3.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -732,11 +740,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.43,
-      "remaining_hours": 5.57,
-      "progress_pct": 30,
+      "elapsed_hours": 2.44,
+      "remaining_hours": 5.56,
+      "progress_pct": 31,
       "cycles": 24,
-      "heartbeat_human": "02:31:03",
+      "heartbeat_human": "02:32:03",
       "tree": {
         "phases": [
           {
@@ -1053,6 +1061,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795735890,
-  "fetched_human": "2026-11-27 02:31:30 +0300"
+  "fetched_at": 1795735949,
+  "fetched_human": "2026-11-27 02:32:29 +0300"
 }
