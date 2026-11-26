@@ -3168,7 +3168,7 @@ function renderLive(){
         .find(el=>el.dataset.runKey===String(cur.key||cur.session_id));
       if(cur&&host){
         const pad=x=>String(x).padStart(2,"0");
-        const trail=(cur.trail||[]).slice(-12).map(t=>{
+        const trail=(cur.trail||[]).slice(-60).map(t=>{  /* было 12: лента обрывалась */
           const ms=(Number(t.ts)||0)*1000, dt=new Date(ms);
           const clock=dt.getFullYear()>2000
             ?pad(dt.getHours())+":"+pad(dt.getMinutes())+":"+pad(dt.getSeconds()):"—";
