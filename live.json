@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2444,
+      "age_min": 2445,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2466,
+      "age_min": 2467,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,22 +2068,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2466,
+      "age_min": 2467,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-c189e4a6",
-      "title": "Создание единой точки оценки T05",
-      "source": "dsh",
-      "claimed_human": "12:52:25",
-      "age_min": 0,
-      "full": "Создание единой точки оценки T05"
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
-      "claimed_human": "12:52:17",
+      "claimed_human": "12:53:30",
       "age_min": 0,
       "full": "Активный сеанс DSH с проверками"
     },
@@ -2091,16 +2083,24 @@
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "12:52:16",
+      "claimed_human": "12:53:19",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
+    },
+    {
+      "id": "session-c189e4a6",
+      "title": "Создание единой точки оценки T05",
+      "source": "dsh",
+      "claimed_human": "12:52:54",
+      "age_min": 0,
+      "full": "Создание единой точки оценки T05"
     },
     {
       "id": "session-17e00542",
       "title": "Эффективность затрат ресурсов ночных прого",
       "source": "dsh",
       "claimed_human": "12:51:37",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Эффективность затрат ресурсов ночных прого"
     },
     {
@@ -2108,7 +2108,7 @@
       "title": "Ты — слепой ревизор. П",
       "source": "dsh",
       "claimed_human": "12:50:23",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Ты — слепой ревизор. П"
     },
     {
@@ -2116,7 +2116,7 @@
       "title": "Унификация точки оценки T05",
       "source": "dsh",
       "claimed_human": "12:48:36",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Унификация точки оценки T05"
     },
     {
@@ -2124,7 +2124,7 @@
       "title": "Аудит UX чата и мини-апа",
       "source": "dsh",
       "claimed_human": "12:44:58",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Аудит UX чата и мини-апа"
     },
     {
@@ -2132,7 +2132,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwxcoritfqma: UNIV8: ввести Ti=19,75 в MvStudium и снять диаграмму",
       "source": "ноут",
       "claimed_human": "12:29:47",
-      "age_min": 22,
+      "age_min": 23,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwxcoritfqma: UNIV8: ввести Ti=19,75 в MvStudium и снять диаграмму",
       "autogen": true
     }
@@ -2172,6 +2172,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 5.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795686749,
-  "fetched_human": "2026-11-26 12:52:29 +0300"
+  "fetched_at": 1795686810,
+  "fetched_human": "2026-11-26 12:53:30 +0300"
 }
