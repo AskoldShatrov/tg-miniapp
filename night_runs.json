@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 4.58,
+      "elapsed_hours": 4.6,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -447,11 +447,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.6,
-      "remaining_hours": 7.4,
-      "progress_pct": 7,
-      "cycles": 8,
-      "heartbeat_human": "13:38:47",
+      "elapsed_hours": 0.62,
+      "remaining_hours": 7.38,
+      "progress_pct": 8,
+      "cycles": 9,
+      "heartbeat_human": "13:39:47",
       "tree": {
         "phases": [
           {
@@ -484,11 +484,11 @@
           {
             "id": "SF-DEATHTICK-INDEP",
             "title": "Death-tick: независимый эталон",
-            "cycles": 0,
+            "cycles": 1,
             "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "SF-T4-CALIB",
@@ -635,19 +635,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: feed-v2-1126/artifacts/SF-ECONOMY-STRIP-c8.md missing KILLFEED: visible; miss"
+          },
+          {
+            "clock": "13:39:45",
+            "cycle": 9,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 3,
-          "mutations": 2
+          "version": 4,
+          "mutations": 3
         },
-        "events": 9,
+        "events": 10,
         "avg_score": 4.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795689529,
-  "fetched_human": "2026-11-26 13:38:49 +0300"
+  "fetched_at": 1795689588,
+  "fetched_human": "2026-11-26 13:39:48 +0300"
 }
