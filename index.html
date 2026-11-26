@@ -3143,7 +3143,7 @@ function renderLive(){
       rows.unshift(`<div class="pbar pbar-live" data-run-key="${key}"`+
         ` title="${esc(r.label||rawKey)} — нажми, чтобы раскрыть дерево задачи">`+
         `<div class="pbar-head"><b><span class="pb-caret">${open?"▾":"▸"}</span>`+
-        `${esc(String(r.label||"Активная задача").slice(0,42))}</b>`+
+        `${esc(String(r.label||"Активная задача"))}</b>`+
         `<span>${N?n+" / "+N+" · "+pct+"%":mini+" · шаг "+n}</span></div>`+
         `<div class="pbar-track"><div class="pbar-fill c-green" style="width:${N?pct:12}%"></div></div></div>`);
     });
@@ -3170,6 +3170,7 @@ function renderLive(){
           `<div class="pbar-branch">`+
           `<div class="pb-row pb-head"><span>└─ ${esc(cur.source||"task")}`+
           `${cur.session_id?" · "+esc(cur.session_id):""}</span></div>`+
+          `<div class="pb-row"><span class="pb-ts">задача</span><span>├─ ${esc(String(cur.label||cur.key||cur.session_id||""))}</span></div>`+
           `<div class="pb-row"><span class="pb-ts">сейчас</span><span>├─ ${stepLine}</span></div>`+
           (trail||'<div class="pb-row pb-empty"><span>└─ вызовов инструментов пока нет</span></div>')+
           `<div class="pb-row"><span class="pb-ts">итого</span>`+
