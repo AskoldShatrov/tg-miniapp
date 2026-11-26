@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.69,
-      "remaining_hours": 5.31,
+      "elapsed_hours": 2.71,
+      "remaining_hours": 5.29,
       "progress_pct": 34,
       "cycles": 20,
-      "heartbeat_human": "16:51:19",
+      "heartbeat_human": "16:52:19",
       "tree": {
         "phases": [
           {
@@ -306,13 +306,22 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.69,
-      "remaining_hours": 5.31,
+      "elapsed_hours": 2.71,
+      "remaining_hours": 5.29,
       "progress_pct": 34,
-      "cycles": 32,
-      "heartbeat_human": "16:51:19",
+      "cycles": 33,
+      "heartbeat_human": "16:52:19",
       "tree": {
         "phases": [
+          {
+            "id": "UNI-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 4,
+            "max": 20,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
           {
             "id": "UNI-MVS-WINE",
             "title": "Моделирование систем: MvStudium под Wine",
@@ -375,15 +384,6 @@
             "last": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 3,
-            "max": 20,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "UNI-PRIOR-INTAKE",
@@ -678,19 +678,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "16:52:34",
+            "cycle": 33,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 11,
           "mutations": 10
         },
-        "events": 32,
+        "events": 33,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795701098,
-  "fetched_human": "2026-11-26 16:51:38 +0300"
+  "fetched_at": 1795701161,
+  "fetched_human": "2026-11-26 16:52:41 +0300"
 }
