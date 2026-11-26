@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.95,
-      "remaining_hours": 7.05,
+      "elapsed_hours": 0.96,
+      "remaining_hours": 7.04,
       "progress_pct": 12,
-      "cycles": 10,
-      "heartbeat_human": "15:06:49",
+      "cycles": 11,
+      "heartbeat_human": "15:07:49",
       "tree": {
         "phases": [
           {
@@ -31,19 +31,19 @@
             "verified": true
           },
           {
-            "id": "IMP-PRIOR-INTAKE",
-            "title": "Приём интервью и наработок по улучшению",
-            "cycles": 2,
-            "max": 2,
+            "id": "IMP-SYS-CLI",
+            "title": "Инспекция OpenCode CLI и доставки",
+            "cycles": 3,
+            "max": 3,
             "last": "MUTATE",
             "score": 7,
             "verified": true
           },
           {
-            "id": "IMP-SYS-CLI",
-            "title": "Инспекция OpenCode CLI и доставки",
+            "id": "IMP-PRIOR-INTAKE",
+            "title": "Приём интервью и наработок по улучшению",
             "cycles": 2,
-            "max": 3,
+            "max": 2,
             "last": "MUTATE",
             "score": 7,
             "verified": true
@@ -174,13 +174,21 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "15:07:49",
+            "cycle": 11,
+            "task": "IMP-SYS-CLI",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 10,
+        "events": 11,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -190,20 +198,20 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.95,
-      "remaining_hours": 7.05,
+      "elapsed_hours": 0.96,
+      "remaining_hours": 7.04,
       "progress_pct": 12,
-      "cycles": 2,
-      "heartbeat_human": "15:06:49",
+      "cycles": 3,
+      "heartbeat_human": "15:07:49",
       "tree": {
         "phases": [
           {
             "id": "SF-HLAE-POV-CAPTURE",
             "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
-            "cycles": 2,
+            "cycles": 3,
             "max": 3,
             "last": "MUTATE",
-            "score": 4,
+            "score": 7,
             "verified": true
           },
           {
@@ -322,13 +330,21 @@
             "action": "MUTATE",
             "score": 4,
             "note": "нет completion promise"
+          },
+          {
+            "clock": "15:07:03",
+            "cycle": 3,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 2,
+        "events": 3,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -338,11 +354,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.95,
-      "remaining_hours": 7.05,
+      "elapsed_hours": 0.96,
+      "remaining_hours": 7.04,
       "progress_pct": 12,
       "cycles": 9,
-      "heartbeat_human": "15:06:49",
+      "heartbeat_human": "15:07:49",
       "tree": {
         "phases": [
           {
@@ -530,6 +546,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795694812,
-  "fetched_human": "2026-11-26 15:06:52 +0300"
+  "fetched_at": 1795694878,
+  "fetched_human": "2026-11-26 15:07:58 +0300"
 }
