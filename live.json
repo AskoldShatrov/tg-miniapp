@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2342,
+      "age_min": 2343,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2363,
+      "age_min": 2364,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,30 +2068,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2364,
+      "age_min": 2365,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
-      "id": "session-3856a02b",
-      "title": "Какие модели обсуждаются",
+      "id": "session-8fc52b16",
+      "title": "РОЛЬ: исполнитель ска",
       "source": "dsh",
-      "claimed_human": "11:10:03",
+      "claimed_human": "11:11:02",
       "age_min": 0,
-      "full": "Какие модели обсуждаются"
-    },
-    {
-      "id": "session-41b44bf1",
-      "title": "Проверка ночного прогона Scanfid",
-      "source": "dsh",
-      "claimed_human": "11:09:57",
-      "age_min": 0,
-      "full": "Проверка ночного прогона Scanfid"
+      "full": "РОЛЬ: исполнитель ска"
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
-      "claimed_human": "11:09:56",
+      "claimed_human": "11:11:01",
       "age_min": 0,
       "full": "Активный сеанс DSH с проверками"
     },
@@ -2099,24 +2091,40 @@
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "11:09:50",
+      "claimed_human": "11:10:59",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
+    },
+    {
+      "id": "session-41b44bf1",
+      "title": "Проверка ночного прогона Scanfid",
+      "source": "dsh",
+      "claimed_human": "11:10:58",
+      "age_min": 0,
+      "full": "Проверка ночного прогона Scanfid"
     },
     {
       "id": "session-f1635227",
       "title": "Суммаризация вопросов за 7 дней",
       "source": "dsh",
-      "claimed_human": "11:09:42",
+      "claimed_human": "11:10:47",
       "age_min": 0,
       "full": "Суммаризация вопросов за 7 дней"
+    },
+    {
+      "id": "session-3856a02b",
+      "title": "Какие модели обсуждаются",
+      "source": "dsh",
+      "claimed_human": "11:10:30",
+      "age_min": 0,
+      "full": "Какие модели обсуждаются"
     },
     {
       "id": "session-2ff0ffc7",
       "title": "Переработка оверлея экономики в HLAE",
       "source": "dsh",
       "claimed_human": "11:09:05",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Переработка оверлея экономики в HLAE"
     },
     {
@@ -2124,16 +2132,8 @@
       "title": "Недельная сводка вопросов и проблем",
       "source": "dsh",
       "claimed_human": "11:07:03",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Недельная сводка вопросов и проблем"
-    },
-    {
-      "id": "session-2c577a1c",
-      "title": "Внутриигровой ScanFeed-оверлей с видимым килфи",
-      "source": "dsh",
-      "claimed_human": "11:01:31",
-      "age_min": 8,
-      "full": "Внутриигровой ScanFeed-оверлей с видимым килфи"
     }
   ],
   "queues": {
@@ -2162,10 +2162,15 @@
       "step_label": "",
       "step": 0,
       "total": null,
-      "events": 0,
-      "trail": [],
+      "events": 1,
+      "trail": [
+        {
+          "ts": 1795680657,
+          "label": "NET · github awesome-cla"
+        }
+      ],
       "started_at": 1795680557,
-      "updated_at": 1795680603
+      "updated_at": 1795680662
     }
   ],
   "bars": [
@@ -2184,6 +2189,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 3.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795680603,
-  "fetched_human": "2026-11-26 11:10:03 +0300"
+  "fetched_at": 1795680664,
+  "fetched_human": "2026-11-26 11:11:04 +0300"
 }
