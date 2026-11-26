@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2361,
+      "age_min": 2362,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2382,
+      "age_min": 2383,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,14 +2068,30 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2383,
+      "age_min": 2384,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-cc75a49b",
+      "title": "Проверка двух ночных прогонов",
+      "source": "dsh",
+      "claimed_human": "11:30:15",
+      "age_min": 0,
+      "full": "Проверка двух ночных прогонов"
+    },
+    {
+      "id": "session-23b4bb42",
+      "title": "Ночная автономная работа над сканфидом",
+      "source": "dsh",
+      "claimed_human": "11:30:13",
+      "age_min": 0,
+      "full": "Ночная автономная работа над сканфидом"
     },
     {
       "id": "session-91229996",
       "title": "Сводка вопросов за 7 дней",
       "source": "dsh",
-      "claimed_human": "11:29:15",
+      "claimed_human": "11:30:12",
       "age_min": 0,
       "full": "Сводка вопросов за 7 дней"
     },
@@ -2083,57 +2099,41 @@
       "id": "session-e94d1ad0",
       "title": "Оформление сканфида: слайды, постер, видео",
       "source": "dsh",
-      "claimed_human": "11:29:11",
+      "claimed_human": "11:30:12",
       "age_min": 0,
       "full": "Оформление сканфида: слайды, постер, видео"
+    },
+    {
+      "id": "session-685498ee",
+      "title": "Активный сеанс DSH с проверками",
+      "source": "dsh",
+      "claimed_human": "11:30:10",
+      "age_min": 0,
+      "full": "Активный сеанс DSH с проверками"
+    },
+    {
+      "id": "9253c862-6590-41",
+      "title": "独立批判者，空上下文。不要",
+      "source": "dsh",
+      "claimed_human": "11:29:51",
+      "age_min": 0,
+      "full": "独立批判者，空上下文。不要"
     },
     {
       "id": "session-41b44bf1",
       "title": "Проверка ночного прогона Scanfid",
       "source": "dsh",
       "claimed_human": "11:29:04",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Проверка ночного прогона Scanfid"
-    },
-    {
-      "id": "session-23b4bb42",
-      "title": "Ночная автономная работа над сканфидом",
-      "source": "dsh",
-      "claimed_human": "11:29:03",
-      "age_min": 0,
-      "full": "Ночная автономная работа над сканфидом"
-    },
-    {
-      "id": "9253c862-6590-41",
-      "title": "独立批判者，空上下文。不要",
-      "source": "dsh",
-      "claimed_human": "11:29:01",
-      "age_min": 0,
-      "full": "独立批判者，空上下文。不要"
-    },
-    {
-      "id": "session-685498ee",
-      "title": "Активный сеанс DSH с проверками",
-      "source": "dsh",
-      "claimed_human": "11:29:00",
-      "age_min": 0,
-      "full": "Активный сеанс DSH с проверками"
     },
     {
       "id": "session-a08e20c1",
       "title": "Недельная сводка вопросов и проблем",
       "source": "dsh",
       "claimed_human": "11:27:34",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Недельная сводка вопросов и проблем"
-    },
-    {
-      "id": "session-8fc52b16",
-      "title": "РОЛЬ: исполнитель ска",
-      "source": "dsh",
-      "claimed_human": "11:25:50",
-      "age_min": 3,
-      "full": "РОЛЬ: исполнитель ска"
     }
   ],
   "queues": {
@@ -2214,7 +2214,7 @@
         }
       ],
       "started_at": 1795681142,
-      "updated_at": 1795681754
+      "updated_at": 1795681814
     },
     {
       "key": "req-20261126-112502-452a97",
@@ -2224,59 +2224,59 @@
       "step_label": "read images",
       "step": 1,
       "total": 6,
-      "events": 22,
+      "events": 29,
       "trail": [
-        {
-          "ts": 1795681684,
-          "label": "GREP · /home/nyaka/share"
-        },
-        {
-          "ts": 1795681684,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795681696,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795681696,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795681706,
-          "label": "FIND · /home/nyaka"
-        },
-        {
-          "ts": 1795681706,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795681718,
-          "label": "BASH · ls ~/shared-repo/"
-        },
-        {
-          "ts": 1795681729,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795681730,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795681741,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795681741,
-          "label": "THINK"
-        },
         {
           "ts": 1795681753,
           "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795681754,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795681762,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795681762,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795681774,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795681784,
+          "label": "BASH · grep -n \"poster\\|"
+        },
+        {
+          "ts": 1795681784,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795681791,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795681800,
+          "label": "BASH · grep -n \"1280\\|72"
+        },
+        {
+          "ts": 1795681800,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795681808,
+          "label": "READ · /home/nyaka/scrip"
+        },
+        {
+          "ts": 1795681808,
+          "label": "THINK"
         }
       ],
       "started_at": 1795681503,
-      "updated_at": 1795681753
+      "updated_at": 1795681816
     }
   ],
   "bars": [
@@ -2295,6 +2295,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 4.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795681756,
-  "fetched_human": "2026-11-26 11:29:16 +0300"
+  "fetched_at": 1795681817,
+  "fetched_human": "2026-11-26 11:30:17 +0300"
 }
