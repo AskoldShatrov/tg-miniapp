@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.55,
-      "remaining_hours": 5.45,
+      "elapsed_hours": 2.56,
+      "remaining_hours": 5.44,
       "progress_pct": 32,
-      "cycles": 21,
-      "heartbeat_human": "02:38:34",
+      "cycles": 22,
+      "heartbeat_human": "02:39:34",
       "tree": {
         "phases": [
           {
@@ -51,9 +51,9 @@
           {
             "id": "IMP-HYPOTHESIS-DIVERGE",
             "title": "Перебор гипотез улучшения",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATE",
+            "last": "PROMOTE",
             "score": 5,
             "verified": false
           },
@@ -271,15 +271,23 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:39:15",
+            "cycle": 22,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 21,
+        "events": 22,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -287,11 +295,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.55,
-      "remaining_hours": 5.45,
+      "elapsed_hours": 2.56,
+      "remaining_hours": 5.44,
       "progress_pct": 32,
       "cycles": 25,
-      "heartbeat_human": "02:38:33",
+      "heartbeat_human": "02:39:33",
       "tree": {
         "phases": [
           {
@@ -616,6 +624,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795736322,
-  "fetched_human": "2026-11-27 02:38:42 +0300"
+  "fetched_at": 1795736382,
+  "fetched_human": "2026-11-27 02:39:42 +0300"
 }
