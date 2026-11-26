@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 4.74,
+      "elapsed_hours": 4.76,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -443,15 +443,235 @@
       }
     },
     {
+      "id": "scanfeed-v2-1126",
+      "label": "Сканфид-мандат",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.77,
+      "remaining_hours": 7.23,
+      "progress_pct": 10,
+      "cycles": 10,
+      "heartbeat_human": "13:49:01",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-HLAE-POV-CAPTURE",
+            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-MAIN-GATE",
+            "title": "Kill feed как главный гейт",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "SF-ECONOMY-STRIP",
+            "title": "Компактная экономия под карточками противников",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "SF-DEATHTICK-INDEP",
+            "title": "Death-tick: независимый эталон",
+            "cycles": 2,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6-8 слайдов и постер",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DIGEST",
+            "title": "Итоговый дайджест",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRIOR-WORK-INTAKE",
+            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез до критики",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев и вопросы к задаче",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "13:02:53",
+            "cycle": 1,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
+          },
+          {
+            "clock": "13:02:53",
+            "cycle": 2,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
+          },
+          {
+            "clock": "13:02:53",
+            "cycle": 3,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
+          },
+          {
+            "clock": "13:02:53",
+            "cycle": 4,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md size 444 < 500; missing SOURCE: H"
+          },
+          {
+            "clock": "13:08:00",
+            "cycle": 5,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c5.md size 444 < 500; missing SOURCE: H"
+          },
+          {
+            "clock": "13:08:00",
+            "cycle": 6,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c6.md size 444 < 500; missing SOURCE: H"
+          },
+          {
+            "clock": "13:25:04",
+            "cycle": 7,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-c"
+          },
+          {
+            "clock": "13:29:53",
+            "cycle": 8,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: :; missing MTIME:; missing VERDICT: PASS; SHA256 fields < 2; DLL_SHA256 != kn"
+          },
+          {
+            "clock": "13:31:15",
+            "cycle": 8,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: feed-v2-1126/artifacts/SF-ECONOMY-STRIP-c8.md missing KILLFEED: visible; miss"
+          },
+          {
+            "clock": "13:39:45",
+            "cycle": 9,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "13:44:54",
+            "cycle": 10,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
+          }
+        ],
+        "strategy": {
+          "version": 5,
+          "mutations": 4
+        },
+        "events": 11,
+        "avg_score": 4.0,
+        "fail_streak": 0
+      }
+    },
+    {
       "id": "complex-improvement-1126",
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.02,
-      "remaining_hours": 7.98,
-      "progress_pct": 0,
+      "elapsed_hours": 0.04,
+      "remaining_hours": 7.96,
+      "progress_pct": 1,
       "cycles": 0,
-      "heartbeat_human": "13:47:50",
+      "heartbeat_human": "13:48:50",
       "tree": {
         "phases": [
           {
@@ -545,9 +765,104 @@
         "avg_score": 0.0,
         "fail_streak": 0
       }
+    },
+    {
+      "id": "university-1126",
+      "label": "university 1126",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.01,
+      "remaining_hours": 7.99,
+      "progress_pct": 0,
+      "cycles": 0,
+      "heartbeat_human": "13:49:01",
+      "tree": {
+        "phases": [
+          {
+            "id": "UNI-PRIOR-INTAKE",
+            "title": "Приём учебных наработок",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-MVS-WINE",
+            "title": "Моделирование систем: MvStudium под Wine",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-PID-CALIB",
+            "title": "ПИ-регулятор Kp=2 Ти=20",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез учебного трека",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев учебного трека",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-WRITER",
+            "title": "Writer учебного трека",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-DIGEST",
+            "title": "Итог учебного трека",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [],
+        "strategy": {
+          "version": 1,
+          "mutations": 0
+        },
+        "events": 0,
+        "avg_score": 0.0,
+        "fail_streak": 0
+      }
     }
   ],
-  "count": 2,
-  "fetched_at": 1795690096,
-  "fetched_human": "2026-11-26 13:48:16 +0300"
+  "count": 4,
+  "fetched_at": 1795690156,
+  "fetched_human": "2026-11-26 13:49:16 +0300"
 }
