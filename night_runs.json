@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.45,
-      "remaining_hours": 4.55,
+      "elapsed_hours": 3.47,
+      "remaining_hours": 4.53,
       "progress_pct": 43,
       "cycles": 34,
-      "heartbeat_human": "12:31:00",
+      "heartbeat_human": "12:32:00",
       "tree": {
         "phases": [
           {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.17,
-      "remaining_hours": 7.98,
-      "progress_pct": 28,
-      "cycles": 27,
-      "heartbeat_human": "12:30:45",
+      "elapsed_hours": 3.19,
+      "remaining_hours": 7.96,
+      "progress_pct": 29,
+      "cycles": 28,
+      "heartbeat_human": "12:32:15",
       "tree": {
         "phases": [
           {
@@ -225,17 +225,18 @@
             "last": "MUTATE",
             "score": 4,
             "verified": true
+          },
+          {
+            "id": "SF-OVERLAY-ADR",
+            "title": "ADR: точная причина, почему внутриигровой оверлей не закрыт",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "09:08:44",
-            "cycle": 20,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос scanfeed"
-          },
           {
             "clock": "09:09:44",
             "cycle": 21,
@@ -291,19 +292,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
+          },
+          {
+            "clock": "09:31:45",
+            "cycle": 28,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос cards"
           }
         ],
         "strategy": {
-          "version": 21,
-          "mutations": 20
+          "version": 22,
+          "mutations": 21
         },
-        "events": 27,
+        "events": 28,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795685471,
-  "fetched_human": "2026-11-26 12:31:11 +0300"
+  "fetched_at": 1795685535,
+  "fetched_human": "2026-11-26 12:32:15 +0300"
 }

@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2423,
+      "age_min": 2424,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2444,
+      "age_min": 2445,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,55 +2068,63 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2445,
+      "age_min": 2446,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-17e00542",
+      "title": "Эффективность затрат ресурсов ночных прого",
+      "source": "dsh",
+      "claimed_human": "12:32:09",
+      "age_min": 0,
+      "full": "Эффективность затрат ресурсов ночных прого"
+    },
+    {
+      "id": "session-685498ee",
+      "title": "Активный сеанс DSH с проверками",
+      "source": "dsh",
+      "claimed_human": "12:32:07",
+      "age_min": 0,
+      "full": "Активный сеанс DSH с проверками"
     },
     {
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "12:31:02",
+      "claimed_human": "12:32:06",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
+    },
+    {
+      "id": "session-e13d6cd8",
+      "title": "Проверка UX чата и мини-апа",
+      "source": "dsh",
+      "claimed_human": "12:32:04",
+      "age_min": 0,
+      "full": "Проверка UX чата и мини-апа"
     },
     {
       "id": "session-cc75a49b",
       "title": "Проверка двух ночных прогонов",
       "source": "dsh",
       "claimed_human": "12:30:57",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Проверка двух ночных прогонов"
-    },
-    {
-      "id": "session-685498ee",
-      "title": "Активный сеанс DSH с проверками",
-      "source": "dsh",
-      "claimed_human": "12:30:55",
-      "age_min": 0,
-      "full": "Активный сеанс DSH с проверками"
     },
     {
       "id": "session-075f5d33",
       "title": "Проверка UX мини-апа и артефакт",
       "source": "dsh",
       "claimed_human": "12:30:53",
-      "age_min": 0,
-      "full": "Проверка UX мини-апа и артефакт"
-    },
-    {
-      "id": "session-17e00542",
-      "title": "Эффективность затрат ресурсов ночных прого",
-      "source": "dsh",
-      "claimed_human": "12:30:01",
       "age_min": 1,
-      "full": "Эффективность затрат ресурсов ночных прого"
+      "full": "Проверка UX мини-апа и артефакт"
     },
     {
       "id": "AU15641",
       "title": "ДОВЕСТИ ЦЕЛЬ gmwxcork7y0ms: UNIV8 — численная настройка ПИ-регулятора выполнена",
       "source": "ноут",
       "claimed_human": "12:29:49",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwxcork7y0ms: UNIV8 — численная настройка ПИ-регулятора выполнена",
       "autogen": true
     },
@@ -2125,7 +2133,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwxcoritfqma: UNIV8: ввести Ti=19,75 в MvStudium и снять диаграмму",
       "source": "ноут",
       "claimed_human": "12:29:47",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwxcoritfqma: UNIV8: ввести Ti=19,75 в MvStudium и снять диаграмму",
       "autogen": true
     },
@@ -2134,7 +2142,7 @@
       "title": "Финальный гейт оверлея Counter-Strike 2",
       "source": "dsh",
       "claimed_human": "12:27:52",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Финальный гейт оверлея Counter-Strike 2"
     },
     {
@@ -2142,7 +2150,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwxckyp5cs6t: Университет: вариант 8 — подобрать Kp/Ти ПИ-регулятора и перенести в MvStudium",
       "source": "ноут",
       "claimed_human": "12:27:17",
-      "age_min": 3,
+      "age_min": 4,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwxckyp5cs6t: Университет: вариант 8 — подобрать Kp/Ти ПИ-регулятора и перенести в MvStudium",
       "autogen": true
     },
@@ -2151,16 +2159,8 @@
       "title": "Наблюдение за ночным прогоном движка",
       "source": "dsh",
       "claimed_human": "12:27:09",
-      "age_min": 3,
+      "age_min": 5,
       "full": "Наблюдение за ночным прогоном движка"
-    },
-    {
-      "id": "session-c4de274c",
-      "title": "Аудит эргономики чата и мини-апа",
-      "source": "dsh",
-      "claimed_human": "12:24:35",
-      "age_min": 6,
-      "full": "Аудит эргономики чата и мини-апа"
     }
   ],
   "queues": {
@@ -2190,24 +2190,8 @@
       "step_label": "Подключить скиллы и вскрыть архивы",
       "step": 1,
       "total": 5,
-      "events": 89,
+      "events": 92,
       "trail": [
-        {
-          "ts": 1795685372,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795685372,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795685388,
-          "label": "BASH · sed -n '80,220p' "
-        },
-        {
-          "ts": 1795685388,
-          "label": "THINK"
-        },
         {
           "ts": 1795685408,
           "label": "BASH · sha256sum /home/n"
@@ -2239,53 +2223,37 @@
         {
           "ts": 1795685462,
           "label": "THINK"
+        },
+        {
+          "ts": 1795685481,
+          "label": "EDIT · /tmp/opencode/uni"
+        },
+        {
+          "ts": 1795685505,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795685525,
+          "label": "READ · /tmp/opencode/uni"
+        },
+        {
+          "ts": 1795685525,
+          "label": "THINK"
         }
       ],
       "started_at": 1795683912,
-      "updated_at": 1795685467
+      "updated_at": 1795685529
     },
     {
       "key": "req-20261126-122052-1cb98d",
       "session_id": "",
       "source": "photo",
       "label": "Непонятно в ответ на что сообщение, если в ответ на что то т",
-      "step_label": "Подключить скиллы и прочитать скриншоты",
-      "step": 1,
+      "step_label": "Внедрить системное решение с реплаем",
+      "step": 3,
       "total": 4,
-      "events": 51,
+      "events": 55,
       "trail": [
-        {
-          "ts": 1795685356,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795685373,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795685373,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795685384,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795685384,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795685402,
-          "label": "BASH · cd /home/nyaka &&"
-        },
-        {
-          "ts": 1795685402,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795685422,
-          "label": "WRITE · /home/nyaka/scri"
-        },
         {
           "ts": 1795685422,
           "label": "THINK"
@@ -2301,10 +2269,42 @@
         {
           "ts": 1795685453,
           "label": "BASH · chmod +x /home/ny"
+        },
+        {
+          "ts": 1795685471,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795685471,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795685482,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795685482,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795685499,
+          "label": "BASH · stat -c '%y' /hom"
+        },
+        {
+          "ts": 1795685499,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795685523,
+          "label": "WRITE · /tmp/opencode/re"
+        },
+        {
+          "ts": 1795685523,
+          "label": "THINK"
         }
       ],
       "started_at": 1795684853,
-      "updated_at": 1795685467
+      "updated_at": 1795685527
     },
     {
       "key": "req-20261126-122103-7b7654",
@@ -2314,36 +2314,8 @@
       "step_label": "Разобрать вложения и извлечь задание",
       "step": 1,
       "total": 6,
-      "events": 39,
+      "events": 44,
       "trail": [
-        {
-          "ts": 1795685346,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795685356,
-          "label": "EDIT · /tmp/opencode/mod"
-        },
-        {
-          "ts": 1795685374,
-          "label": "EDIT · /tmp/opencode/mod"
-        },
-        {
-          "ts": 1795685385,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795685398,
-          "label": "READ · /tmp/opencode/mod"
-        },
-        {
-          "ts": 1795685413,
-          "label": "EDIT · /tmp/opencode/mod"
-        },
-        {
-          "ts": 1795685413,
-          "label": "THINK"
-        },
         {
           "ts": 1795685425,
           "label": "BASH · python3 ~/.config"
@@ -2363,10 +2335,38 @@
         {
           "ts": 1795685460,
           "label": "THINK"
+        },
+        {
+          "ts": 1795685471,
+          "label": "BASH · D=/tmp/opencode/m"
+        },
+        {
+          "ts": 1795685484,
+          "label": "EDIT · /tmp/opencode/mod"
+        },
+        {
+          "ts": 1795685484,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795685500,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795685515,
+          "label": "WRITE · /tmp/opencode/mo"
+        },
+        {
+          "ts": 1795685515,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795685528,
+          "label": "BASH · H=$(sha256sum /tm"
         }
       ],
       "started_at": 1795684866,
-      "updated_at": 1795685466
+      "updated_at": 1795685530
     },
     {
       "key": "req-20261126-122945-79089a",
@@ -2396,8 +2396,8 @@
   ],
   "updatedAt": "2026-11-26T07:22:29+03:00",
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
-  "plan_age_hours": 5.1,
+  "plan_age_hours": 5.2,
   "plan_source": "progress.json",
-  "fetched_at": 1795685469,
-  "fetched_human": "2026-11-26 12:31:09 +0300"
+  "fetched_at": 1795685530,
+  "fetched_human": "2026-11-26 12:32:10 +0300"
 }
