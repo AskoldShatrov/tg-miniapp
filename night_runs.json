@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.46,
-      "remaining_hours": 5.54,
+      "elapsed_hours": 2.48,
+      "remaining_hours": 5.52,
       "progress_pct": 31,
       "cycles": 17,
-      "heartbeat_human": "16:37:49",
+      "heartbeat_human": "16:38:49",
       "tree": {
         "phases": [
           {
@@ -282,11 +282,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.46,
-      "remaining_hours": 5.54,
+      "elapsed_hours": 2.48,
+      "remaining_hours": 5.52,
       "progress_pct": 31,
-      "cycles": 28,
-      "heartbeat_human": "16:37:49",
+      "cycles": 29,
+      "heartbeat_human": "16:38:49",
       "tree": {
         "phases": [
           {
@@ -382,7 +382,7 @@
           {
             "id": "UNI-VOICE",
             "title": "Учебные расшифровки: полезные указания",
-            "cycles": 1,
+            "cycles": 2,
             "max": 2,
             "last": "MUTATE",
             "score": 4,
@@ -622,19 +622,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: 1126/artifacts/UNI-VOICE-c28.md missing PASS:; missing FAIL:; missing OPEN:; "
+          },
+          {
+            "clock": "16:38:55",
+            "cycle": 29,
+            "task": "UNI-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ht-runs/university-1126/artifacts/UNI-VOICE-c29.md missing PASS:; missing FAI"
           }
         ],
         "strategy": {
-          "version": 10,
-          "mutations": 9
+          "version": 11,
+          "mutations": 10
         },
-        "events": 28,
+        "events": 29,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795700276,
-  "fetched_human": "2026-11-26 16:37:56 +0300"
+  "fetched_at": 1795700337,
+  "fetched_human": "2026-11-26 16:38:57 +0300"
 }

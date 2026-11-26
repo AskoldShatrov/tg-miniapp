@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T13:37:55+00:00",
-  "generated_human": "26.11 13:37 UTC",
-  "as_of": 1795700275220,
+  "generated": "2026-11-26T13:38:56+00:00",
+  "generated_human": "26.11 13:38 UTC",
+  "as_of": 1795700336023,
   "stale_days": 1,
   "count": 1117,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-m8uXGmPRIm",
      "text": "СКАНФИД. T4 OPEN: расширить REAL-набор до n>=60 кадров с FP>0, измерить precision/recall и ECE по dot_quality с Wilson CI и честным baseline. Гейт: n>=60, FP>0, ECE<0.15 после калибровки. Новый отчёт ~/overnight/cloud_tracks/C04-28468.md. Не трогать защищённые data/ и 52/73/103. ОБЯЗАТЕЛЬНО дополнительно запиши машино-читаемый результат в ~/overnight/cloud_tracks/C04-result.json с полями из cloud_gates.json (числа), иначе задача НЕ считается выполненной. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795700273000,
+     "ts": 1795700335000,
      "source": "session",
      "title": "СКАНФИД T4: REAL-набор и ECE<0.15",
      "source_label": "ноут",
@@ -54,20 +54,20 @@
       "w261120005246135d",
       "w2611200052463b06"
      ],
-     "as_of": 1795700273000,
+     "as_of": 1795700335000,
      "is_stale": false
     },
     {
      "id": "ses-vTl9Z7g9Yk",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. DELIVERED с путём и user_id 1869196044, VERIFY_CMD с полной командой; доставить постер и текст. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-WRITER-*.md. VERDICT: PASS только после реальной проверки. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-WRITER-c18.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795700271000,
+     "ts": 1795700329000,
      "source": "session",
      "title": "lree-SF-HLAE-WRITER-c18",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795700271000,
+     "as_of": 1795700329000,
      "is_stale": false
     },
     {
@@ -4330,14 +4330,14 @@
     {
      "id": "ses-zGCSbED3HX",
      "text": "Вход — не чистый лист; разбери ~/local-llm/work/mvs_extract/transcripts/{dictaphone_20261116.txt,dictaphone_20261119.txt,voice_204s_20261125.txt} и сверь с ~/overnight/2026-11-20-dictaphone-69min-transcription.md. Извлечь дословные проверяемые указания по НИР и курсовой: структура пояснительной записки, UML, вычислительный эксперимент на двух наборах данных, патентный поиск ФИПС, акт внедрения. Ничего не выдумывать. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-VOICE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-VOICE-c29.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795700270000,
+     "ts": 1795700330000,
      "source": "session",
      "title": "lree-UNI-VOICE-c29",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795700270000,
+     "as_of": 1795700330000,
      "is_stale": false
     },
     {
