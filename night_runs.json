@@ -5,27 +5,27 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.39,
-      "remaining_hours": 3.61,
+      "elapsed_hours": 4.4,
+      "remaining_hours": 3.6,
       "progress_pct": 55,
-      "cycles": 37,
-      "heartbeat_human": "18:32:49",
+      "cycles": 38,
+      "heartbeat_human": "18:33:49",
       "tree": {
         "phases": [
           {
-            "id": "SF-HLAE-WRITER",
-            "title": "Writer: сделай + доставь + проверь доставку",
-            "cycles": 4,
-            "max": 4,
+            "id": "SF-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 5,
+            "max": 20,
             "last": "MUTATE",
             "score": 7,
             "verified": true
           },
           {
-            "id": "SF-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
             "cycles": 4,
-            "max": 20,
+            "max": 4,
             "last": "MUTATE",
             "score": 7,
             "verified": true
@@ -426,19 +426,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "18:33:24",
+            "cycle": 38,
+            "task": "SF-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 37,
+        "events": 38,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795707194,
-  "fetched_human": "2026-11-26 18:33:14 +0300"
+  "fetched_at": 1795707254,
+  "fetched_human": "2026-11-26 18:34:14 +0300"
 }
