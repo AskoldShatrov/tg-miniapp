@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.19,
-      "remaining_hours": 5.81,
-      "progress_pct": 27,
-      "cycles": 18,
-      "heartbeat_human": "02:17:04",
+      "elapsed_hours": 2.21,
+      "remaining_hours": 5.79,
+      "progress_pct": 28,
+      "cycles": 19,
+      "heartbeat_human": "02:18:04",
       "tree": {
         "phases": [
           {
@@ -42,10 +42,10 @@
           {
             "id": "IMP-SYS-CLI",
             "title": "Инспекция OpenCode CLI и доставки",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
             "last": "WARMUP",
-            "score": 5,
+            "score": 4,
             "verified": false
           },
           {
@@ -247,15 +247,23 @@
             "action": "WARMUP",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:17:50",
+            "cycle": 19,
+            "task": "IMP-SYS-CLI",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: LI-c19.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
           }
         ],
         "strategy": {
           "version": 17,
           "mutations": 16
         },
-        "events": 18,
+        "events": 19,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -263,11 +271,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.19,
-      "remaining_hours": 5.81,
-      "progress_pct": 27,
-      "cycles": 24,
-      "heartbeat_human": "02:17:03",
+      "elapsed_hours": 2.21,
+      "remaining_hours": 5.79,
+      "progress_pct": 28,
+      "cycles": 25,
+      "heartbeat_human": "02:18:03",
       "tree": {
         "phases": [
           {
@@ -309,9 +317,9 @@
           {
             "id": "SF-T4-CALIB",
             "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 0,
             "verified": false
           },
@@ -580,15 +588,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:17:34",
+            "cycle": 25,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 34,
-          "mutations": 33
+          "version": 35,
+          "mutations": 34
         },
-        "events": 24,
+        "events": 25,
         "avg_score": 3.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -596,11 +612,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.19,
-      "remaining_hours": 5.81,
-      "progress_pct": 27,
-      "cycles": 20,
-      "heartbeat_human": "02:17:03",
+      "elapsed_hours": 2.21,
+      "remaining_hours": 5.79,
+      "progress_pct": 28,
+      "cycles": 21,
+      "heartbeat_human": "02:18:03",
       "tree": {
         "phases": [
           {
@@ -642,10 +658,10 @@
           {
             "id": "UNI-META-REFLECT",
             "title": "Метарефлексия трёх уровней",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
+            "last": "WARMUP",
+            "score": 5,
             "verified": false
           },
           {
@@ -872,19 +888,27 @@
             "action": "WARMUP",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:17:31",
+            "cycle": 21,
+            "task": "UNI-META-REFLECT",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 20,
+        "events": 21,
         "avg_score": 4.8,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795735028,
-  "fetched_human": "2026-11-27 02:17:08 +0300"
+  "fetched_at": 1795735089,
+  "fetched_human": "2026-11-27 02:18:10 +0300"
 }
