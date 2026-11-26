@@ -3192,6 +3192,8 @@ function renderLive(){
           `<div class="pb-row"><span class="pb-ts">итого</span>`+
           `<span>└─ событий: ${Number(cur.events)||0}</span></div></div>`);
       }
+      const branch=bars.querySelector(".pbar-branch");
+      if(branch) branch.scrollTop=branch.scrollHeight;
       if(!bars.dataset.liveBound){
         bars.dataset.liveBound="1";
         bars.addEventListener("click",(e)=>{
@@ -3436,7 +3438,7 @@ function renderNightRuns(d){
         `<div class="pbar-track"><div class="pbar-fill c-mauve" style="width:${pct}%"></div></div></div>`+
         (open?nightBranch(r):"");
     }).join("");
-    /* Лента обновляется каждые 60 с: держим её Accessed до самого свежего события. */
+    /* Лента обновляется каждые 60 с: держим её прокрученной к свежему событию. */
     const expanded=box.querySelector(".pbar-branch");
     if(expanded) expanded.scrollTop=expanded.scrollHeight;
     if(!box.dataset.nightBound){
