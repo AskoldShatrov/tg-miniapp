@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.05,
-      "remaining_hours": 3.95,
+      "elapsed_hours": 4.08,
+      "remaining_hours": 3.92,
       "progress_pct": 51,
-      "cycles": 40,
-      "heartbeat_human": "13:06:31",
+      "cycles": 41,
+      "heartbeat_human": "13:08:31",
       "tree": {
         "phases": [
           {
@@ -51,7 +51,7 @@
           {
             "id": "T05-UNIFY-POINT",
             "title": "Единая точка оценки",
-            "cycles": 4,
+            "cycles": 5,
             "max": 8,
             "last": "MUTATE",
             "score": 2,
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:24:35",
-            "cycle": 33,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
           {
             "clock": "12:30:53",
             "cycle": 34,
@@ -131,19 +123,27 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
+          },
+          {
+            "clock": "13:08:37",
+            "cycle": 41,
+            "task": "T05-UNIFY-POINT",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
           }
         ],
         "strategy": {
-          "version": 35,
-          "mutations": 34
+          "version": 36,
+          "mutations": 35
         },
-        "events": 40,
+        "events": 41,
         "avg_score": 2.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795687598,
-  "fetched_human": "2026-11-26 13:06:38 +0300"
+  "fetched_at": 1795687723,
+  "fetched_human": "2026-11-26 13:08:43 +0300"
 }
