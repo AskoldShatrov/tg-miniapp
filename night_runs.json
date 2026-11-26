@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.56,
-      "remaining_hours": 6.44,
-      "progress_pct": 19,
-      "cycles": 13,
-      "heartbeat_human": "01:39:07",
+      "elapsed_hours": 1.57,
+      "remaining_hours": 6.43,
+      "progress_pct": 20,
+      "cycles": 14,
+      "heartbeat_human": "01:40:07",
       "tree": {
         "phases": [
           {
@@ -33,10 +33,10 @@
           {
             "id": "IMP-SYS-DSH",
             "title": "Инспекция DSH за 7 дней",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
             "verified": false
           },
           {
@@ -207,15 +207,23 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "01:39:44",
+            "cycle": 14,
+            "task": "IMP-SYS-DSH",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: 126/artifacts/IMP-SYS-DSH-c14.md MTIME unparseable; missing PASS:; missing FA"
           }
         ],
         "strategy": {
-          "version": 14,
-          "mutations": 13
+          "version": 15,
+          "mutations": 14
         },
-        "events": 13,
+        "events": 14,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -223,11 +231,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.56,
-      "remaining_hours": 6.44,
-      "progress_pct": 19,
+      "elapsed_hours": 1.57,
+      "remaining_hours": 6.43,
+      "progress_pct": 20,
       "cycles": 7,
-      "heartbeat_human": "01:39:07",
+      "heartbeat_human": "01:40:07",
       "tree": {
         "phases": [
           {
@@ -420,11 +428,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.56,
-      "remaining_hours": 6.44,
-      "progress_pct": 19,
-      "cycles": 14,
-      "heartbeat_human": "01:39:07",
+      "elapsed_hours": 1.57,
+      "remaining_hours": 6.43,
+      "progress_pct": 20,
+      "cycles": 15,
+      "heartbeat_human": "01:40:07",
       "tree": {
         "phases": [
           {
@@ -448,7 +456,7 @@
           {
             "id": "UNI-PID-CALIB",
             "title": "ПИ-регулятор Kp=2 Ти=20",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "PROMOTE",
             "score": 5,
@@ -648,19 +656,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "01:39:39",
+            "cycle": 15,
+            "task": "UNI-PID-CALIB",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 14,
+        "events": 15,
         "avg_score": 4.8,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795732756,
-  "fetched_human": "2026-11-27 01:39:16 +0300"
+  "fetched_at": 1795732817,
+  "fetched_human": "2026-11-27 01:40:17 +0300"
 }
