@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.05,
-      "remaining_hours": 5.95,
+      "elapsed_hours": 2.07,
+      "remaining_hours": 5.93,
       "progress_pct": 26,
       "cycles": 22,
-      "heartbeat_human": "16:12:49",
+      "heartbeat_human": "16:13:49",
       "tree": {
         "phases": [
           {
@@ -286,11 +286,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.05,
-      "remaining_hours": 5.95,
+      "elapsed_hours": 2.07,
+      "remaining_hours": 5.93,
       "progress_pct": 26,
-      "cycles": 12,
-      "heartbeat_human": "16:12:49",
+      "cycles": 13,
+      "heartbeat_human": "16:13:49",
       "tree": {
         "phases": [
           {
@@ -332,7 +332,7 @@
           {
             "id": "SF-T4-CALIB",
             "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
             "last": "MUTATE",
             "score": 4,
@@ -498,15 +498,23 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
+          },
+          {
+            "clock": "16:13:22",
+            "cycle": 13,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
           }
         ],
         "strategy": {
-          "version": 7,
-          "mutations": 6
+          "version": 8,
+          "mutations": 7
         },
-        "events": 12,
+        "events": 13,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -514,11 +522,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.05,
-      "remaining_hours": 5.95,
+      "elapsed_hours": 2.07,
+      "remaining_hours": 5.93,
       "progress_pct": 26,
       "cycles": 25,
-      "heartbeat_human": "16:12:49",
+      "heartbeat_human": "16:13:49",
       "tree": {
         "phases": [
           {
@@ -834,6 +842,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795698777,
-  "fetched_human": "2026-11-26 16:12:57 +0300"
+  "fetched_at": 1795698842,
+  "fetched_human": "2026-11-26 16:14:02 +0300"
 }
