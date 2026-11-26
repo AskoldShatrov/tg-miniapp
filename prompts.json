@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T10:40:51+00:00",
-  "generated_human": "26.11 10:40 UTC",
-  "as_of": 1795689650644,
+  "generated": "2026-11-26T10:41:56+00:00",
+  "generated_human": "26.11 10:41 UTC",
+  "as_of": 1795689715616,
   "stale_days": 1,
   "count": 1067,
   "groups": 9,
@@ -42,14 +42,32 @@
     {
      "id": "ses-YYD2wtgBIG",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Сверка death-tick с независимым эталоном, поле INDEPENDENT_REF с путём и sha256. Пиши только в /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-DEATHTICK-INDEP-*.md. VERDICT: PASS только после реальной проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-DEATHTICK-INDEP-c10.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795689645000,
+     "ts": 1795689714000,
      "source": "session",
      "title": "lree-SF-DEATHTICK-INDEP-c10",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795689645000,
+     "as_of": 1795689714000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-T4kRT9fmid",
+     "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
+     "ts": 1795689713000,
+     "source": "session",
+     "title": "S01-scanfeed-real60.md: калибровка confidence",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200052468b4b",
+      "w261120005246135d"
+     ],
+     "as_of": 1795689713000,
      "is_stale": false
     },
     {
@@ -63,31 +81,6 @@
      "user": "Аскольд",
      "wants": [],
      "as_of": 1795689585000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-T4kRT9fmid",
-     "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795689542000,
-     "source": "session",
-     "title": "S01-scanfeed-real60.md: калибровка confidence",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Ищу, кто рисует ленту «Ход» и кто порождает ночные мандаты.\nЧиню ленту: снимаю обрезку журнала и добавляю прокрутку до конца.\nДобавляю все учебные работы в живой мандат ночного прогона, а не в отдельн",
-     "answer_short": "w261119190741dca0: Ищу, кто рисует ленту «Ход» и кто порождает ночные мандаты.\n",
-     "answer_full": "Ищу, кто рисует ленту «Ход» и кто порождает ночные мандаты.\nЧиню ленту: снимаю обрезку журнала и добавляю прокрутку до конца.\nДобавляю все учебные работы в живой мандат ночного прогона, а не в отдельный файл.\nЛента «Ход» теперь показывает весь хвост и прокручивается к свежему событию, а все учебные работы добавлены в живой ночной прогон; второй мандат согласован по окнам.\nПОНЯТНО: Простыми словами: журнал больше не обрывается через несколько команд — он длиннее и сам прокручивается к последнему. В ночной прогон добавлены моделирование систем, НИР, курсовая и расшифровки.\nГлавное:\n🟩 Лента ночного прогона: было видно восемь последних решений, теперь до шестидесяти, с прокруткой к концу.\n🟩 В живой мандат добавлены четыре учебные задачи: моделирование систем, НИР, курсовая и расшифровки.\n🟦 Сканфид и учёба разделены: ПК для HLAE, отдельный экран для Wine; фокус друг другу не мешают.\nШаги: проверить первый учебный цикл; сверить ленту в мини-апе; не трогать ПК, пока активно окно игры или HLAE\nПроверка: валидатор задач прошёл — десять задач; опубликованная лента содержит сорок одно решение и все учебные фазы; JavaScript проверен без ошибок.\nСАМОИСЧЕРПАНИЕ:\nПОПЫТКА: нашёл реальную причину обрыва — генератор отдавал только восемь ночных и двенадцать живых событий; поднял лимиты до шестидесяти и добавил прокрутку к концу.\nПОПЫТКА: добавил учебные задачи прямо в живой `tasks.jsonl` мандата `unified-7d-1126`, не меняя `state.json`, реестры и конфиги.\nПОПЫТКА: нашёл второй живой мандат `scanfeed-v2-1126` с HLAE-задачами и записал согласование в его каталоге без изменения его состояния.\nАЛЬТЕРНАТИВЫ: учебные задачи теперь не лежат отдельным планом на полке — они встроены в дерево мандата и берутся движком по циклу.\nИСТОЧНИК: /home/nyaka/evolution-work/unified-7d-1126/tasks.jsonl, /home/nyaka/scripts/background/miniapp_status.py, /home/nyaka/shared-repo/bots/miniapp/index.html, /home/nyaka/evolution-work/scanfeed-v2-1126/COORDINATION-study.md\nАРТЕФАКТ: /home/nyaka/evolution-work/unified-7d-1126/tasks.jsonl ae5803268cba98aa3933676cdfffacad0b38e1b6be6e6855503878e917892f58 PASS: validate_tasks.py OK tasks=10\nАРТЕФАКТ: /home/nyaka/scripts/background/miniapp_status.py 767d72b5e28ab337aa48ac16e13d81d8f0340d3c0bfbec448024f0482e5508fd PASS: py_compile OK, лента 60 событий\nАРТЕФАКТ: /home/nyaka/shared-repo/bots/miniapp/index.html fa2085f23c77427da44be6b28d3bfb771eec5589a67b6e73de174b8ea5a40eaf PASS: node --check OK, прокрутка к концу\nАРТЕФАКТ: /tmp/opencode/night_runs_snapshot_1337.json 74c8fd28eb39464219367c3409dc77e032677362ed0f6bcb92afc8957f2200c3 PASS: 41 решение и 10 фаз в опубликованном файле\nАРТЕФАКТ: /home/nyaka/evolution-work/scanfeed-v2-1126/COORDINATION-study.md 490e65800e1cb2474294a2cf11a70e72087e304505b3c9fd1961a6e2e108865a PASS: два мандата согласованы по окнам\nГейты: human_readable — PASS, draft — PASS, answer_integrity — PASS, presentation — 8 PASS / 0 FAIL. Постер проверен глазами: тёмный фон, светлый текст, одна мысль на экран.",
-     "answer_digest": {
-      "length": 2974,
-      "sha256": "2645e1f8e5edbbfc981502179fcb05751413882727e869e89db07de2def71791"
-     },
-     "answer_text_id": "2645e1f8e5edbbfc",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795689575136,
-     "as_of": 1795689542000,
      "is_stale": false
     },
     {
