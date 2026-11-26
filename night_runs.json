@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.98,
-      "remaining_hours": 6.02,
+      "elapsed_hours": 2.0,
+      "remaining_hours": 6.0,
       "progress_pct": 25,
       "cycles": 16,
-      "heartbeat_human": "02:04:22",
+      "heartbeat_human": "02:05:22",
       "tree": {
         "phases": [
           {
@@ -247,11 +247,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.98,
-      "remaining_hours": 6.02,
+      "elapsed_hours": 2.0,
+      "remaining_hours": 6.0,
       "progress_pct": 25,
-      "cycles": 11,
-      "heartbeat_human": "02:04:22",
+      "cycles": 12,
+      "heartbeat_human": "02:05:22",
       "tree": {
         "phases": [
           {
@@ -275,9 +275,9 @@
           {
             "id": "SF-ECONOMY-STRIP",
             "title": "Компактная экономия под карточками противников",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATE",
+            "last": "MUTATED_AFTER_3_FAIL",
             "score": 0,
             "verified": false
           },
@@ -460,15 +460,23 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:05:23",
+            "cycle": 12,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 23,
-          "mutations": 22
+          "version": 24,
+          "mutations": 23
         },
-        "events": 11,
+        "events": 12,
         "avg_score": 3.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -476,11 +484,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.98,
-      "remaining_hours": 6.02,
+      "elapsed_hours": 2.0,
+      "remaining_hours": 6.0,
       "progress_pct": 25,
-      "cycles": 17,
-      "heartbeat_human": "02:04:22",
+      "cycles": 18,
+      "heartbeat_human": "02:05:22",
       "tree": {
         "phases": [
           {
@@ -513,9 +521,9 @@
           {
             "id": "UNI-HYPOTHESIS-DIVERGE",
             "title": "Перебор гипотез учебного трека",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
-            "last": "PROMOTE",
+            "last": "WARMUP",
             "score": 5,
             "verified": false
           },
@@ -728,19 +736,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:05:30",
+            "cycle": 18,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 17,
+        "events": 18,
         "avg_score": 4.8,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795734283,
-  "fetched_human": "2026-11-27 02:04:43 +0300"
+  "fetched_at": 1795734345,
+  "fetched_human": "2026-11-27 02:05:45 +0300"
 }
