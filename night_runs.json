@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.26,
-      "remaining_hours": 5.74,
+      "elapsed_hours": 2.27,
+      "remaining_hours": 5.73,
       "progress_pct": 28,
-      "cycles": 19,
-      "heartbeat_human": "02:21:04",
+      "cycles": 20,
+      "heartbeat_human": "02:22:04",
       "tree": {
         "phases": [
           {
@@ -42,10 +42,10 @@
           {
             "id": "IMP-SYS-CLI",
             "title": "Инспекция OpenCode CLI и доставки",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "WARMUP",
-            "score": 4,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
             "verified": false
           },
           {
@@ -255,15 +255,23 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=1: LI-c19.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "02:21:48",
+            "cycle": 20,
+            "task": "IMP-SYS-CLI",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
-          "version": 17,
-          "mutations": 16
+          "version": 18,
+          "mutations": 17
         },
-        "events": 19,
+        "events": 20,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -271,11 +279,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.26,
-      "remaining_hours": 5.74,
+      "elapsed_hours": 2.27,
+      "remaining_hours": 5.73,
       "progress_pct": 28,
-      "cycles": 28,
-      "heartbeat_human": "02:21:03",
+      "cycles": 29,
+      "heartbeat_human": "02:22:03",
       "tree": {
         "phases": [
           {
@@ -326,7 +334,7 @@
           {
             "id": "SF-PRESENT-DECK",
             "title": "Презентация: 6-8 слайдов и постер",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
             "last": "MUTATE",
             "score": 0,
@@ -620,15 +628,23 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:21:34",
+            "cycle": 29,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 38,
-          "mutations": 37
+          "version": 39,
+          "mutations": 38
         },
-        "events": 28,
+        "events": 29,
         "avg_score": 3.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -636,11 +652,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.26,
-      "remaining_hours": 5.74,
+      "elapsed_hours": 2.27,
+      "remaining_hours": 5.73,
       "progress_pct": 28,
       "cycles": 22,
-      "heartbeat_human": "02:21:03",
+      "heartbeat_human": "02:22:03",
       "tree": {
         "phases": [
           {
@@ -941,6 +957,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795735278,
-  "fetched_human": "2026-11-27 02:21:18 +0300"
+  "fetched_at": 1795735337,
+  "fetched_human": "2026-11-27 02:22:17 +0300"
 }
