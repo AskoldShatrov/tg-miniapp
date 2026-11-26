@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2348,
+      "age_min": 2349,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2369,
+      "age_min": 2370,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,46 +2068,46 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2370,
+      "age_min": 2371,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-685498ee",
-      "title": "Активный сеанс DSH с проверками",
-      "source": "dsh",
-      "claimed_human": "11:16:02",
-      "age_min": 0,
-      "full": "Активный сеанс DSH с проверками"
-    },
-    {
-      "id": "session-41b44bf1",
-      "title": "Проверка ночного прогона Scanfid",
-      "source": "dsh",
-      "claimed_human": "11:16:01",
-      "age_min": 0,
-      "full": "Проверка ночного прогона Scanfid"
-    },
-    {
-      "id": "session-65f0aaa1",
-      "title": "Сводка вопросов и проблем за 7 дней",
-      "source": "dsh",
-      "claimed_human": "11:16:00",
-      "age_min": 0,
-      "full": "Сводка вопросов и проблем за 7 дней"
     },
     {
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "11:16:00",
+      "claimed_human": "11:17:06",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
+    },
+    {
+      "id": "session-41b44bf1",
+      "title": "Проверка ночного прогона Scanfid",
+      "source": "dsh",
+      "claimed_human": "11:17:04",
+      "age_min": 0,
+      "full": "Проверка ночного прогона Scanfid"
+    },
+    {
+      "id": "session-685498ee",
+      "title": "Активный сеанс DSH с проверками",
+      "source": "dsh",
+      "claimed_human": "11:16:59",
+      "age_min": 0,
+      "full": "Активный сеанс DSH с проверками"
+    },
+    {
+      "id": "session-65f0aaa1",
+      "title": "Сводка вопросов и проблем за 7 дней",
+      "source": "dsh",
+      "claimed_human": "11:16:41",
+      "age_min": 0,
+      "full": "Сводка вопросов и проблем за 7 дней"
     },
     {
       "id": "session-8fc52b16",
       "title": "РОЛЬ: исполнитель ска",
       "source": "dsh",
-      "claimed_human": "11:15:57",
+      "claimed_human": "11:16:22",
       "age_min": 0,
       "full": "РОЛЬ: исполнитель ска"
     },
@@ -2116,7 +2116,7 @@
       "title": "Какие модели обсуждаются",
       "source": "dsh",
       "claimed_human": "11:15:35",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Какие модели обсуждаются"
     },
     {
@@ -2124,7 +2124,7 @@
       "title": "Суммаризация вопросов за 7 дней",
       "source": "dsh",
       "claimed_human": "11:12:58",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Суммаризация вопросов за 7 дней"
     },
     {
@@ -2132,7 +2132,7 @@
       "title": "Переработка оверлея экономики в HLAE",
       "source": "dsh",
       "claimed_human": "11:09:05",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Переработка оверлея экономики в HLAE"
     }
   ],
@@ -2153,70 +2153,7 @@
     "captions_total": 196,
     "source": "cs2-transcribe/state.db"
   },
-  "runs": [
-    {
-      "key": "req-20261126-110917-447c87",
-      "session_id": "ses_dea4eef77ffeYNCKXbhYZ1VLEB",
-      "source": "photo",
-      "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "",
-      "step": 0,
-      "total": null,
-      "events": 6,
-      "trail": [
-        {
-          "ts": 1795680663,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795680663,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795680698,
-          "label": "NET · https://api.github"
-        },
-        {
-          "ts": 1795680698,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795680736,
-          "label": "NET · https://raw.github"
-        },
-        {
-          "ts": 1795680736,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795680791,
-          "label": "BASH · rm -rf /tmp/openc"
-        },
-        {
-          "ts": 1795680791,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795680832,
-          "label": "BASH · git clone --depth"
-        },
-        {
-          "ts": 1795680832,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795680921,
-          "label": "BASH · for s in docx ppt"
-        },
-        {
-          "ts": 1795680922,
-          "label": "THINK"
-        }
-      ],
-      "started_at": 1795680557,
-      "updated_at": 1795680966
-    }
-  ],
+  "runs": [],
   "bars": [
     {
       "key": "task:T29",
@@ -2233,6 +2170,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 3.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795680966,
-  "fetched_human": "2026-11-26 11:16:06 +0300"
+  "fetched_at": 1795681027,
+  "fetched_human": "2026-11-26 11:17:07 +0300"
 }
