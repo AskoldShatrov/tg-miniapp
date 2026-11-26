@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.96,
-      "remaining_hours": 6.04,
-      "progress_pct": 24,
+      "elapsed_hours": 1.98,
+      "remaining_hours": 6.02,
+      "progress_pct": 25,
       "cycles": 21,
-      "heartbeat_human": "16:07:19",
+      "heartbeat_human": "16:08:19",
       "tree": {
         "phases": [
           {
@@ -278,11 +278,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.96,
-      "remaining_hours": 6.04,
-      "progress_pct": 24,
-      "cycles": 11,
-      "heartbeat_human": "16:07:19",
+      "elapsed_hours": 1.98,
+      "remaining_hours": 6.02,
+      "progress_pct": 25,
+      "cycles": 12,
+      "heartbeat_human": "16:08:19",
       "tree": {
         "phases": [
           {
@@ -324,10 +324,10 @@
           {
             "id": "SF-T4-CALIB",
             "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 4,
             "verified": false
           },
           {
@@ -482,15 +482,23 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "16:08:26",
+            "cycle": 12,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
           }
         ],
         "strategy": {
-          "version": 6,
-          "mutations": 5
+          "version": 7,
+          "mutations": 6
         },
-        "events": 11,
+        "events": 12,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -498,11 +506,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.96,
-      "remaining_hours": 6.04,
-      "progress_pct": 24,
+      "elapsed_hours": 1.98,
+      "remaining_hours": 6.02,
+      "progress_pct": 25,
       "cycles": 24,
-      "heartbeat_human": "16:07:19",
+      "heartbeat_human": "16:08:19",
       "tree": {
         "phases": [
           {
@@ -810,6 +818,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795698457,
-  "fetched_human": "2026-11-26 16:07:37 +0300"
+  "fetched_at": 1795698522,
+  "fetched_human": "2026-11-26 16:08:42 +0300"
 }
