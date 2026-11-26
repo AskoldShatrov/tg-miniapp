@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.65,
-      "remaining_hours": 7.35,
+      "elapsed_hours": 0.66,
+      "remaining_hours": 7.34,
       "progress_pct": 8,
       "cycles": 4,
-      "heartbeat_human": "00:44:18",
+      "heartbeat_human": "00:45:18",
       "tree": {
         "phases": [
           {
@@ -151,20 +151,20 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.65,
-      "remaining_hours": 7.35,
+      "elapsed_hours": 0.66,
+      "remaining_hours": 7.34,
       "progress_pct": 8,
-      "cycles": 2,
-      "heartbeat_human": "00:44:18",
+      "cycles": 3,
+      "heartbeat_human": "00:45:18",
       "tree": {
         "phases": [
           {
             "id": "SF-HLAE-POV-CAPTURE",
             "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
-            "last": "WARMUP",
-            "score": 4,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
             "verified": false
           },
           {
@@ -292,19 +292,27 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=1: t-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c3.md age 34187s > 3600"
+          },
+          {
+            "clock": "00:44:45",
+            "cycle": 3,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
           }
         ],
         "strategy": {
-          "version": 19,
-          "mutations": 18
+          "version": 20,
+          "mutations": 19
         },
-        "events": 2,
+        "events": 3,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795729475,
-  "fetched_human": "2026-11-27 00:44:35 +0300"
+  "fetched_at": 1795729536,
+  "fetched_human": "2026-11-27 00:45:36 +0300"
 }
