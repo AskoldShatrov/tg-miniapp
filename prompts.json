@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T11:01:45+00:00",
-  "generated_human": "26.11 11:01 UTC",
-  "as_of": 1795690905122,
+  "generated": "2026-11-26T11:02:45+00:00",
+  "generated_human": "26.11 11:02 UTC",
+  "as_of": 1795690965324,
   "stale_days": 1,
   "count": 1075,
   "groups": 9,
@@ -39,9 +39,37 @@
    ],
    "prompts": [
     {
+     "id": "ses-G1AvdalfUV",
+     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Проверка adb-устройства 10AF6823ZN003YK и tg-bot-ui; команда, rc, SHA256 кадра, человекочитаемый вывод. Пиши только в /home/nyaka/evolution-work/complex-improvement-1126/artifacts/IMP-UX-AUDIT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/complex-improvement-1126/artifacts/IMP-UX-AUDIT-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795690963000,
+     "source": "session",
+     "title": "lree-IMP-UX-AUDIT-c3",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261121055339bfc8"
+     ],
+     "as_of": 1795690963000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-fE1F6Wr6iv",
+     "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Пороги не двигать: N>=60, FP>0, ECE<0.05; если данных нет — честный FAIL. Пиши только в /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-*.md. VERDICT: PASS только после реальной проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c13.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795690961000,
+     "source": "session",
+     "title": "lree-SF-T4-CALIB-c13",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795690961000,
+     "is_stale": false
+    },
+    {
      "id": "ses-CWuO5r3Qwy",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795690902000,
+     "ts": 1795690961000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -53,35 +81,7 @@
       "w2611200052468b4b",
       "w2611200052463b06"
      ],
-     "as_of": 1795690902000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-G1AvdalfUV",
-     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Проверка adb-устройства 10AF6823ZN003YK и tg-bot-ui; команда, rc, SHA256 кадра, человекочитаемый вывод. Пиши только в /home/nyaka/evolution-work/complex-improvement-1126/artifacts/IMP-UX-AUDIT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/complex-improvement-1126/artifacts/IMP-UX-AUDIT-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795690899000,
-     "source": "session",
-     "title": "lree-IMP-UX-AUDIT-c3",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261121055339bfc8"
-     ],
-     "as_of": 1795690899000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-fE1F6Wr6iv",
-     "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Пороги не двигать: N>=60, FP>0, ECE<0.05; если данных нет — честный FAIL. Пиши только в /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-*.md. VERDICT: PASS только после реальной проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c13.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795690896000,
-     "source": "session",
-     "title": "lree-SF-T4-CALIB-c13",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795690896000,
+     "as_of": 1795690961000,
      "is_stale": false
     },
     {
@@ -3803,7 +3803,7 @@
     {
      "id": "ses-GUFQDHGUR5",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Вариант 8. Подтверди реальный запуск: команда, rc, путь проекта, скриншот или лог; без доказательств VERDICT=FAIL. Пиши только в /home/nyaka/evolution-work/university-1126/artifacts/UNI-MVS-WINE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/university-1126/artifacts/UNI-MVS-WINE-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795690799000,
+     "ts": 1795690957000,
      "source": "session",
      "title": "lree-UNI-MVS-WINE-c3",
      "source_label": "ноут",
@@ -3812,7 +3812,7 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795690799000,
+     "as_of": 1795690957000,
      "is_stale": false
     },
     {
