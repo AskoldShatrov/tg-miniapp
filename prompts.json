@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T12:12:05+00:00",
-  "generated_human": "26.11 12:12 UTC",
-  "as_of": 1795695125323,
+  "generated": "2026-11-26T12:13:11+00:00",
+  "generated_human": "26.11 12:13 UTC",
+  "as_of": 1795695190425,
   "stale_days": 1,
   "count": 1092,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-7Fe84oLxlJ",
      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795695122000,
+     "ts": 1795695188000,
      "source": "session",
      "title": "Малый радар spectator/overview в FACEIT-демо",
      "source_label": "ноут",
@@ -53,13 +53,13 @@
       "w2611200052460530",
       "w2611200052465da0"
      ],
-     "as_of": 1795695122000,
+     "as_of": 1795695188000,
      "is_stale": false
     },
     {
      "id": "ses-1tPnJYYkvJ",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Покрытие ников и совпадение раундов; поля KF_NAMES и KF_ROUNDS с числами и источником. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: загрузи skill image-read, выполни describe_image.py + read_image по кадру и запиши VISION_GATE с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent через vision_gate.py; без VISION_GATE гейт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695116000,
+     "ts": 1795695163000,
      "source": "session",
      "title": "lree-SF-KF-MAIN-GATE-c4",
      "source_label": "ноут",
@@ -68,7 +68,7 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795695116000,
+     "as_of": 1795695163000,
      "is_stale": false
     },
     {
@@ -4166,7 +4166,7 @@
     {
      "id": "ses-4Qq9GkxvX0",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. IDEAS>=30, HYPOTHESES>=3, THRESHOLD и HOLDOUT. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-c12.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695120000,
+     "ts": 1795695182000,
      "source": "session",
      "title": "lree-IMP-HYPOTHESIS-DIVERGE-c12",
      "source_label": "ноут",
@@ -4175,13 +4175,13 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795695120000,
+     "as_of": 1795695182000,
      "is_stale": false
     },
     {
      "id": "ses-s4GK2XXQpM",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. IDEAS>=30, HYPOTHESES>=3, THRESHOLD и HOLDOUT до критики. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-HYPOTHESIS-DIVERGE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-HYPOTHESIS-DIVERGE-c11.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695119000,
+     "ts": 1795695169000,
      "source": "session",
      "title": "lree-UNI-HYPOTHESIS-DIVERGE-c11",
      "source_label": "ноут",
@@ -4190,7 +4190,7 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795695119000,
+     "as_of": 1795695169000,
      "is_stale": false
     },
     {
