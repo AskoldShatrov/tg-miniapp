@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.09,
-      "remaining_hours": 6.91,
+      "elapsed_hours": 1.1,
+      "remaining_hours": 6.9,
       "progress_pct": 14,
       "cycles": 12,
-      "heartbeat_human": "15:14:49",
+      "heartbeat_human": "15:16:19",
       "tree": {
         "phases": [
           {
@@ -206,11 +206,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.09,
-      "remaining_hours": 6.91,
+      "elapsed_hours": 1.1,
+      "remaining_hours": 6.9,
       "progress_pct": 14,
       "cycles": 3,
-      "heartbeat_human": "15:14:49",
+      "heartbeat_human": "15:16:19",
       "tree": {
         "phases": [
           {
@@ -362,11 +362,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.09,
-      "remaining_hours": 6.91,
+      "elapsed_hours": 1.1,
+      "remaining_hours": 6.9,
       "progress_pct": 14,
-      "cycles": 10,
-      "heartbeat_human": "15:14:49",
+      "cycles": 11,
+      "heartbeat_human": "15:16:19",
       "tree": {
         "phases": [
           {
@@ -388,6 +388,15 @@
             "verified": true
           },
           {
+            "id": "UNI-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез учебного трека",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
             "cycles": 2,
@@ -395,15 +404,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-HYPOTHESIS-DIVERGE",
-            "title": "Перебор гипотез учебного трека",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "UNI-META-REFLECT",
@@ -549,19 +549,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "15:15:18",
+            "cycle": 11,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 4,
           "mutations": 3
         },
-        "events": 10,
+        "events": 11,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795695316,
-  "fetched_human": "2026-11-26 15:15:16 +0300"
+  "fetched_at": 1795695381,
+  "fetched_human": "2026-11-26 15:16:21 +0300"
 }
