@@ -1300,7 +1300,10 @@ function setTab(name){
   if(name==="library"&&window.LibraryTab) LibraryTab.refresh();
   if(name==="interview"&&typeof renderInterview==="function") renderInterview();
   if(name==="prompts"&&typeof refreshPrompts==="function"&&!PROMPTS_LOADED) refreshPrompts();
-  if(name==="live"&&typeof fetchLiveData==="function") fetchLiveData();
+  if(name==="live"){
+    if(typeof fetchLiveData==="function") fetchLiveData();
+    if(typeof fetchNightRuns==="function") fetchNightRuns();
+  }
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
@@ -4042,10 +4045,10 @@ function mountScenarios(){
 
 /* ---------- init ---------- */
 renderTree(); renderDecisions(); renderSessions(); renderChat(); renderPrompts();
-renderAtlas(); renderLive(); fetchQuestions();
+renderAtlas(); renderLive(); fetchQuestions(); fetchNightRuns();
 loadProcessTree();                    // этап 7: пробуем живой API; без URL остаётся статический фолбэк
 setInterval(()=>{ if(LIVE_DATA_LOADED) fetchLiveData(true); }, 60000); // обновляем только уже открытые тяжёлые данные
-setInterval(()=>{ const s=$("#screen-night"); if(s&&s.classList.contains("active")) fetchNightRuns(true); }, 60000);
+setInterval(()=>{ const s=$("#screen-live"); if(s&&s.classList.contains("active")) fetchNightRuns(true); }, 60000);
 setInterval(fetchQuestions, 5000);    // вопросы: /questions при API, иначе questions.json
 setInterval(()=>{                     // этап 7: только API-дерево (5с), без дублирования статических запросов
   if(API_TREE_ON || (LATEST_STATUS && LATEST_STATUS.process_api_url)) loadProcessTree();
