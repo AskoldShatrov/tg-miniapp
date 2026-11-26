@@ -5,20 +5,20 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 7.78,
+      "elapsed_hours": 0.23,
+      "remaining_hours": 7.77,
       "progress_pct": 3,
-      "cycles": 1,
-      "heartbeat_human": "00:18:48",
+      "cycles": 2,
+      "heartbeat_human": "00:19:48",
       "tree": {
         "phases": [
           {
             "id": "IMP-PRIOR-INTAKE",
             "title": "Приём интервью и наработок по улучшению",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
             "last": "WARMUP",
-            "score": 4,
+            "score": 5,
             "verified": false
           },
           {
@@ -111,15 +111,23 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=1: L /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex"
+          },
+          {
+            "clock": "00:19:34",
+            "cycle": 2,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
           }
         ],
         "strategy": {
           "version": 11,
           "mutations": 10
         },
-        "events": 1,
+        "events": 2,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -127,11 +135,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 7.78,
+      "elapsed_hours": 0.23,
+      "remaining_hours": 7.77,
       "progress_pct": 3,
       "cycles": 0,
-      "heartbeat_human": "00:18:48",
+      "heartbeat_human": "00:19:48",
       "tree": {
         "phases": [
           {
@@ -267,17 +275,17 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 7.78,
+      "elapsed_hours": 0.23,
+      "remaining_hours": 7.77,
       "progress_pct": 3,
-      "cycles": 1,
-      "heartbeat_human": "00:18:48",
+      "cycles": 2,
+      "heartbeat_human": "00:19:48",
       "tree": {
         "phases": [
           {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
             "last": "WARMUP",
             "score": 5,
@@ -391,19 +399,27 @@
             "action": "WARMUP",
             "score": 5,
             "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:19:13",
+            "cycle": 2,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
           }
         ],
         "strategy": {
           "version": 16,
           "mutations": 15
         },
-        "events": 1,
+        "events": 2,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795727933,
-  "fetched_human": "2026-11-27 00:18:53 +0300"
+  "fetched_at": 1795727993,
+  "fetched_human": "2026-11-27 00:19:53 +0300"
 }
