@@ -1,6 +1,352 @@
 {
-  "runs": [],
-  "count": 0,
-  "fetched_at": 1795729717,
-  "fetched_human": "2026-11-27 00:48:37 +0300"
+  "runs": [
+    {
+      "id": "scanfeed-v2-1126",
+      "label": "Сканфид-мандат",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.73,
+      "remaining_hours": 7.27,
+      "progress_pct": 9,
+      "cycles": 3,
+      "heartbeat_human": "00:49:38",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-HLAE-POV-CAPTURE",
+            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
+            "cycles": 3,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-MAIN-GATE",
+            "title": "Kill feed как главный гейт",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-ECONOMY-STRIP",
+            "title": "Компактная экономия под карточками противников",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DEATHTICK-INDEP",
+            "title": "Death-tick: независимый эталон",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6-8 слайдов и постер",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DIGEST",
+            "title": "Итоговый дайджест",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRIOR-WORK-INTAKE",
+            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез до критики",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев и вопросы к задаче",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 0,
+            "max": 8,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "00:20:48",
+            "cycle": 1,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "00:34:17",
+            "cycle": 2,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: t-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c3.md age 34187s > 3600"
+          },
+          {
+            "clock": "00:44:45",
+            "cycle": 3,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          }
+        ],
+        "strategy": {
+          "version": 20,
+          "mutations": 19
+        },
+        "events": 3,
+        "avg_score": 3.0,
+        "fail_streak": 0
+      }
+    },
+    {
+      "id": "university-1126",
+      "label": "university 1126",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.73,
+      "remaining_hours": 7.27,
+      "progress_pct": 9,
+      "cycles": 6,
+      "heartbeat_human": "00:49:38",
+      "tree": {
+        "phases": [
+          {
+            "id": "UNI-PRIOR-INTAKE",
+            "title": "Приём учебных наработок",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-MVS-WINE",
+            "title": "Моделирование систем: MvStudium под Wine",
+            "cycles": 1,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "UNI-PID-CALIB",
+            "title": "ПИ-регулятор Kp=2 Ти=20",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез учебного трека",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев учебного трека",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-WRITER",
+            "title": "Writer учебного трека",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-DIGEST",
+            "title": "Итог учебного трека",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-NIR",
+            "title": "НИР: гейты и версии",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-KP",
+            "title": "Курсовая: LaTeX и блок-схема",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-VOICE",
+            "title": "Учебные расшифровки: полезные указания",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "UNI-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 0,
+            "max": 8,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "00:12:12",
+            "cycle": 1,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:19:13",
+            "cycle": 2,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:25:06",
+            "cycle": 3,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:29:44",
+            "cycle": 4,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:36:42",
+            "cycle": 5,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:43:34",
+            "cycle": 6,
+            "task": "UNI-MVS-WINE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: t-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-c5.md age 36712"
+          }
+        ],
+        "strategy": {
+          "version": 17,
+          "mutations": 16
+        },
+        "events": 6,
+        "avg_score": 4.8,
+        "fail_streak": 0
+      }
+    }
+  ],
+  "count": 2,
+  "fetched_at": 1795729781,
+  "fetched_human": "2026-11-27 00:49:41 +0300"
 }
