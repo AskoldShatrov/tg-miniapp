@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.19,
-      "remaining_hours": 6.81,
+      "elapsed_hours": 1.2,
+      "remaining_hours": 6.8,
       "progress_pct": 15,
       "cycles": 10,
-      "heartbeat_human": "01:16:37",
+      "heartbeat_human": "01:17:37",
       "tree": {
         "phases": [
           {
@@ -199,11 +199,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.19,
-      "remaining_hours": 6.81,
+      "elapsed_hours": 1.2,
+      "remaining_hours": 6.8,
       "progress_pct": 15,
       "cycles": 6,
-      "heartbeat_human": "01:16:37",
+      "heartbeat_human": "01:17:37",
       "tree": {
         "phases": [
           {
@@ -388,11 +388,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.19,
-      "remaining_hours": 6.81,
+      "elapsed_hours": 1.2,
+      "remaining_hours": 6.8,
       "progress_pct": 15,
-      "cycles": 10,
-      "heartbeat_human": "01:16:37",
+      "cycles": 11,
+      "heartbeat_human": "01:17:37",
       "tree": {
         "phases": [
           {
@@ -416,11 +416,11 @@
           {
             "id": "UNI-PID-CALIB",
             "title": "ПИ-регулятор Kp=2 Ти=20",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "UNI-HYPOTHESIS-DIVERGE",
@@ -584,19 +584,27 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "01:18:02",
+            "cycle": 11,
+            "task": "UNI-PID-CALIB",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 17,
-          "mutations": 16
+          "version": 18,
+          "mutations": 17
         },
-        "events": 10,
+        "events": 11,
         "avg_score": 4.8,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795731423,
-  "fetched_human": "2026-11-27 01:17:03 +0300"
+  "fetched_at": 1795731483,
+  "fetched_human": "2026-11-27 01:18:03 +0300"
 }
