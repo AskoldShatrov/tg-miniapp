@@ -1,5 +1,13 @@
 [
   {
+    "h": "SYS-NIGHT-1127",
+    "verdict": "PASS",
+    "title": "Системное решение ночных прогонов: движки вынесены в постоянные пользовательские службы, воркер создаёт DSH-сессии в папке ночных прогонов, мини-ап не показывает застывшие полосы плана",
+    "note": "systemic_night_check.py 02:14 MSK: 9 PASS / 0 FAIL / 1 OPEN; три юнита active+enabled, пульс 5–6 с, циклы 21/20/18, новая сессия 02:14:04 в папке night-runs; night_runs.j",
+    "src": "Documents/deepseek-harness/default-workspace/reports/systemic-night-runs-solution.md; repo",
+    "full": "Системное решение ночных прогонов: движки вынесены в постоянные пользовательские службы, воркер создаёт DSH-сессии в папке ночных прогонов, мини-ап не показывает застывшие полосы плана"
+  },
+  {
     "h": "H446_run2309",
     "verdict": "FAIL",
     "title": "Агрессивный пик не выигрывает дуэль (P03/R01) — отрицательный результат зафиксирован в реестре",
@@ -54,13 +62,5 @@
     "note": "Мета: проверка 2026-11-19. Бэклог `~/scripts/background/hypothesis_backlog.jsonl`, запись `id=H020` (строка 20): `source: \"16-mixed-all40.md\"`, `hypothesis: \"ShortStairs ",
     "src": "overnight/hypothesis/H020.md",
     "full": "H020: H020 — «ShortStairs CT» / `survived` (строка таблицы §«Пять dust2-сигналов» отчёта `16-mixed-all40.md`)"
-  },
-  {
-    "h": "H298_run17951554",
-    "verdict": "FAIL",
-    "title": "H298_run1795155472: Предрегистрация H298_run1795155472",
-    "note": "Отрицательный результат зафиксирован в отчёте; детали и числа — в source_report.",
-    "src": "overnight/prereg/H298_run1795155472.md",
-    "full": "H298_run1795155472: Предрегистрация H298_run1795155472"
   }
 ]
