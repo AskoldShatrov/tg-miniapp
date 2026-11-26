@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.88,
-      "remaining_hours": 4.12,
-      "progress_pct": 48,
-      "cycles": 31,
-      "heartbeat_human": "18:02:19",
+      "elapsed_hours": 3.9,
+      "remaining_hours": 4.1,
+      "progress_pct": 49,
+      "cycles": 32,
+      "heartbeat_human": "18:03:49",
       "tree": {
         "phases": [
           {
@@ -114,10 +114,10 @@
           {
             "id": "SF-CRITERIA-REVIEW",
             "title": "Пересмотр критериев и вопросы к задаче",
-            "cycles": 0,
+            "cycles": 1,
             "max": 2,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 4,
             "verified": false
           },
           {
@@ -378,19 +378,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: eek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-META-R"
+          },
+          {
+            "clock": "18:03:28",
+            "cycle": 32,
+            "task": "SF-CRITERIA-REVIEW",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ce/night-runs/scanfeed-v2-1126/artifacts/SF-CRITERIA-REVIEW-c32.md missing SO"
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 31,
+        "events": 32,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795705368,
-  "fetched_human": "2026-11-26 18:02:48 +0300"
+  "fetched_at": 1795705432,
+  "fetched_human": "2026-11-26 18:03:53 +0300"
 }
