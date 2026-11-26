@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.64,
-      "remaining_hours": 5.36,
+      "elapsed_hours": 2.66,
+      "remaining_hours": 5.34,
       "progress_pct": 33,
       "cycles": 19,
-      "heartbeat_human": "16:48:19",
+      "heartbeat_human": "16:49:19",
       "tree": {
         "phases": [
           {
@@ -298,11 +298,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.64,
-      "remaining_hours": 5.36,
+      "elapsed_hours": 2.66,
+      "remaining_hours": 5.34,
       "progress_pct": 33,
-      "cycles": 31,
-      "heartbeat_human": "16:48:19",
+      "cycles": 32,
+      "heartbeat_human": "16:49:19",
       "tree": {
         "phases": [
           {
@@ -369,6 +369,15 @@
             "verified": false
           },
           {
+            "id": "UNI-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 3,
+            "max": 20,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
             "cycles": 2,
@@ -403,15 +412,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 2,
-            "max": 20,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           }
         ],
         "trail": [
@@ -662,19 +662,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "16:49:13",
+            "cycle": 32,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 11,
           "mutations": 10
         },
-        "events": 31,
+        "events": 32,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795700908,
-  "fetched_human": "2026-11-26 16:48:28 +0300"
+  "fetched_at": 1795700973,
+  "fetched_human": "2026-11-26 16:49:33 +0300"
 }
