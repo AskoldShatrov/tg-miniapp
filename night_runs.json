@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.37,
-      "remaining_hours": 4.63,
+      "elapsed_hours": 3.39,
+      "remaining_hours": 4.61,
       "progress_pct": 42,
-      "cycles": 26,
-      "heartbeat_human": "17:32:19",
+      "cycles": 27,
+      "heartbeat_human": "17:33:19",
       "tree": {
         "phases": [
           {
@@ -96,9 +96,9 @@
           {
             "id": "SF-HYPOTHESIS-DIVERGE",
             "title": "Перебор гипотез до критики",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 4,
             "verified": false
           },
@@ -338,15 +338,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: lt-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HYPOTHESIS-DIVERGE-c26."
+          },
+          {
+            "clock": "17:32:37",
+            "cycle": 27,
+            "task": "SF-HYPOTHESIS-DIVERGE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: lt-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HYPOTHESIS-DIVERGE-c27."
           }
         ],
         "strategy": {
-          "version": 12,
-          "mutations": 11
+          "version": 13,
+          "mutations": 12
         },
-        "events": 26,
+        "events": 27,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -354,17 +362,17 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.37,
-      "remaining_hours": 4.63,
+      "elapsed_hours": 3.39,
+      "remaining_hours": 4.61,
       "progress_pct": 42,
-      "cycles": 43,
-      "heartbeat_human": "17:32:19",
+      "cycles": 44,
+      "heartbeat_human": "17:33:19",
       "tree": {
         "phases": [
           {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 14,
+            "cycles": 15,
             "max": 20,
             "last": "MUTATE",
             "score": 7,
@@ -814,19 +822,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "17:32:34",
+            "cycle": 44,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 11,
           "mutations": 10
         },
-        "events": 43,
+        "events": 44,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795703544,
-  "fetched_human": "2026-11-26 17:32:24 +0300"
+  "fetched_at": 1795703608,
+  "fetched_human": "2026-11-26 17:33:28 +0300"
 }
