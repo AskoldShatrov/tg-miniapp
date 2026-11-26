@@ -1281,7 +1281,7 @@ function toast(msg){
 
 /* ---------- tabs ---------- */
 /* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
-const TAB_IDS=["live","tasks","prompts","atlas","chat","backup","library","interview","night"];
+const TAB_IDS=["live","tasks","prompts","atlas","chat","backup","library","interview"];
 
 const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function setTab(name){
@@ -1301,7 +1301,6 @@ function setTab(name){
   if(name==="interview"&&typeof renderInterview==="function") renderInterview();
   if(name==="prompts"&&typeof refreshPrompts==="function"&&!PROMPTS_LOADED) refreshPrompts();
   if(name==="live"&&typeof fetchLiveData==="function") fetchLiveData();
-  if(name==="night"&&typeof fetchNightRuns==="function") fetchNightRuns();
   $("#main").scrollTop=0;
 }
 function setTaskSub(name){
@@ -3376,29 +3375,71 @@ async function fetchQuestions(){
   renderQuestions();
 }
 
-/* ---------- ночные прогоны: бюджет, прогресс, витки ---------- */
-let NIGHT_LOADED=false;
+/* ---------- ночные мандаты внутри «Ход»: бюджет + дерево хода по клику ----------
+   Та же механика, что у живых прогонов моста: полоса кликабельна, под ней
+   раскрывается дерево — задачи мандата, стратегия и лента последних решений.
+   Источник дерева — night_runs.json:runs[].tree (miniapp_status.py). */
+let NIGHT_LOADED=false, NIGHT_DATA=null;
+function nightBranch(r){
+  const t=(r.tree&&typeof r.tree==="object")?r.tree:{};
+  const phases=Array.isArray(t.phases)?t.phases:[];
+  const trail=Array.isArray(t.trail)?t.trail:[];
+  const st=(t.strategy&&typeof t.strategy==="object")?t.strategy:{};
+  const budget=r.budget_hours?Number(r.budget_hours).toFixed(1):"—";
+  const remain=r.budget_hours?Number(r.remaining_hours||0).toFixed(1):"—";
+  const phaseRows=phases.length?phases.map(p=>
+    `<div class="pb-row"><span class="pb-ts">${esc(String(p.id||""))}</span>`+
+    `<span>├─ ${p.verified?"✓":"·"} ${esc(String(p.title||""))} · циклов `+
+    `${Number(p.cycles)||0}/${Number(p.max)||0}`+
+    `${p.last&&p.last!=="—"?" · "+esc(String(p.last))+" · балл "+(Number(p.score)||0):""}</span></div>`
+  ).join(""):'<div class="pb-row pb-empty"><span>├─ задач в мандате не найдено</span></div>';
+  const trailRows=trail.length?trail.map(x=>
+    `<div class="pb-row pb-tool" data-tool="SYNC"><span class="pb-ts">${esc(String(x.clock||"—"))}</span>`+
+    `<span>├─ цикл ${Number(x.cycle)||0} · ${esc(String(x.task||""))} → `+
+    `${esc(String(x.action||""))}${x.note?" · "+esc(String(x.note)):""}</span></div>`
+  ).join(""):'<div class="pb-row pb-empty"><span>└─ событий в журнале пока нет</span></div>';
+  return `<div class="pbar-branch">`+
+    `<div class="pb-row pb-head"><span>└─ ${esc(String(r.id||r.label||""))} · бюджет ${budget} ч · осталось ${remain} ч · пульс ${esc(String(r.heartbeat_human||"—"))}</span></div>`+
+    `<div class="pb-row"><span class="pb-ts">стратегия</span><span>├─ версия ${Number(st.version)||0} · мутаций ${Number(st.mutations)||0} · провалов подряд ${Number(t.fail_streak)||0}</span></div>`+
+    phaseRows+
+    `<div class="pb-row"><span class="pb-ts">лента</span><span>├─ последние ${trail.length} решений из ${Number(t.events)||0}</span></div>`+
+    trailRows+
+    `<div class="pb-row"><span class="pb-ts">итого</span><span>└─ событий ${Number(t.events)||0} · средний балл ${Number(t.avg_score)||0}</span></div>`+
+    `</div>`;
+}
 function renderNightRuns(d){
+  NIGHT_DATA=d;
   const box=$("#nightCards");
   if(!box) return;
   const runs=Array.isArray(d.runs)?d.runs:[];
-  box.innerHTML=runs.length?runs.map(r=>{
-    const pct=Math.max(0,Math.min(100,Number(r.progress_pct)||0));
-    const budget=r.budget_hours?Number(r.budget_hours).toFixed(1):"—";
-    const elapsed=Number(r.elapsed_hours||0).toFixed(1);
-    const remain=r.budget_hours?Number(r.remaining_hours||0).toFixed(1):"—";
-    return `<div style="background:var(--surface0);border:1px solid var(--surface1);border-radius:16px;padding:16px">
-      <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">
-        <b style="font-size:18px">${String(r.label||r.id||"Мандат")}</b>
-        <span class="muted">${pct}%</span>
-      </div>
-      <div style="height:8px;border-radius:999px;background:var(--surface2);overflow:hidden;margin:12px 0">
-        <div style="height:100%;width:${pct}%;background:var(--green)"></div>
-      </div>
-      <div class="muted">Бюджет ${budget} ч · прошло ${elapsed} ч · осталось ${remain} ч · витков ${Number(r.cycles||0)}</div>
-      <div class="hint" style="margin-top:6px">${String(r.status||"идёт")} · пульс ${String(r.heartbeat_human||"—")}</div>
-    </div>`;
-  }).join(""):'<div class="hint">Активных ночных прогонов нет.</div>';
+  if(!runs.length){
+    box.innerHTML='<div class="hint">Активных ночных прогонов нет.</div>';
+  } else {
+    box.innerHTML=runs.map(r=>{
+      const rawKey=String(r.id||r.label||"Мандат"), key=esc(rawKey);
+      const pct=Math.max(0,Math.min(100,Number(r.progress_pct)||0));
+      const N=Number(r.cycles)||0;
+      const filled=Math.round(pct/10);
+      const mini="█".repeat(filled)+"░".repeat(10-filled);
+      const open=window.NIGHT_EXPANDED===rawKey;
+      return `<div class="pbar pbar-live" data-night-key="${key}"`+
+        ` title="${esc(String(r.label||rawKey))} — нажми, чтобы раскрыть дерево мандата">`+
+        `<div class="pbar-head"><b><span class="pb-caret">${open?"▾":"▸"}</span>`+
+        `${esc(String(r.label||rawKey))}</b><span>${pct}% · ${mini} · витков ${N}</span></div>`+
+        `<div class="pbar-track"><div class="pbar-fill c-mauve" style="width:${pct}%"></div></div></div>`+
+        (open?nightBranch(r):"");
+    }).join("");
+    if(!box.dataset.nightBound){
+      box.dataset.nightBound="1";
+      box.addEventListener("click",(e)=>{
+        const row=e.target&&e.target.closest?e.target.closest(".pbar-live"):null;
+        if(!row) return;
+        const k=row.dataset.nightKey||"";
+        window.NIGHT_EXPANDED=(window.NIGHT_EXPANDED===k?null:k);
+        if(NIGHT_DATA) renderNightRuns(NIGHT_DATA);
+      });
+    }
+  }
   const stamp=$("#nightStamp");
   if(stamp) stamp.textContent=d.fetched_human||"данные обновлены";
 }
