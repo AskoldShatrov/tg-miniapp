@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.96,
-      "remaining_hours": 4.04,
+      "elapsed_hours": 4.0,
+      "remaining_hours": 4.0,
       "progress_pct": 50,
-      "cycles": 39,
-      "heartbeat_human": "13:01:30",
+      "cycles": 40,
+      "heartbeat_human": "13:03:31",
       "tree": {
         "phases": [
           {
@@ -51,9 +51,9 @@
           {
             "id": "T05-UNIFY-POINT",
             "title": "Единая точка оценки",
-            "cycles": 3,
+            "cycles": 4,
             "max": 8,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 2,
             "verified": false
           },
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:19:23",
-            "cycle": 32,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
           {
             "clock": "12:24:35",
             "cycle": 33,
@@ -131,19 +123,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 2,
             "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
+          },
+          {
+            "clock": "13:01:55",
+            "cycle": 40,
+            "task": "T05-UNIFY-POINT",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
           }
         ],
         "strategy": {
-          "version": 34,
-          "mutations": 33
+          "version": 35,
+          "mutations": 34
         },
-        "events": 39,
+        "events": 40,
         "avg_score": 2.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795687298,
-  "fetched_human": "2026-11-26 13:01:38 +0300"
+  "fetched_at": 1795687419,
+  "fetched_human": "2026-11-26 13:03:39 +0300"
 }
