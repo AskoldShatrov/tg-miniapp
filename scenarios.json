@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-26 02:30",
+ "generated": "2026-11-26 03:00",
  "window": {
-  "start": "2026-11-25T14:30",
-  "end": "2026-11-25T23:29",
+  "start": "2026-11-25T14:49",
+  "end": "2026-11-25T23:58",
   "sessions": 155,
   "roots": 150
  },
  "summary": {
   "skills": 45,
-  "skills_used": 19,
+  "skills_used": 18,
   "agents": 7,
   "agents_used": 1,
   "autofeed": 0,
@@ -23,16 +23,16 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 355,
-   "max_s": 2577,
-   "last": "2026-11-25T23:29:54.356000+00:00",
+   "median_s": 352,
+   "max_s": 2029,
+   "last": "2026-11-25T23:58:54.735000+00:00",
    "outcomes": {
-    "waiting_user": 12,
-    "done": 138
+    "waiting_user": 11,
+    "done": 139
    },
    "example": [
-    "1sQByRX2",
-    "jUwLLSUT"
+    "5mLBiAbi",
+    "FiDl32Oz"
    ],
    "actual": [
     {
@@ -43,48 +43,42 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 62 из 150",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 48 из 150",
+     "t": "в 63 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 146 из 150, ≈32 вызовов за раз",
+     "t": "в 147 из 150, ≈30 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 54 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 117 из 150, ≈6 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "cs2-demo-capture",
-     "t": "в 31 из 150",
+     "t": "в 115 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 141 из 150, ≈6 вызовов за раз",
+     "t": "в 139 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 35 из 150",
+     "t": "в 36 из 150",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, blocker-clock, code-review, cs2-demo-manager, disk-triage, draft-gate, experimentation-analytics, game",
+     "n": "реже: answer-integrity, blocker-clock, code-review, cs2-demo-capture, cs2-demo-manager, disk-triage, draft-gate, experimentati",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -477,15 +471,67 @@
    "group": "typ",
    "title": "Что сделано / статус",
    "when": "«статус», «что я просил», «что сделано»",
-   "status": "idle",
-   "status_text": "Нет запусков за окно",
-   "runs": 0,
-   "median_s": null,
-   "max_s": null,
-   "last": "",
-   "outcomes": {},
-   "example": [],
-   "actual": [],
+   "status": "warn",
+   "status_text": "Мимо единого входа",
+   "runs": 1,
+   "median_s": 315,
+   "max_s": 315,
+   "last": "2026-11-25T23:53:30.382000+00:00",
+   "outcomes": {
+    "done": 1
+   },
+   "example": [
+    "cK4RUr3E"
+   ],
+   "actual": [
+    {
+     "k": "agent",
+     "n": "build",
+     "t": "запусков: 1"
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "work-audit",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hidden-auditor",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "≈40 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "правки",
+     "t": "≈9 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "pc-bridge-live",
+     "t": "",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "≈1 вызовов за раз",
+     "d": 1
+    }
+   ],
    "declared": [
     {
      "k": "script",
@@ -498,7 +544,7 @@
      "n": "work-audit",
      "t": "единая точка входа /work",
      "f": "C6",
-     "u": true
+     "u": false
     },
     {
      "k": "skill",
@@ -755,76 +801,76 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 61,
-   "median_s": 514,
-   "max_s": 2577,
-   "last": "2026-11-25T23:29:54.356000+00:00",
+   "runs": 66,
+   "median_s": 487,
+   "max_s": 2029,
+   "last": "2026-11-25T23:58:08.804000+00:00",
    "outcomes": {
-    "waiting_user": 4,
-    "done": 57
+    "waiting_user": 2,
+    "done": 64
    },
    "example": [
-    "1sQByRX2",
-    "jUwLLSUT"
+    "wJADJcfV",
+    "5mLBiAbi"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 61"
+     "t": "запусков: 66"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 44 из 61",
+     "t": "в 44 из 66",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 48 из 61",
+     "t": "в 54 из 66",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 22 из 61",
+     "t": "в 20 из 66",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 60 из 61, ≈38 вызовов за раз",
+     "t": "в 66 из 66, ≈34 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 27 из 61",
+     "t": "в 26 из 66",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 51 из 61, ≈7 вызовов за раз",
+     "t": "в 53 из 66, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 58 из 61, ≈10 вызовов за раз",
+     "t": "в 62 из 66, ≈10 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 27 из 61",
+     "t": "в 27 из 66",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, blocker-clock, code-review, cs2-demo-manager, disk-triage, draft-gate, experimentation-analytics, game",
-     "t": "меньше 12 из 61",
+     "t": "меньше 13 из 66",
      "d": 1
     }
    ],
@@ -916,7 +962,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 18, с файлами 0",
+   "state": "Владельцев 19, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
@@ -969,7 +1015,7 @@
    "items": [
     {
      "n": "work-audit",
-     "used": false,
+     "used": true,
      "merged": false
     },
     {
