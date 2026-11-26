@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.81,
-      "remaining_hours": 7.19,
+      "elapsed_hours": 0.82,
+      "remaining_hours": 7.18,
       "progress_pct": 10,
-      "cycles": 8,
-      "heartbeat_human": "14:58:19",
+      "cycles": 9,
+      "heartbeat_human": "14:59:19",
       "tree": {
         "phases": [
           {
@@ -42,11 +42,11 @@
           {
             "id": "IMP-SYS-CLI",
             "title": "Инспекция OpenCode CLI и доставки",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "IMP-HYPOTHESIS-DIVERGE",
@@ -158,13 +158,21 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "14:59:11",
+            "cycle": 9,
+            "task": "IMP-SYS-CLI",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 8,
+        "events": 9,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -174,21 +182,21 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.81,
-      "remaining_hours": 7.19,
+      "elapsed_hours": 0.82,
+      "remaining_hours": 7.18,
       "progress_pct": 10,
-      "cycles": 1,
-      "heartbeat_human": "14:58:19",
+      "cycles": 2,
+      "heartbeat_human": "14:59:19",
       "tree": {
         "phases": [
           {
             "id": "SF-HLAE-POV-CAPTURE",
             "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
             "last": "MUTATE",
-            "score": 0,
-            "verified": false
+            "score": 4,
+            "verified": true
           },
           {
             "id": "SF-KF-MAIN-GATE",
@@ -298,15 +306,23 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "14:59:19",
+            "cycle": 2,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "нет completion promise"
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 1,
+        "events": 2,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     },
     {
@@ -314,11 +330,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.81,
-      "remaining_hours": 7.19,
+      "elapsed_hours": 0.82,
+      "remaining_hours": 7.18,
       "progress_pct": 10,
-      "cycles": 7,
-      "heartbeat_human": "14:58:19",
+      "cycles": 8,
+      "heartbeat_human": "14:59:19",
       "tree": {
         "phases": [
           {
@@ -331,6 +347,15 @@
             "verified": true
           },
           {
+            "id": "UNI-PID-CALIB",
+            "title": "ПИ-регулятор Kp=2 Ти=20",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
             "cycles": 2,
@@ -338,15 +363,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-PID-CALIB",
-            "title": "ПИ-регулятор Kp=2 Ти=20",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "UNI-HYPOTHESIS-DIVERGE",
@@ -477,19 +493,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "14:58:51",
+            "cycle": 8,
+            "task": "UNI-PID-CALIB",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 4,
           "mutations": 3
         },
-        "events": 7,
+        "events": 8,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795694306,
-  "fetched_human": "2026-11-26 14:58:26 +0300"
+  "fetched_at": 1795694372,
+  "fetched_human": "2026-11-26 14:59:32 +0300"
 }
