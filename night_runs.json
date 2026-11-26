@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.12,
-      "remaining_hours": 5.88,
-      "progress_pct": 26,
+      "elapsed_hours": 2.13,
+      "remaining_hours": 5.87,
+      "progress_pct": 27,
       "cycles": 23,
-      "heartbeat_human": "16:16:49",
+      "heartbeat_human": "16:17:49",
       "tree": {
         "phases": [
           {
@@ -294,11 +294,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.12,
-      "remaining_hours": 5.88,
-      "progress_pct": 26,
-      "cycles": 13,
-      "heartbeat_human": "16:16:49",
+      "elapsed_hours": 2.13,
+      "remaining_hours": 5.87,
+      "progress_pct": 27,
+      "cycles": 14,
+      "heartbeat_human": "16:17:49",
       "tree": {
         "phases": [
           {
@@ -329,6 +329,15 @@
             "verified": true
           },
           {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "SF-DEATHTICK-INDEP",
             "title": "Death-tick: независимый эталон",
             "cycles": 2,
@@ -336,15 +345,6 @@
             "last": "MUTATE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "SF-T4-CALIB",
-            "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
           },
           {
             "id": "SF-PRESENT-DECK",
@@ -514,15 +514,23 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
+          },
+          {
+            "clock": "16:17:31",
+            "cycle": 14,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
           }
         ],
         "strategy": {
-          "version": 8,
-          "mutations": 7
+          "version": 9,
+          "mutations": 8
         },
-        "events": 13,
+        "events": 14,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -530,11 +538,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.12,
-      "remaining_hours": 5.88,
-      "progress_pct": 26,
-      "cycles": 25,
-      "heartbeat_human": "16:16:49",
+      "elapsed_hours": 2.13,
+      "remaining_hours": 5.87,
+      "progress_pct": 27,
+      "cycles": 26,
+      "heartbeat_human": "16:17:49",
       "tree": {
         "phases": [
           {
@@ -621,7 +629,7 @@
           {
             "id": "UNI-KP",
             "title": "Курсовая: LaTeX и блок-схема",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
             "last": "MUTATE",
             "score": 4,
@@ -837,19 +845,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: ness/default-workspace/night-runs/university-1126/artifacts/UNI-KP-c25.md mis"
+          },
+          {
+            "clock": "16:17:19",
+            "cycle": 26,
+            "task": "UNI-KP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ness/default-workspace/night-runs/university-1126/artifacts/UNI-KP-c26.md mis"
           }
         ],
         "strategy": {
-          "version": 7,
-          "mutations": 6
+          "version": 8,
+          "mutations": 7
         },
-        "events": 25,
+        "events": 26,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795699026,
-  "fetched_human": "2026-11-26 16:17:06 +0300"
+  "fetched_at": 1795699088,
+  "fetched_human": "2026-11-26 16:18:08 +0300"
 }
