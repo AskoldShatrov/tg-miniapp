@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-26T12:37:12+00:00",
-  "generated_human": "26.11 12:37 UTC",
-  "as_of": 1795696631499,
+  "generated": "2026-11-26T12:38:12+00:00",
+  "generated_human": "26.11 12:38 UTC",
+  "as_of": 1795696691523,
   "stale_days": 1,
-  "count": 1104,
+  "count": 1105,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -42,7 +42,7 @@
     {
      "id": "ses-AGaOAGcMy6",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Полоса экономики в игровой/HLAE-поверхности, BROWSER_OVERLAY: absent, kill feed не перекрыт. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: перед приёмкой кадра загрузи через tool skill `image-read` и `cs2-demo-capture`; запусти describe_image.py и read_image по выбранному PNG; затем vision_gate.py с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent и запиши путь в поле VISION_GATE. Без VISION_GATE и совпадения image_sha со SCREEN_SHA256 гейт FAIL. ПОЛНАЯ АВТОНОМИЯ ПО ПК: вам разрешено через pc-bridge управлять состоянием демки и CS2: сначала диагностика (Get-CimInstance cs2.exe, console.log, GSI, pc_live), при паузе — перезапуск CS2 через ASCII cfg и +exec, ожидание готовности до пяти минут, асинхронный зонд хэша вместо синхронного Get-FileHash на 301 МБ. Не трогать bots/config.json, ключи и chat_id; всё сделанное зафиксировать в артефакте с командами, rc и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-c7.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795696630000,
+     "ts": 1795696689000,
      "source": "session",
      "title": "lree-SF-ECONOMY-STRIP-c7",
      "source_label": "ноут",
@@ -51,7 +51,7 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795696630000,
+     "as_of": 1795696689000,
      "is_stale": false
     },
     {
@@ -4211,7 +4211,7 @@
     {
      "id": "ses-0SQVdq0Iwv",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. DELIVERED, TG_MESSAGE_ID, DELIVERY_LOG, VERIFY_CMD. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-WRITER-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-WRITER-c17.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795696628000,
+     "ts": 1795696687000,
      "source": "session",
      "title": "lree-UNI-WRITER-c17",
      "source_label": "ноут",
@@ -4220,7 +4220,22 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795696628000,
+     "as_of": 1795696687000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-p36yhEfbSs",
+     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. META_LEVELS=3, REFLECTION, QUESTION_TO_TASK. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-META-REFLECT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-META-REFLECT-c17.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795696685000,
+     "source": "session",
+     "title": "lree-IMP-META-REFLECT-c17",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261121055339bfc8"
+     ],
+     "as_of": 1795696685000,
      "is_stale": false
     },
     {
