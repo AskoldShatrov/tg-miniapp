@@ -1,15 +1,169 @@
 {
   "runs": [
     {
+      "id": "complex-improvement-1126",
+      "label": "complex improvement 1126",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.78,
+      "remaining_hours": 7.22,
+      "progress_pct": 10,
+      "cycles": 5,
+      "heartbeat_human": "00:52:23",
+      "tree": {
+        "phases": [
+          {
+            "id": "IMP-PRIOR-INTAKE",
+            "title": "Приём интервью и наработок по улучшению",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-UX-AUDIT",
+            "title": "Эргономика чата и мини-апа",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-SYS-DSH",
+            "title": "Инспекция DSH за 7 дней",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-SYS-CLI",
+            "title": "Инспекция OpenCode CLI и доставки",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез улучшения",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-META-REFLECT",
+            "title": "Метарефлексия улучшения",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев улучшения",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER",
+            "title": "Writer улучшения",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-DIGEST",
+            "title": "Итог улучшения",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 0,
+            "max": 8,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "00:13:45",
+            "cycle": 1,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: L /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex"
+          },
+          {
+            "clock": "00:19:34",
+            "cycle": 2,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:35:34",
+            "cycle": 3,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 3,
+            "note": "нет completion promise"
+          },
+          {
+            "clock": "00:39:51",
+            "cycle": 4,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:46:21",
+            "cycle": 5,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          }
+        ],
+        "strategy": {
+          "version": 14,
+          "mutations": 13
+        },
+        "events": 5,
+        "avg_score": 0.0,
+        "fail_streak": 2
+      }
+    },
+    {
       "id": "scanfeed-v2-1126",
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.77,
-      "remaining_hours": 7.23,
+      "elapsed_hours": 0.78,
+      "remaining_hours": 7.22,
       "progress_pct": 10,
       "cycles": 3,
-      "heartbeat_human": "00:51:38",
+      "heartbeat_human": "00:52:38",
       "tree": {
         "phases": [
           {
@@ -170,11 +324,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.77,
-      "remaining_hours": 7.23,
+      "elapsed_hours": 0.78,
+      "remaining_hours": 7.22,
       "progress_pct": 10,
-      "cycles": 6,
-      "heartbeat_human": "00:51:38",
+      "cycles": 7,
+      "heartbeat_human": "00:52:38",
       "tree": {
         "phases": [
           {
@@ -189,9 +343,9 @@
           {
             "id": "UNI-MVS-WINE",
             "title": "Моделирование систем: MvStudium под Wine",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "WARMUP",
             "score": 4,
             "verified": false
           },
@@ -334,19 +488,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: t-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-c5.md age 36712"
+          },
+          {
+            "clock": "00:52:30",
+            "cycle": 7,
+            "task": "UNI-MVS-WINE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: t-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-c5.md age 37247"
           }
         ],
         "strategy": {
           "version": 17,
           "mutations": 16
         },
-        "events": 6,
+        "events": 7,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
-  "count": 2,
-  "fetched_at": 1795729909,
-  "fetched_human": "2026-11-27 00:51:49 +0300"
+  "count": 3,
+  "fetched_at": 1795729967,
+  "fetched_human": "2026-11-27 00:52:47 +0300"
 }
