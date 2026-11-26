@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 4.44,
+      "elapsed_hours": 4.46,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -411,11 +411,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.46,
-      "remaining_hours": 7.54,
+      "elapsed_hours": 0.48,
+      "remaining_hours": 7.52,
       "progress_pct": 6,
       "cycles": 8,
-      "heartbeat_human": "13:30:17",
+      "heartbeat_human": "13:31:17",
       "tree": {
         "phases": [
           {
@@ -439,9 +439,9 @@
           {
             "id": "SF-ECONOMY-STRIP",
             "title": "Компактная экономия под карточками противников",
-            "cycles": 2,
+            "cycles": 3,
             "max": 3,
-            "last": "MUTATE",
+            "last": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "verified": false
           },
@@ -591,19 +591,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: :; missing MTIME:; missing VERDICT: PASS; SHA256 fields < 2; DLL_SHA256 != kn"
+          },
+          {
+            "clock": "13:31:15",
+            "cycle": 8,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: feed-v2-1126/artifacts/SF-ECONOMY-STRIP-c8.md missing KILLFEED: visible; miss"
           }
         ],
         "strategy": {
           "version": 3,
           "mutations": 2
         },
-        "events": 8,
+        "events": 9,
         "avg_score": 4.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795689032,
-  "fetched_human": "2026-11-26 13:30:32 +0300"
+  "fetched_at": 1795689090,
+  "fetched_human": "2026-11-26 13:31:30 +0300"
 }
