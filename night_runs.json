@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 4.93,
+      "elapsed_hours": 4.95,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -447,11 +447,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.95,
-      "remaining_hours": 7.05,
+      "elapsed_hours": 0.97,
+      "remaining_hours": 7.03,
       "progress_pct": 12,
-      "cycles": 11,
-      "heartbeat_human": "13:59:31",
+      "cycles": 12,
+      "heartbeat_human": "14:00:31",
       "tree": {
         "phases": [
           {
@@ -493,7 +493,7 @@
           {
             "id": "SF-T4-CALIB",
             "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
             "last": "MUTATE",
             "score": 4,
@@ -659,15 +659,23 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c11.md"
+          },
+          {
+            "clock": "14:00:30",
+            "cycle": 12,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c12.md"
           }
         ],
         "strategy": {
           "version": 5,
           "mutations": 4
         },
-        "events": 12,
+        "events": 13,
         "avg_score": 4.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -675,11 +683,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 7.78,
+      "elapsed_hours": 0.23,
+      "remaining_hours": 7.77,
       "progress_pct": 3,
       "cycles": 2,
-      "heartbeat_human": "13:59:20",
+      "heartbeat_human": "14:00:20",
       "tree": {
         "phases": [
           {
@@ -796,11 +804,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.19,
-      "remaining_hours": 7.81,
-      "progress_pct": 2,
+      "elapsed_hours": 0.2,
+      "remaining_hours": 7.8,
+      "progress_pct": 3,
       "cycles": 2,
-      "heartbeat_human": "13:59:31",
+      "heartbeat_human": "14:00:31",
       "tree": {
         "phases": [
           {
@@ -905,6 +913,6 @@
     }
   ],
   "count": 4,
-  "fetched_at": 1795690785,
-  "fetched_human": "2026-11-26 13:59:45 +0300"
+  "fetched_at": 1795690848,
+  "fetched_human": "2026-11-26 14:00:48 +0300"
 }
