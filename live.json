@@ -2006,7 +2006,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2036,
+      "age_min": 2037,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2014,7 +2014,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2058,
+      "age_min": 2059,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2022,30 +2022,62 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2058,
+      "age_min": 2059,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-b74f203c",
+      "title": "Запуск демки сканфида без остановки",
+      "source": "dsh",
+      "claimed_human": "06:05:38",
+      "age_min": 0,
+      "full": "Запуск демки сканфида без остановки"
+    },
+    {
+      "id": "session-447c0873",
+      "title": "Почему инструмент не показывает демки",
+      "source": "dsh",
+      "claimed_human": "06:05:37",
+      "age_min": 0,
+      "full": "Почему инструмент не показывает демки"
     },
     {
       "id": "session-d18e8af1",
       "title": "у мэтпока есть скилл и",
       "source": "dsh",
-      "claimed_human": "06:04:38",
+      "claimed_human": "06:05:35",
       "age_min": 0,
       "full": "у мэтпока есть скилл и"
+    },
+    {
+      "id": "session-aca1061f",
+      "title": "я просил проанализири",
+      "source": "dsh",
+      "claimed_human": "06:05:32",
+      "age_min": 0,
+      "full": "я просил проанализири"
     },
     {
       "id": "session-438c75cc",
       "title": "Полноэкранный режим КС 2 и блэкбары",
       "source": "dsh",
-      "claimed_human": "06:04:37",
+      "claimed_human": "06:05:26",
       "age_min": 0,
       "full": "Полноэкранный режим КС 2 и блэкбары"
+    },
+    {
+      "id": "session-f7fce3fb",
+      "title": "Непрерывная ночная работа со сканфидом",
+      "source": "dsh",
+      "claimed_human": "06:04:58",
+      "age_min": 0,
+      "full": "Непрерывная ночная работа со сканфидом"
     },
     {
       "id": "session-ad7c73c8",
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
-      "claimed_human": "06:04:36",
+      "claimed_human": "06:04:57",
       "age_min": 0,
       "full": "Остановка непрерывной работы над CS2"
     },
@@ -2054,80 +2086,24 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwwyxijmk7qn: AU15623 — шаг T32.3 не закрыт: счётчик 0/10 вместо 10/10",
       "source": "ноут",
       "claimed_human": "06:04:04",
-      "age_min": 0,
+      "age_min": 1,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwwyxijmk7qn: AU15623 — шаг T32.3 не закрыт: счётчик 0/10 вместо 10/10",
       "autogen": true
-    },
-    {
-      "id": "session-aca1061f",
-      "title": "я просил проанализири",
-      "source": "dsh",
-      "claimed_human": "06:04:04",
-      "age_min": 0,
-      "full": "я просил проанализири"
-    },
-    {
-      "id": "session-447c0873",
-      "title": "Почему инструмент не показывает демки",
-      "source": "dsh",
-      "claimed_human": "06:04:02",
-      "age_min": 0,
-      "full": "Почему инструмент не показывает демки"
-    },
-    {
-      "id": "session-f7fce3fb",
-      "title": "Непрерывная ночная работа со сканфидом",
-      "source": "dsh",
-      "claimed_human": "06:03:34",
-      "age_min": 1,
-      "full": "Непрерывная ночная работа со сканфидом"
-    },
-    {
-      "id": "session-b74f203c",
-      "title": "Запуск демки сканфида без остановки",
-      "source": "dsh",
-      "claimed_human": "06:02:08",
-      "age_min": 2,
-      "full": "Запуск демки сканфида без остановки"
     },
     {
       "id": "AU15627",
       "title": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых",
       "source": "ноут",
       "claimed_human": "05:55:31",
-      "age_min": 9,
+      "age_min": 10,
       "full": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых"
-    },
-    {
-      "id": "AU15626",
-      "title": "ЗАКРЫТЬ ШАГ T33.T33.2: Привести три поверхности к Catppuccin Mocha точечными правками с @owner/@region",
-      "source": "ноут",
-      "claimed_human": "05:54:44",
-      "age_min": 9,
-      "full": "ЗАКРЫТЬ ШАГ T33.T33.2: Привести три поверхности к Catppuccin Mocha точечными правками с @owner/@region"
-    },
-    {
-      "id": "AU15622",
-      "title": "ЗАКРЫТЬ ШАГ T32.T32.2: Записать итог в отдельный файл сессии таблицей «пункт → факт → решение → владелец → OPEN»",
-      "source": "ноут",
-      "claimed_human": "05:54:26",
-      "age_min": 10,
-      "full": "ЗАКРЫТЬ ШАГ T32.T32.2: Записать итог в отдельный файл сессии таблицей «пункт → факт → решение → владелец → OPEN»"
-    },
-    {
-      "id": "AU15621",
-      "title": "ЗАКРЫТЬ ШАГ T32.T32.1: Собрать 10 пунктов и реальные команды проверки из interview-задач 25.11 с SHA256/mtime",
-      "source": "ноут",
-      "claimed_human": "05:54:05",
-      "age_min": 10,
-      "full": "ЗАКРЫТЬ ШАГ T32.T32.1: Собрать 10 пунктов и реальные команды проверки из interview-задач 25.11 с SHA256/mtime"
     }
   ],
   "queues": {
     "ноут": {
-      "done": 1516,
+      "done": 1519,
       "failed": 154,
-      "doing": 5
+      "doing": 2
     },
     "ПК": {
       "done": 84,
@@ -2158,6 +2134,6 @@
   "progress_updated_at": "2026-11-26T05:53:31+03:00",
   "plan_age_hours": 0.2,
   "plan_source": "progress.json",
-  "fetched_at": 1795662280,
-  "fetched_human": "2026-11-26 06:04:40 +0300"
+  "fetched_at": 1795662342,
+  "fetched_human": "2026-11-26 06:05:42 +0300"
 }
