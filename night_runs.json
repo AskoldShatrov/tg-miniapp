@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.39,
-      "remaining_hours": 4.61,
-      "progress_pct": 42,
+      "elapsed_hours": 3.4,
+      "remaining_hours": 4.6,
+      "progress_pct": 43,
       "cycles": 33,
-      "heartbeat_human": "12:27:00",
+      "heartbeat_human": "12:28:00",
       "tree": {
         "phases": [
           {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.1,
-      "remaining_hours": 8.05,
+      "elapsed_hours": 3.12,
+      "remaining_hours": 8.03,
       "progress_pct": 28,
-      "cycles": 23,
-      "heartbeat_human": "12:26:45",
+      "cycles": 24,
+      "heartbeat_human": "12:27:45",
       "tree": {
         "phases": [
           {
@@ -200,21 +200,21 @@
             "verified": true
           },
           {
+            "id": "SF-OVERLAY-FINAL",
+            "title": "Финальный строгий кадр: экономика под карточками противников в окне CS",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 0,
+            "verified": false
+          },
+          {
             "id": "SF-MORNING-DIGEST",
             "title": "Утренний дайджест: N PASS / M FAIL / K OPEN",
             "cycles": 2,
             "max": 2,
             "last": "MUTATE",
             "score": 2,
-            "verified": false
-          },
-          {
-            "id": "SF-OVERLAY-FINAL",
-            "title": "Финальный строгий кадр: экономика под карточками противников в окне CS",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 0,
             "verified": false
           },
           {
@@ -228,14 +228,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:45:55",
-            "cycle": 16,
-            "task": "SF-PRESENT-DECK",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-PRESENT-DECK-*.md"
-          },
           {
             "clock": "08:54:15",
             "cycle": 17,
@@ -291,19 +283,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
+          },
+          {
+            "clock": "09:27:45",
+            "cycle": 24,
+            "task": "SF-OVERLAY-FINAL",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
           }
         ],
         "strategy": {
-          "version": 17,
-          "mutations": 16
+          "version": 18,
+          "mutations": 17
         },
-        "events": 23,
+        "events": 24,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795685229,
-  "fetched_human": "2026-11-26 12:27:09 +0300"
+  "fetched_at": 1795685293,
+  "fetched_human": "2026-11-26 12:28:13 +0300"
 }
