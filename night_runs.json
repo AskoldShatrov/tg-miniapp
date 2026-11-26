@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.82,
-      "remaining_hours": 5.18,
-      "progress_pct": 35,
-      "cycles": 24,
-      "heartbeat_human": "02:55:04",
+      "elapsed_hours": 2.86,
+      "remaining_hours": 5.14,
+      "progress_pct": 36,
+      "cycles": 25,
+      "heartbeat_human": "02:57:04",
       "tree": {
         "phases": [
           {
@@ -51,7 +51,7 @@
           {
             "id": "IMP-HYPOTHESIS-DIVERGE",
             "title": "Перебор гипотез улучшения",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "PROMOTE",
             "score": 5,
@@ -295,15 +295,23 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:56:47",
+            "cycle": 25,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 24,
+        "events": 25,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -311,11 +319,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.82,
-      "remaining_hours": 5.18,
-      "progress_pct": 35,
-      "cycles": 28,
-      "heartbeat_human": "02:55:03",
+      "elapsed_hours": 2.86,
+      "remaining_hours": 5.14,
+      "progress_pct": 36,
+      "cycles": 29,
+      "heartbeat_human": "02:57:04",
       "tree": {
         "phases": [
           {
@@ -366,7 +374,7 @@
           {
             "id": "UNI-CRITERIA-REVIEW",
             "title": "Пересмотр критериев учебного трека",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
             "last": "PROMOTE",
             "score": 5,
@@ -651,19 +659,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:55:31",
+            "cycle": 29,
+            "task": "UNI-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 28,
+        "events": 29,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795737313,
-  "fetched_human": "2026-11-27 02:55:13 +0300"
+  "fetched_at": 1795737433,
+  "fetched_human": "2026-11-27 02:57:13 +0300"
 }
