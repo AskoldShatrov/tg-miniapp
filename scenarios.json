@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-26 18:30",
+ "generated": "2026-11-26 19:00",
  "window": {
-  "start": "2026-11-26T10:46",
-  "end": "2026-11-26T15:26",
+  "start": "2026-11-26T10:59",
+  "end": "2026-11-26T15:57",
   "sessions": 152,
   "roots": 150
  },
  "summary": {
   "skills": 69,
-  "skills_used": 29,
+  "skills_used": 30,
   "agents": 7,
   "agents_used": 1,
   "autofeed": 0,
@@ -23,18 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 267,
-   "max_s": 2514,
-   "last": "2026-11-26T15:26:00.670000+00:00",
+   "median_s": 259,
+   "max_s": 1750,
+   "last": "2026-11-26T15:57:51.942000+00:00",
    "outcomes": {
-    "done": 143,
+    "waiting_user": 3,
+    "done": 142,
     "error": 1,
-    "cancelled": 5,
-    "waiting_user": 1
+    "cancelled": 4
    },
    "example": [
-    "9tjpO4vO",
-    "4q60A2v8"
+    "2uNX0pbj",
+    "cF3pwSM2"
    ],
    "actual": [
     {
@@ -45,25 +45,25 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 149 из 150, ≈24 вызовов за раз",
+     "t": "в 149 из 150, ≈23 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 129 из 150, ≈6 вызовов за раз",
+     "t": "в 127 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 31 из 150",
+     "t": "в 32 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 131 из 150, ≈5 вызовов за раз",
+     "t": "в 132 из 150, ≈5 вызовов за раз",
      "d": 1
     },
     {
@@ -501,57 +501,82 @@
    "when": "«статус», «что я просил», «что сделано»",
    "status": "warn",
    "status_text": "Мимо единого входа",
-   "runs": 3,
-   "median_s": 217,
+   "runs": 4,
+   "median_s": 258,
    "max_s": 424,
-   "last": "2026-11-26T12:04:12.002000+00:00",
+   "last": "2026-11-26T15:55:00.487000+00:00",
    "outcomes": {
+    "waiting_user": 1,
     "done": 3
    },
    "example": [
-    "4v15nn2E",
-    "l0LNBuUc"
+    "l0LNBuUc",
+    "2uNX0pbj"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 3"
+     "t": "запусков: 4"
+    },
+    {
+     "k": "skill",
+     "n": "work-audit",
+     "t": "в 1 из 4",
+     "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 3 из 3, ≈26 вызовов за раз",
+     "t": "в 4 из 4, ≈25 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hidden-auditor",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 3 из 3, ≈3 вызовов за раз",
+     "t": "в 3 из 4, ≈3 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "opencode",
-     "t": "в 1 из 3",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "prompt-decision-map",
-     "t": "в 3 из 3",
+     "t": "в 3 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "pc-bridge-live",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "wants-radar",
-     "t": "в 3 из 3",
+     "t": "в 3 из 4",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 3 из 3, ≈5 вызовов за раз",
+     "t": "в 4 из 4, ≈6 вызовов за раз",
      "d": 1
     }
    ],
@@ -567,7 +592,7 @@
      "n": "work-audit",
      "t": "единая точка входа /work",
      "f": "C6",
-     "u": true
+     "u": false
     },
     {
      "k": "skill",
@@ -1003,7 +1028,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 0",
+   "state": "Прогонов сейчас: 1",
    "level": "ok",
    "f": "C1"
   },
@@ -1019,7 +1044,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×134, opencode/iceman-free ×7, opencode/hy4-flash-free ×3",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×133, opencode/iceman-free ×7, opencode/hy4-flash-free ×4",
    "level": "ok",
    "f": "C13"
   },
@@ -1043,7 +1068,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 24, с файлами 0",
+   "state": "Владельцев 23, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
@@ -1096,7 +1121,7 @@
    "items": [
     {
      "n": "work-audit",
-     "used": false,
+     "used": true,
      "merged": false
     },
     {
