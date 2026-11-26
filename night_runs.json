@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 5.02,
+      "elapsed_hours": 5.03,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -447,11 +447,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.03,
-      "remaining_hours": 6.97,
+      "elapsed_hours": 1.05,
+      "remaining_hours": 6.95,
       "progress_pct": 13,
-      "cycles": 12,
-      "heartbeat_human": "14:04:31",
+      "cycles": 13,
+      "heartbeat_human": "14:06:01",
       "tree": {
         "phases": [
           {
@@ -482,6 +482,15 @@
             "verified": false
           },
           {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "SF-DEATHTICK-INDEP",
             "title": "Death-tick: независимый эталон",
             "cycles": 2,
@@ -489,15 +498,6 @@
             "last": "MUTATE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "SF-T4-CALIB",
-            "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
           },
           {
             "id": "SF-PRESENT-DECK",
@@ -667,15 +667,23 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c12.md"
+          },
+          {
+            "clock": "14:05:52",
+            "cycle": 13,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c13.md"
           }
         ],
         "strategy": {
-          "version": 5,
-          "mutations": 4
+          "version": 6,
+          "mutations": 5
         },
-        "events": 13,
+        "events": 14,
         "avg_score": 4.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -683,11 +691,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.3,
-      "remaining_hours": 7.7,
+      "elapsed_hours": 0.32,
+      "remaining_hours": 7.68,
       "progress_pct": 4,
       "cycles": 3,
-      "heartbeat_human": "14:04:50",
+      "heartbeat_human": "14:05:50",
       "tree": {
         "phases": [
           {
@@ -812,11 +820,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.27,
-      "remaining_hours": 7.73,
-      "progress_pct": 3,
+      "elapsed_hours": 0.29,
+      "remaining_hours": 7.71,
+      "progress_pct": 4,
       "cycles": 2,
-      "heartbeat_human": "14:04:31",
+      "heartbeat_human": "14:06:01",
       "tree": {
         "phases": [
           {
@@ -921,6 +929,6 @@
     }
   ],
   "count": 4,
-  "fetched_at": 1795691096,
-  "fetched_human": "2026-11-26 14:04:56 +0300"
+  "fetched_at": 1795691161,
+  "fetched_human": "2026-11-26 14:06:01 +0300"
 }
