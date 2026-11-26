@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T22:02:53+00:00",
-  "generated_human": "26.11 22:02 UTC",
-  "as_of": 1795730573240,
+  "generated": "2026-11-26T22:03:54+00:00",
+  "generated_human": "26.11 22:03 UTC",
+  "as_of": 1795730633858,
   "stale_days": 1,
   "count": 1177,
   "groups": 9,
@@ -39,9 +39,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-KNk50jqGvh",
+     "id": "ses-hmSMkXLLbq",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Нужен один кадр 1280x720+: allplayers=10, kill feed справа видим, money/buy и AWP в HUD; зафиксируй console-маркеры mirv_pov, dll_sha256 и demo_id. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: перед приёмкой кадра загрузи через tool skill `image-read` и `cs2-demo-capture`; запусти describe_image.py и read_image по выбранному PNG; затем vision_gate.py с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent и запиши путь в поле VISION_GATE. Без VISION_GATE и совпадения image_sha со SCREEN_SHA256 гейт FAIL. ПОЛНАЯ АВТОНОМИЯ ПО ПК: вам разрешено через pc-bridge управлять состоянием демки и CS2: сначала диагностика (Get-CimInstance cs2.exe, console.log, GSI, pc_live), при паузе — перезапуск CS2 через ASCII cfg и +exec, ожидание готовности до пяти минут, асинхронный зонд хэша вместо синхронного Get-FileHash на 301 МБ. Не трогать bots/config.json, ключи и chat_id; всё сделанное зафиксировать в артефакте с командами, rc и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. ОБЯЗАТЕЛЬНО: после реальной записи артефакта выведи отдельной строкой PROMISE: DONE и назови session_id; intermediate report пиши до медленных зондов, порог не понижай.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c5.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795730571000,
+     "ts": 1795730630000,
      "source": "session",
      "title": "lree-SF-HLAE-POV-CAPTURE-c5",
      "source_label": "ноут",
@@ -50,13 +50,13 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795730571000,
+     "as_of": 1795730630000,
      "is_stale": false
     },
     {
      "id": "ses-0yfMafuhdJ",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Проверка adb-устройства 10AF6823ZN003YK и tg-bot-ui; команда, rc, SHA256 кадра, человекочитаемый вывод. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-UX-AUDIT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. ОБЯЗАТЕЛЬНО: после реальной записи артефакта выведи отдельной строкой PROMISE: DONE и назови session_id; intermediate report пиши до медленных зондов, порог не понижай.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-UX-AUDIT-c8.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795730569000,
+     "ts": 1795730630000,
      "source": "session",
      "title": "lree-IMP-UX-AUDIT-c8",
      "source_label": "ноут",
@@ -65,13 +65,13 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795730569000,
+     "as_of": 1795730630000,
      "is_stale": false
     },
     {
-     "id": "ses-hmSMkXLLbq",
+     "id": "ses-KNk50jqGvh",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Нужен один кадр 1280x720+: allplayers=10, kill feed справа видим, money/buy и AWP в HUD; зафиксируй console-маркеры mirv_pov, dll_sha256 и demo_id. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: перед приёмкой кадра загрузи через tool skill `image-read` и `cs2-demo-capture`; запусти describe_image.py и read_image по выбранному PNG; затем vision_gate.py с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent и запиши путь в поле VISION_GATE. Без VISION_GATE и совпадения image_sha со SCREEN_SHA256 гейт FAIL. ПОЛНАЯ АВТОНОМИЯ ПО ПК: вам разрешено через pc-bridge управлять состоянием демки и CS2: сначала диагностика (Get-CimInstance cs2.exe, console.log, GSI, pc_live), при паузе — перезапуск CS2 через ASCII cfg и +exec, ожидание готовности до пяти минут, асинхронный зонд хэша вместо синхронного Get-FileHash на 301 МБ. Не трогать bots/config.json, ключи и chat_id; всё сделанное зафиксировать в артефакте с командами, rc и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. ОБЯЗАТЕЛЬНО: после реальной записи артефакта выведи отдельной строкой PROMISE: DONE и назови session_id; intermediate report пиши до медленных зондов, порог не понижай.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c5.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795730564000,
+     "ts": 1795730622000,
      "source": "session",
      "title": "lree-SF-HLAE-POV-CAPTURE-c5",
      "source_label": "ноут",
@@ -80,7 +80,7 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795730564000,
+     "as_of": 1795730622000,
      "is_stale": false
     },
     {
@@ -4871,7 +4871,7 @@
     {
      "id": "ses-UU0XFo00TX",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Вариант 8. Подтверди реальный запуск: команда, rc, путь проекта, скриншот или лог; без доказательств VERDICT=FAIL. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. ОБЯЗАТЕЛЬНО: после реальной записи артефакта выведи отдельной строкой PROMISE: DONE и назови session_id; intermediate report пиши до медленных зондов, порог не понижай.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-c9.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795730569000,
+     "ts": 1795730622000,
      "source": "session",
      "title": "lree-UNI-MVS-WINE-c9",
      "source_label": "ноут",
@@ -4880,7 +4880,7 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795730569000,
+     "as_of": 1795730622000,
      "is_stale": false
     },
     {
