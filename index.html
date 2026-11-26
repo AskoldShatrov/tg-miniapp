@@ -188,7 +188,9 @@
   .pb-caret{font:700 11px/1 var(--fm);color:var(--blue);margin-right:6px}
   .pbar-branch{margin:6px 0 14px 8px;padding:8px 10px;border-left:2px solid var(--blue);
     border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:var(--mantle);
-    font:500 11px/1.6 var(--fm)}
+    font:500 11px/1.6 var(--fm);
+    max-height:min(62vh,560px);overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch}
   .pb-row{display:flex;gap:8px;align-items:baseline;color:var(--subtext1)}
   .pb-row span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   /* Дерево ночного мандата должно читаться целиком, а не обрезаться многоточием */
@@ -3434,6 +3436,9 @@ function renderNightRuns(d){
         `<div class="pbar-track"><div class="pbar-fill c-mauve" style="width:${pct}%"></div></div></div>`+
         (open?nightBranch(r):"");
     }).join("");
+    /* Лента обновляется каждые 60 с: держим её Accessed до самого свежего события. */
+    const expanded=box.querySelector(".pbar-branch");
+    if(expanded) expanded.scrollTop=expanded.scrollHeight;
     if(!box.dataset.nightBound){
       box.dataset.nightBound="1";
       box.addEventListener("click",(e)=>{
