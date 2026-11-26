@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 6.83,
-      "remaining_hours": 1.17,
-      "progress_pct": 85,
-      "cycles": 32,
-      "heartbeat_human": "20:59:33",
+      "elapsed_hours": 6.85,
+      "remaining_hours": 1.15,
+      "progress_pct": 86,
+      "cycles": 33,
+      "heartbeat_human": "21:00:33",
       "tree": {
         "phases": [
           {
@@ -359,13 +359,21 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос delivery"
+          },
+          {
+            "clock": "21:00:03",
+            "cycle": 33,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос hypothesis"
           }
         ],
         "strategy": {
-          "version": 8,
-          "mutations": 7
+          "version": 9,
+          "mutations": 8
         },
-        "events": 32,
+        "events": 33,
         "avg_score": 6.1,
         "fail_streak": 0
       }
@@ -375,11 +383,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 6.83,
-      "remaining_hours": 1.17,
-      "progress_pct": 85,
+      "elapsed_hours": 6.85,
+      "remaining_hours": 1.15,
+      "progress_pct": 86,
       "cycles": 59,
-      "heartbeat_human": "20:59:33",
+      "heartbeat_human": "21:00:33",
       "tree": {
         "phases": [
           {
@@ -988,17 +996,17 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 6.83,
-      "remaining_hours": 1.17,
-      "progress_pct": 85,
-      "cycles": 55,
-      "heartbeat_human": "20:59:33",
+      "elapsed_hours": 6.85,
+      "remaining_hours": 1.15,
+      "progress_pct": 86,
+      "cycles": 56,
+      "heartbeat_human": "21:00:33",
       "tree": {
         "phases": [
           {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 20,
+            "cycles": 21,
             "max": 200,
             "last": "MUTATE",
             "score": 7,
@@ -1544,19 +1552,27 @@
             "action": "ESCALATE",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "21:00:20",
+            "cycle": 56,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 16,
           "mutations": 15
         },
-        "events": 55,
+        "events": 56,
         "avg_score": 6.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795715995,
-  "fetched_human": "2026-11-26 20:59:55 +0300"
+  "fetched_at": 1795716057,
+  "fetched_human": "2026-11-26 21:00:57 +0300"
 }
