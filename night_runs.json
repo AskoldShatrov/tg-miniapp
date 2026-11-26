@@ -5,11 +5,11 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.34,
-      "remaining_hours": 4.66,
+      "elapsed_hours": 3.35,
+      "remaining_hours": 4.65,
       "progress_pct": 42,
-      "cycles": 32,
-      "heartbeat_human": "12:24:00",
+      "cycles": 33,
+      "heartbeat_human": "12:25:00",
       "tree": {
         "phases": [
           {
@@ -42,9 +42,9 @@
           {
             "id": "T04-MINIAPP-UX",
             "title": "Эргономика чата и мини-апа",
-            "cycles": 6,
+            "cycles": 7,
             "max": 10,
-            "last": "MUTATE",
+            "last": "MUTATED_AFTER_3_FAIL",
             "score": 2,
             "verified": false
           },
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:27:34",
-            "cycle": 25,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
           {
             "clock": "08:35:05",
             "cycle": 26,
@@ -131,15 +123,23 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "09:24:35",
+            "cycle": 33,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           }
         ],
         "strategy": {
-          "version": 27,
-          "mutations": 26
+          "version": 28,
+          "mutations": 27
         },
-        "events": 32,
+        "events": 33,
         "avg_score": 2.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.05,
-      "remaining_hours": 8.1,
-      "progress_pct": 27,
+      "elapsed_hours": 3.07,
+      "remaining_hours": 8.08,
+      "progress_pct": 28,
       "cycles": 23,
-      "heartbeat_human": "12:23:45",
+      "heartbeat_human": "12:24:45",
       "tree": {
         "phases": [
           {
@@ -304,6 +304,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795685047,
-  "fetched_human": "2026-11-26 12:24:07 +0300"
+  "fetched_at": 1795685107,
+  "fetched_human": "2026-11-26 12:25:07 +0300"
 }
