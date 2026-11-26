@@ -2079,7 +2079,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 3235,
+      "age_min": 3236,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 3257,
+      "age_min": 3258,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2095,7 +2095,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 3257,
+      "age_min": 3258,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
@@ -2103,7 +2103,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 705,
+      "age_min": 706,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2111,7 +2111,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 705,
+      "age_min": 706,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2119,14 +2119,30 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 705,
+      "age_min": 706,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
+    },
+    {
+      "id": "session-7cf5a770",
+      "title": "Восстановить последнюю сессию из архива",
+      "source": "dsh",
+      "claimed_human": "02:04:40",
+      "age_min": 0,
+      "full": "Восстановить последнюю сессию из архива"
+    },
+    {
+      "id": "3d4754f5-5cf5-40",
+      "title": "Ты — свежий исследова",
+      "source": "dsh",
+      "claimed_human": "02:04:38",
+      "age_min": 0,
+      "full": "Ты — свежий исследова"
     },
     {
       "id": "session-fe9113d0",
       "title": "Проверка и запись артефакта IMP-SYS-CLI-c17",
       "source": "dsh",
-      "claimed_human": "02:03:36",
+      "claimed_human": "02:04:32",
       "age_min": 0,
       "full": "Проверка и запись артефакта IMP-SYS-CLI-c17"
     },
@@ -2135,31 +2151,15 @@
       "title": "Проверка и запись артефакта гипотез",
       "source": "dsh",
       "claimed_human": "02:03:31",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Проверка и запись артефакта гипотез"
-    },
-    {
-      "id": "session-7cf5a770",
-      "title": "Восстановить последнюю сессию из архива",
-      "source": "dsh",
-      "claimed_human": "02:03:30",
-      "age_min": 0,
-      "full": "Восстановить последнюю сессию из архива"
-    },
-    {
-      "id": "3d4754f5-5cf5-40",
-      "title": "Ты — свежий исследова",
-      "source": "dsh",
-      "claimed_human": "02:03:30",
-      "age_min": 0,
-      "full": "Ты — свежий исследова"
     },
     {
       "id": "session-4ab85241",
       "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
       "claimed_human": "02:03:28",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Анализ прогресса сканфида человеческим язы"
     },
     {
@@ -2167,7 +2167,7 @@
       "title": "Ты — свежий исследова",
       "source": "dsh",
       "claimed_human": "02:03:23",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Ты — свежий исследова"
     },
     {
@@ -2175,7 +2175,7 @@
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
       "claimed_human": "02:02:27",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Активный сеанс DSH с проверками"
     },
     {
@@ -2183,7 +2183,7 @@
       "title": "Ответ одним словом",
       "source": "dsh",
       "claimed_human": "01:55:55",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Ответ одним словом"
     }
   ],
@@ -2214,32 +2214,8 @@
       "step_label": "Отчёт и постер",
       "step": 4,
       "total": 5,
-      "events": 27,
+      "events": 29,
       "trail": [
-        {
-          "ts": 1795733266,
-          "label": "SYNC · anti-autism"
-        },
-        {
-          "ts": 1795733266,
-          "label": "SYNC · gost-spbgtti"
-        },
-        {
-          "ts": 1795733266,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795733312,
-          "label": "BASH · echo '---universi"
-        },
-        {
-          "ts": 1795733312,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795733312,
-          "label": "THINK"
-        },
         {
           "ts": 1795733356,
           "label": "BASH · echo '---study fi"
@@ -2407,10 +2383,34 @@
         {
           "ts": 1795734184,
           "label": "THINK"
+        },
+        {
+          "ts": 1795734235,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795734235,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795734235,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795734235,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795734253,
+          "label": "BASH · printf '%s\\n' '{\""
+        },
+        {
+          "ts": 1795734253,
+          "label": "THINK"
         }
       ],
       "started_at": 1795733245,
-      "updated_at": 1795734218
+      "updated_at": 1795734278
     }
   ],
   "bars": [
@@ -2459,6 +2459,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 11.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795734221,
-  "fetched_human": "2026-11-27 02:03:41 +0300"
+  "fetched_at": 1795734281,
+  "fetched_human": "2026-11-27 02:04:41 +0300"
 }
