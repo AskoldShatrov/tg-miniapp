@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.92,
-      "remaining_hours": 6.08,
+      "elapsed_hours": 1.94,
+      "remaining_hours": 6.06,
       "progress_pct": 24,
       "cycles": 21,
-      "heartbeat_human": "16:05:19",
+      "heartbeat_human": "16:06:19",
       "tree": {
         "phases": [
           {
@@ -278,11 +278,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.92,
-      "remaining_hours": 6.08,
+      "elapsed_hours": 1.94,
+      "remaining_hours": 6.06,
       "progress_pct": 24,
       "cycles": 11,
-      "heartbeat_human": "16:05:19",
+      "heartbeat_human": "16:06:19",
       "tree": {
         "phases": [
           {
@@ -498,11 +498,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.92,
-      "remaining_hours": 6.08,
+      "elapsed_hours": 1.94,
+      "remaining_hours": 6.06,
       "progress_pct": 24,
-      "cycles": 23,
-      "heartbeat_human": "16:05:19",
+      "cycles": 24,
+      "heartbeat_human": "16:06:19",
       "tree": {
         "phases": [
           {
@@ -551,6 +551,15 @@
             "verified": true
           },
           {
+            "id": "UNI-NIR",
+            "title": "НИР: гейты и версии",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
             "cycles": 2,
@@ -576,15 +585,6 @@
             "last": "MUTATE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "UNI-NIR",
-            "title": "НИР: гейты и версии",
-            "cycles": 2,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 0,
-            "verified": false
           },
           {
             "id": "UNI-KP",
@@ -789,19 +789,27 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "16:05:44",
+            "cycle": 24,
+            "task": "UNI-NIR",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: ight-runs/university-1126/artifacts/UNI-NIR-c24.md missing PASS:; missing FAI"
           }
         ],
         "strategy": {
-          "version": 5,
-          "mutations": 4
+          "version": 6,
+          "mutations": 5
         },
-        "events": 23,
+        "events": 24,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795698328,
-  "fetched_human": "2026-11-26 16:05:28 +0300"
+  "fetched_at": 1795698391,
+  "fetched_human": "2026-11-26 16:06:31 +0300"
 }
