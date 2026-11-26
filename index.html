@@ -169,7 +169,7 @@
   /* @owner:miniapp-progress @region:pbar: полоски живого прогресса во вкладке «Ход» */
   .pbar{margin:0 0 12px}
   .pbar-head{display:flex;align-items:baseline;gap:8px;margin-bottom:5px}
-  .pbar-head b{font:700 12px/1.3 var(--ff);color:var(--text)}
+  .pbar-head b{font:700 12px/1.3 var(--ff);color:var(--text);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .pbar-head span{font:600 10px/1.3 var(--fm);color:var(--overlay1);margin-left:auto}
   .pbar-track{height:9px;border-radius:999px;background:var(--surface1);overflow:hidden}
   .pbar-fill{height:100%;border-radius:999px;transition:width .3s ease}
