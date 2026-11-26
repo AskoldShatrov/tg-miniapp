@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.61,
-      "remaining_hours": 6.39,
+      "elapsed_hours": 1.62,
+      "remaining_hours": 6.38,
       "progress_pct": 20,
       "cycles": 17,
-      "heartbeat_human": "15:46:19",
+      "heartbeat_human": "15:47:19",
       "tree": {
         "phases": [
           {
@@ -246,11 +246,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.61,
-      "remaining_hours": 6.39,
+      "elapsed_hours": 1.62,
+      "remaining_hours": 6.38,
       "progress_pct": 20,
-      "cycles": 7,
-      "heartbeat_human": "15:46:19",
+      "cycles": 8,
+      "heartbeat_human": "15:47:19",
       "tree": {
         "phases": [
           {
@@ -274,7 +274,7 @@
           {
             "id": "SF-ECONOMY-STRIP",
             "title": "Компактная экономия под карточками противников",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
             "last": "MUTATE",
             "score": 7,
@@ -418,13 +418,21 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "15:47:28",
+            "cycle": 8,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 5,
-          "mutations": 4
+          "version": 6,
+          "mutations": 5
         },
-        "events": 7,
+        "events": 8,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -434,11 +442,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.61,
-      "remaining_hours": 6.39,
+      "elapsed_hours": 1.62,
+      "remaining_hours": 6.38,
       "progress_pct": 20,
-      "cycles": 18,
-      "heartbeat_human": "15:46:19",
+      "cycles": 19,
+      "heartbeat_human": "15:47:19",
       "tree": {
         "phases": [
           {
@@ -478,6 +486,15 @@
             "verified": true
           },
           {
+            "id": "UNI-WRITER",
+            "title": "Writer учебного трека",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
             "cycles": 2,
@@ -491,15 +508,6 @@
             "title": "Пересмотр критериев учебного трека",
             "cycles": 2,
             "max": 2,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-WRITER",
-            "title": "Writer учебного трека",
-            "cycles": 2,
-            "max": 3,
             "last": "MUTATE",
             "score": 7,
             "verified": true
@@ -685,19 +693,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "15:46:47",
+            "cycle": 19,
+            "task": "UNI-WRITER",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 4,
           "mutations": 3
         },
-        "events": 18,
+        "events": 19,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795697186,
-  "fetched_human": "2026-11-26 15:46:26 +0300"
+  "fetched_at": 1795697251,
+  "fetched_human": "2026-11-26 15:47:31 +0300"
 }
