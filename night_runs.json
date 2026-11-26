@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.03,
-      "remaining_hours": 5.97,
-      "progress_pct": 25,
+      "elapsed_hours": 2.05,
+      "remaining_hours": 5.95,
+      "progress_pct": 26,
       "cycles": 22,
-      "heartbeat_human": "16:11:49",
+      "heartbeat_human": "16:12:49",
       "tree": {
         "phases": [
           {
@@ -286,11 +286,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.03,
-      "remaining_hours": 5.97,
-      "progress_pct": 25,
+      "elapsed_hours": 2.05,
+      "remaining_hours": 5.95,
+      "progress_pct": 26,
       "cycles": 12,
-      "heartbeat_human": "16:11:49",
+      "heartbeat_human": "16:12:49",
       "tree": {
         "phases": [
           {
@@ -514,11 +514,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.03,
-      "remaining_hours": 5.97,
-      "progress_pct": 25,
-      "cycles": 24,
-      "heartbeat_human": "16:11:49",
+      "elapsed_hours": 2.05,
+      "remaining_hours": 5.95,
+      "progress_pct": 26,
+      "cycles": 25,
+      "heartbeat_human": "16:12:49",
       "tree": {
         "phases": [
           {
@@ -605,10 +605,10 @@
           {
             "id": "UNI-KP",
             "title": "Курсовая: LaTeX и блок-схема",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 4,
             "verified": false
           },
           {
@@ -813,19 +813,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: ight-runs/university-1126/artifacts/UNI-NIR-c24.md missing PASS:; missing FAI"
+          },
+          {
+            "clock": "16:11:58",
+            "cycle": 25,
+            "task": "UNI-KP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ness/default-workspace/night-runs/university-1126/artifacts/UNI-KP-c25.md mis"
           }
         ],
         "strategy": {
-          "version": 6,
-          "mutations": 5
+          "version": 7,
+          "mutations": 6
         },
-        "events": 24,
+        "events": 25,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795698712,
-  "fetched_human": "2026-11-26 16:11:52 +0300"
+  "fetched_at": 1795698777,
+  "fetched_human": "2026-11-26 16:12:57 +0300"
 }
