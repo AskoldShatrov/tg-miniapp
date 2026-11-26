@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T12:17:25+00:00",
-  "generated_human": "26.11 12:17 UTC",
-  "as_of": 1795695445164,
+  "generated": "2026-11-26T12:18:25+00:00",
+  "generated_human": "26.11 12:18 UTC",
+  "as_of": 1795695505209,
   "stale_days": 1,
   "count": 1100,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-1tPnJYYkvJ",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Покрытие ников и совпадение раундов; поля KF_NAMES и KF_ROUNDS с числами и источником. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: загрузи skill image-read, выполни describe_image.py + read_image по кадру и запиши VISION_GATE с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent через vision_gate.py; без VISION_GATE гейт FAIL.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695444000,
+     "ts": 1795695501000,
      "source": "session",
      "title": "lree-SF-KF-MAIN-GATE-c4",
      "source_label": "ноут",
@@ -50,7 +50,7 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795695444000,
+     "as_of": 1795695501000,
      "is_stale": false
     },
     {
@@ -2937,7 +2937,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795608716000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DzB0As3RLY",
@@ -2960,7 +2960,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795607691000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Mov6PkTsBG",
@@ -2983,7 +2983,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795607599000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-5AMFSY5kn5",
@@ -3006,7 +3006,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795607550000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-vdKB1k55fc",
@@ -3029,7 +3029,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606788000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dKkakxiMHP",
@@ -3052,7 +3052,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606788000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-dKkakxiMHP-2",
@@ -3075,7 +3075,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606788000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-gUl9458Lhq",
@@ -3098,7 +3098,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606375000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-2wEqXhUkH5",
@@ -3121,7 +3121,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606362000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-DB2BGrp4Rn",
@@ -4188,24 +4188,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-CDpq5XN3FA",
-     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. IDEAS>=30, HYPOTHESES>=3, THRESHOLD и HOLDOUT. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-c13.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695442000,
-     "source": "session",
-     "title": "lree-IMP-HYPOTHESIS-DIVERGE-c13",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261121055339bfc8"
-     ],
-     "as_of": 1795695442000,
-     "is_stale": false
-    },
-    {
      "id": "ses-VGphR4oWJE",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. META_LEVELS=3, REFLECTION, QUESTION_TO_TASK. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-META-REFLECT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-META-REFLECT-c12.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795695441000,
+     "ts": 1795695501000,
      "source": "session",
      "title": "lree-UNI-META-REFLECT-c12",
      "source_label": "ноут",
@@ -4214,7 +4199,22 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795695441000,
+     "as_of": 1795695501000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-CDpq5XN3FA",
+     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. IDEAS>=30, HYPOTHESES>=3, THRESHOLD и HOLDOUT. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-HYPOTHESIS-DIVERGE-c13.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795695500000,
+     "source": "session",
+     "title": "lree-IMP-HYPOTHESIS-DIVERGE-c13",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261121055339bfc8"
+     ],
+     "as_of": 1795695500000,
      "is_stale": false
     },
     {
@@ -11550,7 +11550,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795607944000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Y2X5xG8Bd3",
@@ -18606,7 +18606,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606953000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-3FFxWJhazc",
@@ -21258,7 +21258,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795609062028,
      "as_of": 1795606533000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Qi4Kdwbysy",
