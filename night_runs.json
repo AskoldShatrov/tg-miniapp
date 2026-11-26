@@ -5,7 +5,7 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 0.0,
-      "elapsed_hours": 4.25,
+      "elapsed_hours": 4.27,
       "remaining_hours": 0.0,
       "progress_pct": 0,
       "cycles": 41,
@@ -141,9 +141,189 @@
         "avg_score": 2.0,
         "fail_streak": 2
       }
+    },
+    {
+      "id": "scanfeed-v2-1126",
+      "label": "Сканфид-мандат",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.29,
+      "remaining_hours": 7.71,
+      "progress_pct": 4,
+      "cycles": 6,
+      "heartbeat_human": "13:19:46",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-HLAE-POV-CAPTURE",
+            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-MAIN-GATE",
+            "title": "Kill feed как главный гейт",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "SF-ECONOMY-STRIP",
+            "title": "Компактная экономия под карточками противников",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DEATHTICK-INDEP",
+            "title": "Death-tick: независимый эталон",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6-8 слайдов и постер",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DIGEST",
+            "title": "Итоговый дайджест",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRIOR-WORK-INTAKE",
+            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез до критики",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев и вопросы к задаче",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "13:02:53",
+            "cycle": 1,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
+          },
+          {
+            "clock": "13:02:53",
+            "cycle": 2,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
+          },
+          {
+            "clock": "13:02:53",
+            "cycle": 3,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
+          },
+          {
+            "clock": "13:02:53",
+            "cycle": 4,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md size 444 < 500; missing SOURCE: H"
+          },
+          {
+            "clock": "13:08:00",
+            "cycle": 5,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c5.md size 444 < 500; missing SOURCE: H"
+          },
+          {
+            "clock": "13:08:00",
+            "cycle": 6,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c6.md size 444 < 500; missing SOURCE: H"
+          }
+        ],
+        "strategy": {
+          "version": 3,
+          "mutations": 2
+        },
+        "events": 6,
+        "avg_score": 4.0,
+        "fail_streak": 0
+      }
     }
   ],
-  "count": 1,
-  "fetched_at": 1795688336,
-  "fetched_human": "2026-11-26 13:18:56 +0300"
+  "count": 2,
+  "fetched_at": 1795688401,
+  "fetched_human": "2026-11-26 13:20:01 +0300"
 }
