@@ -2079,7 +2079,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 3200,
+      "age_min": 3201,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 3221,
+      "age_min": 3222,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2095,7 +2095,7 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 3222,
+      "age_min": 3223,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
@@ -2103,7 +2103,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 670,
+      "age_min": 671,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2111,7 +2111,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 670,
+      "age_min": 671,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2119,14 +2119,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 670,
+      "age_min": 671,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
       "id": "session-d76a3819",
       "title": "Ночной прогон без прогресса демки",
       "source": "dsh",
-      "claimed_human": "01:28:02",
+      "claimed_human": "01:28:55",
       "age_min": 0,
       "full": "Ночной прогон без прогресса демки"
     },
@@ -2135,7 +2135,7 @@
       "title": "Задача: сделать один с",
       "source": "dsh",
       "claimed_human": "01:22:10",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Задача: сделать один с"
     },
     {
@@ -2143,7 +2143,7 @@
       "title": "Приветствие",
       "source": "dsh",
       "claimed_human": "01:20:54",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Приветствие"
     }
   ],
@@ -2165,214 +2165,7 @@
     "captions_total": 196,
     "source": "cs2-transcribe/state.db"
   },
-  "runs": [
-    {
-      "key": "req-20261127-012250-a6222d",
-      "session_id": "",
-      "source": "task",
-      "label": "Помнишь, я тебе отправлял по моделированию систем, типа, бол",
-      "step_label": "Прогнать гейты",
-      "step": 5,
-      "total": 5,
-      "events": 25,
-      "trail": [
-        {
-          "ts": 1795731853,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795731853,
-          "label": "BASH · find /home/nyaka/"
-        },
-        {
-          "ts": 1795731854,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795731854,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731864,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795731864,
-          "label": "BASH · find /home/nyaka/"
-        },
-        {
-          "ts": 1795731864,
-          "label": "BASH · grep -n -A 8 -B 3"
-        },
-        {
-          "ts": 1795731864,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731874,
-          "label": "BASH · find /home/nyaka/"
-        },
-        {
-          "ts": 1795731874,
-          "label": "BASH · grep -n '2026-11-"
-        },
-        {
-          "ts": 1795731874,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795731874,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731883,
-          "label": "SYNC · skill-creator"
-        },
-        {
-          "ts": 1795731883,
-          "label": "SYNC · dsh-plugin-discov"
-        },
-        {
-          "ts": 1795731883,
-          "label": "SYNC · disk-triage"
-        },
-        {
-          "ts": 1795731883,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795731883,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731895,
-          "label": "BASH · sha256sum /home/n"
-        },
-        {
-          "ts": 1795731895,
-          "label": "BASH · stat -c '%y %n' /"
-        },
-        {
-          "ts": 1795731895,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795731902,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795731902,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731909,
-          "label": "READ · /tmp/opencode/ans"
-        },
-        {
-          "ts": 1795731909,
-          "label": "READ · /tmp/opencode/hum"
-        },
-        {
-          "ts": 1795731909,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731927,
-          "label": "BASH · ls -l ~/.config/o"
-        },
-        {
-          "ts": 1795731927,
-          "label": "BASH · ls /home/nyaka/sh"
-        },
-        {
-          "ts": 1795731927,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731934,
-          "label": "BASH · grep -n 'send_for"
-        },
-        {
-          "ts": 1795731934,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731943,
-          "label": "BASH · sed -n '1,80p' /h"
-        },
-        {
-          "ts": 1795731971,
-          "label": "WRITE · /tmp/opencode/au"
-        },
-        {
-          "ts": 1795731971,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795731990,
-          "label": "WRITE · /tmp/opencode/la"
-        },
-        {
-          "ts": 1795731999,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795732016,
-          "label": "READ · /tmp/opencode/aud"
-        },
-        {
-          "ts": 1795732016,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795732016,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795732016,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795732017,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795732017,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795732034,
-          "label": "BASH · head -5 /tmp/open"
-        },
-        {
-          "ts": 1795732034,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795732044,
-          "label": "EDIT · /tmp/opencode/aud"
-        },
-        {
-          "ts": 1795732044,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795732055,
-          "label": "EDIT · /tmp/opencode/aud"
-        },
-        {
-          "ts": 1795732064,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795732074,
-          "label": "READ · /tmp/opencode/aud"
-        }
-      ],
-      "started_at": 1795731771,
-      "updated_at": 1795732086
-    }
-  ],
+  "runs": [],
   "bars": [
     {
       "key": "task:T29",
@@ -2419,6 +2212,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 11.2,
   "plan_source": "progress.json",
-  "fetched_at": 1795732086,
-  "fetched_human": "2026-11-27 01:28:06 +0300"
+  "fetched_at": 1795732147,
+  "fetched_human": "2026-11-27 01:29:07 +0300"
 }
