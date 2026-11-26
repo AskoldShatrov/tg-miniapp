@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.63,
-      "remaining_hours": 6.37,
-      "progress_pct": 20,
-      "cycles": 14,
-      "heartbeat_human": "01:43:07",
+      "elapsed_hours": 1.64,
+      "remaining_hours": 6.36,
+      "progress_pct": 21,
+      "cycles": 15,
+      "heartbeat_human": "01:44:07",
       "tree": {
         "phases": [
           {
@@ -33,9 +33,9 @@
           {
             "id": "IMP-SYS-DSH",
             "title": "Инспекция DSH за 7 дней",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 4,
             "verified": false
           },
@@ -215,15 +215,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: 126/artifacts/IMP-SYS-DSH-c14.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "01:43:35",
+            "cycle": 15,
+            "task": "IMP-SYS-DSH",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: 126/artifacts/IMP-SYS-DSH-c15.md MTIME unparseable; missing PASS:; missing FA"
           }
         ],
         "strategy": {
-          "version": 15,
-          "mutations": 14
+          "version": 16,
+          "mutations": 15
         },
-        "events": 14,
+        "events": 15,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -231,11 +239,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.63,
-      "remaining_hours": 6.37,
-      "progress_pct": 20,
+      "elapsed_hours": 1.64,
+      "remaining_hours": 6.36,
+      "progress_pct": 21,
       "cycles": 7,
-      "heartbeat_human": "01:43:07",
+      "heartbeat_human": "01:44:07",
       "tree": {
         "phases": [
           {
@@ -428,11 +436,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.63,
-      "remaining_hours": 6.37,
-      "progress_pct": 20,
+      "elapsed_hours": 1.64,
+      "remaining_hours": 6.36,
+      "progress_pct": 21,
       "cycles": 15,
-      "heartbeat_human": "01:43:07",
+      "heartbeat_human": "01:44:07",
       "tree": {
         "phases": [
           {
@@ -677,6 +685,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795732999,
-  "fetched_human": "2026-11-27 01:43:19 +0300"
+  "fetched_at": 1795733059,
+  "fetched_human": "2026-11-27 01:44:19 +0300"
 }
