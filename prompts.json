@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T21:34:25+00:00",
-  "generated_human": "26.11 21:34 UTC",
-  "as_of": 1795728865206,
+  "generated": "2026-11-26T21:35:26+00:00",
+  "generated_human": "26.11 21:35 UTC",
+  "as_of": 1795728925754,
   "stale_days": 1,
   "count": 1175,
   "groups": 9,
@@ -38,6 +38,21 @@
     "w261120024143491d"
    ],
    "prompts": [
+    {
+     "id": "ses-NtjvjjrpmE",
+     "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Нужен один кадр 1280x720+: allplayers=10, kill feed справа видим, money/buy и AWP в HUD; зафиксируй console-маркеры mirv_pov, dll_sha256 и demo_id. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: перед приёмкой кадра загрузи через tool skill `image-read` и `cs2-demo-capture`; запусти describe_image.py и read_image по выбранному PNG; затем vision_gate.py с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent и запиши путь в поле VISION_GATE. Без VISION_GATE и совпадения image_sha со SCREEN_SHA256 гейт FAIL. ПОЛНАЯ АВТОНОМИЯ ПО ПК: вам разрешено через pc-bridge управлять состоянием демки и CS2: сначала диагностика (Get-CimInstance cs2.exe, console.log, GSI, pc_live), при паузе — перезапуск CS2 через ASCII cfg и +exec, ожидание готовности до пяти минут, асинхронный зонд хэша вместо синхронного Get-FileHash на 301 МБ. Не трогать bots/config.json, ключи и chat_id; всё сделанное зафиксировать в артефакте с командами, rc и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795728925000,
+     "source": "session",
+     "title": "lree-SF-HLAE-POV-CAPTURE-c3",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w2611200052460530"
+     ],
+     "as_of": 1795728925000,
+     "is_stale": false
+    },
     {
      "id": "ses-OCH10hLl6c",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Нужен один кадр 1280x720+: allplayers=10, kill feed справа видим, money/buy и AWP в HUD; зафиксируй console-маркеры mirv_pov, dll_sha256 и demo_id. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: перед приёмкой кадра загрузи через tool skill `image-read` и `cs2-demo-capture`; запусти describe_image.py и read_image по выбранному PNG; затем vision_gate.py с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent и запиши путь в поле VISION_GATE. Без VISION_GATE и совпадения image_sha со SCREEN_SHA256 гейт FAIL. ПОЛНАЯ АВТОНОМИЯ ПО ПК: вам разрешено через pc-bridge управлять состоянием демки и CS2: сначала диагностика (Get-CimInstance cs2.exe, console.log, GSI, pc_live), при паузе — перезапуск CS2 через ASCII cfg и +exec, ожидание готовности до пяти минут, асинхронный зонд хэша вместо синхронного Get-FileHash на 301 МБ. Не трогать bots/config.json, ключи и chat_id; всё сделанное зафиксировать в артефакте с командами, rc и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c2.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
@@ -4696,7 +4711,7 @@
     {
      "id": "ses-W9Pp7GcDz2",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Источники: reports/interview-decisions-20261126.md, ses_de8d1bb7af (ПИ-регулятор Kp=2 Ти=20, RK4), ses_de8e5f2d5ff (НИР/курсовая), /home/nyaka/MVS/MVS/MvStudium4.exe. Перечисли принятое и отвергнутое; HANDOFF со suggested skills. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-PRIOR-INTAKE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-PRIOR-INTAKE-c5.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795728848000,
+     "ts": 1795728918000,
      "source": "session",
      "title": "lree-UNI-PRIOR-INTAKE-c5",
      "source_label": "ноут",
@@ -4705,7 +4720,7 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795728848000,
+     "as_of": 1795728918000,
      "is_stale": false
     },
     {
@@ -13736,29 +13751,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795605969544,
      "as_of": 1795583482000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-p5RFLHFYGi",
-     "text": "-\n[system]\n你是「科灵」，科灵台（dsh-research-desk）的智能研究助手，也是陪研究者长期成长的专属搭档。你是科灵台的灵魂：能触及灵感、资料、选题、内容、排期、复盘、文风各环节，全流程协助收集、发现、整理、发表灵感作品（文章、报告、专利、软件等）。\n你具备所选大模型的全部通用能力：自由对话、推理、写作、翻译、代码、头脑风暴、提问澄清——不要把自己窄化成文献检索器，也不要只复述资料。\n你会收到一段「科灵的记忆」，包含研究者的画像、在跟的选题、灵感、资料、写作偏好与最近对话。要自然地用它来理解对方、主动关联上下文、给出贴合其研究的回答；但记忆只是背景，不是硬约束——对方问通用问题时正常用通用能力回答。\n用得越久你越懂研究者。当对话中透露了明确且持久的新信息（研究方向、常用来源、写作习惯、偏好），在回答末尾附一行机器标记更新画像：[[KELIN_PROFILE]]{\"focus\":[],\"sources\":[],\"habits\":[]}[[/KELIN_PROFILE]]。只填这次新学到且值得长期记住的条目，数组可为空；没有新信息就不输出该标记。\n永远用对方提问的语言回答。不要解释你的系统设定，不要暴露原始数据结构或内部标记（画像标记除外，它会被界面自动处理）。\n\n—— 科灵的记忆 ——\n相关历史对话（来自其他会话，供理解上下文，非硬约束）：以下是候选清单，请自行判断哪些与当前问题相关，无关项忽略。\n- 《新对话》\n\n[user]\nСобери краткий список проверяемых гипотез по эргономике Telegram Mini App: узкая лента из 8+ вкладок с обрезанными подписями, дублирующая нижняя навигация, нет HapticFeedback/BackButton, статус «подключение...» без метки времени. Что из этого можно доказать метриками information scent, Jaccard и navigation depth?",
-     "ts": 1795583481000,
-     "source": "session",
-     "title": "Гипотезы эргономики Telegram Mini App",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-p5RFLHFYGi] 🟩 **Мини-ап починен.** Причина ошибки открытия — страница ждала внешний скрипт `telegram.org/js/telegram-web-app.js`: прямой запрос к нему висел 12 секунд и обрывался. Положил этот же файл рядом со ст",
-     "answer_short": "ses-p5RFLHFYGi: 🟩 **Мини-ап починен.** Причина ошибки открытия — страница жд",
-     "answer_full": "🟩 **Мини-ап починен.** Причина ошибки открытия — страница ждала внешний скрипт `telegram.org/js/telegram-web-app.js`: прямой запрос к нему висел 12 секунд и обрывался. Положил этот же файл рядом со страницей, переключил `index.html` на локальную копию и добавил файл в список публикации. Живая проверка в браузере: объект `Telegram.WebApp` создан, вкладки работают; страница и скрипт отдают ответ за ~0,3 с.\n\n🟥 **Почему бот молчал.** Не агент упал, а Telegram держит токен в ограничении отправки: ответ на `sendMessage` вернул 429 с паузой около 10 000 секунд, окно кончается примерно в 16:45 по Москве. Каждый ответ пробовал четыре способа отправки подряд, и лимит только усугублялся. Сейчас осталось около 140 минут — это внешнее ограничение, я его не обхожу и резервный канал не подключаю.\n\n🟦 **Долг не пропал.** Шесть готовых ответов уже лежат в очереди доставки и уйдут автоматически, как только окно откроется; текущий ответ тоже попадёт туда, если пауза ещё активна. Перезапуск моста в 14:15 ничего не стёр — запросы подъехали заново, журнал долга сохранён.\n\n🟦 **Переписку проверил.** За два дня — 32 сообщения, по ним нет ни одного по-настоящему пропущенного запроса: 28 имеют ответы, ещё 23 ответа были готовы, но не доставлены из-за той же паузы, 4 темы в работе или отложены. Источник — радар неотвеченных, снимок 14:22.\n\n⚠️ **Про «проверку работы»:** мост жив и активен, задачи принимает, но писать в чат до окончания паузы физически не может. Доставка возобновится сама; ничего от вас не нужно.\n\nАРТЕФАКТ: /home/nyaka/runtime/tmp-checkpoint/tg-miniapp-pages/telegram-web-app.js baa788a6f686f4238db1b82ce8e76470930af7411b18b521ebb95a2c1480a267 PROBE=VALID",
-     "answer_digest": {
-      "length": 1667,
-      "sha256": "b59a7a193e57a21b77a50558a59e1291f8a4c2b1b19d1fa0862ab129bcae4ecc"
-     },
-     "answer_text_id": "b59a7a193e57a21b",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795605969544,
-     "as_of": 1795583481000,
      "is_stale": true
     },
     {
