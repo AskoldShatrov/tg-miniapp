@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-26T12:31:56+00:00",
-  "generated_human": "26.11 12:31 UTC",
-  "as_of": 1795696315677,
+  "generated": "2026-11-26T12:33:01+00:00",
+  "generated_human": "26.11 12:33 UTC",
+  "as_of": 1795696380760,
   "stale_days": 1,
   "count": 1107,
   "groups": 9,
@@ -39,24 +39,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-SrV1ttKlnr",
-     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. META_LEVELS=3, REFLECTION, QUESTION_TO_TASK. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-META-REFLECT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-META-REFLECT-c15.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795696310000,
-     "source": "session",
-     "title": "lree-IMP-META-REFLECT-c15",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261121055339bfc8"
-     ],
-     "as_of": 1795696310000,
-     "is_stale": false
-    },
-    {
      "id": "ses-vFaociPA99",
      "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. CRITERIA_SOURCE user/test, CRITERIA_THRESHOLD с числом, QUESTIONS_TO_TASK. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-CRITERIA-REVIEW-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-CRITERIA-REVIEW-c16.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795696310000,
+     "ts": 1795696376000,
      "source": "session",
      "title": "lree-UNI-CRITERIA-REVIEW-c16",
      "source_label": "ноут",
@@ -65,7 +50,22 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795696310000,
+     "as_of": 1795696376000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-SrV1ttKlnr",
+     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. META_LEVELS=3, REFLECTION, QUESTION_TO_TASK. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-META-REFLECT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-META-REFLECT-c15.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795696343000,
+     "source": "session",
+     "title": "lree-IMP-META-REFLECT-c15",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261121055339bfc8"
+     ],
+     "as_of": 1795696343000,
      "is_stale": false
     },
     {
@@ -4436,7 +4436,7 @@
     {
      "id": "ses-SE4SR9Ko5d",
      "text": "Источник кадра только HLAE POV через mirv_pov с DLL C:/scanfeed/tools/HLAE/x64/AfxHookSource2.dll sha256 6d3b9c5fb9a7a72b0a39e452993126adcfb15cf58326a0783157536d18cbfccb. Запрещены браузерный /overlay, бот-матч как REAL и подмена(source) demoparser. В отчёте обязательны поля SOURCE, DEMO_ID, ALLPLAYERS, KILLFEED, SHA256, MTIME, VERDICT; поля сверяются верификатором, а не подставляются. Покрытие ников и совпадение раундов; поля KF_NAMES и KF_ROUNDS с числами и источником. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-*.md. VERDICT: PASS только после реальной проверки. ЗРЕНИЕ ОБЯЗАТЕЛЬНО: загрузи skill image-read, выполни describe_image.py + read_image по кадру и запиши VISION_GATE с флагами hud/killfeed/money/buy/awp/overlay_strip/browser_absent через vision_gate.py; без VISION_GATE гейт FAIL. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-KF-MAIN-GATE-c6.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795696286000,
+     "ts": 1795696370000,
      "source": "session",
      "title": "lree-SF-KF-MAIN-GATE-c6",
      "source_label": "ноут",
@@ -4445,7 +4445,7 @@
      "wants": [
       "w2611200052460530"
      ],
-     "as_of": 1795696286000,
+     "as_of": 1795696370000,
      "is_stale": false
     },
     {
