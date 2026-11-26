@@ -2006,7 +2006,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2027,
+      "age_min": 2028,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2014,7 +2014,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2049,
+      "age_min": 2050,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2022,47 +2022,71 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2049,
+      "age_min": 2050,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-438c75cc",
-      "title": "Полноэкранный режим КС 2 и блэкбары",
-      "source": "dsh",
-      "claimed_human": "05:55:22",
-      "age_min": 0,
-      "full": "Полноэкранный режим КС 2 и блэкбары"
     },
     {
       "id": "session-ad7c73c8",
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
-      "claimed_human": "05:55:20",
+      "claimed_human": "05:56:25",
       "age_min": 0,
       "full": "Остановка непрерывной работы над CS2"
+    },
+    {
+      "id": "session-b74f203c",
+      "title": "Запуск демки сканфида без остановки",
+      "source": "dsh",
+      "claimed_human": "05:56:16",
+      "age_min": 0,
+      "full": "Запуск демки сканфида без остановки"
+    },
+    {
+      "id": "session-f7fce3fb",
+      "title": "Непрерывная ночная работа со сканфидом",
+      "source": "dsh",
+      "claimed_human": "05:55:44",
+      "age_min": 0,
+      "full": "Непрерывная ночная работа со сканфидом"
+    },
+    {
+      "id": "AU15628",
+      "title": "ЗАКРЫТЬ ШАГ T33.T33.4: Зафиксировать стандарт в MORNING-HANDOFF и progress T33",
+      "source": "ноут",
+      "claimed_human": "05:55:40",
+      "age_min": 0,
+      "full": "ЗАКРЫТЬ ШАГ T33.T33.4: Зафиксировать стандарт в MORNING-HANDOFF и progress T33"
+    },
+    {
+      "id": "session-438c75cc",
+      "title": "Полноэкранный режим КС 2 и блэкбары",
+      "source": "dsh",
+      "claimed_human": "05:55:40",
+      "age_min": 0,
+      "full": "Полноэкранный режим КС 2 и блэкбары"
+    },
+    {
+      "id": "AU15627",
+      "title": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых",
+      "source": "ноут",
+      "claimed_human": "05:55:31",
+      "age_min": 0,
+      "full": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых"
     },
     {
       "id": "AU15626",
       "title": "ЗАКРЫТЬ ШАГ T33.T33.2: Привести три поверхности к Catppuccin Mocha точечными правками с @owner/@region",
       "source": "ноут",
       "claimed_human": "05:54:44",
-      "age_min": 0,
+      "age_min": 1,
       "full": "ЗАКРЫТЬ ШАГ T33.T33.2: Привести три поверхности к Catppuccin Mocha точечными правками с @owner/@region"
-    },
-    {
-      "id": "session-f7fce3fb",
-      "title": "Непрерывная ночная работа со сканфидом",
-      "source": "dsh",
-      "claimed_human": "05:54:38",
-      "age_min": 0,
-      "full": "Непрерывная ночная работа со сканфидом"
     },
     {
       "id": "AU15624",
       "title": "ЗАКРЫТЬ ШАГ T32.T32.4: Зафиксировать вердикт в progress T32 и утренний handoff",
       "source": "ноут",
       "claimed_human": "05:54:27",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ЗАКРЫТЬ ШАГ T32.T32.4: Зафиксировать вердикт в progress T32 и утренний handoff"
     },
     {
@@ -2070,7 +2094,7 @@
       "title": "ЗАКРЫТЬ ШАГ T33.T33.1: Инвентаризовать текущие токены в miniapp/index.html, show-in-answer и ответе бота",
       "source": "ноут",
       "claimed_human": "05:54:27",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ЗАКРЫТЬ ШАГ T33.T33.1: Инвентаризовать текущие токены в miniapp/index.html, show-in-answer и ответе бота"
     },
     {
@@ -2078,7 +2102,7 @@
       "title": "ЗАКРЫТЬ ШАГ T32.T32.2: Записать итог в отдельный файл сессии таблицей «пункт → факт → решение → владелец → OPEN»",
       "source": "ноут",
       "claimed_human": "05:54:26",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ЗАКРЫТЬ ШАГ T32.T32.2: Записать итог в отдельный файл сессии таблицей «пункт → факт → решение → владелец → OPEN»"
     },
     {
@@ -2086,23 +2110,15 @@
       "title": "ЗАКРЫТЬ ШАГ T32.T32.3: Прогнать счётчик 10/10 и сверить, что чужие state-файлы не тронуты",
       "source": "ноут",
       "claimed_human": "05:54:26",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ЗАКРЫТЬ ШАГ T32.T32.3: Прогнать счётчик 10/10 и сверить, что чужие state-файлы не тронуты"
-    },
-    {
-      "id": "session-b74f203c",
-      "title": "Запуск демки сканфида без остановки",
-      "source": "dsh",
-      "claimed_human": "05:54:16",
-      "age_min": 1,
-      "full": "Запуск демки сканфида без остановки"
     },
     {
       "id": "session-d18e8af1",
       "title": "у мэтпока есть скилл и",
       "source": "dsh",
       "claimed_human": "05:54:11",
-      "age_min": 1,
+      "age_min": 2,
       "full": "у мэтпока есть скилл и"
     },
     {
@@ -2110,7 +2126,7 @@
       "title": "ЗАКРЫТЬ ШАГ T32.T32.1: Собрать 10 пунктов и реальные команды проверки из interview-задач 25.11 с SHA256/mtime",
       "source": "ноут",
       "claimed_human": "05:54:05",
-      "age_min": 1,
+      "age_min": 2,
       "full": "ЗАКРЫТЬ ШАГ T32.T32.1: Собрать 10 пунктов и реальные команды проверки из interview-задач 25.11 с SHA256/mtime"
     },
     {
@@ -2118,7 +2134,7 @@
       "title": "Задача: ТОЛЬКО ЧТЕНИЕ",
       "source": "dsh",
       "claimed_human": "05:53:08",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Задача: ТОЛЬКО ЧТЕНИЕ"
     }
   ],
@@ -2126,8 +2142,7 @@
     "ноут": {
       "done": 1512,
       "failed": 154,
-      "doing": 6,
-      "todo": 2
+      "doing": 8
     },
     "ПК": {
       "done": 84,
@@ -2150,17 +2165,9 @@
       "step_label": "проверить мост и подхват правил",
       "step": 2,
       "total": 3,
-      "events": 6,
+      "events": 7,
       "trail": [
         {
-          "ts": 1795661613,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795661629,
-          "label": "BASH · echo \"--- bridge "
-        },
-        {
           "ts": 1795661629,
           "label": "BASH · cd /home/nyaka/sh"
         },
@@ -2198,11 +2205,19 @@
         },
         {
           "ts": 1795661726,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795661761,
+          "label": "WRITE · /home/nyaka/shar"
+        },
+        {
+          "ts": 1795661761,
           "label": "THINK"
         }
       ],
       "started_at": 1795661587,
-      "updated_at": 1795661727
+      "updated_at": 1795661789
     }
   ],
   "bars": [
@@ -2221,6 +2236,6 @@
   "progress_updated_at": "2026-11-26T05:53:31+03:00",
   "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795661728,
-  "fetched_human": "2026-11-26 05:55:28 +0300"
+  "fetched_at": 1795661789,
+  "fetched_human": "2026-11-26 05:56:29 +0300"
 }
