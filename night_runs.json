@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.26,
-      "remaining_hours": 6.74,
+      "elapsed_hours": 1.28,
+      "remaining_hours": 6.72,
       "progress_pct": 16,
       "cycles": 14,
-      "heartbeat_human": "15:25:19",
+      "heartbeat_human": "15:26:19",
       "tree": {
         "phases": [
           {
@@ -222,11 +222,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.26,
-      "remaining_hours": 6.74,
+      "elapsed_hours": 1.28,
+      "remaining_hours": 6.72,
       "progress_pct": 16,
-      "cycles": 4,
-      "heartbeat_human": "15:25:19",
+      "cycles": 5,
+      "heartbeat_human": "15:26:19",
       "tree": {
         "phases": [
           {
@@ -241,7 +241,7 @@
           {
             "id": "SF-KF-MAIN-GATE",
             "title": "Kill feed как главный гейт",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
             "last": "MUTATE",
             "score": 4,
@@ -370,15 +370,23 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
+          },
+          {
+            "clock": "15:25:56",
+            "cycle": 5,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
           }
         ],
         "strategy": {
-          "version": 2,
-          "mutations": 1
+          "version": 3,
+          "mutations": 2
         },
-        "events": 4,
+        "events": 5,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -386,11 +394,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.26,
-      "remaining_hours": 6.74,
+      "elapsed_hours": 1.28,
+      "remaining_hours": 6.72,
       "progress_pct": 16,
       "cycles": 13,
-      "heartbeat_human": "15:25:19",
+      "heartbeat_human": "15:26:19",
       "tree": {
         "phases": [
           {
@@ -610,6 +618,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795695941,
-  "fetched_human": "2026-11-26 15:25:41 +0300"
+  "fetched_at": 1795696001,
+  "fetched_human": "2026-11-26 15:26:41 +0300"
 }
