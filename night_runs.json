@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.02,
-      "remaining_hours": 5.98,
+      "elapsed_hours": 2.03,
+      "remaining_hours": 5.97,
       "progress_pct": 25,
-      "cycles": 16,
-      "heartbeat_human": "02:06:22",
+      "cycles": 17,
+      "heartbeat_human": "02:07:22",
       "tree": {
         "phases": [
           {
@@ -42,9 +42,9 @@
           {
             "id": "IMP-SYS-CLI",
             "title": "Инспекция OpenCode CLI и доставки",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATE",
+            "last": "WARMUP",
             "score": 5,
             "verified": false
           },
@@ -231,15 +231,23 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:07:09",
+            "cycle": 17,
+            "task": "IMP-SYS-CLI",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 17,
           "mutations": 16
         },
-        "events": 16,
+        "events": 17,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -247,11 +255,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.02,
-      "remaining_hours": 5.98,
+      "elapsed_hours": 2.03,
+      "remaining_hours": 5.97,
       "progress_pct": 25,
-      "cycles": 13,
-      "heartbeat_human": "02:06:22",
+      "cycles": 14,
+      "heartbeat_human": "02:07:22",
       "tree": {
         "phases": [
           {
@@ -275,7 +283,7 @@
           {
             "id": "SF-ECONOMY-STRIP",
             "title": "Компактная экономия под карточками противников",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
             "last": "MUTATE",
             "score": 0,
@@ -476,15 +484,23 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:07:23",
+            "cycle": 14,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 25,
-          "mutations": 24
+          "version": 26,
+          "mutations": 25
         },
-        "events": 13,
+        "events": 14,
         "avg_score": 3.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -492,11 +508,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.02,
-      "remaining_hours": 5.98,
+      "elapsed_hours": 2.03,
+      "remaining_hours": 5.97,
       "progress_pct": 25,
       "cycles": 18,
-      "heartbeat_human": "02:06:22",
+      "heartbeat_human": "02:07:22",
       "tree": {
         "phases": [
           {
@@ -765,6 +781,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795734407,
-  "fetched_human": "2026-11-27 02:06:47 +0300"
+  "fetched_at": 1795734467,
+  "fetched_human": "2026-11-27 02:07:47 +0300"
 }
