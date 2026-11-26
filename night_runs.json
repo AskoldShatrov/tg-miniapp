@@ -5,25 +5,305 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.13,
-      "remaining_hours": 4.87,
+      "elapsed_hours": 3.15,
+      "remaining_hours": 4.85,
       "progress_pct": 39,
-      "cycles": 30,
-      "heartbeat_human": "12:11:30"
+      "cycles": 31,
+      "heartbeat_human": "12:12:30",
+      "tree": {
+        "phases": [
+          {
+            "id": "T03-SUM-7D",
+            "title": "Суммаризация вопросов и проблем за 7 дней",
+            "cycles": 10,
+            "max": 10,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "T01-SYS-DSH",
+            "title": "Инспекция работы с DSH за 7 дней",
+            "cycles": 8,
+            "max": 8,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "T02-SYS-CLI",
+            "title": "Инспекция OpenCode CLI и доставки",
+            "cycles": 8,
+            "max": 8,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "T04-MINIAPP-UX",
+            "title": "Эргономика чата и мини-апа",
+            "cycles": 5,
+            "max": 10,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "T05-UNIFY-POINT",
+            "title": "Единая точка оценки",
+            "cycles": 0,
+            "max": 8,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "T06-ARBITER",
+            "title": "Трёхуровневая инспекция и арбитраж",
+            "cycles": 0,
+            "max": 6,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "08:21:01",
+            "cycle": 24,
+            "task": "T03-SUM-7D",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
+          },
+          {
+            "clock": "08:27:34",
+            "cycle": 25,
+            "task": "T03-SUM-7D",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
+          },
+          {
+            "clock": "08:35:05",
+            "cycle": 26,
+            "task": "T03-SUM-7D",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
+          },
+          {
+            "clock": "08:42:06",
+            "cycle": 27,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "08:50:16",
+            "cycle": 28,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "08:56:23",
+            "cycle": 29,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "09:05:42",
+            "cycle": 30,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "09:11:58",
+            "cycle": 31,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          }
+        ],
+        "strategy": {
+          "version": 26,
+          "mutations": 25
+        },
+        "events": 31,
+        "avg_score": 2.0,
+        "fail_streak": 1
+      }
     },
     {
       "id": "scanfeed-12h-1126-live",
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 2.85,
-      "remaining_hours": 8.3,
+      "elapsed_hours": 2.86,
+      "remaining_hours": 8.28,
       "progress_pct": 26,
       "cycles": 23,
-      "heartbeat_human": "12:11:44"
+      "heartbeat_human": "12:12:44",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6–8 слайдов, постер, лучший кейс — видео",
+            "cycles": 4,
+            "max": 4,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-ROSTER",
+            "title": "Kill feed: покрытие ников и счёт выживших",
+            "cycles": 3,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "SF-KF-DEATHTICK",
+            "title": "Парсер сверяет death-tick kill feed",
+            "cycles": 3,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "SF-OVERLAY-STRICT",
+            "title": "Строгий кадр оверлея G3+G4",
+            "cycles": 3,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "SF-OVERLAY-REDESIGN",
+            "title": "Внутриигровой оверлей: экономика под карточками врагов без перекрытия ",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          },
+          {
+            "id": "SF-MORNING-DIGEST",
+            "title": "Утренний дайджест: N PASS / M FAIL / K OPEN",
+            "cycles": 2,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "SF-OVERLAY-FINAL",
+            "title": "Финальный строгий кадр: экономика под карточками противников в окне CS",
+            "cycles": 2,
+            "max": 3,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CARDS-GUARD",
+            "title": "Карточки как защитный механизм — концепция и практика",
+            "cycles": 1,
+            "max": 1,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          }
+        ],
+        "trail": [
+          {
+            "clock": "08:45:55",
+            "cycle": 16,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-PRESENT-DECK-*.md"
+          },
+          {
+            "clock": "08:54:15",
+            "cycle": 17,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-PRESENT-DECK-*.md"
+          },
+          {
+            "clock": "08:59:24",
+            "cycle": 18,
+            "task": "SF-MORNING-DIGEST",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-MORNING-DIGEST-*.md"
+          },
+          {
+            "clock": "09:07:44",
+            "cycle": 19,
+            "task": "SF-MORNING-DIGEST",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-MORNING-DIGEST-*.md"
+          },
+          {
+            "clock": "09:08:44",
+            "cycle": 20,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос scanfeed"
+          },
+          {
+            "clock": "09:09:44",
+            "cycle": 21,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос killfeed"
+          },
+          {
+            "clock": "09:10:45",
+            "cycle": 22,
+            "task": "SF-OVERLAY-FINAL",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
+          },
+          {
+            "clock": "09:11:45",
+            "cycle": 23,
+            "task": "SF-OVERLAY-FINAL",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
+          }
+        ],
+        "strategy": {
+          "version": 17,
+          "mutations": 16
+        },
+        "events": 23,
+        "avg_score": 0.0,
+        "fail_streak": 0
+      }
     }
   ],
   "count": 2,
-  "fetched_at": 1795684314,
-  "fetched_human": "2026-11-26 12:11:54 +0300"
+  "fetched_at": 1795684377,
+  "fetched_human": "2026-11-26 12:12:57 +0300"
 }
