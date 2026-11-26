@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.2,
-      "remaining_hours": 5.8,
+      "elapsed_hours": 2.22,
+      "remaining_hours": 5.78,
       "progress_pct": 28,
-      "cycles": 26,
-      "heartbeat_human": "16:21:49",
+      "cycles": 27,
+      "heartbeat_human": "16:23:19",
       "tree": {
         "phases": [
           {
@@ -302,13 +302,21 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос ux"
+          },
+          {
+            "clock": "16:22:49",
+            "cycle": 27,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос miniapp"
           }
         ],
         "strategy": {
-          "version": 3,
-          "mutations": 2
+          "version": 4,
+          "mutations": 3
         },
-        "events": 26,
+        "events": 27,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -318,11 +326,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.2,
-      "remaining_hours": 5.8,
+      "elapsed_hours": 2.22,
+      "remaining_hours": 5.78,
       "progress_pct": 28,
-      "cycles": 14,
-      "heartbeat_human": "16:21:49",
+      "cycles": 15,
+      "heartbeat_human": "16:23:19",
       "tree": {
         "phases": [
           {
@@ -373,11 +381,11 @@
           {
             "id": "SF-PRESENT-DECK",
             "title": "Презентация: 6-8 слайдов и постер",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "SF-HLAE-WRITER",
@@ -546,13 +554,21 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
+          },
+          {
+            "clock": "16:23:17",
+            "cycle": 15,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 9,
-          "mutations": 8
+          "version": 10,
+          "mutations": 9
         },
-        "events": 14,
+        "events": 15,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -562,11 +578,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.2,
-      "remaining_hours": 5.8,
+      "elapsed_hours": 2.22,
+      "remaining_hours": 5.78,
       "progress_pct": 28,
       "cycles": 26,
-      "heartbeat_human": "16:21:49",
+      "heartbeat_human": "16:23:19",
       "tree": {
         "phases": [
           {
@@ -890,6 +906,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795699336,
-  "fetched_human": "2026-11-26 16:22:16 +0300"
+  "fetched_at": 1795699401,
+  "fetched_human": "2026-11-26 16:23:21 +0300"
 }
