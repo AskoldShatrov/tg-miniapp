@@ -2931,7 +2931,13 @@ function renderAtlas(){
   const count=(rs)=>rs.reduce((a,n)=>a+1+count(n.children||[]),0);
   $("#atlasCount").textContent=count(tree.roots||[]);
   const atEl=$("#atlasTime"), af=paint("atlas", atEl);
-  if(atEl) atEl.textContent=((ATLAS.updatedAt||"").slice(11,16)||"—")+" · "+af.text;
+  /* @owner:miniapp-ux @region:atlas-freshness: снимок atlas.json может быть днями старым —
+     показываем собственный возраст снимка, а не только время приёма файла. */
+  if(atEl){
+    const raw=String(ATLAS.updatedAt||""), au=Date.parse(raw||"");
+    const when=raw.slice(0,16).replace("T"," ");
+    atEl.textContent="снимок "+(when&&isFinite(au)?when.slice(5)+" ("+timeAgo(Date.parse(ATLAS.updatedAt))+")":"—")+" · файл "+af.text;
+  }
   ATLAS_LOOKUP={}; atlasIndex(tree.roots);
   ATLAS_VOICE_BY_HYP={};
   (Array.isArray(ATLAS.voice_signals)?ATLAS.voice_signals:[]).forEach(s=>{
