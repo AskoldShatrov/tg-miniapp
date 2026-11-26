@@ -1,701 +1,15 @@
 {
   "runs": [
     {
-      "id": "unified-7d-1126",
-      "label": "Общий мандат",
-      "status": "идёт",
-      "budget_hours": 0.0,
-      "elapsed_hours": 5.39,
-      "remaining_hours": 0.0,
-      "progress_pct": 0,
-      "cycles": 41,
-      "heartbeat_human": "13:10:31",
-      "tree": {
-        "phases": [
-          {
-            "id": "T03-SUM-7D",
-            "title": "Суммаризация вопросов и проблем за 7 дней",
-            "cycles": 10,
-            "max": 10,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "T04-MINIAPP-UX",
-            "title": "Эргономика чата и мини-апа",
-            "cycles": 10,
-            "max": 10,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "T01-SYS-DSH",
-            "title": "Инспекция работы с DSH за 7 дней",
-            "cycles": 8,
-            "max": 8,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "T02-SYS-CLI",
-            "title": "Инспекция OpenCode CLI и доставки",
-            "cycles": 8,
-            "max": 8,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "T05-UNIFY-POINT",
-            "title": "Единая точка оценки",
-            "cycles": 5,
-            "max": 8,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "T06-ARBITER",
-            "title": "Трёхуровневая инспекция и арбитраж",
-            "cycles": 0,
-            "max": 6,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "T07-STUDY-MVS",
-            "title": "Моделирование систем: КР №3 вариант 8",
-            "cycles": 0,
-            "max": 5,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "T08-STUDY-NIR",
-            "title": "НИР: гейты оформления и сверка версий",
-            "cycles": 0,
-            "max": 5,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "T09-STUDY-KP",
-            "title": "Курсовая: гейты LaTeX и блок-схемы",
-            "cycles": 0,
-            "max": 4,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "T10-STUDY-VOICE",
-            "title": "Учебные расшифровки: извлечь полезное",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          }
-        ],
-        "trail": [
-          {
-            "clock": "09:03:55",
-            "cycle": 1,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:03:55",
-            "cycle": 2,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:07:23",
-            "cycle": 3,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:13:10",
-            "cycle": 4,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:21:33",
-            "cycle": 5,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:24:59",
-            "cycle": 6,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:30:48",
-            "cycle": 7,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:37:57",
-            "cycle": 8,
-            "task": "T01-SYS-DSH",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T01-SYS-DSH-*.md"
-          },
-          {
-            "clock": "09:46:50",
-            "cycle": 9,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "09:52:18",
-            "cycle": 10,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:00:19",
-            "cycle": 11,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:08:28",
-            "cycle": 12,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:15:21",
-            "cycle": 13,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:19:57",
-            "cycle": 14,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:24:40",
-            "cycle": 15,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:30:01",
-            "cycle": 16,
-            "task": "T02-SYS-CLI",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T02-SYS-CLI-*.md"
-          },
-          {
-            "clock": "10:36:58",
-            "cycle": 17,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "10:41:43",
-            "cycle": 18,
-            "task": "T03-SUM-7D",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "10:47:11",
-            "cycle": 19,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "10:53:36",
-            "cycle": 20,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "10:59:42",
-            "cycle": 21,
-            "task": "T03-SUM-7D",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "11:07:03",
-            "cycle": 22,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "11:12:58",
-            "cycle": 23,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "11:21:01",
-            "cycle": 24,
-            "task": "T03-SUM-7D",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "11:27:34",
-            "cycle": 25,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "11:35:05",
-            "cycle": 26,
-            "task": "T03-SUM-7D",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T03-SUM-7D-*.md"
-          },
-          {
-            "clock": "11:42:06",
-            "cycle": 27,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "11:50:16",
-            "cycle": 28,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "11:56:23",
-            "cycle": 29,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:05:42",
-            "cycle": 30,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:11:58",
-            "cycle": 31,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:19:23",
-            "cycle": 32,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:24:35",
-            "cycle": 33,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:30:53",
-            "cycle": 34,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:36:25",
-            "cycle": 35,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:44:59",
-            "cycle": 36,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "12:48:36",
-            "cycle": 37,
-            "task": "T05-UNIFY-POINT",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
-          },
-          {
-            "clock": "12:53:55",
-            "cycle": 38,
-            "task": "T05-UNIFY-POINT",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
-          },
-          {
-            "clock": "12:56:57",
-            "cycle": 39,
-            "task": "T05-UNIFY-POINT",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
-          },
-          {
-            "clock": "13:01:55",
-            "cycle": 40,
-            "task": "T05-UNIFY-POINT",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
-          },
-          {
-            "clock": "13:08:37",
-            "cycle": 41,
-            "task": "T05-UNIFY-POINT",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T05-UNIFY-POINT-*.md"
-          }
-        ],
-        "strategy": {
-          "version": 36,
-          "mutations": 35
-        },
-        "events": 41,
-        "avg_score": 2.0,
-        "fail_streak": 2
-      }
-    },
-    {
-      "id": "scanfeed-v2-1126",
-      "label": "Сканфид-мандат",
-      "status": "идёт",
-      "budget_hours": 0.0,
-      "elapsed_hours": 1.41,
-      "remaining_hours": 0.0,
-      "progress_pct": 0,
-      "cycles": 13,
-      "heartbeat_human": "14:08:31",
-      "tree": {
-        "phases": [
-          {
-            "id": "SF-HLAE-POV-CAPTURE",
-            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "SF-KF-MAIN-GATE",
-            "title": "Kill feed как главный гейт",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "SF-ECONOMY-STRIP",
-            "title": "Компактная экономия под карточками противников",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "SF-T4-CALIB",
-            "title": "T4: REAL-калибровка с FP>0",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "SF-DEATHTICK-INDEP",
-            "title": "Death-tick: независимый эталон",
-            "cycles": 2,
-            "max": 2,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-PRESENT-DECK",
-            "title": "Презентация: 6-8 слайдов и постер",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-HLAE-WRITER",
-            "title": "Writer: сделай + доставь + проверь доставку",
-            "cycles": 0,
-            "max": 4,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-DIGEST",
-            "title": "Итоговый дайджест",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-PRIOR-WORK-INTAKE",
-            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-HYPOTHESIS-DIVERGE",
-            "title": "Перебор гипотез до критики",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-META-REFLECT",
-            "title": "Метарефлексия трёх уровней",
-            "cycles": 0,
-            "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          },
-          {
-            "id": "SF-CRITERIA-REVIEW",
-            "title": "Пересмотр критериев и вопросы к задаче",
-            "cycles": 0,
-            "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
-          }
-        ],
-        "trail": [
-          {
-            "clock": "13:02:53",
-            "cycle": 1,
-            "task": "SF-HLAE-POV-CAPTURE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
-          },
-          {
-            "clock": "13:02:53",
-            "cycle": 2,
-            "task": "SF-HLAE-POV-CAPTURE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
-          },
-          {
-            "clock": "13:02:53",
-            "cycle": 3,
-            "task": "SF-HLAE-POV-CAPTURE",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: MO_ID:; missing ALPLAYERS: 10; missing KILLFEED: visible; missing MONEY: visi"
-          },
-          {
-            "clock": "13:02:53",
-            "cycle": 4,
-            "task": "SF-KF-MAIN-GATE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c4.md size 444 < 500; missing SOURCE: H"
-          },
-          {
-            "clock": "13:08:00",
-            "cycle": 5,
-            "task": "SF-KF-MAIN-GATE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c5.md size 444 < 500; missing SOURCE: H"
-          },
-          {
-            "clock": "13:08:00",
-            "cycle": 6,
-            "task": "SF-KF-MAIN-GATE",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: eed-v2-1126/artifacts/SF-KF-MAIN-GATE-c6.md size 444 < 500; missing SOURCE: H"
-          },
-          {
-            "clock": "13:25:04",
-            "cycle": 7,
-            "task": "SF-ECONOMY-STRIP",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-ECONOMY-STRIP-c"
-          },
-          {
-            "clock": "13:29:53",
-            "cycle": 8,
-            "task": "SF-ECONOMY-STRIP",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: :; missing MTIME:; missing VERDICT: PASS; SHA256 fields < 2; DLL_SHA256 != kn"
-          },
-          {
-            "clock": "13:31:15",
-            "cycle": 8,
-            "task": "SF-ECONOMY-STRIP",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: feed-v2-1126/artifacts/SF-ECONOMY-STRIP-c8.md missing KILLFEED: visible; miss"
-          },
-          {
-            "clock": "13:39:45",
-            "cycle": 9,
-            "task": "SF-DEATHTICK-INDEP",
-            "action": "MUTATE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "13:44:54",
-            "cycle": 10,
-            "task": "SF-DEATHTICK-INDEP",
-            "action": "MUTATE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "13:55:15",
-            "cycle": 11,
-            "task": "SF-T4-CALIB",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c11.md"
-          },
-          {
-            "clock": "14:00:30",
-            "cycle": 12,
-            "task": "SF-T4-CALIB",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c12.md"
-          },
-          {
-            "clock": "14:05:52",
-            "cycle": 13,
-            "task": "SF-T4-CALIB",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: FAIL /home/nyaka/evolution-work/scanfeed-v2-1126/artifacts/SF-T4-CALIB-c13.md"
-          }
-        ],
-        "strategy": {
-          "version": 6,
-          "mutations": 5
-        },
-        "events": 14,
-        "avg_score": 4.0,
-        "fail_streak": 0
-      }
-    },
-    {
       "id": "complex-improvement-1126",
       "label": "complex improvement 1126",
       "status": "идёт",
-      "budget_hours": 0.0,
-      "elapsed_hours": 0.68,
-      "remaining_hours": 0.0,
-      "progress_pct": 0,
-      "cycles": 4,
-      "heartbeat_human": "14:08:50",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.3,
+      "remaining_hours": 7.7,
+      "progress_pct": 4,
+      "cycles": 3,
+      "heartbeat_human": "14:27:35",
       "tree": {
         "phases": [
           {
@@ -710,7 +24,7 @@
           {
             "id": "IMP-UX-AUDIT",
             "title": "Эргономика чата и мини-апа",
-            "cycles": 2,
+            "cycles": 1,
             "max": 3,
             "last": "MUTATE",
             "score": 7,
@@ -782,7 +96,7 @@
         ],
         "trail": [
           {
-            "clock": "13:52:18",
+            "clock": "14:14:09",
             "cycle": 1,
             "task": "IMP-PRIOR-INTAKE",
             "action": "MUTATE",
@@ -790,7 +104,7 @@
             "note": ""
           },
           {
-            "clock": "13:58:20",
+            "clock": "14:20:35",
             "cycle": 2,
             "task": "IMP-PRIOR-INTAKE",
             "action": "MUTATE",
@@ -798,16 +112,8 @@
             "note": ""
           },
           {
-            "clock": "14:04:04",
+            "clock": "14:24:44",
             "cycle": 3,
-            "task": "IMP-UX-AUDIT",
-            "action": "MUTATE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "14:08:12",
-            "cycle": 4,
             "task": "IMP-UX-AUDIT",
             "action": "MUTATE",
             "score": 7,
@@ -818,21 +124,161 @@
           "version": 1,
           "mutations": 0
         },
-        "events": 4,
+        "events": 3,
         "avg_score": 0.0,
         "fail_streak": 0
+      }
+    },
+    {
+      "id": "scanfeed-v2-1126",
+      "label": "Сканфид-мандат",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.3,
+      "remaining_hours": 7.7,
+      "progress_pct": 4,
+      "cycles": 1,
+      "heartbeat_human": "14:27:35",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-HLAE-POV-CAPTURE",
+            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
+            "cycles": 1,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-MAIN-GATE",
+            "title": "Kill feed как главный гейт",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-ECONOMY-STRIP",
+            "title": "Компактная экономия под карточками противников",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DEATHTICK-INDEP",
+            "title": "Death-tick: независимый эталон",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6-8 слайдов и постер",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DIGEST",
+            "title": "Итоговый дайджест",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRIOR-WORK-INTAKE",
+            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез до критики",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 3,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев и вопросы к задаче",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "14:25:05",
+            "cycle": 1,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          }
+        ],
+        "strategy": {
+          "version": 1,
+          "mutations": 0
+        },
+        "events": 1,
+        "avg_score": 0.0,
+        "fail_streak": 1
       }
     },
     {
       "id": "university-1126",
       "label": "university 1126",
       "status": "идёт",
-      "budget_hours": 0.0,
-      "elapsed_hours": 0.65,
-      "remaining_hours": 0.0,
-      "progress_pct": 0,
-      "cycles": 2,
-      "heartbeat_human": "14:08:31",
+      "budget_hours": 8.0,
+      "elapsed_hours": 0.3,
+      "remaining_hours": 7.7,
+      "progress_pct": 4,
+      "cycles": 3,
+      "heartbeat_human": "14:27:35",
       "tree": {
         "phases": [
           {
@@ -847,11 +293,11 @@
           {
             "id": "UNI-MVS-WINE",
             "title": "Моделирование систем: MvStudium под Wine",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
           },
           {
             "id": "UNI-PID-CALIB",
@@ -910,33 +356,41 @@
         ],
         "trail": [
           {
-            "clock": "13:53:50",
+            "clock": "14:15:18",
             "cycle": 1,
             "task": "UNI-PRIOR-INTAKE",
             "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: e/nyaka/evolution-work/university-1126/artifacts/UNI-PRIOR-INTAKE-c1.md missi"
+            "score": 7,
+            "note": ""
           },
           {
-            "clock": "13:57:08",
+            "clock": "14:18:34",
             "cycle": 2,
             "task": "UNI-PRIOR-INTAKE",
             "action": "MUTATE",
             "score": 4,
-            "note": "verify rc=1: e/nyaka/evolution-work/university-1126/artifacts/UNI-PRIOR-INTAKE-c2.md missi"
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/univ"
+          },
+          {
+            "clock": "14:23:15",
+            "cycle": 3,
+            "task": "UNI-MVS-WINE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 1,
-          "mutations": 0
+          "version": 2,
+          "mutations": 1
         },
-        "events": 2,
+        "events": 3,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
-  "count": 4,
-  "fetched_at": 1795692446,
-  "fetched_human": "2026-11-26 14:27:26 +0300"
+  "count": 3,
+  "fetched_at": 1795692477,
+  "fetched_human": "2026-11-26 14:27:57 +0300"
 }
