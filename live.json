@@ -2079,7 +2079,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2573,
+      "age_min": 2574,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2595,
+      "age_min": 2596,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2095,14 +2095,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2595,
+      "age_min": 2596,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
+    },
+    {
+      "id": "session-17e00542",
+      "title": "Эффективность затрат ресурсов ночных прого",
+      "source": "dsh",
+      "claimed_human": "15:02:28",
+      "age_min": 0,
+      "full": "Эффективность затрат ресурсов ночных прого"
     },
     {
       "id": "session-23b4bb42",
       "title": "Ночная автономная работа над сканфидом",
       "source": "dsh",
-      "claimed_human": "15:01:27",
+      "claimed_human": "15:02:08",
       "age_min": 0,
       "full": "Ночная автономная работа над сканфидом"
     },
@@ -2111,23 +2119,15 @@
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
       "claimed_human": "15:00:06",
-      "age_min": 1,
-      "full": "Активный сеанс DSH с проверками"
-    },
-    {
-      "id": "session-17e00542",
-      "title": "Эффективность затрат ресурсов ночных прого",
-      "source": "dsh",
-      "claimed_human": "14:59:27",
       "age_min": 2,
-      "full": "Эффективность затрат ресурсов ночных прого"
+      "full": "Активный сеанс DSH с проверками"
     },
     {
       "id": "session-38a740d8",
       "title": "Страж: проверка каждые 30 мин",
       "source": "dsh",
       "claimed_human": "14:52:48",
-      "age_min": 8,
+      "age_min": 9,
       "full": "Страж: проверка каждые 30 мин"
     },
     {
@@ -2135,7 +2135,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 43,
+      "age_min": 44,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2143,7 +2143,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 43,
+      "age_min": 44,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2151,7 +2151,7 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 43,
+      "age_min": 44,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     }
   ],
@@ -2181,28 +2181,8 @@
       "step_label": "Проверить локальный реестр скиллов и плагинов",
       "step": 2,
       "total": 5,
-      "events": 58,
+      "events": 61,
       "trail": [
-        {
-          "ts": 1795693719,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795693720,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795693740,
-          "label": "WRITE · /home/nyaka/.con"
-        },
-        {
-          "ts": 1795693740,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795693793,
-          "label": "BASH · chmod +x /home/ny"
-        },
         {
           "ts": 1795693815,
           "label": "BASH · date '+%H:%M:%S %"
@@ -2374,10 +2354,30 @@
         {
           "ts": 1795694470,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795694492,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795694492,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795694511,
+          "label": "READ · /tmp/opencode/cha"
+        },
+        {
+          "ts": 1795694532,
+          "label": "READ · /tmp/opencode/cha"
+        },
+        {
+          "ts": 1795694532,
+          "label": "THINK"
         }
       ],
       "started_at": 1795692602,
-      "updated_at": 1795694488
+      "updated_at": 1795694551
     }
   ],
   "bars": [
@@ -2426,6 +2426,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 0.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795694488,
-  "fetched_human": "2026-11-26 15:01:28 +0300"
+  "fetched_at": 1795694552,
+  "fetched_human": "2026-11-26 15:02:32 +0300"
 }
