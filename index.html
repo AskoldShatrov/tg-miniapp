@@ -1050,6 +1050,13 @@
       <div class="eyebrow" style="margin-top:12px">Задачи в работе: шаги плана, живые DSH-сессии, claim'ы</div>
       <div id="liveJobs"></div>
     </section>
+    <section class="screen" id="screen-night">
+      <div class="eyebrow">Ночные прогоны · бюджет и ход</div>
+      <div class="live-strip" id="nightStamp">…</div>
+      <div id="nightCards" style="display:grid;gap:12px">
+        <div class="hint">Загружаю активные мандаты…</div>
+      </div>
+    </section>
     <section class="screen" id="screen-studio">
       <div class="eyebrow">Студия идей · второй слой + стикер</div>
       <div class="hint" style="margin:0 0 10px">
@@ -3356,6 +3363,45 @@ async function fetchQuestions(){
   bad("questions", "все источники вопросов недоступны");
   if(!QUESTIONS){QUESTIONS={questions:[]};}
   renderQuestions();
+}
+
+/* ---------- ночные прогоны: бюджет, прогресс, витки ---------- */
+let NIGHT_LOADED=false;
+function renderNightRuns(d){
+  const box=$("#nightCards");
+  if(!box) return;
+  const runs=Array.isArray(d.runs)?d.runs:[];
+  box.innerHTML=runs.length?runs.map(r=>{
+    const pct=Math.max(0,Math.min(100,Number(r.progress_pct)||0));
+    const budget=r.budget_hours?Number(r.budget_hours).toFixed(1):"—";
+    const elapsed=Number(r.elapsed_hours||0).toFixed(1);
+    const remain=r.budget_hours?Number(r.remaining_hours||0).toFixed(1):"—";
+    return `<div style="background:var(--surface0);border:1px solid var(--surface1);border-radius:16px;padding:16px">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">
+        <b style="font-size:18px">${String(r.label||r.id||"Мандат")}</b>
+        <span class="muted">${pct}%</span>
+      </div>
+      <div style="height:8px;border-radius:999px;background:var(--surface2);overflow:hidden;margin:12px 0">
+        <div style="height:100%;width:${pct}%;background:var(--green)"></div>
+      </div>
+      <div class="muted">Бюджет ${budget} ч · прошло ${elapsed} ч · осталось ${remain} ч · витков ${Number(r.cycles||0)}</div>
+      <div class="hint" style="margin-top:6px">${String(r.status||"идёт")} · пульс ${String(r.heartbeat_human||"—")}</div>
+    </div>`;
+  }).join(""):'<div class="hint">Активных ночных прогонов нет.</div>';
+  const stamp=$("#nightStamp");
+  if(stamp) stamp.textContent=d.fetched_human||"данные обновлены";
+}
+async function fetchNightRuns(force){
+  if(NIGHT_LOADED&&!force) return;
+  const bases=["","https://raw.githubusercontent.com/AskoldShatrov/tg-miniapp/main/"];
+  for(const base of bases){
+    try{
+      const r=await fetchTimed(base+"night_runs.json?ts="+Date.now(),{cache:"no-store"},6000);
+      if(!r.ok) continue;
+      const d=await r.json(); renderNightRuns(d); NIGHT_LOADED=true; return;
+    }catch(e){ /* показать честную пустоту */ }
+  }
+  renderNightRuns({runs:[],fetched_human:"источник временно недоступен"});
 }
 
 /* ---------- живые данные OpenCode: дерево задач и вердикты ---------- */
