@@ -2043,7 +2043,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2088,
+      "age_min": 2089,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2051,7 +2051,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2110,
+      "age_min": 2111,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2059,54 +2059,22 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2110,
+      "age_min": 2111,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "0f6832a9-ecd0-42",
-      "title": "Проведи исследование",
-      "source": "dsh",
-      "claimed_human": "06:56:26",
-      "age_min": 0,
-      "full": "Проведи исследование"
-    },
-    {
-      "id": "session-b74f203c",
-      "title": "Запуск демки сканфида без остановки",
-      "source": "dsh",
-      "claimed_human": "06:56:25",
-      "age_min": 0,
-      "full": "Запуск демки сканфида без остановки"
-    },
-    {
-      "id": "session-aca1061f",
-      "title": "я просил проанализири",
-      "source": "dsh",
-      "claimed_human": "06:56:25",
-      "age_min": 0,
-      "full": "я просил проанализири"
     },
     {
       "id": "session-d18e8af1",
       "title": "у мэтпока есть скилл и",
       "source": "dsh",
-      "claimed_human": "06:56:22",
+      "claimed_human": "06:57:11",
       "age_min": 0,
       "full": "у мэтпока есть скилл и"
-    },
-    {
-      "id": "session-f7fce3fb",
-      "title": "Непрерывная ночная работа со сканфидом",
-      "source": "dsh",
-      "claimed_human": "06:56:20",
-      "age_min": 0,
-      "full": "Непрерывная ночная работа со сканфидом"
     },
     {
       "id": "session-ad7c73c8",
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
-      "claimed_human": "06:56:16",
+      "claimed_human": "06:57:11",
       "age_min": 0,
       "full": "Остановка непрерывной работы над CS2"
     },
@@ -2114,16 +2082,48 @@
       "id": "session-438c75cc",
       "title": "ПРОВЕРИТЬ ВРОДЕ ЗБС",
       "source": "dsh",
-      "claimed_human": "06:56:06",
+      "claimed_human": "06:57:01",
       "age_min": 0,
       "full": "ПРОВЕРИТЬ ВРОДЕ ЗБС"
+    },
+    {
+      "id": "0f6832a9-ecd0-42",
+      "title": "Проведи исследование",
+      "source": "dsh",
+      "claimed_human": "06:56:59",
+      "age_min": 0,
+      "full": "Проведи исследование"
+    },
+    {
+      "id": "session-aca1061f",
+      "title": "я просил проанализири",
+      "source": "dsh",
+      "claimed_human": "06:56:52",
+      "age_min": 0,
+      "full": "я просил проанализири"
+    },
+    {
+      "id": "session-b74f203c",
+      "title": "Запуск демки сканфида без остановки",
+      "source": "dsh",
+      "claimed_human": "06:56:47",
+      "age_min": 0,
+      "full": "Запуск демки сканфида без остановки"
+    },
+    {
+      "id": "session-f7fce3fb",
+      "title": "Непрерывная ночная работа со сканфидом",
+      "source": "dsh",
+      "claimed_human": "06:56:45",
+      "age_min": 0,
+      "full": "Непрерывная ночная работа со сканфидом"
     },
     {
       "id": "AU15627",
       "title": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых",
       "source": "ноут",
       "claimed_human": "06:55:46",
-      "age_min": 0,
+      "age_min": 1,
       "full": "ЗАКРЫТЬ ШАГ T33.T33.3: Прогнать palette gate и записать 3/3 + 0 внепалитровых"
     },
     {
@@ -2131,7 +2131,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.5: Собрать отчёт, проверить гейты и доставить",
       "source": "ноут",
       "claimed_human": "06:54:25",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.5: Собрать отчёт, проверить гейты и доставить"
     },
     {
@@ -2139,7 +2139,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.4: Сформулировать гипотезы и пороги до прогона",
       "source": "ноут",
       "claimed_human": "06:54:24",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.4: Сформулировать гипотезы и пороги до прогона"
     },
     {
@@ -2147,7 +2147,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.3: Изучить первичные источники про FPS и инпутлаг",
       "source": "ноут",
       "claimed_human": "06:54:22",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.3: Изучить первичные источники про FPS и инпутлаг"
     },
     {
@@ -2155,7 +2155,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации",
       "source": "ноут",
       "claimed_human": "06:54:13",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации"
     },
     {
@@ -2163,7 +2163,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.1: Собрать факты о железе, мониторе и текущих настройках",
       "source": "ноут",
       "claimed_human": "06:54:04",
-      "age_min": 2,
+      "age_min": 3,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.1: Собрать факты о железе, мониторе и текущих настройках"
     },
     {
@@ -2171,7 +2171,7 @@
       "title": "Собрать факты о железе, мониторе и текущих настройках",
       "source": "progress",
       "claimed_human": "06:54:03",
-      "age_min": 2,
+      "age_min": 3,
       "full": "сбор cable: железе, монитор, настройки CS2"
     },
     {
@@ -2179,7 +2179,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwwz8zhhg4xp: C03-28211: пересчёт adjusted winrate по корпусу 7 карт/320 демо",
       "source": "ноут",
       "claimed_human": "06:13:17",
-      "age_min": 43,
+      "age_min": 44,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwwz8zhhg4xp: C03-28211: пересчёт adjusted winrate по корпусу 7 карт/320 демо",
       "autogen": true
     }
@@ -2208,13 +2208,80 @@
       "session_id": "ses_dea4eef77ffeYNCKXbhYZ1VLEB",
       "source": "task",
       "label": "Ну вот, посмотри свои последние ответы, ты ведь до сих пор т",
-      "step_label": "",
-      "step": 0,
-      "total": null,
-      "events": 0,
-      "trail": [],
+      "step_label": "оценить постер визуально",
+      "step": 2,
+      "total": 3,
+      "events": 3,
+      "trail": [
+        {
+          "ts": 1795665393,
+          "label": "SYNC · systemic-dialogue"
+        },
+        {
+          "ts": 1795665393,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795665419,
+          "label": "READ · /tmp/opencode/sty"
+        },
+        {
+          "ts": 1795665419,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795665442,
+          "label": "BASH · sed -n '1,80p' ~/"
+        },
+        {
+          "ts": 1795665442,
+          "label": "BASH · echo \"--- my run "
+        },
+        {
+          "ts": 1795665442,
+          "label": "THINK"
+        }
+      ],
       "started_at": 1795665358,
-      "updated_at": 1795665390
+      "updated_at": 1795665449
+    },
+    {
+      "key": "req-20261126-065702-e43a4d",
+      "session_id": "",
+      "source": "task",
+      "label": "Тут типа получается забавная рекурсия, восстанови контекст п",
+      "step_label": "контекст",
+      "step": 1,
+      "total": 5,
+      "events": 1,
+      "trail": [
+        {
+          "ts": 1795665444,
+          "label": "SYNC · strange-question"
+        },
+        {
+          "ts": 1795665444,
+          "label": "SYNC · anti-autism"
+        },
+        {
+          "ts": 1795665444,
+          "label": "SYNC · session-handoff"
+        },
+        {
+          "ts": 1795665444,
+          "label": "SYNC · work-until-done"
+        },
+        {
+          "ts": 1795665444,
+          "label": "BASH · printf '%s\\n' \"$O"
+        },
+        {
+          "ts": 1795665444,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795665423,
+      "updated_at": 1795665449
     }
   ],
   "bars": [
@@ -2241,8 +2308,8 @@
   ],
   "updatedAt": "2026-11-26T06:54:03+03:00",
   "progress_updated_at": "2026-11-26T06:54:03+03:00",
-  "plan_age_hours": 0.0,
+  "plan_age_hours": 0.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795665392,
-  "fetched_human": "2026-11-26 06:56:32 +0300"
+  "fetched_at": 1795665451,
+  "fetched_human": "2026-11-26 06:57:31 +0300"
 }
