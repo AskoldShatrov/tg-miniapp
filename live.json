@@ -2043,7 +2043,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2103,
+      "age_min": 2104,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2051,7 +2051,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2125,
+      "age_min": 2126,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2059,22 +2059,14 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2125,
+      "age_min": 2126,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
-    },
-    {
-      "id": "session-438c75cc",
-      "title": "ПРОВЕРИТЬ ВРОДЕ ЗБС",
-      "source": "dsh",
-      "claimed_human": "07:11:35",
-      "age_min": 0,
-      "full": "ПРОВЕРИТЬ ВРОДЕ ЗБС"
     },
     {
       "id": "session-d18e8af1",
       "title": "у мэтпока есть скилл и",
       "source": "dsh",
-      "claimed_human": "07:11:31",
+      "claimed_human": "07:12:35",
       "age_min": 0,
       "full": "у мэтпока есть скилл и"
     },
@@ -2082,16 +2074,24 @@
       "id": "session-b74f203c",
       "title": "Запуск демки сканфида без остановки",
       "source": "dsh",
-      "claimed_human": "07:11:23",
+      "claimed_human": "07:12:31",
       "age_min": 0,
       "full": "Запуск демки сканфида без остановки"
+    },
+    {
+      "id": "session-438c75cc",
+      "title": "ПРОВЕРИТЬ ВРОДЕ ЗБС",
+      "source": "dsh",
+      "claimed_human": "07:11:59",
+      "age_min": 0,
+      "full": "ПРОВЕРИТЬ ВРОДЕ ЗБС"
     },
     {
       "id": "session-f7fce3fb",
       "title": "Непрерывная ночная работа со сканфидом",
       "source": "dsh",
       "claimed_human": "07:09:55",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Непрерывная ночная работа со сканфидом"
     },
     {
@@ -2099,7 +2099,7 @@
       "title": "Задача: ТОЛЬКО ЧТЕНИЕ,",
       "source": "dsh",
       "claimed_human": "07:05:24",
-      "age_min": 6,
+      "age_min": 7,
       "full": "Задача: ТОЛЬКО ЧТЕНИЕ,"
     },
     {
@@ -2107,7 +2107,7 @@
       "title": "Остановка непрерывной работы над CS2",
       "source": "dsh",
       "claimed_human": "07:04:38",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Остановка непрерывной работы над CS2"
     },
     {
@@ -2115,7 +2115,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации",
       "source": "ноут",
       "claimed_human": "06:54:13",
-      "age_min": 17,
+      "age_min": 18,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации"
     },
     {
@@ -2123,7 +2123,7 @@
       "title": "ЗАКРЫТЬ ШАГ T34.T34.1: Собрать факты о железе, мониторе и текущих настройках",
       "source": "ноут",
       "claimed_human": "06:54:04",
-      "age_min": 17,
+      "age_min": 18,
       "full": "ЗАКРЫТЬ ШАГ T34.T34.1: Собрать факты о железе, мониторе и текущих настройках"
     },
     {
@@ -2131,7 +2131,7 @@
       "title": "Собрать факты о железе, мониторе и текущих настройках",
       "source": "progress",
       "claimed_human": "06:54:03",
-      "age_min": 17,
+      "age_min": 18,
       "full": "сбор cable: железе, монитор, настройки CS2"
     },
     {
@@ -2139,7 +2139,7 @@
       "title": "ДОВЕСТИ ЦЕЛЬ gmwwz8zhhg4xp: C03-28211: пересчёт adjusted winrate по корпусу 7 карт/320 демо",
       "source": "ноут",
       "claimed_human": "06:13:17",
-      "age_min": 58,
+      "age_min": 59,
       "full": "ДОВЕСТИ ЦЕЛЬ gmwwz8zhhg4xp: C03-28211: пересчёт adjusted winrate по корпусу 7 карт/320 демо",
       "autogen": true
     }
@@ -2168,13 +2168,43 @@
       "session_id": "ses_dea4eef77ffeYNCKXbhYZ1VLEB",
       "source": "task",
       "label": "Ну вот, посмотри свои последние ответы, ты ведь до сих пор т",
+      "step_label": "собрать свежую деку под новый запрос",
+      "step": 1,
+      "total": 3,
+      "events": 2,
+      "trail": [
+        {
+          "ts": 1795666340,
+          "label": "BASH · mkdir -p /tmp/ope"
+        },
+        {
+          "ts": 1795666340,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795666357,
+          "label": "READ · /tmp/opencode/sty"
+        },
+        {
+          "ts": 1795666357,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795666303,
+      "updated_at": 1795666364
+    },
+    {
+      "key": "req-20261126-071243-45a438",
+      "session_id": "",
+      "source": "task",
+      "label": "Тут типа получается забавная рекурсия, восстанови контекст п",
       "step_label": "",
       "step": 0,
       "total": null,
       "events": 0,
       "trail": [],
-      "started_at": 1795666303,
-      "updated_at": 1795666303
+      "started_at": 1795666364,
+      "updated_at": 1795666364
     }
   ],
   "bars": [
@@ -2203,6 +2233,6 @@
   "progress_updated_at": "2026-11-26T06:54:03+03:00",
   "plan_age_hours": 0.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795666304,
-  "fetched_human": "2026-11-26 07:11:44 +0300"
+  "fetched_at": 1795666365,
+  "fetched_human": "2026-11-26 07:12:45 +0300"
 }
