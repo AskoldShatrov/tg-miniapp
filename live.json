@@ -2052,7 +2052,7 @@
       "title": "S4 Калибровка: ECE<0.05 на REAL c FP>0",
       "source": "progress",
       "claimed_human": "20:08:01",
-      "age_min": 2408,
+      "age_min": 2409,
       "full": "T4-4MAPS-1124: 70 REAL-кадров nuke, overview_map 70/70, tp=0 fp=123 fn=64; train_pos=0 holdout_pos=0 → confidence неидентифицируемо, ECE Platt/isotonic вырождены. УТОЧНЕНО 25.11: отложено до работающего детектора — до исправления геометрии HUD (нативные 2560x1440 вместо SCALE=2560/1920) сопоставление GT было недостоверным; пересмотр после детектора с count-match>=0.95. Владелец dsh-current; пороги не двигать."
     },
     {
@@ -2060,7 +2060,7 @@
       "title": "S2 Имена: coverage 0.725 -> >=0.92 на holdout",
       "source": "progress",
       "claimed_human": "19:46:22",
-      "age_min": 2430,
+      "age_min": 2431,
       "full": "S2-NAMES-1124: coverage 0/700; S2.1 OCR-grid на 5 кадрах лучший coverage 0.12 (y1=40, psm=11, binarize=true). ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 домножал нативные координаты 2560x1440 и сдвигал ROI; на экране псевдонимы, эталон GSI — настоящие ники. Артефакт: ~/scanfeed/data/realgt_batch/rerun_old9_v2.json (coverage 0.711, name_slot_acc 0.300). Порог 0.92 не двигать; владелец dsh-current."
     },
     {
@@ -2068,47 +2068,47 @@
       "title": "S3 Счёт живых: count-match>=0.95, per-slot>=0.90",
       "source": "progress",
       "claimed_human": "19:45:56",
-      "age_min": 2431,
+      "age_min": 2432,
       "full": "Пилот S3-ALIVE-1124: 70 REAL-кадров, count-match 1/70, per-slot 0.437. ИСПРАВЛЕНО 25.11 (S3-ALIVE-1125-FIX): не измерено (ошибка масштаба координат и псевдонимы), а не провал метода — старый SCALE=2560/1920 сдвигал ROI; после перевода на нативные 2560x1440 count-match 45/70 (0.643), wilson_low 0.526, per-slot 0.923; тривиальный «всегда 10» даёт 0.771. Гейт count-match>=0.95 не взят; остаток ошибок вероятно из сопоставления GSI по настенному времени. Артефакт: ~/scanfeed/data/realgt_batch/s3_alive_1125/s3_alive_eval_v2.json. Пороги не двигать; владелец dsh-current."
     },
     {
       "id": "session-685498ee",
       "title": "Активный сеанс DSH с проверками",
       "source": "dsh",
-      "claimed_human": "12:16:54",
+      "claimed_human": "12:17:56",
       "age_min": 0,
       "full": "Активный сеанс DSH с проверками"
-    },
-    {
-      "id": "session-02907f33",
-      "title": "Финальный гейт оверлея Counter-Strike 2",
-      "source": "dsh",
-      "claimed_human": "12:16:54",
-      "age_min": 0,
-      "full": "Финальный гейт оверлея Counter-Strike 2"
-    },
-    {
-      "id": "session-23b4bb42",
-      "title": "Ночная автономная работа над сканфидом",
-      "source": "dsh",
-      "claimed_human": "12:16:52",
-      "age_min": 0,
-      "full": "Ночная автономная работа над сканфидом"
     },
     {
       "id": "session-f081b4a5",
       "title": "Аудит эргономики чата и мини-апа",
       "source": "dsh",
-      "claimed_human": "12:16:52",
+      "claimed_human": "12:17:55",
       "age_min": 0,
       "full": "Аудит эргономики чата и мини-апа"
+    },
+    {
+      "id": "session-23b4bb42",
+      "title": "Ночная автономная работа над сканфидом",
+      "source": "dsh",
+      "claimed_human": "12:17:54",
+      "age_min": 0,
+      "full": "Ночная автономная работа над сканфидом"
+    },
+    {
+      "id": "session-02907f33",
+      "title": "Финальный гейт оверлея Counter-Strike 2",
+      "source": "dsh",
+      "claimed_human": "12:17:51",
+      "age_min": 0,
+      "full": "Финальный гейт оверлея Counter-Strike 2"
     },
     {
       "id": "session-17e00542",
       "title": "Эффективность затрат ресурсов ночных прого",
       "source": "dsh",
       "claimed_human": "12:15:58",
-      "age_min": 0,
+      "age_min": 2,
       "full": "Эффективность затрат ресурсов ночных прого"
     },
     {
@@ -2116,16 +2116,8 @@
       "title": "Проверка эргономики мини-апа T04",
       "source": "dsh",
       "claimed_human": "12:11:58",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Проверка эргономики мини-апа T04"
-    },
-    {
-      "id": "session-ddc10eb6",
-      "title": "Сводный утренний отчёт с верификацией",
-      "source": "dsh",
-      "claimed_human": "12:07:44",
-      "age_min": 9,
-      "full": "Сводный утренний отчёт с верификацией"
     }
   ],
   "queues": {
@@ -2154,32 +2146,8 @@
       "step_label": "Подключить скиллы и вскрыть архивы",
       "step": 1,
       "total": 5,
-      "events": 47,
+      "events": 51,
       "trail": [
-        {
-          "ts": 1795684490,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684506,
-          "label": "READ · /tmp/opencode/mvs"
-        },
-        {
-          "ts": 1795684506,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684526,
-          "label": "BASH · export DISPLAY=:9"
-        },
-        {
-          "ts": 1795684526,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684537,
-          "label": "READ · /tmp/opencode/mvs"
-        },
         {
           "ts": 1795684554,
           "label": "BASH · export DISPLAY=:9"
@@ -2203,10 +2171,34 @@
         {
           "ts": 1795684596,
           "label": "READ · /tmp/opencode/mvs"
+        },
+        {
+          "ts": 1795684619,
+          "label": "BASH · export DISPLAY=:9"
+        },
+        {
+          "ts": 1795684620,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684639,
+          "label": "READ · /tmp/opencode/mvs"
+        },
+        {
+          "ts": 1795684656,
+          "label": "BASH · export DISPLAY=:9"
+        },
+        {
+          "ts": 1795684656,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684675,
+          "label": "READ · /tmp/opencode/mvs"
         }
       ],
       "started_at": 1795683912,
-      "updated_at": 1795684616
+      "updated_at": 1795684677
     },
     {
       "key": "req-20261126-120732-280492",
@@ -2216,32 +2208,8 @@
       "step_label": "Найти код вкладок мини-апа",
       "step": 1,
       "total": 3,
-      "events": 54,
+      "events": 58,
       "trail": [
-        {
-          "ts": 1795684511,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684527,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795684527,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684539,
-          "label": "WRITE · /tmp/opencode/ve"
-        },
-        {
-          "ts": 1795684540,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795684547,
-          "label": "BASH · cd /home/nyaka &&"
-        },
         {
           "ts": 1795684556,
           "label": "EDIT · /tmp/opencode/ver"
@@ -2265,10 +2233,34 @@
         {
           "ts": 1795684607,
           "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795684625,
+          "label": "READ · /tmp/opencode/nig"
+        },
+        {
+          "ts": 1795684626,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684640,
+          "label": "EDIT · /tmp/opencode/ver"
+        },
+        {
+          "ts": 1795684640,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684658,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795684667,
+          "label": "READ · /tmp/opencode/nig"
         }
       ],
       "started_at": 1795684052,
-      "updated_at": 1795684616
+      "updated_at": 1795684676
     },
     {
       "key": "req-20261126-121227-4d6319",
@@ -2278,59 +2270,121 @@
       "step_label": "Прогнать гейты",
       "step": 4,
       "total": 5,
-      "events": 26,
+      "events": 33,
       "trail": [
         {
-          "ts": 1795684551,
-          "label": "READ · /tmp/opencode/sty"
-        },
-        {
-          "ts": 1795684551,
+          "ts": 1795684618,
           "label": "THINK"
         },
         {
-          "ts": 1795684558,
+          "ts": 1795684626,
+          "label": "READ · /tmp/opencode/sty"
+        },
+        {
+          "ts": 1795684626,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684637,
           "label": "EDIT · /tmp/opencode/sty"
         },
         {
-          "ts": 1795684558,
+          "ts": 1795684637,
           "label": "THINK"
         },
         {
-          "ts": 1795684568,
+          "ts": 1795684650,
+          "label": "EDIT · /tmp/opencode/sty"
+        },
+        {
+          "ts": 1795684650,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684661,
           "label": "BASH · python3 ~/.config"
         },
         {
-          "ts": 1795684575,
-          "label": "READ · /tmp/opencode/sty"
+          "ts": 1795684670,
+          "label": "WRITE · /tmp/opencode/sh"
         },
         {
-          "ts": 1795684590,
-          "label": "WRITE · /tmp/opencode/st"
-        },
-        {
-          "ts": 1795684590,
+          "ts": 1795684670,
           "label": "THINK"
         },
         {
-          "ts": 1795684598,
-          "label": "BASH · cd /tmp/opencode "
+          "ts": 1795684678,
+          "label": "BASH · grep -n \"SINGLE_M"
         },
         {
-          "ts": 1795684609,
-          "label": "BASH · grep -n \"ОДНИМ\\|c"
-        },
-        {
-          "ts": 1795684609,
+          "ts": 1795684678,
           "label": "THINK"
-        },
-        {
-          "ts": 1795684618,
-          "label": "BASH · sed -n '2525,2558"
         }
       ],
       "started_at": 1795684347,
-      "updated_at": 1795684618
+      "updated_at": 1795684678
+    },
+    {
+      "key": "req-20261126-121713-c30ad5",
+      "session_id": "",
+      "source": "photo",
+      "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
+      "step_label": "разобрать кадры",
+      "step": 1,
+      "total": 5,
+      "events": 3,
+      "trail": [
+        {
+          "ts": 1795684640,
+          "label": "SYNC · show-in-answer"
+        },
+        {
+          "ts": 1795684653,
+          "label": "SYNC · anti-autism"
+        },
+        {
+          "ts": 1795684653,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795684661,
+          "label": "BASH · ls ~/.config/open"
+        },
+        {
+          "ts": 1795684661,
+          "label": "BASH · for f in human_an"
+        },
+        {
+          "ts": 1795684661,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795684662,
+          "label": "NET · https://github.com"
+        },
+        {
+          "ts": 1795684662,
+          "label": "NET · https://github.com"
+        },
+        {
+          "ts": 1795684662,
+          "label": "NET · https://github.com"
+        },
+        {
+          "ts": 1795684662,
+          "label": "NET · https://github.com"
+        },
+        {
+          "ts": 1795684662,
+          "label": "NET · https://github.com"
+        },
+        {
+          "ts": 1795684662,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795684633,
+      "updated_at": 1795684676
     }
   ],
   "bars": [
@@ -2349,6 +2403,6 @@
   "progress_updated_at": "2026-11-26T07:22:29+03:00",
   "plan_age_hours": 4.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795684618,
-  "fetched_human": "2026-11-26 12:16:58 +0300"
+  "fetched_at": 1795684679,
+  "fetched_human": "2026-11-26 12:17:59 +0300"
 }
