@@ -1533,6 +1533,12 @@ async function loadProcessTree(){
 }
 
 /* ---------- decisions ---------- */
+/* @owner:miniapp-ux @region:decision-header-full-id: генератор кладёт в h ID, урезанный до 16 символов; полный ID есть в имени src */
+function decisionFullId(d){
+  const h=String(d.h||"");
+  const m=String(d.src||"").match(/(?:^|\/)([^/]+)\.md$/);
+  return (m && m[1].length>h.length && m[1].startsWith(h)) ? m[1] : h;
+}
 function renderDecisions(){
   const isDemo=!(LIVE.decisions&&LIVE.decisions.length);
   const rows=isDemo?DEMO.decisions:LIVE.decisions;
@@ -1540,7 +1546,7 @@ function renderDecisions(){
   $("#dlist").innerHTML=(isDemo?'<div class="demo-note">DEMO · встроенная заглушка, не живые данные</div>':'')+rows.map(d=>`
     <div class="dec">
       <div>
-        <h4>${esc(d.h)} · ${esc(d.title)}</h4>
+        <h4>${esc(decisionFullId(d))} · ${esc(d.title)}</h4>
         <p>${esc(d.note)}</p>
         <div class="src">${esc(d.src)}</div>
       </div>
