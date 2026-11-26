@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.53,
-      "remaining_hours": 5.47,
+      "elapsed_hours": 2.55,
+      "remaining_hours": 5.45,
       "progress_pct": 32,
       "cycles": 18,
-      "heartbeat_human": "16:41:49",
+      "heartbeat_human": "16:42:49",
       "tree": {
         "phases": [
           {
@@ -290,11 +290,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 2.53,
-      "remaining_hours": 5.47,
+      "elapsed_hours": 2.55,
+      "remaining_hours": 5.45,
       "progress_pct": 32,
-      "cycles": 29,
-      "heartbeat_human": "16:41:49",
+      "cycles": 30,
+      "heartbeat_human": "16:42:49",
       "tree": {
         "phases": [
           {
@@ -399,11 +399,11 @@
           {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 0,
+            "cycles": 1,
             "max": 20,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           }
         ],
         "trail": [
@@ -638,19 +638,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: ht-runs/university-1126/artifacts/UNI-VOICE-c29.md missing PASS:; missing FAI"
+          },
+          {
+            "clock": "16:42:19",
+            "cycle": 30,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 11,
           "mutations": 10
         },
-        "events": 29,
+        "events": 30,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795700531,
-  "fetched_human": "2026-11-26 16:42:11 +0300"
+  "fetched_at": 1795700593,
+  "fetched_human": "2026-11-26 16:43:13 +0300"
 }
