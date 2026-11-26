@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.1,
-      "remaining_hours": 7.9,
+      "elapsed_hours": 0.12,
+      "remaining_hours": 7.88,
       "progress_pct": 1,
       "cycles": 0,
-      "heartbeat_human": "00:11:48",
+      "heartbeat_human": "00:12:48",
       "tree": {
         "phases": [
           {
@@ -118,11 +118,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.1,
-      "remaining_hours": 7.9,
+      "elapsed_hours": 0.12,
+      "remaining_hours": 7.88,
       "progress_pct": 1,
       "cycles": 0,
-      "heartbeat_human": "00:11:48",
+      "heartbeat_human": "00:12:48",
       "tree": {
         "phases": [
           {
@@ -258,20 +258,20 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.1,
-      "remaining_hours": 7.9,
+      "elapsed_hours": 0.12,
+      "remaining_hours": 7.88,
       "progress_pct": 1,
-      "cycles": 0,
-      "heartbeat_human": "00:11:48",
+      "cycles": 1,
+      "heartbeat_human": "00:12:48",
       "tree": {
         "phases": [
           {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
+            "last": "WARMUP",
+            "score": 5,
             "verified": false
           },
           {
@@ -374,18 +374,27 @@
             "verified": false
           }
         ],
-        "trail": [],
+        "trail": [
+          {
+            "clock": "00:12:12",
+            "cycle": 1,
+            "task": "UNI-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          }
+        ],
         "strategy": {
           "version": 16,
           "mutations": 15
         },
-        "events": 0,
+        "events": 1,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795727509,
-  "fetched_human": "2026-11-27 00:11:49 +0300"
+  "fetched_at": 1795727569,
+  "fetched_human": "2026-11-27 00:12:49 +0300"
 }
