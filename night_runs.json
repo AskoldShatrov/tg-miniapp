@@ -5,11 +5,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.25,
-      "remaining_hours": 3.75,
+      "elapsed_hours": 4.26,
+      "remaining_hours": 3.74,
       "progress_pct": 53,
-      "cycles": 35,
-      "heartbeat_human": "18:24:49",
+      "cycles": 36,
+      "heartbeat_human": "18:25:49",
       "tree": {
         "phases": [
           {
@@ -85,6 +85,15 @@
             "verified": false
           },
           {
+            "id": "SF-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 3,
+            "max": 20,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "SF-DEATHTICK-INDEP",
             "title": "Death-tick: независимый эталон",
             "cycles": 2,
@@ -116,15 +125,6 @@
             "title": "Пересмотр критериев и вопросы к задаче",
             "cycles": 2,
             "max": 2,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 2,
-            "max": 20,
             "last": "MUTATE",
             "score": 7,
             "verified": true
@@ -410,19 +410,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "18:25:00",
+            "cycle": 36,
+            "task": "SF-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 35,
+        "events": 36,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795706696,
-  "fetched_human": "2026-11-26 18:24:56 +0300"
+  "fetched_at": 1795706756,
+  "fetched_human": "2026-11-26 18:25:56 +0300"
 }
