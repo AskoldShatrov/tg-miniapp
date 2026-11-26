@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.52,
-      "remaining_hours": 6.48,
+      "elapsed_hours": 1.54,
+      "remaining_hours": 6.46,
       "progress_pct": 19,
       "cycles": 16,
-      "heartbeat_human": "15:40:49",
+      "heartbeat_human": "15:42:19",
       "tree": {
         "phases": [
           {
@@ -238,11 +238,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.52,
-      "remaining_hours": 6.48,
+      "elapsed_hours": 1.54,
+      "remaining_hours": 6.46,
       "progress_pct": 19,
-      "cycles": 6,
-      "heartbeat_human": "15:40:49",
+      "cycles": 7,
+      "heartbeat_human": "15:42:19",
       "tree": {
         "phases": [
           {
@@ -266,11 +266,11 @@
           {
             "id": "SF-ECONOMY-STRIP",
             "title": "Компактная экономия под карточками противников",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "SF-DEATHTICK-INDEP",
@@ -402,13 +402,21 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
+          },
+          {
+            "clock": "15:41:18",
+            "cycle": 7,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 4,
-          "mutations": 3
+          "version": 5,
+          "mutations": 4
         },
-        "events": 6,
+        "events": 7,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -418,11 +426,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 1.52,
-      "remaining_hours": 6.48,
+      "elapsed_hours": 1.54,
+      "remaining_hours": 6.46,
       "progress_pct": 19,
       "cycles": 17,
-      "heartbeat_human": "15:40:49",
+      "heartbeat_human": "15:42:19",
       "tree": {
         "phases": [
           {
@@ -674,6 +682,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795696876,
-  "fetched_human": "2026-11-26 15:41:16 +0300"
+  "fetched_at": 1795696941,
+  "fetched_human": "2026-11-26 15:42:21 +0300"
 }
