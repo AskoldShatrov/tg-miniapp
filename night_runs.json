@@ -5,17 +5,26 @@
       "label": "Общий мандат",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.54,
-      "remaining_hours": 4.46,
+      "elapsed_hours": 3.56,
+      "remaining_hours": 4.44,
       "progress_pct": 44,
-      "cycles": 34,
-      "heartbeat_human": "12:36:00",
+      "cycles": 35,
+      "heartbeat_human": "12:37:00",
       "tree": {
         "phases": [
           {
             "id": "T03-SUM-7D",
             "title": "Суммаризация вопросов и проблем за 7 дней",
             "cycles": 10,
+            "max": 10,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "T04-MINIAPP-UX",
+            "title": "Эргономика чата и мини-апа",
+            "cycles": 9,
             "max": 10,
             "last": "MUTATE",
             "score": 2,
@@ -35,15 +44,6 @@
             "title": "Инспекция OpenCode CLI и доставки",
             "cycles": 8,
             "max": 8,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
-          },
-          {
-            "id": "T04-MINIAPP-UX",
-            "title": "Эргономика чата и мини-апа",
-            "cycles": 8,
-            "max": 10,
             "last": "MUTATE",
             "score": 2,
             "verified": false
@@ -69,15 +69,7 @@
         ],
         "trail": [
           {
-            "clock": "08:42:06",
-            "cycle": 27,
-            "task": "T04-MINIAPP-UX",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
-          },
-          {
-            "clock": "08:50:16",
+            "clock": "11:50:16",
             "cycle": 28,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATE",
@@ -85,7 +77,7 @@
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           },
           {
-            "clock": "08:56:23",
+            "clock": "11:56:23",
             "cycle": 29,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATE",
@@ -93,7 +85,7 @@
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           },
           {
-            "clock": "09:05:42",
+            "clock": "12:05:42",
             "cycle": 30,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATED_AFTER_3_FAIL",
@@ -101,7 +93,7 @@
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           },
           {
-            "clock": "09:11:58",
+            "clock": "12:11:58",
             "cycle": 31,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATE",
@@ -109,7 +101,7 @@
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           },
           {
-            "clock": "09:19:23",
+            "clock": "12:19:23",
             "cycle": 32,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATE",
@@ -117,7 +109,7 @@
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           },
           {
-            "clock": "09:24:35",
+            "clock": "12:24:35",
             "cycle": 33,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATED_AFTER_3_FAIL",
@@ -125,8 +117,16 @@
             "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
           },
           {
-            "clock": "09:30:53",
+            "clock": "12:30:53",
             "cycle": 34,
+            "task": "T04-MINIAPP-UX",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон artifacts/T04-MINIAPP-UX-*.md"
+          },
+          {
+            "clock": "12:36:25",
+            "cycle": 35,
             "task": "T04-MINIAPP-UX",
             "action": "MUTATE",
             "score": 2,
@@ -134,12 +134,12 @@
           }
         ],
         "strategy": {
-          "version": 29,
-          "mutations": 28
+          "version": 30,
+          "mutations": 29
         },
-        "events": 34,
+        "events": 35,
         "avg_score": 2.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -147,11 +147,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 11.147,
-      "elapsed_hours": 3.25,
-      "remaining_hours": 7.89,
+      "elapsed_hours": 3.27,
+      "remaining_hours": 7.88,
       "progress_pct": 29,
       "cycles": 28,
-      "heartbeat_human": "12:36:15",
+      "heartbeat_human": "12:37:15",
       "tree": {
         "phases": [
           {
@@ -238,7 +238,7 @@
         ],
         "trail": [
           {
-            "clock": "09:09:44",
+            "clock": "12:09:44",
             "cycle": 21,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
@@ -246,7 +246,7 @@
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос killfeed"
           },
           {
-            "clock": "09:10:45",
+            "clock": "12:10:45",
             "cycle": 22,
             "task": "SF-OVERLAY-FINAL",
             "action": "MUTATE",
@@ -254,7 +254,7 @@
             "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
           },
           {
-            "clock": "09:11:45",
+            "clock": "12:11:45",
             "cycle": 23,
             "task": "SF-OVERLAY-FINAL",
             "action": "MUTATED_AFTER_3_FAIL",
@@ -262,7 +262,7 @@
             "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
           },
           {
-            "clock": "09:27:45",
+            "clock": "12:27:45",
             "cycle": 24,
             "task": "SF-OVERLAY-FINAL",
             "action": "MUTATE",
@@ -270,7 +270,7 @@
             "note": "нет свежего артефакта под шаблон /home/nyaka/overnight/mandate-1126/SF-OVERLAY-FINAL-*.md"
           },
           {
-            "clock": "09:28:45",
+            "clock": "12:28:45",
             "cycle": 25,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
@@ -278,7 +278,7 @@
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос roster"
           },
           {
-            "clock": "09:29:45",
+            "clock": "12:29:45",
             "cycle": 26,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
@@ -286,7 +286,7 @@
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос parser"
           },
           {
-            "clock": "09:30:45",
+            "clock": "12:30:45",
             "cycle": 27,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
@@ -294,7 +294,7 @@
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
           },
           {
-            "clock": "09:31:45",
+            "clock": "12:31:45",
             "cycle": 28,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
@@ -313,6 +313,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795685777,
-  "fetched_human": "2026-11-26 12:36:17 +0300"
+  "fetched_at": 1795685838,
+  "fetched_human": "2026-11-26 12:37:18 +0300"
 }
