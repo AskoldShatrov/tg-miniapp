@@ -5,26 +5,26 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.65,
-      "remaining_hours": 12.35,
+      "elapsed_hours": 7.67,
+      "remaining_hours": 12.33,
       "progress_pct": 38,
-      "cycles": 127,
-      "heartbeat_human": "15:51:55",
+      "cycles": 128,
+      "heartbeat_human": "15:53:25",
       "tree": {
         "phases": [
           {
-            "id": "IMP-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
+            "id": "IMP-NIGHT-PAIR-WRITER",
+            "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 16,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
-            "verified": true
+            "verified": false
           },
           {
-            "id": "IMP-NIGHT-PAIR-WRITER",
-            "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 15,
+            "id": "IMP-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
+            "cycles": 16,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:04:51",
-            "cycle": 88,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "13:15:35",
-            "cycle": 89,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:15:35",
             "cycle": 89,
@@ -547,15 +531,31 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "15:52:49",
+            "cycle": 128,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "15:52:49",
+            "cycle": 128,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "RED.log старше старта витка на 260 с"
           }
         ],
         "strategy": {
-          "version": 59,
-          "mutations": 58
+          "version": 60,
+          "mutations": 59
         },
-        "events": 167,
+        "events": 169,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.65,
-      "remaining_hours": 12.35,
+      "elapsed_hours": 7.67,
+      "remaining_hours": 12.33,
       "progress_pct": 38,
-      "cycles": 148,
-      "heartbeat_human": "15:52:07",
+      "cycles": 149,
+      "heartbeat_human": "15:53:07",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:37:45",
-            "cycle": 102,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:39:00",
             "cycle": 103,
@@ -1096,19 +1088,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос obs-free"
+          },
+          {
+            "clock": "15:52:38",
+            "cycle": 149,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос decisions"
           }
         ],
         "strategy": {
-          "version": 37,
-          "mutations": 36
+          "version": 38,
+          "mutations": 37
         },
-        "events": 169,
+        "events": 170,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795783944,
-  "fetched_human": "2026-11-27 15:52:24 +0300"
+  "fetched_at": 1795784009,
+  "fetched_human": "2026-11-27 15:53:29 +0300"
 }
