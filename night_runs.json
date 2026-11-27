@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.23,
-      "remaining_hours": 0.77,
-      "progress_pct": 62,
+      "elapsed_hours": 1.25,
+      "remaining_hours": 0.75,
+      "progress_pct": 63,
       "cycles": 65,
-      "heartbeat_human": "07:21:11",
+      "heartbeat_human": "07:22:41",
       "tree": {
         "phases": [
           {
@@ -128,6 +128,15 @@
             "last": "PROMOTE",
             "score": 7,
             "verified": true
+          },
+          {
+            "id": "IMP-PROMOTE-HONESTY-V2",
+            "title": "PROMOTE без verify_ok: честный аудит с обязательными полями",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
           },
           {
             "id": "IMP-REQ-TRACE",
@@ -644,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.23,
-      "remaining_hours": 0.77,
-      "progress_pct": 62,
+      "elapsed_hours": 1.25,
+      "remaining_hours": 0.75,
+      "progress_pct": 63,
       "cycles": 48,
-      "heartbeat_human": "07:21:11",
+      "heartbeat_human": "07:22:41",
       "tree": {
         "phases": [
           {
@@ -1196,11 +1205,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.23,
-      "remaining_hours": 0.77,
-      "progress_pct": 62,
-      "cycles": 81,
-      "heartbeat_human": "07:21:11",
+      "elapsed_hours": 1.25,
+      "remaining_hours": 0.75,
+      "progress_pct": 63,
+      "cycles": 82,
+      "heartbeat_human": "07:22:41",
       "tree": {
         "phases": [
           {
@@ -1341,11 +1350,11 @@
           {
             "id": "UNI-RK4-PREREG",
             "title": "RK4: предрегистрация порога до прогона",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
             "last": "PROMOTE",
-            "score": 5,
-            "verified": false
+            "score": 7,
+            "verified": true
           },
           {
             "id": "UNI-REQ-TRACE",
@@ -1358,14 +1367,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "02:21:11",
-            "cycle": 22,
-            "task": "UNI-META-REFLECT",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "02:27:02",
             "cycle": 23,
@@ -1837,19 +1838,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "07:22:00",
+            "cycle": 82,
+            "task": "UNI-RK4-PREREG",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 81,
+        "events": 82,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795753300,
-  "fetched_human": "2026-11-27 07:21:40 +0300"
+  "fetched_at": 1795753363,
+  "fetched_human": "2026-11-27 07:22:43 +0300"
 }
