@@ -5,13 +5,22 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.05,
-      "remaining_hours": 12.95,
+      "elapsed_hours": 7.07,
+      "remaining_hours": 12.93,
       "progress_pct": 35,
-      "cycles": 122,
-      "heartbeat_human": "15:15:55",
+      "cycles": 123,
+      "heartbeat_human": "15:16:55",
       "tree": {
         "phases": [
+          {
+            "id": "IMP-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
+            "cycles": 14,
+            "max": 16,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
+          },
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
@@ -20,15 +29,6 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "IMP-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 13,
-            "max": 16,
-            "last": "WARMUP",
-            "score": 4,
-            "verified": true
           },
           {
             "id": "IMP-PHYSICAL-GATE-20H",
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:42:34",
-            "cycle": 81,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
-          {
-            "clock": "12:47:18",
-            "cycle": 82,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "12:47:18",
             "cycle": 82,
@@ -547,13 +531,29 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "15:16:26",
+            "cycle": 123,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "15:16:26",
+            "cycle": 123,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 54,
-          "mutations": 53
+          "version": 55,
+          "mutations": 54
         },
-        "events": 157,
+        "events": 159,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,17 +563,26 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.05,
-      "remaining_hours": 12.95,
+      "elapsed_hours": 7.07,
+      "remaining_hours": 12.93,
       "progress_pct": 35,
-      "cycles": 141,
-      "heartbeat_human": "15:16:06",
+      "cycles": 142,
+      "heartbeat_human": "15:17:06",
       "tree": {
         "phases": [
           {
             "id": "SF-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
             "cycles": 14,
+            "max": 16,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
+          },
+          {
+            "id": "SF-NIGHT-PAIR-WRITER",
+            "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
+            "cycles": 9,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -598,15 +607,6 @@
             "verified": false
           },
           {
-            "id": "SF-NIGHT-PAIR-WRITER",
-            "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 8,
-            "max": 16,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
-          },
-          {
             "id": "SF-DECISION-MEMORY-CALIB-20H",
             "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
             "cycles": 6,
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:12:53",
-            "cycle": 92,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "13:19:20",
-            "cycle": 93,
-            "task": "SF-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:19:20",
             "cycle": 93,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "15:17:10",
+            "cycle": 142,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "15:17:10",
+            "cycle": 142,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 30,
-          "mutations": 29
+          "version": 31,
+          "mutations": 30
         },
-        "events": 157,
+        "events": 159,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795781775,
-  "fetched_human": "2026-11-27 15:16:15 +0300"
+  "fetched_at": 1795781837,
+  "fetched_human": "2026-11-27 15:17:17 +0300"
 }
