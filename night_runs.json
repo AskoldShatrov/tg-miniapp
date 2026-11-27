@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.36,
-      "remaining_hours": 17.64,
+      "elapsed_hours": 2.38,
+      "remaining_hours": 17.62,
       "progress_pct": 12,
-      "cycles": 25,
-      "heartbeat_human": "10:34:24",
+      "cycles": 26,
+      "heartbeat_human": "10:35:24",
       "tree": {
         "phases": [
           {
@@ -42,10 +42,10 @@
           {
             "id": "IMP-NIGHT-WATCHDOG-20H",
             "title": "Аудит свежих витков: что реально улучшилось и где регресс",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
             "verified": false
           }
         ],
@@ -281,15 +281,31 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос machine-gate"
+          },
+          {
+            "clock": "10:35:35",
+            "cycle": 26,
+            "task": "IMP-NIGHT-WATCHDOG-20H",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "10:35:35",
+            "cycle": 26,
+            "task": "IMP-NIGHT-WATCHDOG-20H",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "RED.log старше старта витка на 8253 с"
           }
         ],
         "strategy": {
-          "version": 10,
-          "mutations": 9
+          "version": 11,
+          "mutations": 10
         },
-        "events": 29,
+        "events": 31,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -297,11 +313,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.36,
-      "remaining_hours": 17.64,
+      "elapsed_hours": 2.38,
+      "remaining_hours": 17.62,
       "progress_pct": 12,
       "cycles": 16,
-      "heartbeat_human": "10:34:27",
+      "heartbeat_human": "10:35:27",
       "tree": {
         "phases": [
           {
@@ -489,6 +505,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795764892,
-  "fetched_human": "2026-11-27 10:34:52 +0300"
+  "fetched_at": 1795764951,
+  "fetched_human": "2026-11-27 10:35:51 +0300"
 }
