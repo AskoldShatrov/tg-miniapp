@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 817,
+      "age_min": 818,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 817,
+      "age_min": 818,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,38 +2095,30 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 817,
+      "age_min": 818,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "03:55:11",
-      "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-6dc6210a",
       "title": "Проверка канона НИР и артефакт c44",
       "source": "dsh",
-      "claimed_human": "03:55:10",
+      "claimed_human": "03:56:12",
       "age_min": 0,
       "full": "Проверка канона НИР и артефакт c44"
     },
     {
-      "id": "session-f61be027",
-      "title": "Запись артефакта и проверка хэша",
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "03:55:07",
+      "claimed_human": "03:56:07",
       "age_min": 0,
-      "full": "Запись артефакта и проверка хэша"
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-8e85d767",
       "title": "Ночной прогон: университет (pid 1917542)",
       "source": "dsh",
-      "claimed_human": "03:55:06",
+      "claimed_human": "03:56:06",
       "age_min": 0,
       "full": "Ночной прогон: университет (pid 1917542)"
     },
@@ -2134,16 +2126,24 @@
       "id": "session-4ab85241",
       "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
-      "claimed_human": "03:55:01",
+      "claimed_human": "03:56:02",
       "age_min": 0,
       "full": "Анализ прогресса сканфида человеческим язы"
+    },
+    {
+      "id": "session-f61be027",
+      "title": "Запись артефакта и проверка хэша",
+      "source": "dsh",
+      "claimed_human": "03:55:40",
+      "age_min": 0,
+      "full": "Запись артефакта и проверка хэша"
     },
     {
       "id": "session-200f702c",
       "title": "Запись артефакта с проверкой хэша",
       "source": "dsh",
       "claimed_human": "03:53:59",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Запись артефакта с проверкой хэша"
     },
     {
@@ -2151,7 +2151,7 @@
       "title": "Проверка NIR PDF и запись артефакта",
       "source": "dsh",
       "claimed_human": "03:52:12",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Проверка NIR PDF и запись артефакта"
     },
     {
@@ -2159,7 +2159,7 @@
       "title": "Подбор бенчмарка и диагностика системы",
       "source": "dsh",
       "claimed_human": "03:51:16",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Подбор бенчмарка и диагностика системы"
     }
   ],
@@ -2190,32 +2190,8 @@
       "step_label": "Оценка и proposal",
       "step": 4,
       "total": 5,
-      "events": 54,
+      "events": 57,
       "trail": [
-        {
-          "ts": 1795740050,
-          "label": "BASH · sed -n '1284,1325"
-        },
-        {
-          "ts": 1795740050,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740064,
-          "label": "BASH · grep -n 'function"
-        },
-        {
-          "ts": 1795740064,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740077,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795740094,
-          "label": "BASH · grep -n 'fetchTGR"
-        },
         {
           "ts": 1795740094,
           "label": "THINK"
@@ -2383,10 +2359,34 @@
         {
           "ts": 1795740888,
           "label": "THINK"
+        },
+        {
+          "ts": 1795740919,
+          "label": "BASH · curl -s --max-tim"
+        },
+        {
+          "ts": 1795740919,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740939,
+          "label": "WRITE · /home/nyaka/.loc"
+        },
+        {
+          "ts": 1795740939,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740955,
+          "label": "BASH · sha256sum ~/share"
+        },
+        {
+          "ts": 1795740955,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739112,
-      "updated_at": 1795740912
+      "updated_at": 1795740974
     },
     {
       "key": "req-20261127-032656-beb2f1",
@@ -2592,7 +2592,7 @@
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795740910
+      "updated_at": 1795740971
     }
   ],
   "bars": [
@@ -2611,6 +2611,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 13.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795740912,
-  "fetched_human": "2026-11-27 03:55:12 +0300"
+  "fetched_at": 1795740974,
+  "fetched_human": "2026-11-27 03:56:14 +0300"
 }
