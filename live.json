@@ -2075,27 +2075,27 @@
   ],
   "active": [
     {
-      "id": "session-c1e9e894",
-      "title": "Моделирование, системные проблемы и Word-файл",
-      "source": "dsh",
-      "claimed_human": "10:04:21",
-      "age_min": 0,
-      "full": "Моделирование, системные проблемы и Word-файл"
-    },
-    {
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
-      "claimed_human": "10:04:20",
+      "claimed_human": "10:05:23",
       "age_min": 0,
       "full": "Подключение Graphify и инструментов инспекции"
+    },
+    {
+      "id": "session-c1e9e894",
+      "title": "Моделирование, системные проблемы и Word-файл",
+      "source": "dsh",
+      "claimed_human": "10:05:20",
+      "age_min": 0,
+      "full": "Моделирование, системные проблемы и Word-файл"
     },
     {
       "id": "0a6170b7-a17a-43",
       "title": "Self-contained task in Russian environme",
       "source": "dsh",
       "claimed_human": "10:02:53",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Self-contained task in Russian environme"
     }
   ],
@@ -2126,20 +2126,8 @@
       "step_label": "Собрать три контрольные с графиками из приложения",
       "step": 3,
       "total": 5,
-      "events": 75,
+      "events": 76,
       "trail": [
-        {
-          "ts": 1795762003,
-          "label": "BASH · grep -nE \"extract"
-        },
-        {
-          "ts": 1795762003,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795762044,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795762044,
           "label": "THINK"
@@ -2319,10 +2307,22 @@
         {
           "ts": 1795763046,
           "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795763090,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763090,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763097,
+          "label": "RETRY · opencode-go/hung"
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795763062
+      "updated_at": 1795763123
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2332,20 +2332,8 @@
       "step_label": "",
       "step": 3,
       "total": null,
-      "events": 60,
+      "events": 61,
       "trail": [
-        {
-          "ts": 1795762003,
-          "label": "BASH · grep -nE \"extract"
-        },
-        {
-          "ts": 1795762003,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795762044,
-          "label": "BASH · python3 ~/.config"
-        },
         {
           "ts": 1795762044,
           "label": "THINK"
@@ -2525,10 +2513,22 @@
         {
           "ts": 1795763046,
           "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795763090,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763090,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763097,
+          "label": "RETRY · opencode-go/hung"
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795763062
+      "updated_at": 1795763123
     },
     {
       "key": "req-20261127-091831-84a793",
@@ -2538,24 +2538,8 @@
       "step_label": "заменить питон-код графиками и собрать три работы",
       "step": 4,
       "total": 5,
-      "events": 149,
+      "events": 151,
       "trail": [
-        {
-          "ts": 1795762435,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795762451,
-          "label": "READ · /tmp/opencode/mvs"
-        },
-        {
-          "ts": 1795762481,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795762481,
-          "label": "THINK"
-        },
         {
           "ts": 1795762510,
           "label": "BASH · sed -n '140,175p'"
@@ -2731,10 +2715,92 @@
         {
           "ts": 1795763043,
           "label": "READ · /tmp/opencode/tit"
+        },
+        {
+          "ts": 1795763076,
+          "label": "BASH · head -5 /tmp/open"
+        },
+        {
+          "ts": 1795763076,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763113,
+          "label": "BASH · cat > /tmp/openco"
+        },
+        {
+          "ts": 1795763113,
+          "label": "THINK"
         }
       ],
       "started_at": 1795760311,
-      "updated_at": 1795763062
+      "updated_at": 1795763123
+    },
+    {
+      "key": "req-20261127-100432-5a466a",
+      "session_id": "",
+      "source": "photo",
+      "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
+      "step_label": "осмотр библиотеки",
+      "step": 1,
+      "total": 5,
+      "events": 3,
+      "trail": [
+        {
+          "ts": 1795763096,
+          "label": "SYNC · show-in-answer"
+        },
+        {
+          "ts": 1795763096,
+          "label": "SYNC · anti-autism"
+        },
+        {
+          "ts": 1795763096,
+          "label": "SYNC · docx"
+        },
+        {
+          "ts": 1795763096,
+          "label": "SYNC · gost-spbgtti"
+        },
+        {
+          "ts": 1795763096,
+          "label": "READ · /home/nyaka/local"
+        },
+        {
+          "ts": 1795763096,
+          "label": "READ · /home/nyaka/local"
+        },
+        {
+          "ts": 1795763096,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763107,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795763107,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795763107,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763119,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795763120,
+          "label": "BASH · find /home/nyaka/"
+        },
+        {
+          "ts": 1795763120,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795763072,
+      "updated_at": 1795763124
     }
   ],
   "bars": [
@@ -2753,6 +2819,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 5.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795763065,
-  "fetched_human": "2026-11-27 10:04:25 +0300"
+  "fetched_at": 1795763125,
+  "fetched_human": "2026-11-27 10:05:25 +0300"
 }
