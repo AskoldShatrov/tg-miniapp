@@ -20,22 +20,31 @@
     abstract: 'Large language models now generate code, documentation, and analyses, and are increasingly used to review such output. We ask when a second review by a different model helps. Building on the author\'s earlier preprints, which varied context, repetition, and role structure within one model, we test model independence in a controlled experiment: 30 artifacts with 150 planted errors, 10 review conditions, and 900 review sessions with three reviewer models from two developers. In this experiment, (1) a top-tier cross-model reviewer is not significantly different in F1 from same-model review in a fresh session (CCR), which does not establish equivalence; (2) the two find partly different errors (Jaccard 41.2%); and (3) at two review calls, one CCR plus one cross-model review matches more planted errors than two CCR reviews (56.7% vs. 42.7%; Holm-adjusted p=.006), but not significantly more than two reviews by the top-tier cross-model reviewer, so model difference and reviewer capability are not separated. A lightweight cross-model reviewer scores no higher than same-model review. Withholding requirements from the reviewer raises F1 for the two lower tiers but not the top tier, in untested point estimates whose pattern depends on how failed sessions are scored. Before analysis we audited all session records, excluding one baseline run of uncertain provenance and 14 failed calls; results with all sessions are also reported. A partial check on public detector outputs from another benchmark neither replicates nor contradicts the main comparison.'
   }, {
     id: 'study-nir-final-20261123',
-    title: 'НИР · итоговая версия (40 стр · 23.11.2026)',
+    title: 'НИР · актуальная версия (40 стр)',
     authors: 'Шатров А. И. · группа 4291 · СПбГТИ(ТУ)',
     source: 'Учёба · PDF',
-    date: '2026-11-23',
-    url: BASE_URL + 'pdfs/nir-final-20261123.pdf',
-    tags: ['НИР', 'компьютерное моделирование', 'практика', '40 стр'],
-    abstract: 'Последняя версия отчёта по научно-исследовательской работе (Б2.О.02.02(Н)), 40 страниц, собрана 23.11.2026 13:22 МСК. Канонический файл на ноуте: /home/nyaka/учеба/учеба/nir_latex/nir_final.pdf; SHA256 612eda10991e86b7bd583f708f2a0cbc2c33609da8c0d0fd4a6c4efb84f277c0.'
+    date: '2026-11-27',
+    url: BASE_URL + 'pdfs/nir-final.pdf',
+    tags: ['НИР', 'компьютерное моделирование', 'практика', '40 стр', 'постоянная ссылка'],
+    abstract: 'Постоянная ссылка на актуальный отчёт по научно-исследовательской работе (Б2.О.02.02(Н)), 40 страниц. Файл обновляется на месте: дата в ссылке не меняется. Обновлено 27.11.2026.'
   }, {
     id: 'study-kp-kmvkh-final-20261123',
-    title: 'Курсовой проект · КМвХиХТ (27 стр · 23.11.2026)',
+    title: 'Курсовой проект · КМвХиХТ · актуальная версия',
     authors: 'Шатров А. И. · группа 4291 · Полосин А. Н., Козлов А. В.',
     source: 'Учёба · PDF',
-    date: '2026-11-23',
-    url: BASE_URL + 'pdfs/kp-kmvkh-final-20261123.pdf',
-    tags: ['курсовой', 'КМвХиХТ', 'компьютерное моделирование', 'TLS', '27 стр'],
-    abstract: 'Последняя версия пояснительной записки курсового проекта по компьютерному моделированию в химии и химической технологии, 27 страниц, собрана 23.11.2026 10:33 МСК. Канонический файл: /home/nyaka/учеба/учеба/it/kp/current/kp_pz.pdf; SHA256 b51e08144d0dab24d8bbee2596a1c16490db021ac48ab1a339d6d21cf7977575.'
+    date: '2026-11-27',
+    url: BASE_URL + 'pdfs/kp-kmvkh-final.pdf',
+    tags: ['курсовой', 'КМвХиХТ', 'компьютерное моделирование', 'TLS', 'постоянная ссылка'],
+    abstract: 'Постоянная ссылка на актуальную пояснительную записку курсового проекта по компьютерному моделированию в химии и химической технологии. Файл обновляется на месте: дата в ссылке не меняется. Обновлено 27.11.2026.'
+  }, {
+    id: 'study-control-works-1-3-20261126',
+    title: 'Контрольные работы № 1–3 · комплект',
+    authors: 'Голубкова Ю. А. · примеры оформления',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'pdfs/kontrolnye-raboty-1-3.docx',
+    tags: ['контрольные работы', 'Word', 'компьютерное моделирование', 'постоянная ссылка'],
+    abstract: 'Постоянная ссылка на комплект контрольных работ № 1–3 в формате Word. Файл обновляется на месте: дата в ссылке не меняется. Опубликовано 27.11.2026.'
   }];
 
   function esc(s) {
@@ -76,14 +85,20 @@
       var raw = global.localStorage.getItem(KEY);
       if (raw) {
         var items = normalList(JSON.parse(raw));
-        var have = {};
-        items.forEach(function (a) { have[a.id] = true; });
         var added = false;
-        // Новые вшитые статьи должны доезжать до устройств, где библиотека
-        // уже сохранена в localStorage. Удалённые пользователем сид-статьи
-        // не воскресают: их id запоминается в KEY_HIDDEN.
+        // Сид-записи обновляются на месте: постоянные ссылки должны доехать
+        // до устройств, где старая версия уже лежит в localStorage.
+        // Удалённые пользователем сид-статьи не воскресают — их id в KEY_HIDDEN.
         SEED.forEach(function (s) {
-          if (!have[s.id] && hidden.indexOf(s.id) === -1) {
+          if (hidden.indexOf(s.id) !== -1) return;
+          var idx = -1;
+          for (var i = 0; i < items.length; i++) {
+            if (items[i] && items[i].id === s.id) { idx = i; break; }
+          }
+          if (idx >= 0) {
+            items[idx] = JSON.parse(JSON.stringify(s));
+            added = true;
+          } else {
             items.push(JSON.parse(JSON.stringify(s)));
             added = true;
           }
