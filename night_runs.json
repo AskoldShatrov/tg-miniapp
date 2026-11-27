@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.33,
-      "remaining_hours": 15.67,
+      "elapsed_hours": 4.35,
+      "remaining_hours": 15.65,
       "progress_pct": 22,
       "cycles": 79,
-      "heartbeat_human": "12:32:45",
+      "heartbeat_human": "12:33:45",
       "tree": {
         "phases": [
           {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.33,
-      "remaining_hours": 15.67,
+      "elapsed_hours": 4.35,
+      "remaining_hours": 15.65,
       "progress_pct": 22,
-      "cycles": 73,
-      "heartbeat_human": "12:32:45",
+      "cycles": 74,
+      "heartbeat_human": "12:33:45",
       "tree": {
         "phases": [
           {
@@ -591,9 +591,9 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 5,
+            "cycles": 6,
             "max": 8,
-            "last": "WARMUP",
+            "last": "PROMOTE",
             "score": 7,
             "verified": true
           },
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:31:22",
-            "cycle": 16,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 5,
-            "note": "RED.log старше старта витка на 7686 с"
-          },
           {
             "clock": "10:37:33",
             "cycle": 17,
@@ -1096,19 +1088,27 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:33:13",
+            "cycle": 74,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 77,
+        "events": 78,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795771992,
-  "fetched_human": "2026-11-27 12:33:12 +0300"
+  "fetched_at": 1795772045,
+  "fetched_human": "2026-11-27 12:34:05 +0300"
 }
