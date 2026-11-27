@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.7,
-      "remaining_hours": 19.3,
+      "elapsed_hours": 0.72,
+      "remaining_hours": 19.28,
       "progress_pct": 4,
       "cycles": 6,
-      "heartbeat_human": "08:55:06",
+      "heartbeat_human": "08:56:06",
       "tree": {
         "phases": [
           {
@@ -112,20 +112,20 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.7,
-      "remaining_hours": 19.3,
+      "elapsed_hours": 0.72,
+      "remaining_hours": 19.28,
       "progress_pct": 4,
-      "cycles": 5,
-      "heartbeat_human": "08:55:06",
+      "cycles": 6,
+      "heartbeat_human": "08:56:06",
       "tree": {
         "phases": [
           {
             "id": "SF-LIVE-DEMO-20H",
             "title": "Сканфид: живая демка вместо заморозки на 54806",
-            "cycles": 5,
+            "cycles": 6,
             "max": 8,
-            "last": "PROMOTE",
-            "score": 4,
+            "last": "MUTATE",
+            "score": 2,
             "verified": false
           },
           {
@@ -195,19 +195,27 @@
             "action": "PROMOTE",
             "score": 4,
             "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
+          },
+          {
+            "clock": "08:56:11",
+            "cycle": 6,
+            "task": "SF-LIVE-DEMO-20H",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
           }
         ],
         "strategy": {
-          "version": 3,
-          "mutations": 2
+          "version": 4,
+          "mutations": 3
         },
-        "events": 6,
+        "events": 7,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795758914,
-  "fetched_human": "2026-11-27 08:55:14 +0300"
+  "fetched_at": 1795758974,
+  "fetched_human": "2026-11-27 08:56:14 +0300"
 }
