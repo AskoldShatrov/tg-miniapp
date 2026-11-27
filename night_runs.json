@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 12.22,
-      "remaining_hours": 7.78,
+      "elapsed_hours": 12.24,
+      "remaining_hours": 7.76,
       "progress_pct": 61,
-      "cycles": 346,
-      "heartbeat_human": "20:25:58",
+      "cycles": 347,
+      "heartbeat_human": "20:26:58",
       "tree": {
         "phases": [
           {
@@ -69,22 +69,6 @@
         ],
         "trail": [
           {
-            "clock": "19:49:16",
-            "cycle": 317,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "19:49:16",
-            "cycle": 317,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
-          {
             "clock": "19:50:31",
             "cycle": 318,
             "task": "SCOUT_OPEN",
@@ -543,6 +527,22 @@
           {
             "clock": "20:25:32",
             "cycle": 346,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "20:26:47",
+            "cycle": 347,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "20:26:47",
+            "cycle": 347,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
             "score": 0,
@@ -550,8 +550,8 @@
           }
         ],
         "strategy": {
-          "version": 278,
-          "mutations": 277
+          "version": 279,
+          "mutations": 278
         },
         "events": 400,
         "avg_score": 0.0,
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 12.22,
-      "remaining_hours": 7.78,
+      "elapsed_hours": 12.24,
+      "remaining_hours": 7.76,
       "progress_pct": 61,
-      "cycles": 351,
-      "heartbeat_human": "20:26:10",
+      "cycles": 352,
+      "heartbeat_human": "20:27:10",
       "tree": {
         "phases": [
           {
@@ -584,9 +584,9 @@
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
             "cycles": 16,
             "max": 16,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
+            "last": "—",
+            "score": 0,
+            "verified": false
           },
           {
             "id": "SF-LIVE-DEMO-20H",
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "19:49:01",
-            "cycle": 322,
-            "task": "SCOUT_OPEN",
-            "action": "TRIGGER_ROTATED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "19:49:01",
-            "cycle": 322,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
           {
             "clock": "19:50:16",
             "cycle": 323,
@@ -1096,11 +1080,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
+          },
+          {
+            "clock": "20:26:32",
+            "cycle": 352,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "20:26:32",
+            "cycle": 352,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
           }
         ],
         "strategy": {
-          "version": 237,
-          "mutations": 236
+          "version": 238,
+          "mutations": 237
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795800380,
-  "fetched_human": "2026-11-27 20:26:20 +0300"
+  "fetched_at": 1795800441,
+  "fetched_human": "2026-11-27 20:27:21 +0300"
 }
