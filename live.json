@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1058,
+      "age_min": 1059,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1058,
+      "age_min": 1059,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,40 +2095,40 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 1058,
+      "age_min": 1059,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
       "id": "1ac336b4-3558-40",
       "title": "РОЛЬ: исполнитель реа",
       "source": "dsh",
-      "claimed_human": "07:56:16",
+      "claimed_human": "07:57:16",
       "age_min": 0,
       "full": "РОЛЬ: исполнитель реа"
-    },
-    {
-      "id": "session-2dc8b998",
-      "title": "Работа над университетскими заданиями сейч",
-      "source": "dsh",
-      "claimed_human": "07:56:15",
-      "age_min": 0,
-      "full": "Работа над университетскими заданиями сейч"
-    },
-    {
-      "id": "session-d37eb26f",
-      "title": "Мониторинг прогонов и анализ сканфида",
-      "source": "dsh",
-      "claimed_human": "07:56:04",
-      "age_min": 0,
-      "full": "Мониторинг прогонов и анализ сканфида"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "07:53:54",
-      "age_min": 2,
+      "claimed_human": "07:57:14",
+      "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-d37eb26f",
+      "title": "Мониторинг прогонов и анализ сканфида",
+      "source": "dsh",
+      "claimed_human": "07:57:07",
+      "age_min": 0,
+      "full": "Мониторинг прогонов и анализ сканфида"
+    },
+    {
+      "id": "session-2dc8b998",
+      "title": "Работа над университетскими заданиями сейч",
+      "source": "dsh",
+      "claimed_human": "07:56:30",
+      "age_min": 0,
+      "full": "Работа над университетскими заданиями сейч"
     }
   ],
   "queues": {
@@ -2158,16 +2158,8 @@
       "step_label": "Исправить то, что не доехало, и выложить заново",
       "step": 3,
       "total": 4,
-      "events": 43,
+      "events": 45,
       "trail": [
-        {
-          "ts": 1795754554,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795754554,
-          "label": "THINK"
-        },
         {
           "ts": 1795754572,
           "label": "EDIT · /home/nyaka/учеба"
@@ -2351,10 +2343,18 @@
         {
           "ts": 1795755341,
           "label": "THINK"
+        },
+        {
+          "ts": 1795755383,
+          "label": "BASH · TS=$(date +%s%N);"
+        },
+        {
+          "ts": 1795755431,
+          "label": "BASH · cp /home/nyaka/уч"
         }
       ],
       "started_at": 1795754185,
-      "updated_at": 1795755375
+      "updated_at": 1795755438
     },
     {
       "key": "req-20261127-074824-fc97e9",
@@ -2364,40 +2364,8 @@
       "step_label": "Проверить ночные прогоны",
       "step": 1,
       "total": 5,
-      "events": 46,
+      "events": 51,
       "trail": [
-        {
-          "ts": 1795755085,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755085,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755096,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755109,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755114,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755114,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755132,
-          "label": "WRITE · /home/nyaka/.con"
-        },
-        {
-          "ts": 1795755132,
-          "label": "THINK"
-        },
         {
           "ts": 1795755138,
           "label": "EDIT · /home/nyaka/.conf"
@@ -2557,10 +2525,42 @@
         {
           "ts": 1795755377,
           "label": "GREP · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755377,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755393,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755405,
+          "label": "BASH · sha256sum /tmp/op"
+        },
+        {
+          "ts": 1795755405,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755421,
+          "label": "BASH · sha256sum ~/.conf"
+        },
+        {
+          "ts": 1795755421,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755434,
+          "label": "WRITE · /tmp/opencode/fi"
+        },
+        {
+          "ts": 1795755434,
+          "label": "THINK"
         }
       ],
       "started_at": 1795754904,
-      "updated_at": 1795755377
+      "updated_at": 1795755438
     }
   ],
   "bars": [
@@ -2579,6 +2579,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 3.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795755377,
-  "fetched_human": "2026-11-27 07:56:17 +0300"
+  "fetched_at": 1795755439,
+  "fetched_human": "2026-11-27 07:57:19 +0300"
 }
