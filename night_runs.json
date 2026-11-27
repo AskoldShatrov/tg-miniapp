@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.83,
-      "remaining_hours": 11.17,
+      "elapsed_hours": 8.85,
+      "remaining_hours": 11.15,
       "progress_pct": 44,
-      "cycles": 183,
-      "heartbeat_human": "17:02:26",
+      "cycles": 184,
+      "heartbeat_human": "17:03:26",
       "tree": {
         "phases": [
           {
@@ -69,22 +69,6 @@
         ],
         "trail": [
           {
-            "clock": "16:25:21",
-            "cycle": 154,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "16:25:21",
-            "cycle": 154,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
-          {
             "clock": "16:26:36",
             "cycle": 155,
             "task": "SCOUT_OPEN",
@@ -543,6 +527,22 @@
           {
             "clock": "17:01:38",
             "cycle": 183,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "17:02:53",
+            "cycle": 184,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "17:02:53",
+            "cycle": 184,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
             "score": 0,
@@ -550,10 +550,10 @@
           }
         ],
         "strategy": {
-          "version": 115,
-          "mutations": 114
+          "version": 116,
+          "mutations": 115
         },
-        "events": 274,
+        "events": 276,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.83,
-      "remaining_hours": 11.17,
+      "elapsed_hours": 8.85,
+      "remaining_hours": 11.15,
       "progress_pct": 44,
-      "cycles": 201,
-      "heartbeat_human": "17:02:37",
+      "cycles": 202,
+      "heartbeat_human": "17:03:37",
       "tree": {
         "phases": [
           {
@@ -582,11 +582,11 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 11,
+            "cycles": 12,
             "max": 16,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
           },
           {
             "id": "SF-LIVE-DEMO-20H",
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "16:20:10",
-            "cycle": 171,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
-            "clock": "16:21:25",
-            "cycle": 172,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "16:21:25",
             "cycle": 172,
@@ -1096,19 +1080,35 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
+          },
+          {
+            "clock": "17:03:47",
+            "cycle": 202,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "17:03:47",
+            "cycle": 202,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 89,
-          "mutations": 88
+          "version": 90,
+          "mutations": 89
         },
-        "events": 271,
+        "events": 273,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795788172,
-  "fetched_human": "2026-11-27 17:02:52 +0300"
+  "fetched_at": 1795788231,
+  "fetched_human": "2026-11-27 17:03:51 +0300"
 }
