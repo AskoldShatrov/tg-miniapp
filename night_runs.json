@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.11,
-      "remaining_hours": 18.89,
+      "elapsed_hours": 1.13,
+      "remaining_hours": 18.87,
       "progress_pct": 6,
-      "cycles": 9,
-      "heartbeat_human": "09:19:37",
+      "cycles": 10,
+      "heartbeat_human": "09:20:37",
       "tree": {
         "phases": [
           {
@@ -24,11 +24,11 @@
           {
             "id": "IMP-HONESTY-20H",
             "title": "Комплексное улучшение: честная сверка цифр без старой таблицы лидеров",
-            "cycles": 3,
+            "cycles": 4,
             "max": 6,
             "last": "PROMOTE",
-            "score": 7,
-            "verified": true
+            "score": 5,
+            "verified": false
           },
           {
             "id": "IMP-RETHINK-WIRING-20H",
@@ -120,15 +120,23 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "09:20:30",
+            "cycle": 10,
+            "task": "IMP-HONESTY-20H",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 10,
+        "events": 11,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -136,11 +144,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.11,
-      "remaining_hours": 18.89,
+      "elapsed_hours": 1.13,
+      "remaining_hours": 18.87,
       "progress_pct": 6,
       "cycles": 9,
-      "heartbeat_human": "09:19:37",
+      "heartbeat_human": "09:20:37",
       "tree": {
         "phases": [
           {
@@ -264,6 +272,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795760384,
-  "fetched_human": "2026-11-27 09:19:44 +0300"
+  "fetched_at": 1795760449,
+  "fetched_human": "2026-11-27 09:20:49 +0300"
 }
