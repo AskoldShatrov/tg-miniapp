@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.11,
-      "remaining_hours": 17.89,
+      "elapsed_hours": 2.13,
+      "remaining_hours": 17.87,
       "progress_pct": 11,
-      "cycles": 16,
-      "heartbeat_human": "10:19:24",
+      "cycles": 17,
+      "heartbeat_human": "10:20:24",
       "tree": {
         "phases": [
           {
@@ -33,7 +33,7 @@
           {
             "id": "IMP-RETHINK-WIRING-20H",
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "WARMUP",
             "score": 4,
@@ -176,15 +176,23 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=1: 8cdccab1345265aee42a99bda6149f3ad96480f9bea47ba407dd7e5e662955\", \"gate_mtime\""
+          },
+          {
+            "clock": "10:19:49",
+            "cycle": 17,
+            "task": "IMP-RETHINK-WIRING-20H",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1:  {\"MIN_ATTEMPTS\": 2, \"MIN_CANDIDATES\": 3}, \"problems\": [\"artifact_missing_new"
           }
         ],
         "strategy": {
           "version": 2,
           "mutations": 1
         },
-        "events": 17,
+        "events": 18,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -192,11 +200,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.11,
-      "remaining_hours": 17.89,
+      "elapsed_hours": 2.13,
+      "remaining_hours": 17.87,
       "progress_pct": 11,
-      "cycles": 14,
-      "heartbeat_human": "10:19:26",
+      "cycles": 15,
+      "heartbeat_human": "10:20:26",
       "tree": {
         "phases": [
           {
@@ -211,7 +219,7 @@
           {
             "id": "SF-CLIP-CAPTURE-20H",
             "title": "Сканфид: настоящий клип убийства без OBS websocket",
-            "cycles": 6,
+            "cycles": 7,
             "max": 8,
             "last": "WARMUP",
             "score": 4,
@@ -347,19 +355,27 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
+          },
+          {
+            "clock": "10:20:23",
+            "cycle": 15,
+            "task": "SF-CLIP-CAPTURE-20H",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
           }
         ],
         "strategy": {
           "version": 11,
           "mutations": 10
         },
-        "events": 15,
+        "events": 16,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795763983,
-  "fetched_human": "2026-11-27 10:19:43 +0300"
+  "fetched_at": 1795764041,
+  "fetched_human": "2026-11-27 10:20:41 +0300"
 }
