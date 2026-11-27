@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.06,
-      "remaining_hours": 0.94,
-      "progress_pct": 53,
-      "cycles": 63,
-      "heartbeat_human": "07:11:11",
+      "elapsed_hours": 1.08,
+      "remaining_hours": 0.92,
+      "progress_pct": 54,
+      "cycles": 64,
+      "heartbeat_human": "07:12:11",
       "tree": {
         "phases": [
           {
@@ -103,6 +103,15 @@
             "verified": true
           },
           {
+            "id": "IMP-PROMOTE-HONESTY",
+            "title": "PROMOTE без verify_ok: честный аудит",
+            "cycles": 3,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "IMP-DELIVERY-TRUTH",
             "title": "Доставка vs запись: сверка writer-артефактов",
             "cycles": 3,
@@ -119,26 +128,9 @@
             "last": "PROMOTE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "IMP-PROMOTE-HONESTY",
-            "title": "PROMOTE без verify_ok: честный аудит",
-            "cycles": 2,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "00:39:51",
-            "cycle": 4,
-            "task": "IMP-PRIOR-INTAKE",
-            "action": "MUTATE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше started_ts"
-          },
           {
             "clock": "00:46:21",
             "cycle": 5,
@@ -610,15 +602,23 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "07:12:00",
+            "cycle": 64,
+            "task": "IMP-PROMOTE-HONESTY",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/comp"
           }
         ],
         "strategy": {
-          "version": 25,
-          "mutations": 24
+          "version": 26,
+          "mutations": 25
         },
-        "events": 63,
+        "events": 64,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.06,
-      "remaining_hours": 0.94,
-      "progress_pct": 53,
+      "elapsed_hours": 1.08,
+      "remaining_hours": 0.92,
+      "progress_pct": 54,
       "cycles": 46,
-      "heartbeat_human": "07:11:11",
+      "heartbeat_human": "07:12:11",
       "tree": {
         "phases": [
           {
@@ -1162,11 +1162,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.06,
-      "remaining_hours": 0.94,
-      "progress_pct": 53,
+      "elapsed_hours": 1.08,
+      "remaining_hours": 0.92,
+      "progress_pct": 54,
       "cycles": 80,
-      "heartbeat_human": "07:11:11",
+      "heartbeat_human": "07:12:11",
       "tree": {
         "phases": [
           {
@@ -1807,6 +1807,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795752690,
-  "fetched_human": "2026-11-27 07:11:30 +0300"
+  "fetched_at": 1795752753,
+  "fetched_human": "2026-11-27 07:12:33 +0300"
 }
