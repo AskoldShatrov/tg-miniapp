@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.15,
-      "remaining_hours": 12.85,
+      "elapsed_hours": 7.17,
+      "remaining_hours": 12.83,
       "progress_pct": 36,
       "cycles": 123,
-      "heartbeat_human": "15:21:55",
+      "heartbeat_human": "15:23:25",
       "tree": {
         "phases": [
           {
@@ -563,17 +563,17 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.15,
-      "remaining_hours": 12.85,
+      "elapsed_hours": 7.17,
+      "remaining_hours": 12.83,
       "progress_pct": 36,
-      "cycles": 142,
-      "heartbeat_human": "15:22:06",
+      "cycles": 143,
+      "heartbeat_human": "15:23:06",
       "tree": {
         "phases": [
           {
             "id": "SF-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 14,
+            "cycles": 15,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:19:20",
-            "cycle": 93,
-            "task": "SF-NIGHT-PAIR-WRITER-B",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
-          {
-            "clock": "13:27:45",
-            "cycle": 94,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:27:45",
             "cycle": 94,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "15:23:22",
+            "cycle": 143,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "15:23:22",
+            "cycle": 143,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 31,
-          "mutations": 30
+          "version": 32,
+          "mutations": 31
         },
-        "events": 159,
+        "events": 161,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795782138,
-  "fetched_human": "2026-11-27 15:22:18 +0300"
+  "fetched_at": 1795782207,
+  "fetched_human": "2026-11-27 15:23:27 +0300"
 }

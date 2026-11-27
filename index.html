@@ -2256,7 +2256,7 @@ function richHtml(text){
    pair.rid_match=true означает «по ID», false — «по времени». */
 function pairChat(sent, replies){
   const qs=(sent||[]).slice(-40).map(m=>({
-    rid:String(m.rid||""), text:String(m.text||""), ts:Number(m.ts)||0, t:m.t||""
+    rid:String(m.rid||""), text:String(m.text||""), ts:Number(m.ts)||0, t:m.t||"", failed:!!m.failed
   }));
   const rs=(replies||[]).slice(-40).map(r=>({
     rid:String(r.rid||""), text:String(r.text||""), ts:Number(r.ts||0)*1000, t:absTime(r)
@@ -2301,7 +2301,7 @@ function updateJump(){
 }
 function updateTyping(pairs){
   const tp=$("#typing"); if(!tp) return;
-  const waiting=pairs.some(p=>p.pending && p.ts && Date.now()-p.ts<120000);
+  const waiting=pairs.some(p=>p.pending && !p.failed && p.ts && Date.now()-p.ts<120000);
   tp.classList.toggle("on", waiting);
 }
 function renderChat(){
