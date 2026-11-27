@@ -5,21 +5,21 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.15,
-      "remaining_hours": 14.85,
+      "elapsed_hours": 5.17,
+      "remaining_hours": 14.83,
       "progress_pct": 26,
-      "cycles": 89,
-      "heartbeat_human": "13:22:16",
+      "cycles": 90,
+      "heartbeat_human": "13:23:16",
       "tree": {
         "phases": [
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 7,
+            "cycles": 8,
             "max": 16,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
           },
           {
             "id": "IMP-PHYSICAL-GATE-20H",
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:07:19",
-            "cycle": 45,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
-          {
-            "clock": "11:08:34",
-            "cycle": 46,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "11:09:49",
             "cycle": 47,
@@ -547,13 +531,29 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:22:35",
+            "cycle": 90,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:22:35",
+            "cycle": 90,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 35,
-          "mutations": 34
+          "version": 36,
+          "mutations": 35
         },
-        "events": 110,
+        "events": 112,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.15,
-      "remaining_hours": 14.85,
+      "elapsed_hours": 5.17,
+      "remaining_hours": 14.83,
       "progress_pct": 26,
       "cycles": 93,
-      "heartbeat_human": "13:22:15",
+      "heartbeat_human": "13:23:15",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795774939,
-  "fetched_human": "2026-11-27 13:22:19 +0300"
+  "fetched_at": 1795775009,
+  "fetched_human": "2026-11-27 13:23:29 +0300"
 }
