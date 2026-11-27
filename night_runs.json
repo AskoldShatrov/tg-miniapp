@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 2.0,
+      "elapsed_hours": 2.01,
       "remaining_hours": 0.0,
       "progress_pct": 100,
       "cycles": 71,
-      "heartbeat_human": "08:07:11",
+      "heartbeat_human": "08:08:11",
       "tree": {
         "phases": [
           {
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 2.0,
+      "elapsed_hours": 2.01,
       "remaining_hours": 0.0,
       "progress_pct": 100,
       "cycles": 54,
-      "heartbeat_human": "08:07:12",
+      "heartbeat_human": "08:08:12",
       "tree": {
         "phases": [
           {
@@ -1253,11 +1253,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 2.0,
+      "elapsed_hours": 2.01,
       "remaining_hours": 0.0,
       "progress_pct": 100,
-      "cycles": 89,
-      "heartbeat_human": "08:07:11",
+      "cycles": 90,
+      "heartbeat_human": "08:08:11",
       "tree": {
         "phases": [
           {
@@ -1396,6 +1396,15 @@
             "verified": true
           },
           {
+            "id": "UNI-REQ-TRACE",
+            "title": "Сверка голосовых просьб с доставленными артефактами",
+            "cycles": 4,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PID-VOICE",
             "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
             "cycles": 3,
@@ -1403,26 +1412,9 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-REQ-TRACE",
-            "title": "Сверка голосовых просьб с доставленными артефактами",
-            "cycles": 3,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "03:00:50",
-            "cycle": 30,
-            "task": "UNI-CRITERIA-REVIEW",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "03:04:11",
             "cycle": 31,
@@ -1894,19 +1886,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "08:08:07",
+            "cycle": 90,
+            "task": "UNI-REQ-TRACE",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 89,
+        "events": 90,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795756057,
-  "fetched_human": "2026-11-27 08:07:37 +0300"
+  "fetched_at": 1795756110,
+  "fetched_human": "2026-11-27 08:08:30 +0300"
 }
