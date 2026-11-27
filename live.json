@@ -2075,10 +2075,26 @@
   ],
   "active": [
     {
+      "id": "b26a9c87-7184-45",
+      "title": "Только чтение + один о",
+      "source": "dsh",
+      "claimed_human": "10:16:32",
+      "age_min": 0,
+      "full": "Только чтение + один о"
+    },
+    {
+      "id": "b6d86ac7-e25d-41",
+      "title": "Работаешь в /home/nyaka/уче",
+      "source": "dsh",
+      "claimed_human": "10:16:29",
+      "age_min": 0,
+      "full": "Работаешь в /home/nyaka/уче"
+    },
+    {
       "id": "1e054bc2-d1dd-49",
       "title": "Работаешь в /home/nyaka/уче",
       "source": "dsh",
-      "claimed_human": "10:15:31",
+      "claimed_human": "10:16:22",
       "age_min": 0,
       "full": "Работаешь в /home/nyaka/уче"
     },
@@ -2087,7 +2103,7 @@
       "title": "Моделирование, системные проблемы и Word-файл",
       "source": "dsh",
       "claimed_human": "10:15:27",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Моделирование, системные проблемы и Word-файл"
     },
     {
@@ -2095,31 +2111,15 @@
       "title": "Работаешь в /home/nyaka/Docume",
       "source": "dsh",
       "claimed_human": "10:15:22",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Работаешь в /home/nyaka/Docume"
-    },
-    {
-      "id": "b26a9c87-7184-45",
-      "title": "Только чтение + один о",
-      "source": "dsh",
-      "claimed_human": "10:15:04",
-      "age_min": 0,
-      "full": "Только чтение + один о"
-    },
-    {
-      "id": "b6d86ac7-e25d-41",
-      "title": "Работаешь в /home/nyaka/уче",
-      "source": "dsh",
-      "claimed_human": "10:14:59",
-      "age_min": 0,
-      "full": "Работаешь в /home/nyaka/уче"
     },
     {
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
       "claimed_human": "10:13:26",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Подключение Graphify и инструментов инспекции"
     }
   ],
@@ -2150,16 +2150,8 @@
       "step_label": "Разбор замечаний",
       "step": 1,
       "total": 6,
-      "events": 89,
+      "events": 90,
       "trail": [
-        {
-          "ts": 1795762573,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795762573,
-          "label": "READ · /home/nyaka/учеба"
-        },
         {
           "ts": 1795762573,
           "label": "THINK"
@@ -2343,10 +2335,18 @@
         {
           "ts": 1795763717,
           "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763779,
+          "label": "BASH · cat /home/nyaka/у"
+        },
+        {
+          "ts": 1795763779,
+          "label": "BASH · cd /tmp/opencode/"
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795763734
+      "updated_at": 1795763794
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2356,16 +2356,8 @@
       "step_label": "Разбор замечаний",
       "step": 1,
       "total": 6,
-      "events": 74,
+      "events": 75,
       "trail": [
-        {
-          "ts": 1795762573,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795762573,
-          "label": "READ · /home/nyaka/учеба"
-        },
         {
           "ts": 1795762573,
           "label": "THINK"
@@ -2549,10 +2541,18 @@
         {
           "ts": 1795763717,
           "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763778,
+          "label": "BASH · cat /home/nyaka/у"
+        },
+        {
+          "ts": 1795763779,
+          "label": "BASH · cd /tmp/opencode/"
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795763732
+      "updated_at": 1795763794
     },
     {
       "key": "req-20261127-100432-5a466a",
@@ -2562,56 +2562,8 @@
       "step_label": "выдача",
       "step": 6,
       "total": 5,
-      "events": 33,
+      "events": 37,
       "trail": [
-        {
-          "ts": 1795763420,
-          "label": "BASH · cd /tmp/opencode/"
-        },
-        {
-          "ts": 1795763420,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795763431,
-          "label": "BASH · cd /tmp/opencode/"
-        },
-        {
-          "ts": 1795763431,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795763451,
-          "label": "BASH · cd /tmp/opencode/"
-        },
-        {
-          "ts": 1795763451,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795763465,
-          "label": "BASH · head -30 /home/ny"
-        },
-        {
-          "ts": 1795763465,
-          "label": "BASH · cd /tmp/opencode/"
-        },
-        {
-          "ts": 1795763465,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795763483,
-          "label": "BASH · grep -rn \"library"
-        },
-        {
-          "ts": 1795763483,
-          "label": "BASH · find /home/nyaka "
-        },
-        {
-          "ts": 1795763483,
-          "label": "THINK"
-        },
         {
           "ts": 1795763493,
           "label": "READ · /home/nyaka/share"
@@ -2755,10 +2707,58 @@
         {
           "ts": 1795763723,
           "label": "THINK"
+        },
+        {
+          "ts": 1795763740,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763741,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795763741,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763762,
+          "label": "READ · /home/nyaka/Docum"
+        },
+        {
+          "ts": 1795763762,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763762,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763776,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795763776,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795763776,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763790,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795763791,
+          "label": "BASH · for u in 'https:/"
+        },
+        {
+          "ts": 1795763791,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763072,
-      "updated_at": 1795763733
+      "updated_at": 1795763794
     }
   ],
   "bars": [
@@ -2777,6 +2777,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 5.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795763734,
-  "fetched_human": "2026-11-27 10:15:34 +0300"
+  "fetched_at": 1795763795,
+  "fetched_human": "2026-11-27 10:16:35 +0300"
 }
