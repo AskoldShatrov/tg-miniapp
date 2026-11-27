@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 975,
+      "age_min": 976,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 975,
+      "age_min": 976,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,24 +2095,24 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 975,
+      "age_min": 976,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "06:33:43",
-      "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "06:33:42",
+      "claimed_human": "06:34:48",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
+    },
+    {
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "source": "dsh",
+      "claimed_human": "06:34:47",
+      "age_min": 0,
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     }
   ],
   "queues": {
@@ -2139,23 +2139,11 @@
       "session_id": "",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "Собрать контрольную в PDF",
-      "step": 4,
+      "step_label": "Проверить и показать RESULT",
+      "step": 5,
       "total": 5,
-      "events": 75,
+      "events": 78,
       "trail": [
-        {
-          "ts": 1795749713,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749727,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749740,
-          "label": "READ · /home/nyaka/учеба"
-        },
         {
           "ts": 1795749757,
           "label": "BASH · cd /home/nyaka/уч"
@@ -2335,53 +2323,33 @@
         {
           "ts": 1795750430,
           "label": "THINK"
+        },
+        {
+          "ts": 1795750447,
+          "label": "BASH · SES=${OPENCODE_SE"
+        },
+        {
+          "ts": 1795750472,
+          "label": "BASH · cp /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750488,
+          "label": "BASH · execute"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795750431
+      "updated_at": 1795750491
     },
     {
       "key": "req-20261127-062630-b7c384",
       "session_id": "",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "Разобрать дефекты по скриншотам",
-      "step": 2,
+      "step_label": "Исправить титульники и таблицу",
+      "step": 3,
       "total": 5,
-      "events": 30,
+      "events": 35,
       "trail": [
-        {
-          "ts": 1795750088,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795750088,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795750096,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795750097,
-          "label": "BASH · date '+%F %T %Z';"
-        },
-        {
-          "ts": 1795750097,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795750119,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795750119,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795750119,
-          "label": "THINK"
-        },
         {
           "ts": 1795750140,
           "label": "BASH · cd /home/nyaka/уч"
@@ -2541,10 +2509,42 @@
         {
           "ts": 1795750422,
           "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795750433,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795750447,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795750447,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750459,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795750476,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750476,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750487,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750487,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749990,
-      "updated_at": 1795750432
+      "updated_at": 1795750492
     }
   ],
   "bars": [
@@ -2563,6 +2563,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 2.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795750433,
-  "fetched_human": "2026-11-27 06:33:53 +0300"
+  "fetched_at": 1795750494,
+  "fetched_human": "2026-11-27 06:34:54 +0300"
 }
