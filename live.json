@@ -2075,26 +2075,10 @@
   ],
   "active": [
     {
-      "id": "1ac336b4-3558-40",
-      "title": "РОЛЬ: исполнитель реа",
-      "source": "dsh",
-      "claimed_human": "08:28:42",
-      "age_min": 0,
-      "full": "РОЛЬ: исполнитель реа"
-    },
-    {
-      "id": "61b536e0-0ece-47",
-      "title": "Read-only research task. The user",
-      "source": "dsh",
-      "claimed_human": "08:28:41",
-      "age_min": 0,
-      "full": "Read-only research task. The user"
-    },
-    {
       "id": "session-d6542988",
       "title": "20-часовой прогон и диагностика OBS",
       "source": "dsh",
-      "claimed_human": "08:28:35",
+      "claimed_human": "08:29:44",
       "age_min": 0,
       "full": "20-часовой прогон и диагностика OBS"
     },
@@ -2102,16 +2086,49 @@
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
-      "claimed_human": "08:28:14",
+      "claimed_human": "08:29:42",
       "age_min": 0,
       "full": "Подключение Graphify и инструментов инспекции"
+    },
+    {
+      "id": "98234959-b143-42",
+      "title": "Работа в /home/nyaka, тольк",
+      "source": "dsh",
+      "claimed_human": "08:29:39",
+      "age_min": 0,
+      "full": "Работа в /home/nyaka, тольк"
+    },
+    {
+      "id": "1ac336b4-3558-40",
+      "title": "РОЛЬ: исполнитель реа",
+      "source": "dsh",
+      "claimed_human": "08:29:32",
+      "age_min": 0,
+      "full": "РОЛЬ: исполнитель реа"
+    },
+    {
+      "id": "61b536e0-0ece-47",
+      "title": "Read-only research task. The user",
+      "source": "dsh",
+      "claimed_human": "08:29:07",
+      "age_min": 0,
+      "full": "Read-only research task. The user"
+    },
+    {
+      "id": "AU15695",
+      "title": "ДОВЕСТИ ЦЕЛЬ gmwyjiz2wu26v: S01SN-REAL60-R6 — шестая независимая реплика REAL-набора scanfeed",
+      "source": "ноут",
+      "claimed_human": "08:29:02",
+      "age_min": 0,
+      "full": "ДОВЕСТИ ЦЕЛЬ gmwyjiz2wu26v: S01SN-REAL60-R6 — шестая независимая реплика REAL-набора scanfeed",
+      "autogen": true
     },
     {
       "id": "86977efd-e443-4e",
       "title": "Read-only research task in the",
       "source": "dsh",
       "claimed_human": "08:28:03",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Read-only research task in the"
     },
     {
@@ -2119,7 +2136,7 @@
       "title": "Read-only task. Determine what DeepSeek",
       "source": "dsh",
       "claimed_human": "08:28:00",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Read-only task. Determine what DeepSeek"
     },
     {
@@ -2127,23 +2144,16 @@
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
       "claimed_human": "08:27:27",
-      "age_min": 1,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
-    },
-    {
-      "id": "df6f95be-e497-46",
-      "title": "Read-only analysis task. The user",
-      "source": "dsh",
-      "claimed_human": "08:26:07",
       "age_min": 2,
-      "full": "Read-only analysis task. The user"
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     }
   ],
   "queues": {
     "ноут": {
       "done": 1581,
       "failed": 159,
-      "unknown": 1
+      "unknown": 1,
+      "doing": 1
     },
     "ПК": {
       "done": 84,
@@ -2166,24 +2176,8 @@
       "step_label": "Загрузить скиллы и прочитать новые скриншоты",
       "step": 1,
       "total": 5,
-      "events": 27,
+      "events": 29,
       "trail": [
-        {
-          "ts": 1795756371,
-          "label": "SYNC · visual-answer-che"
-        },
-        {
-          "ts": 1795756371,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795756417,
-          "label": "READ · /home/nyaka/local"
-        },
-        {
-          "ts": 1795756417,
-          "label": "BASH · echo \"=== эталоны"
-        },
         {
           "ts": 1795756417,
           "label": "THINK"
@@ -2359,10 +2353,26 @@
         {
           "ts": 1795757315,
           "label": "THINK"
+        },
+        {
+          "ts": 1795757339,
+          "label": "BASH · grep -nE \"подразд"
+        },
+        {
+          "ts": 1795757339,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795757359,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795757359,
+          "label": "THINK"
         }
       ],
       "started_at": 1795756345,
-      "updated_at": 1795757320
+      "updated_at": 1795757380
     },
     {
       "key": "req-20261127-082730-684c3f",
@@ -2372,10 +2382,31 @@
       "step_label": "",
       "step": 0,
       "total": null,
-      "events": 0,
-      "trail": [],
+      "events": 2,
+      "trail": [
+        {
+          "ts": 1795757339,
+          "label": "BASH · grep -nE \"подразд"
+        },
+        {
+          "ts": 1795757339,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795757359,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795757359,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795757382,
+          "label": "EDIT · /home/nyaka/учеба"
+        }
+      ],
       "started_at": 1795757251,
-      "updated_at": 1795757323
+      "updated_at": 1795757382
     }
   ],
   "bars": [
@@ -2394,6 +2425,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 3.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795757323,
-  "fetched_human": "2026-11-27 08:28:43 +0300"
+  "fetched_at": 1795757384,
+  "fetched_human": "2026-11-27 08:29:44 +0300"
 }
