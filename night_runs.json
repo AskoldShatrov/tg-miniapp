@@ -5,13 +5,22 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.77,
-      "remaining_hours": 15.23,
+      "elapsed_hours": 4.78,
+      "remaining_hours": 15.22,
       "progress_pct": 24,
-      "cycles": 83,
-      "heartbeat_human": "12:58:46",
+      "cycles": 84,
+      "heartbeat_human": "12:59:46",
       "tree": {
         "phases": [
+          {
+            "id": "IMP-NIGHT-PAIR-WRITER",
+            "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
+            "cycles": 7,
+            "max": 8,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
+          },
           {
             "id": "IMP-PHYSICAL-GATE-20H",
             "title": "Комплексное улучшение: текстовый артефакт не считается захватом",
@@ -29,15 +38,6 @@
             "last": "PROMOTE",
             "score": 5,
             "verified": false
-          },
-          {
-            "id": "IMP-NIGHT-PAIR-WRITER",
-            "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 6,
-            "max": 8,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
           },
           {
             "id": "IMP-RETHINK-WIRING-20H",
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:53:17",
-            "cycle": 37,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "10:54:32",
-            "cycle": 38,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:55:47",
             "cycle": 39,
@@ -547,13 +531,29 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "12:59:51",
+            "cycle": 84,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:59:51",
+            "cycle": 84,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 33,
-          "mutations": 32
+          "version": 34,
+          "mutations": 33
         },
-        "events": 102,
+        "events": 104,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.77,
-      "remaining_hours": 15.23,
+      "elapsed_hours": 4.78,
+      "remaining_hours": 15.22,
       "progress_pct": 24,
-      "cycles": 80,
-      "heartbeat_human": "12:58:45",
+      "cycles": 81,
+      "heartbeat_human": "12:59:45",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:53:16",
-            "cycle": 23,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:54:31",
             "cycle": 24,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:59:07",
+            "cycle": 81,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 16,
           "mutations": 15
         },
-        "events": 86,
+        "events": 87,
         "avg_score": 0.0,
         "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795773546,
-  "fetched_human": "2026-11-27 12:59:06 +0300"
+  "fetched_at": 1795773607,
+  "fetched_human": "2026-11-27 13:00:07 +0300"
 }
