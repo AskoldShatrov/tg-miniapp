@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 5.39,
-      "remaining_hours": 2.61,
-      "progress_pct": 67,
-      "cycles": 68,
-      "heartbeat_human": "05:28:34",
+      "elapsed_hours": 5.4,
+      "remaining_hours": 2.6,
+      "progress_pct": 68,
+      "cycles": 69,
+      "heartbeat_human": "05:30:04",
       "tree": {
         "phases": [
           {
@@ -131,14 +131,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:06:22",
-            "cycle": 9,
-            "task": "UNI-MVS-WINE",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "01:11:26",
             "cycle": 10,
@@ -610,19 +602,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
+          },
+          {
+            "clock": "05:30:01",
+            "cycle": 69,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
           }
         ],
         "strategy": {
-          "version": 44,
-          "mutations": 43
+          "version": 45,
+          "mutations": 44
         },
-        "events": 68,
+        "events": 69,
         "avg_score": 4.8,
         "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795746542,
-  "fetched_human": "2026-11-27 05:29:02 +0300"
+  "fetched_at": 1795746605,
+  "fetched_human": "2026-11-27 05:30:05 +0300"
 }

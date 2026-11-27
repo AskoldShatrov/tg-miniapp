@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T02:29:02+00:00",
-  "generated_human": "27.11 02:29 UTC",
-  "as_of": 1795746540331,
+  "generated": "2026-11-27T02:30:04+00:00",
+  "generated_human": "27.11 02:30 UTC",
+  "as_of": 1795746602714,
   "stale_days": 1,
   "count": 1183,
   "groups": 9,
@@ -39,6 +39,24 @@
     "w261120024143491d"
    ],
    "prompts": [
+    {
+     "id": "ses-ZWC432iOCX",
+     "text": "ОВЕРЛЕЙ. P0-1: один кадр реального матча с allplayers>0, деньги/бай/AWP под иконками, проверка через pc-bridge/GSI. Если allplayers недоступны — блокер с причиной и n попыток. Новый отчёт ~/overnight/cloud_tracks/C13-47885.md. Не трогать 44/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795746599000,
+     "source": "session",
+     "title": "C13-47885 оверлей реального матча",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200241438cdc",
+      "w261123053459cf23"
+     ],
+     "as_of": 1795746599000,
+     "is_stale": false
+    },
     {
      "id": "ses-J43k6HszBw",
      "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15694. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwyctodo0tz5: R02CZ: малый радар в новом материале — буквальный гейт взят. Где: goals.json · Отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md; prereg R02CZ 15 порогов до прогона, check PASS 9/9. Новый REAL-кадр SF_C2_fresh_202611 В конце вызови tools.goals.track({action:'done', id:'gmwyctodo0tz5', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15694_run47873.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
@@ -10221,31 +10239,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795618947727,
      "as_of": 1795618775000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-IEwKoVCHPj",
-     "text": "РАДАР. Тепловые карты зон: пересчитать adjusted winrate по новому корпусу (7 карт, 320 демо), честно отделить «нет сигнала» от «плохо». Гейт: нижняя граница CI > 0 на нёзащищённых зонах, FDR BH q=0.05. Новый отчёт ~/overnight/cloud_tracks/C03-27603.md. Не трогать data/ и 18-closure.md. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795618743000,
-     "source": "session",
-     "title": "C03-27603: пересчёт adjusted winrate зон",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] I'll analyze this architecture decision about scanfeed. Let me check the required gates and existing context first.\n\nI have enough context on the project. Let me verify write-safety and the knowledge-",
-     "answer_short": "w261119190741dca0: I'll analyze this architecture decision about scanfeed. Let ",
-     "answer_full": "I'll analyze this architecture decision about scanfeed. Let me check the required gates and existing context first.\n\nI have enough context on the project. Let me verify write-safety and the knowledge-base command before recording the decision.\n\nI've confirmed the key fact: scanfeed's own architecture doc already treats the top-right kill feed as the primary signal — demos appear only as an optional tick-aligned validator, not as a data dependency. That makes the pivot a formalisation of what's already there, not a rewrite. Writing the decision record now.\n\nThe decision is recorded. Now I'm persisting it to the knowledge base and running the mandatory pre-send gates.\n\nThe gate flagged jargon and an `OPEN` marker. I'm fixing the draft wording rather than weakening the gate.\n\nРешение зафиксировано: первичный сигнал сканфида — список смертей из киллфида в правом верхнем углу экрана, без зависимости от демок. Демки остаются необязательным валидатором по тику, а не источником данных. Код, конфиги и рабочее состояние не тронуты.\n\nПочему так:\n\n- Внутри проекта конвейер уже устроен именно так: захват → киллфид → события → экономика; демка подключается только в конце для сверки. Это не переписывание, а закрепление существующего устройства.\n- Киллфид даёт «кто как умирает» — для экономики и раундов этого достаточно; разбор аватарок и иконок не меняет факта смерти.\n- Независимость от демок снимает конкретный блокер: претензия к матчам без исходных записей и структурно отсутствующее поле со списком всех игроков в демках.\n- Натуральный просмотр от первого лица требует второго режима распознавания — с полоской здоровья под карточкой игрока и без неё. Проверенные программы Limp CS2, Haya, SEZ 2 — все дают только навигацию по тикам, а не просмотр с закрытой информацией о противниках.\n\nОтложено без окончательного отказа: натуральный просмотр от первого лица, перекрёстная проверка «посеревшая иконка плюс смерть в киллфиде», задача прорыва как таковая. Отсутствие прорыва ожидаемо: это решение об источнике данных, а не новый алгоритм распознавания.\n\nСледующий шаг — прогнать уже готовый модуль сопоставления имён по шаблону списка игроков матча, с порогом, зафиксированным до прогона, и контрольной выборкой матчей. Метрика: доля слотов, покрытых именем из списка, с доверительным интервалом Вильсона и объёмом выборки. Пока гейт не имеет артефакта, не добавлять новую калибровку под натуральный просмотр и не подключать перекрёстную проверку с иконками.\n\nОстаётся сделать: гейт сопоставления имён с зафиксированным порогом; способ просмотра демки с закрытой информацией о противниках пока не найден.\n\nАРТЕФАКТ: /home/nyaka/scanfeed/research/DECISION-killfeed-no-demos.md 2026-11-25T18:00:24 свежий — проверка по времени изменения",
-     "answer_digest": {
-      "length": 2745,
-      "sha256": "cf6e7b7c0bb2e8ddfff46795bb8e8ba4ab27f58ff0d9b993758f377cabc93f70"
-     },
-     "answer_text_id": "cf6e7b7c0bb2e8dd",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795618947727,
-     "as_of": 1795618743000,
      "is_stale": true
     },
     {
