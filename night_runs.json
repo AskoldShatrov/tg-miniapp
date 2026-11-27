@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.18,
-      "remaining_hours": 5.82,
+      "elapsed_hours": 14.2,
+      "remaining_hours": 5.8,
       "progress_pct": 71,
-      "cycles": 431,
-      "heartbeat_human": "22:23:31",
+      "cycles": 432,
+      "heartbeat_human": "22:24:31",
       "tree": {
         "phases": [
           {
@@ -78,30 +78,14 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 0,
+            "cycles": 1,
             "max": 12,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 4,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "21:30:35",
-            "cycle": 398,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
-          {
-            "clock": "21:31:50",
-            "cycle": 399,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:31:50",
             "cycle": 399,
@@ -565,15 +549,31 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "22:24:25",
+            "cycle": 432,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "22:24:25",
+            "cycle": 432,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: claim_status\": \"STRUCTURAL_ONLY\",\n  \"defects\": [\n    \"STALE_EVIDENCE: mtime в"
           }
         ],
         "strategy": {
-          "version": 356,
-          "mutations": 355
+          "version": 357,
+          "mutations": 356
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.18,
-      "remaining_hours": 5.82,
+      "elapsed_hours": 14.2,
+      "remaining_hours": 5.8,
       "progress_pct": 71,
-      "cycles": 437,
-      "heartbeat_human": "22:23:43",
+      "cycles": 438,
+      "heartbeat_human": "22:24:43",
       "tree": {
         "phases": [
           {
@@ -645,30 +645,14 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 0,
+            "cycles": 1,
             "max": 12,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "21:30:20",
-            "cycle": 403,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
-            "clock": "21:31:35",
-            "cycle": 404,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:31:35",
             "cycle": 404,
@@ -1132,19 +1116,35 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "22:24:55",
+            "cycle": 438,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "22:24:55",
+            "cycle": 438,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 314,
-          "mutations": 313
+          "version": 315,
+          "mutations": 314
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795807441,
-  "fetched_human": "2026-11-27 22:24:01 +0300"
+  "fetched_at": 1795807500,
+  "fetched_human": "2026-11-27 22:25:00 +0300"
 }
