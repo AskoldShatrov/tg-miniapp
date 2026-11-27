@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 10.3,
-      "remaining_hours": 9.7,
+      "elapsed_hours": 10.32,
+      "remaining_hours": 9.68,
       "progress_pct": 52,
-      "cycles": 254,
-      "heartbeat_human": "18:30:57",
+      "cycles": 255,
+      "heartbeat_human": "18:31:57",
       "tree": {
         "phases": [
           {
@@ -53,8 +53,8 @@
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
             "cycles": 5,
             "max": 5,
-            "last": "WARMUP",
-            "score": 4,
+            "last": "—",
+            "score": 0,
             "verified": false
           },
           {
@@ -69,22 +69,6 @@
         ],
         "trail": [
           {
-            "clock": "17:54:11",
-            "cycle": 225,
-            "task": "SCOUT_OPEN",
-            "action": "TRIGGER_ROTATED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "17:54:11",
-            "cycle": 225,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
-          {
             "clock": "17:55:26",
             "cycle": 226,
             "task": "SCOUT_OPEN",
@@ -543,6 +527,22 @@
           {
             "clock": "18:30:28",
             "cycle": 254,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "18:31:43",
+            "cycle": 255,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "18:31:43",
+            "cycle": 255,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
             "score": 0,
@@ -550,8 +550,8 @@
           }
         ],
         "strategy": {
-          "version": 186,
-          "mutations": 185
+          "version": 187,
+          "mutations": 186
         },
         "events": 400,
         "avg_score": 0.0,
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 10.3,
-      "remaining_hours": 9.7,
+      "elapsed_hours": 10.32,
+      "remaining_hours": 9.68,
       "progress_pct": 52,
-      "cycles": 259,
-      "heartbeat_human": "18:31:09",
+      "cycles": 260,
+      "heartbeat_human": "18:32:09",
       "tree": {
         "phases": [
           {
@@ -618,22 +618,6 @@
         ],
         "trail": [
           {
-            "clock": "17:53:56",
-            "cycle": 230,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "17:53:56",
-            "cycle": 230,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
             "clock": "17:55:11",
             "cycle": 231,
             "task": "SCOUT_OPEN",
@@ -1092,6 +1076,22 @@
           {
             "clock": "18:30:13",
             "cycle": 259,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
+          },
+          {
+            "clock": "18:31:28",
+            "cycle": 260,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "18:31:28",
+            "cycle": 260,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
             "score": 0,
@@ -1099,16 +1099,16 @@
           }
         ],
         "strategy": {
-          "version": 145,
-          "mutations": 144
+          "version": 146,
+          "mutations": 145
         },
-        "events": 380,
+        "events": 382,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795793483,
-  "fetched_human": "2026-11-27 18:31:23 +0300"
+  "fetched_at": 1795793543,
+  "fetched_human": "2026-11-27 18:32:23 +0300"
 }
