@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.72,
-      "remaining_hours": 18.28,
+      "elapsed_hours": 1.74,
+      "remaining_hours": 18.26,
       "progress_pct": 9,
-      "cycles": 13,
-      "heartbeat_human": "09:56:07",
+      "cycles": 14,
+      "heartbeat_human": "09:57:07",
       "tree": {
         "phases": [
           {
@@ -33,7 +33,7 @@
           {
             "id": "IMP-RETHINK-WIRING-20H",
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
             "last": "PROMOTE",
             "score": 5,
@@ -152,15 +152,23 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "09:56:55",
+            "cycle": 14,
+            "task": "IMP-RETHINK-WIRING-20H",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 14,
+        "events": 15,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -168,11 +176,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.72,
-      "remaining_hours": 18.28,
+      "elapsed_hours": 1.74,
+      "remaining_hours": 18.26,
       "progress_pct": 9,
       "cycles": 12,
-      "heartbeat_human": "09:56:07",
+      "heartbeat_human": "09:57:07",
       "tree": {
         "phases": [
           {
@@ -320,6 +328,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795762578,
-  "fetched_human": "2026-11-27 09:56:18 +0300"
+  "fetched_at": 1795762639,
+  "fetched_human": "2026-11-27 09:57:19 +0300"
 }
