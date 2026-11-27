@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 859,
+      "age_min": 860,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 859,
+      "age_min": 860,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,30 +2095,46 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 859,
+      "age_min": 860,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-f5e9fcec",
-      "title": "Подбор бенчмарка и диагностика системы",
-      "source": "dsh",
-      "claimed_human": "04:37:54",
-      "age_min": 0,
-      "full": "Подбор бенчмарка и диагностика системы"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "04:37:51",
+      "claimed_human": "04:38:57",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-8e85d767",
+      "title": "Ночной прогон: университет (pid 1917542)",
+      "source": "dsh",
+      "claimed_human": "04:38:55",
+      "age_min": 0,
+      "full": "Ночной прогон: университет (pid 1917542)"
+    },
+    {
+      "id": "session-43bab254",
+      "title": "Транскрипт трех диктофонных записей с абза",
+      "source": "dsh",
+      "claimed_human": "04:38:54",
+      "age_min": 0,
+      "full": "Транскрипт трех диктофонных записей с абза"
+    },
+    {
+      "id": "session-f5e9fcec",
+      "title": "Подбор бенчмарка и диагностика системы",
+      "source": "dsh",
+      "claimed_human": "04:38:53",
+      "age_min": 0,
+      "full": "Подбор бенчмарка и диагностика системы"
     },
     {
       "id": "session-7433ac64",
       "title": "Проверка указаний в голосовых расшифровках",
       "source": "dsh",
-      "claimed_human": "04:37:50",
+      "claimed_human": "04:38:49",
       "age_min": 0,
       "full": "Проверка указаний в голосовых расшифровках"
     },
@@ -2127,31 +2143,15 @@
       "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
       "claimed_human": "04:37:39",
-      "age_min": 0,
-      "full": "Анализ прогресса сканфида человеческим язы"
-    },
-    {
-      "id": "session-8e85d767",
-      "title": "Ночной прогон: университет (pid 1917542)",
-      "source": "dsh",
-      "claimed_human": "04:37:13",
-      "age_min": 0,
-      "full": "Ночной прогон: университет (pid 1917542)"
-    },
-    {
-      "id": "session-43bab254",
-      "title": "Транскрипт трех диктофонных записей с абза",
-      "source": "dsh",
-      "claimed_human": "04:36:40",
       "age_min": 1,
-      "full": "Транскрипт трех диктофонных записей с абза"
+      "full": "Анализ прогресса сканфида человеческим язы"
     },
     {
       "id": "session-589dcccf",
       "title": "Сверка транскриптов для артефакта НИР",
       "source": "dsh",
       "claimed_human": "04:34:59",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Сверка транскриптов для артефакта НИР"
     },
     {
@@ -2159,7 +2159,7 @@
       "title": "Мини-сканфид по логу матча методом мэтпок",
       "source": "dsh",
       "claimed_human": "04:34:46",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Мини-сканфид по логу матча методом мэтпок"
     }
   ],
@@ -2190,7 +2190,7 @@
       "step_label": "Разбор библиотеки мини-апа",
       "step": 2,
       "total": 5,
-      "events": 3,
+      "events": 4,
       "trail": [
         {
           "ts": 1795743386,
@@ -2227,10 +2227,22 @@
         {
           "ts": 1795743466,
           "label": "THINK"
+        },
+        {
+          "ts": 1795743489,
+          "label": "BASH · find ~/учеба -max"
+        },
+        {
+          "ts": 1795743489,
+          "label": "BASH · grep -n -E 'funct"
+        },
+        {
+          "ts": 1795743489,
+          "label": "THINK"
         }
       ],
       "started_at": 1795743324,
-      "updated_at": 1795743477
+      "updated_at": 1795743539
     }
   ],
   "bars": [
@@ -2249,6 +2261,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 0.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795743479,
-  "fetched_human": "2026-11-27 04:37:59 +0300"
+  "fetched_at": 1795743539,
+  "fetched_human": "2026-11-27 04:38:59 +0300"
 }
