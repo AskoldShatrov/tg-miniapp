@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T04:33:56+00:00",
-  "generated_human": "27.11 04:33 UTC",
-  "as_of": 1795754035477,
+  "generated": "2026-11-27T04:34:57+00:00",
+  "generated_human": "27.11 04:34 UTC",
+  "as_of": 1795754095877,
   "stale_days": 1,
   "count": 1190,
   "groups": 9,
@@ -41,14 +41,14 @@
     {
      "id": "ses-p5N4qn6xcz",
      "text": "Вход — не чистый лист. Обязательно прочитай и используй: night-runs/MORNING-DIGEST-20261126.md sha256 5e173710… (3 PASS/2 FAIL/3 OPEN за 3.5 ч), night-runs/overlay_target_correction_20261126.md sha256 daf5f5e6…, reports/interview_scanfeed_decisions_20261126.md sha256 c2f376f2… (четыре раунда мэтпока), reports/interview-decisions-20261126.md (четыре раунда по мини-апу), coordination/grilling_round1_20261126.json. Не начинай заново и не поднимай старый браузерный оверлей. Перечисли, что принято в работу из прошлого, что отвергнуто и почему; поле HANDOFF укажи путь с suggested skills для следующей сессии. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-PRIOR-WORK-INTAKE-*.md. VERDICT: PASS только после реальной проверки. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. ОБЯЗАТЕЛЬНО: после реальной записи артефакта выведи отдельной строкой PROMISE: DONE и назови session_id; intermediate report пиши до медленных зондов, порог не понижай. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-PRIOR-WORK-INTAKE-c51.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795754035000,
+     "ts": 1795754095000,
      "source": "session",
      "title": "lree-SF-PRIOR-WORK-INTAKE-c51",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795754035000,
+     "as_of": 1795754095000,
      "is_stale": false
     },
     {
@@ -6355,14 +6355,14 @@
     {
      "id": "ses-cUUyI8C99N",
      "text": "Пользователь спит; только локальные файлы. Прочитай input/USER-VOICE-PID-20261127.md, artifacts/UNI-PID-VOICE-c60.md и ~/overnight/2026-11-20-dictaphone-69min-transcription.md. Порог и holdout зафиксируй ДО сравнения с эталоном Голубковой. IDEAS: >=30, HYPOTHESES: >=3 с X/Y, THRESHOLD: числом, HOLDOUT: источник и правило сплита, SOURCE: PRIOR, SHA256:, MTIME:, VERDICT: PASS, два хэша. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-RK4-PREREG-c85.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795754032000,
+     "ts": 1795754094000,
      "source": "session",
      "title": "lree-UNI-RK4-PREREG-c85",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795754032000,
+     "as_of": 1795754094000,
      "is_stale": false
     },
     {
@@ -7016,9 +7016,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-6pLcjcI9Mk",
+     "text": "Пользователь спит; только локальные файлы. По engine.py:732-765 и ledger.jsonl проверь, сколько циклов получили PROMOTE при verify_ok=false. Дай минимальный патч, запрещающий PROMOTE без verify_ok, с путём, номером строки и регрессионным тестом. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. ОБЯЗАТЕЛЬНО: отчёт обязан содержать поля PASS:, FAIL:, OPEN: каждой по одной строке с путями и rc.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PROMOTE-HONESTY-V2-c67.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795754093000,
+     "source": "session",
+     "title": "lree-IMP-PROMOTE-HONESTY-V2-c67",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795754093000,
+     "is_stale": false
+    },
+    {
      "id": "ses-jDj0y6LWaM",
      "text": "Только чтение и один артефакт. Найди первичные источники по вопросу: что даёт много дешёвых попыток по сравнению с одним дорогим прогоном. Выпиши формулу или метод оценки цены подтверждённого вывода, условия, когда рой выигрывает, и когда проигрывает. Примени к нашему контуру: free-модели hy4-flash-free/hungerg-free, субагенты cheap/deep, движок longrun-evolution. Обязательны VERDICT, n источников, дата, неопределённость. Запиши артефакт ровно по пути /home/nyaka/evolution-work-researcher/artifacts/RSCH-ROI-*.md. В артефакте обязательны: задача, команда проверки, её rc, путь, mtime, SHA256, дата и VERDICT. PROMISE: DONE только после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-ROI-c7.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795754031000,
+     "ts": 1795754090000,
      "source": "session",
      "title": "lree-RSCH-ROI-c7",
      "source_label": "ноут",
@@ -7027,20 +7040,7 @@
      "wants": [
       "w261121055339bfc8"
      ],
-     "as_of": 1795754031000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-6pLcjcI9Mk",
-     "text": "Пользователь спит; только локальные файлы. По engine.py:732-765 и ledger.jsonl проверь, сколько циклов получили PROMOTE при verify_ok=false. Дай минимальный патч, запрещающий PROMOTE без verify_ok, с путём, номером строки и регрессионным тестом. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. ОБЯЗАТЕЛЬНО: отчёт обязан содержать поля PASS:, FAIL:, OPEN: каждой по одной строке с путями и rc.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PROMOTE-HONESTY-V2-c67.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795754029000,
-     "source": "session",
-     "title": "lree-IMP-PROMOTE-HONESTY-V2-c67",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795754029000,
+     "as_of": 1795754090000,
      "is_stale": false
     },
     {
