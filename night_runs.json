@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.48,
-      "remaining_hours": 17.52,
+      "elapsed_hours": 2.5,
+      "remaining_hours": 17.5,
       "progress_pct": 12,
-      "cycles": 27,
-      "heartbeat_human": "10:41:54",
+      "cycles": 28,
+      "heartbeat_human": "10:42:54",
       "tree": {
         "phases": [
           {
@@ -44,8 +44,8 @@
             "title": "Аудит свежих витков: что реально улучшилось и где регресс",
             "cycles": 2,
             "max": 3,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
+            "last": "RETHINK_BLOCKED",
+            "score": 0,
             "verified": false
           }
         ],
@@ -313,13 +313,21 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "RED.log старше старта витка на 8599 с"
+          },
+          {
+            "clock": "10:42:06",
+            "cycle": 28,
+            "task": "IMP-NIGHT-WATCHDOG-20H",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 12,
           "mutations": 11
         },
-        "events": 33,
+        "events": 34,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -329,11 +337,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.48,
-      "remaining_hours": 17.52,
+      "elapsed_hours": 2.5,
+      "remaining_hours": 17.5,
       "progress_pct": 12,
       "cycles": 17,
-      "heartbeat_human": "10:41:27",
+      "heartbeat_human": "10:42:57",
       "tree": {
         "phases": [
           {
@@ -537,6 +545,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795765314,
-  "fetched_human": "2026-11-27 10:41:54 +0300"
+  "fetched_at": 1795765386,
+  "fetched_human": "2026-11-27 10:43:06 +0300"
 }
