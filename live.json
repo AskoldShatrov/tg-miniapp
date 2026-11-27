@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 794,
+      "age_min": 795,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 794,
+      "age_min": 795,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,30 +2095,46 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 794,
+      "age_min": 795,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
-      "id": "session-685498ee",
-      "title": "Активный сеанс DSH с проверками",
+      "id": "f0660990-ff28-4f",
+      "title": "Роль: проектировщик и",
       "source": "dsh",
-      "claimed_human": "03:32:43",
+      "claimed_human": "03:33:42",
       "age_min": 0,
-      "full": "Активный сеанс DSH с проверками"
+      "full": "Роль: проектировщик и"
     },
     {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "id": "f638ff50-4d82-48",
+      "title": "Роль: независимый ауд",
       "source": "dsh",
-      "claimed_human": "03:32:40",
+      "claimed_human": "03:33:42",
       "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
+      "full": "Роль: независимый ауд"
+    },
+    {
+      "id": "9c40bdc3-8c04-43",
+      "title": "Роль: исследователь-п",
+      "source": "dsh",
+      "claimed_human": "03:33:42",
+      "age_min": 0,
+      "full": "Роль: исследователь-п"
+    },
+    {
+      "id": "session-f5e9fcec",
+      "title": "Подбор бенчмарка и диагностика системы",
+      "source": "dsh",
+      "claimed_human": "03:33:42",
+      "age_min": 0,
+      "full": "Подбор бенчмарка и диагностика системы"
     },
     {
       "id": "session-8e85d767",
       "title": "Ночной прогон: университет (pid 1917542)",
       "source": "dsh",
-      "claimed_human": "03:32:40",
+      "claimed_human": "03:33:39",
       "age_min": 0,
       "full": "Ночной прогон: университет (pid 1917542)"
     },
@@ -2126,41 +2142,25 @@
       "id": "session-2f08b1ce",
       "title": "Ночной прогон: сканфид-v2 (pid 1917540)",
       "source": "dsh",
-      "claimed_human": "03:32:38",
+      "claimed_human": "03:33:39",
       "age_min": 0,
       "full": "Ночной прогон: сканфид-v2 (pid 1917540)"
     },
     {
-      "id": "session-f5e9fcec",
-      "title": "Подбор бенчмарка и диагностика системы",
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "03:32:37",
+      "claimed_human": "03:33:38",
       "age_min": 0,
-      "full": "Подбор бенчмарка и диагностика системы"
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
-      "id": "session-4ab85241",
-      "title": "Анализ прогресса сканфида человеческим язы",
+      "id": "session-e8bbb62f",
+      "title": "Запись дайджеста с проверкой и обещанием",
       "source": "dsh",
-      "claimed_human": "03:32:35",
+      "claimed_human": "03:33:38",
       "age_min": 0,
-      "full": "Анализ прогресса сканфида человеческим язы"
-    },
-    {
-      "id": "session-ca0f62b3",
-      "title": "Проверка критериев и запись артефакта",
-      "source": "dsh",
-      "claimed_human": "03:32:21",
-      "age_min": 0,
-      "full": "Проверка критериев и запись артефакта"
-    },
-    {
-      "id": "session-63f1cf79",
-      "title": "Запись и проверка артефакта дайджеста",
-      "source": "dsh",
-      "claimed_human": "03:31:46",
-      "age_min": 0,
-      "full": "Запись и проверка артефакта дайджеста"
+      "full": "Запись дайджеста с проверкой и обещанием"
     }
   ],
   "queues": {
@@ -2190,7 +2190,7 @@
       "step_label": "Разбор дашборда и вкладок",
       "step": 2,
       "total": 5,
-      "events": 13,
+      "events": 14,
       "trail": [
         {
           "ts": 1795739134,
@@ -2299,10 +2299,18 @@
         {
           "ts": 1795739546,
           "label": "THINK"
+        },
+        {
+          "ts": 1795739596,
+          "label": "BASH · find ~/.local/sta"
+        },
+        {
+          "ts": 1795739597,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739112,
-      "updated_at": 1795739561
+      "updated_at": 1795739622
     },
     {
       "key": "req-20261127-032656-beb2f1",
@@ -2312,16 +2320,8 @@
       "step_label": "Разведка файлов и приложения",
       "step": 1,
       "total": 4,
-      "events": 14,
+      "events": 17,
       "trail": [
-        {
-          "ts": 1795739232,
-          "label": "SYNC · anti-autism"
-        },
-        {
-          "ts": 1795739232,
-          "label": "SYNC · show-in-answer"
-        },
         {
           "ts": 1795739232,
           "label": "THINK"
@@ -2489,10 +2489,34 @@
         {
           "ts": 1795739551,
           "label": "THINK"
+        },
+        {
+          "ts": 1795739568,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795739569,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795739589,
+          "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795739590,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795739604,
+          "label": "BASH · echo \"=== kr2_otc"
+        },
+        {
+          "ts": 1795739605,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795739561
+      "updated_at": 1795739623
     }
   ],
   "bars": [
@@ -2509,8 +2533,8 @@
   ],
   "updatedAt": "2026-11-26T14:18:01+03:00",
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
-  "plan_age_hours": 13.2,
+  "plan_age_hours": 13.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795739564,
-  "fetched_human": "2026-11-27 03:32:44 +0300"
+  "fetched_at": 1795739624,
+  "fetched_human": "2026-11-27 03:33:44 +0300"
 }
