@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.09,
-      "remaining_hours": 16.91,
-      "progress_pct": 15,
-      "cycles": 47,
-      "heartbeat_human": "11:18:02",
+      "elapsed_hours": 3.1,
+      "remaining_hours": 16.9,
+      "progress_pct": 16,
+      "cycles": 48,
+      "heartbeat_human": "11:19:02",
       "tree": {
         "phases": [
           {
@@ -51,7 +51,7 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 1,
+            "cycles": 2,
             "max": 4,
             "last": "WARMUP",
             "score": 4,
@@ -491,13 +491,21 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "11:18:51",
+            "cycle": 48,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 12,
           "mutations": 11
         },
-        "events": 53,
+        "events": 54,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -507,11 +515,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.09,
-      "remaining_hours": 16.91,
-      "progress_pct": 15,
+      "elapsed_hours": 3.1,
+      "remaining_hours": 16.9,
+      "progress_pct": 16,
       "cycles": 36,
-      "heartbeat_human": "11:18:01",
+      "heartbeat_human": "11:19:01",
       "tree": {
         "phases": [
           {
@@ -893,6 +901,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795767505,
-  "fetched_human": "2026-11-27 11:18:25 +0300"
+  "fetched_at": 1795767561,
+  "fetched_human": "2026-11-27 11:19:21 +0300"
 }
