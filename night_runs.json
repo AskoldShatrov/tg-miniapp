@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.96,
-      "remaining_hours": 5.04,
+      "elapsed_hours": 14.97,
+      "remaining_hours": 5.03,
       "progress_pct": 75,
       "cycles": 438,
-      "heartbeat_human": "23:10:26",
+      "heartbeat_human": "23:11:26",
       "tree": {
         "phases": [
           {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.96,
-      "remaining_hours": 5.04,
+      "elapsed_hours": 14.97,
+      "remaining_hours": 5.03,
       "progress_pct": 75,
-      "cycles": 443,
-      "heartbeat_human": "23:10:26",
+      "cycles": 444,
+      "heartbeat_human": "23:11:26",
       "tree": {
         "phases": [
           {
@@ -625,6 +625,15 @@
             "verified": false
           },
           {
+            "id": "CONSULT-FAMILY-MUT-WRITER-V2",
+            "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
+            "cycles": 7,
+            "max": 12,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "SF-DECISION-MEMORY-CALIB-20H",
             "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
             "cycles": 6,
@@ -632,15 +641,6 @@
             "last": "—",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "CONSULT-FAMILY-MUT-WRITER-V2",
-            "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 6,
-            "max": 12,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "CONSULT-FAMILY-MUT-WRITER",
@@ -653,22 +653,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:36:35",
-            "cycle": 408,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
-            "clock": "21:37:51",
-            "cycle": 409,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:37:51",
             "cycle": 409,
@@ -1132,11 +1116,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "23:11:15",
+            "cycle": 444,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "23:11:15",
+            "cycle": 444,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 318,
-          "mutations": 317
+          "version": 319,
+          "mutations": 318
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1145,6 +1145,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795810230,
-  "fetched_human": "2026-11-27 23:10:30 +0300"
+  "fetched_at": 1795810290,
+  "fetched_human": "2026-11-27 23:11:30 +0300"
 }
