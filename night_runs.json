@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.79,
-      "remaining_hours": 3.21,
-      "progress_pct": 60,
-      "cycles": 55,
-      "heartbeat_human": "04:53:04",
+      "elapsed_hours": 4.86,
+      "remaining_hours": 3.14,
+      "progress_pct": 61,
+      "cycles": 56,
+      "heartbeat_human": "04:57:04",
       "tree": {
         "phases": [
           {
@@ -114,8 +114,17 @@
           {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 0,
+            "cycles": 1,
             "max": 8,
+            "last": "MUTATE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-PID-VOICE",
+            "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
+            "cycles": 0,
+            "max": 3,
             "last": "—",
             "score": 0,
             "verified": false
@@ -561,19 +570,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: rtifacts/UNI-VOICE-c55.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
+          },
+          {
+            "clock": "04:54:03",
+            "cycle": 56,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
-          "version": 34,
-          "mutations": 33
+          "version": 35,
+          "mutations": 34
         },
-        "events": 55,
+        "events": 56,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795744408,
-  "fetched_human": "2026-11-27 04:53:28 +0300"
+  "fetched_at": 1795744635,
+  "fetched_human": "2026-11-27 04:57:15 +0300"
 }
