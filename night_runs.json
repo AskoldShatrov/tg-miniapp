@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.69,
-      "remaining_hours": 14.31,
-      "progress_pct": 28,
-      "cycles": 94,
-      "heartbeat_human": "13:54:16",
+      "elapsed_hours": 5.71,
+      "remaining_hours": 14.29,
+      "progress_pct": 29,
+      "cycles": 95,
+      "heartbeat_human": "13:55:16",
       "tree": {
         "phases": [
           {
@@ -24,10 +24,10 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 8,
+            "cycles": 9,
             "max": 16,
             "last": "RETHINK_REQUIRED",
-            "score": 4,
+            "score": 7,
             "verified": true
           },
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:45:08",
-            "cycle": 52,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "11:45:08",
-            "cycle": 52,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "11:46:23",
             "cycle": 53,
@@ -547,13 +531,29 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:55:38",
+            "cycle": 95,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:55:38",
+            "cycle": 95,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 40,
-          "mutations": 39
+          "version": 41,
+          "mutations": 40
         },
-        "events": 120,
+        "events": 122,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.69,
-      "remaining_hours": 14.31,
-      "progress_pct": 28,
+      "elapsed_hours": 5.71,
+      "remaining_hours": 14.29,
+      "progress_pct": 29,
       "cycles": 111,
-      "heartbeat_human": "13:54:15",
+      "heartbeat_human": "13:55:15",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795776880,
-  "fetched_human": "2026-11-27 13:54:40 +0300"
+  "fetched_at": 1795776942,
+  "fetched_human": "2026-11-27 13:55:42 +0300"
 }
