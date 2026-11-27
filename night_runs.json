@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.52,
-      "remaining_hours": 16.48,
+      "elapsed_hours": 3.54,
+      "remaining_hours": 16.46,
       "progress_pct": 18,
-      "cycles": 51,
-      "heartbeat_human": "11:44:32",
+      "cycles": 52,
+      "heartbeat_human": "11:45:32",
       "tree": {
         "phases": [
           {
@@ -60,30 +60,14 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 1,
+            "cycles": 2,
             "max": 3,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "08:13:06",
-            "cycle": 0,
-            "task": "LEDGER_INIT",
-            "action": "INIT",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "08:20:16",
-            "cycle": 1,
-            "task": "IMP-PHYSICAL-GATE-20H",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "08:26:03",
             "cycle": 2,
@@ -547,15 +531,31 @@
             "action": "MUTATE",
             "score": 2,
             "note": "verify rc=1: ,\n    \"artifact_sha256\": \"6e914121cce0d46175d165f5833a8a031ed91eef9a5c0763184"
+          },
+          {
+            "clock": "11:45:08",
+            "cycle": 52,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "11:45:08",
+            "cycle": 52,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 15,
-          "mutations": 14
+          "version": 16,
+          "mutations": 15
         },
-        "events": 60,
+        "events": 62,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     },
     {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.52,
-      "remaining_hours": 16.48,
+      "elapsed_hours": 3.54,
+      "remaining_hours": 16.46,
       "progress_pct": 18,
       "cycles": 47,
-      "heartbeat_human": "11:44:32",
+      "heartbeat_human": "11:45:32",
       "tree": {
         "phases": [
           {
@@ -1037,6 +1037,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795769076,
-  "fetched_human": "2026-11-27 11:44:36 +0300"
+  "fetched_at": 1795769137,
+  "fetched_human": "2026-11-27 11:45:37 +0300"
 }
