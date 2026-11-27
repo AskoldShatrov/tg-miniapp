@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 808,
+      "age_min": 809,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 808,
+      "age_min": 809,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,14 +2095,46 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 808,
+      "age_min": 809,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
+    },
+    {
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "source": "dsh",
+      "claimed_human": "03:47:54",
+      "age_min": 0,
+      "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-4a0f625d",
+      "title": "Проверка критериев и запись отчёта",
+      "source": "dsh",
+      "claimed_human": "03:47:53",
+      "age_min": 0,
+      "full": "Проверка критериев и запись отчёта"
+    },
+    {
+      "id": "session-f5e9fcec",
+      "title": "Подбор бенчмарка и диагностика системы",
+      "source": "dsh",
+      "claimed_human": "03:47:53",
+      "age_min": 0,
+      "full": "Подбор бенчмарка и диагностика системы"
+    },
+    {
+      "id": "session-d5d61a25",
+      "title": "Проверка НИР и запись артефакта",
+      "source": "dsh",
+      "claimed_human": "03:47:52",
+      "age_min": 0,
+      "full": "Проверка НИР и запись артефакта"
     },
     {
       "id": "session-8e85d767",
       "title": "Ночной прогон: университет (pid 1917542)",
       "source": "dsh",
-      "claimed_human": "03:46:55",
+      "claimed_human": "03:47:50",
       "age_min": 0,
       "full": "Ночной прогон: университет (pid 1917542)"
     },
@@ -2110,32 +2142,16 @@
       "id": "session-ae247f5c",
       "title": "Исправление трёх дефектов реестра",
       "source": "dsh",
-      "claimed_human": "03:46:53",
+      "claimed_human": "03:47:03",
       "age_min": 0,
       "full": "Исправление трёх дефектов реестра"
-    },
-    {
-      "id": "session-d5d61a25",
-      "title": "Проверка НИР и запись артефакта",
-      "source": "dsh",
-      "claimed_human": "03:46:52",
-      "age_min": 0,
-      "full": "Проверка НИР и запись артефакта"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "03:46:52",
-      "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-4ab85241",
       "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
       "claimed_human": "03:46:35",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Анализ прогресса сканфида человеческим язы"
     },
     {
@@ -2143,24 +2159,8 @@
       "title": "Проверка критериев и запись артефакта",
       "source": "dsh",
       "claimed_human": "03:46:20",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Проверка критериев и запись артефакта"
-    },
-    {
-      "id": "session-f5e9fcec",
-      "title": "Подбор бенчмарка и диагностика системы",
-      "source": "dsh",
-      "claimed_human": "03:45:44",
-      "age_min": 1,
-      "full": "Подбор бенчмарка и диагностика системы"
-    },
-    {
-      "id": "session-d70596bc",
-      "title": "Исправление трёх дефектов в реестре",
-      "source": "dsh",
-      "claimed_human": "03:45:33",
-      "age_min": 1,
-      "full": "Исправление трёх дефектов в реестре"
     }
   ],
   "queues": {
@@ -2187,19 +2187,11 @@
       "session_id": "ses_de67cd76fffegP3Toj4xSA0e3V",
       "source": "task",
       "label": "В текущей системе есть такая проблема, что когда я отправляю",
-      "step_label": "Поиск данных об активных запросах",
-      "step": 3,
+      "step_label": "Оценка и proposal",
+      "step": 4,
       "total": 5,
-      "events": 43,
+      "events": 44,
       "trail": [
-        {
-          "ts": 1795739796,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795739796,
-          "label": "THINK"
-        },
         {
           "ts": 1795739824,
           "label": "WRITE · /home/nyaka/shar"
@@ -2383,10 +2375,18 @@
         {
           "ts": 1795740238,
           "label": "RETRY · opencode-go/hy4-"
+        },
+        {
+          "ts": 1795740447,
+          "label": "BASH · cd ~/shared-repo "
+        },
+        {
+          "ts": 1795740447,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739112,
-      "updated_at": 1795740415
+      "updated_at": 1795740478
     },
     {
       "key": "req-20261127-032656-beb2f1",
@@ -2592,7 +2592,7 @@
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795740415
+      "updated_at": 1795740478
     }
   ],
   "bars": [
@@ -2611,6 +2611,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 13.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795740417,
-  "fetched_human": "2026-11-27 03:46:57 +0300"
+  "fetched_at": 1795740479,
+  "fetched_human": "2026-11-27 03:47:59 +0300"
 }
