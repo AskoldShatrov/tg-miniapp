@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.83,
-      "remaining_hours": 0.17,
-      "progress_pct": 91,
-      "cycles": 69,
-      "heartbeat_human": "07:57:11",
+      "elapsed_hours": 1.85,
+      "remaining_hours": 0.15,
+      "progress_pct": 92,
+      "cycles": 70,
+      "heartbeat_human": "07:58:11",
       "tree": {
         "phases": [
           {
@@ -114,10 +114,10 @@
           {
             "id": "IMP-PROMOTE-HONESTY-V2",
             "title": "PROMOTE без verify_ok: честный аудит с обязательными полями",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
+            "last": "MUTATE",
+            "score": 4,
             "verified": true
           },
           {
@@ -158,14 +158,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:15:43",
-            "cycle": 10,
-            "task": "IMP-UX-AUDIT",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "01:22:24",
             "cycle": 11,
@@ -637,13 +629,21 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:57:35",
+            "cycle": 70,
+            "task": "IMP-PROMOTE-HONESTY-V2",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 27,
-          "mutations": 26
+          "version": 28,
+          "mutations": 27
         },
-        "events": 69,
+        "events": 70,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.83,
-      "remaining_hours": 0.17,
-      "progress_pct": 91,
+      "elapsed_hours": 1.85,
+      "remaining_hours": 0.15,
+      "progress_pct": 92,
       "cycles": 53,
-      "heartbeat_human": "07:57:12",
+      "heartbeat_human": "07:58:12",
       "tree": {
         "phases": [
           {
@@ -1245,11 +1245,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.83,
-      "remaining_hours": 0.17,
-      "progress_pct": 91,
+      "elapsed_hours": 1.85,
+      "remaining_hours": 0.15,
+      "progress_pct": 92,
       "cycles": 88,
-      "heartbeat_human": "07:57:11",
+      "heartbeat_human": "07:58:11",
       "tree": {
         "phases": [
           {
@@ -1899,6 +1899,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795755444,
-  "fetched_human": "2026-11-27 07:57:24 +0300"
+  "fetched_at": 1795755503,
+  "fetched_human": "2026-11-27 07:58:23 +0300"
 }

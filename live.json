@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1059,
+      "age_min": 1060,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1059,
+      "age_min": 1060,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 1059,
+      "age_min": 1060,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "1ac336b4-3558-40",
-      "title": "РОЛЬ: исполнитель реа",
-      "source": "dsh",
-      "claimed_human": "07:57:16",
-      "age_min": 0,
-      "full": "РОЛЬ: исполнитель реа"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "07:57:14",
+      "claimed_human": "07:58:20",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     },
@@ -2118,7 +2110,7 @@
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "07:57:07",
+      "claimed_human": "07:58:16",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
     },
@@ -2126,9 +2118,17 @@
       "id": "session-2dc8b998",
       "title": "Работа над университетскими заданиями сейч",
       "source": "dsh",
-      "claimed_human": "07:56:30",
+      "claimed_human": "07:58:13",
       "age_min": 0,
       "full": "Работа над университетскими заданиями сейч"
+    },
+    {
+      "id": "1ac336b4-3558-40",
+      "title": "РОЛЬ: исполнитель реа",
+      "source": "dsh",
+      "claimed_human": "07:57:48",
+      "age_min": 0,
+      "full": "РОЛЬ: исполнитель реа"
     }
   ],
   "queues": {
@@ -2158,12 +2158,8 @@
       "step_label": "Исправить то, что не доехало, и выложить заново",
       "step": 3,
       "total": 4,
-      "events": 45,
+      "events": 46,
       "trail": [
-        {
-          "ts": 1795754572,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
         {
           "ts": 1795754588,
           "label": "EDIT · /home/nyaka/учеба"
@@ -2351,10 +2347,14 @@
         {
           "ts": 1795755431,
           "label": "BASH · cp /home/nyaka/уч"
+        },
+        {
+          "ts": 1795755474,
+          "label": "BASH · cd /tmp/opencode/"
         }
       ],
       "started_at": 1795754185,
-      "updated_at": 1795755438
+      "updated_at": 1795755499
     },
     {
       "key": "req-20261127-074824-fc97e9",
@@ -2364,40 +2364,8 @@
       "step_label": "Проверить ночные прогоны",
       "step": 1,
       "total": 5,
-      "events": 51,
+      "events": 56,
       "trail": [
-        {
-          "ts": 1795755138,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755138,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755151,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755151,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755159,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755159,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755173,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755182,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
         {
           "ts": 1795755182,
           "label": "THINK"
@@ -2557,10 +2525,42 @@
         {
           "ts": 1795755434,
           "label": "THINK"
+        },
+        {
+          "ts": 1795755448,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755448,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755456,
+          "label": "EDIT · /tmp/opencode/fin"
+        },
+        {
+          "ts": 1795755456,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755467,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795755481,
+          "label": "EDIT · /tmp/opencode/fin"
+        },
+        {
+          "ts": 1795755481,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755491,
+          "label": "BASH · python3 ~/.config"
         }
       ],
       "started_at": 1795754904,
-      "updated_at": 1795755438
+      "updated_at": 1795755499
     }
   ],
   "bars": [
@@ -2579,6 +2579,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 3.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795755439,
-  "fetched_human": "2026-11-27 07:57:19 +0300"
+  "fetched_at": 1795755500,
+  "fetched_human": "2026-11-27 07:58:20 +0300"
 }
