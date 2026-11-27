@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 5.35,
-      "remaining_hours": 2.65,
+      "elapsed_hours": 5.37,
+      "remaining_hours": 2.63,
       "progress_pct": 67,
-      "cycles": 65,
-      "heartbeat_human": "05:26:34",
+      "cycles": 66,
+      "heartbeat_human": "05:27:34",
       "tree": {
         "phases": [
           {
@@ -131,14 +131,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "00:43:34",
-            "cycle": 6,
-            "task": "UNI-MVS-WINE",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: t-workspace/night-runs/university-1126/artifacts/UNI-MVS-WINE-c5.md age 36712"
-          },
           {
             "clock": "00:52:30",
             "cycle": 7,
@@ -610,19 +602,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:27:01",
+            "cycle": 66,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
           }
         ],
         "strategy": {
-          "version": 41,
-          "mutations": 40
+          "version": 42,
+          "mutations": 41
         },
-        "events": 65,
+        "events": 66,
         "avg_score": 4.8,
         "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795746420,
-  "fetched_human": "2026-11-27 05:27:00 +0300"
+  "fetched_at": 1795746477,
+  "fetched_human": "2026-11-27 05:27:57 +0300"
 }
