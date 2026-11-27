@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.78,
-      "remaining_hours": 15.22,
+      "elapsed_hours": 4.8,
+      "remaining_hours": 15.2,
       "progress_pct": 24,
-      "cycles": 84,
-      "heartbeat_human": "12:59:46",
+      "cycles": 85,
+      "heartbeat_human": "13:00:46",
       "tree": {
         "phases": [
           {
@@ -17,9 +17,9 @@
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 7,
             "max": 8,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
+            "last": "RETHINK_BLOCKED",
+            "score": 0,
+            "verified": false
           },
           {
             "id": "IMP-PHYSICAL-GATE-20H",
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:55:47",
-            "cycle": 39,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:57:02",
             "cycle": 40,
@@ -547,13 +539,21 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:01:06",
+            "cycle": 85,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 34,
           "mutations": 33
         },
-        "events": 104,
+        "events": 105,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.78,
-      "remaining_hours": 15.22,
+      "elapsed_hours": 4.8,
+      "remaining_hours": 15.2,
       "progress_pct": 24,
-      "cycles": 81,
-      "heartbeat_human": "12:59:45",
+      "cycles": 82,
+      "heartbeat_human": "13:00:45",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:54:31",
-            "cycle": 24,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:55:46",
             "cycle": 25,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "13:00:22",
+            "cycle": 82,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 16,
           "mutations": 15
         },
-        "events": 87,
+        "events": 88,
         "avg_score": 0.0,
         "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795773607,
-  "fetched_human": "2026-11-27 13:00:07 +0300"
+  "fetched_at": 1795773666,
+  "fetched_human": "2026-11-27 13:01:06 +0300"
 }
