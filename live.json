@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 820,
+      "age_min": 821,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 820,
+      "age_min": 821,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,30 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 820,
+      "age_min": 821,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
-      "id": "session-55a1a67d",
-      "title": "Сессия без названия",
+      "id": "session-4ab85241",
+      "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
-      "claimed_human": "03:58:12",
+      "claimed_human": "03:59:14",
       "age_min": 0,
-      "full": "Сессия без названия"
+      "full": "Анализ прогресса сканфида человеческим язы"
+    },
+    {
+      "id": "session-55a1a67d",
+      "title": "Реальная проверка НИР и запись артефакта",
+      "source": "dsh",
+      "claimed_human": "03:59:09",
+      "age_min": 0,
+      "full": "Реальная проверка НИР и запись артефакта"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "03:58:09",
+      "claimed_human": "03:59:08",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     },
@@ -2118,24 +2126,32 @@
       "id": "session-8e85d767",
       "title": "Ночной прогон: университет (pid 1917542)",
       "source": "dsh",
-      "claimed_human": "03:58:08",
+      "claimed_human": "03:59:06",
       "age_min": 0,
       "full": "Ночной прогон: университет (pid 1917542)"
     },
     {
-      "id": "session-4ab85241",
-      "title": "Анализ прогресса сканфида человеческим язы",
+      "id": "5556658a-473a-46",
+      "title": "Проведи независимый а",
       "source": "dsh",
-      "claimed_human": "03:57:43",
+      "claimed_human": "03:59:06",
       "age_min": 0,
-      "full": "Анализ прогресса сканфида человеческим язы"
+      "full": "Проведи независимый а"
+    },
+    {
+      "id": "session-d6e954ec",
+      "title": "Запись артефакта с проверкой SHA256",
+      "source": "dsh",
+      "claimed_human": "03:58:51",
+      "age_min": 0,
+      "full": "Запись артефакта с проверкой SHA256"
     },
     {
       "id": "session-f61be027",
       "title": "Запись артефакта и проверка хэша",
       "source": "dsh",
       "claimed_human": "03:57:23",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Запись артефакта и проверка хэша"
     },
     {
@@ -2143,24 +2159,8 @@
       "title": "Проверка канона НИР и артефакт c44",
       "source": "dsh",
       "claimed_human": "03:57:09",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Проверка канона НИР и артефакт c44"
-    },
-    {
-      "id": "session-200f702c",
-      "title": "Запись артефакта с проверкой хэша",
-      "source": "dsh",
-      "claimed_human": "03:53:59",
-      "age_min": 4,
-      "full": "Запись артефакта с проверкой хэша"
-    },
-    {
-      "id": "session-89ec0a57",
-      "title": "Проверка NIR PDF и запись артефакта",
-      "source": "dsh",
-      "claimed_human": "03:52:12",
-      "age_min": 6,
-      "full": "Проверка NIR PDF и запись артефакта"
     }
   ],
   "queues": {
@@ -2182,212 +2182,6 @@
     "source": "cs2-transcribe/state.db"
   },
   "runs": [
-    {
-      "key": "req-20261127-032511-6d87e8",
-      "session_id": "ses_de67cd76fffegP3Toj4xSA0e3V",
-      "source": "task",
-      "label": "В текущей системе есть такая проблема, что когда я отправляю",
-      "step_label": "Оценка и proposal",
-      "step": 4,
-      "total": 5,
-      "events": 64,
-      "trail": [
-        {
-          "ts": 1795740197,
-          "label": "BASH · ls -l ~/shared-re"
-        },
-        {
-          "ts": 1795740197,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740217,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795740217,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740236,
-          "label": "BASH · timeout 40 google"
-        },
-        {
-          "ts": 1795740236,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740238,
-          "label": "RETRY · opencode-go/hy4-"
-        },
-        {
-          "ts": 1795740447,
-          "label": "BASH · cd ~/shared-repo "
-        },
-        {
-          "ts": 1795740447,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740502,
-          "label": "BASH · cd ~/shared-repo "
-        },
-        {
-          "ts": 1795740502,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740562,
-          "label": "BASH · cd ~/shared-repo "
-        },
-        {
-          "ts": 1795740562,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740616,
-          "label": "BASH · grep -rn -i 'gh-p"
-        },
-        {
-          "ts": 1795740616,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740635,
-          "label": "BASH · P=~/runtime/tmp-c"
-        },
-        {
-          "ts": 1795740635,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740691,
-          "label": "BASH · P=~/runtime/tmp-c"
-        },
-        {
-          "ts": 1795740691,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740719,
-          "label": "BASH · P=~/runtime/tmp-c"
-        },
-        {
-          "ts": 1795740719,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740776,
-          "label": "BASH · ls -la ~/runtime/"
-        },
-        {
-          "ts": 1795740777,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740857,
-          "label": "BASH · stat /home/nyaka/"
-        },
-        {
-          "ts": 1795740857,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740872,
-          "label": "BASH · P=/home/nyaka/run"
-        },
-        {
-          "ts": 1795740872,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740888,
-          "label": "BASH · curl -s --max-tim"
-        },
-        {
-          "ts": 1795740888,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740919,
-          "label": "BASH · curl -s --max-tim"
-        },
-        {
-          "ts": 1795740919,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740939,
-          "label": "WRITE · /home/nyaka/.loc"
-        },
-        {
-          "ts": 1795740939,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740955,
-          "label": "BASH · sha256sum ~/share"
-        },
-        {
-          "ts": 1795740955,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795740976,
-          "label": "WRITE · /home/nyaka/docs"
-        },
-        {
-          "ts": 1795740992,
-          "label": "BASH · grep -nP '[\\x{4e0"
-        },
-        {
-          "ts": 1795740992,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795741028,
-          "label": "WRITE · /tmp/opencode/da"
-        },
-        {
-          "ts": 1795741028,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795741044,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795741058,
-          "label": "READ · /tmp/opencode/das"
-        },
-        {
-          "ts": 1795741077,
-          "label": "WRITE · /tmp/opencode/da"
-        },
-        {
-          "ts": 1795741077,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795741091,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795741091,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795741091,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795741091,
-          "label": "BASH · python3 ~/.config"
-        }
-      ],
-      "started_at": 1795739112,
-      "updated_at": 1795741094
-    },
     {
       "key": "req-20261127-032656-beb2f1",
       "session_id": "",
@@ -2592,7 +2386,7 @@
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795741093
+      "updated_at": 1795741153
     }
   ],
   "bars": [
@@ -2611,6 +2405,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 13.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795741094,
-  "fetched_human": "2026-11-27 03:58:14 +0300"
+  "fetched_at": 1795741154,
+  "fetched_human": "2026-11-27 03:59:14 +0300"
 }
