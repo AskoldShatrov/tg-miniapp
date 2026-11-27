@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.4,
-      "remaining_hours": 3.6,
+      "elapsed_hours": 4.42,
+      "remaining_hours": 3.58,
       "progress_pct": 55,
-      "cycles": 46,
-      "heartbeat_human": "04:29:34",
+      "cycles": 47,
+      "heartbeat_human": "04:30:34",
       "tree": {
         "phases": [
           {
@@ -96,7 +96,7 @@
           {
             "id": "IMP-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 1,
+            "cycles": 2,
             "max": 8,
             "last": "PROMOTE",
             "score": 5,
@@ -471,15 +471,23 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:30:33",
+            "cycle": 47,
+            "task": "IMP-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 46,
+        "events": 47,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -487,11 +495,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.4,
-      "remaining_hours": 3.6,
+      "elapsed_hours": 4.42,
+      "remaining_hours": 3.58,
       "progress_pct": 55,
-      "cycles": 50,
-      "heartbeat_human": "04:29:34",
+      "cycles": 51,
+      "heartbeat_human": "04:30:34",
       "tree": {
         "phases": [
           {
@@ -587,10 +595,10 @@
           {
             "id": "UNI-VOICE",
             "title": "Учебные расшифровки: полезные указания",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 4,
             "verified": false
           },
           {
@@ -1003,19 +1011,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c50.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "04:29:53",
+            "cycle": 51,
+            "task": "UNI-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ble; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing S"
           }
         ],
         "strategy": {
-          "version": 29,
-          "mutations": 28
+          "version": 30,
+          "mutations": 29
         },
-        "events": 50,
+        "events": 51,
         "avg_score": 4.8,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795742993,
-  "fetched_human": "2026-11-27 04:29:53 +0300"
+  "fetched_at": 1795743060,
+  "fetched_human": "2026-11-27 04:31:00 +0300"
 }
