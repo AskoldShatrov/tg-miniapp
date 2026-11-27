@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 885,
+      "age_min": 886,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 885,
+      "age_min": 886,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,30 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 885,
+      "age_min": 886,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
-      "id": "session-8e85d767",
-      "title": "Ночной прогон: университет (pid 1917542)",
+      "id": "session-6739556a",
+      "title": "Проверка PID-настройки и запись артефакта",
       "source": "dsh",
-      "claimed_human": "05:03:04",
+      "claimed_human": "05:04:02",
       "age_min": 0,
-      "full": "Ночной прогон: университет (pid 1917542)"
+      "full": "Проверка PID-настройки и запись артефакта"
+    },
+    {
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "source": "dsh",
+      "claimed_human": "05:03:55",
+      "age_min": 0,
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-6b8efaa9",
       "title": "Готовность университетских задач после ноч",
       "source": "dsh",
-      "claimed_human": "05:03:04",
+      "claimed_human": "05:03:25",
       "age_min": 0,
       "full": "Готовность университетских задач после ноч"
     },
@@ -2118,16 +2126,24 @@
       "id": "session-4ab85241",
       "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
-      "claimed_human": "05:03:02",
+      "claimed_human": "05:03:20",
       "age_min": 0,
       "full": "Анализ прогресса сканфида человеческим язы"
+    },
+    {
+      "id": "session-8e85d767",
+      "title": "Ночной прогон: университет (pid 1917542)",
+      "source": "dsh",
+      "claimed_human": "05:03:17",
+      "age_min": 0,
+      "full": "Ночной прогон: университет (pid 1917542)"
     },
     {
       "id": "session-f5e9fcec",
       "title": "Подбор бенчмарка и диагностика системы",
       "source": "dsh",
       "claimed_human": "05:02:53",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Подбор бенчмарка и диагностика системы"
     },
     {
@@ -2135,32 +2151,16 @@
       "title": "Настройка Ti и проверка артефакта",
       "source": "dsh",
       "claimed_human": "05:02:08",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Настройка Ti и проверка артефакта"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "05:01:28",
-      "age_min": 1,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "5e20cf1d-3b25-4c",
       "title": "Роль: независимый ауд",
       "source": "dsh",
       "claimed_human": "04:59:33",
-      "age_min": 3,
-      "full": "Роль: независимый ауд"
-    },
-    {
-      "id": "session-fc832681",
-      "title": "Подтверждение записи артефакта после прове",
-      "source": "dsh",
-      "claimed_human": "04:58:22",
       "age_min": 4,
-      "full": "Подтверждение записи артефакта после прове"
+      "full": "Роль: независимый ауд"
     }
   ],
   "queues": {
@@ -2190,36 +2190,8 @@
       "step_label": "Публикация по стабильным ссылкам",
       "step": 4,
       "total": 5,
-      "events": 32,
+      "events": 34,
       "trail": [
-        {
-          "ts": 1795743635,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795743718,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795743718,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795743733,
-          "label": "READ · /home/nyaka/share"
-        },
-        {
-          "ts": 1795743733,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795743755,
-          "label": "EDIT · /home/nyaka/share"
-        },
-        {
-          "ts": 1795743755,
-          "label": "THINK"
-        },
         {
           "ts": 1795743774,
           "label": "EDIT · /home/nyaka/share"
@@ -2383,10 +2355,38 @@
         {
           "ts": 1795744983,
           "label": "READ · /tmp/opencode/lib"
+        },
+        {
+          "ts": 1795745006,
+          "label": "WRITE · /tmp/opencode/li"
+        },
+        {
+          "ts": 1795745006,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795745026,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795745026,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795745026,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795745026,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795745045,
+          "label": "BASH · printf '%s\\n' '{\""
         }
       ],
       "started_at": 1795743324,
-      "updated_at": 1795744988
+      "updated_at": 1795745046
     }
   ],
   "bars": [
@@ -2405,6 +2405,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 0.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795744989,
-  "fetched_human": "2026-11-27 05:03:09 +0300"
+  "fetched_at": 1795745049,
+  "fetched_human": "2026-11-27 05:04:09 +0300"
 }
