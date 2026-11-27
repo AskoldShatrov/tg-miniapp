@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.11,
-      "remaining_hours": 13.89,
+      "elapsed_hours": 6.13,
+      "remaining_hours": 13.87,
       "progress_pct": 31,
-      "cycles": 104,
-      "heartbeat_human": "14:19:52",
+      "cycles": 105,
+      "heartbeat_human": "14:20:52",
       "tree": {
         "phases": [
           {
@@ -24,10 +24,10 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 9,
+            "cycles": 10,
             "max": 16,
             "last": "RETHINK_REQUIRED",
-            "score": 7,
+            "score": 4,
             "verified": true
           },
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:11:00",
-            "cycle": 64,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "12:11:00",
-            "cycle": 64,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "12:12:15",
             "cycle": 65,
@@ -547,13 +531,29 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "14:20:25",
+            "cycle": 105,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:20:25",
+            "cycle": 105,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 50,
-          "mutations": 49
+          "version": 51,
+          "mutations": 50
         },
-        "events": 135,
+        "events": 137,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.11,
-      "remaining_hours": 13.89,
+      "elapsed_hours": 6.13,
+      "remaining_hours": 13.87,
       "progress_pct": 31,
-      "cycles": 127,
-      "heartbeat_human": "14:19:54",
+      "cycles": 128,
+      "heartbeat_human": "14:20:24",
       "tree": {
         "phases": [
           {
@@ -600,11 +600,11 @@
           {
             "id": "SF-DECISION-MEMORY-CALIB-20H",
             "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
-            "cycles": 5,
+            "cycles": 6,
             "max": 6,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
+            "last": "WARMUP",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "SF-NIGHT-PAIR-WRITER",
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:25:43",
-            "cycle": 73,
-            "task": "SF-NIGHT-PAIR-WRITER-B",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "12:33:13",
             "cycle": 74,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "14:20:32",
+            "cycle": 128,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 136,
+        "events": 137,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795778394,
-  "fetched_human": "2026-11-27 14:19:54 +0300"
+  "fetched_at": 1795778453,
+  "fetched_human": "2026-11-27 14:20:53 +0300"
 }
