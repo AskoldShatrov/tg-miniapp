@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.72,
-      "remaining_hours": 1.28,
-      "progress_pct": 36,
-      "cycles": 60,
-      "heartbeat_human": "06:50:41",
+      "elapsed_hours": 0.74,
+      "remaining_hours": 1.26,
+      "progress_pct": 37,
+      "cycles": 61,
+      "heartbeat_human": "06:52:11",
       "tree": {
         "phases": [
           {
@@ -114,7 +114,7 @@
           {
             "id": "IMP-WRITER-GATE-PATCH",
             "title": "Writer-гейт: отвергать подмену доставки",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
             "last": "PROMOTE",
             "score": 7,
@@ -131,14 +131,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "00:13:45",
-            "cycle": 1,
-            "task": "IMP-PRIOR-INTAKE",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "verify rc=1: L /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex"
-          },
           {
             "clock": "00:19:34",
             "cycle": 2,
@@ -610,13 +602,21 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:51:37",
+            "cycle": 61,
+            "task": "IMP-WRITER-GATE-PATCH",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 24,
           "mutations": 23
         },
-        "events": 60,
+        "events": 61,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.72,
-      "remaining_hours": 1.28,
-      "progress_pct": 36,
+      "elapsed_hours": 0.74,
+      "remaining_hours": 1.26,
+      "progress_pct": 37,
       "cycles": 44,
-      "heartbeat_human": "06:50:41",
+      "heartbeat_human": "06:52:11",
       "tree": {
         "phases": [
           {
@@ -1146,11 +1146,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.72,
-      "remaining_hours": 1.28,
-      "progress_pct": 36,
+      "elapsed_hours": 0.74,
+      "remaining_hours": 1.26,
+      "progress_pct": 37,
       "cycles": 77,
-      "heartbeat_human": "06:50:41",
+      "heartbeat_human": "06:52:11",
       "tree": {
         "phases": [
           {
@@ -1791,6 +1791,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795751470,
-  "fetched_human": "2026-11-27 06:51:10 +0300"
+  "fetched_at": 1795751534,
+  "fetched_human": "2026-11-27 06:52:14 +0300"
 }
