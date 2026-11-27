@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.84,
-      "remaining_hours": 5.16,
+      "elapsed_hours": 14.86,
+      "remaining_hours": 5.14,
       "progress_pct": 74,
       "cycles": 437,
-      "heartbeat_human": "23:02:56",
+      "heartbeat_human": "23:04:26",
       "tree": {
         "phases": [
           {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.84,
-      "remaining_hours": 5.16,
+      "elapsed_hours": 14.86,
+      "remaining_hours": 5.14,
       "progress_pct": 74,
-      "cycles": 442,
-      "heartbeat_human": "23:02:56",
+      "cycles": 443,
+      "heartbeat_human": "23:04:26",
       "tree": {
         "phases": [
           {
@@ -636,11 +636,11 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 5,
+            "cycles": 6,
             "max": 12,
             "last": "MUTATE",
-            "score": 4,
-            "verified": false
+            "score": 7,
+            "verified": true
           },
           {
             "id": "CONSULT-FAMILY-MUT-WRITER",
@@ -653,22 +653,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:35:20",
-            "cycle": 407,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
-            "clock": "21:36:35",
-            "cycle": 408,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:36:35",
             "cycle": 408,
@@ -1132,19 +1116,35 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: claim_status\": \"STRUCTURAL_ONLY\",\n  \"defects\": [\n    \"STALE_EVIDENCE: mtime в"
+          },
+          {
+            "clock": "23:03:27",
+            "cycle": 443,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "23:03:27",
+            "cycle": 443,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 317,
-          "mutations": 316
+          "version": 318,
+          "mutations": 317
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795809799,
-  "fetched_human": "2026-11-27 23:03:19 +0300"
+  "fetched_at": 1795809867,
+  "fetched_human": "2026-11-27 23:04:27 +0300"
 }
