@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.9,
-      "remaining_hours": 16.1,
-      "progress_pct": 19,
-      "cycles": 60,
-      "heartbeat_human": "12:06:45",
+      "elapsed_hours": 3.93,
+      "remaining_hours": 16.07,
+      "progress_pct": 20,
+      "cycles": 62,
+      "heartbeat_human": "12:08:45",
       "tree": {
         "phases": [
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:35:10",
-            "cycle": 12,
-            "task": "IMP-HONESTY-20H",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "09:47:25",
-            "cycle": 13,
-            "task": "IMP-RETHINK-WIRING-20H",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "09:56:55",
             "cycle": 14,
@@ -547,13 +531,29 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "12:07:15",
+            "cycle": 61,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "12:08:30",
+            "cycle": 62,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 23,
-          "mutations": 22
+          "version": 25,
+          "mutations": 24
         },
-        "events": 72,
+        "events": 74,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.9,
-      "remaining_hours": 16.1,
-      "progress_pct": 19,
-      "cycles": 65,
-      "heartbeat_human": "12:06:44",
+      "elapsed_hours": 3.93,
+      "remaining_hours": 16.07,
+      "progress_pct": 20,
+      "cycles": 67,
+      "heartbeat_human": "12:08:45",
       "tree": {
         "phases": [
           {
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:16:22",
-            "cycle": 9,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "MUTATE",
-            "score": 0,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
-          {
-            "clock": "09:32:17",
-            "cycle": 10,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
-          },
           {
             "clock": "09:44:18",
             "cycle": 11,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:07:15",
+            "cycle": 66,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:08:30",
+            "cycle": 67,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 69,
+        "events": 71,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795770409,
-  "fetched_human": "2026-11-27 12:06:49 +0300"
+  "fetched_at": 1795770537,
+  "fetched_human": "2026-11-27 12:08:57 +0300"
 }
