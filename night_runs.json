@@ -5,17 +5,17 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 5.33,
-      "remaining_hours": 2.67,
+      "elapsed_hours": 5.35,
+      "remaining_hours": 2.65,
       "progress_pct": 67,
-      "cycles": 64,
-      "heartbeat_human": "05:25:34",
+      "cycles": 65,
+      "heartbeat_human": "05:26:34",
       "tree": {
         "phases": [
           {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 6,
+            "cycles": 7,
             "max": 8,
             "last": "PROMOTE",
             "score": 5,
@@ -131,14 +131,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "00:36:42",
-            "cycle": 5,
-            "task": "UNI-PRIOR-INTAKE",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше started_ts"
-          },
           {
             "clock": "00:43:34",
             "cycle": 6,
@@ -610,19 +602,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:26:01",
+            "cycle": 65,
+            "task": "UNI-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 41,
           "mutations": 40
         },
-        "events": 64,
+        "events": 65,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795746354,
-  "fetched_human": "2026-11-27 05:25:54 +0300"
+  "fetched_at": 1795746420,
+  "fetched_human": "2026-11-27 05:27:00 +0300"
 }
