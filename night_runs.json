@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.73,
-      "remaining_hours": 3.27,
-      "progress_pct": 59,
-      "cycles": 54,
-      "heartbeat_human": "04:49:04",
+      "elapsed_hours": 4.79,
+      "remaining_hours": 3.21,
+      "progress_pct": 60,
+      "cycles": 55,
+      "heartbeat_human": "04:53:04",
       "tree": {
         "phases": [
           {
@@ -105,9 +105,9 @@
           {
             "id": "UNI-VOICE",
             "title": "Учебные расшифровки: полезные указания",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "MUTATE",
+            "last": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "verified": false
           },
@@ -553,19 +553,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: CE-c54.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "04:50:51",
+            "cycle": 55,
+            "task": "UNI-VOICE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: rtifacts/UNI-VOICE-c55.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
           }
         ],
         "strategy": {
-          "version": 33,
-          "mutations": 32
+          "version": 34,
+          "mutations": 33
         },
-        "events": 54,
+        "events": 55,
         "avg_score": 4.8,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795744169,
-  "fetched_human": "2026-11-27 04:49:29 +0300"
+  "fetched_at": 1795744408,
+  "fetched_human": "2026-11-27 04:53:28 +0300"
 }
