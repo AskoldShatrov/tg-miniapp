@@ -1,6 +1,1655 @@
 {
-  "runs": [],
-  "count": 0,
-  "fetched_at": 1795748857,
-  "fetched_human": "2026-11-27 06:07:37 +0300"
+  "runs": [
+    {
+      "id": "complex-improvement-1126",
+      "label": "complex improvement 1126",
+      "status": "идёт",
+      "budget_hours": 2.0,
+      "elapsed_hours": 0.02,
+      "remaining_hours": 1.98,
+      "progress_pct": 1,
+      "cycles": 53,
+      "heartbeat_human": "06:08:11",
+      "tree": {
+        "phases": [
+          {
+            "id": "IMP-PRIOR-INTAKE",
+            "title": "Приём интервью и наработок по улучшению",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-UX-AUDIT",
+            "title": "Эргономика чата и мини-апа",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
+            "id": "IMP-SYS-DSH",
+            "title": "Инспекция DSH за 7 дней",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "IMP-SYS-CLI",
+            "title": "Инспекция OpenCode CLI и доставки",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез улучшения",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-META-REFLECT",
+            "title": "Метарефлексия улучшения",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев улучшения",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER",
+            "title": "Writer улучшения",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-DIGEST",
+            "title": "Итог улучшения",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 2,
+            "max": 8,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "IMP-DELIVERY-TRUTH",
+            "title": "Доставка vs запись: сверка writer-артефактов",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "00:13:45",
+            "cycle": 1,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: L /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex"
+          },
+          {
+            "clock": "00:19:34",
+            "cycle": 2,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:35:34",
+            "cycle": 3,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 3,
+            "note": "нет completion promise"
+          },
+          {
+            "clock": "00:39:51",
+            "cycle": 4,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:46:21",
+            "cycle": 5,
+            "task": "IMP-PRIOR-INTAKE",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:55:57",
+            "cycle": 6,
+            "task": "IMP-UX-AUDIT",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:00:45",
+            "cycle": 7,
+            "task": "IMP-UX-AUDIT",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:05:30",
+            "cycle": 8,
+            "task": "IMP-UX-AUDIT",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:10:22",
+            "cycle": 9,
+            "task": "IMP-UX-AUDIT",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:15:43",
+            "cycle": 10,
+            "task": "IMP-UX-AUDIT",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:22:24",
+            "cycle": 11,
+            "task": "IMP-SYS-DSH",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:26:19",
+            "cycle": 12,
+            "task": "IMP-SYS-DSH",
+            "action": "PROMOTE",
+            "score": 4,
+            "note": "verify rc=1: match: declared=cab5b8f8a5ee actual=b540ac9597ef; MTIME unparseable; missing "
+          },
+          {
+            "clock": "01:31:03",
+            "cycle": 13,
+            "task": "IMP-SYS-DSH",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "01:39:44",
+            "cycle": 14,
+            "task": "IMP-SYS-DSH",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: 126/artifacts/IMP-SYS-DSH-c14.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "01:43:35",
+            "cycle": 15,
+            "task": "IMP-SYS-DSH",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: 126/artifacts/IMP-SYS-DSH-c15.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "01:49:26",
+            "cycle": 16,
+            "task": "IMP-SYS-CLI",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:07:09",
+            "cycle": 17,
+            "task": "IMP-SYS-CLI",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:13:09",
+            "cycle": 18,
+            "task": "IMP-SYS-CLI",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:17:50",
+            "cycle": 19,
+            "task": "IMP-SYS-CLI",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: LI-c19.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "02:21:48",
+            "cycle": 20,
+            "task": "IMP-SYS-CLI",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:30:12",
+            "cycle": 21,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:39:15",
+            "cycle": 22,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:44:57",
+            "cycle": 23,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:50:37",
+            "cycle": 24,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:56:47",
+            "cycle": 25,
+            "task": "IMP-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:00:33",
+            "cycle": 26,
+            "task": "IMP-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:07:02",
+            "cycle": 27,
+            "task": "IMP-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:13:05",
+            "cycle": 28,
+            "task": "IMP-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:19:44",
+            "cycle": 29,
+            "task": "IMP-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:23:36",
+            "cycle": 30,
+            "task": "IMP-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:32:21",
+            "cycle": 31,
+            "task": "IMP-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:38:46",
+            "cycle": 32,
+            "task": "IMP-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:42:35",
+            "cycle": 33,
+            "task": "IMP-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:46:20",
+            "cycle": 34,
+            "task": "IMP-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:49:39",
+            "cycle": 35,
+            "task": "IMP-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:53:59",
+            "cycle": 36,
+            "task": "IMP-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:57:23",
+            "cycle": 37,
+            "task": "IMP-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:00:41",
+            "cycle": 38,
+            "task": "IMP-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:04:18",
+            "cycle": 39,
+            "task": "IMP-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:07:08",
+            "cycle": 40,
+            "task": "IMP-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:10:41",
+            "cycle": 41,
+            "task": "IMP-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:14:37",
+            "cycle": 42,
+            "task": "IMP-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:17:36",
+            "cycle": 43,
+            "task": "IMP-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:20:36",
+            "cycle": 44,
+            "task": "IMP-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:24:06",
+            "cycle": 45,
+            "task": "IMP-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:27:32",
+            "cycle": 46,
+            "task": "IMP-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:30:33",
+            "cycle": 47,
+            "task": "IMP-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:31:33",
+            "cycle": 48,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос *"
+          },
+          {
+            "clock": "04:32:33",
+            "cycle": 49,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос *"
+          },
+          {
+            "clock": "04:33:33",
+            "cycle": 50,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос *"
+          },
+          {
+            "clock": "04:34:33",
+            "cycle": 51,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос *"
+          },
+          {
+            "clock": "04:35:33",
+            "cycle": 52,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос *"
+          },
+          {
+            "clock": "04:36:33",
+            "cycle": 53,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE",
+            "score": 0,
+            "note": ""
+          }
+        ],
+        "strategy": {
+          "version": 24,
+          "mutations": 23
+        },
+        "events": 53,
+        "avg_score": 0.0,
+        "fail_streak": 0
+      }
+    },
+    {
+      "id": "scanfeed-v2-1126",
+      "label": "Сканфид-мандат",
+      "status": "идёт",
+      "budget_hours": 2.0,
+      "elapsed_hours": 0.02,
+      "remaining_hours": 1.98,
+      "progress_pct": 1,
+      "cycles": 39,
+      "heartbeat_human": "06:08:11",
+      "tree": {
+        "phases": [
+          {
+            "id": "SF-HLAE-POV-CAPTURE",
+            "title": "HLAE POV: кадр с kill feed и money/buy/AWP",
+            "cycles": 5,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "SF-KF-MAIN-GATE",
+            "title": "Kill feed как главный гейт",
+            "cycles": 5,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-ECONOMY-STRIP",
+            "title": "Компактная экономия под карточками противников",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DEATHTICK-INDEP",
+            "title": "Death-tick: независимый эталон",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-T4-CALIB",
+            "title": "T4: REAL-калибровка с FP>0",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRESENT-DECK",
+            "title": "Презентация: 6-8 слайдов и постер",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HLAE-WRITER",
+            "title": "Writer: сделай + доставь + проверь доставку",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-DIGEST",
+            "title": "Итоговый дайджест",
+            "cycles": 4,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-PRIOR-WORK-INTAKE",
+            "title": "Приём наработок за 3.5 часа и мэтпок-решений",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез до критики",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев и вопросы к задаче",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 0,
+            "max": 8,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-P0-1-EVIDENCE-AUDIT",
+            "title": "P0-1: честный аудит доказательств оверлея",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "SF-T4-REAL-RECOVERY",
+            "title": "T4: план выхода из OPEN через REAL с FP>0",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "00:20:48",
+            "cycle": 1,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "00:34:17",
+            "cycle": 2,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: t-runs/scanfeed-v2-1126/artifacts/SF-HLAE-POV-CAPTURE-c3.md age 34187s > 3600"
+          },
+          {
+            "clock": "00:44:45",
+            "cycle": 3,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log отсутствует или старше started_ts"
+          },
+          {
+            "clock": "00:55:30",
+            "cycle": 4,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: me/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-"
+          },
+          {
+            "clock": "01:07:29",
+            "cycle": 5,
+            "task": "SF-HLAE-POV-CAPTURE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scan"
+          },
+          {
+            "clock": "01:14:57",
+            "cycle": 6,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:30:58",
+            "cycle": 7,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "verify rc=1: 26/artifacts/SF-KF-MAIN-GATE-c7.md MTIME unparseable; missing SOURCE: HLAE_De"
+          },
+          {
+            "clock": "01:46:58",
+            "cycle": 8,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "MUTATE",
+            "score": 3,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:02:22",
+            "cycle": 9,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "WARMUP",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:03:23",
+            "cycle": 10,
+            "task": "SF-KF-MAIN-GATE",
+            "action": "WARMUP",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:04:23",
+            "cycle": 11,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:05:23",
+            "cycle": 12,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:06:23",
+            "cycle": 13,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:07:23",
+            "cycle": 14,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:08:23",
+            "cycle": 15,
+            "task": "SF-ECONOMY-STRIP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:09:23",
+            "cycle": 16,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:10:23",
+            "cycle": 17,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:10:33",
+            "cycle": 18,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "WARMUP",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:11:33",
+            "cycle": 19,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "WARMUP",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:12:33",
+            "cycle": 20,
+            "task": "SF-DEATHTICK-INDEP",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:13:33",
+            "cycle": 21,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:14:34",
+            "cycle": 22,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:15:34",
+            "cycle": 23,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:16:34",
+            "cycle": 24,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:17:34",
+            "cycle": 25,
+            "task": "SF-T4-CALIB",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:18:34",
+            "cycle": 26,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:19:34",
+            "cycle": 27,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:20:34",
+            "cycle": 28,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:21:34",
+            "cycle": 29,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:22:34",
+            "cycle": 30,
+            "task": "SF-PRESENT-DECK",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:23:34",
+            "cycle": 31,
+            "task": "SF-HLAE-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:24:34",
+            "cycle": 32,
+            "task": "SF-HLAE-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:25:35",
+            "cycle": 33,
+            "task": "SF-HLAE-WRITER",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:26:35",
+            "cycle": 34,
+            "task": "SF-HLAE-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:27:35",
+            "cycle": 35,
+            "task": "SF-HLAE-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:28:35",
+            "cycle": 36,
+            "task": "SF-DIGEST",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:29:35",
+            "cycle": 37,
+            "task": "SF-DIGEST",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:30:35",
+            "cycle": 38,
+            "task": "SF-DIGEST",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "02:31:35",
+            "cycle": 39,
+            "task": "SF-DIGEST",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          }
+        ],
+        "strategy": {
+          "version": 49,
+          "mutations": 48
+        },
+        "events": 39,
+        "avg_score": 0.0,
+        "fail_streak": 0
+      }
+    },
+    {
+      "id": "university-1126",
+      "label": "university 1126",
+      "status": "идёт",
+      "budget_hours": 2.0,
+      "elapsed_hours": 0.02,
+      "remaining_hours": 1.98,
+      "progress_pct": 1,
+      "cycles": 71,
+      "heartbeat_human": "06:08:11",
+      "tree": {
+        "phases": [
+          {
+            "id": "UNI-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 7,
+            "max": 8,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-PRIOR-INTAKE",
+            "title": "Приём учебных наработок",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-MVS-WINE",
+            "title": "Моделирование систем: MvStudium под Wine",
+            "cycles": 5,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
+          },
+          {
+            "id": "UNI-PID-CALIB",
+            "title": "ПИ-регулятор Kp=2 Ти=20",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-HYPOTHESIS-DIVERGE",
+            "title": "Перебор гипотез учебного трека",
+            "cycles": 5,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-META-REFLECT",
+            "title": "Метарефлексия трёх уровней",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-CRITERIA-REVIEW",
+            "title": "Пересмотр критериев учебного трека",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-WRITER",
+            "title": "Writer учебного трека",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-DIGEST",
+            "title": "Итог учебного трека",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "UNI-NIR",
+            "title": "НИР: гейты и версии",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "UNI-KP",
+            "title": "Курсовая: LaTeX и блок-схема",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "UNI-VOICE",
+            "title": "Учебные расшифровки: полезные указания",
+            "cycles": 5,
+            "max": 5,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "UNI-PID-VOICE",
+            "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "UNI-PIVOT-EVIDENCE",
+            "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
+            "cycles": 0,
+            "max": 4,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "01:24:46",
+            "cycle": 12,
+            "task": "UNI-PID-CALIB",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:29:38",
+            "cycle": 13,
+            "task": "UNI-PID-CALIB",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
+          },
+          {
+            "clock": "01:35:10",
+            "cycle": 14,
+            "task": "UNI-PID-CALIB",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "01:39:39",
+            "cycle": 15,
+            "task": "UNI-PID-CALIB",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "01:45:27",
+            "cycle": 16,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "01:51:37",
+            "cycle": 17,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:05:30",
+            "cycle": 18,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:09:30",
+            "cycle": 19,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:12:48",
+            "cycle": 20,
+            "task": "UNI-HYPOTHESIS-DIVERGE",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:17:31",
+            "cycle": 21,
+            "task": "UNI-META-REFLECT",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:21:11",
+            "cycle": 22,
+            "task": "UNI-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:27:02",
+            "cycle": 23,
+            "task": "UNI-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:30:48",
+            "cycle": 24,
+            "task": "UNI-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:36:58",
+            "cycle": 25,
+            "task": "UNI-META-REFLECT",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:42:36",
+            "cycle": 26,
+            "task": "UNI-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:47:57",
+            "cycle": 27,
+            "task": "UNI-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:52:30",
+            "cycle": 28,
+            "task": "UNI-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "02:55:31",
+            "cycle": 29,
+            "task": "UNI-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:00:50",
+            "cycle": 30,
+            "task": "UNI-CRITERIA-REVIEW",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:04:11",
+            "cycle": 31,
+            "task": "UNI-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:07:34",
+            "cycle": 32,
+            "task": "UNI-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:10:50",
+            "cycle": 33,
+            "task": "UNI-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:13:37",
+            "cycle": 34,
+            "task": "UNI-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:17:15",
+            "cycle": 35,
+            "task": "UNI-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:21:01",
+            "cycle": 36,
+            "task": "UNI-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:27:30",
+            "cycle": 37,
+            "task": "UNI-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:31:47",
+            "cycle": 38,
+            "task": "UNI-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:36:59",
+            "cycle": 39,
+            "task": "UNI-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:40:00",
+            "cycle": 40,
+            "task": "UNI-DIGEST",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "03:45:08",
+            "cycle": 41,
+            "task": "UNI-NIR",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: artifacts/UNI-NIR-c41.md MTIME unparseable; missing PASS:; missing FAIL:; mis"
+          },
+          {
+            "clock": "03:48:59",
+            "cycle": 42,
+            "task": "UNI-NIR",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ty-1126/artifacts/UNI-NIR-c42.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "03:52:12",
+            "cycle": 43,
+            "task": "UNI-NIR",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: =1795603115 file=1795740715; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "03:57:09",
+            "cycle": 44,
+            "task": "UNI-NIR",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
+          },
+          {
+            "clock": "04:01:00",
+            "cycle": 45,
+            "task": "UNI-NIR",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
+          },
+          {
+            "clock": "04:07:03",
+            "cycle": 46,
+            "task": "UNI-KP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: KP-c46.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "04:13:34",
+            "cycle": 47,
+            "task": "UNI-KP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: S:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing SHA256:; missing "
+          },
+          {
+            "clock": "04:17:59",
+            "cycle": 48,
+            "task": "UNI-KP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
+          },
+          {
+            "clock": "04:22:01",
+            "cycle": 49,
+            "task": "UNI-KP",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c49.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "04:27:02",
+            "cycle": 50,
+            "task": "UNI-KP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c50.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "04:29:53",
+            "cycle": 51,
+            "task": "UNI-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ble; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing S"
+          },
+          {
+            "clock": "04:35:00",
+            "cycle": 52,
+            "task": "UNI-VOICE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: /artifacts/UNI-VOICE-c52.md SHA256 mismatch: declared=2b02d1a9aa2e actual=22b"
+          },
+          {
+            "clock": "04:40:58",
+            "cycle": 53,
+            "task": "UNI-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: S:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing SHA256:; missing "
+          },
+          {
+            "clock": "04:45:37",
+            "cycle": 54,
+            "task": "UNI-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: CE-c54.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "04:50:51",
+            "cycle": 55,
+            "task": "UNI-VOICE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: rtifacts/UNI-VOICE-c55.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
+          },
+          {
+            "clock": "04:54:03",
+            "cycle": 56,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:58:22",
+            "cycle": 57,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:02:08",
+            "cycle": 58,
+            "task": "UNI-PID-VOICE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: acts/UNI-PID-VOICE-c58.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
+          },
+          {
+            "clock": "05:06:48",
+            "cycle": 59,
+            "task": "UNI-PID-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: CE-c59.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "05:09:42",
+            "cycle": 60,
+            "task": "UNI-PID-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: CE-c60.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "05:13:14",
+            "cycle": 61,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:17:28",
+            "cycle": 62,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:20:29",
+            "cycle": 63,
+            "task": "UNI-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:23:08",
+            "cycle": 64,
+            "task": "UNI-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:26:01",
+            "cycle": 65,
+            "task": "UNI-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:27:01",
+            "cycle": 66,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
+          },
+          {
+            "clock": "05:28:01",
+            "cycle": 67,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
+          },
+          {
+            "clock": "05:29:01",
+            "cycle": 68,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
+          },
+          {
+            "clock": "05:30:01",
+            "cycle": 69,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
+          },
+          {
+            "clock": "05:31:01",
+            "cycle": 70,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
+          },
+          {
+            "clock": "05:32:01",
+            "cycle": 71,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE",
+            "score": 0,
+            "note": ""
+          }
+        ],
+        "strategy": {
+          "version": 46,
+          "mutations": 45
+        },
+        "events": 71,
+        "avg_score": 0.0,
+        "fail_streak": 1
+      }
+    }
+  ],
+  "count": 3,
+  "fetched_at": 1795748920,
+  "fetched_human": "2026-11-27 06:08:40 +0300"
 }
