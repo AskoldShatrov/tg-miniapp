@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.08,
-      "remaining_hours": 15.92,
-      "progress_pct": 20,
-      "cycles": 69,
-      "heartbeat_human": "12:17:15",
+      "elapsed_hours": 4.15,
+      "remaining_hours": 15.85,
+      "progress_pct": 21,
+      "cycles": 72,
+      "heartbeat_human": "12:21:45",
       "tree": {
         "phases": [
           {
@@ -68,30 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:27:19",
-            "cycle": 23,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rethink"
-          },
-          {
-            "clock": "10:28:34",
-            "cycle": 24,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "10:28:34",
-            "cycle": 24,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос machine-gate"
-          },
           {
             "clock": "10:29:49",
             "cycle": 25,
@@ -547,13 +523,37 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:18:31",
+            "cycle": 70,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:19:46",
+            "cycle": 71,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:21:01",
+            "cycle": 72,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 29,
           "mutations": 28
         },
-        "events": 84,
+        "events": 87,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.08,
-      "remaining_hours": 15.92,
-      "progress_pct": 20,
-      "cycles": 71,
-      "heartbeat_human": "12:17:45",
+      "elapsed_hours": 4.15,
+      "remaining_hours": 15.85,
+      "progress_pct": 21,
+      "cycles": 72,
+      "heartbeat_human": "12:21:45",
       "tree": {
         "phases": [
           {
@@ -600,9 +600,9 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 3,
+            "cycles": 4,
             "max": 8,
-            "last": "PROMOTE",
+            "last": "WARMUP",
             "score": 7,
             "verified": true
           },
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:20:23",
-            "cycle": 15,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
-          },
           {
             "clock": "10:31:22",
             "cycle": 16,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:20:51",
+            "cycle": 72,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 75,
+        "events": 76,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795771065,
-  "fetched_human": "2026-11-27 12:17:45 +0300"
+  "fetched_at": 1795771314,
+  "fetched_human": "2026-11-27 12:21:54 +0300"
 }
