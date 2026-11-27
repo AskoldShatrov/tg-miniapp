@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 9.01,
-      "remaining_hours": 10.99,
+      "elapsed_hours": 9.03,
+      "remaining_hours": 10.97,
       "progress_pct": 45,
-      "cycles": 192,
-      "heartbeat_human": "17:13:56",
+      "cycles": 193,
+      "heartbeat_human": "17:14:56",
       "tree": {
         "phases": [
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "16:36:37",
-            "cycle": 163,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "16:36:37",
-            "cycle": 163,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "16:37:52",
             "cycle": 164,
@@ -547,13 +531,29 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "17:14:08",
+            "cycle": 193,
+            "task": "SCOUT_OPEN",
+            "action": "TRIGGER_ROTATED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "17:14:08",
+            "cycle": 193,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 124,
-          "mutations": 123
+          "version": 125,
+          "mutations": 124
         },
-        "events": 292,
+        "events": 294,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 9.01,
-      "remaining_hours": 10.99,
+      "elapsed_hours": 9.03,
+      "remaining_hours": 10.97,
       "progress_pct": 45,
-      "cycles": 203,
-      "heartbeat_human": "17:13:38",
+      "cycles": 204,
+      "heartbeat_human": "17:14:38",
       "tree": {
         "phases": [
           {
@@ -582,7 +582,7 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 13,
+            "cycles": 14,
             "max": 16,
             "last": "MUTATE",
             "score": 7,
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "16:22:40",
-            "cycle": 173,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
-            "clock": "16:23:55",
-            "cycle": 174,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "16:23:55",
             "cycle": 174,
@@ -1096,19 +1080,35 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "17:14:00",
+            "cycle": 204,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "17:14:00",
+            "cycle": 204,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 91,
-          "mutations": 90
+          "version": 92,
+          "mutations": 91
         },
-        "events": 275,
+        "events": 277,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795788837,
-  "fetched_human": "2026-11-27 17:13:57 +0300"
+  "fetched_at": 1795788898,
+  "fetched_human": "2026-11-27 17:14:58 +0300"
 }
