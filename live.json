@@ -2078,7 +2078,7 @@
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
-      "claimed_human": "09:25:42",
+      "claimed_human": "09:26:44",
       "age_min": 0,
       "full": "Подключение Graphify и инструментов инспекции"
     },
@@ -2086,7 +2086,7 @@
       "id": "session-4c455fa7",
       "title": "Зачем Сканфид замедлил воспроизведение дем",
       "source": "dsh",
-      "claimed_human": "09:25:42",
+      "claimed_human": "09:26:39",
       "age_min": 0,
       "full": "Зачем Сканфид замедлил воспроизведение дем"
     },
@@ -2095,16 +2095,8 @@
       "title": "Ты — независимый крит",
       "source": "dsh",
       "claimed_human": "09:17:48",
-      "age_min": 7,
+      "age_min": 8,
       "full": "Ты — независимый крит"
-    },
-    {
-      "id": "5d6b48f2-48b9-43",
-      "title": "Read-only fresh measurement task. The",
-      "source": "dsh",
-      "claimed_human": "09:15:51",
-      "age_min": 9,
-      "full": "Read-only fresh measurement task. The"
     }
   ],
   "queues": {
@@ -2134,16 +2126,8 @@
       "step_label": "Собрать три контрольные с графиками из приложения",
       "step": 3,
       "total": 5,
-      "events": 28,
+      "events": 29,
       "trail": [
-        {
-          "ts": 1795759431,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795759477,
-          "label": "BASH · echo \"=== все box"
-        },
         {
           "ts": 1795759477,
           "label": "THINK"
@@ -2327,10 +2311,18 @@
         {
           "ts": 1795760700,
           "label": "THINK"
+        },
+        {
+          "ts": 1795760793,
+          "label": "BASH · pdftotext -f 1 -l"
+        },
+        {
+          "ts": 1795760793,
+          "label": "THINK"
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795760745
+      "updated_at": 1795760805
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2340,7 +2332,7 @@
       "step_label": "",
       "step": 3,
       "total": null,
-      "events": 13,
+      "events": 14,
       "trail": [
         {
           "ts": 1795759895,
@@ -2441,10 +2433,18 @@
         {
           "ts": 1795760700,
           "label": "THINK"
+        },
+        {
+          "ts": 1795760793,
+          "label": "BASH · pdftotext -f 1 -l"
+        },
+        {
+          "ts": 1795760793,
+          "label": "THINK"
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795760743
+      "updated_at": 1795760807
     },
     {
       "key": "req-20261127-091831-84a793",
@@ -2454,36 +2454,8 @@
       "step_label": "измерить титульники и таблицы зрением",
       "step": 2,
       "total": 5,
-      "events": 32,
+      "events": 36,
       "trail": [
-        {
-          "ts": 1795760423,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795760423,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795760423,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795760423,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795760443,
-          "label": "BASH · grep -n -E 'geome"
-        },
-        {
-          "ts": 1795760443,
-          "label": "BASH · grep -rn -F 'p{71"
-        },
-        {
-          "ts": 1795760443,
-          "label": "THINK"
-        },
         {
           "ts": 1795760451,
           "label": "BASH · sed -n '50,65p' /"
@@ -2647,10 +2619,38 @@
         {
           "ts": 1795760744,
           "label": "THINK"
+        },
+        {
+          "ts": 1795760753,
+          "label": "BASH · grep -n -i -E 'ко"
+        },
+        {
+          "ts": 1795760765,
+          "label": "BASH · grep -n -E 'Учебн"
+        },
+        {
+          "ts": 1795760765,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795760780,
+          "label": "BASH · f=/home/nyaka/loc"
+        },
+        {
+          "ts": 1795760780,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795760802,
+          "label": "BASH · find /home/nyaka/"
+        },
+        {
+          "ts": 1795760802,
+          "label": "THINK"
         }
       ],
       "started_at": 1795760311,
-      "updated_at": 1795760746
+      "updated_at": 1795760806
     },
     {
       "key": "req-20261127-092050-dd5941",
@@ -2680,8 +2680,8 @@
   ],
   "updatedAt": "2026-11-27T04:34:55+03:00",
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
-  "plan_age_hours": 4.8,
+  "plan_age_hours": 4.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795760746,
-  "fetched_human": "2026-11-27 09:25:46 +0300"
+  "fetched_at": 1795760808,
+  "fetched_human": "2026-11-27 09:26:48 +0300"
 }
