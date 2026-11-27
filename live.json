@@ -2078,7 +2078,7 @@
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
-      "claimed_human": "09:37:59",
+      "claimed_human": "09:38:36",
       "age_min": 0,
       "full": "Подключение Graphify и инструментов инспекции"
     },
@@ -2087,16 +2087,8 @@
       "title": "Почему нет ответа на ГС",
       "source": "dsh",
       "claimed_human": "09:34:02",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Почему нет ответа на ГС"
-    },
-    {
-      "id": "session-4c455fa7",
-      "title": "Зачем Сканфид замедлил воспроизведение дем",
-      "source": "dsh",
-      "claimed_human": "09:28:51",
-      "age_min": 9,
-      "full": "Зачем Сканфид замедлил воспроизведение дем"
     }
   ],
   "queues": {
@@ -2126,16 +2118,8 @@
       "step_label": "Собрать три контрольные с графиками из приложения",
       "step": 3,
       "total": 5,
-      "events": 41,
+      "events": 42,
       "trail": [
-        {
-          "ts": 1795760059,
-          "label": "WRITE · /home/nyaka/учеб"
-        },
-        {
-          "ts": 1795760086,
-          "label": "WRITE · /home/nyaka/учеб"
-        },
         {
           "ts": 1795760086,
           "label": "THINK"
@@ -2319,10 +2303,18 @@
         {
           "ts": 1795761434,
           "label": "THINK"
+        },
+        {
+          "ts": 1795761529,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795761529,
+          "label": "THINK"
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795761480
+      "updated_at": 1795761540
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2332,16 +2324,8 @@
       "step_label": "",
       "step": 3,
       "total": null,
-      "events": 26,
+      "events": 27,
       "trail": [
-        {
-          "ts": 1795760059,
-          "label": "WRITE · /home/nyaka/учеб"
-        },
-        {
-          "ts": 1795760086,
-          "label": "WRITE · /home/nyaka/учеб"
-        },
         {
           "ts": 1795760086,
           "label": "THINK"
@@ -2525,57 +2509,29 @@
         {
           "ts": 1795761434,
           "label": "THINK"
+        },
+        {
+          "ts": 1795761529,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795761529,
+          "label": "THINK"
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795761478
+      "updated_at": 1795761539
     },
     {
       "key": "req-20261127-091831-84a793",
       "session_id": "",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "измерить титульники и таблицы зрением",
-      "step": 2,
+      "step_label": "исправить титульники и линии таблиц",
+      "step": 3,
       "total": 5,
-      "events": 74,
+      "events": 79,
       "trail": [
-        {
-          "ts": 1795761042,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795761090,
-          "label": "BASH · for d in kp/curre"
-        },
-        {
-          "ts": 1795761090,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795761103,
-          "label": "BASH · for f in /tmp/ope"
-        },
-        {
-          "ts": 1795761103,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795761114,
-          "label": "BASH · grep -n -B4 -A6 '"
-        },
-        {
-          "ts": 1795761114,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795761131,
-          "label": "BASH · sed -n '54,64p' /"
-        },
-        {
-          "ts": 1795761131,
-          "label": "THINK"
-        },
         {
           "ts": 1795761170,
           "label": "BASH · python3 - <<'PY'"
@@ -2731,10 +2687,46 @@
         {
           "ts": 1795761467,
           "label": "THINK"
+        },
+        {
+          "ts": 1795761479,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795761479,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795761492,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795761505,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795761505,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795761521,
+          "label": "BASH · sed -n '112,126p'"
+        },
+        {
+          "ts": 1795761521,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795761532,
+          "label": "BASH · grep -rn -B1 'Про"
+        },
+        {
+          "ts": 1795761532,
+          "label": "THINK"
         }
       ],
       "started_at": 1795760311,
-      "updated_at": 1795761478
+      "updated_at": 1795761539
     }
   ],
   "bars": [
@@ -2753,6 +2745,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 5.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795761480,
-  "fetched_human": "2026-11-27 09:38:00 +0300"
+  "fetched_at": 1795761541,
+  "fetched_human": "2026-11-27 09:39:01 +0300"
 }
