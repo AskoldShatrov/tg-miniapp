@@ -5,17 +5,17 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.57,
-      "remaining_hours": 14.43,
+      "elapsed_hours": 5.59,
+      "remaining_hours": 14.41,
       "progress_pct": 28,
-      "cycles": 93,
-      "heartbeat_human": "13:47:16",
+      "cycles": 94,
+      "heartbeat_human": "13:48:16",
       "tree": {
         "phases": [
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 9,
+            "cycles": 10,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:39:24",
-            "cycle": 51,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "11:39:24",
-            "cycle": 51,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "verify rc=1: ,\n    \"artifact_sha256\": \"6e914121cce0d46175d165f5833a8a031ed91eef9a5c0763184"
-          },
           {
             "clock": "11:45:08",
             "cycle": 52,
@@ -547,13 +531,29 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:47:55",
+            "cycle": 94,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:47:55",
+            "cycle": 94,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 39,
-          "mutations": 38
+          "version": 40,
+          "mutations": 39
         },
-        "events": 118,
+        "events": 120,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.57,
-      "remaining_hours": 14.43,
+      "elapsed_hours": 5.59,
+      "remaining_hours": 14.41,
       "progress_pct": 28,
-      "cycles": 109,
-      "heartbeat_human": "13:47:15",
+      "cycles": 110,
+      "heartbeat_human": "13:48:15",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:53:11",
-            "cycle": 54,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "11:54:26",
             "cycle": 55,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "13:47:45",
+            "cycle": 110,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 18,
           "mutations": 17
         },
-        "events": 117,
+        "events": 118,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795776455,
-  "fetched_human": "2026-11-27 13:47:35 +0300"
+  "fetched_at": 1795776523,
+  "fetched_human": "2026-11-27 13:48:43 +0300"
 }
