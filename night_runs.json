@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.59,
-      "remaining_hours": 0.41,
-      "progress_pct": 80,
-      "cycles": 67,
-      "heartbeat_human": "07:43:11",
+      "elapsed_hours": 1.61,
+      "remaining_hours": 0.39,
+      "progress_pct": 81,
+      "cycles": 68,
+      "heartbeat_human": "07:44:11",
       "tree": {
         "phases": [
           {
@@ -121,8 +121,8 @@
             "verified": true
           },
           {
-            "id": "IMP-WRITER-GATE-PATCH",
-            "title": "Writer-гейт: отвергать подмену доставки",
+            "id": "IMP-PROMOTE-HONESTY-V2",
+            "title": "PROMOTE без verify_ok: честный аудит с обязательными полями",
             "cycles": 2,
             "max": 5,
             "last": "PROMOTE",
@@ -130,9 +130,9 @@
             "verified": true
           },
           {
-            "id": "IMP-PROMOTE-HONESTY-V2",
-            "title": "PROMOTE без verify_ok: честный аудит с обязательными полями",
-            "cycles": 1,
+            "id": "IMP-WRITER-GATE-PATCH",
+            "title": "Writer-гейт: отвергать подмену доставки",
+            "cycles": 2,
             "max": 5,
             "last": "PROMOTE",
             "score": 7,
@@ -158,14 +158,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:05:30",
-            "cycle": 8,
-            "task": "IMP-UX-AUDIT",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "01:10:22",
             "cycle": 9,
@@ -637,13 +629,21 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:43:18",
+            "cycle": 68,
+            "task": "IMP-PROMOTE-HONESTY-V2",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 27,
           "mutations": 26
         },
-        "events": 67,
+        "events": 68,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.59,
-      "remaining_hours": 0.41,
-      "progress_pct": 80,
+      "elapsed_hours": 1.61,
+      "remaining_hours": 0.39,
+      "progress_pct": 81,
       "cycles": 52,
-      "heartbeat_human": "07:43:11",
+      "heartbeat_human": "07:44:11",
       "tree": {
         "phases": [
           {
@@ -1237,11 +1237,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.59,
-      "remaining_hours": 0.41,
-      "progress_pct": 80,
+      "elapsed_hours": 1.61,
+      "remaining_hours": 0.39,
+      "progress_pct": 81,
       "cycles": 86,
-      "heartbeat_human": "07:43:11",
+      "heartbeat_human": "07:44:11",
       "tree": {
         "phases": [
           {
@@ -1891,6 +1891,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795754592,
-  "fetched_human": "2026-11-27 07:43:12 +0300"
+  "fetched_at": 1795754657,
+  "fetched_human": "2026-11-27 07:44:17 +0300"
 }
