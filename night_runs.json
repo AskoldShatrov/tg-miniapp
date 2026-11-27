@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.3,
-      "remaining_hours": 17.7,
-      "progress_pct": 11,
+      "elapsed_hours": 2.31,
+      "remaining_hours": 17.69,
+      "progress_pct": 12,
       "cycles": 25,
-      "heartbeat_human": "10:30:54",
+      "heartbeat_human": "10:31:24",
       "tree": {
         "phases": [
           {
@@ -297,11 +297,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.3,
-      "remaining_hours": 17.7,
-      "progress_pct": 11,
-      "cycles": 15,
-      "heartbeat_human": "10:30:27",
+      "elapsed_hours": 2.31,
+      "remaining_hours": 17.69,
+      "progress_pct": 12,
+      "cycles": 16,
+      "heartbeat_human": "10:31:27",
       "tree": {
         "phases": [
           {
@@ -316,10 +316,10 @@
           {
             "id": "SF-CLIP-CAPTURE-20H",
             "title": "Сканфид: настоящий клип убийства без OBS websocket",
-            "cycles": 7,
+            "cycles": 8,
             "max": 8,
-            "last": "WARMUP",
-            "score": 4,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
             "verified": false
           },
           {
@@ -460,19 +460,35 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
+          },
+          {
+            "clock": "10:31:22",
+            "cycle": 16,
+            "task": "SF-CLIP-CAPTURE-20H",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "10:31:22",
+            "cycle": 16,
+            "task": "SF-CLIP-CAPTURE-20H",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 5,
+            "note": "RED.log старше старта витка на 7686 с"
           }
         ],
         "strategy": {
-          "version": 11,
-          "mutations": 10
+          "version": 12,
+          "mutations": 11
         },
-        "events": 16,
+        "events": 18,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795764656,
-  "fetched_human": "2026-11-27 10:30:56 +0300"
+  "fetched_at": 1795764708,
+  "fetched_human": "2026-11-27 10:31:48 +0300"
 }
