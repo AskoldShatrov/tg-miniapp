@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.04,
-      "remaining_hours": 18.96,
+      "elapsed_hours": 1.06,
+      "remaining_hours": 18.94,
       "progress_pct": 5,
       "cycles": 9,
-      "heartbeat_human": "09:15:37",
+      "heartbeat_human": "09:16:37",
       "tree": {
         "phases": [
           {
@@ -136,11 +136,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.04,
-      "remaining_hours": 18.96,
+      "elapsed_hours": 1.06,
+      "remaining_hours": 18.94,
       "progress_pct": 5,
-      "cycles": 8,
-      "heartbeat_human": "09:15:37",
+      "cycles": 9,
+      "heartbeat_human": "09:16:37",
       "tree": {
         "phases": [
           {
@@ -155,9 +155,9 @@
           {
             "id": "SF-CLIP-CAPTURE-20H",
             "title": "Сканфид: настоящий клип убийства без OBS websocket",
-            "cycles": 0,
+            "cycles": 1,
             "max": 8,
-            "last": "—",
+            "last": "MUTATE",
             "score": 0,
             "verified": false
           },
@@ -243,19 +243,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
+          },
+          {
+            "clock": "09:16:22",
+            "cycle": 9,
+            "task": "SF-CLIP-CAPTURE-20H",
+            "action": "MUTATE",
+            "score": 0,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 6,
-          "mutations": 5
+          "version": 7,
+          "mutations": 6
         },
-        "events": 9,
+        "events": 10,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795760138,
-  "fetched_human": "2026-11-27 09:15:38 +0300"
+  "fetched_at": 1795760201,
+  "fetched_human": "2026-11-27 09:16:41 +0300"
 }
