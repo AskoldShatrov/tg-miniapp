@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.67,
-      "remaining_hours": 15.33,
+      "elapsed_hours": 4.68,
+      "remaining_hours": 15.32,
       "progress_pct": 23,
       "cycles": 83,
-      "heartbeat_human": "12:53:15",
+      "heartbeat_human": "12:53:45",
       "tree": {
         "phases": [
           {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.67,
-      "remaining_hours": 15.33,
+      "elapsed_hours": 4.68,
+      "remaining_hours": 15.32,
       "progress_pct": 23,
-      "cycles": 76,
-      "heartbeat_human": "12:53:15",
+      "cycles": 77,
+      "heartbeat_human": "12:53:45",
       "tree": {
         "phases": [
           {
@@ -609,30 +609,14 @@
           {
             "id": "SF-DECISION-MEMORY-CALIB-20H",
             "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
-            "cycles": 2,
+            "cycles": 3,
             "max": 6,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
+            "last": "RETHINK_REQUIRED",
+            "score": 5,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "10:47:59",
-            "cycle": 18,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_REQUIRED",
-            "score": 5,
-            "note": "RED.log старше старта витка на 8717 с"
-          },
-          {
-            "clock": "10:48:16",
-            "cycle": 19,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:49:31",
             "cycle": 20,
@@ -1096,19 +1080,35 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log старше старта витка на 30 с"
+          },
+          {
+            "clock": "12:54:07",
+            "cycle": 77,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:54:07",
+            "cycle": 77,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_REQUIRED",
+            "score": 5,
+            "note": "RED.log старше старта витка на 324 с"
           }
         ],
         "strategy": {
-          "version": 15,
-          "mutations": 14
+          "version": 16,
+          "mutations": 15
         },
-        "events": 81,
+        "events": 83,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795773198,
-  "fetched_human": "2026-11-27 12:53:18 +0300"
+  "fetched_at": 1795773251,
+  "fetched_human": "2026-11-27 12:54:11 +0300"
 }
