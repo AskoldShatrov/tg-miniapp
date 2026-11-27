@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.51,
-      "remaining_hours": 1.49,
-      "progress_pct": 25,
+      "elapsed_hours": 0.52,
+      "remaining_hours": 1.48,
+      "progress_pct": 26,
       "cycles": 57,
-      "heartbeat_human": "06:37:41",
+      "heartbeat_human": "06:38:41",
       "tree": {
         "phases": [
           {
@@ -602,11 +602,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.51,
-      "remaining_hours": 1.49,
-      "progress_pct": 25,
+      "elapsed_hours": 0.52,
+      "remaining_hours": 1.48,
+      "progress_pct": 26,
       "cycles": 43,
-      "heartbeat_human": "06:37:41",
+      "heartbeat_human": "06:38:41",
       "tree": {
         "phases": [
           {
@@ -1114,11 +1114,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.51,
-      "remaining_hours": 1.49,
-      "progress_pct": 25,
-      "cycles": 74,
-      "heartbeat_human": "06:37:41",
+      "elapsed_hours": 0.52,
+      "remaining_hours": 1.48,
+      "progress_pct": 26,
+      "cycles": 75,
+      "heartbeat_human": "06:38:41",
       "tree": {
         "phases": [
           {
@@ -1230,6 +1230,15 @@
             "verified": false
           },
           {
+            "id": "UNI-PIVOT-EVIDENCE",
+            "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
+            "cycles": 4,
+            "max": 4,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PID-VOICE",
             "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
             "cycles": 3,
@@ -1237,15 +1246,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-PIVOT-EVIDENCE",
-            "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
-            "cycles": 3,
-            "max": 4,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "UNI-GOST-RESIDUAL",
@@ -1267,14 +1267,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:39:39",
-            "cycle": 15,
-            "task": "UNI-PID-CALIB",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "01:45:27",
             "cycle": 16,
@@ -1746,19 +1738,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:38:11",
+            "cycle": 75,
+            "task": "UNI-PIVOT-EVIDENCE",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 74,
+        "events": 75,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795750681,
-  "fetched_human": "2026-11-27 06:38:01 +0300"
+  "fetched_at": 1795750744,
+  "fetched_human": "2026-11-27 06:39:04 +0300"
 }
