@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.58,
-      "remaining_hours": 19.42,
+      "elapsed_hours": 0.6,
+      "remaining_hours": 19.4,
       "progress_pct": 3,
       "cycles": 5,
-      "heartbeat_human": "08:48:06",
+      "heartbeat_human": "08:49:06",
       "tree": {
         "phases": [
           {
@@ -104,21 +104,21 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.58,
-      "remaining_hours": 19.42,
+      "elapsed_hours": 0.6,
+      "remaining_hours": 19.4,
       "progress_pct": 3,
-      "cycles": 2,
-      "heartbeat_human": "08:48:06",
+      "cycles": 3,
+      "heartbeat_human": "08:49:06",
       "tree": {
         "phases": [
           {
             "id": "SF-LIVE-DEMO-20H",
             "title": "Сканфид: живая демка вместо заморозки на 54806",
-            "cycles": 2,
+            "cycles": 3,
             "max": 8,
-            "last": "WARMUP",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "SF-CLIP-CAPTURE-20H",
@@ -163,19 +163,27 @@
             "action": "WARMUP",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "08:48:42",
+            "cycle": 3,
+            "task": "SF-LIVE-DEMO-20H",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 1,
-          "mutations": 0
+          "version": 2,
+          "mutations": 1
         },
-        "events": 3,
+        "events": 4,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795758489,
-  "fetched_human": "2026-11-27 08:48:09 +0300"
+  "fetched_at": 1795758547,
+  "fetched_human": "2026-11-27 08:49:07 +0300"
 }
