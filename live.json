@@ -2075,27 +2075,27 @@
   ],
   "active": [
     {
-      "id": "cae4eefd-56be-4b",
-      "title": "Задача: исправить деф",
-      "source": "dsh",
-      "claimed_human": "12:09:44",
-      "age_min": 0,
-      "full": "Задача: исправить деф"
-    },
-    {
       "id": "session-8a5dfe1a",
       "title": "Как идет работа над Сканфидом",
       "source": "dsh",
-      "claimed_human": "12:09:42",
+      "claimed_human": "12:10:42",
       "age_min": 0,
       "full": "Как идет работа над Сканфидом"
+    },
+    {
+      "id": "cae4eefd-56be-4b",
+      "title": "Задача: исправить деф",
+      "source": "dsh",
+      "claimed_human": "12:10:29",
+      "age_min": 0,
+      "full": "Задача: исправить деф"
     },
     {
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
       "claimed_human": "12:06:57",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Подключение Graphify и инструментов инспекции"
     }
   ],
@@ -2126,24 +2126,8 @@
       "step_label": "переделать задание и контрольные работы",
       "step": 4,
       "total": 5,
-      "events": 246,
+      "events": 249,
       "trail": [
-        {
-          "ts": 1795770106,
-          "label": "BASH · echo '=== last re"
-        },
-        {
-          "ts": 1795770106,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770125,
-          "label": "BASH · echo '=== outbox "
-        },
-        {
-          "ts": 1795770125,
-          "label": "THINK"
-        },
         {
           "ts": 1795770152,
           "label": "BASH · B=/home/nyaka/.lo"
@@ -2319,10 +2303,26 @@
         {
           "ts": 1795770581,
           "label": "THINK"
+        },
+        {
+          "ts": 1795770603,
+          "label": "BASH · sed -n '60,66p' /"
+        },
+        {
+          "ts": 1795770613,
+          "label": "BASH · python3 - <<'EOF'"
+        },
+        {
+          "ts": 1795770630,
+          "label": "BASH · grep -n 'SD-PUBLI"
+        },
+        {
+          "ts": 1795770630,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763987,
-      "updated_at": 1795770586
+      "updated_at": 1795770648
     },
     {
       "key": "req-20261127-103932-f850fd",
@@ -2332,32 +2332,8 @@
       "step_label": "Отправить готовые файлы",
       "step": 6,
       "total": 6,
-      "events": 200,
+      "events": 203,
       "trail": [
-        {
-          "ts": 1795770078,
-          "label": "WRITE · /tmp/opencode/do"
-        },
-        {
-          "ts": 1795770078,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770093,
-          "label": "BASH · python3 /home/nya"
-        },
-        {
-          "ts": 1795770108,
-          "label": "READ · /tmp/opencode/doc"
-        },
-        {
-          "ts": 1795770108,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770125,
-          "label": "READ · /tmp/opencode/doc"
-        },
         {
           "ts": 1795770125,
           "label": "THINK"
@@ -2525,10 +2501,34 @@
         {
           "ts": 1795770583,
           "label": "THINK"
+        },
+        {
+          "ts": 1795770598,
+          "label": "BASH · sed -n '1388,1406"
+        },
+        {
+          "ts": 1795770598,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770621,
+          "label": "BASH · grep -n -A35 'def"
+        },
+        {
+          "ts": 1795770622,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770640,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795770640,
+          "label": "THINK"
         }
       ],
       "started_at": 1795765174,
-      "updated_at": 1795770588
+      "updated_at": 1795770647
     },
     {
       "key": "req-20261127-115534-8e9bae",
@@ -2536,34 +2536,10 @@
       "source": "task",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
       "step_label": "проверить и показать",
-      "step": 4,
+      "step": 5,
       "total": 4,
-      "events": 49,
+      "events": 52,
       "trail": [
-        {
-          "ts": 1795770227,
-          "label": "BASH · sed -n '1,140p' /"
-        },
-        {
-          "ts": 1795770227,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770247,
-          "label": "BASH · grep -n \"CANON\\|P"
-        },
-        {
-          "ts": 1795770247,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770266,
-          "label": "BASH · sed -n '1195,1220"
-        },
-        {
-          "ts": 1795770266,
-          "label": "THINK"
-        },
         {
           "ts": 1795770281,
           "label": "BASH · for f in /home/ny"
@@ -2731,10 +2707,84 @@
         {
           "ts": 1795770577,
           "label": "THINK"
+        },
+        {
+          "ts": 1795770593,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795770593,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795770593,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770608,
+          "label": "EDIT · /home/nyaka/share"
+        },
+        {
+          "ts": 1795770608,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770622,
+          "label": "BASH · git add miniapp/l"
         }
       ],
       "started_at": 1795769735,
-      "updated_at": 1795770588
+      "updated_at": 1795770641
+    },
+    {
+      "key": "req-20261127-120948-a5042c",
+      "session_id": "",
+      "source": "photo",
+      "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
+      "step_label": "Разобрать претензии и найти файлы",
+      "step": 1,
+      "total": 5,
+      "events": 2,
+      "trail": [
+        {
+          "ts": 1795770606,
+          "label": "SYNC · show-in-answer"
+        },
+        {
+          "ts": 1795770606,
+          "label": "SYNC · anti-autism"
+        },
+        {
+          "ts": 1795770606,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795770606,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770619,
+          "label": "BASH · echo \"SESSION=$OP"
+        },
+        {
+          "ts": 1795770619,
+          "label": "BASH · kb list 2>/dev/nu"
+        },
+        {
+          "ts": 1795770619,
+          "label": "BASH · ls -la ~/local-ll"
+        },
+        {
+          "ts": 1795770619,
+          "label": "BASH · find ~/ma_reports"
+        },
+        {
+          "ts": 1795770619,
+          "label": "THINK"
+        }
+      ],
+      "started_at": 1795770589,
+      "updated_at": 1795770647
     }
   ],
   "bars": [
@@ -2753,6 +2803,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 7.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795770588,
-  "fetched_human": "2026-11-27 12:09:48 +0300"
+  "fetched_at": 1795770648,
+  "fetched_human": "2026-11-27 12:10:48 +0300"
 }
