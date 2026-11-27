@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.8,
-      "remaining_hours": 5.2,
+      "elapsed_hours": 14.82,
+      "remaining_hours": 5.18,
       "progress_pct": 74,
-      "cycles": 436,
-      "heartbeat_human": "23:00:56",
+      "cycles": 437,
+      "heartbeat_human": "23:01:56",
       "tree": {
         "phases": [
           {
@@ -49,6 +49,15 @@
             "verified": false
           },
           {
+            "id": "CONSULT-FAMILY-MUT-WRITER-V2",
+            "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
+            "cycles": 6,
+            "max": 12,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "IMP-RETHINK-WIRING-20H",
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
             "cycles": 5,
@@ -56,15 +65,6 @@
             "last": "—",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "CONSULT-FAMILY-MUT-WRITER-V2",
-            "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 5,
-            "max": 12,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "IMP-NIGHT-WATCHDOG-20H",
@@ -86,14 +86,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:35:35",
-            "cycle": 402,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "21:36:51",
             "cycle": 403,
@@ -565,6 +557,14 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "23:01:46",
+            "cycle": 437,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.8,
-      "remaining_hours": 5.2,
+      "elapsed_hours": 14.82,
+      "remaining_hours": 5.18,
       "progress_pct": 74,
       "cycles": 442,
-      "heartbeat_human": "23:00:56",
+      "heartbeat_human": "23:01:56",
       "tree": {
         "phases": [
           {
@@ -1145,6 +1145,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795809676,
-  "fetched_human": "2026-11-27 23:01:16 +0300"
+  "fetched_at": 1795809737,
+  "fetched_human": "2026-11-27 23:02:17 +0300"
 }
