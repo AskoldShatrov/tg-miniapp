@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 15.09,
-      "remaining_hours": 4.91,
-      "progress_pct": 75,
+      "elapsed_hours": 15.11,
+      "remaining_hours": 4.89,
+      "progress_pct": 76,
       "cycles": 439,
-      "heartbeat_human": "23:18:27",
+      "heartbeat_human": "23:19:27",
       "tree": {
         "phases": [
           {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 15.09,
-      "remaining_hours": 4.91,
-      "progress_pct": 75,
-      "cycles": 444,
-      "heartbeat_human": "23:18:27",
+      "elapsed_hours": 15.11,
+      "remaining_hours": 4.89,
+      "progress_pct": 76,
+      "cycles": 445,
+      "heartbeat_human": "23:19:27",
       "tree": {
         "phases": [
           {
@@ -627,11 +627,11 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 7,
+            "cycles": 8,
             "max": 12,
             "last": "MUTATE",
-            "score": 7,
-            "verified": true
+            "score": 4,
+            "verified": false
           },
           {
             "id": "SF-DECISION-MEMORY-CALIB-20H",
@@ -653,22 +653,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:37:51",
-            "cycle": 409,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
-            "clock": "21:39:06",
-            "cycle": 410,
-            "task": "SCOUT_OPEN",
-            "action": "TRIGGER_ROTATED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:39:06",
             "cycle": 410,
@@ -1132,19 +1116,35 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "23:19:29",
+            "cycle": 445,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "23:19:29",
+            "cycle": 445,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: LE_ARTIFACT: mtime вне окна витка (age=201.6s)\",\n    \"STALE_EVIDENCE: mtime в"
           }
         ],
         "strategy": {
-          "version": 319,
-          "mutations": 318
+          "version": 320,
+          "mutations": 319
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795810711,
-  "fetched_human": "2026-11-27 23:18:31 +0300"
+  "fetched_at": 1795810772,
+  "fetched_human": "2026-11-27 23:19:32 +0300"
 }
