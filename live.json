@@ -2075,26 +2075,26 @@
   ],
   "active": [
     {
-      "id": "session-f7092bc2",
-      "title": "Подключение Graphify и инструментов инспекции",
-      "source": "dsh",
-      "claimed_human": "10:53:58",
-      "age_min": 0,
-      "full": "Подключение Graphify и инструментов инспекции"
-    },
-    {
       "id": "6dcfdc83-3885-46",
       "title": "Ты переделываешь зада",
       "source": "dsh",
-      "claimed_human": "10:53:52",
+      "claimed_human": "10:54:56",
       "age_min": 0,
       "full": "Ты переделываешь зада"
+    },
+    {
+      "id": "session-f7092bc2",
+      "title": "Подключение Graphify и инструментов инспекции",
+      "source": "dsh",
+      "claimed_human": "10:54:55",
+      "age_min": 0,
+      "full": "Подключение Graphify и инструментов инспекции"
     },
     {
       "id": "session-c1e9e894",
       "title": "Моделирование, системные проблемы и Word-файл",
       "source": "dsh",
-      "claimed_human": "10:53:51",
+      "claimed_human": "10:54:51",
       "age_min": 0,
       "full": "Моделирование, системные проблемы и Word-файл"
     },
@@ -2102,7 +2102,7 @@
       "id": "27b2b8c0-6f2c-41",
       "title": "Ты отвечаешь за доказ",
       "source": "dsh",
-      "claimed_human": "10:53:48",
+      "claimed_human": "10:54:50",
       "age_min": 0,
       "full": "Ты отвечаешь за доказ"
     },
@@ -2110,7 +2110,7 @@
       "id": "session-8a5dfe1a",
       "title": "Как идет работа над Сканфидом",
       "source": "dsh",
-      "claimed_human": "10:53:47",
+      "claimed_human": "10:54:30",
       "age_min": 0,
       "full": "Как идет работа над Сканфидом"
     },
@@ -2118,7 +2118,7 @@
       "id": "d95e0931-33ab-45",
       "title": "READ-ONLY investigation in /home/nyaka.",
       "source": "dsh",
-      "claimed_human": "10:53:45",
+      "claimed_human": "10:54:08",
       "age_min": 0,
       "full": "READ-ONLY investigation in /home/nyaka."
     },
@@ -2127,7 +2127,7 @@
       "title": "Настройка V2RayNG и мобильного интернета",
       "source": "dsh",
       "claimed_human": "10:52:51",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Настройка V2RayNG и мобильного интернета"
     },
     {
@@ -2135,7 +2135,7 @@
       "title": "Ты — слепой ревизор. Н",
       "source": "dsh",
       "claimed_human": "10:49:23",
-      "age_min": 4,
+      "age_min": 5,
       "full": "Ты — слепой ревизор. Н"
     }
   ],
@@ -2362,7 +2362,7 @@
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795766037
+      "updated_at": 1795766092
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2568,7 +2568,7 @@
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795766037
+      "updated_at": 1795766097
     },
     {
       "key": "req-20261127-100432-5a466a",
@@ -2578,32 +2578,8 @@
       "step_label": "Разобрать титульники",
       "step": 1,
       "total": 4,
-      "events": 99,
+      "events": 102,
       "trail": [
-        {
-          "ts": 1795765593,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795765605,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795765605,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795765611,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795765611,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795765623,
-          "label": "BASH · kb list"
-        },
         {
           "ts": 1795765630,
           "label": "BASH · rg -l --hidden -g"
@@ -2771,10 +2747,34 @@
         {
           "ts": 1795765915,
           "label": "READ · /tmp/opencode/tit"
+        },
+        {
+          "ts": 1795766060,
+          "label": "BASH · mkdir -p /tmp/ope"
+        },
+        {
+          "ts": 1795766060,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795766080,
+          "label": "BASH · pdftoppm -f 1 -l "
+        },
+        {
+          "ts": 1795766080,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795766090,
+          "label": "BASH · ls -l /tmp/openco"
+        },
+        {
+          "ts": 1795766090,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763072,
-      "updated_at": 1795766037
+      "updated_at": 1795766095
     },
     {
       "key": "req-20261127-101946-87ea3a",
@@ -2784,36 +2784,8 @@
       "step_label": "выправить отчёт АНИР и отступы колонок",
       "step": 4,
       "total": 6,
-      "events": 77,
+      "events": 81,
       "trail": [
-        {
-          "ts": 1795765604,
-          "label": "GREP · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795765604,
-          "label": "BASH · ls /home/nyaka/уч"
-        },
-        {
-          "ts": 1795765604,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795765604,
-          "label": "BASH · for f in /home/ny"
-        },
-        {
-          "ts": 1795765604,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795765627,
-          "label": "BASH · ls -lat /home/nya"
-        },
-        {
-          "ts": 1795765631,
-          "label": "BASH · for f in /home/ny"
-        },
         {
           "ts": 1795765631,
           "label": "THINK"
@@ -2977,10 +2949,38 @@
         {
           "ts": 1795766024,
           "label": "READ · /tmp/opencode/gos"
+        },
+        {
+          "ts": 1795766050,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795766050,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795766063,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795766073,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795766073,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795766089,
+          "label": "BASH · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795766090,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763987,
-      "updated_at": 1795766037
+      "updated_at": 1795766098
     },
     {
       "key": "req-20261127-103932-f850fd",
@@ -2990,32 +2990,8 @@
       "step_label": "исправить документы системно",
       "step": 2,
       "total": 4,
-      "events": 52,
+      "events": 55,
       "trail": [
-        {
-          "ts": 1795765614,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795765640,
-          "label": "BASH · pdftotext -layout"
-        },
-        {
-          "ts": 1795765640,
-          "label": "BASH · python3 -c 'impor"
-        },
-        {
-          "ts": 1795765640,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795765660,
-          "label": "BASH · ls -la ~/ВОССТАНО"
-        },
-        {
-          "ts": 1795765660,
-          "label": "THINK"
-        },
         {
           "ts": 1795765674,
           "label": "BASH · cat ~/ВОССТАНОВЛЕ"
@@ -3183,10 +3159,34 @@
         {
           "ts": 1795766032,
           "label": "THINK"
+        },
+        {
+          "ts": 1795766047,
+          "label": "BASH · grep -n -i -C3 'P"
+        },
+        {
+          "ts": 1795766047,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795766070,
+          "label": "BASH · cd ~/ВОССТАНОВЛЕН"
+        },
+        {
+          "ts": 1795766070,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795766086,
+          "label": "BASH · cd ~/учеба && gre"
+        },
+        {
+          "ts": 1795766086,
+          "label": "THINK"
         }
       ],
       "started_at": 1795765174,
-      "updated_at": 1795766037
+      "updated_at": 1795766097
     }
   ],
   "bars": [
@@ -3205,6 +3205,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 6.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795766038,
-  "fetched_human": "2026-11-27 10:53:58 +0300"
+  "fetched_at": 1795766098,
+  "fetched_human": "2026-11-27 10:54:58 +0300"
 }
