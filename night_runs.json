@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.61,
-      "remaining_hours": 12.39,
+      "elapsed_hours": 7.62,
+      "remaining_hours": 12.38,
       "progress_pct": 38,
       "cycles": 127,
-      "heartbeat_human": "15:48:55",
+      "heartbeat_human": "15:50:25",
       "tree": {
         "phases": [
           {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.61,
-      "remaining_hours": 12.39,
+      "elapsed_hours": 7.62,
+      "remaining_hours": 12.38,
       "progress_pct": 38,
-      "cycles": 146,
-      "heartbeat_human": "15:49:07",
+      "cycles": 147,
+      "heartbeat_human": "15:50:07",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:35:15",
-            "cycle": 100,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:36:30",
             "cycle": 101,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "verify rc=1: ,\n    \"artifact_sha256\": \"264d5e9c4b5bdf8a512485b8ef123ce32e21aa3982513702d43"
+          },
+          {
+            "clock": "15:50:08",
+            "cycle": 147,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос clip"
           }
         ],
         "strategy": {
-          "version": 35,
-          "mutations": 34
+          "version": 36,
+          "mutations": 35
         },
-        "events": 167,
+        "events": 168,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795783765,
-  "fetched_human": "2026-11-27 15:49:25 +0300"
+  "fetched_at": 1795783826,
+  "fetched_human": "2026-11-27 15:50:26 +0300"
 }
