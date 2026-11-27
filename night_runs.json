@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.81,
-      "remaining_hours": 16.19,
+      "elapsed_hours": 3.85,
+      "remaining_hours": 16.15,
       "progress_pct": 19,
-      "cycles": 56,
-      "heartbeat_human": "12:01:33",
+      "cycles": 58,
+      "heartbeat_human": "12:03:33",
       "tree": {
         "phases": [
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:03:21",
-            "cycle": 8,
-            "task": "IMP-HONESTY-20H",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "09:12:23",
-            "cycle": 9,
-            "task": "IMP-HONESTY-20H",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "09:20:30",
             "cycle": 10,
@@ -547,13 +531,29 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос watchdog"
+          },
+          {
+            "clock": "12:02:30",
+            "cycle": 57,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос writer"
+          },
+          {
+            "clock": "12:03:45",
+            "cycle": 58,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос pair"
           }
         ],
         "strategy": {
-          "version": 19,
-          "mutations": 18
+          "version": 21,
+          "mutations": 20
         },
-        "events": 68,
+        "events": 70,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.81,
-      "remaining_hours": 16.19,
+      "elapsed_hours": 3.85,
+      "remaining_hours": 16.15,
       "progress_pct": 19,
-      "cycles": 60,
-      "heartbeat_human": "12:01:32",
+      "cycles": 62,
+      "heartbeat_human": "12:03:32",
       "tree": {
         "phases": [
           {
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:51:48",
-            "cycle": 4,
-            "task": "SF-LIVE-DEMO-20H",
-            "action": "MUTATE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "08:54:34",
-            "cycle": 5,
-            "task": "SF-LIVE-DEMO-20H",
-            "action": "PROMOTE",
-            "score": 4,
-            "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
-          },
           {
             "clock": "08:56:11",
             "cycle": 6,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:01:57",
+            "cycle": 61,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:03:12",
+            "cycle": 62,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 64,
+        "events": 66,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795770111,
-  "fetched_human": "2026-11-27 12:01:51 +0300"
+  "fetched_at": 1795770234,
+  "fetched_human": "2026-11-27 12:03:54 +0300"
 }
