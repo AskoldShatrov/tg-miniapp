@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.24,
-      "remaining_hours": 14.76,
+      "elapsed_hours": 5.25,
+      "remaining_hours": 14.75,
       "progress_pct": 26,
       "cycles": 90,
-      "heartbeat_human": "13:27:16",
+      "heartbeat_human": "13:28:16",
       "tree": {
         "phases": [
           {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.24,
-      "remaining_hours": 14.76,
+      "elapsed_hours": 5.25,
+      "remaining_hours": 14.75,
       "progress_pct": 26,
-      "cycles": 93,
-      "heartbeat_human": "13:27:15",
+      "cycles": 94,
+      "heartbeat_human": "13:28:15",
       "tree": {
         "phases": [
           {
@@ -598,6 +598,15 @@
             "verified": false
           },
           {
+            "id": "SF-DECISION-MEMORY-CALIB-20H",
+            "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
+            "cycles": 4,
+            "max": 6,
+            "last": "RETHINK_REQUIRED",
+            "score": 5,
+            "verified": false
+          },
+          {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 4,
@@ -605,34 +614,9 @@
             "last": "PROMOTE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "SF-DECISION-MEMORY-CALIB-20H",
-            "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
-            "cycles": 3,
-            "max": 6,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "11:22:15",
-            "cycle": 37,
-            "task": "SF-NIGHT-PAIR-WRITER",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "11:23:31",
-            "cycle": 38,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "11:24:46",
             "cycle": 39,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:27:45",
+            "cycle": 94,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:27:45",
+            "cycle": 94,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_REQUIRED",
+            "score": 5,
+            "note": "RED.log старше старта витка на 263 с"
           }
         ],
         "strategy": {
-          "version": 17,
-          "mutations": 16
+          "version": 18,
+          "mutations": 17
         },
-        "events": 100,
+        "events": 102,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795775238,
-  "fetched_human": "2026-11-27 13:27:18 +0300"
+  "fetched_at": 1795775304,
+  "fetched_human": "2026-11-27 13:28:24 +0300"
 }
