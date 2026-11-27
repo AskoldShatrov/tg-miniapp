@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 9.1,
-      "remaining_hours": 10.9,
-      "progress_pct": 45,
-      "cycles": 196,
-      "heartbeat_human": "17:18:56",
+      "elapsed_hours": 9.11,
+      "remaining_hours": 10.89,
+      "progress_pct": 46,
+      "cycles": 197,
+      "heartbeat_human": "17:19:56",
       "tree": {
         "phases": [
           {
@@ -69,22 +69,6 @@
         ],
         "trail": [
           {
-            "clock": "16:41:37",
-            "cycle": 167,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "16:41:37",
-            "cycle": 167,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
-          {
             "clock": "16:42:52",
             "cycle": 168,
             "task": "SCOUT_OPEN",
@@ -543,6 +527,22 @@
           {
             "clock": "17:17:54",
             "cycle": 196,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "17:19:09",
+            "cycle": 197,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "17:19:09",
+            "cycle": 197,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
             "score": 0,
@@ -550,10 +550,10 @@
           }
         ],
         "strategy": {
-          "version": 128,
-          "mutations": 127
+          "version": 129,
+          "mutations": 128
         },
-        "events": 300,
+        "events": 302,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 9.1,
-      "remaining_hours": 10.9,
-      "progress_pct": 45,
-      "cycles": 204,
-      "heartbeat_human": "17:18:38",
+      "elapsed_hours": 9.11,
+      "remaining_hours": 10.89,
+      "progress_pct": 46,
+      "cycles": 205,
+      "heartbeat_human": "17:19:38",
       "tree": {
         "phases": [
           {
@@ -582,9 +582,9 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 14,
+            "cycles": 15,
             "max": 16,
-            "last": "MUTATE",
+            "last": "PROMOTE",
             "score": 7,
             "verified": true
           },
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "16:23:55",
-            "cycle": 174,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
           {
             "clock": "16:25:10",
             "cycle": 175,
@@ -1096,19 +1088,27 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "17:19:03",
+            "cycle": 205,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 92,
           "mutations": 91
         },
-        "events": 277,
+        "events": 278,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795789140,
-  "fetched_human": "2026-11-27 17:19:00 +0300"
+  "fetched_at": 1795789198,
+  "fetched_human": "2026-11-27 17:19:58 +0300"
 }
