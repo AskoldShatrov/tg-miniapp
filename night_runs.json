@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.97,
-      "remaining_hours": 18.03,
+      "elapsed_hours": 1.99,
+      "remaining_hours": 18.01,
       "progress_pct": 10,
-      "cycles": 15,
-      "heartbeat_human": "10:11:24",
+      "cycles": 16,
+      "heartbeat_human": "10:12:24",
       "tree": {
         "phases": [
           {
@@ -33,9 +33,9 @@
           {
             "id": "IMP-RETHINK-WIRING-20H",
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "WARMUP",
             "score": 4,
             "verified": false
           }
@@ -168,15 +168,23 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: 6e6d6345a6ea3a044ce63b8be8f10f51ef39ec2126bf5b64a2\", \"red_rc\": 1, \"green_rc\":"
+          },
+          {
+            "clock": "10:11:54",
+            "cycle": 16,
+            "task": "IMP-RETHINK-WIRING-20H",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: 8cdccab1345265aee42a99bda6149f3ad96480f9bea47ba407dd7e5e662955\", \"gate_mtime\""
           }
         ],
         "strategy": {
           "version": 2,
           "mutations": 1
         },
-        "events": 16,
+        "events": 17,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -184,11 +192,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.97,
-      "remaining_hours": 18.03,
+      "elapsed_hours": 1.99,
+      "remaining_hours": 18.01,
       "progress_pct": 10,
       "cycles": 14,
-      "heartbeat_human": "10:11:26",
+      "heartbeat_human": "10:12:26",
       "tree": {
         "phases": [
           {
@@ -352,6 +360,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795763494,
-  "fetched_human": "2026-11-27 10:11:34 +0300"
+  "fetched_at": 1795763555,
+  "fetched_human": "2026-11-27 10:12:35 +0300"
 }
