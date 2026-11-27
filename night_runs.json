@@ -5,17 +5,17 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.83,
-      "remaining_hours": 14.17,
+      "elapsed_hours": 5.85,
+      "remaining_hours": 14.15,
       "progress_pct": 29,
-      "cycles": 95,
-      "heartbeat_human": "14:02:16",
+      "cycles": 97,
+      "heartbeat_human": "14:03:22",
       "tree": {
         "phases": [
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 10,
+            "cycles": 11,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -68,30 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:46:23",
-            "cycle": 53,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "11:53:40",
-            "cycle": 54,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "11:53:40",
-            "cycle": 54,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "RED.log старше старта витка на 330 с"
-          },
           {
             "clock": "12:00:00",
             "cycle": 55,
@@ -547,13 +523,37 @@
             "action": "RETHINK_REQUIRED",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "14:03:18",
+            "cycle": 96,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:03:18",
+            "cycle": 96,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "14:03:37",
+            "cycle": 97,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 41,
-          "mutations": 40
+          "version": 43,
+          "mutations": 42
         },
-        "events": 122,
+        "events": 125,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.83,
-      "remaining_hours": 14.17,
+      "elapsed_hours": 5.85,
+      "remaining_hours": 14.15,
       "progress_pct": 29,
-      "cycles": 116,
-      "heartbeat_human": "14:02:20",
+      "cycles": 117,
+      "heartbeat_human": "14:03:50",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:03:12",
-            "cycle": 62,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "12:04:27",
             "cycle": 63,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "14:03:35",
+            "cycle": 117,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 125,
+        "events": 126,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795777365,
-  "fetched_human": "2026-11-27 14:02:45 +0300"
+  "fetched_at": 1795777432,
+  "fetched_human": "2026-11-27 14:03:52 +0300"
 }
