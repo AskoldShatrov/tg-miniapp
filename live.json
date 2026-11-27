@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 965,
+      "age_min": 966,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 965,
+      "age_min": 966,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,24 +2095,24 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 965,
+      "age_min": 966,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-d37eb26f",
-      "title": "Мониторинг прогонов и анализ сканфида",
-      "source": "dsh",
-      "claimed_human": "06:23:46",
-      "age_min": 0,
-      "full": "Мониторинг прогонов и анализ сканфида"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "06:23:45",
+      "claimed_human": "06:24:47",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-d37eb26f",
+      "title": "Мониторинг прогонов и анализ сканфида",
+      "source": "dsh",
+      "claimed_human": "06:24:24",
+      "age_min": 0,
+      "full": "Мониторинг прогонов и анализ сканфида"
     }
   ],
   "queues": {
@@ -2142,20 +2142,8 @@
       "step_label": "Переделать блок-схемы и терминатор",
       "step": 3,
       "total": 5,
-      "events": 45,
+      "events": 48,
       "trail": [
-        {
-          "ts": 1795749252,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749263,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749296,
-          "label": "SUBAGENT · subagent"
-        },
         {
           "ts": 1795749296,
           "label": "THINK"
@@ -2335,10 +2323,22 @@
         {
           "ts": 1795749818,
           "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749833,
+          "label": "BASH · python3 -c \"impor"
+        },
+        {
+          "ts": 1795749853,
+          "label": "WRITE · /home/nyaka/учеб"
+        },
+        {
+          "ts": 1795749866,
+          "label": "BASH · cd /home/nyaka/уч"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795749825
+      "updated_at": 1795749885
     },
     {
       "key": "req-20261127-061357-6f27b5",
@@ -2348,36 +2348,8 @@
       "step_label": "найти Dash и источник запросов из ТГ",
       "step": 1,
       "total": 5,
-      "events": 49,
+      "events": 53,
       "trail": [
-        {
-          "ts": 1795749445,
-          "label": "BASH · cd /tmp/opencode/"
-        },
-        {
-          "ts": 1795749445,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749452,
-          "label": "READ · /tmp/opencode/das"
-        },
-        {
-          "ts": 1795749465,
-          "label": "BASH · cd /home/nyaka/sh"
-        },
-        {
-          "ts": 1795749465,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749477,
-          "label": "BASH · grep -n -i -E 'pu"
-        },
-        {
-          "ts": 1795749477,
-          "label": "THINK"
-        },
         {
           "ts": 1795749486,
           "label": "BASH · echo '---PAGES RE"
@@ -2541,10 +2513,38 @@
         {
           "ts": 1795749817,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749845,
+          "label": "READ · /tmp/opencode/das"
+        },
+        {
+          "ts": 1795749845,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749860,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795749860,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749869,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795749885,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795749885,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749237,
-      "updated_at": 1795749826
+      "updated_at": 1795749887
     },
     {
       "key": "req-20261127-061715-16abd6",
@@ -2576,6 +2576,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795749827,
-  "fetched_human": "2026-11-27 06:23:47 +0300"
+  "fetched_at": 1795749887,
+  "fetched_human": "2026-11-27 06:24:47 +0300"
 }

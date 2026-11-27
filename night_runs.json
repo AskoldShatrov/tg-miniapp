@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.27,
-      "remaining_hours": 1.73,
+      "elapsed_hours": 0.29,
+      "remaining_hours": 1.71,
       "progress_pct": 14,
       "cycles": 55,
-      "heartbeat_human": "06:23:41",
+      "heartbeat_human": "06:24:41",
       "tree": {
         "phases": [
           {
@@ -586,11 +586,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.27,
-      "remaining_hours": 1.73,
+      "elapsed_hours": 0.29,
+      "remaining_hours": 1.71,
       "progress_pct": 14,
-      "cycles": 40,
-      "heartbeat_human": "06:23:41",
+      "cycles": 41,
+      "heartbeat_human": "06:24:41",
       "tree": {
         "phases": [
           {
@@ -668,11 +668,11 @@
           {
             "id": "SF-P0-1-EVIDENCE-AUDIT",
             "title": "P0-1: честный аудит доказательств оверлея",
-            "cycles": 0,
+            "cycles": 1,
             "max": 4,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
           },
           {
             "id": "SF-T4-REAL-RECOVERY",
@@ -1058,13 +1058,21 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:24:31",
+            "cycle": 41,
+            "task": "SF-P0-1-EVIDENCE-AUDIT",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 49,
           "mutations": 48
         },
-        "events": 40,
+        "events": 41,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -1074,11 +1082,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.27,
-      "remaining_hours": 1.73,
+      "elapsed_hours": 0.29,
+      "remaining_hours": 1.71,
       "progress_pct": 14,
       "cycles": 73,
-      "heartbeat_human": "06:23:41",
+      "heartbeat_human": "06:24:41",
       "tree": {
         "phases": [
           {
@@ -1719,6 +1727,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795749834,
-  "fetched_human": "2026-11-27 06:23:54 +0300"
+  "fetched_at": 1795749890,
+  "fetched_human": "2026-11-27 06:24:50 +0300"
 }
