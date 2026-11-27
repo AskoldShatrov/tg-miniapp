@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.37,
-      "remaining_hours": 0.63,
-      "progress_pct": 68,
+      "elapsed_hours": 1.39,
+      "remaining_hours": 0.61,
+      "progress_pct": 69,
       "cycles": 66,
-      "heartbeat_human": "07:29:41",
+      "heartbeat_human": "07:30:41",
       "tree": {
         "phases": [
           {
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.37,
-      "remaining_hours": 0.63,
-      "progress_pct": 68,
+      "elapsed_hours": 1.39,
+      "remaining_hours": 0.61,
+      "progress_pct": 69,
       "cycles": 49,
-      "heartbeat_human": "07:29:41",
+      "heartbeat_human": "07:30:41",
       "tree": {
         "phases": [
           {
@@ -1213,11 +1213,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.37,
-      "remaining_hours": 0.63,
-      "progress_pct": 68,
-      "cycles": 83,
-      "heartbeat_human": "07:29:41",
+      "elapsed_hours": 1.39,
+      "remaining_hours": 0.61,
+      "progress_pct": 69,
+      "cycles": 84,
+      "heartbeat_human": "07:30:41",
       "tree": {
         "phases": [
           {
@@ -1338,19 +1338,19 @@
             "verified": false
           },
           {
-            "id": "UNI-PIVOT-EVIDENCE",
-            "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
+            "id": "UNI-RK4-PREREG",
+            "title": "RK4: предрегистрация порога до прогона",
             "cycles": 4,
-            "max": 4,
+            "max": 5,
             "last": "PROMOTE",
             "score": 7,
             "verified": true
           },
           {
-            "id": "UNI-RK4-PREREG",
-            "title": "RK4: предрегистрация порога до прогона",
-            "cycles": 3,
-            "max": 5,
+            "id": "UNI-PIVOT-EVIDENCE",
+            "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
+            "cycles": 4,
+            "max": 4,
             "last": "PROMOTE",
             "score": 7,
             "verified": true
@@ -1375,14 +1375,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "02:30:48",
-            "cycle": 24,
-            "task": "UNI-META-REFLECT",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "02:36:58",
             "cycle": 25,
@@ -1854,19 +1846,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:30:46",
+            "cycle": 84,
+            "task": "UNI-RK4-PREREG",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 83,
+        "events": 84,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795753793,
-  "fetched_human": "2026-11-27 07:29:53 +0300"
+  "fetched_at": 1795753855,
+  "fetched_human": "2026-11-27 07:30:55 +0300"
 }
