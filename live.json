@@ -2075,20 +2075,28 @@
   ],
   "active": [
     {
+      "id": "session-f7092bc2",
+      "title": "Подключение Graphify и инструментов инспекции",
+      "source": "dsh",
+      "claimed_human": "09:50:06",
+      "age_min": 0,
+      "full": "Подключение Graphify и инструментов инспекции"
+    },
+    {
+      "id": "session-c1e9e894",
+      "title": "Сессия без названия",
+      "source": "dsh",
+      "claimed_human": "09:49:37",
+      "age_min": 0,
+      "full": "Сессия без названия"
+    },
+    {
       "id": "session-fe1f9473",
       "title": "Почему нет ответа на ГС",
       "source": "dsh",
       "claimed_human": "09:49:07",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Почему нет ответа на ГС"
-    },
-    {
-      "id": "session-f7092bc2",
-      "title": "Подключение Graphify и инструментов инспекции",
-      "source": "dsh",
-      "claimed_human": "09:46:07",
-      "age_min": 3,
-      "full": "Подключение Graphify и инструментов инспекции"
     }
   ],
   "queues": {
@@ -2314,7 +2322,7 @@
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795762149
+      "updated_at": 1795762208
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2520,7 +2528,7 @@
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795762148
+      "updated_at": 1795762211
     },
     {
       "key": "req-20261127-091831-84a793",
@@ -2530,32 +2538,8 @@
       "step_label": "исправить титульники и линии таблиц",
       "step": 3,
       "total": 5,
-      "events": 109,
+      "events": 112,
       "trail": [
-        {
-          "ts": 1795761589,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795761601,
-          "label": "BASH · cd /tmp/opencode "
-        },
-        {
-          "ts": 1795761612,
-          "label": "READ · /tmp/opencode/tab"
-        },
-        {
-          "ts": 1795761626,
-          "label": "READ · /tmp/opencode/tab"
-        },
-        {
-          "ts": 1795761626,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795761643,
-          "label": "BASH · grep -n 'УТВЕРЖДА"
-        },
         {
           "ts": 1795761643,
           "label": "THINK"
@@ -2723,10 +2707,34 @@
         {
           "ts": 1795762123,
           "label": "READ · /tmp/opencode/mvs"
+        },
+        {
+          "ts": 1795762158,
+          "label": "BASH · find /tmp/opencod"
+        },
+        {
+          "ts": 1795762158,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795762176,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795762177,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795762195,
+          "label": "BASH · stat -c '%y %n' /"
+        },
+        {
+          "ts": 1795762195,
+          "label": "THINK"
         }
       ],
       "started_at": 1795760311,
-      "updated_at": 1795762148
+      "updated_at": 1795762210
     },
     {
       "key": "req-20261127-094813-5acea4",
@@ -2756,8 +2764,8 @@
   ],
   "updatedAt": "2026-11-27T04:34:55+03:00",
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
-  "plan_age_hours": 5.2,
+  "plan_age_hours": 5.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795762150,
-  "fetched_human": "2026-11-27 09:49:10 +0300"
+  "fetched_at": 1795762211,
+  "fetched_human": "2026-11-27 09:50:11 +0300"
 }
