@@ -4117,82 +4117,66 @@ function mountScenarios(){
    Источник запросов: pending_requests.json (журнал долгов remote_agent_bot.py).
    Процессы по тем же req-id: live.json:runs — уже грузится в LIVE_JOBS. */
 let TG_REQUESTS = null, TG_LOADED = false, TG_LOADING = false;
-const TG_URLS = [
-  "pending_requests.json?ts=",
-  "https://askoldshatrov.github.io/tg-miniapp/pending_requests.json?ts="
-];
+/* Основной источник — опубликованный live.json:runs: он доступен и на GitHub Pages.
+   pending_requests.json читаем только как подробность (chat_id), и его absence не ломает экран. */
 async function fetchTGRequests(force){
   if(TG_LOADING || (TG_LOADED && !force)) return;
   TG_LOADING = true;
-  let data = null;
-  for(const url of TG_URLS){
+  let runs = (LIVE_JOBS && Array.isArray(LIVE_JOBS.runs)) ? LIVE_JOBS.runs : [];
+  if(!runs.length){
     try{
-      const r = await fetchTimed(url + Date.now(), {cache:"no-store"}, 6000);
-      if(!r.ok) continue;
-      const d = await r.json();
-      if(d && typeof d === "object" && !Array.isArray(d)){ data = d; break; }
-    }catch(e){ /* следующий источник */ }
+      const r = await fetchTimed("live.json?ts="+Date.now(),{cache:"no-store"},8000);
+      if(r.ok){ const d = await r.json(); if(d && Array.isArray(d.runs)) runs = d.runs; }
+    }catch(e){ /* последний удачный список остаётся на экране */ }
   }
-  TG_LOADING = false;
-  if(data === null){ renderTGRequests(null); return; }
-  TG_REQUESTS = data; TG_LOADED = true;
-  renderTGRequests(data);
-  if(typeof fetchLiveData === "function" && !LIVE_DATA_LOADED) fetchLiveData();
-}
-function tgRunMap(){
-  const runs = (LIVE_JOBS && Array.isArray(LIVE_JOBS.runs)) ? LIVE_JOBS.runs : [];
-  const m = {};
-  runs.forEach(r => { if(r && r.key) m[r.key] = r; });
-  return m;
+  let pending = null;
+  try{
+    const r = await fetchTimed("pending_requests.json?ts="+Date.now(),{cache:"no-store"},4000);
+    if(r.ok){ const d = await r.json(); if(d && typeof d === "object" && !Array.isArray(d)) pending = d; }
+  }catch(e){ /* на Pages этого файла нет — это норма */ }
+  TG_REQUESTS = {runs:runs, pending:pending};
+  TG_LOADED = true; TG_LOADING = false;
+  renderTGRequests(TG_REQUESTS);
 }
 function renderTGRequests(data){
-  const list = $("#tgList"), stat = $("#tgStat");
+  const list = $("#tgList"), stat = $("#tgStat"), tabLive = $("#tgTabLive");
   if(!list) return;
-  if(data === null){
-    list.innerHTML = '<div class="tg-empty">Не удалось прочитать pending_requests.json — источник недоступен.</div>';
-    if(stat) stat.textContent = "источник недоступен";
-    return;
-  }
-  const entries = Object.keys(data).map(k => Object.assign({_id:k}, data[k] || {}))
-    .filter(r => r && typeof r === "object")
-    .sort((a,b) => Number(b.ts||0) - Number(a.ts||0));
-  if(!entries.length){
-    list.innerHTML = '<div class="tg-empty">Активных запросов из Telegram нет — все закрыты.</div>';
+  const runs = data && Array.isArray(data.runs) ? data.runs
+    : ((LIVE_JOBS && Array.isArray(LIVE_JOBS.runs)) ? LIVE_JOBS.runs : []);
+  const pending = (data && data.pending && typeof data.pending === "object") ? data.pending : null;
+  if(!runs.length){
+    list.innerHTML = '<div class="tg-empty">Активных запросов из Telegram сейчас нет — отправь сообщение боту.</div>';
     if(stat) stat.textContent = "0 запросов";
+    if(tabLive) tabLive.textContent = "";
     return;
   }
-  const runs = tgRunMap();
-  const st = (typeof LATEST_STATUS !== "undefined" && LATEST_STATUS) ? LATEST_STATUS : null;
+  const now = Date.now();
   let active = 0;
-  list.innerHTML = entries.map(r => {
-    const ageMs = Date.now() - Number(r.ts||0)*1000;
-    const fresh = ageMs >= 0 && ageMs < 900000;
-    const run = runs[r._id];
-    const runFresh = run && (Date.now() - Number(run.updated_at||0)*1000) < 900000;
-    const on = fresh || runFresh;
-    if(on) active++;
-    const status = runFresh ? "в работе" : (fresh ? "ожидает агента" : "ожидает");
-    const step = run && run.total ? (Number(run.step||0) + " / " + run.total) : "—";
-    const stepLabel = run ? (run.step_label || String(run.label||"").slice(0,60)) : "";
-    const last = run && Array.isArray(run.trail) && run.trail.length
+  list.innerHTML = runs.map(run => {
+    const key = String(run.key||"");
+    const extra = (pending && pending[key] && typeof pending[key] === "object") ? pending[key] : {};
+    const upd = Number(run.updated_at||0)*1000;
+    const fresh = upd > 0 && (now - upd) < 900000;
+    if(fresh) active++;
+    const last = (Array.isArray(run.trail) && run.trail.length)
       ? String(run.trail[run.trail.length-1].label||"") : "";
-    const text = String(r.text||"").replace(/\s+/g," ").trim();
-    return '<div class="tg-card'+(on?" active":"")+'">'
+    const text = String(run.label||extra.text||"").replace(/\s+/g," ").trim();
+    return '<div class="tg-card'+(fresh?" active":"")+'">'
       + '<div class="tg-top">'
-        + '<span class="tg-id">'+esc(r._id)+'</span>'
-        + '<span class="tg-chat">chat '+esc(r.chat_id)+' · '+esc(r.username||"")+'</span>'
-        + '<span class="tg-badge'+(on?" on":"")+'">'+status+'</span>'
-        + '<span class="tg-age">'+timeAgo(Number(r.ts||0)*1000)+'</span>'
+        + (fresh ? '<span class="tg-spin" aria-hidden="true"></span>' : '')
+        + '<span class="tg-id">'+esc(key)+'</span>'
+        + '<span class="tg-chat">chat '+esc(extra.chat_id||"—")+' · '+esc(run.source||"tg")+'</span>'
+        + '<span class="tg-badge'+(fresh?" on":"")+'">'+(fresh?"в работе":"завершён")+'</span>'
+        + '<span class="tg-age">'+timeAgo(upd)+'</span>'
       + '</div>'
-      + '<div class="tg-text" title="'+esc(String(r.text||"").slice(0,400))+'">'+esc(text||"без текста")+'</div>'
-      + (run
-          ? '<div class="tg-proc">Процесс: <b>'+esc(step)+'</b> · '+esc(stepLabel)
-            + (last ? '<span class="tg-trail">последнее: '+esc(last)+'</span>' : '') + '</div>'
-          : '<div class="tg-proc">Процесс в live.json:runs не найден</div>')
+      + '<div class="tg-text" title="'+esc(text.slice(0,400))+'">'+esc(text||"без текста")+'</div>'
+      + '<div class="tg-proc">Шаг <b>'+Number(run.step||0)+' / '+Number(run.total||0)+'</b> · '
+        + esc(run.step_label||"") + ' · событий ' + Number(run.events||0)
+        + (last ? '<span class="tg-trail">последнее: '+esc(last)+'</span>' : '') + '</div>'
       + '</div>';
   }).join("");
-  const proc = st ? ' · агентов в работе: '+esc(st.agents_running!==undefined?st.agents_running:(st.agents||0)) : '';
-  if(stat) stat.innerHTML = '<b>'+active+'</b> в работе · '+entries.length+' всего'+proc;
+  if(stat) stat.innerHTML = '<span class="tg-pulse"></span><b>'+active+'</b> в работе · '+runs.length+' всего';
+  if(tabLive) tabLive.textContent = active ? ('●'+active) : '';
 }
 const tgReload = $("#tgReload"); if(tgReload) tgReload.addEventListener("click",()=>{
   fetchTGRequests(true); if(typeof fetchLiveData === "function") fetchLiveData(true);
@@ -4216,7 +4200,7 @@ const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
 <script src="task-tree.js?v=20261121-0640"></script>
-<script src="tg-requests.js?v=20261127-0335"></script>
+<script src="tg-requests.js?v=20261127-0620"></script>
 <script>/* views-render: источник декларативных видов; views.js читает SRC или inline window.MINIAPP_VIEWS */ window.MINIAPP_VIEWS_SRC = "views.json";</script>
 <script src="views.js?v=20261125-1705"></script>
 <script src="pdf-hub.js?v=20261121-0650"></script>
