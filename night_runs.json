@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.31,
-      "remaining_hours": 16.69,
+      "elapsed_hours": 3.32,
+      "remaining_hours": 16.68,
       "progress_pct": 17,
-      "cycles": 49,
-      "heartbeat_human": "11:31:02",
+      "cycles": 50,
+      "heartbeat_human": "11:32:02",
       "tree": {
         "phases": [
           {
@@ -42,9 +42,9 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 3,
+            "cycles": 4,
             "max": 4,
-            "last": "MUTATE",
+            "last": "RETHINK_REQUIRED",
             "score": 4,
             "verified": true
           },
@@ -515,13 +515,29 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "11:32:06",
+            "cycle": 50,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "11:32:06",
+            "cycle": 50,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 13,
-          "mutations": 12
+          "version": 14,
+          "mutations": 13
         },
-        "events": 56,
+        "events": 58,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -531,11 +547,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.31,
-      "remaining_hours": 16.69,
+      "elapsed_hours": 3.32,
+      "remaining_hours": 16.68,
       "progress_pct": 17,
-      "cycles": 44,
-      "heartbeat_human": "11:31:01",
+      "cycles": 45,
+      "heartbeat_human": "11:32:01",
       "tree": {
         "phases": [
           {
@@ -968,19 +984,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "11:32:16",
+            "cycle": 45,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 48,
+        "events": 49,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795768288,
-  "fetched_human": "2026-11-27 11:31:28 +0300"
+  "fetched_at": 1795768348,
+  "fetched_human": "2026-11-27 11:32:28 +0300"
 }
