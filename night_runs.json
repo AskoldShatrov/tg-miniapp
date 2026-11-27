@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 1.78,
-      "progress_pct": 11,
+      "elapsed_hours": 0.24,
+      "remaining_hours": 1.76,
+      "progress_pct": 12,
       "cycles": 54,
-      "heartbeat_human": "06:20:41",
+      "heartbeat_human": "06:21:41",
       "tree": {
         "phases": [
           {
@@ -578,11 +578,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 1.78,
-      "progress_pct": 11,
+      "elapsed_hours": 0.24,
+      "remaining_hours": 1.76,
+      "progress_pct": 12,
       "cycles": 40,
-      "heartbeat_human": "06:20:41",
+      "heartbeat_human": "06:21:41",
       "tree": {
         "phases": [
           {
@@ -1066,11 +1066,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.22,
-      "remaining_hours": 1.78,
-      "progress_pct": 11,
-      "cycles": 72,
-      "heartbeat_human": "06:20:41",
+      "elapsed_hours": 0.24,
+      "remaining_hours": 1.76,
+      "progress_pct": 12,
+      "cycles": 73,
+      "heartbeat_human": "06:21:41",
       "tree": {
         "phases": [
           {
@@ -1193,11 +1193,11 @@
           {
             "id": "UNI-PIVOT-EVIDENCE",
             "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
-            "cycles": 1,
+            "cycles": 2,
             "max": 4,
             "last": "WARMUP",
-            "score": 5,
-            "verified": false
+            "score": 7,
+            "verified": true
           },
           {
             "id": "UNI-GOST-RESIDUAL",
@@ -1219,14 +1219,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:29:38",
-            "cycle": 13,
-            "task": "UNI-PID-CALIB",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "01:35:10",
             "cycle": 14,
@@ -1698,19 +1690,27 @@
             "action": "WARMUP",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "06:21:22",
+            "cycle": 73,
+            "task": "UNI-PIVOT-EVIDENCE",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 72,
+        "events": 73,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795749652,
-  "fetched_human": "2026-11-27 06:20:52 +0300"
+  "fetched_at": 1795749710,
+  "fetched_human": "2026-11-27 06:21:50 +0300"
 }
