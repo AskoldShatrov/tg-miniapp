@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T04:00:14+00:00",
-  "generated_human": "27.11 04:00 UTC",
-  "as_of": 1795752013486,
+  "generated": "2026-11-27T04:01:16+00:00",
+  "generated_human": "27.11 04:01 UTC",
+  "as_of": 1795752075332,
   "stale_days": 1,
   "count": 1187,
   "groups": 9,
@@ -40,16 +40,29 @@
    ],
    "prompts": [
     {
+     "id": "ses-kwCTpkKqQt",
+     "text": "Пользователь спит; только локальные файлы. По engine.py:732-765 и ledger.jsonl проверь, сколько циклов получили PROMOTE при verify_ok=false (по аудиту — 57). Опиши минимальный патч, запрещающий PROMOTE без verify_ok, с путём, номером строки и регрессионным тестом. PASS/FAIL/OPEN с путями, командами, rc. HANDOFF: /home/nyaka/Documents/deepseek-harness/default-workspace/next_session_handoff_v50.md, SHA256:, MTIME:, VERDICT: PASS, два хэша. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PROMOTE-HONESTY-c63.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795752070000,
+     "source": "session",
+     "title": "lree-IMP-PROMOTE-HONESTY-c63",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795752070000,
+     "is_stale": false
+    },
+    {
      "id": "ses-9137qD9Zfu",
      "text": "Пользователь спит; только локальные файлы. Проверь ~/учеба/учеба/it/kr3/kr3_otchet.tex и pdf, ~/учеба/учеба/it/kp/current/kp_pz.tex, ~/учеба/учеба/nir_latex/nir_final.pdf командами check-tex.sh и check-pdf.py. Выведи PASS/FAIL/OPEN с путями, rc, sha256/mtime и конкретными остатками (таблицы, блок-схемы, титульник). HANDOFF: /home/nyaka/Documents/deepseek-harness/default-workspace/next_session_handoff_v50.md, SHA256:, MTIME:, VERDICT: PASS, два хэша. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-GOST-RESIDUAL-c79.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795752012000,
+     "ts": 1795752064000,
      "source": "session",
      "title": "lree-UNI-GOST-RESIDUAL-c79",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795752012000,
+     "as_of": 1795752064000,
      "is_stale": false
     },
     {
@@ -1877,14 +1890,14 @@
     {
      "id": "ses-pMX7RUpm62",
      "text": "Пользователь спит; только локальные файлы и уже собранные данные, новых камер/ПК не трогать. Факты из MASTERPLAN-v2 §1: T4 OPEN, REAL n=20, tp=17 fp=0 fn=11, ECE 0.4176; при 0 FP confidence неидентифицируем; SYNTHETIC в вердикт не входит; нужно REAL n>=60 с FP>0 и переобучение dot_quality под cyan. Прочитай artifacts/SF-T4-CALIB-c14.md, artifacts/SF-DIGEST-c23.md и research/REPORT.md в ~/scanfeed. Сгенерируй и зафиксируй ДО критики: IDEAS: (>=30 пронумерованных идей), HYPOTHESES: (>=3 проверяемых гипотез с X/Y), THRESHOLD: (числовой порог), HOLDOUT: (источник holdout и правило сплита). Обязательно опиши путь к REAL-кадрам с ненулевым FP и какие данные уже есть локально, а чего нет. Поля: SOURCE: PRIOR, SHA256:, MTIME:, VERDICT: PASS; минимум два хэша в тексте. VERDICT: PASS только при rc=0 команды verify_cmd. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-T4-REAL-RECOVERY-c46.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795752007000,
+     "ts": 1795752070000,
      "source": "session",
      "title": "lree-SF-T4-REAL-RECOVERY-c46",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795752007000,
+     "as_of": 1795752070000,
      "is_stale": false
     },
     {
@@ -5505,7 +5518,7 @@
     {
      "id": "ses-m9f4o0q43u",
      "text": "Только чтение и один артефакт. Исследуй готовые решения и последние проекты по автономным агентам-исследователям. Источники только первичные: страницы репозиториев, официальная документация, статьи авторов; через websearch/webfetch. Для каждого решения укажи название, точный URL, дату последней активности, какой механизм решает дублирование тем, сравнение результатов и проверку выводов, и что из этого применимо к нашему контуру (Telegram-бот + движок мандатов + сканфид). Обязательны VERDICT, n источников, дата чтения и оговорка о том, что не подтверждено. Запиши артефакт ровно по пути /home/nyaka/evolution-work-researcher/artifacts/RSCH-SURVEY-*.md. В артефакте обязательны: задача, команда проверки, её rc, путь, mtime, SHA256, дата и VERDICT. PROMISE: DONE только после записи файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-SURVEY-c4.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795752005000,
+     "ts": 1795752065000,
      "source": "session",
      "title": "lree-RSCH-SURVEY-c4",
      "source_label": "ноут",
@@ -5515,7 +5528,7 @@
       "w26112002435610ee",
       "w261121055339bfc8"
      ],
-     "as_of": 1795752005000,
+     "as_of": 1795752065000,
      "is_stale": false
     },
     {
@@ -22372,31 +22385,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795661211989,
      "as_of": 1795628811000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-KrMpBlkA60",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15613. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwweikv64jbe: C06-27638: C06 FP gate PASS — fp=67 > 0. Где: goals.json · 25.11.2026. Отчёт ~/overnight/cloud_tracks/C06-27638.md (T0 OPEN → T1 PASS → T2 pc-bridge DEGRADED). Машино-читаемый ~/overnight/cloud_tracks/C06-resu В конце вызови tools.goals.track({action:'done', id:'gmwweikv64jbe', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15613_run27638.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795628340000,
-     "source": "session",
-     "title": "AU15613: FP gate для C06-27638",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d"
-     ],
-     "answer": "[w261119090518006d] 🟩 Стили запушены, и итоги ночи теперь приходят одной красивой картинкой с человеческой подписью.\n\nПОНЯТНО: оформление мини-апа уже было выложено, а вот доставка ответа одним сообщением не работала — т",
-     "answer_short": "w261119090518006d: 🟩 Стили запушены, и итоги ночи теперь приходят одной красиво",
-     "answer_full": "🟩 Стили запушены, и итоги ночи теперь приходят одной красивой картинкой с человеческой подписью.\n\nПОНЯТНО: оформление мини-апа уже было выложено, а вот доставка ответа одним сообщением не работала — тест падал. Исправил, проверил и отправил исправление на сервер исходников.\n\nОба новых коммита в origin/master: f6cc03d и 3172b62.\n\n🟦 Где стили: оформление мини-апа — `bots/miniapp/` (коммит 8d88691 уже на странице приложения); стиль доставки ответов — `bots/remote_agent_bot.py`; правило отвечать по-человечески — `bots/chat_memory.md`.\n\n🟩 Постер с итогами ночи уже ушёл в чат одной картинкой с подписью — это и есть новый стиль доставки.\n\n🟥 Итог ночи по сканфиду честный: сто два витка и двенадцать проверенных дайджестов, но главный гейт калибровки не пройден — ошибка уверенности выше порога. Прорывом это не называю.\n\n🟨 Одно ограничение: мост не перезапускал, потому что в работе активные сессии. Пока он не перезапустится в тихое окно, новые ответы пойдут старым путём; этот постер отправил напрямую с подписью.\n\nКак убедиться: `python3 bots/test_one_message_delivery.py` — PASS; отчёт мандата — `/home/nyaka/evolution-work/scanfeed-8h-1125/COORD-MANDATE-COMPLETE.md`, контрольная сумма постера `4869da0e…`.",
-     "answer_digest": {
-      "length": 1212,
-      "sha256": "65f08ffed6d16c4252525b76677c486b8c71bc5925127c7cb4befa17c8b79b65"
-     },
-     "answer_text_id": "65f08ffed6d16c42",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795661211989,
-     "as_of": 1795628340000,
      "is_stale": true
     },
     {
