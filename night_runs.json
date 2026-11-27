@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.9,
-      "remaining_hours": 17.1,
+      "elapsed_hours": 2.92,
+      "remaining_hours": 17.08,
       "progress_pct": 15,
-      "cycles": 44,
-      "heartbeat_human": "11:07:02",
+      "cycles": 45,
+      "heartbeat_human": "11:08:02",
       "tree": {
         "phases": [
           {
@@ -51,11 +51,11 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 0,
+            "cycles": 1,
             "max": 4,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
           }
         ],
         "trail": [
@@ -458,15 +458,23 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "11:07:19",
+            "cycle": 45,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 12,
           "mutations": 11
         },
-        "events": 50,
+        "events": 51,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     },
     {
@@ -474,11 +482,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.9,
-      "remaining_hours": 17.1,
+      "elapsed_hours": 2.92,
+      "remaining_hours": 17.08,
       "progress_pct": 15,
-      "cycles": 31,
-      "heartbeat_human": "11:07:01",
+      "cycles": 32,
+      "heartbeat_human": "11:08:01",
       "tree": {
         "phases": [
           {
@@ -798,19 +806,27 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "11:07:35",
+            "cycle": 32,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 35,
+        "events": 36,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795766834,
-  "fetched_human": "2026-11-27 11:07:14 +0300"
+  "fetched_at": 1795766900,
+  "fetched_human": "2026-11-27 11:08:20 +0300"
 }
