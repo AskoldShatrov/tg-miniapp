@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.91,
-      "remaining_hours": 4.09,
+      "elapsed_hours": 3.95,
+      "remaining_hours": 4.05,
       "progress_pct": 49,
-      "cycles": 37,
-      "heartbeat_human": "04:00:04",
+      "cycles": 38,
+      "heartbeat_human": "04:02:04",
       "tree": {
         "phases": [
           {
@@ -78,7 +78,7 @@
           {
             "id": "IMP-WRITER",
             "title": "Writer улучшения",
-            "cycles": 2,
+            "cycles": 3,
             "max": 5,
             "last": "PROMOTE",
             "score": 5,
@@ -399,15 +399,23 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:00:41",
+            "cycle": 38,
+            "task": "IMP-WRITER",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 37,
+        "events": 38,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -415,11 +423,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.91,
-      "remaining_hours": 4.09,
+      "elapsed_hours": 3.95,
+      "remaining_hours": 4.05,
       "progress_pct": 49,
-      "cycles": 44,
-      "heartbeat_human": "04:00:04",
+      "cycles": 45,
+      "heartbeat_human": "04:02:04",
       "tree": {
         "phases": [
           {
@@ -497,7 +505,7 @@
           {
             "id": "UNI-NIR",
             "title": "НИР: гейты и версии",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "MUTATE",
             "score": 4,
@@ -883,19 +891,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
+          },
+          {
+            "clock": "04:01:00",
+            "cycle": 45,
+            "task": "UNI-NIR",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
           }
         ],
         "strategy": {
-          "version": 23,
-          "mutations": 22
+          "version": 24,
+          "mutations": 23
         },
-        "events": 44,
+        "events": 45,
         "avg_score": 4.8,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795741221,
-  "fetched_human": "2026-11-27 04:00:21 +0300"
+  "fetched_at": 1795741353,
+  "fetched_human": "2026-11-27 04:02:33 +0300"
 }
