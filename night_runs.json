@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.82,
-      "remaining_hours": 13.18,
+      "elapsed_hours": 6.85,
+      "remaining_hours": 13.15,
       "progress_pct": 34,
-      "cycles": 120,
-      "heartbeat_human": "15:01:55",
+      "cycles": 121,
+      "heartbeat_human": "15:03:55",
       "tree": {
         "phases": [
           {
@@ -24,9 +24,9 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 11,
+            "cycles": 12,
             "max": 16,
-            "last": "RETHINK_REQUIRED",
+            "last": "WARMUP",
             "score": 4,
             "verified": true
           },
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:36:14",
-            "cycle": 80,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "12:42:34",
             "cycle": 81,
@@ -547,13 +539,21 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "15:04:08",
+            "cycle": 121,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 54,
           "mutations": 53
         },
-        "events": 155,
+        "events": 156,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.82,
-      "remaining_hours": 13.18,
+      "elapsed_hours": 6.85,
+      "remaining_hours": 13.15,
       "progress_pct": 34,
       "cycles": 138,
-      "heartbeat_human": "15:02:06",
+      "heartbeat_human": "15:04:06",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795780933,
-  "fetched_human": "2026-11-27 15:02:13 +0300"
+  "fetched_at": 1795781055,
+  "fetched_human": "2026-11-27 15:04:15 +0300"
 }
