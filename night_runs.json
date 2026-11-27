@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.1,
-      "remaining_hours": 14.9,
+      "elapsed_hours": 5.12,
+      "remaining_hours": 14.88,
       "progress_pct": 26,
       "cycles": 89,
-      "heartbeat_human": "13:19:16",
+      "heartbeat_human": "13:20:16",
       "tree": {
         "phases": [
           {
@@ -563,13 +563,22 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.1,
-      "remaining_hours": 14.9,
+      "elapsed_hours": 5.12,
+      "remaining_hours": 14.88,
       "progress_pct": 26,
-      "cycles": 92,
-      "heartbeat_human": "13:19:15",
+      "cycles": 93,
+      "heartbeat_human": "13:20:15",
       "tree": {
         "phases": [
+          {
+            "id": "SF-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
+            "cycles": 9,
+            "max": 16,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
+          },
           {
             "id": "SF-LIVE-DEMO-20H",
             "title": "Сканфид: живая демка вместо заморозки на 54806",
@@ -585,15 +594,6 @@
             "cycles": 8,
             "max": 8,
             "last": "MUTATED_AFTER_3_FAIL",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "SF-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 8,
-            "max": 16,
-            "last": "MUTATE",
             "score": 5,
             "verified": false
           },
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:13:53",
-            "cycle": 35,
-            "task": "SF-NIGHT-PAIR-WRITER",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "11:18:08",
-            "cycle": 36,
-            "task": "SF-NIGHT-PAIR-WRITER",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "11:22:15",
             "cycle": 37,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "13:19:20",
+            "cycle": 93,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:19:20",
+            "cycle": 93,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 16,
-          "mutations": 15
+          "version": 17,
+          "mutations": 16
         },
-        "events": 98,
+        "events": 100,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795774758,
-  "fetched_human": "2026-11-27 13:19:18 +0300"
+  "fetched_at": 1795774818,
+  "fetched_human": "2026-11-27 13:20:18 +0300"
 }
