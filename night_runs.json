@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.74,
-      "remaining_hours": 12.26,
+      "elapsed_hours": 7.76,
+      "remaining_hours": 12.24,
       "progress_pct": 39,
-      "cycles": 131,
-      "heartbeat_human": "15:56:55",
+      "cycles": 132,
+      "heartbeat_human": "15:58:25",
       "tree": {
         "phases": [
           {
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:29:33",
-            "cycle": 91,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:29:33",
             "cycle": 91,
@@ -547,13 +539,21 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "15:57:50",
+            "cycle": 132,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 63,
-          "mutations": 62
+          "version": 64,
+          "mutations": 63
         },
-        "events": 172,
+        "events": 173,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.74,
-      "remaining_hours": 12.26,
+      "elapsed_hours": 7.76,
+      "remaining_hours": 12.24,
       "progress_pct": 39,
-      "cycles": 152,
-      "heartbeat_human": "15:57:07",
+      "cycles": 153,
+      "heartbeat_human": "15:58:07",
       "tree": {
         "phases": [
           {
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:44:00",
-            "cycle": 107,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "13:45:15",
-            "cycle": 108,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:46:30",
             "cycle": 109,
@@ -1096,19 +1080,35 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос writer"
+          },
+          {
+            "clock": "15:57:38",
+            "cycle": 153,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "15:57:38",
+            "cycle": 153,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос pair"
           }
         ],
         "strategy": {
-          "version": 41,
-          "mutations": 40
+          "version": 42,
+          "mutations": 41
         },
-        "events": 174,
+        "events": 176,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795784244,
-  "fetched_human": "2026-11-27 15:57:24 +0300"
+  "fetched_at": 1795784306,
+  "fetched_human": "2026-11-27 15:58:26 +0300"
 }
