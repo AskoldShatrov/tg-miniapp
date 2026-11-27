@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.67,
-      "remaining_hours": 12.33,
+      "elapsed_hours": 7.69,
+      "remaining_hours": 12.31,
       "progress_pct": 38,
-      "cycles": 128,
-      "heartbeat_human": "15:53:25",
+      "cycles": 129,
+      "heartbeat_human": "15:54:25",
       "tree": {
         "phases": [
           {
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:15:35",
-            "cycle": 89,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "13:22:35",
             "cycle": 90,
@@ -547,13 +539,21 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "RED.log старше старта витка на 260 с"
+          },
+          {
+            "clock": "15:54:05",
+            "cycle": 129,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 60,
-          "mutations": 59
+          "version": 61,
+          "mutations": 60
         },
-        "events": 169,
+        "events": 170,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.67,
-      "remaining_hours": 12.33,
+      "elapsed_hours": 7.69,
+      "remaining_hours": 12.31,
       "progress_pct": 38,
-      "cycles": 149,
-      "heartbeat_human": "15:53:07",
+      "cycles": 150,
+      "heartbeat_human": "15:54:07",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:39:00",
-            "cycle": 103,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:40:15",
             "cycle": 104,
@@ -1096,19 +1088,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос decisions"
+          },
+          {
+            "clock": "15:53:53",
+            "cycle": 150,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос calibration"
           }
         ],
         "strategy": {
-          "version": 38,
-          "mutations": 37
+          "version": 39,
+          "mutations": 38
         },
-        "events": 170,
+        "events": 171,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795784009,
-  "fetched_human": "2026-11-27 15:53:29 +0300"
+  "fetched_at": 1795784066,
+  "fetched_human": "2026-11-27 15:54:26 +0300"
 }
