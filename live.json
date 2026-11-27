@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1056,
+      "age_min": 1057,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1056,
+      "age_min": 1057,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 1056,
+      "age_min": 1057,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-2dc8b998",
-      "title": "Работа над университетскими заданиями сейч",
-      "source": "dsh",
-      "claimed_human": "07:54:14",
-      "age_min": 0,
-      "full": "Работа над университетскими заданиями сейч"
     },
     {
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "07:54:07",
+      "claimed_human": "07:55:15",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
     },
@@ -2118,16 +2110,24 @@
       "id": "1ac336b4-3558-40",
       "title": "РОЛЬ: исполнитель реа",
       "source": "dsh",
-      "claimed_human": "07:54:06",
+      "claimed_human": "07:55:13",
       "age_min": 0,
       "full": "РОЛЬ: исполнитель реа"
+    },
+    {
+      "id": "session-2dc8b998",
+      "title": "Работа над университетскими заданиями сейч",
+      "source": "dsh",
+      "claimed_human": "07:54:50",
+      "age_min": 0,
+      "full": "Работа над университетскими заданиями сейч"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
       "claimed_human": "07:53:54",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     }
   ],
@@ -2158,16 +2158,8 @@
       "step_label": "Исправить то, что не доехало, и выложить заново",
       "step": 3,
       "total": 4,
-      "events": 40,
+      "events": 42,
       "trail": [
-        {
-          "ts": 1795754508,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795754522,
-          "label": "READ · /tmp/opencode/vis"
-        },
         {
           "ts": 1795754537,
           "label": "BASH · grep -n \"dec/.sty"
@@ -2351,10 +2343,18 @@
         {
           "ts": 1795755217,
           "label": "SYNC · visual-answer-che"
+        },
+        {
+          "ts": 1795755263,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795755285,
+          "label": "BASH · echo \"=== живые P"
         }
       ],
       "started_at": 1795754185,
-      "updated_at": 1795755252
+      "updated_at": 1795755315
     },
     {
       "key": "req-20261127-074824-fc97e9",
@@ -2364,44 +2364,8 @@
       "step_label": "Проверить ночные прогоны",
       "step": 1,
       "total": 5,
-      "events": 35,
+      "events": 41,
       "trail": [
-        {
-          "ts": 1795754988,
-          "label": "BASH · ls -la ~/.config/"
-        },
-        {
-          "ts": 1795754988,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755000,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755001,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755008,
-          "label": "READ · /home/nyaka/scrip"
-        },
-        {
-          "ts": 1795755008,
-          "label": "BASH · python3 -c \"impor"
-        },
-        {
-          "ts": 1795755008,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755014,
-          "label": "SYNC · opencode"
-        },
-        {
-          "ts": 1795755014,
-          "label": "THINK"
-        },
         {
           "ts": 1795755024,
           "label": "READ · /home/nyaka/.conf"
@@ -2557,10 +2521,46 @@
         {
           "ts": 1795755250,
           "label": "THINK"
+        },
+        {
+          "ts": 1795755258,
+          "label": "BASH · git -C ~/.config/"
+        },
+        {
+          "ts": 1795755267,
+          "label": "GREP · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755268,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755274,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755282,
+          "label": "EDIT · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755282,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755289,
+          "label": "BASH · python3 -m py_com"
+        },
+        {
+          "ts": 1795755309,
+          "label": "GREP · /home/nyaka/share"
+        },
+        {
+          "ts": 1795755309,
+          "label": "THINK"
         }
       ],
       "started_at": 1795754904,
-      "updated_at": 1795755252
+      "updated_at": 1795755315
     }
   ],
   "bars": [
@@ -2579,6 +2579,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 3.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795755255,
-  "fetched_human": "2026-11-27 07:54:15 +0300"
+  "fetched_at": 1795755315,
+  "fetched_human": "2026-11-27 07:55:15 +0300"
 }
