@@ -24,9 +24,11 @@
       var ts = Number(r.updated_at) || 0;
       var clock = ts ? new Date(ts * 1000).toLocaleTimeString("ru-RU",
         {hour:"2-digit",minute:"2-digit",second:"2-digit"}) : "—";
+      var running = ts > 0 && (Date.now() - ts * 1000) < 900000;
       return '<div class="tg-req" data-key="' + esc(key) + '" style="padding:9px 11px;margin-bottom:7px;' +
         'background:var(--surface0);border:1px solid var(--surface1);border-radius:10px;cursor:pointer">' +
         '<div style="font:700 13px/1.35 var(--ff);color:var(--text)">' +
+          (running ? '<span class="tg-spin" aria-hidden="true"></span>' : '') +
           esc(r.title || r.label || key) + '</div>' +
         '<div style="margin-top:5px;color:var(--subtext0);font:600 10.5px/1.3 var(--fm)">' +
           esc(key) + (r.session_id ? " · " + esc(r.session_id) : "") + '</div>' +
