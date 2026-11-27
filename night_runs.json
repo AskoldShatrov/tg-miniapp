@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.77,
-      "remaining_hours": 12.23,
+      "elapsed_hours": 7.79,
+      "remaining_hours": 12.21,
       "progress_pct": 39,
-      "cycles": 133,
-      "heartbeat_human": "15:59:25",
+      "cycles": 134,
+      "heartbeat_human": "16:00:25",
       "tree": {
         "phases": [
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:35:41",
-            "cycle": 92,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "13:35:41",
-            "cycle": 92,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "13:42:56",
             "cycle": 93,
@@ -547,13 +531,29 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "16:00:20",
+            "cycle": 134,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "16:00:20",
+            "cycle": 134,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 65,
-          "mutations": 64
+          "version": 66,
+          "mutations": 65
         },
-        "events": 174,
+        "events": 176,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.77,
-      "remaining_hours": 12.23,
+      "elapsed_hours": 7.79,
+      "remaining_hours": 12.21,
       "progress_pct": 39,
-      "cycles": 154,
-      "heartbeat_human": "15:59:07",
+      "cycles": 155,
+      "heartbeat_human": "16:00:07",
       "tree": {
         "phases": [
           {
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:49:00",
-            "cycle": 111,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "13:57:34",
-            "cycle": 112,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "13:57:34",
             "cycle": 112,
@@ -1096,19 +1080,35 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос retro-unblock"
+          },
+          {
+            "clock": "16:00:08",
+            "cycle": 155,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "16:00:08",
+            "cycle": 155,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
           }
         ],
         "strategy": {
-          "version": 43,
-          "mutations": 42
+          "version": 44,
+          "mutations": 43
         },
-        "events": 178,
+        "events": 180,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795784366,
-  "fetched_human": "2026-11-27 15:59:26 +0300"
+  "fetched_at": 1795784426,
+  "fetched_human": "2026-11-27 16:00:26 +0300"
 }
