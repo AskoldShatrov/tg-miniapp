@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.54,
-      "remaining_hours": 16.46,
+      "elapsed_hours": 3.56,
+      "remaining_hours": 16.44,
       "progress_pct": 18,
-      "cycles": 52,
-      "heartbeat_human": "11:45:32",
+      "cycles": 53,
+      "heartbeat_human": "11:46:32",
       "tree": {
         "phases": [
           {
@@ -62,20 +62,12 @@
             "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
             "cycles": 2,
             "max": 3,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
+            "last": "RETHINK_BLOCKED",
+            "score": 0,
+            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:26:03",
-            "cycle": 2,
-            "task": "IMP-PHYSICAL-GATE-20H",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "08:31:30",
             "cycle": 3,
@@ -547,13 +539,21 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "11:46:23",
+            "cycle": 53,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 16,
           "mutations": 15
         },
-        "events": 62,
+        "events": 63,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.54,
-      "remaining_hours": 16.46,
+      "elapsed_hours": 3.56,
+      "remaining_hours": 16.44,
       "progress_pct": 18,
-      "cycles": 47,
-      "heartbeat_human": "11:45:32",
+      "cycles": 48,
+      "heartbeat_human": "11:46:32",
       "tree": {
         "phases": [
           {
@@ -598,6 +598,15 @@
             "verified": true
           },
           {
+            "id": "SF-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
+            "cycles": 3,
+            "max": 3,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "SF-DECISION-MEMORY-CALIB-20H",
             "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
             "cycles": 2,
@@ -605,15 +614,6 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "SF-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 2,
-            "max": 3,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
           }
         ],
         "trail": [
@@ -1024,19 +1024,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "11:45:41",
+            "cycle": 48,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 51,
+        "events": 52,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795769137,
-  "fetched_human": "2026-11-27 11:45:37 +0300"
+  "fetched_at": 1795769198,
+  "fetched_human": "2026-11-27 11:46:38 +0300"
 }
