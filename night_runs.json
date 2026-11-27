@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.86,
-      "remaining_hours": 1.14,
-      "progress_pct": 43,
-      "cycles": 61,
-      "heartbeat_human": "06:59:11",
+      "elapsed_hours": 0.88,
+      "remaining_hours": 1.12,
+      "progress_pct": 44,
+      "cycles": 62,
+      "heartbeat_human": "07:00:11",
       "tree": {
         "phases": [
           {
@@ -123,22 +123,14 @@
           {
             "id": "IMP-PROMOTE-HONESTY",
             "title": "PROMOTE без verify_ok: честный аудит",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
+            "last": "PROMOTE",
+            "score": 4,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "00:19:34",
-            "cycle": 2,
-            "task": "IMP-PRIOR-INTAKE",
-            "action": "WARMUP",
-            "score": 5,
-            "note": "RED.log отсутствует или старше started_ts"
-          },
           {
             "clock": "00:35:34",
             "cycle": 3,
@@ -610,15 +602,23 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:59:45",
+            "cycle": 62,
+            "task": "IMP-PROMOTE-HONESTY",
+            "action": "PROMOTE",
+            "score": 4,
+            "note": "verify rc=1: FAIL /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/comp"
           }
         ],
         "strategy": {
           "version": 24,
           "mutations": 23
         },
-        "events": 61,
+        "events": 62,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.86,
-      "remaining_hours": 1.14,
-      "progress_pct": 43,
+      "elapsed_hours": 0.88,
+      "remaining_hours": 1.12,
+      "progress_pct": 44,
       "cycles": 45,
-      "heartbeat_human": "06:59:11",
+      "heartbeat_human": "07:00:11",
       "tree": {
         "phases": [
           {
@@ -1154,11 +1154,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.86,
-      "remaining_hours": 1.14,
-      "progress_pct": 43,
+      "elapsed_hours": 0.88,
+      "remaining_hours": 1.12,
+      "progress_pct": 44,
       "cycles": 78,
-      "heartbeat_human": "06:59:11",
+      "heartbeat_human": "07:00:11",
       "tree": {
         "phases": [
           {
@@ -1799,6 +1799,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795751955,
-  "fetched_human": "2026-11-27 06:59:15 +0300"
+  "fetched_at": 1795752015,
+  "fetched_human": "2026-11-27 07:00:16 +0300"
 }
