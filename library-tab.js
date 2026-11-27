@@ -63,8 +63,8 @@
     source: 'Учёба · PDF',
     folder: 'Учёба · PDF',
     date: '2026-11-27',
-    url: BASE_URL + 'pdfs/kr3-modelirovanie.pdf?v=efd66364fe',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'pdfs/kr3-modelirovanie.pdf?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     tags: ['контрольная работа', 'моделирование систем', 'КР3', '7 стр', 'постоянная ссылка'],
     abstract: 'Контрольная работа №3 по моделированию систем, вариант 8. Адрес привязан к отпечатку файла (efd66364fe). Титульник на общей сетке с НИР и курсовым проектом, гейт PASS; график подходит к заданию 1,50 снизу, без пересечения.'
   }, {
@@ -74,8 +74,8 @@
     source: 'Учёба · Word',
     folder: 'Word · документы',
     date: '2026-11-27',
-    url: BASE_URL + 'pdfs/kontrolnye-raboty-1-3.docx?v=7eb04bf7c0',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'pdfs/kontrolnye-raboty-1-3.docx?v=20261127-1136',
+    updated: '2026-11-27T11:36:00+03:00',
     tags: ['контрольные работы', 'Word', 'компьютерное моделирование', 'постоянная ссылка'],
     abstract: 'Постоянная ссылка на комплект контрольных работ № 1–3 в формате Word. Файл обновляется на месте: дата в ссылке не меняется. Опубликовано 27.11.2026.'
   }, {
@@ -84,8 +84,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/01-kontrolnye-raboty-1-3.docx?v=7eb04bf7c0',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/01-kontrolnye-raboty-1-3.docx?v=20261127-1136',
+    updated: '2026-11-27T11:36:00+03:00',
     folder: 'Word · документы',
     tags: ['контрольные работы', 'Word', 'компьютерное моделирование'],
     abstract: 'Комплект контрольных работ № 1–3 в исходном формате Word, опубликован без перекодирования.'
@@ -95,8 +95,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/02-kr1-2-3-shatrov.docx?v=9201d79aa5',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/02-kr1-2-3-shatrov.docx?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['контрольные работы', 'Word', 'Шатров'],
     abstract: 'Контрольные работы 1, 2 и 3 Шатрова А. И. в исходном формате Word.'
@@ -106,8 +106,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/03-zadanie-kp-kmvkh.doc?v=6684d6a986',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/03-zadanie-kp-kmvkh.doc?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
     abstract: 'Шаблон задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
@@ -117,8 +117,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/04-titul-sheremetev.docx?v=15dc309c74',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/04-titul-sheremetev.docx?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['титульный лист', 'курсовая работа', 'Word', 'Шереметьев'],
     abstract: 'Пример титульного листа и задания курсовой работы, формат Word.'
@@ -128,8 +128,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/05-zadanie-belyaev.doc?v=76014ae969',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/05-zadanie-belyaev.doc?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
     abstract: 'Пример задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
@@ -139,8 +139,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/06-zadanie-rumyantsev.doc?v=e465be01f4',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/06-zadanie-rumyantsev.doc?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
     abstract: 'Пример задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
@@ -150,8 +150,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/07-otchet-nir.docx?v=b286a34b87',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/07-otchet-nir.docx?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['НИР', 'отчёт', 'Word', 'Ковинев'],
     abstract: 'Отчёт по научно-исследовательской работе в исходном формате Word.'
@@ -161,8 +161,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/08-tz-nir.docx?v=0a9064e91e',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/08-tz-nir.docx?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['НИР', 'техническое задание', 'Word'],
     abstract: 'Техническое задание на научно-исследовательскую работу в исходном формате Word.'
@@ -172,8 +172,8 @@
     authors: 'Учёба · Word',
     source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'word/09-kp-primer.docx?v=e7abbdd3f1',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'word/09-kp-primer.docx?v=20261127-1139',
+    updated: '2026-11-27T11:39:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'ОРАИС', 'пример', 'Word'],
     abstract: 'Пример курсового проекта по ОРАИС в исходном формате Word.'
