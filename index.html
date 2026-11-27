@@ -852,6 +852,9 @@
     <!-- @owner:interview-tab @region:nav-interview: отдельная вкладка интервью -->
     <button class="tab" data-tab="interview" title="Интервью по всем проектам"><span>🎙</span> Интервью <span class="key">8</span></button>
     <!-- @owner:interview-tab @region:nav-interview end -->
+    <!-- @owner:tg-requests-tab @region:nav-tg: активные запросы из Telegram -->
+    <button class="tab" data-tab="tg" title="Активные запросы из Telegram"><span>⟲</span> TG-запросы <span class="key">9</span></button>
+    <!-- @owner:tg-requests-tab @region:nav-tg end -->
     <!-- @owner:night-runs @region:nav-night: ночные мандаты живут внутри вкладки «Ход» --->
     <!-- @owner:redesign-2026-11-21 @region:nav-5tabs end -->
       </nav>
@@ -910,6 +913,47 @@
       </div>
     </section>
     <!-- @owner:interview-tab @region:screen-interview end -->
+    <!-- @owner:tg-requests-tab @region:screen-tg: активные запросы из Telegram и живые процессы по ним -->
+    <section class="screen" id="screen-tg">
+      <style>
+        .tg-wrap{padding:12px;display:flex;flex-direction:column;gap:10px}
+        .tg-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .tg-head .eyebrow{margin:0;flex:1}
+        .tg-stat{font:600 11px/1.3 var(--fm);color:var(--overlay2)}
+        .tg-stat b{color:var(--green)}
+        .tg-list{display:flex;flex-direction:column;gap:10px}
+        .tg-card{border:1px solid var(--surface0);border-radius:14px;padding:11px 12px;background:rgba(49,50,68,.35)}
+        .tg-card.active{border-color:rgba(166,227,161,.45);background:rgba(166,227,161,.06)}
+        .tg-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+        .tg-id{font:700 11px/1 var(--fm);color:var(--blue)}
+        .tg-chat{font:600 11px/1 var(--fm);color:var(--overlay2)}
+        .tg-age{font:600 11px/1 var(--fm);color:var(--overlay2);margin-left:auto}
+        .tg-badge{font:800 10px/1 var(--fm);padding:4px 7px;border-radius:8px;border:1px solid var(--surface1);color:var(--overlay2)}
+        .tg-badge.on{color:var(--green);border-color:rgba(166,227,161,.5);background:rgba(166,227,161,.08)}
+        .tg-text{font:13px/1.45 var(--ff);color:var(--subtext1);max-height:76px;overflow:hidden;
+          display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;white-space:pre-wrap;word-break:break-word}
+        .tg-proc{margin-top:8px;padding-top:8px;border-top:1px dashed var(--surface0);
+          font:600 11px/1.45 var(--fm);color:var(--overlay2)}
+        .tg-proc b{color:var(--green)}
+        .tg-trail{display:block;margin-top:3px;color:var(--subtext0);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .tg-empty{padding:18px;text-align:center;color:var(--overlay2);font:12px/1.5 var(--ff);
+          border:1px dashed var(--surface0);border-radius:14px}
+        .tg-reload{appearance:none;border:1px solid var(--surface1);background:var(--surface0);color:var(--text);
+          font:700 11px/1 var(--ff);padding:7px 10px;border-radius:10px;cursor:pointer}
+        .tg-hint{font:11px/1.45 var(--ff);color:var(--overlay2)}
+        .tg-hint b{color:var(--subtext0)}
+      </style>
+      <div class="tg-wrap">
+        <div class="tg-head">
+          <div class="eyebrow">⟲ TG-запросы · активные запросы из Telegram</div>
+          <span class="tg-stat" id="tgStat">…</span>
+          <button class="tg-reload" id="tgReload" type="button" title="Перечитать pending_requests.json и live.json">⟳ Обновить</button>
+        </div>
+        <div class="tg-list" id="tgList"><div class="tg-empty">Загружаю активные запросы…</div></div>
+        <div class="tg-hint">Источник: <b>pending_requests.json</b> · процессы: <b>live.json:runs</b> · «в работе» = запрос моложе 15 минут.</div>
+      </div>
+    </section>
+    <!-- @owner:tg-requests-tab @region:screen-tg end -->
     <section class="screen" id="screen-chat">
       <div class="chat-head">
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
@@ -1285,7 +1329,7 @@ function toast(msg){
 
 /* ---------- tabs ---------- */
 /* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
-const TAB_IDS=["live","tasks","prompts","atlas","chat","backup","library","interview"];
+const TAB_IDS=["live","tasks","prompts","atlas","chat","backup","library","interview","tg"];
 
 const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function setTab(name){
@@ -1303,6 +1347,7 @@ function setTab(name){
   if(name==="backup"&&typeof backupLoad==="function") backupLoad();
   if(name==="library"&&window.LibraryTab) LibraryTab.refresh();
   if(name==="interview"&&typeof renderInterview==="function") renderInterview();
+  if(name==="tg"&&typeof fetchTGRequests==="function") fetchTGRequests(true);
   if(name==="prompts"&&typeof refreshPrompts==="function"&&!PROMPTS_LOADED) refreshPrompts();
   if(name==="live"){
     if(typeof fetchLiveData==="function") fetchLiveData();
