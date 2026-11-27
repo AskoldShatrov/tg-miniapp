@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.86,
-      "remaining_hours": 16.14,
+      "elapsed_hours": 3.88,
+      "remaining_hours": 16.12,
       "progress_pct": 19,
-      "cycles": 58,
-      "heartbeat_human": "12:04:33",
+      "cycles": 59,
+      "heartbeat_human": "12:05:45",
       "tree": {
         "phases": [
           {
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:20:30",
-            "cycle": 10,
-            "task": "IMP-HONESTY-20H",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "09:28:15",
             "cycle": 11,
@@ -547,13 +539,21 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос pair"
+          },
+          {
+            "clock": "12:05:00",
+            "cycle": 59,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос retro-unblock"
           }
         ],
         "strategy": {
-          "version": 21,
-          "mutations": 20
+          "version": 22,
+          "mutations": 21
         },
-        "events": 70,
+        "events": 71,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.86,
-      "remaining_hours": 16.14,
+      "elapsed_hours": 3.88,
+      "remaining_hours": 16.12,
       "progress_pct": 19,
-      "cycles": 63,
-      "heartbeat_human": "12:04:32",
+      "cycles": 64,
+      "heartbeat_human": "12:05:44",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:58:22",
-            "cycle": 7,
-            "task": "SF-LIVE-DEMO-20H",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
-          },
           {
             "clock": "09:00:22",
             "cycle": 8,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:05:42",
+            "cycle": 64,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 67,
+        "events": 68,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795770290,
-  "fetched_human": "2026-11-27 12:04:50 +0300"
+  "fetched_at": 1795770352,
+  "fetched_human": "2026-11-27 12:05:52 +0300"
 }
