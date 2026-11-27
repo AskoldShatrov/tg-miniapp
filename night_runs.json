@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.35,
-      "remaining_hours": 3.65,
-      "progress_pct": 54,
-      "cycles": 45,
-      "heartbeat_human": "04:26:34",
+      "elapsed_hours": 4.37,
+      "remaining_hours": 3.63,
+      "progress_pct": 55,
+      "cycles": 46,
+      "heartbeat_human": "04:27:34",
       "tree": {
         "phases": [
           {
@@ -96,10 +96,10 @@
           {
             "id": "IMP-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 0,
+            "cycles": 1,
             "max": 8,
-            "last": "—",
-            "score": 0,
+            "last": "PROMOTE",
+            "score": 5,
             "verified": false
           }
         ],
@@ -463,15 +463,23 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:27:32",
+            "cycle": 46,
+            "task": "IMP-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 19,
           "mutations": 18
         },
-        "events": 45,
+        "events": 46,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -479,11 +487,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.35,
-      "remaining_hours": 3.65,
-      "progress_pct": 54,
-      "cycles": 49,
-      "heartbeat_human": "04:26:34",
+      "elapsed_hours": 4.37,
+      "remaining_hours": 3.63,
+      "progress_pct": 55,
+      "cycles": 50,
+      "heartbeat_human": "04:27:34",
       "tree": {
         "phases": [
           {
@@ -570,9 +578,9 @@
           {
             "id": "UNI-KP",
             "title": "Курсовая: LaTeX и блок-схема",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 4,
             "verified": false
           },
@@ -987,19 +995,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c49.md MTIME unparseable; missing PASS:; missing FA"
+          },
+          {
+            "clock": "04:27:02",
+            "cycle": 50,
+            "task": "UNI-KP",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c50.md MTIME unparseable; missing PASS:; missing FA"
           }
         ],
         "strategy": {
-          "version": 28,
-          "mutations": 27
+          "version": 29,
+          "mutations": 28
         },
-        "events": 49,
+        "events": 50,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795742811,
-  "fetched_human": "2026-11-27 04:26:51 +0300"
+  "fetched_at": 1795742870,
+  "fetched_human": "2026-11-27 04:27:50 +0300"
 }
