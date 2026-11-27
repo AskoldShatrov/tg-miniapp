@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-27 03:30",
+ "generated": "2026-11-27 04:00",
  "window": {
-  "start": "2026-11-26T20:15",
-  "end": "2026-11-27T00:26",
-  "sessions": 186,
+  "start": "2026-11-26T20:16",
+  "end": "2026-11-27T00:40",
+  "sessions": 187,
   "roots": 150
  },
  "summary": {
@@ -24,17 +24,17 @@
    "status_text": "Расходится с задуманным",
    "runs": 150,
    "median_s": 291,
-   "max_s": 15024,
-   "last": "2026-11-27T00:26:57.126000+00:00",
+   "max_s": 16780,
+   "last": "2026-11-27T00:40:01.165000+00:00",
    "outcomes": {
-    "waiting_user": 3,
-    "done": 111,
+    "done": 112,
     "cancelled": 2,
-    "error": 34
+    "error": 34,
+    "waiting_user": 2
    },
    "example": [
-    "x3pG1SPD",
-    "thTmOwvs"
+    "thTmOwvs",
+    "ew9P0KG9"
    ],
    "actual": [
     {
@@ -51,7 +51,7 @@
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 114 из 150, ≈30 вызовов за раз",
+     "t": "в 114 из 150, ≈31 вызовов за раз",
      "d": 1
     },
     {
@@ -63,13 +63,13 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 100 из 150, ≈8 вызовов за раз",
+     "t": "в 101 из 150, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 102 из 150, ≈8 вызовов за раз",
+     "t": "в 103 из 150, ≈8 вызовов за раз",
      "d": 1
     },
     {
@@ -280,7 +280,7 @@
    "status_text": "Работает в обход",
    "runs": 4,
    "median_s": 766,
-   "max_s": 15024,
+   "max_s": 16780,
    "last": "2026-11-27T00:09:53.606000+00:00",
    "outcomes": {
     "done": 4
@@ -322,13 +322,13 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 4 из 4, ≈20 вызовов за раз",
+     "t": "в 4 из 4, ≈22 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 4 из 4, ≈70 вызовов за раз",
+     "t": "в 4 из 4, ≈81 вызовов за раз",
      "d": 1
     },
     {
@@ -346,7 +346,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 4 из 4, ≈28 вызовов за раз",
+     "t": "в 4 из 4, ≈30 вызовов за раз",
      "d": 1
     },
     {
@@ -1145,7 +1145,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×107, opencode/deepseek-v4.1-flash-free ×10, opencode/flint-40b-free ×8",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×106, opencode/deepseek-v4.1-flash-free ×10, opencode/flint-40b-free ×8",
    "level": "ok",
    "f": "C13"
   },
@@ -1169,7 +1169,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 26, с файлами 0",
+   "state": "Владельцев 25, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
