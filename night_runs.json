@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.72,
-      "remaining_hours": 12.28,
+      "elapsed_hours": 7.74,
+      "remaining_hours": 12.26,
       "progress_pct": 39,
-      "cycles": 130,
-      "heartbeat_human": "15:55:55",
+      "cycles": 131,
+      "heartbeat_human": "15:56:55",
       "tree": {
         "phases": [
           {
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:22:35",
-            "cycle": 90,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "13:29:33",
             "cycle": 91,
@@ -547,13 +539,21 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "15:56:35",
+            "cycle": 131,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 62,
-          "mutations": 61
+          "version": 63,
+          "mutations": 62
         },
-        "events": 171,
+        "events": 172,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.72,
-      "remaining_hours": 12.28,
+      "elapsed_hours": 7.74,
+      "remaining_hours": 12.26,
       "progress_pct": 39,
       "cycles": 152,
-      "heartbeat_human": "15:56:07",
+      "heartbeat_human": "15:57:07",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795784185,
-  "fetched_human": "2026-11-27 15:56:25 +0300"
+  "fetched_at": 1795784244,
+  "fetched_human": "2026-11-27 15:57:24 +0300"
 }
