@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T13:21:34+00:00",
-  "generated_human": "27.11 13:21 UTC",
-  "as_of": 1795785692912,
+  "generated": "2026-11-27T13:22:35+00:00",
+  "generated_human": "27.11 13:22 UTC",
+  "as_of": 1795785753202,
   "stale_days": 1,
   "count": 1168,
   "groups": 9,
@@ -41,7 +41,7 @@
     {
      "id": "ses-pDWp2V4P64",
      "text": "Один физический writer-виток по другому источнику: прочитай любой свежий stop_hook/*.json в корне workspace и проверь три блока testimony, fact_sheet и deathnote. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-NIGHT-PAIR-WRITER-B-*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-NIGHT-PAIR-WRITER-B-cN.md с путём STOP-HOOK, тремя блоками, командой, rc, mtime, SHA256, датой и VERDICT. ПОСЛЕ этого снова запусти команду и запиши rc=0 и маркер OK в GREEN.log. Порядок mtime RED ≤ артефакт ≤ GREEN. НЕ удаляй предыдущие артефакты: они нужны окну последних пяти витков. PROMISE: DONE только после rc=0.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-NIGHT-PAIR-WRITER-B-c88.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795785691000,
+     "ts": 1795785748000,
      "source": "session",
      "title": "lree-RSCH-NIGHT-PAIR-WRITER-B-c88",
      "source_label": "ноут",
@@ -50,7 +50,7 @@
      "wants": [
       "w261120005246a1ca"
      ],
-     "as_of": 1795785691000,
+     "as_of": 1795785748000,
      "is_stale": false
     },
     {
