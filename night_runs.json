@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.2,
-      "remaining_hours": 15.8,
+      "elapsed_hours": 4.22,
+      "remaining_hours": 15.78,
       "progress_pct": 21,
-      "cycles": 75,
-      "heartbeat_human": "12:24:45",
+      "cycles": 76,
+      "heartbeat_human": "12:25:45",
       "tree": {
         "phases": [
           {
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:35:35",
-            "cycle": 26,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "RED.log старше старта витка на 8253 с"
-          },
           {
             "clock": "10:40:51",
             "cycle": 27,
@@ -547,13 +539,21 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:26:01",
+            "cycle": 76,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 29,
           "mutations": 28
         },
-        "events": 90,
+        "events": 91,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.2,
-      "remaining_hours": 15.8,
+      "elapsed_hours": 4.22,
+      "remaining_hours": 15.78,
       "progress_pct": 21,
-      "cycles": 72,
-      "heartbeat_human": "12:24:45",
+      "cycles": 73,
+      "heartbeat_human": "12:25:45",
       "tree": {
         "phases": [
           {
@@ -589,20 +589,20 @@
             "verified": false
           },
           {
+            "id": "SF-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
+            "cycles": 5,
+            "max": 8,
+            "last": "WARMUP",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 4,
             "max": 8,
             "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 4,
-            "max": 8,
-            "last": "WARMUP",
             "score": 7,
             "verified": true
           },
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:31:22",
-            "cycle": 16,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:31:22",
             "cycle": 16,
@@ -1096,19 +1088,27 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:25:43",
+            "cycle": 73,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 76,
+        "events": 77,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795771506,
-  "fetched_human": "2026-11-27 12:25:06 +0300"
+  "fetched_at": 1795771567,
+  "fetched_human": "2026-11-27 12:26:07 +0300"
 }
