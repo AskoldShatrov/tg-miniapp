@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.88,
-      "remaining_hours": 17.12,
-      "progress_pct": 14,
+      "elapsed_hours": 2.9,
+      "remaining_hours": 17.1,
+      "progress_pct": 15,
       "cycles": 44,
-      "heartbeat_human": "11:06:02",
+      "heartbeat_human": "11:07:02",
       "tree": {
         "phases": [
           {
@@ -474,11 +474,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.88,
-      "remaining_hours": 17.12,
-      "progress_pct": 14,
-      "cycles": 30,
-      "heartbeat_human": "11:06:01",
+      "elapsed_hours": 2.9,
+      "remaining_hours": 17.1,
+      "progress_pct": 15,
+      "cycles": 31,
+      "heartbeat_human": "11:07:01",
       "tree": {
         "phases": [
           {
@@ -511,11 +511,11 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 0,
+            "cycles": 1,
             "max": 4,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "WARMUP",
+            "score": 7,
+            "verified": true
           }
         ],
         "trail": [
@@ -790,19 +790,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "11:06:20",
+            "cycle": 31,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "WARMUP",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 34,
+        "events": 35,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795766771,
-  "fetched_human": "2026-11-27 11:06:11 +0300"
+  "fetched_at": 1795766834,
+  "fetched_human": "2026-11-27 11:07:14 +0300"
 }
