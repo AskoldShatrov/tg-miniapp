@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-27 20:00",
+ "generated": "2026-11-27 20:30",
  "window": {
-  "start": "2026-11-27T08:20",
-  "end": "2026-11-27T15:47",
+  "start": "2026-11-27T08:22",
+  "end": "2026-11-27T17:24",
   "sessions": 170,
   "roots": 150
  },
@@ -25,13 +25,14 @@
    "runs": 150,
    "median_s": 356,
    "max_s": 15537,
-   "last": "2026-11-27T15:47:04.528000+00:00",
+   "last": "2026-11-27T17:24:52.007000+00:00",
    "outcomes": {
-    "done": 150
+    "waiting_user": 1,
+    "done": 149
    },
    "example": [
-    "Xrgibls1",
-    "6ZHciu7t"
+    "6ZHciu7t",
+    "4Bc0NGPj"
    ],
    "actual": [
     {
@@ -42,19 +43,19 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 35 из 150",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 149 из 150, ≈27 вызовов за раз",
+     "t": "в 36 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
      "t": "в 125 из 150, ≈8 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 149 из 150, ≈27 вызовов за раз",
      "d": 1
     },
     {
@@ -882,87 +883,88 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 28,
-   "median_s": 580,
+   "runs": 29,
+   "median_s": 556,
    "max_s": 11198,
-   "last": "2026-11-27T15:43:54.584000+00:00",
+   "last": "2026-11-27T17:24:52.007000+00:00",
    "outcomes": {
+    "waiting_user": 1,
     "done": 28
    },
    "example": [
-    "Q8ixVDFP",
-    "Xrgibls1"
+    "Xrgibls1",
+    "4Bc0NGPj"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 28"
+     "t": "запусков: 29"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 25 из 28",
+     "t": "в 26 из 29",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 25 из 28",
+     "t": "в 26 из 29",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 9 из 28",
+     "t": "в 9 из 29",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 8 из 28",
+     "t": "в 8 из 29",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 6 из 28",
+     "t": "в 6 из 29",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 25 из 28, ≈11 вызовов за раз",
+     "t": "в 26 из 29, ≈10 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 28 из 28, ≈37 вызовов за раз",
+     "t": "в 29 из 29, ≈36 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 10 из 28",
+     "t": "в 10 из 29",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 13 из 28",
+     "t": "в 14 из 29",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 28 из 28, ≈15 вызовов за раз",
+     "t": "в 29 из 29, ≈14 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, anti-autism, code-review, disk-triage, docx, draft-gate, game-mode, image-read, longrun-evolution, min",
-     "t": "меньше 6 из 28",
+     "t": "меньше 6 из 29",
      "d": 1
     }
    ],
@@ -1014,7 +1016,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 0",
+   "state": "Прогонов сейчас: 1",
    "level": "ok",
    "f": "C1"
   },
@@ -1054,7 +1056,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 25, с файлами 0",
+   "state": "Владельцев 26, с файлами 0",
    "level": "warn",
    "f": "C11"
   },
