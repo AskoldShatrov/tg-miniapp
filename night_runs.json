@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.45,
-      "remaining_hours": 1.55,
-      "progress_pct": 23,
-      "cycles": 56,
-      "heartbeat_human": "06:34:41",
+      "elapsed_hours": 0.51,
+      "remaining_hours": 1.49,
+      "progress_pct": 25,
+      "cycles": 57,
+      "heartbeat_human": "06:37:41",
       "tree": {
         "phases": [
           {
@@ -94,6 +94,15 @@
             "verified": false
           },
           {
+            "id": "IMP-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 3,
+            "max": 8,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "IMP-DELIVERY-TRUTH",
             "title": "Доставка vs запись: сверка writer-артефактов",
             "cycles": 3,
@@ -101,15 +110,6 @@
             "last": "PROMOTE",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "IMP-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 2,
-            "max": 8,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
           },
           {
             "id": "IMP-WRITER-GATE-PATCH",
@@ -578,13 +578,21 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:34:56",
+            "cycle": 57,
+            "task": "IMP-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 24,
           "mutations": 23
         },
-        "events": 56,
+        "events": 57,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -594,11 +602,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.45,
-      "remaining_hours": 1.55,
-      "progress_pct": 23,
-      "cycles": 42,
-      "heartbeat_human": "06:34:41",
+      "elapsed_hours": 0.51,
+      "remaining_hours": 1.49,
+      "progress_pct": 25,
+      "cycles": 43,
+      "heartbeat_human": "06:37:41",
       "tree": {
         "phases": [
           {
@@ -676,10 +684,10 @@
           {
             "id": "SF-P0-1-EVIDENCE-AUDIT",
             "title": "P0-1: честный аудит доказательств оверлея",
-            "cycles": 2,
+            "cycles": 3,
             "max": 4,
             "last": "MUTATE",
-            "score": 4,
+            "score": 7,
             "verified": true
           },
           {
@@ -1082,13 +1090,21 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "06:37:07",
+            "cycle": 43,
+            "task": "SF-P0-1-EVIDENCE-AUDIT",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 50,
-          "mutations": 49
+          "version": 51,
+          "mutations": 50
         },
-        "events": 42,
+        "events": 43,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -1098,11 +1114,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.45,
-      "remaining_hours": 1.55,
-      "progress_pct": 23,
+      "elapsed_hours": 0.51,
+      "remaining_hours": 1.49,
+      "progress_pct": 25,
       "cycles": 74,
-      "heartbeat_human": "06:34:41",
+      "heartbeat_human": "06:37:41",
       "tree": {
         "phases": [
           {
@@ -1743,6 +1759,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795750496,
-  "fetched_human": "2026-11-27 06:34:56 +0300"
+  "fetched_at": 1795750681,
+  "fetched_human": "2026-11-27 06:38:01 +0300"
 }
