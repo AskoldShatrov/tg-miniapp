@@ -5,17 +5,26 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.27,
-      "remaining_hours": 14.73,
+      "elapsed_hours": 5.29,
+      "remaining_hours": 14.71,
       "progress_pct": 26,
-      "cycles": 90,
-      "heartbeat_human": "13:29:16",
+      "cycles": 91,
+      "heartbeat_human": "13:30:16",
       "tree": {
         "phases": [
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 8,
+            "max": 16,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
+          },
+          {
+            "id": "IMP-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
+            "cycles": 7,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -40,15 +49,6 @@
             "verified": false
           },
           {
-            "id": "IMP-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 6,
-            "max": 16,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
-          },
-          {
             "id": "IMP-RETHINK-WIRING-20H",
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
             "cycles": 5,
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:09:49",
-            "cycle": 47,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "11:18:51",
-            "cycle": 48,
-            "task": "IMP-NIGHT-PAIR-WRITER",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "11:24:12",
             "cycle": 49,
@@ -547,13 +531,29 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:29:33",
+            "cycle": 91,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:29:33",
+            "cycle": 91,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 36,
-          "mutations": 35
+          "version": 37,
+          "mutations": 36
         },
-        "events": 112,
+        "events": 114,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.27,
-      "remaining_hours": 14.73,
+      "elapsed_hours": 5.29,
+      "remaining_hours": 14.71,
       "progress_pct": 26,
-      "cycles": 95,
-      "heartbeat_human": "13:29:15",
+      "cycles": 96,
+      "heartbeat_human": "13:30:15",
       "tree": {
         "phases": [
           {
@@ -617,14 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:26:01",
-            "cycle": 40,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "11:27:16",
             "cycle": 41,
@@ -1096,19 +1088,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "13:30:15",
+            "cycle": 96,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 18,
           "mutations": 17
         },
-        "events": 103,
+        "events": 104,
         "avg_score": 0.0,
         "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795775359,
-  "fetched_human": "2026-11-27 13:29:19 +0300"
+  "fetched_at": 1795775420,
+  "fetched_human": "2026-11-27 13:30:20 +0300"
 }

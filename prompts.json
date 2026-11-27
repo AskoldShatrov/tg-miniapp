@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T10:29:18+00:00",
-  "generated_human": "27.11 10:29 UTC",
-  "as_of": 1795775357336,
+  "generated": "2026-11-27T10:30:19+00:00",
+  "generated_human": "27.11 10:30 UTC",
+  "as_of": 1795775418269,
   "stale_days": 1,
   "count": 1172,
   "groups": 9,
@@ -40,9 +40,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-XWCvzhji3D",
+     "text": "Один физический writer-виток. Прочитай свежий /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json и выпиши три гейта с их значениями и временем снимка. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-NIGHT-PAIR-WRITER-*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-NIGHT-PAIR-WRITER-cN.md с тремя гейтами, командой, rc, путём, mtime, SHA256, датой и VERDICT. ПОСЛЕ этого снова запусти команду и запиши rc=0 и маркер OK в GREEN.log. Порядок mtime RED ≤ артефакт ≤ GREEN. НЕ удаляй предыдущие артефакты: они нужны окну последних пяти витков. PROMISE: DONE только после rc=0.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-NIGHT-PAIR-WRITER-c62.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795775402000,
+     "source": "session",
+     "title": "lree-RSCH-NIGHT-PAIR-WRITER-c62",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795775402000,
+     "is_stale": false
+    },
+    {
      "id": "ses-Zy41YoajlY",
      "text": "Один физический writer-виток: прочитай любой свежий файл stop_hook/*.json в корне workspace и проверь наличие testimony, fact_sheet и deathnote. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-NIGHT-PAIR-WRITER-B-*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-NIGHT-PAIR-WRITER-B-cN.md с путём STOP-HOOK, тремя блоками, командой, rc, mtime, SHA256, датой и VERDICT. ПОСЛЕ этого снова запусти команду и запиши rc=0 и маркер OK в GREEN.log. Порядок mtime RED ≤ артефакт ≤ GREEN. НЕ удаляй предыдущие артефакты: они нужны окну последних пяти витков. PROMISE: DONE только после rc=0.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-NIGHT-PAIR-WRITER-B-c91.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795775352000,
+     "ts": 1795775372000,
      "source": "session",
      "title": "lree-IMP-NIGHT-PAIR-WRITER-B-c91",
      "source_label": "ноут",
@@ -51,7 +64,7 @@
      "wants": [
       "w261120005246a1ca"
      ],
-     "as_of": 1795775352000,
+     "as_of": 1795775372000,
      "is_stale": false
     },
     {
@@ -7034,31 +7047,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795669928236,
      "as_of": 1795669792000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-Uz48TUDSYv",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15633. Источник: autofeed:progress. Гипотеза: ЗАКРЫТЬ ШАГ T34.T34.2: Замерить FPS и разброс кадров в текущей конфигурации. Где: progress.json · Плавность и FPS CS2 на моём ПК. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15633_run28255.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795669260000,
-     "source": "session",
-     "title": "AU15633: FPS и разброс кадров",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] 🟩 Все категории сообщений бота проходят через единый слой стиля — карта и код выложены, мост работает на новой сборке.\nПОНЯТНО: ответы, команды и ошибки идут Rich Messages; план, шаги и статус — загол",
-     "answer_short": "w261119190741dca0: 🟩 Все категории сообщений бота проходят через единый слой ст",
-     "answer_full": "🟩 Все категории сообщений бота проходят через единый слой стиля — карта и код выложены, мост работает на новой сборке.\nПОНЯТНО: ответы, команды и ошибки идут Rich Messages; план, шаги и статус — заголовок и цитата; подписи к файлам и повторы из очереди тоже оформляются.\nКак убедиться: `docs/bot-message-style-map.md`, коммит `8ac4e6a` в `origin/master`, тест доставки PASS, мост перезапущен в 08:02.",
-     "answer_digest": {
-      "length": 400,
-      "sha256": "280b78470c6ee75e687d96ba54ca3d6ccc4267d5da54c21e78bfb9ae86950d6b"
-     },
-     "answer_text_id": "280b78470c6ee75e",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795669928236,
-     "as_of": 1795669260000,
      "is_stale": true
     },
     {
