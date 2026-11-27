@@ -318,6 +318,20 @@
     border-left:2px solid var(--blue);color:var(--subtext1);
     background:rgba(137,180,250,.07);border-radius:0 5px 5px 0}
   .bubble hr,.sr-rep hr{border:0;border-top:1px solid var(--surface1);margin:6px 0}
+  /* Калибровка чата: таблицы читаются строками, а не "| --- |" в тексте;
+     источники видны под ответом, служебный блок в пузырь не попадает. */
+  .rtab{margin:5px 0;border:1px solid var(--surface1);border-radius:7px;
+    overflow:hidden;background:rgba(17,17,27,.35)}
+  .rtab-cap{font:700 9px/1.3 var(--fm);letter-spacing:.3px;color:var(--blue);
+    padding:4px 7px;border-bottom:1px solid var(--surface1);background:rgba(137,180,250,.07)}
+  .rtab table{width:100%;border-collapse:collapse;font:500 11px/1.35 var(--fm)}
+  .rtab th,.rtab td{padding:4px 6px;border-bottom:1px solid var(--surface1);
+    text-align:left;vertical-align:top}
+  .rtab th{color:var(--blue);font-weight:700}
+  .rtab tr:last-child td{border-bottom:0}
+  .rsrc{margin-top:5px;padding:4px 7px;border-left:2px solid var(--green);border-radius:0 5px 5px 0;
+    background:rgba(166,227,161,.07);color:var(--subtext1);font:600 10px/1.4 var(--fm)}
+  .rsrc b{color:var(--green)}
   /* Запрос и ответ — одна связка: видно, на какой вопрос пришёл ответ. */
   .pair{position:relative;padding:9px 10px 10px 12px;border-radius:14px;
     background:linear-gradient(180deg,rgba(49,50,68,.40),rgba(17,17,27,.16));
@@ -2108,12 +2122,17 @@ function dshAvailable(){
   catch(e){ return false; }
 }
 function dshFallback(payload){
-  if(typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
+  /* В обычном браузере SDK всё равно создаёт tg.sendData, но он ничего не
+     отправляет. Раньше это давало ложный «задача ушла через OpenCode». */
+  var inTelegram=false;
+  try{ inTelegram=!!((window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)||
+       (typeof tg!=="undefined"&&tg&&tg.initData)); }catch(e){}
+  if(inTelegram && typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
     tg.sendData(JSON.stringify(payload));
-    toast("API недоступен — задача ушла через OpenCode");
+    toast("Ушло боту — ответ появится здесь");
     return true;
   }
-  toast("Нет API и нет sendData — задача не отправлена");
+  toast("Не отправлено: открой мини-ап кнопкой бота");
   return false;
 }
 function dshSend(payload, okText){
@@ -2166,20 +2185,68 @@ function escHtml(x){
    Message → entities), а мини-ап раньше показывал тот же текст как обычный:
    **жирный**, ###, > и `код` виднелись буквально. Сначала экранируем HTML,
    потом размечаем безопасный поднабор TFM — наружный HTML всё ещё невозможен. */
+/* Калибровка чата (27.11): мини-ап показывает ЧЕЛОВЕЧЕСКИЙ слой ответа.
+   Всё после «САМОИСЧЕРПАНИЕ:» — блок доказательств для гейтов, в чате он
+   выглядел простынёй ПЫТОК/ПОПЫТКА и создавал ощущение «аутичного» вывода.
+   Источники и отпечатки артефактов из этого блока забираем в компактную
+   подпись под сообщением — ответ сохраняет опору, но остаётся читаемым. */
+function chatSplit(text){
+  const whole=String(text==null?"":text);
+  const m=whole.search(/(^|\n)\s*САМОИСЧЕРПАНИЕ\s*:/i);
+  const human=m>=0?whole.slice(0,m):whole;
+  const evidence=m>=0?whole.slice(m):"";
+  const src=[];
+  evidence.split("\n").forEach(l=>{
+    const t=l.trim();
+    if(/^(ИСТОЧНИКИ?|Первоисточник|АРТЕФАКТ|SOURCE)\s*:/i.test(t)) src.push(t);
+  });
+  return {human:human, src:src};
+}
 function richHtml(text){
-  let s=escHtml(text==null?"":String(text));
+  const part=chatSplit(text);
+  let s=escHtml(part.human);
   s=s.replace(/⟦(?:ФАЙЛ|ОДНИМ):[^⟧]*⟧/g,"");       // служебные метки моста в чат не показываем
   s=s.replace(/```([\s\S]*?)```/g,(_,c)=>"<pre>"+c+"</pre>");
   s=s.replace(/`([^`\n]+)`/g,"<code>$1</code>");
   s=s.replace(/\*\*([^*\n]+)\*\*/g,"<b>$1</b>");
   s=s.replace(/(^|[\s(])\*([^*\n]+)\*/g,"$1<i>$2</i>");
-  return s.split("\n").map(line=>{
-    if(/^#{1,6}\s/.test(line)) return '<div class="rh">'+line.replace(/^#{1,6}\s/,"")+'</div>';
-    if(/^&gt;\s?/.test(line)) return '<blockquote>'+line.replace(/^&gt;\s?/,"")+'</blockquote>';
-    if(/^\s*[-•]\s/.test(line)) return '<div class="rli">'+line.replace(/^\s*[-•]\s/,"")+'</div>';
-    if(/^\s*(?:---|\*\*\*)\s*$/.test(line)) return '<hr>';
-    return line;
-  }).join("<br>");
+  const out=[];
+  let pending=null, tables=0;
+  const cells = l => l.replace(/^\s*\|/,"").replace(/\|\s*$/,"").split("|").map(x=>x.trim());
+  function flushTable(){
+    if(!pending || !pending.length){ pending=null; return; }
+    const body=pending.filter(l=>!/^\s*\|?\s*:?[-=]{3,}[\s|:-]*$/.test(l));
+    if(body.length<2){ out.push(pending.join("<br>")); pending=null; return; }
+    tables++;
+    let html='<div class="rtab"><div class="rtab-cap">'+
+      (tables>1?'перенос таблицы':'таблица')+'</div><table>';
+    body.forEach((l,i)=>{
+      const cs=cells(l);
+      html+='<tr>'+cs.map(c=>i===0?'<th>'+c+'</th>':'<td>'+c+'</td>').join('')+'</tr>';
+    });
+    out.push(html+'</table></div>');
+    pending=null;
+  }
+  s.split("\n").forEach(line=>{
+    if(/^\s*\|.*\|\s*$/.test(line)){
+      if(!pending) pending=[];
+      pending.push(line);
+      return;
+    }
+    flushTable();
+    if(/^#{1,6}\s/.test(line)) out.push('<div class="rh">'+line.replace(/^#{1,6}\s/,"")+'</div>');
+    else if(/^&gt;\s?/.test(line)) out.push('<blockquote>'+line.replace(/^&gt;\s?/,"")+'</blockquote>');
+    else if(/^\s*[-•]\s/.test(line)) out.push('<div class="rli">'+line.replace(/^\s*[-•]\s/,"")+'</div>');
+    else if(/^\s*(?:---|\*\*\*)\s*$/.test(line)) out.push('<hr>');
+    else out.push(line);
+  });
+  flushTable();
+  let html=out.join("<br>");
+  if(part.src.length){
+    html+='<div class="rsrc"><b>Источники:</b> '+
+      part.src.map(x=>escHtml(x)).join('<br>')+'</div>';
+  }
+  return html;
 }
 /* Связка «запрос → ответ», два прохода (E-34 / G1):
    1) точное совпадение по rid — бот теперь пишет его в replies.json
@@ -2263,7 +2330,7 @@ function renderChat(){
     const req='<div class="msg me"><div class="mava">👤</div><div class="bubble">'+escHtml(p.text)+
       '<span class="mtime">'+escHtml(p.t)+'</span></div></div>';
     const rep=p.pending
-      ? '<div class="pair-wait">⏳ запрос агенту · ответ подтянется сам</div>'
+      ? '<div class="pair-wait">⏳ ушло боту · открой чат позже — ответ появится здесь</div>'
       : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+richHtml(p.rep.text)+
         '<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div>';
     out.push('<div class="pair '+(p.pending?'pending':'done')+'">'+
