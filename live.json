@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 801,
+      "age_min": 802,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 801,
+      "age_min": 802,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,79 +2095,89 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 801,
+      "age_min": 802,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "id": "session-4ab85241",
+      "title": "Анализ прогресса сканфида человеческим язы",
       "source": "dsh",
-      "claimed_human": "03:39:48",
+      "claimed_human": "03:40:49",
       "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
+      "full": "Анализ прогресса сканфида человеческим язы"
     },
     {
-      "id": "session-7f68e99b",
-      "title": "Проверка и запись артефакта с хэшем",
+      "id": "session-f5e9fcec",
+      "title": "Подбор бенчмарка и диагностика системы",
       "source": "dsh",
-      "claimed_human": "03:39:48",
+      "claimed_human": "03:40:49",
       "age_min": 0,
-      "full": "Проверка и запись артефакта с хэшем"
-    },
-    {
-      "id": "session-f95d5d15",
-      "title": "Сессия без названия",
-      "source": "dsh",
-      "claimed_human": "03:39:48",
-      "age_min": 0,
-      "full": "Сессия без названия"
+      "full": "Подбор бенчмарка и диагностика системы"
     },
     {
       "id": "session-82e0704d",
       "title": "Почему сторож не завершился после смерти пр",
       "source": "dsh",
-      "claimed_human": "03:39:47",
+      "claimed_human": "03:40:47",
       "age_min": 0,
       "full": "Почему сторож не завершился после смерти пр"
-    },
-    {
-      "id": "f0660990-ff28-4f",
-      "title": "Роль: проектировщик и",
-      "source": "dsh",
-      "claimed_human": "03:39:47",
-      "age_min": 0,
-      "full": "Роль: проектировщик и"
     },
     {
       "id": "session-8e85d767",
       "title": "Ночной прогон: университет (pid 1917542)",
       "source": "dsh",
-      "claimed_human": "03:39:47",
+      "claimed_human": "03:40:47",
       "age_min": 0,
       "full": "Ночной прогон: университет (pid 1917542)"
     },
     {
-      "id": "a2caa9e8-2123-4b",
-      "title": "Проведи независимый к",
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "03:39:43",
+      "claimed_human": "03:40:43",
       "age_min": 0,
-      "full": "Проведи независимый к"
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-bb3ff073",
       "title": "Системные решения вместо повторяющихся воп",
       "source": "dsh",
-      "claimed_human": "03:39:43",
+      "claimed_human": "03:40:41",
       "age_min": 0,
       "full": "Системные решения вместо повторяющихся воп"
+    },
+    {
+      "id": "session-f95d5d15",
+      "title": "Проверка критериев и запись артефакта",
+      "source": "dsh",
+      "claimed_human": "03:40:04",
+      "age_min": 0,
+      "full": "Проверка критериев и запись артефакта"
+    },
+    {
+      "id": "AU15693",
+      "title": "ДОВЕСТИ ЦЕЛЬ gmwy97htdrlgw: КР3 вариант 8: исправлено пересечение линии задания (Моделирование систем)",
+      "source": "ноут",
+      "claimed_human": "03:40:00",
+      "age_min": 0,
+      "full": "ДОВЕСТИ ЦЕЛЬ gmwy97htdrlgw: КР3 вариант 8: исправлено пересечение линии задания (Моделирование систем)",
+      "autogen": true
+    },
+    {
+      "id": "session-7f68e99b",
+      "title": "Проверка и запись артефакта с хэшем",
+      "source": "dsh",
+      "claimed_human": "03:40:00",
+      "age_min": 0,
+      "full": "Проверка и запись артефакта с хэшем"
     }
   ],
   "queues": {
     "ноут": {
       "done": 1579,
       "failed": 159,
-      "unknown": 1
+      "unknown": 1,
+      "doing": 1
     },
     "ПК": {
       "done": 84,
@@ -2190,36 +2200,8 @@
       "step_label": "Поиск данных об активных запросах",
       "step": 3,
       "total": 5,
-      "events": 26,
+      "events": 30,
       "trail": [
-        {
-          "ts": 1795739189,
-          "label": "BASH · echo '---state mi"
-        },
-        {
-          "ts": 1795739189,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739240,
-          "label": "BASH · grep -n -E 'data-"
-        },
-        {
-          "ts": 1795739240,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739288,
-          "label": "BASH · grep -rn -l 'live"
-        },
-        {
-          "ts": 1795739288,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739310,
-          "label": "BASH · grep -n -E 'live-"
-        },
         {
           "ts": 1795739311,
           "label": "THINK"
@@ -2383,10 +2365,38 @@
         {
           "ts": 1795739974,
           "label": "THINK"
+        },
+        {
+          "ts": 1795739990,
+          "label": "EDIT · /home/nyaka/share"
+        },
+        {
+          "ts": 1795739990,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740003,
+          "label": "EDIT · /home/nyaka/share"
+        },
+        {
+          "ts": 1795740003,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740021,
+          "label": "BASH · node --check ~/sh"
+        },
+        {
+          "ts": 1795740021,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740035,
+          "label": "READ · /tmp/opencode/min"
         }
       ],
       "started_at": 1795739112,
-      "updated_at": 1795739986
+      "updated_at": 1795740050
     },
     {
       "key": "req-20261127-032656-beb2f1",
@@ -2396,48 +2406,8 @@
       "step_label": "Разведка файлов и приложения",
       "step": 1,
       "total": 4,
-      "events": 42,
+      "events": 47,
       "trail": [
-        {
-          "ts": 1795739531,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739539,
-          "label": "BASH · cd /tmp/opencode "
-        },
-        {
-          "ts": 1795739551,
-          "label": "BASH · echo \"=== kr3.ini"
-        },
-        {
-          "ts": 1795739551,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739568,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795739569,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739589,
-          "label": "SUBAGENT · subagent"
-        },
-        {
-          "ts": 1795739590,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739604,
-          "label": "BASH · echo \"=== kr2_otc"
-        },
-        {
-          "ts": 1795739605,
-          "label": "THINK"
-        },
         {
           "ts": 1795739624,
           "label": "BASH · echo \"=== matplot"
@@ -2589,10 +2559,50 @@
         {
           "ts": 1795739973,
           "label": "SUBAGENT · subagent"
+        },
+        {
+          "ts": 1795739992,
+          "label": "BASH · echo \"=== all KR1"
+        },
+        {
+          "ts": 1795739992,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740006,
+          "label": "BASH · OUT=/home/nyaka/."
+        },
+        {
+          "ts": 1795740006,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740018,
+          "label": "BASH · pdftotext '/home/"
+        },
+        {
+          "ts": 1795740018,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740031,
+          "label": "BASH · OUT=/home/nyaka/."
+        },
+        {
+          "ts": 1795740031,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740044,
+          "label": "BASH · cd /home/nyaka/sh"
+        },
+        {
+          "ts": 1795740044,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795739986
+      "updated_at": 1795740048
     }
   ],
   "bars": [
@@ -2611,6 +2621,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 13.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795739989,
-  "fetched_human": "2026-11-27 03:39:49 +0300"
+  "fetched_at": 1795740050,
+  "fetched_human": "2026-11-27 03:40:50 +0300"
 }
