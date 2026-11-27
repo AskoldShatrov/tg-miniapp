@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 5.01,
-      "remaining_hours": 2.99,
+      "elapsed_hours": 5.02,
+      "remaining_hours": 2.98,
       "progress_pct": 63,
-      "cycles": 58,
-      "heartbeat_human": "05:06:04",
+      "cycles": 59,
+      "heartbeat_human": "05:07:04",
       "tree": {
         "phases": [
           {
@@ -112,21 +112,21 @@
             "verified": false
           },
           {
+            "id": "UNI-PID-VOICE",
+            "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
+            "cycles": 2,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
             "cycles": 2,
             "max": 8,
             "last": "MUTATE",
             "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-PID-VOICE",
-            "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
-            "cycles": 1,
-            "max": 3,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
             "verified": false
           }
         ],
@@ -594,19 +594,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: acts/UNI-PID-VOICE-c58.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
+          },
+          {
+            "clock": "05:06:48",
+            "cycle": 59,
+            "task": "UNI-PID-VOICE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: CE-c59.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
           }
         ],
         "strategy": {
-          "version": 37,
-          "mutations": 36
+          "version": 38,
+          "mutations": 37
         },
-        "events": 58,
+        "events": 59,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795745173,
-  "fetched_human": "2026-11-27 05:06:13 +0300"
+  "fetched_at": 1795745238,
+  "fetched_human": "2026-11-27 05:07:18 +0300"
 }
