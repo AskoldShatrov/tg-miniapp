@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T18:26:45+00:00",
-  "generated_human": "27.11 18:26 UTC",
-  "as_of": 1795804003254,
+  "generated": "2026-11-27T18:27:45+00:00",
+  "generated_human": "27.11 18:27 UTC",
+  "as_of": 1795804063889,
   "stale_days": 1,
   "count": 1168,
   "groups": 9,
@@ -40,27 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-eX5gNl4EIU",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15706. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwzav7arliao: S01SP: REAL-60 восьмая реплика — расширение REAL-набора (T4 OPEN). Где: goals.json · Получатель: пользователь, запросивший проработку сканфида. DoD: n>=60 REAL-кадров, FP>0, ECE после калибровки<0.15, Wilson 95% по precision/recall и б В конце вызови tools.goals.track({action:'done', id:'gmwzav7arliao', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15706_run48290.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795803995000,
-     "source": "session",
-     "title": "AU15706: восьмая реплика REAL-60",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119090518006d",
-      "w261119190741dca0",
-      "w2611200052460530",
-      "w261120005246135d"
-     ],
-     "as_of": 1795803995000,
-     "is_stale": false
-    },
-    {
      "id": "ses-DLunQ7mpHM",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795803993000,
+     "ts": 1795804058000,
      "source": "session",
      "title": "Калибровка dot_quality под cyan",
      "source_label": "ноут",
@@ -72,7 +54,25 @@
       "w2611200052468b4b",
       "w2611200052463b06"
      ],
-     "as_of": 1795803993000,
+     "as_of": 1795804058000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-eX5gNl4EIU",
+     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15706. Источник: autofeed:goals. Гипотеза: ДОВЕСТИ ЦЕЛЬ gmwzav7arliao: S01SP: REAL-60 восьмая реплика — расширение REAL-набора (T4 OPEN). Где: goals.json · Получатель: пользователь, запросивший проработку сканфида. DoD: n>=60 REAL-кадров, FP>0, ECE после калибровки<0.15, Wilson 95% по precision/recall и б В конце вызови tools.goals.track({action:'done', id:'gmwzav7arliao', result:'коротко, что сделано'}}) через execute.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15706_run48290.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
+     "ts": 1795804050000,
+     "source": "session",
+     "title": "AU15706: восьмая реплика REAL-60",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119090518006d",
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w261120005246135d"
+     ],
+     "as_of": 1795804050000,
      "is_stale": false
     },
     {
