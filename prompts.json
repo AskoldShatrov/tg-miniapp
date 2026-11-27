@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T11:02:19+00:00",
+  "generated": "2026-11-27T11:02:44+00:00",
   "generated_human": "27.11 11:02 UTC",
-  "as_of": 1795777337901,
+  "as_of": 1795777363056,
   "stale_days": 1,
   "count": 1172,
   "groups": 9,
@@ -40,22 +40,9 @@
    ],
    "prompts": [
     {
-     "id": "ses-yMFGi051r2",
-     "text": "Один физический writer-виток. Прочитай свежий /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json и последние строки ledger.jsonl двух других прогонов. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-NIGHT-PAIR-WRITER-*.md' VERDICT 900 ; запиши его rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-NIGHT-PAIR-WRITER-cN.md: что реально улучшилось, где регресс, команда проверки, её rc, путь, размер, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и маркер OK в GREEN.log корня workspace. Порядок mtime обязан быть RED ≤ артефакт ≤ GREEN. PROMISE: DONE только после rc=0 гейта.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-NIGHT-PAIR-WRITER-c96.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795777335000,
-     "source": "session",
-     "title": "lree-IMP-NIGHT-PAIR-WRITER-c96",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795777335000,
-     "is_stale": false
-    },
-    {
      "id": "ses-YQEWwDC3xV",
      "text": "Только чтение и один артефакт. Сверь /home/nyaka/overnight/researcher-agent-strategy.md с якорем /home/nyaka/docs/reasoning-compensation/anchor.md, предрегистрациями в /home/nyaka/docs/reasoning-compensation/prereg/ и отчётами H### в /home/nyaka/overnight/. Найди, какие проблемы исследовательского агента уже закрыты гейтами, а какие остались OPEN. Не двигай пороги постфактум. Обязательны VERDICT, список путей, дата. Запиши артефакт ровно по пути /home/nyaka/evolution-work-researcher/artifacts/RSCH-ANCHOR-*.md. В артефакте обязательны: задача, команда проверки, её rc, путь, mtime, SHA256, дата и VERDICT. PROMISE: DONE только после записи файла. ОБЯЗАТЕЛЬНО ВНУТРИ ВИТКА: обнови RED.log и GREEN.log в корне workspace и запиши в них реальные команды проверки, код возврата и маркеры errors= для провала и OK для прохода; без свежей пары движок не засчитает проверку.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-ANCHOR-c66.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795777328000,
+     "ts": 1795777356000,
      "source": "session",
      "title": "lree-RSCH-ANCHOR-c66",
      "source_label": "ноут",
@@ -64,7 +51,20 @@
      "wants": [
       "w26112002435610ee"
      ],
-     "as_of": 1795777328000,
+     "as_of": 1795777356000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-yMFGi051r2",
+     "text": "Один физический writer-виток. Прочитай свежий /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json и последние строки ledger.jsonl двух других прогонов. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-NIGHT-PAIR-WRITER-*.md' VERDICT 900 ; запиши его rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-NIGHT-PAIR-WRITER-cN.md: что реально улучшилось, где регресс, команда проверки, её rc, путь, размер, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и маркер OK в GREEN.log корня workspace. Порядок mtime обязан быть RED ≤ артефакт ≤ GREEN. PROMISE: DONE только после rc=0 гейта.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-NIGHT-PAIR-WRITER-c96.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795777356000,
+     "source": "session",
+     "title": "lree-IMP-NIGHT-PAIR-WRITER-c96",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795777356000,
      "is_stale": false
     },
     {
