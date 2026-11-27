@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1057,
+      "age_min": 1058,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1057,
+      "age_min": 1058,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 1057,
+      "age_min": 1058,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-d37eb26f",
-      "title": "Мониторинг прогонов и анализ сканфида",
-      "source": "dsh",
-      "claimed_human": "07:55:15",
-      "age_min": 0,
-      "full": "Мониторинг прогонов и анализ сканфида"
     },
     {
       "id": "1ac336b4-3558-40",
       "title": "РОЛЬ: исполнитель реа",
       "source": "dsh",
-      "claimed_human": "07:55:13",
+      "claimed_human": "07:56:16",
       "age_min": 0,
       "full": "РОЛЬ: исполнитель реа"
     },
@@ -2118,16 +2110,24 @@
       "id": "session-2dc8b998",
       "title": "Работа над университетскими заданиями сейч",
       "source": "dsh",
-      "claimed_human": "07:54:50",
+      "claimed_human": "07:56:15",
       "age_min": 0,
       "full": "Работа над университетскими заданиями сейч"
+    },
+    {
+      "id": "session-d37eb26f",
+      "title": "Мониторинг прогонов и анализ сканфида",
+      "source": "dsh",
+      "claimed_human": "07:56:04",
+      "age_min": 0,
+      "full": "Мониторинг прогонов и анализ сканфида"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
       "claimed_human": "07:53:54",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     }
   ],
@@ -2158,16 +2158,8 @@
       "step_label": "Исправить то, что не доехало, и выложить заново",
       "step": 3,
       "total": 4,
-      "events": 42,
+      "events": 43,
       "trail": [
-        {
-          "ts": 1795754537,
-          "label": "BASH · grep -n \"dec/.sty"
-        },
-        {
-          "ts": 1795754538,
-          "label": "THINK"
-        },
         {
           "ts": 1795754554,
           "label": "BASH · python3 ~/.config"
@@ -2351,10 +2343,18 @@
         {
           "ts": 1795755285,
           "label": "BASH · echo \"=== живые P"
+        },
+        {
+          "ts": 1795755341,
+          "label": "BASH · echo \"=== remote "
+        },
+        {
+          "ts": 1795755341,
+          "label": "THINK"
         }
       ],
       "started_at": 1795754185,
-      "updated_at": 1795755315
+      "updated_at": 1795755375
     },
     {
       "key": "req-20261127-074824-fc97e9",
@@ -2364,48 +2364,8 @@
       "step_label": "Проверить ночные прогоны",
       "step": 1,
       "total": 5,
-      "events": 41,
+      "events": 46,
       "trail": [
-        {
-          "ts": 1795755024,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755024,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755039,
-          "label": "BASH · tesseract --list-"
-        },
-        {
-          "ts": 1795755039,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755049,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755049,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755066,
-          "label": "WRITE · /home/nyaka/.con"
-        },
-        {
-          "ts": 1795755066,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795755073,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795755073,
-          "label": "THINK"
-        },
         {
           "ts": 1795755085,
           "label": "EDIT · /home/nyaka/.conf"
@@ -2557,10 +2517,50 @@
         {
           "ts": 1795755309,
           "label": "THINK"
+        },
+        {
+          "ts": 1795755317,
+          "label": "READ · /home/nyaka/share"
+        },
+        {
+          "ts": 1795755317,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755325,
+          "label": "BASH · ls -l ~/.config/s"
+        },
+        {
+          "ts": 1795755325,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755335,
+          "label": "GREP · /home/nyaka/share"
+        },
+        {
+          "ts": 1795755335,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755352,
+          "label": "WRITE · /tmp/opencode/la"
+        },
+        {
+          "ts": 1795755352,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755360,
+          "label": "BASH · D=/tmp/opencode/v"
+        },
+        {
+          "ts": 1795755377,
+          "label": "GREP · /home/nyaka/.conf"
         }
       ],
       "started_at": 1795754904,
-      "updated_at": 1795755315
+      "updated_at": 1795755377
     }
   ],
   "bars": [
@@ -2577,8 +2577,8 @@
   ],
   "updatedAt": "2026-11-27T04:34:55+03:00",
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
-  "plan_age_hours": 3.3,
+  "plan_age_hours": 3.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795755315,
-  "fetched_human": "2026-11-27 07:55:15 +0300"
+  "fetched_at": 1795755377,
+  "fetched_human": "2026-11-27 07:56:17 +0300"
 }
