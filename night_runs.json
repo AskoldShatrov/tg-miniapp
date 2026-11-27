@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.79,
-      "remaining_hours": 19.21,
+      "elapsed_hours": 0.84,
+      "remaining_hours": 19.16,
       "progress_pct": 4,
-      "cycles": 7,
-      "heartbeat_human": "09:00:07",
+      "cycles": 8,
+      "heartbeat_human": "09:03:07",
       "tree": {
         "phases": [
           {
@@ -24,7 +24,7 @@
           {
             "id": "IMP-HONESTY-20H",
             "title": "Комплексное улучшение: честная сверка цифр без старой таблицы лидеров",
-            "cycles": 1,
+            "cycles": 2,
             "max": 6,
             "last": "PROMOTE",
             "score": 7,
@@ -104,13 +104,21 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "09:03:21",
+            "cycle": 8,
+            "task": "IMP-HONESTY-20H",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 1,
           "mutations": 0
         },
-        "events": 8,
+        "events": 9,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -120,19 +128,19 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.79,
-      "remaining_hours": 19.21,
+      "elapsed_hours": 0.84,
+      "remaining_hours": 19.16,
       "progress_pct": 4,
-      "cycles": 7,
-      "heartbeat_human": "09:00:07",
+      "cycles": 8,
+      "heartbeat_human": "09:03:07",
       "tree": {
         "phases": [
           {
             "id": "SF-LIVE-DEMO-20H",
             "title": "Сканфид: живая демка вместо заморозки на 54806",
-            "cycles": 7,
+            "cycles": 8,
             "max": 8,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 4,
             "verified": false
           },
@@ -219,19 +227,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
+          },
+          {
+            "clock": "09:00:22",
+            "cycle": 8,
+            "task": "SF-LIVE-DEMO-20H",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
           }
         ],
         "strategy": {
-          "version": 5,
-          "mutations": 4
+          "version": 6,
+          "mutations": 5
         },
-        "events": 8,
+        "events": 9,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795759219,
-  "fetched_human": "2026-11-27 09:00:19 +0300"
+  "fetched_at": 1795759405,
+  "fetched_human": "2026-11-27 09:03:25 +0300"
 }
