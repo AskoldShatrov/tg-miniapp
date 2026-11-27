@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T10:30:19+00:00",
-  "generated_human": "27.11 10:30 UTC",
-  "as_of": 1795775418269,
+  "generated": "2026-11-27T10:31:26+00:00",
+  "generated_human": "27.11 10:31 UTC",
+  "as_of": 1795775481567,
   "stale_days": 1,
   "count": 1172,
   "groups": 9,
@@ -42,14 +42,27 @@
     {
      "id": "ses-XWCvzhji3D",
      "text": "Один физический writer-виток. Прочитай свежий /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json и выпиши три гейта с их значениями и временем снимка. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-NIGHT-PAIR-WRITER-*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-NIGHT-PAIR-WRITER-cN.md с тремя гейтами, командой, rc, путём, mtime, SHA256, датой и VERDICT. ПОСЛЕ этого снова запусти команду и запиши rc=0 и маркер OK в GREEN.log. Порядок mtime RED ≤ артефакт ≤ GREEN. НЕ удаляй предыдущие артефакты: они нужны окну последних пяти витков. PROMISE: DONE только после rc=0.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-NIGHT-PAIR-WRITER-c62.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795775402000,
+     "ts": 1795775475000,
      "source": "session",
      "title": "lree-RSCH-NIGHT-PAIR-WRITER-c62",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795775402000,
+     "as_of": 1795775475000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-jsFsIZVMMX",
+     "text": "Один физический writer-виток. Прочитай свежий /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json и последние строки ledger.jsonl двух других прогонов. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-NIGHT-PAIR-WRITER-*.md' VERDICT 900 ; запиши его rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-NIGHT-PAIR-WRITER-cN.md: что реально улучшилось, где регресс, команда проверки, её rc, путь, размер, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и маркер OK в GREEN.log корня workspace. Порядок mtime обязан быть RED ≤ артефакт ≤ GREEN. PROMISE: DONE только после rc=0 гейта.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-NIGHT-PAIR-WRITER-c92.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795775473000,
+     "source": "session",
+     "title": "lree-IMP-NIGHT-PAIR-WRITER-c92",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795775473000,
      "is_stale": false
     },
     {
@@ -21789,31 +21802,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795672080346,
      "as_of": 1795669937000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-D1ToueMoOA",
-     "text": "ПРОРАБОТКА T5, T1c полное покрытие позиций 320/320. Предрегистрировать гейт ДО прогона: contested AUC > 0.60, нижняя граница CI > 0.55, ECE < 0.05. Прогнать на расширенном корпусе (320 демо, 7 карт). Честно отделить pooled от contested. Новый отчёт ~/overnight/open_tracks/T05-t1c-coverage.md. Не переоткрывать закрытые T1/wp_v3 (см. MASTERPLAN-v2 §2.1). ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795669453000,
-     "source": "session",
-     "title": "Покрытие T1c 320/320",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] 🟩 Все категории сообщений бота проходят через единый слой стиля — карта и код выложены, мост работает на новой сборке.\nПОНЯТНО: ответы, команды и ошибки идут Rich Messages; план, шаги и статус — загол",
-     "answer_short": "w261119190741dca0: 🟩 Все категории сообщений бота проходят через единый слой ст",
-     "answer_full": "🟩 Все категории сообщений бота проходят через единый слой стиля — карта и код выложены, мост работает на новой сборке.\nПОНЯТНО: ответы, команды и ошибки идут Rich Messages; план, шаги и статус — заголовок и цитата; подписи к файлам и повторы из очереди тоже оформляются.\nКак убедиться: `docs/bot-message-style-map.md`, коммит `8ac4e6a` в `origin/master`, тест доставки PASS, мост перезапущен в 08:02.",
-     "answer_digest": {
-      "length": 400,
-      "sha256": "280b78470c6ee75e687d96ba54ca3d6ccc4267d5da54c21e78bfb9ae86950d6b"
-     },
-     "answer_text_id": "280b78470c6ee75e",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795669928236,
-     "as_of": 1795669453000,
      "is_stale": true
     },
     {
