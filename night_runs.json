@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.13,
-      "remaining_hours": 17.87,
+      "elapsed_hours": 2.14,
+      "remaining_hours": 17.86,
       "progress_pct": 11,
-      "cycles": 17,
-      "heartbeat_human": "10:20:24",
+      "cycles": 18,
+      "heartbeat_human": "10:21:24",
       "tree": {
         "phases": [
           {
@@ -184,13 +184,21 @@
             "action": "WARMUP",
             "score": 4,
             "note": "verify rc=1:  {\"MIN_ATTEMPTS\": 2, \"MIN_CANDIDATES\": 3}, \"problems\": [\"artifact_missing_new"
+          },
+          {
+            "clock": "10:21:04",
+            "cycle": 18,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос improvement"
           }
         ],
         "strategy": {
-          "version": 2,
-          "mutations": 1
+          "version": 3,
+          "mutations": 2
         },
-        "events": 18,
+        "events": 19,
         "avg_score": 0.0,
         "fail_streak": 2
       }
@@ -200,11 +208,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.13,
-      "remaining_hours": 17.87,
+      "elapsed_hours": 2.14,
+      "remaining_hours": 17.86,
       "progress_pct": 11,
       "cycles": 15,
-      "heartbeat_human": "10:20:26",
+      "heartbeat_human": "10:21:26",
       "tree": {
         "phases": [
           {
@@ -376,6 +384,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795764041,
-  "fetched_human": "2026-11-27 10:20:41 +0300"
+  "fetched_at": 1795764107,
+  "fetched_human": "2026-11-27 10:21:47 +0300"
 }
