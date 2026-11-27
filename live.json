@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 966,
+      "age_min": 967,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 966,
+      "age_min": 967,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,14 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 966,
+      "age_min": 967,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "06:24:47",
+      "claimed_human": "06:25:46",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     },
@@ -2110,7 +2110,7 @@
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "06:24:24",
+      "claimed_human": "06:25:46",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
     }
@@ -2142,28 +2142,8 @@
       "step_label": "Переделать блок-схемы и терминатор",
       "step": 3,
       "total": 5,
-      "events": 48,
+      "events": 51,
       "trail": [
-        {
-          "ts": 1795749296,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749308,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749320,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749333,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749353,
-          "label": "READ · /home/nyaka/учеба"
-        },
         {
           "ts": 1795749353,
           "label": "THINK"
@@ -2335,49 +2315,41 @@
         {
           "ts": 1795749866,
           "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749898,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795749898,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749912,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749932,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749932,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795749885
+      "updated_at": 1795749943
     },
     {
       "key": "req-20261127-061357-6f27b5",
       "session_id": "",
       "source": "task",
       "label": "В кладках Dash я до сих пор не вижу, типа, ТГ-запросы, чтобы",
-      "step_label": "найти Dash и источник запросов из ТГ",
-      "step": 1,
+      "step_label": "подключить живые данные и проверить",
+      "step": 3,
       "total": 5,
-      "events": 53,
+      "events": 57,
       "trail": [
-        {
-          "ts": 1795749486,
-          "label": "BASH · echo '---PAGES RE"
-        },
-        {
-          "ts": 1795749486,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749500,
-          "label": "BASH · grep -n -E 'LIVE_"
-        },
-        {
-          "ts": 1795749500,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749518,
-          "label": "BASH · sed -n '1435,1460"
-        },
-        {
-          "ts": 1795749518,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749541,
-          "label": "READ · /home/nyaka/share"
-        },
         {
           "ts": 1795749541,
           "label": "THINK"
@@ -2541,10 +2513,38 @@
         {
           "ts": 1795749885,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749895,
+          "label": "BASH · grep -n -E 'АРТЕФ"
+        },
+        {
+          "ts": 1795749895,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749910,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795749910,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749919,
+          "label": "BASH · curl -sL --max-ti"
+        },
+        {
+          "ts": 1795749940,
+          "label": "BASH · grep -r -l 'send_"
+        },
+        {
+          "ts": 1795749941,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749237,
-      "updated_at": 1795749887
+      "updated_at": 1795749945
     },
     {
       "key": "req-20261127-061715-16abd6",
@@ -2576,6 +2576,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795749887,
-  "fetched_human": "2026-11-27 06:24:47 +0300"
+  "fetched_at": 1795749948,
+  "fetched_human": "2026-11-27 06:25:48 +0300"
 }
