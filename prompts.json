@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T03:55:17+00:00",
-  "generated_human": "27.11 03:55 UTC",
-  "as_of": 1795751713382,
+  "generated": "2026-11-27T03:56:17+00:00",
+  "generated_human": "27.11 03:56 UTC",
+  "as_of": 1795751773447,
   "stale_days": 1,
   "count": 1186,
   "groups": 9,
@@ -40,9 +40,22 @@
    ],
    "prompts": [
     {
+     "id": "ses-w5Vu0bWaNP",
+     "text": "Пользователь спит; только локальные файлы. По engine.py:732-765 и ledger.jsonl проверь, сколько циклов получили PROMOTE при verify_ok=false (по аудиту — 57). Опиши минимальный патч, запрещающий PROMOTE без verify_ok, с путём, номером строки и регрессионным тестом. PASS/FAIL/OPEN с путями, командами, rc. HANDOFF: /home/nyaka/Documents/deepseek-harness/default-workspace/next_session_handoff_v50.md, SHA256:, MTIME:, VERDICT: PASS, два хэша. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PROMOTE-HONESTY-c62.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795751772000,
+     "source": "session",
+     "title": "lree-IMP-PROMOTE-HONESTY-c62",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795751772000,
+     "is_stale": false
+    },
+    {
      "id": "ses-VQyI2gRrOw",
      "text": "ДОПОЛНЕНИЕ К ЗАДАЧЕ (اعتبر как часть того же задания, файлы по-прежнему НЕ писать):\n\nСледующие проекты УЖЕ разобраны в предыдущих срезах c1/c2/c3 и НЕ должны попасть в c4: STORM, GPT Researcher, AI Scientist / AI Scientist-v2, Agent Laboratory, AgentRxiv, ResearchAgent, OpenAI deep research, AIDE (aideml), Gemini Deep Research, AI-Researcher, Tongyi DeepResearch, PaperQA2, Perplexity, ArenaRL, BrowseComp, OpenCrabs, Open Deep Research (langchain-ai), DeepResearch Bench (Ayanami0730/deep_research_bench), FS-Researcher, DeepResearch Bench II, DeepSearch Research Agent & Studio (1nc0gn30 / NullAITech), A-RAG.\n\nНайди 5–8 ДРУГИХ решений по автономным агентам-исследователям из первичных источников. Приоритет — проекты с активностью в 2026 году. Для каждого снова дай все обязательные поля (название, точный URL, дата активности, механизм дублирования тем, сравнение результатов, проверка выводов, применимость к контуру). Помни: прямого дедупликатора тем может не быть — тогда честно пиши «не описано/не подтверждено», не выдумывай. Список прочитанных URL и дату чтения (2026-11-27) тоже приложи. Никаких записей в файлы.",
-     "ts": 1795751711000,
+     "ts": 1795751771000,
      "source": "session",
      "title": "Primary-source researcher survey",
      "source_label": "ноут",
@@ -51,33 +64,20 @@
      "wants": [
       "w26111909050929f4"
      ],
-     "as_of": 1795751711000,
+     "as_of": 1795751771000,
      "is_stale": false
     },
     {
      "id": "ses-B1IxnTSxZo",
      "text": "Пользователь спит; только локальные файлы. Проверь ~/учеба/учеба/it/kr3/kr3_otchet.tex и pdf, ~/учеба/учеба/it/kp/current/kp_pz.tex, ~/учеба/учеба/nir_latex/nir_final.pdf командами check-tex.sh и check-pdf.py. Выведи PASS/FAIL/OPEN с путями, rc, sha256/mtime и конкретными остатками (таблицы, блок-схемы, титульник). HANDOFF: /home/nyaka/Documents/deepseek-harness/default-workspace/next_session_handoff_v50.md, SHA256:, MTIME:, VERDICT: PASS, два хэша. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/artifacts/UNI-GOST-RESIDUAL-c78.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795751709000,
+     "ts": 1795751769000,
      "source": "session",
      "title": "lree-UNI-GOST-RESIDUAL-c78",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795751709000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-w5Vu0bWaNP",
-     "text": "Пользователь спит; только локальные файлы. По engine.py:732-765 и ledger.jsonl проверь, сколько циклов получили PROMOTE при verify_ok=false (по аудиту — 57). Опиши минимальный патч, запрещающий PROMOTE без verify_ok, с путём, номером строки и регрессионным тестом. PASS/FAIL/OPEN с путями, командами, rc. HANDOFF: /home/nyaka/Documents/deepseek-harness/default-workspace/next_session_handoff_v50.md, SHA256:, MTIME:, VERDICT: PASS, два хэша. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PROMOTE-HONESTY-c62.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795751702000,
-     "source": "session",
-     "title": "lree-IMP-PROMOTE-HONESTY-c62",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795751702000,
+     "as_of": 1795751769000,
      "is_stale": false
     },
     {
@@ -1864,14 +1864,14 @@
     {
      "id": "ses-oCoZ7aOARA",
      "text": "Пользователь спит; только локальные файлы и уже собранные данные, новых камер/ПК не трогать. Факты из MASTERPLAN-v2 §1: T4 OPEN, REAL n=20, tp=17 fp=0 fn=11, ECE 0.4176; при 0 FP confidence неидентифицируем; SYNTHETIC в вердикт не входит; нужно REAL n>=60 с FP>0 и переобучение dot_quality под cyan. Прочитай artifacts/SF-T4-CALIB-c14.md, artifacts/SF-DIGEST-c23.md и research/REPORT.md в ~/scanfeed. Сгенерируй и зафиксируй ДО критики: IDEAS: (>=30 пронумерованных идей), HYPOTHESES: (>=3 проверяемых гипотез с X/Y), THRESHOLD: (числовой порог), HOLDOUT: (источник holdout и правило сплита). Обязательно опиши путь к REAL-кадрам с ненулевым FP и какие данные уже есть локально, а чего нет. Поля: SOURCE: PRIOR, SHA256:, MTIME:, VERDICT: PASS; минимум два хэша в тексте. VERDICT: PASS только при rc=0 команды verify_cmd. ПЕРЕД PROMISE: DONE запусти `python3 /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/artifact_selfseal.py <путь артефакта>` (контракт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/design-contract-selfseal.json sha256 7ec45943cf036f4b3c4023b336e36f01c8312e8f5d8205a9dd4e0796c78eba0f); гейт ожидает rc=0 selfseal и rc=0 verify_cmd. Без selfseal поле SHA256/MTIME не совпадёт с байтами файла.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-T4-REAL-RECOVERY-c45.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795751707000,
+     "ts": 1795751766000,
      "source": "session",
      "title": "lree-SF-T4-REAL-RECOVERY-c45",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795751707000,
+     "as_of": 1795751766000,
      "is_stale": false
     },
     {
