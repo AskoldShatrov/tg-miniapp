@@ -2075,27 +2075,27 @@
   ],
   "active": [
     {
-      "id": "session-f7092bc2",
-      "title": "Подключение Graphify и инструментов инспекции",
-      "source": "dsh",
-      "claimed_human": "10:05:23",
-      "age_min": 0,
-      "full": "Подключение Graphify и инструментов инспекции"
-    },
-    {
       "id": "session-c1e9e894",
       "title": "Моделирование, системные проблемы и Word-файл",
       "source": "dsh",
-      "claimed_human": "10:05:20",
+      "claimed_human": "10:06:23",
       "age_min": 0,
       "full": "Моделирование, системные проблемы и Word-файл"
+    },
+    {
+      "id": "session-f7092bc2",
+      "title": "Подключение Graphify и инструментов инспекции",
+      "source": "dsh",
+      "claimed_human": "10:06:01",
+      "age_min": 0,
+      "full": "Подключение Graphify и инструментов инспекции"
     },
     {
       "id": "0a6170b7-a17a-43",
       "title": "Self-contained task in Russian environme",
       "source": "dsh",
       "claimed_human": "10:02:53",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Self-contained task in Russian environme"
     }
   ],
@@ -2322,7 +2322,7 @@
         }
       ],
       "started_at": 1795759298,
-      "updated_at": 1795763123
+      "updated_at": 1795763182
     },
     {
       "key": "req-20261127-091053-3590b1",
@@ -2528,7 +2528,7 @@
         }
       ],
       "started_at": 1795759853,
-      "updated_at": 1795763123
+      "updated_at": 1795763183
     },
     {
       "key": "req-20261127-091831-84a793",
@@ -2538,32 +2538,8 @@
       "step_label": "заменить питон-код графиками и собрать три работы",
       "step": 4,
       "total": 5,
-      "events": 151,
+      "events": 154,
       "trail": [
-        {
-          "ts": 1795762510,
-          "label": "BASH · sed -n '140,175p'"
-        },
-        {
-          "ts": 1795762510,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795762530,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795762530,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795762551,
-          "label": "BASH · python3 /home/nya"
-        },
-        {
-          "ts": 1795762551,
-          "label": "THINK"
-        },
         {
           "ts": 1795762584,
           "label": "BASH · cd /home/nyaka/уч"
@@ -2731,20 +2707,44 @@
         {
           "ts": 1795763113,
           "label": "THINK"
+        },
+        {
+          "ts": 1795763133,
+          "label": "BASH · grep -rn 'send_fo"
+        },
+        {
+          "ts": 1795763133,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763153,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795763153,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763174,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795763174,
+          "label": "THINK"
         }
       ],
       "started_at": 1795760311,
-      "updated_at": 1795763123
+      "updated_at": 1795763182
     },
     {
       "key": "req-20261127-100432-5a466a",
       "session_id": "",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "осмотр библиотеки",
-      "step": 1,
+      "step_label": "разбор эталонов",
+      "step": 2,
       "total": 5,
-      "events": 3,
+      "events": 8,
       "trail": [
         {
           "ts": 1795763096,
@@ -2797,10 +2797,74 @@
         {
           "ts": 1795763120,
           "label": "THINK"
+        },
+        {
+          "ts": 1795763138,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795763138,
+          "label": "BASH · find /home/nyaka/"
+        },
+        {
+          "ts": 1795763138,
+          "label": "BASH · grep -rl -i \"сосо"
+        },
+        {
+          "ts": 1795763138,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763146,
+          "label": "BASH · grep -n -i -C 3 \""
+        },
+        {
+          "ts": 1795763146,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763154,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795763154,
+          "label": "BASH · find /home/nyaka/"
+        },
+        {
+          "ts": 1795763154,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763162,
+          "label": "BASH · grep -n -i -m 60 "
+        },
+        {
+          "ts": 1795763162,
+          "label": "BASH · mkdir -p /tmp/ope"
+        },
+        {
+          "ts": 1795763162,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795763169,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795763169,
+          "label": "READ · /tmp/opencode/tit"
+        },
+        {
+          "ts": 1795763170,
+          "label": "READ · /tmp/opencode/tit"
+        },
+        {
+          "ts": 1795763170,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763072,
-      "updated_at": 1795763124
+      "updated_at": 1795763182
     }
   ],
   "bars": [
@@ -2819,6 +2883,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 5.5,
   "plan_source": "progress.json",
-  "fetched_at": 1795763125,
-  "fetched_human": "2026-11-27 10:05:25 +0300"
+  "fetched_at": 1795763185,
+  "fetched_human": "2026-11-27 10:06:25 +0300"
 }
