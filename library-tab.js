@@ -20,7 +20,7 @@
     folder: 'Статьи',
     date: '2026-10-01',
     url: 'https://arxiv.org/abs/2610.01471',
-    updated: '2026-10-01T00:00:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     tags: ['LLM', 'review', 'verification', 'cross-model', 'cs.CL'],
     abstract: 'Large language models now generate code, documentation, and analyses, and are increasingly used to review such output. We ask when a second review by a different model helps. Building on the author\'s earlier preprints, which varied context, repetition, and role structure within one model, we test model independence in a controlled experiment: 30 artifacts with 150 planted errors, 10 review conditions, and 900 review sessions with three reviewer models from two developers. In this experiment, (1) a top-tier cross-model reviewer is not significantly different in F1 from same-model review in a fresh session (CCR), which does not establish equivalence; (2) the two find partly different errors (Jaccard 41.2%); and (3) at two review calls, one CCR plus one cross-model review matches more planted errors than two CCR reviews (56.7% vs. 42.7%; Holm-adjusted p=.006), but not significantly more than two reviews by the top-tier cross-model reviewer, so model difference and reviewer capability are not separated. A lightweight cross-model reviewer scores no higher than same-model review. Withholding requirements from the reviewer raises F1 for the two lower tiers but not the top tier, in untested point estimates whose pattern depends on how failed sessions are scored. Before analysis we audited all session records, excluding one baseline run of uncertain provenance and 14 failed calls; results with all sessions are also reported. A partial check on public detector outputs from another benchmark neither replicates nor contradicts the main comparison.'
   }, {
@@ -31,7 +31,7 @@
     folder: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/nir-final.pdf?v=20261127-1217',
-    updated: '2026-11-27T12:17:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     tags: ['НИР', 'компьютерное моделирование', 'практика', '37 стр', 'постоянная ссылка'],
     abstract: 'Отчёт по научно-исследовательской работе, 37 страниц. Адрес привязан к отпечатку файла (741ab27210): как только содержимое меняется, меняется и адрес, поэтому телефон не показывает старую копию. Титульник: подписи слева на 98 пт, значения справа на 310,4 пт, центр сетки совпадает с центром страницы; гейт сетки PASS.'
   }, {
@@ -64,7 +64,7 @@
     folder: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/kr3-modelirovanie.pdf?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     tags: ['контрольная работа', 'моделирование систем', 'КР3', '7 стр', 'постоянная ссылка'],
     abstract: 'Контрольная работа №3 по моделированию систем, вариант 8. Адрес привязан к отпечатку файла (efd66364fe). Титульник на общей сетке с НИР и курсовым проектом, гейт PASS; график подходит к заданию 1,50 снизу, без пересечения.'
   }, {
@@ -75,7 +75,7 @@
     folder: 'Word · документы',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/kontrolnye-raboty-1-3.docx?v=20261127-1136',
-    updated: '2026-11-27T11:36:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     tags: ['контрольные работы', 'Word', 'компьютерное моделирование', 'постоянная ссылка'],
     abstract: 'Постоянная ссылка на комплект контрольных работ № 1–3 в формате Word. Файл обновляется на месте: дата в ссылке не меняется. Опубликовано 27.11.2026.'
   }, {
@@ -85,7 +85,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/01-kontrolnye-raboty-1-3.docx?v=20261127-1136',
-    updated: '2026-11-27T11:36:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['контрольные работы', 'Word', 'компьютерное моделирование'],
     abstract: 'Комплект контрольных работ № 1–3 в исходном формате Word, опубликован без перекодирования.'
@@ -96,7 +96,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/02-kr1-2-3-shatrov.docx?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['контрольные работы', 'Word', 'Шатров'],
     abstract: 'Контрольные работы 1, 2 и 3 Шатрова А. И. в исходном формате Word.'
@@ -107,7 +107,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/03-zadanie-kp-kmvkh.doc?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
     abstract: 'Шаблон задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
@@ -118,7 +118,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/04-titul-sheremetev.docx?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['титульный лист', 'курсовая работа', 'Word', 'Шереметьев'],
     abstract: 'Пример титульного листа и задания курсовой работы, формат Word.'
@@ -129,7 +129,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/05-zadanie-belyaev.doc?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
     abstract: 'Пример задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
@@ -140,7 +140,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/06-zadanie-rumyantsev.doc?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
     abstract: 'Пример задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
@@ -151,7 +151,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/07-otchet-nir.docx?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['НИР', 'отчёт', 'Word', 'Ковинев'],
     abstract: 'Отчёт по научно-исследовательской работе в исходном формате Word.'
@@ -162,7 +162,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/08-tz-nir.docx?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['НИР', 'техническое задание', 'Word'],
     abstract: 'Техническое задание на научно-исследовательскую работу в исходном формате Word.'
@@ -173,7 +173,7 @@
     source: 'Учёба · Word',
     date: '2026-11-27',
     url: BASE_URL + 'word/09-kp-primer.docx?v=20261127-1139',
-    updated: '2026-11-27T11:39:00+03:00',
+    updated: '2026-11-27T12:30:00+03:00',
     folder: 'Word · документы',
     tags: ['курсовой проект', 'ОРАИС', 'пример', 'Word'],
     abstract: 'Пример курсового проекта по ОРАИС в исходном формате Word.'
