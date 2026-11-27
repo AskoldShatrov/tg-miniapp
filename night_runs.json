@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.75,
-      "remaining_hours": 19.25,
+      "elapsed_hours": 0.77,
+      "remaining_hours": 19.23,
       "progress_pct": 4,
       "cycles": 7,
-      "heartbeat_human": "08:58:06",
+      "heartbeat_human": "08:59:07",
       "tree": {
         "phases": [
           {
@@ -120,20 +120,20 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.75,
-      "remaining_hours": 19.25,
+      "elapsed_hours": 0.77,
+      "remaining_hours": 19.23,
       "progress_pct": 4,
-      "cycles": 6,
-      "heartbeat_human": "08:58:07",
+      "cycles": 7,
+      "heartbeat_human": "08:59:07",
       "tree": {
         "phases": [
           {
             "id": "SF-LIVE-DEMO-20H",
             "title": "Сканфид: живая демка вместо заморозки на 54806",
-            "cycles": 6,
+            "cycles": 7,
             "max": 8,
-            "last": "MUTATE",
-            "score": 2,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
             "verified": false
           },
           {
@@ -211,19 +211,27 @@
             "action": "MUTATE",
             "score": 2,
             "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
+          },
+          {
+            "clock": "08:58:22",
+            "cycle": 7,
+            "task": "SF-LIVE-DEMO-20H",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: {\"verdict\": \"FAIL\", \"problems\": [\"no_live_capture_channel\"], \"info\": {\"obs_li"
           }
         ],
         "strategy": {
-          "version": 4,
-          "mutations": 3
+          "version": 5,
+          "mutations": 4
         },
-        "events": 7,
+        "events": 8,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795759100,
-  "fetched_human": "2026-11-27 08:58:20 +0300"
+  "fetched_at": 1795759157,
+  "fetched_human": "2026-11-27 08:59:17 +0300"
 }
