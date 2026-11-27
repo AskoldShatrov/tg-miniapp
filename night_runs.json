@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.92,
-      "remaining_hours": 8.08,
+      "elapsed_hours": 11.94,
+      "remaining_hours": 8.06,
       "progress_pct": 60,
       "cycles": 332,
-      "heartbeat_human": "20:07:58",
+      "heartbeat_human": "20:08:58",
       "tree": {
         "phases": [
           {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.92,
-      "remaining_hours": 8.08,
+      "elapsed_hours": 11.94,
+      "remaining_hours": 8.06,
       "progress_pct": 60,
-      "cycles": 337,
-      "heartbeat_human": "20:08:10",
+      "cycles": 338,
+      "heartbeat_human": "20:09:10",
       "tree": {
         "phases": [
           {
@@ -611,29 +611,13 @@
             "title": "Калибровка инструментов по уже решённым требованиям, а не новый опрос",
             "cycles": 6,
             "max": 6,
-            "last": "WARMUP",
-            "score": 7,
-            "verified": true
+            "last": "—",
+            "score": 0,
+            "verified": false
           }
         ],
         "trail": [
           {
-            "clock": "19:31:30",
-            "cycle": 308,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "19:31:30",
-            "cycle": 308,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
-          {
             "clock": "19:32:45",
             "cycle": 309,
             "task": "SCOUT_OPEN",
@@ -1092,6 +1076,22 @@
           {
             "clock": "20:07:46",
             "cycle": 337,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
+          },
+          {
+            "clock": "20:09:01",
+            "cycle": 338,
+            "task": "SCOUT_OPEN",
+            "action": "TRIGGER_ROTATED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "20:09:01",
+            "cycle": 338,
             "task": "SCOUT_OPEN",
             "action": "REFORMULATE",
             "score": 0,
@@ -1099,8 +1099,8 @@
           }
         ],
         "strategy": {
-          "version": 223,
-          "mutations": 222
+          "version": 224,
+          "mutations": 223
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795799291,
-  "fetched_human": "2026-11-27 20:08:11 +0300"
+  "fetched_at": 1795799354,
+  "fetched_human": "2026-11-27 20:09:14 +0300"
 }
