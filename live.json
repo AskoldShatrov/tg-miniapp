@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 958,
+      "age_min": 959,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 958,
+      "age_min": 959,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,14 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 958,
+      "age_min": 959,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "06:16:33",
+      "claimed_human": "06:17:35",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     },
@@ -2110,7 +2110,7 @@
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "06:16:04",
+      "claimed_human": "06:17:35",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
     },
@@ -2119,7 +2119,7 @@
       "title": "Ты — независимый read-onl",
       "source": "dsh",
       "claimed_human": "06:13:43",
-      "age_min": 2,
+      "age_min": 3,
       "full": "Ты — независимый read-onl"
     },
     {
@@ -2127,7 +2127,7 @@
       "title": "Ты — независимый read-onl",
       "source": "dsh",
       "claimed_human": "06:12:45",
-      "age_min": 3,
+      "age_min": 4,
       "full": "Ты — независимый read-onl"
     }
   ],
@@ -2158,12 +2158,8 @@
       "step_label": "Исправить титульник и таблицу",
       "step": 2,
       "total": 5,
-      "events": 20,
+      "events": 24,
       "trail": [
-        {
-          "ts": 1795749022,
-          "label": "SYNC · show-in-answer"
-        },
         {
           "ts": 1795749022,
           "label": "SYNC · anti-autism"
@@ -2335,10 +2331,30 @@
         {
           "ts": 1795749388,
           "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795749400,
+          "label": "BASH · ls /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749420,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749432,
+          "label": "BASH · grep -nE \"^!|Emer"
+        },
+        {
+          "ts": 1795749449,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749449,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795749398
+      "updated_at": 1795749460
     },
     {
       "key": "req-20261127-061357-6f27b5",
@@ -2348,7 +2364,7 @@
       "step_label": "найти Dash и источник запросов из ТГ",
       "step": 1,
       "total": 5,
-      "events": 18,
+      "events": 23,
       "trail": [
         {
           "ts": 1795749249,
@@ -2485,20 +2501,52 @@
         {
           "ts": 1795749391,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749408,
+          "label": "BASH · mkdir -p /tmp/ope"
+        },
+        {
+          "ts": 1795749409,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749421,
+          "label": "READ · /tmp/opencode/das"
+        },
+        {
+          "ts": 1795749431,
+          "label": "READ · /tmp/opencode/das"
+        },
+        {
+          "ts": 1795749431,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749445,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795749445,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749452,
+          "label": "READ · /tmp/opencode/das"
         }
       ],
       "started_at": 1795749237,
-      "updated_at": 1795749398
+      "updated_at": 1795749458
     },
     {
       "key": "req-20261127-061407-5fbe9f",
       "session_id": "",
       "source": "task",
       "label": "Стартани, большой ночной прогон на часов 20 по поиску и изуч",
-      "step_label": "Стратегия",
-      "step": 2,
+      "step_label": "Литература",
+      "step": 3,
       "total": 5,
-      "events": 12,
+      "events": 17,
       "trail": [
         {
           "ts": 1795749261,
@@ -2655,10 +2703,59 @@
         {
           "ts": 1795749392,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749400,
+          "label": "GREP · /home/nyaka/scrip"
+        },
+        {
+          "ts": 1795749400,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749411,
+          "label": "BASH · sed -n '960,1030p"
+        },
+        {
+          "ts": 1795749437,
+          "label": "WRITE · /home/nyaka/evol"
+        },
+        {
+          "ts": 1795749437,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749444,
+          "label": "BASH · python3 - <<'PY'"
+        },
+        {
+          "ts": 1795749444,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749452,
+          "label": "NET · https://arxiv.org/"
+        },
+        {
+          "ts": 1795749452,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749247,
-      "updated_at": 1795749397
+      "updated_at": 1795749459
+    },
+    {
+      "key": "req-20261127-061715-16abd6",
+      "session_id": "",
+      "source": "task",
+      "label": "Можешь стартануть прогон еще вот по анализу моих промптов по",
+      "step_label": "",
+      "step": 0,
+      "total": null,
+      "events": 0,
+      "trail": [],
+      "started_at": 1795749436,
+      "updated_at": 1795749436
     }
   ],
   "bars": [
@@ -2677,6 +2774,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.7,
   "plan_source": "progress.json",
-  "fetched_at": 1795749399,
-  "fetched_human": "2026-11-27 06:16:39 +0300"
+  "fetched_at": 1795749461,
+  "fetched_human": "2026-11-27 06:17:41 +0300"
 }
