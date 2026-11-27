@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1040,
+      "age_min": 1041,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1040,
+      "age_min": 1041,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,24 +2095,24 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 1040,
+      "age_min": 1041,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "07:37:38",
-      "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "07:37:03",
+      "claimed_human": "07:38:54",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
+    },
+    {
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "source": "dsh",
+      "claimed_human": "07:38:49",
+      "age_min": 0,
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     }
   ],
   "queues": {
@@ -2142,7 +2142,7 @@
       "step_label": "Подключить скиллы визуальной проверки и гейты подозрения",
       "step": 1,
       "total": 4,
-      "events": 1,
+      "events": 4,
       "trail": [
         {
           "ts": 1795754247,
@@ -2167,10 +2167,26 @@
         {
           "ts": 1795754247,
           "label": "THINK"
+        },
+        {
+          "ts": 1795754296,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795754314,
+          "label": "BASH · echo \"=== Текущие"
+        },
+        {
+          "ts": 1795754314,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795754337,
+          "label": "BASH · cd /home/nyaka/уч"
         }
       ],
       "started_at": 1795754185,
-      "updated_at": 1795754278
+      "updated_at": 1795754340
     }
   ],
   "bars": [
@@ -2189,6 +2205,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 3.1,
   "plan_source": "progress.json",
-  "fetched_at": 1795754281,
-  "fetched_human": "2026-11-27 07:38:01 +0300"
+  "fetched_at": 1795754342,
+  "fetched_human": "2026-11-27 07:39:02 +0300"
 }
