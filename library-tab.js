@@ -20,22 +20,31 @@
     abstract: 'Large language models now generate code, documentation, and analyses, and are increasingly used to review such output. We ask when a second review by a different model helps. Building on the author\'s earlier preprints, which varied context, repetition, and role structure within one model, we test model independence in a controlled experiment: 30 artifacts with 150 planted errors, 10 review conditions, and 900 review sessions with three reviewer models from two developers. In this experiment, (1) a top-tier cross-model reviewer is not significantly different in F1 from same-model review in a fresh session (CCR), which does not establish equivalence; (2) the two find partly different errors (Jaccard 41.2%); and (3) at two review calls, one CCR plus one cross-model review matches more planted errors than two CCR reviews (56.7% vs. 42.7%; Holm-adjusted p=.006), but not significantly more than two reviews by the top-tier cross-model reviewer, so model difference and reviewer capability are not separated. A lightweight cross-model reviewer scores no higher than same-model review. Withholding requirements from the reviewer raises F1 for the two lower tiers but not the top tier, in untested point estimates whose pattern depends on how failed sessions are scored. Before analysis we audited all session records, excluding one baseline run of uncertain provenance and 14 failed calls; results with all sessions are also reported. A partial check on public detector outputs from another benchmark neither replicates nor contradicts the main comparison.'
   }, {
     id: 'study-nir-final-20261123',
-    title: 'НИР · актуальная версия (40 стр)',
+    title: 'НИР · актуальная версия (36 стр)',
     authors: 'Шатров А. И. · группа 4291 · СПбГТИ(ТУ)',
     source: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/nir-final.pdf',
-    tags: ['НИР', 'компьютерное моделирование', 'практика', '40 стр', 'постоянная ссылка'],
-    abstract: 'Постоянная ссылка на актуальный отчёт по научно-исследовательской работе (Б2.О.02.02(Н)), 40 страниц. Файл обновляется на месте: дата в ссылке не меняется. Обновлено 27.11.2026.'
+    tags: ['НИР', 'компьютерное моделирование', 'практика', '36 стр', 'постоянная ссылка'],
+    abstract: 'Отчёт по научно-исследовательской работе, 36 страниц. Постоянная ссылка: файл обновляется на месте, адрес не меняется. 27.11 исправлены титульник, таблица 7 и блок-схемы.'
   }, {
     id: 'study-kp-kmvkh-final-20261123',
-    title: 'Курсовой проект · КМвХиХТ · актуальная версия',
+    title: 'Курсовой проект · КМвХиХТ · актуальная версия (28 стр)',
     authors: 'Шатров А. И. · группа 4291 · Полосин А. Н., Козлов А. В.',
     source: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/kp-kmvkh-final.pdf',
-    tags: ['курсовой', 'КМвХиХТ', 'компьютерное моделирование', 'TLS', 'постоянная ссылка'],
-    abstract: 'Постоянная ссылка на актуальную пояснительную записку курсового проекта по компьютерному моделированию в химии и химической технологии. Файл обновляется на месте: дата в ссылке не меняется. Обновлено 27.11.2026.'
+    tags: ['курсовой', 'КМвХиХТ', 'компьютерное моделирование', 'TLS', '28 стр', 'постоянная ссылка'],
+    abstract: 'Пояснительная записка курсового проекта по компьютерному моделированию в химии и химической технологии, 28 страниц. Постоянная ссылка: файл обновляется на месте. 27.11 выровнен титульник.'
+  }, {
+    id: 'study-kr3-modelirovanie-20261127',
+    title: 'КР3 · Моделирование систем · исправленная редакция (7 стр)',
+    authors: 'Шатров А. И. · группа 4291 · вариант 8',
+    source: 'Учёба · PDF',
+    date: '2026-11-27',
+    url: BASE_URL + 'pdfs/kr3-modelirovanie.pdf',
+    tags: ['контрольная работа', 'моделирование систем', 'КР3', '7 стр', 'постоянная ссылка'],
+    abstract: 'Контрольная работа №3 по моделированию систем, вариант 8. Постоянная ссылка: файл обновляется на месте. 27.11 выровнен титульник и перевёрстан график — кривая подходит к заданию 1,50 снизу, без пересечения.'
   }, {
     id: 'study-control-works-1-3-20261126',
     title: 'Контрольные работы № 1–3 · комплект',
