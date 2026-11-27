@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.87,
-      "remaining_hours": 3.13,
+      "elapsed_hours": 4.89,
+      "remaining_hours": 3.11,
       "progress_pct": 61,
-      "cycles": 56,
-      "heartbeat_human": "04:58:04",
+      "cycles": 57,
+      "heartbeat_human": "04:59:04",
       "tree": {
         "phases": [
           {
@@ -114,7 +114,7 @@
           {
             "id": "UNI-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 1,
+            "cycles": 2,
             "max": 8,
             "last": "MUTATE",
             "score": 5,
@@ -578,19 +578,27 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "04:58:22",
+            "cycle": 57,
+            "task": "UNI-WRITER-STANDING",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
-          "version": 35,
-          "mutations": 34
+          "version": 36,
+          "mutations": 35
         },
-        "events": 56,
+        "events": 57,
         "avg_score": 4.8,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795744694,
-  "fetched_human": "2026-11-27 04:58:14 +0300"
+  "fetched_at": 1795744755,
+  "fetched_human": "2026-11-27 04:59:15 +0300"
 }
