@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-27T13:44:43+00:00",
-  "generated_human": "27.11 13:44 UTC",
-  "as_of": 1795787082365,
+  "generated": "2026-11-27T13:45:44+00:00",
+  "generated_human": "27.11 13:45 UTC",
+  "as_of": 1795787143359,
   "stale_days": 1,
   "count": 1165,
   "groups": 9,
@@ -39,6 +39,19 @@
     "w261121215151ef72"
    ],
    "prompts": [
+    {
+     "id": "ses-OYyqAyFm7c",
+     "text": "Только чтение и один артефакт. Собери свежие артефакты этого воркспейса и отбери ровно десять карточек. Каждая карточка: одно утверждение, путь к источнику, VERDICT, что меняется для человека. Судья не видит имени модели-автора и рассуждений генератора. OPEN фиксируй с причиной и числом попыток, не закрывай молча. Обязательны VERDICT и дата. Запиши артефакт ровно по пути /home/nyaka/evolution-work-researcher/artifacts/RSCH-DIGEST-*.md. В артефакте обязательны: задача, команда проверки, её rc, путь, mtime, SHA256, дата и VERDICT. PROMISE: DONE только после записи файла. ОБЯЗАТЕЛЬНО ВНУТРИ ВИТКА: обнови RED.log и GREEN.log в корне workspace и запиши в них реальные команды проверки, код возврата и маркеры errors= для провала и OK для прохода; без свежей пары движок не засчитает проверку.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-DIGEST-c92.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795787141000,
+     "source": "session",
+     "title": "lree-RSCH-DIGEST-c92",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795787141000,
+     "is_stale": false
+    },
     {
      "id": "ses-gIPWjfPOum",
      "text": "Один физический writer-виток по другому источнику: прочитай любой свежий stop_hook/*.json в корне workspace и проверь три блока testimony, fact_sheet и deathnote. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-NIGHT-PAIR-WRITER-B-*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-NIGHT-PAIR-WRITER-B-cN.md с путём STOP-HOOK, тремя блоками, командой, rc, mtime, SHA256, датой и VERDICT. ПОСЛЕ этого снова запусти команду и запиши rc=0 и маркер OK в GREEN.log. Порядок mtime RED ≤ артефакт ≤ GREEN. НЕ удаляй предыдущие артефакты: они нужны окну последних пяти витков. PROMISE: DONE только после rc=0.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-NIGHT-PAIR-WRITER-B-c91.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
@@ -18266,31 +18279,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795694558225,
      "as_of": 1795691152000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-G1AvdalfUV",
-     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Проверка adb-устройства 10AF6823ZN003YK и tg-bot-ui; команда, rc, SHA256 кадра, человекочитаемый вывод. Пиши только в /home/nyaka/evolution-work/complex-improvement-1126/artifacts/IMP-UX-AUDIT-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/complex-improvement-1126/artifacts/IMP-UX-AUDIT-c3.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795691044000,
-     "source": "session",
-     "title": "lree-IMP-UX-AUDIT-c3",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261121055339bfc8"
-     ],
-     "answer": "[w261121055339bfc8] Именованного продукта Evenlabs не нашёл; похожие бенчмарки найдены, а полезную часть подключил как локальный гейт перед длинным прогоном.\nПОНЯТНО: Простыми словами: проверить устойчивость агента заран",
-     "answer_short": "w261121055339bfc8: Именованного продукта Evenlabs не нашёл; похожие бенчмарки н",
-     "answer_full": "Именованного продукта Evenlabs не нашёл; похожие бенчмарки найдены, а полезную часть подключил как локальный гейт перед длинным прогоном.\nПОНЯТНО: Простыми словами: проверить устойчивость агента заранее можно, но это набор бенчмарков и линтеров, а не один магический предсказатель. У меня теперь есть локальная предпроверка, которая снижает риск повторного срыва.\nГлавное:\n🟨 «Evenlabs» как продукт не подтверждён: ближайший — ElevenLabs, но в его официальных репозиториях хаос-бенчмарка нет.\n🟩 Найдены EvalMonkey, Chaos Monkey для кодирующих агентов и линтеры харнесса AgentLint/agnix — с первоисточниками.\n🟩 Подключён локальный chaos-preflight: проверяет пульс, известные ошибки, окна и конфликты перед длинным шагом.\nШаги: прочитать отчёт с первоисточниками; прогнать chaos-preflight перед длинным прогоном; решить отдельно про установку сторонних пакетов\nПроверка: четыре источника плагинов опрошены; отчёт записан; предпроверка честно показала OPEN по устаревшим пульсам мандатов.\nСАМОИСЧЕРПАНИЕ:\nПОПЫТКА: опросил npm, GitHub, каталог сообщества DSH и локальные скиллы; точного плагина Evenlabs chaos benchmark нет.\nПОПЫТКА: нашёл реальные аналоги и проверил их README: EvalMonkey, Chaos Monkey, AgentLint, agnix; создал локальный предпроверочный скилл.\nАЛЬТЕРНАТИВЫ: не ставить чужой пакет глобально, а использовать проверенный принцип в локальном гейте только для чтения.\nИСТОЧНИК ОТКАЗА: блог ElevenLabs заблокирован по региону; это не доказательство отсутствия продукта. Сторонние пакеты без отдельной команды не устанавливал.\nИСТОЧНИК: /home/nyaka/docs/research/evenlabs-chaos-benchmark-20261126.md, https://github.com/Corbell-AI/evalmonkey, https://github.com/davila7/chaos-monkey-coding-agents\nАРТЕФАКТ: /home/nyaka/docs/research/evenlabs-chaos-benchmark-20261126.md 5572a57da9101f6a27352ecf22b668a91e0d130fb878cc66169cf28aa3119d36 PASS: источники и статусы четырёх каналов записаны\nАРТЕФАКТ: /home/nyaka/.config/opencode/skills/chaos-preflight/SKILL.md 7e40dbd3dace1a565a1cfaa9c57617a5b4b43d0204c141d12febf5ca99321d09 PASS: скилл зарегистрирован в системе\nАРТЕФАКТ: /home/nyaka/.config/opencode/skills/chaos-preflight/scripts/chaos_preflight.py 33373bde8fdca4034e444632d306d2359f78da3afd54afdaa5c959e5feacab5f PASS: запуск дал OPEN по старому мандату и PASS по живым\nАРТЕФАКТ: /tmp/opencode/dsh_chaos_search.json 9582efc8156d1003dddc947380c1acf94fb1fc17bc30f55c46fb31cb9d7e7672 PASS: npm/github/catalog/local опрошены\nАРТЕФАКТ: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/university-1126/tasks.jsonl 65516c063744f4ac6db5bd91194029fa556e5d89afb27444e5cc2f81e58d0bb9 PASS: одиннадцать живых задач, включая НИР, курсовую и расшифровки\n```criteria\ngoal: Говорят, Evenlabs сделал какой-то хаос-бенчмарк... есть ли какой-то скилл, если да, то подключи к моей системе, и можно ли его будет как-то системно интегрировать в меня, будет ли это полезно\ncriteria:\n  - найти информацию и назвать реальные первоисточники | user\n  - если есть подходящий скилл — подключить к моей",
-     "answer_digest": {
-      "length": 3000,
-      "sha256": "0a8d56201473a5eccea94f79f9ee3424991aba01fd0804cb73d79a4214ad373d"
-     },
-     "answer_text_id": "0a8d56201473a5ec",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795694558225,
-     "as_of": 1795691044000,
      "is_stale": true
     },
     {
