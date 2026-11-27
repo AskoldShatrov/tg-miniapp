@@ -297,6 +297,7 @@
             return '<article class="lb-card">' +
               '<div class="lb-meta">' + badge(a) +
                 (a.date ? '<span class="lb-date">' + esc(a.date) + '</span>' : '') +
+                (a.updated ? '<span class="lb-date" title="Обновлено">обновлено ' + esc(a.updated.slice(5,7) + '.' + a.updated.slice(8,10) + ' ' + a.updated.slice(11,16)) + '</span>' : '') +
                 '<button class="lb-del" data-del="' + esc(a.id) + '" title="Убрать из библиотеки" aria-label="Удалить">✕</button>' +
               '</div>' +
               '<a class="lb-link" href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title || deriveTitle(a.url)) + '</a>' +
