@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.98,
-      "remaining_hours": 16.02,
+      "elapsed_hours": 4.01,
+      "remaining_hours": 15.99,
       "progress_pct": 20,
-      "cycles": 64,
-      "heartbeat_human": "12:11:45",
+      "cycles": 66,
+      "heartbeat_human": "12:13:45",
       "tree": {
         "phases": [
           {
@@ -43,7 +43,7 @@
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 4,
-            "max": 4,
+            "max": 8,
             "last": "RETHINK_REQUIRED",
             "score": 4,
             "verified": true
@@ -68,38 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:19:49",
-            "cycle": 17,
-            "task": "IMP-RETHINK-WIRING-20H",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "verify rc=1:  {\"MIN_ATTEMPTS\": 2, \"MIN_CANDIDATES\": 3}, \"problems\": [\"artifact_missing_new"
-          },
-          {
-            "clock": "10:21:04",
-            "cycle": 18,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос improvement"
-          },
-          {
-            "clock": "10:22:19",
-            "cycle": 19,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос gate"
-          },
-          {
-            "clock": "10:23:34",
-            "cycle": 20,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос honesty"
-          },
           {
             "clock": "10:24:49",
             "cycle": 21,
@@ -547,13 +515,45 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "12:12:15",
+            "cycle": 65,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:12:15",
+            "cycle": 65,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "12:13:30",
+            "cycle": 66,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:13:30",
+            "cycle": 66,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 27,
-          "mutations": 26
+          "version": 29,
+          "mutations": 28
         },
-        "events": 77,
+        "events": 81,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.98,
-      "remaining_hours": 16.02,
+      "elapsed_hours": 4.01,
+      "remaining_hours": 15.99,
       "progress_pct": 20,
-      "cycles": 69,
-      "heartbeat_human": "12:11:45",
+      "cycles": 71,
+      "heartbeat_human": "12:13:45",
       "tree": {
         "phases": [
           {
@@ -592,7 +592,7 @@
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
             "cycles": 4,
-            "max": 4,
+            "max": 8,
             "last": "PROMOTE",
             "score": 7,
             "verified": true
@@ -601,7 +601,7 @@
             "id": "SF-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
             "cycles": 3,
-            "max": 3,
+            "max": 8,
             "last": "PROMOTE",
             "score": 7,
             "verified": true
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:58:45",
-            "cycle": 13,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
-          },
-          {
-            "clock": "10:07:04",
-            "cycle": 14,
-            "task": "SF-CLIP-CAPTURE-20H",
-            "action": "WARMUP",
-            "score": 4,
-            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
-          },
           {
             "clock": "10:20:23",
             "cycle": 15,
@@ -1096,19 +1080,35 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "12:12:15",
+            "cycle": 70,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:13:30",
+            "cycle": 71,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 73,
+        "events": 75,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795770712,
-  "fetched_human": "2026-11-27 12:11:52 +0300"
+  "fetched_at": 1795770827,
+  "fetched_human": "2026-11-27 12:13:47 +0300"
 }
