@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.35,
-      "remaining_hours": 1.65,
-      "progress_pct": 18,
-      "cycles": 55,
-      "heartbeat_human": "06:28:41",
+      "elapsed_hours": 0.37,
+      "remaining_hours": 1.63,
+      "progress_pct": 19,
+      "cycles": 56,
+      "heartbeat_human": "06:29:41",
       "tree": {
         "phases": [
           {
@@ -94,6 +94,15 @@
             "verified": false
           },
           {
+            "id": "IMP-DELIVERY-TRUTH",
+            "title": "Доставка vs запись: сверка writer-артефактов",
+            "cycles": 3,
+            "max": 4,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "IMP-WRITER-STANDING",
             "title": "Дежурный writer выхода из SCOUT_OPEN",
             "cycles": 2,
@@ -101,15 +110,6 @@
             "last": "PROMOTE",
             "score": 5,
             "verified": false
-          },
-          {
-            "id": "IMP-DELIVERY-TRUTH",
-            "title": "Доставка vs запись: сверка writer-артефактов",
-            "cycles": 2,
-            "max": 4,
-            "last": "WARMUP",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "IMP-WRITER-GATE-PATCH",
@@ -570,13 +570,21 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:29:53",
+            "cycle": 56,
+            "task": "IMP-DELIVERY-TRUTH",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 24,
           "mutations": 23
         },
-        "events": 55,
+        "events": 56,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -586,11 +594,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.35,
-      "remaining_hours": 1.65,
-      "progress_pct": 18,
-      "cycles": 41,
-      "heartbeat_human": "06:28:41",
+      "elapsed_hours": 0.37,
+      "remaining_hours": 1.63,
+      "progress_pct": 19,
+      "cycles": 42,
+      "heartbeat_human": "06:29:41",
       "tree": {
         "phases": [
           {
@@ -668,9 +676,9 @@
           {
             "id": "SF-P0-1-EVIDENCE-AUDIT",
             "title": "P0-1: честный аудит доказательств оверлея",
-            "cycles": 1,
+            "cycles": 2,
             "max": 4,
-            "last": "WARMUP",
+            "last": "MUTATE",
             "score": 4,
             "verified": true
           },
@@ -1066,13 +1074,21 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "06:29:23",
+            "cycle": 42,
+            "task": "SF-P0-1-EVIDENCE-AUDIT",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 49,
-          "mutations": 48
+          "version": 50,
+          "mutations": 49
         },
-        "events": 41,
+        "events": 42,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -1082,11 +1098,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 0.35,
-      "remaining_hours": 1.65,
-      "progress_pct": 18,
-      "cycles": 73,
-      "heartbeat_human": "06:28:41",
+      "elapsed_hours": 0.37,
+      "remaining_hours": 1.63,
+      "progress_pct": 19,
+      "cycles": 74,
+      "heartbeat_human": "06:29:41",
       "tree": {
         "phases": [
           {
@@ -1209,9 +1225,9 @@
           {
             "id": "UNI-PIVOT-EVIDENCE",
             "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
-            "cycles": 2,
+            "cycles": 3,
             "max": 4,
-            "last": "WARMUP",
+            "last": "PROMOTE",
             "score": 7,
             "verified": true
           },
@@ -1235,14 +1251,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:35:10",
-            "cycle": 14,
-            "task": "UNI-PID-CALIB",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "01:39:39",
             "cycle": 15,
@@ -1714,19 +1722,27 @@
             "action": "WARMUP",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:29:48",
+            "cycle": 74,
+            "task": "UNI-PIVOT-EVIDENCE",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 73,
+        "events": 74,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795750132,
-  "fetched_human": "2026-11-27 06:28:52 +0300"
+  "fetched_at": 1795750193,
+  "fetched_human": "2026-11-27 06:29:53 +0300"
 }

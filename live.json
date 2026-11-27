@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 970,
+      "age_min": 971,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 970,
+      "age_min": 971,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,24 +2095,24 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 970,
+      "age_min": 971,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-d37eb26f",
-      "title": "Мониторинг прогонов и анализ сканфида",
-      "source": "dsh",
-      "claimed_human": "06:28:42",
-      "age_min": 0,
-      "full": "Мониторинг прогонов и анализ сканфида"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "06:28:41",
+      "claimed_human": "06:29:43",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-d37eb26f",
+      "title": "Мониторинг прогонов и анализ сканфида",
+      "source": "dsh",
+      "claimed_human": "06:29:32",
+      "age_min": 0,
+      "full": "Мониторинг прогонов и анализ сканфида"
     }
   ],
   "queues": {
@@ -2139,27 +2139,11 @@
       "session_id": "",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "Переделать блок-схемы и терминатор",
-      "step": 3,
+      "step_label": "Собрать контрольную в PDF",
+      "step": 4,
       "total": 5,
-      "events": 59,
+      "events": 62,
       "trail": [
-        {
-          "ts": 1795749499,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749499,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749512,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749525,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
         {
           "ts": 1795749542,
           "label": "BASH · cd /home/nyaka/уч"
@@ -2335,10 +2319,26 @@
         {
           "ts": 1795750104,
           "label": "THINK"
+        },
+        {
+          "ts": 1795750130,
+          "label": "READ · /tmp/kr3_titul.pn"
+        },
+        {
+          "ts": 1795750130,
+          "label": "READ · /tmp/kr3_graph.pn"
+        },
+        {
+          "ts": 1795750147,
+          "label": "BASH · mkdir -p /home/ny"
+        },
+        {
+          "ts": 1795750165,
+          "label": "BASH · find /home/nyaka/"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795750128
+      "updated_at": 1795750188
     },
     {
       "key": "req-20261127-061357-6f27b5",
@@ -2348,28 +2348,8 @@
       "step_label": "подключить живые данные и проверить",
       "step": 3,
       "total": 5,
-      "events": 69,
+      "events": 72,
       "trail": [
-        {
-          "ts": 1795749707,
-          "label": "BASH · DST=/home/nyaka/r"
-        },
-        {
-          "ts": 1795749707,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749724,
-          "label": "BASH · grep -n -E 'copy|"
-        },
-        {
-          "ts": 1795749724,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749740,
-          "label": "BASH · sed -n '1300,1345"
-        },
         {
           "ts": 1795749753,
           "label": "BASH · python3 /home/nya"
@@ -2541,10 +2521,30 @@
         {
           "ts": 1795750114,
           "label": "THINK"
+        },
+        {
+          "ts": 1795750134,
+          "label": "BASH · grep -n -E 'ЭХО|e"
+        },
+        {
+          "ts": 1795750134,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750157,
+          "label": "EDIT · /tmp/opencode/das"
+        },
+        {
+          "ts": 1795750157,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750178,
+          "label": "EDIT · /tmp/opencode/das"
         }
       ],
       "started_at": 1795749237,
-      "updated_at": 1795750127
+      "updated_at": 1795750190
     },
     {
       "key": "req-20261127-061715-16abd6",
@@ -2567,7 +2567,7 @@
       "step_label": "Изучить правила ГОСТ и найти файлы",
       "step": 1,
       "total": 5,
-      "events": 11,
+      "events": 16,
       "trail": [
         {
           "ts": 1795750002,
@@ -2712,10 +2712,50 @@
         {
           "ts": 1795750119,
           "label": "THINK"
+        },
+        {
+          "ts": 1795750140,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750140,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750157,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750157,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750167,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750167,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750177,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750185,
+          "label": "READ · /tmp/opencode/gos"
+        },
+        {
+          "ts": 1795750185,
+          "label": "READ · /tmp/opencode/gos"
+        },
+        {
+          "ts": 1795750185,
+          "label": "READ · /tmp/opencode/gos"
         }
       ],
       "started_at": 1795749990,
-      "updated_at": 1795750127
+      "updated_at": 1795750187
     }
   ],
   "bars": [
@@ -2734,6 +2774,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795750130,
-  "fetched_human": "2026-11-27 06:28:50 +0300"
+  "fetched_at": 1795750190,
+  "fetched_human": "2026-11-27 06:29:50 +0300"
 }
