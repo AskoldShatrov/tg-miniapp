@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 952,
+      "age_min": 953,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 952,
+      "age_min": 953,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 952,
+      "age_min": 953,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "06:10:34",
-      "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "042d6369-a168-4b",
       "title": "Ты — независимый read-onl",
       "source": "dsh",
-      "claimed_human": "06:10:33",
+      "claimed_human": "06:11:35",
       "age_min": 0,
       "full": "Ты — независимый read-onl"
     },
@@ -2118,15 +2110,23 @@
       "id": "6e121298-fadb-40",
       "title": "Ты — независимый read-onl",
       "source": "dsh",
-      "claimed_human": "06:10:14",
+      "claimed_human": "06:11:27",
       "age_min": 0,
       "full": "Ты — независимый read-onl"
+    },
+    {
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "source": "dsh",
+      "claimed_human": "06:11:26",
+      "age_min": 0,
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "06:09:56",
+      "claimed_human": "06:11:19",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
     }
@@ -2158,7 +2158,7 @@
       "step_label": "Найти исходники и посмотреть скриншоты",
       "step": 1,
       "total": 5,
-      "events": 1,
+      "events": 4,
       "trail": [
         {
           "ts": 1795749022,
@@ -2175,10 +2175,46 @@
         {
           "ts": 1795749022,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749038,
+          "label": "BASH · find /home/nyaka/"
+        },
+        {
+          "ts": 1795749038,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795749038,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749055,
+          "label": "GREP · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795749055,
+          "label": "GREP · /home/nyaka"
+        },
+        {
+          "ts": 1795749055,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749070,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795749070,
+          "label": "BASH · cd /home/nyaka &&"
+        },
+        {
+          "ts": 1795749070,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795749035
+      "updated_at": 1795749093
     }
   ],
   "bars": [
@@ -2197,6 +2233,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795749036,
-  "fetched_human": "2026-11-27 06:10:36 +0300"
+  "fetched_at": 1795749096,
+  "fetched_human": "2026-11-27 06:11:36 +0300"
 }
