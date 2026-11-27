@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1052,
+      "age_min": 1053,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 1052,
+      "age_min": 1053,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,14 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 1052,
+      "age_min": 1053,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "07:50:08",
+      "claimed_human": "07:51:09",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     },
@@ -2110,25 +2110,25 @@
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "07:49:50",
+      "claimed_human": "07:51:03",
       "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
+    },
+    {
+      "id": "1ac336b4-3558-40",
+      "title": "РОЛЬ: исполнитель реа",
+      "source": "dsh",
+      "claimed_human": "07:50:40",
+      "age_min": 0,
+      "full": "РОЛЬ: исполнитель реа"
     },
     {
       "id": "session-2dc8b998",
       "title": "Работа над университетскими заданиями сейч",
       "source": "dsh",
       "claimed_human": "07:49:47",
-      "age_min": 0,
-      "full": "Работа над университетскими заданиями сейч"
-    },
-    {
-      "id": "1ac336b4-3558-40",
-      "title": "РОЛЬ: исполнитель реа",
-      "source": "dsh",
-      "claimed_human": "07:48:52",
       "age_min": 1,
-      "full": "РОЛЬ: исполнитель реа"
+      "full": "Работа над университетскими заданиями сейч"
     }
   ],
   "queues": {
@@ -2158,16 +2158,8 @@
       "step_label": "Исправить то, что не доехало, и выложить заново",
       "step": 3,
       "total": 4,
-      "events": 34,
+      "events": 36,
       "trail": [
-        {
-          "ts": 1795754475,
-          "label": "READ · /tmp/opencode/vis"
-        },
-        {
-          "ts": 1795754475,
-          "label": "READ · /tmp/opencode/vis"
-        },
         {
           "ts": 1795754492,
           "label": "READ · /tmp/opencode/vis"
@@ -2351,20 +2343,28 @@
         {
           "ts": 1795754975,
           "label": "EDIT · /home/nyaka/share"
+        },
+        {
+          "ts": 1795755019,
+          "label": "EDIT · /home/nyaka/share"
+        },
+        {
+          "ts": 1795755065,
+          "label": "EDIT · /home/nyaka/share"
         }
       ],
       "started_at": 1795754185,
-      "updated_at": 1795755007
+      "updated_at": 1795755069
     },
     {
       "key": "req-20261127-074824-fc97e9",
       "session_id": "",
       "source": "task",
       "label": "В том, как сейчас у меня выполняются ночные прогоны, есть ли",
-      "step_label": "Подключить скиллы и гейт",
+      "step_label": "Проверить стили и рич-со",
       "step": 1,
       "total": 5,
-      "events": 11,
+      "events": 17,
       "trail": [
         {
           "ts": 1795754912,
@@ -2449,10 +2449,62 @@
         {
           "ts": 1795755001,
           "label": "THINK"
+        },
+        {
+          "ts": 1795755008,
+          "label": "READ · /home/nyaka/scrip"
+        },
+        {
+          "ts": 1795755008,
+          "label": "BASH · python3 -c \"impor"
+        },
+        {
+          "ts": 1795755008,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755014,
+          "label": "SYNC · opencode"
+        },
+        {
+          "ts": 1795755014,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755024,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755024,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755039,
+          "label": "BASH · tesseract --list-"
+        },
+        {
+          "ts": 1795755039,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755049,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795755049,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795755066,
+          "label": "WRITE · /home/nyaka/.con"
+        },
+        {
+          "ts": 1795755066,
+          "label": "THINK"
         }
       ],
       "started_at": 1795754904,
-      "updated_at": 1795755007
+      "updated_at": 1795755068
     }
   ],
   "bars": [
@@ -2471,6 +2523,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 3.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795755009,
-  "fetched_human": "2026-11-27 07:50:09 +0300"
+  "fetched_at": 1795755071,
+  "fetched_human": "2026-11-27 07:51:11 +0300"
 }
