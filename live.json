@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 789,
+      "age_min": 790,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 789,
+      "age_min": 790,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,72 +2095,72 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 789,
+      "age_min": 790,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-8e85d767",
-      "title": "Ночной прогон: университет (pid 1917542)",
-      "source": "dsh",
-      "claimed_human": "03:27:37",
-      "age_min": 0,
-      "full": "Ночной прогон: университет (pid 1917542)"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "03:27:36",
+      "claimed_human": "03:28:39",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-f5e9fcec",
+      "title": "Сессия без названия",
+      "source": "dsh",
+      "claimed_human": "03:28:38",
+      "age_min": 0,
+      "full": "Сессия без названия"
+    },
+    {
+      "id": "session-63f1cf79",
+      "title": "Вход — не чистый лист;",
+      "source": "dsh",
+      "claimed_human": "03:28:38",
+      "age_min": 0,
+      "full": "Вход — не чистый лист;"
+    },
+    {
+      "id": "session-8e85d767",
+      "title": "Ночной прогон: университет (pid 1917542)",
+      "source": "dsh",
+      "claimed_human": "03:28:34",
+      "age_min": 0,
+      "full": "Ночной прогон: университет (pid 1917542)"
     },
     {
       "id": "session-ca0f62b3",
       "title": "Проверка критериев и запись артефакта",
       "source": "dsh",
-      "claimed_human": "03:27:34",
+      "claimed_human": "03:28:34",
       "age_min": 0,
       "full": "Проверка критериев и запись артефакта"
+    },
+    {
+      "id": "session-4ab85241",
+      "title": "Анализ прогресса сканфида человеческим язы",
+      "source": "dsh",
+      "claimed_human": "03:28:32",
+      "age_min": 0,
+      "full": "Анализ прогресса сканфида человеческим язы"
+    },
+    {
+      "id": "session-2f08b1ce",
+      "title": "Ночной прогон: сканфид-v2 (pid 1917540)",
+      "source": "dsh",
+      "claimed_human": "03:28:26",
+      "age_min": 0,
+      "full": "Ночной прогон: сканфид-v2 (pid 1917540)"
     },
     {
       "id": "session-5add8586",
       "title": "Запись дайджеста с проверкой SHA256",
       "source": "dsh",
       "claimed_human": "03:27:30",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Запись дайджеста с проверкой SHA256"
-    },
-    {
-      "id": "session-2f08b1ce",
-      "title": "Ночной прогон: сканфид-v2 (pid 1917540)",
-      "source": "dsh",
-      "claimed_human": "03:27:02",
-      "age_min": 0,
-      "full": "Ночной прогон: сканфид-v2 (pid 1917540)"
-    },
-    {
-      "id": "session-4ab85241",
-      "title": "Анализ прогресса сканфида человеческим язы",
-      "source": "dsh",
-      "claimed_human": "03:25:09",
-      "age_min": 2,
-      "full": "Анализ прогресса сканфида человеческим язы"
-    },
-    {
-      "id": "277ed6b7-061a-4e",
-      "title": "Ты — независимый крас",
-      "source": "dsh",
-      "claimed_human": "03:23:58",
-      "age_min": 3,
-      "full": "Ты — независимый крас"
-    },
-    {
-      "id": "session-81b2d685",
-      "title": "Запись артефакта метарефлексии с проверкой",
-      "source": "dsh",
-      "claimed_human": "03:23:36",
-      "age_min": 4,
-      "full": "Запись артефакта метарефлексии с проверкой"
     }
   ],
   "queues": {
@@ -2190,7 +2190,7 @@
       "step_label": "Разбор дашборда и вкладок",
       "step": 2,
       "total": 5,
-      "events": 3,
+      "events": 5,
       "trail": [
         {
           "ts": 1795739134,
@@ -2223,20 +2223,36 @@
         {
           "ts": 1795739240,
           "label": "THINK"
+        },
+        {
+          "ts": 1795739288,
+          "label": "BASH · grep -rn -l 'live"
+        },
+        {
+          "ts": 1795739288,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795739310,
+          "label": "BASH · grep -n -E 'live-"
+        },
+        {
+          "ts": 1795739311,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739112,
-      "updated_at": 1795739261
+      "updated_at": 1795739321
     },
     {
       "key": "req-20261127-032656-beb2f1",
       "session_id": "",
       "source": "task",
       "label": "пришли в telegram pdf файлами последние отчеты по моим униве",
-      "step_label": "",
-      "step": 0,
-      "total": null,
-      "events": 3,
+      "step_label": "Разведка файлов и приложения",
+      "step": 1,
+      "total": 4,
+      "events": 4,
       "trail": [
         {
           "ts": 1795739232,
@@ -2289,10 +2305,34 @@
         {
           "ts": 1795739256,
           "label": "THINK"
+        },
+        {
+          "ts": 1795739274,
+          "label": "BASH · echo \"=== учеба/у"
+        },
+        {
+          "ts": 1795739274,
+          "label": "BASH · cd /home/nyaka/lo"
+        },
+        {
+          "ts": 1795739274,
+          "label": "BASH · echo \"=== assignm"
+        },
+        {
+          "ts": 1795739274,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795739298,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795739298,
+          "label": "BASH · cd /tmp/opencode "
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795739259
+      "updated_at": 1795739322
     }
   ],
   "bars": [
@@ -2311,6 +2351,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 13.2,
   "plan_source": "progress.json",
-  "fetched_at": 1795739262,
-  "fetched_human": "2026-11-27 03:27:42 +0300"
+  "fetched_at": 1795739322,
+  "fetched_human": "2026-11-27 03:28:42 +0300"
 }
