@@ -5,13 +5,22 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 5.28,
-      "remaining_hours": 2.72,
+      "elapsed_hours": 5.3,
+      "remaining_hours": 2.7,
       "progress_pct": 66,
-      "cycles": 63,
-      "heartbeat_human": "05:22:34",
+      "cycles": 64,
+      "heartbeat_human": "05:23:34",
       "tree": {
         "phases": [
+          {
+            "id": "UNI-WRITER-STANDING",
+            "title": "Дежурный writer выхода из SCOUT_OPEN",
+            "cycles": 6,
+            "max": 8,
+            "last": "PROMOTE",
+            "score": 5,
+            "verified": false
+          },
           {
             "id": "UNI-PRIOR-INTAKE",
             "title": "Приём учебных наработок",
@@ -112,15 +121,6 @@
             "verified": false
           },
           {
-            "id": "UNI-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 5,
-            "max": 8,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
             "id": "UNI-PID-VOICE",
             "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
             "cycles": 3,
@@ -131,14 +131,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "00:29:44",
-            "cycle": 4,
-            "task": "UNI-PRIOR-INTAKE",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше started_ts"
-          },
           {
             "clock": "00:36:42",
             "cycle": 5,
@@ -610,19 +602,27 @@
             "action": "PROMOTE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:23:08",
+            "cycle": 64,
+            "task": "UNI-WRITER-STANDING",
+            "action": "PROMOTE",
+            "score": 5,
+            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
           }
         ],
         "strategy": {
           "version": 41,
           "mutations": 40
         },
-        "events": 63,
+        "events": 64,
         "avg_score": 4.8,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795746168,
-  "fetched_human": "2026-11-27 05:22:48 +0300"
+  "fetched_at": 1795746233,
+  "fetched_human": "2026-11-27 05:23:53 +0300"
 }
