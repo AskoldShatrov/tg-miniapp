@@ -348,6 +348,7 @@
   /* Качество связки: «по ID» точное, «по времени» — эвристика (E-34 / G1). */
   .pair.done .pair-state.by-id{color:var(--green);background:rgba(166,227,161,.14);border-color:rgba(166,227,161,.5)}
   .pair.done .pair-state.by-time{color:var(--yellow);background:rgba(249,226,175,.12);border-color:rgba(249,226,175,.4)}
+  .pair.fail .pair-state{color:#f38ba8;background:rgba(243,139,168,.10);border-color:rgba(243,139,168,.35)}
   .pair-time{margin-left:auto;font:600 9px/1 var(--fm);color:var(--overlay0)}
   .pair-body{display:flex;flex-direction:column;gap:8px;padding-left:2px}
   .pair .bubble{font-size:12px}
@@ -2324,13 +2325,17 @@ function renderChat(){
         richHtml(p.rep.text)+'<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div></div></div>');
       return;
     }
-    const state=p.pending?'<span class="pair-state">ожидание</span>'
-                         :'<span class="pair-state '+(p.rid_match?'by-id':'by-time')+'">'+
-                           (p.rid_match?'ответ · по ID':'ответ · по времени')+'</span>';
+    const state=p.pending && p.failed
+      ? '<span class="pair-state fail">не отправлено</span>'
+      : p.pending ? '<span class="pair-state">ожидание</span>'
+                  : '<span class="pair-state '+(p.rid_match?'by-id':'by-time')+'">'+
+                    (p.rid_match?'ответ · по ID':'ответ · по времени')+'</span>';
     const req='<div class="msg me"><div class="mava">👤</div><div class="bubble">'+escHtml(p.text)+
       '<span class="mtime">'+escHtml(p.t)+'</span></div></div>';
     const rep=p.pending
-      ? '<div class="pair-wait">⏳ ушло боту · открой чат позже — ответ появится здесь</div>'
+      ? (p.failed
+         ? '<div class="pair-wait">⚠️ сообщение не ушло. Открой мини-ап кнопкой бота в Телеге и отправь снова</div>'
+         : '<div class="pair-wait">⏳ ушло боту · открой чат позже — ответ появится здесь</div>')
       : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+richHtml(p.rep.text)+
         '<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div>';
     out.push('<div class="pair '+(p.pending?'pending':'done')+'">'+
@@ -2415,9 +2420,23 @@ function sendChat(){
   chatPinned=true; chatUnread=0;
   renderChat(); inp.value = "";
   /* rid уходит в payload: replies.json возвращает его, pairing точный. */
-  dshSend({source:"miniapp_chat", text:text, user_id:userID, rid:rid,
+  const sent=dshSend({source:"miniapp_chat", text:text, user_id:userID, rid:rid,
            session_id:interviewSession()},
           "Отправлено в DeepSeek Harness");
+  /* Карточка не имеет права притворяться отправленной, если канал
+     отказал: помечаем именно её, а не все сообщения в чате. */
+  function markNotSent(ok){
+    if(ok!==false) return;
+    const last=CHAT.sent[CHAT.sent.length-1];
+    if(last && last.rid===rid){
+      last.failed=true;
+      try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
+      renderChat();
+      toast("Не отправлено: открой мини-ап кнопкой бота в Телеге");
+    }
+  }
+  if(sent && typeof sent.then==="function") sent.then(markNotSent);
+  else markNotSent(sent);
 }
 const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", sendChat);
 const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown", e => {
