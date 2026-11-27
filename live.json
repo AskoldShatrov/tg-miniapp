@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 963,
+      "age_min": 964,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 963,
+      "age_min": 964,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,39 +2095,31 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 963,
+      "age_min": 964,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-7eb7b39f",
-      "title": "Мониторинг вкладок и автозапуск прогонов",
-      "source": "dsh",
-      "claimed_human": "06:21:37",
-      "age_min": 0,
-      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "session-d37eb26f",
       "title": "Мониторинг прогонов и анализ сканфида",
       "source": "dsh",
-      "claimed_human": "06:19:25",
-      "age_min": 2,
+      "claimed_human": "06:22:42",
+      "age_min": 0,
       "full": "Мониторинг прогонов и анализ сканфида"
+    },
+    {
+      "id": "session-7eb7b39f",
+      "title": "Мониторинг вкладок и автозапуск прогонов",
+      "source": "dsh",
+      "claimed_human": "06:22:41",
+      "age_min": 0,
+      "full": "Мониторинг вкладок и автозапуск прогонов"
     },
     {
       "id": "6e121298-fadb-40",
       "title": "Ты — независимый read-onl",
       "source": "dsh",
       "claimed_human": "06:13:43",
-      "age_min": 8,
-      "full": "Ты — независимый read-onl"
-    },
-    {
-      "id": "042d6369-a168-4b",
-      "title": "Ты — независимый read-onl",
-      "source": "dsh",
-      "claimed_human": "06:12:45",
-      "age_min": 8,
+      "age_min": 9,
       "full": "Ты — независимый read-onl"
     }
   ],
@@ -2158,28 +2150,8 @@
       "step_label": "Переделать блок-схемы и терминатор",
       "step": 3,
       "total": 5,
-      "events": 38,
+      "events": 42,
       "trail": [
-        {
-          "ts": 1795749177,
-          "label": "BASH · find /home/nyaka/"
-        },
-        {
-          "ts": 1795749177,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749208,
-          "label": "SYNC · gost-spbgtti"
-        },
-        {
-          "ts": 1795749208,
-          "label": "SYNC · pdf"
-        },
-        {
-          "ts": 1795749208,
-          "label": "SYNC · gost-block-diagra"
-        },
         {
           "ts": 1795749208,
           "label": "THINK"
@@ -2351,10 +2323,30 @@
         {
           "ts": 1795749699,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749713,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795749713,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749727,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795749740,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795749757,
+          "label": "BASH · cd /home/nyaka/уч"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795749703
+      "updated_at": 1795749765
     },
     {
       "key": "req-20261127-061357-6f27b5",
@@ -2364,40 +2356,8 @@
       "step_label": "найти Dash и источник запросов из ТГ",
       "step": 1,
       "total": 5,
-      "events": 41,
+      "events": 46,
       "trail": [
-        {
-          "ts": 1795749350,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749363,
-          "label": "BASH · echo '---REMOTE--"
-        },
-        {
-          "ts": 1795749363,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749372,
-          "label": "BASH · grep -r -l 'tg-mi"
-        },
-        {
-          "ts": 1795749373,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749380,
-          "label": "READ · /home/nyaka/docs/"
-        },
-        {
-          "ts": 1795749380,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749391,
-          "label": "BASH · for u in \"https:/"
-        },
         {
           "ts": 1795749391,
           "label": "THINK"
@@ -2557,10 +2517,42 @@
         {
           "ts": 1795749698,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749707,
+          "label": "BASH · DST=/home/nyaka/r"
+        },
+        {
+          "ts": 1795749707,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749724,
+          "label": "BASH · grep -n -E 'copy|"
+        },
+        {
+          "ts": 1795749724,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749740,
+          "label": "BASH · sed -n '1300,1345"
+        },
+        {
+          "ts": 1795749753,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795749753,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749762,
+          "label": "EDIT · /home/nyaka/scrip"
         }
       ],
       "started_at": 1795749237,
-      "updated_at": 1795749702
+      "updated_at": 1795749763
     },
     {
       "key": "req-20261127-061407-5fbe9f",
@@ -2570,36 +2562,8 @@
       "step_label": "Выдача",
       "step": 5,
       "total": 5,
-      "events": 37,
+      "events": 41,
       "trail": [
-        {
-          "ts": 1795749392,
-          "label": "BASH · python3 - <<'PY'"
-        },
-        {
-          "ts": 1795749392,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749400,
-          "label": "GREP · /home/nyaka/scrip"
-        },
-        {
-          "ts": 1795749400,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749411,
-          "label": "BASH · sed -n '960,1030p"
-        },
-        {
-          "ts": 1795749437,
-          "label": "WRITE · /home/nyaka/evol"
-        },
-        {
-          "ts": 1795749437,
-          "label": "THINK"
-        },
         {
           "ts": 1795749444,
           "label": "BASH · python3 - <<'PY'"
@@ -2763,10 +2727,38 @@
         {
           "ts": 1795749699,
           "label": "THINK"
+        },
+        {
+          "ts": 1795749711,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795749728,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795749728,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749737,
+          "label": "BASH · stat -c '%y' /hom"
+        },
+        {
+          "ts": 1795749737,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795749749,
+          "label": "BASH · sha256sum /tmp/op"
+        },
+        {
+          "ts": 1795749749,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749247,
-      "updated_at": 1795749702
+      "updated_at": 1795749766
     },
     {
       "key": "req-20261127-061715-16abd6",
@@ -2798,6 +2790,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.8,
   "plan_source": "progress.json",
-  "fetched_at": 1795749704,
-  "fetched_human": "2026-11-27 06:21:44 +0300"
+  "fetched_at": 1795749766,
+  "fetched_human": "2026-11-27 06:22:46 +0300"
 }
