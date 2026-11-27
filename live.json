@@ -2078,7 +2078,7 @@
       "id": "cae4eefd-56be-4b",
       "title": "Задача: исправить деф",
       "source": "dsh",
-      "claimed_human": "12:08:40",
+      "claimed_human": "12:09:44",
       "age_min": 0,
       "full": "Задача: исправить деф"
     },
@@ -2086,7 +2086,7 @@
       "id": "session-8a5dfe1a",
       "title": "Как идет работа над Сканфидом",
       "source": "dsh",
-      "claimed_human": "12:08:40",
+      "claimed_human": "12:09:42",
       "age_min": 0,
       "full": "Как идет работа над Сканфидом"
     },
@@ -2095,7 +2095,7 @@
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
       "claimed_human": "12:06:57",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Подключение Graphify и инструментов инспекции"
     }
   ],
@@ -2126,28 +2126,8 @@
       "step_label": "переделать задание и контрольные работы",
       "step": 4,
       "total": 5,
-      "events": 243,
+      "events": 246,
       "trail": [
-        {
-          "ts": 1795770060,
-          "label": "BASH · find /home/nyaka/"
-        },
-        {
-          "ts": 1795770060,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770080,
-          "label": "BASH · ls /home/nyaka/уч"
-        },
-        {
-          "ts": 1795770080,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770092,
-          "label": "READ · /home/nyaka/учеба"
-        },
         {
           "ts": 1795770106,
           "label": "BASH · echo '=== last re"
@@ -2319,10 +2299,30 @@
         {
           "ts": 1795770520,
           "label": "THINK"
+        },
+        {
+          "ts": 1795770544,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795770559,
+          "label": "BASH · grep -n 'ALT_LINE"
+        },
+        {
+          "ts": 1795770559,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770581,
+          "label": "BASH · grep -n 'PIN_GATE"
+        },
+        {
+          "ts": 1795770581,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763987,
-      "updated_at": 1795770526
+      "updated_at": 1795770586
     },
     {
       "key": "req-20261127-103932-f850fd",
@@ -2332,40 +2332,8 @@
       "step_label": "Отправить готовые файлы",
       "step": 6,
       "total": 6,
-      "events": 196,
+      "events": 200,
       "trail": [
-        {
-          "ts": 1795769980,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770002,
-          "label": "BASH · echo \"=== human_a"
-        },
-        {
-          "ts": 1795770007,
-          "label": "BASH · echo \"=== receipt"
-        },
-        {
-          "ts": 1795770008,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770020,
-          "label": "BASH · cat /tmp/opencode"
-        },
-        {
-          "ts": 1795770020,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770052,
-          "label": "BASH · sha256sum /home/n"
-        },
-        {
-          "ts": 1795770052,
-          "label": "THINK"
-        },
         {
           "ts": 1795770078,
           "label": "WRITE · /tmp/opencode/do"
@@ -2525,10 +2493,42 @@
         {
           "ts": 1795770521,
           "label": "THINK"
+        },
+        {
+          "ts": 1795770531,
+          "label": "BASH · grep -n 'PIN_GATE"
+        },
+        {
+          "ts": 1795770531,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770547,
+          "label": "BASH · sed -n '58,70p' /"
+        },
+        {
+          "ts": 1795770547,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770566,
+          "label": "BASH · grep -n -A40 'def"
+        },
+        {
+          "ts": 1795770566,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770583,
+          "label": "BASH · grep -n -A55 'def"
+        },
+        {
+          "ts": 1795770583,
+          "label": "THINK"
         }
       ],
       "started_at": 1795765174,
-      "updated_at": 1795770528
+      "updated_at": 1795770588
     },
     {
       "key": "req-20261127-115534-8e9bae",
@@ -2538,32 +2538,8 @@
       "step_label": "проверить и показать",
       "step": 4,
       "total": 4,
-      "events": 46,
+      "events": 49,
       "trail": [
-        {
-          "ts": 1795770192,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770199,
-          "label": "READ · /tmp/opencode/tit"
-        },
-        {
-          "ts": 1795770200,
-          "label": "READ · /tmp/opencode/tit"
-        },
-        {
-          "ts": 1795770200,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795770217,
-          "label": "BASH · echo \"=== remotes"
-        },
-        {
-          "ts": 1795770217,
-          "label": "THINK"
-        },
         {
           "ts": 1795770227,
           "label": "BASH · sed -n '1,140p' /"
@@ -2731,10 +2707,34 @@
         {
           "ts": 1795770523,
           "label": "THINK"
+        },
+        {
+          "ts": 1795770546,
+          "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795770546,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770561,
+          "label": "BASH · sed -n '33,50p' /"
+        },
+        {
+          "ts": 1795770561,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795770577,
+          "label": "BASH · curl -sS --max-ti"
+        },
+        {
+          "ts": 1795770577,
+          "label": "THINK"
         }
       ],
       "started_at": 1795769735,
-      "updated_at": 1795770525
+      "updated_at": 1795770588
     }
   ],
   "bars": [
@@ -2753,6 +2753,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 7.6,
   "plan_source": "progress.json",
-  "fetched_at": 1795770528,
-  "fetched_human": "2026-11-27 12:08:48 +0300"
+  "fetched_at": 1795770588,
+  "fetched_human": "2026-11-27 12:09:48 +0300"
 }
