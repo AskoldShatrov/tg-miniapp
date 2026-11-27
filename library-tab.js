@@ -14,6 +14,7 @@
     title: 'When Does a Second Model Help? Cross-Model Review in LLM Verification',
     authors: 'Tae-Eun Song',
     source: 'arXiv',
+    folder: 'Статьи',
     date: '2026-10-01',
     url: 'https://arxiv.org/abs/2610.01471',
     tags: ['LLM', 'review', 'verification', 'cross-model', 'cs.CL'],
@@ -23,6 +24,7 @@
     title: 'НИР · актуальная версия (37 стр)',
     authors: 'Шатров А. И. · группа 4291 · СПбГТИ(ТУ)',
     source: 'Учёба · PDF',
+    folder: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/nir-final.pdf?v=20261127-0840',
     tags: ['НИР', 'компьютерное моделирование', 'практика', '37 стр', 'постоянная ссылка'],
@@ -32,6 +34,7 @@
     title: 'Курсовой проект · КМвХиХТ · актуальная версия (28 стр)',
     authors: 'Шатров А. И. · группа 4291 · Полосин А. Н., Козлов А. В.',
     source: 'Учёба · PDF',
+    folder: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/kp-kmvkh-final.pdf?v=20261127-0840',
     tags: ['курсовой', 'КМвХиХТ', 'компьютерное моделирование', 'TLS', '28 стр', 'постоянная ссылка'],
@@ -41,6 +44,7 @@
     title: 'КР3 · Моделирование систем · исправленная редакция (7 стр)',
     authors: 'Шатров А. И. · группа 4291 · вариант 8',
     source: 'Учёба · PDF',
+    folder: 'Учёба · PDF',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/kr3-modelirovanie.pdf?v=20261127-0840',
     tags: ['контрольная работа', 'моделирование систем', 'КР3', '7 стр', 'постоянная ссылка'],
@@ -50,28 +54,101 @@
     title: 'Контрольные работы № 1–3 · комплект',
     authors: 'Голубкова Ю. А. · примеры оформления',
     source: 'Учёба · Word',
+    folder: 'Word · документы',
     date: '2026-11-27',
     url: BASE_URL + 'pdfs/kontrolnye-raboty-1-3.docx',
     tags: ['контрольные работы', 'Word', 'компьютерное моделирование', 'постоянная ссылка'],
     abstract: 'Постоянная ссылка на комплект контрольных работ № 1–3 в формате Word. Файл обновляется на месте: дата в ссылке не меняется. Опубликовано 27.11.2026.'
   }, {
-    id: 'study-kr1-20261127',
-    title: 'КР1 · Интернет-технологии · HTML и CSS (14 стр)',
-    authors: 'Шатров А. И. · группа 4291 · вариант 3',
-    source: 'Учёба · PDF',
+    id: 'word-01-kontrolnye-20261127',
+    title: 'Контрольные работы № 1–3 · Word',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'pdfs/kr1-internet-technologies.pdf?v=20261127-1000',
-    tags: ['контрольная работа', 'КР1', 'HTML', 'CSS', 'постоянная ссылка'],
-    abstract: 'Отчёт по контрольной работе №1. Титульник приведён к общей сетке 71+70 мм и проверен компьютерным зрением; продолжения таблиц без «уходящих» линий.'
+    url: BASE_URL + 'word/01-kontrolnye-raboty-1-3.docx?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['контрольные работы', 'Word', 'компьютерное моделирование'],
+    abstract: 'Комплект контрольных работ № 1–3 в исходном формате Word, опубликован без перекодирования.'
   }, {
-    id: 'study-kr2-20261127',
-    title: 'КР2 · Интернет-технологии · JavaScript (20 стр)',
-    authors: 'Шатров А. И. · группа 4291 · вариант 3',
-    source: 'Учёба · PDF',
+    id: 'word-02-kr-shatrov-20261127',
+    title: 'Контрольные работы 1, 2, 3 · Шатров А. И.',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
     date: '2026-11-27',
-    url: BASE_URL + 'pdfs/kr2-internet-technologies.pdf?v=20261127-1000',
-    tags: ['контрольная работа', 'КР2', 'JavaScript', 'постоянная ссылка'],
-    abstract: 'Отчёт по контрольной работе №2. Титульник и подписные строки выровнены по одной сетке с НИР и курсовым;продолжения таблиц исправлены.'
+    url: BASE_URL + 'word/02-kr1-2-3-shatrov.docx?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['контрольные работы', 'Word', 'Шатров'],
+    abstract: 'Контрольные работы 1, 2 и 3 Шатрова А. И. в исходном формате Word.'
+  }, {
+    id: 'word-03-zadanie-kp-kmvkh-20261127',
+    title: 'Задание на курсовой проект · КМвХиХТ · 2025',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/03-zadanie-kp-kmvkh.doc?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
+    abstract: 'Шаблон задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
+  }, {
+    id: 'word-04-titul-sheremetev-20261127',
+    title: 'Титул и задание курсовой работы · Шереметьев',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/04-titul-sheremetev.docx?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['титульный лист', 'курсовая работа', 'Word', 'Шереметьев'],
+    abstract: 'Пример титульного листа и задания курсовой работы, формат Word.'
+  }, {
+    id: 'word-05-zadanie-belyaev-20261127',
+    title: 'Задание на курсовой проект · КМвХиХТ · Беляев',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/05-zadanie-belyaev.doc?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
+    abstract: 'Пример задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
+  }, {
+    id: 'word-06-zadanie-rumyantsev-20261127',
+    title: 'Задание на курсовой проект · КМвХиХТ · Румянцев',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/06-zadanie-rumyantsev.doc?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['курсовой проект', 'КМвХиХТ', 'задание', 'Word'],
+    abstract: 'Пример задания на курсовой проект по компьютерному моделированию в химии и химической технологии, формат Word.'
+  }, {
+    id: 'word-07-otchet-nir-20261127',
+    title: 'Отчёт по НИР · Ковинев Д. С.',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/07-otchet-nir.docx?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['НИР', 'отчёт', 'Word', 'Ковинев'],
+    abstract: 'Отчёт по научно-исследовательской работе в исходном формате Word.'
+  }, {
+    id: 'word-08-tz-nir-20261127',
+    title: 'Техническое задание на НИР',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/08-tz-nir.docx?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['НИР', 'техническое задание', 'Word'],
+    abstract: 'Техническое задание на научно-исследовательскую работу в исходном формате Word.'
+  }, {
+    id: 'word-09-kp-primer-20261127',
+    title: 'Курсовой проект · ОРАИС · пример Кабинова Е. В.',
+    authors: 'Учёба · Word',
+    source: 'Учёба · Word',
+    date: '2026-11-27',
+    url: BASE_URL + 'word/09-kp-primer.docx?v=20261127-1000',
+    folder: 'Word · документы',
+    tags: ['курсовой проект', 'ОРАИС', 'пример', 'Word'],
+    abstract: 'Пример курсового проекта по ОРАИС в исходном формате Word.'
   }];
 
   function esc(s) {
@@ -193,22 +270,42 @@
       '<button type="submit">＋ Добавить</button>' +
       '</form>';
 
+    var FOLDER_ORDER = ['Word · документы', 'Учёба · PDF', 'Статьи'];
+    var groups = {};
+    byDate.forEach(function (a) {
+      var f = String(a.folder || 'Прочее');
+      if (!groups[f]) groups[f] = [];
+      groups[f].push(a);
+    });
+    var folderNames = Object.keys(groups);
+    folderNames.sort(function (x, y) {
+      var ix = FOLDER_ORDER.indexOf(x);
+      var iy = FOLDER_ORDER.indexOf(y);
+      if (ix !== -1 && iy !== -1) return ix - iy;
+      if (ix !== -1) return -1;
+      if (iy !== -1) return 1;
+      return x.localeCompare(y, 'ru');
+    });
+
     if (!byDate.length) {
       html += '<div class="lb-empty">' + (list.length ? 'Ничего не найдено.' : 'Пока пусто. Вставьте ссылку выше.') + '</div>';
     } else {
-      html += '<div class="lb-list">' + byDate.map(function (a) {
-        var tags = (a.tags || []).map(function (t) { return '<span class="lb-tag">#' + esc(t) + '</span>'; }).join('');
-        return '<article class="lb-card">' +
-          '<div class="lb-meta">' + badge(a) +
-            (a.date ? '<span class="lb-date">' + esc(a.date) + '</span>' : '') +
-            '<button class="lb-del" data-del="' + esc(a.id) + '" title="Убрать из библиотеки" aria-label="Удалить">✕</button>' +
-          '</div>' +
-          '<a class="lb-link" href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title || deriveTitle(a.url)) + '</a>' +
-          (a.authors ? '<div class="lb-authors">' + esc(a.authors) + '</div>' : '') +
-          (tags ? '<div class="lb-tags">' + tags + '</div>' : '') +
-          (a.abstract ? '<details class="lb-abs"><summary>Аннотация</summary><p>' + esc(a.abstract) + '</p></details>' : '') +
-          '</article>';
-      }).join('') + '</div>';
+      html += folderNames.map(function (folder) {
+        return '<h3 class="lb-folder">' + esc(folder) + '</h3>' +
+          '<div class="lb-list">' + groups[folder].map(function (a) {
+            var tags = (a.tags || []).map(function (t) { return '<span class="lb-tag">#' + esc(t) + '</span>'; }).join('');
+            return '<article class="lb-card">' +
+              '<div class="lb-meta">' + badge(a) +
+                (a.date ? '<span class="lb-date">' + esc(a.date) + '</span>' : '') +
+                '<button class="lb-del" data-del="' + esc(a.id) + '" title="Убрать из библиотеки" aria-label="Удалить">✕</button>' +
+              '</div>' +
+              '<a class="lb-link" href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title || deriveTitle(a.url)) + '</a>' +
+              (a.authors ? '<div class="lb-authors">' + esc(a.authors) + '</div>' : '') +
+              (tags ? '<div class="lb-tags">' + tags + '</div>' : '') +
+              (a.abstract ? '<details class="lb-abs"><summary>Аннотация</summary><p>' + esc(a.abstract) + '</p></details>' : '') +
+              '</article>';
+          }).join('') + '</div>';
+      }).join('');
     }
 
     host.innerHTML = html;
