@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 2.01,
+      "elapsed_hours": 2.03,
       "remaining_hours": 0.0,
       "progress_pct": 100,
-      "cycles": 71,
-      "heartbeat_human": "08:08:11",
+      "cycles": 72,
+      "heartbeat_human": "08:09:11",
       "tree": {
         "phases": [
           {
@@ -121,19 +121,19 @@
             "verified": true
           },
           {
-            "id": "IMP-DELIVERY-TRUTH",
-            "title": "Доставка vs запись: сверка writer-артефактов",
+            "id": "IMP-WRITER-GATE-PATCH",
+            "title": "Writer-гейт: отвергать подмену доставки",
             "cycles": 3,
-            "max": 4,
-            "last": "PROMOTE",
+            "max": 5,
+            "last": "MUTATE",
             "score": 7,
             "verified": true
           },
           {
-            "id": "IMP-WRITER-GATE-PATCH",
-            "title": "Writer-гейт: отвергать подмену доставки",
-            "cycles": 2,
-            "max": 5,
+            "id": "IMP-DELIVERY-TRUTH",
+            "title": "Доставка vs запись: сверка writer-артефактов",
+            "cycles": 3,
+            "max": 4,
             "last": "PROMOTE",
             "score": 7,
             "verified": true
@@ -158,14 +158,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "01:26:19",
-            "cycle": 12,
-            "task": "IMP-SYS-DSH",
-            "action": "PROMOTE",
-            "score": 4,
-            "note": "verify rc=1: match: declared=cab5b8f8a5ee actual=b540ac9597ef; MTIME unparseable; missing "
-          },
           {
             "clock": "01:31:03",
             "cycle": 13,
@@ -637,13 +629,21 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "08:08:57",
+            "cycle": 72,
+            "task": "IMP-WRITER-GATE-PATCH",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 29,
-          "mutations": 28
+          "version": 30,
+          "mutations": 29
         },
-        "events": 71,
+        "events": 72,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 2.01,
+      "elapsed_hours": 2.03,
       "remaining_hours": 0.0,
       "progress_pct": 100,
-      "cycles": 54,
-      "heartbeat_human": "08:08:12",
+      "cycles": 55,
+      "heartbeat_human": "08:09:12",
       "tree": {
         "phases": [
           {
@@ -762,7 +762,7 @@
           {
             "id": "SF-HYPOTHESIS-DIVERGE",
             "title": "Перебор гипотез до критики",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
             "last": "PROMOTE",
             "score": 7,
@@ -1237,676 +1237,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "08:08:50",
+            "cycle": 55,
+            "task": "SF-HYPOTHESIS-DIVERGE",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 52,
           "mutations": 51
         },
-        "events": 54,
-        "avg_score": 0.0,
-        "fail_streak": 0
-      }
-    },
-    {
-      "id": "university-1126",
-      "label": "university 1126",
-      "status": "идёт",
-      "budget_hours": 2.0,
-      "elapsed_hours": 2.01,
-      "remaining_hours": 0.0,
-      "progress_pct": 100,
-      "cycles": 90,
-      "heartbeat_human": "08:08:11",
-      "tree": {
-        "phases": [
-          {
-            "id": "UNI-WRITER-STANDING",
-            "title": "Дежурный writer выхода из SCOUT_OPEN",
-            "cycles": 8,
-            "max": 8,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-GOST-RESIDUAL",
-            "title": "ГОСТ-остатки по НИР/КП/КР3",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-RK4-PREREG",
-            "title": "RK4: предрегистрация порога до прогона",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-PRIOR-INTAKE",
-            "title": "Приём учебных наработок",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-MVS-WINE",
-            "title": "Моделирование систем: MvStudium под Wine",
-            "cycles": 5,
-            "max": 5,
-            "last": "WARMUP",
-            "score": 4,
-            "verified": true
-          },
-          {
-            "id": "UNI-PID-CALIB",
-            "title": "ПИ-регулятор Kp=2 Ти=20",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-HYPOTHESIS-DIVERGE",
-            "title": "Перебор гипотез учебного трека",
-            "cycles": 5,
-            "max": 5,
-            "last": "WARMUP",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-META-REFLECT",
-            "title": "Метарефлексия трёх уровней",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-CRITERIA-REVIEW",
-            "title": "Пересмотр критериев учебного трека",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-WRITER",
-            "title": "Writer учебного трека",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-DIGEST",
-            "title": "Итог учебного трека",
-            "cycles": 5,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 5,
-            "verified": false
-          },
-          {
-            "id": "UNI-NIR",
-            "title": "НИР: гейты и версии",
-            "cycles": 5,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "UNI-KP",
-            "title": "Курсовая: LaTeX и блок-схема",
-            "cycles": 5,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "UNI-VOICE",
-            "title": "Учебные расшифровки: полезные указания",
-            "cycles": 5,
-            "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "verified": false
-          },
-          {
-            "id": "UNI-PIVOT-EVIDENCE",
-            "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
-            "cycles": 4,
-            "max": 4,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-REQ-TRACE",
-            "title": "Сверка голосовых просьб с доставленными артефактами",
-            "cycles": 4,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "UNI-PID-VOICE",
-            "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
-            "cycles": 3,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": false
-          }
-        ],
-        "trail": [
-          {
-            "clock": "03:04:11",
-            "cycle": 31,
-            "task": "UNI-WRITER",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:07:34",
-            "cycle": 32,
-            "task": "UNI-WRITER",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:10:50",
-            "cycle": 33,
-            "task": "UNI-WRITER",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:13:37",
-            "cycle": 34,
-            "task": "UNI-WRITER",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:17:15",
-            "cycle": 35,
-            "task": "UNI-WRITER",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:21:01",
-            "cycle": 36,
-            "task": "UNI-DIGEST",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:27:30",
-            "cycle": 37,
-            "task": "UNI-DIGEST",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:31:47",
-            "cycle": 38,
-            "task": "UNI-DIGEST",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:36:59",
-            "cycle": 39,
-            "task": "UNI-DIGEST",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:40:00",
-            "cycle": 40,
-            "task": "UNI-DIGEST",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "03:45:08",
-            "cycle": 41,
-            "task": "UNI-NIR",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: artifacts/UNI-NIR-c41.md MTIME unparseable; missing PASS:; missing FAIL:; mis"
-          },
-          {
-            "clock": "03:48:59",
-            "cycle": 42,
-            "task": "UNI-NIR",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: ty-1126/artifacts/UNI-NIR-c42.md MTIME unparseable; missing PASS:; missing FA"
-          },
-          {
-            "clock": "03:52:12",
-            "cycle": 43,
-            "task": "UNI-NIR",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: =1795603115 file=1795740715; missing PASS:; missing FAIL:; missing OPEN:; mis"
-          },
-          {
-            "clock": "03:57:09",
-            "cycle": 44,
-            "task": "UNI-NIR",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
-          },
-          {
-            "clock": "04:01:00",
-            "cycle": 45,
-            "task": "UNI-NIR",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
-          },
-          {
-            "clock": "04:07:03",
-            "cycle": 46,
-            "task": "UNI-KP",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: KP-c46.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
-          },
-          {
-            "clock": "04:13:34",
-            "cycle": 47,
-            "task": "UNI-KP",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: S:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing SHA256:; missing "
-          },
-          {
-            "clock": "04:17:59",
-            "cycle": 48,
-            "task": "UNI-KP",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
-          },
-          {
-            "clock": "04:22:01",
-            "cycle": 49,
-            "task": "UNI-KP",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c49.md MTIME unparseable; missing PASS:; missing FA"
-          },
-          {
-            "clock": "04:27:02",
-            "cycle": 50,
-            "task": "UNI-KP",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: ity-1126/artifacts/UNI-KP-c50.md MTIME unparseable; missing PASS:; missing FA"
-          },
-          {
-            "clock": "04:29:53",
-            "cycle": 51,
-            "task": "UNI-VOICE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: ble; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing S"
-          },
-          {
-            "clock": "04:35:00",
-            "cycle": 52,
-            "task": "UNI-VOICE",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: /artifacts/UNI-VOICE-c52.md SHA256 mismatch: declared=2b02d1a9aa2e actual=22b"
-          },
-          {
-            "clock": "04:40:58",
-            "cycle": 53,
-            "task": "UNI-VOICE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: S:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing SHA256:; missing "
-          },
-          {
-            "clock": "04:45:37",
-            "cycle": 54,
-            "task": "UNI-VOICE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: CE-c54.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
-          },
-          {
-            "clock": "04:50:51",
-            "cycle": 55,
-            "task": "UNI-VOICE",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: rtifacts/UNI-VOICE-c55.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
-          },
-          {
-            "clock": "04:54:03",
-            "cycle": 56,
-            "task": "UNI-WRITER-STANDING",
-            "action": "MUTATE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "04:58:22",
-            "cycle": 57,
-            "task": "UNI-WRITER-STANDING",
-            "action": "MUTATE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "05:02:08",
-            "cycle": 58,
-            "task": "UNI-PID-VOICE",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 4,
-            "note": "verify rc=1: acts/UNI-PID-VOICE-c58.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
-          },
-          {
-            "clock": "05:06:48",
-            "cycle": 59,
-            "task": "UNI-PID-VOICE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: CE-c59.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
-          },
-          {
-            "clock": "05:09:42",
-            "cycle": 60,
-            "task": "UNI-PID-VOICE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: CE-c60.md MTIME unparseable; missing PASS:; missing FAIL:; missing OPEN:; mis"
-          },
-          {
-            "clock": "05:13:14",
-            "cycle": 61,
-            "task": "UNI-WRITER-STANDING",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "05:17:28",
-            "cycle": 62,
-            "task": "UNI-WRITER-STANDING",
-            "action": "MUTATE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "05:20:29",
-            "cycle": 63,
-            "task": "UNI-WRITER-STANDING",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "05:23:08",
-            "cycle": 64,
-            "task": "UNI-WRITER-STANDING",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "05:26:01",
-            "cycle": 65,
-            "task": "UNI-WRITER-STANDING",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "05:27:01",
-            "cycle": 66,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
-          },
-          {
-            "clock": "05:28:01",
-            "cycle": 67,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
-          },
-          {
-            "clock": "05:29:01",
-            "cycle": 68,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
-          },
-          {
-            "clock": "05:30:01",
-            "cycle": 69,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
-          },
-          {
-            "clock": "05:31:01",
-            "cycle": 70,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rk4"
-          },
-          {
-            "clock": "05:32:01",
-            "cycle": 71,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "06:15:09",
-            "cycle": 72,
-            "task": "UNI-PIVOT-EVIDENCE",
-            "action": "WARMUP",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "06:21:22",
-            "cycle": 73,
-            "task": "UNI-PIVOT-EVIDENCE",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "06:29:48",
-            "cycle": 74,
-            "task": "UNI-PIVOT-EVIDENCE",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "06:38:11",
-            "cycle": 75,
-            "task": "UNI-PIVOT-EVIDENCE",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "06:45:45",
-            "cycle": 76,
-            "task": "UNI-GOST-RESIDUAL",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "06:50:42",
-            "cycle": 77,
-            "task": "UNI-GOST-RESIDUAL",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "06:56:14",
-            "cycle": 78,
-            "task": "UNI-GOST-RESIDUAL",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:04:00",
-            "cycle": 79,
-            "task": "UNI-GOST-RESIDUAL",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:11:19",
-            "cycle": 80,
-            "task": "UNI-GOST-RESIDUAL",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:16:52",
-            "cycle": 81,
-            "task": "UNI-RK4-PREREG",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
-          {
-            "clock": "07:22:00",
-            "cycle": 82,
-            "task": "UNI-RK4-PREREG",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:26:50",
-            "cycle": 83,
-            "task": "UNI-RK4-PREREG",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:30:46",
-            "cycle": 84,
-            "task": "UNI-RK4-PREREG",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:34:54",
-            "cycle": 85,
-            "task": "UNI-RK4-PREREG",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:39:23",
-            "cycle": 86,
-            "task": "UNI-WRITER-STANDING",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:46:20",
-            "cycle": 87,
-            "task": "UNI-REQ-TRACE",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "07:54:16",
-            "cycle": 88,
-            "task": "UNI-REQ-TRACE",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "08:03:57",
-            "cycle": 89,
-            "task": "UNI-REQ-TRACE",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "08:08:07",
-            "cycle": 90,
-            "task": "UNI-REQ-TRACE",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          }
-        ],
-        "strategy": {
-          "version": 46,
-          "mutations": 45
-        },
-        "events": 90,
+        "events": 55,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
-  "count": 3,
-  "fetched_at": 1795756110,
-  "fetched_human": "2026-11-27 08:08:30 +0300"
+  "count": 2,
+  "fetched_at": 1795756170,
+  "fetched_human": "2026-11-27 08:09:30 +0300"
 }
