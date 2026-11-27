@@ -5,11 +5,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.91,
-      "remaining_hours": 3.09,
-      "progress_pct": 61,
-      "cycles": 57,
-      "heartbeat_human": "05:00:04",
+      "elapsed_hours": 4.94,
+      "remaining_hours": 3.06,
+      "progress_pct": 62,
+      "cycles": 58,
+      "heartbeat_human": "05:02:04",
       "tree": {
         "phases": [
           {
@@ -123,10 +123,10 @@
           {
             "id": "UNI-PID-VOICE",
             "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
             "verified": false
           }
         ],
@@ -586,19 +586,27 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log отсутствует или старше 3600 с (standing proof)"
+          },
+          {
+            "clock": "05:02:08",
+            "cycle": 58,
+            "task": "UNI-PID-VOICE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=1: acts/UNI-PID-VOICE-c58.md MTIME unparseable; missing PASS:; missing FAIL:; mi"
           }
         ],
         "strategy": {
-          "version": 36,
-          "mutations": 35
+          "version": 37,
+          "mutations": 36
         },
-        "events": 57,
+        "events": 58,
         "avg_score": 4.8,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 1,
-  "fetched_at": 1795744814,
-  "fetched_human": "2026-11-27 05:00:14 +0300"
+  "fetched_at": 1795744935,
+  "fetched_human": "2026-11-27 05:02:15 +0300"
 }
