@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.94,
-      "remaining_hours": 13.06,
+      "elapsed_hours": 6.95,
+      "remaining_hours": 13.05,
       "progress_pct": 35,
-      "cycles": 121,
-      "heartbeat_human": "15:08:55",
+      "cycles": 122,
+      "heartbeat_human": "15:09:55",
       "tree": {
         "phases": [
           {
@@ -24,7 +24,7 @@
           {
             "id": "IMP-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 12,
+            "cycles": 13,
             "max": 16,
             "last": "WARMUP",
             "score": 4,
@@ -68,14 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:42:34",
-            "cycle": 81,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "12:42:34",
             "cycle": 81,
@@ -547,13 +539,21 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "15:10:06",
+            "cycle": 122,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 54,
           "mutations": 53
         },
-        "events": 156,
+        "events": 157,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.94,
-      "remaining_hours": 13.06,
+      "elapsed_hours": 6.95,
+      "remaining_hours": 13.05,
       "progress_pct": 35,
       "cycles": 140,
-      "heartbeat_human": "15:09:06",
+      "heartbeat_human": "15:10:06",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795781357,
-  "fetched_human": "2026-11-27 15:09:17 +0300"
+  "fetched_at": 1795781412,
+  "fetched_human": "2026-11-27 15:10:12 +0300"
 }
