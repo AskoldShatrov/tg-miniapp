@@ -5,17 +5,17 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.28,
-      "remaining_hours": 13.72,
+      "elapsed_hours": 6.3,
+      "remaining_hours": 13.7,
       "progress_pct": 31,
-      "cycles": 105,
-      "heartbeat_human": "14:29:52",
+      "cycles": 106,
+      "heartbeat_human": "14:30:52",
       "tree": {
         "phases": [
           {
             "id": "IMP-NIGHT-PAIR-WRITER",
             "title": "Writer-виток аудита: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 11,
+            "cycles": 12,
             "max": 16,
             "last": "RETHINK_REQUIRED",
             "score": 4,
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "12:12:15",
-            "cycle": 65,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "12:12:15",
-            "cycle": 65,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "12:13:30",
             "cycle": 66,
@@ -547,13 +531,29 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "14:29:59",
+            "cycle": 106,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:29:59",
+            "cycle": 106,
+            "task": "IMP-NIGHT-PAIR-WRITER",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 51,
-          "mutations": 50
+          "version": 52,
+          "mutations": 51
         },
-        "events": 137,
+        "events": 139,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.28,
-      "remaining_hours": 13.72,
+      "elapsed_hours": 6.3,
+      "remaining_hours": 13.7,
       "progress_pct": 31,
-      "cycles": 132,
-      "heartbeat_human": "14:29:54",
+      "cycles": 133,
+      "heartbeat_human": "14:30:54",
       "tree": {
         "phases": [
           {
@@ -609,30 +609,14 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER",
             "title": "Writer-виток scanfeed: честная пара RED/GREEN вместо RETRO-блока",
-            "cycles": 4,
+            "cycles": 5,
             "max": 16,
-            "last": "PROMOTE",
+            "last": "MUTATE",
             "score": 7,
             "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "12:54:07",
-            "cycle": 77,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "12:54:07",
-            "cycle": 77,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "RETHINK_REQUIRED",
-            "score": 5,
-            "note": "RED.log старше старта витка на 324 с"
-          },
           {
             "clock": "12:55:22",
             "cycle": 78,
@@ -1096,19 +1080,35 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос physical"
+          },
+          {
+            "clock": "14:30:34",
+            "cycle": 133,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:30:34",
+            "cycle": 133,
+            "task": "SF-NIGHT-PAIR-WRITER",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 23,
-          "mutations": 22
+          "version": 24,
+          "mutations": 23
         },
-        "events": 141,
+        "events": 143,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795778998,
-  "fetched_human": "2026-11-27 14:29:58 +0300"
+  "fetched_at": 1795779058,
+  "fetched_human": "2026-11-27 14:30:58 +0300"
 }
