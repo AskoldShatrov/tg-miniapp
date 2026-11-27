@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.03,
-      "remaining_hours": 14.97,
+      "elapsed_hours": 5.05,
+      "remaining_hours": 14.95,
       "progress_pct": 25,
-      "cycles": 88,
-      "heartbeat_human": "13:14:46",
+      "cycles": 89,
+      "heartbeat_human": "13:15:46",
       "tree": {
         "phases": [
           {
@@ -40,6 +40,15 @@
             "verified": false
           },
           {
+            "id": "IMP-NIGHT-PAIR-WRITER-B",
+            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
+            "cycles": 6,
+            "max": 16,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "IMP-RETHINK-WIRING-20H",
             "title": "Переосмысление как-machine: повтор failure mode меняет гейт, а не текс",
             "cycles": 5,
@@ -47,15 +56,6 @@
             "last": "WARMUP",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "IMP-NIGHT-PAIR-WRITER-B",
-            "title": "Writer-виток аудита B: один STOP-HOOK с честной парой",
-            "cycles": 5,
-            "max": 16,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
           },
           {
             "id": "IMP-NIGHT-WATCHDOG-20H",
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "11:00:47",
-            "cycle": 43,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "11:02:02",
-            "cycle": 44,
-            "task": "IMP-NIGHT-WATCHDOG-20H",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "11:07:19",
             "cycle": 45,
@@ -547,13 +531,29 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "13:15:35",
+            "cycle": 89,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:15:35",
+            "cycle": 89,
+            "task": "IMP-NIGHT-PAIR-WRITER-B",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 34,
-          "mutations": 33
+          "version": 35,
+          "mutations": 34
         },
-        "events": 108,
+        "events": 110,
         "avg_score": 0.0,
         "fail_streak": 0
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.03,
-      "remaining_hours": 14.97,
+      "elapsed_hours": 5.05,
+      "remaining_hours": 14.95,
       "progress_pct": 25,
       "cycles": 92,
-      "heartbeat_human": "13:14:45",
+      "heartbeat_human": "13:15:45",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795774511,
-  "fetched_human": "2026-11-27 13:15:11 +0300"
+  "fetched_at": 1795774572,
+  "fetched_human": "2026-11-27 13:16:12 +0300"
 }
