@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.67,
-      "remaining_hours": 18.33,
+      "elapsed_hours": 1.69,
+      "remaining_hours": 18.31,
       "progress_pct": 8,
       "cycles": 13,
-      "heartbeat_human": "09:53:07",
+      "heartbeat_human": "09:54:07",
       "tree": {
         "phases": [
           {
@@ -168,11 +168,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.67,
-      "remaining_hours": 18.33,
+      "elapsed_hours": 1.69,
+      "remaining_hours": 18.31,
       "progress_pct": 8,
-      "cycles": 11,
-      "heartbeat_human": "09:53:07",
+      "cycles": 12,
+      "heartbeat_human": "09:54:07",
       "tree": {
         "phases": [
           {
@@ -187,7 +187,7 @@
           {
             "id": "SF-CLIP-CAPTURE-20H",
             "title": "Сканфид: настоящий клип убийства без OBS websocket",
-            "cycles": 3,
+            "cycles": 4,
             "max": 8,
             "last": "MUTATE",
             "score": 4,
@@ -299,19 +299,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
+          },
+          {
+            "clock": "09:54:10",
+            "cycle": 12,
+            "task": "SF-CLIP-CAPTURE-20H",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
           }
         ],
         "strategy": {
-          "version": 9,
-          "mutations": 8
+          "version": 10,
+          "mutations": 9
         },
-        "events": 12,
+        "events": 13,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795762400,
-  "fetched_human": "2026-11-27 09:53:20 +0300"
+  "fetched_at": 1795762457,
+  "fetched_human": "2026-11-27 09:54:17 +0300"
 }
