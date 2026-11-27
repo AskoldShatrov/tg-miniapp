@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 15.31,
-      "remaining_hours": 4.69,
+      "elapsed_hours": 15.32,
+      "remaining_hours": 4.68,
       "progress_pct": 77,
-      "cycles": 441,
-      "heartbeat_human": "23:31:27",
+      "cycles": 442,
+      "heartbeat_human": "23:32:27",
       "tree": {
         "phases": [
           {
@@ -33,11 +33,11 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 10,
+            "cycles": 11,
             "max": 12,
             "last": "MUTATE",
-            "score": 5,
-            "verified": false
+            "score": 7,
+            "verified": true
           },
           {
             "id": "IMP-PHYSICAL-GATE-20H",
@@ -86,22 +86,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:40:36",
-            "cycle": 406,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "21:40:36",
-            "cycle": 406,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "21:41:51",
             "cycle": 407,
@@ -565,15 +549,31 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log старше старта витка на 259 с"
+          },
+          {
+            "clock": "23:31:49",
+            "cycle": 442,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "23:31:49",
+            "cycle": 442,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 361,
-          "mutations": 360
+          "version": 362,
+          "mutations": 361
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 15.31,
-      "remaining_hours": 4.69,
+      "elapsed_hours": 15.32,
+      "remaining_hours": 4.68,
       "progress_pct": 77,
       "cycles": 446,
-      "heartbeat_human": "23:31:27",
+      "heartbeat_human": "23:32:27",
       "tree": {
         "phases": [
           {
@@ -1145,6 +1145,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795811494,
-  "fetched_human": "2026-11-27 23:31:34 +0300"
+  "fetched_at": 1795811555,
+  "fetched_human": "2026-11-27 23:32:35 +0300"
 }
