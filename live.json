@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 972,
+      "age_min": 973,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 972,
+      "age_min": 973,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,24 +2095,24 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 972,
+      "age_min": 973,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-d37eb26f",
-      "title": "Мониторинг прогонов и анализ сканфида",
-      "source": "dsh",
-      "claimed_human": "06:30:50",
-      "age_min": 0,
-      "full": "Мониторинг прогонов и анализ сканфида"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "06:30:50",
+      "claimed_human": "06:31:44",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
+    },
+    {
+      "id": "session-d37eb26f",
+      "title": "Мониторинг прогонов и анализ сканфида",
+      "source": "dsh",
+      "claimed_human": "06:31:42",
+      "age_min": 0,
+      "full": "Мониторинг прогонов и анализ сканфида"
     }
   ],
   "queues": {
@@ -2142,32 +2142,8 @@
       "step_label": "Собрать контрольную в PDF",
       "step": 4,
       "total": 5,
-      "events": 65,
+      "events": 69,
       "trail": [
-        {
-          "ts": 1795749581,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749600,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749600,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749613,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795749613,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749636,
-          "label": "READ · /home/nyaka/учеба"
-        },
         {
           "ts": 1795749636,
           "label": "THINK"
@@ -2335,10 +2311,34 @@
         {
           "ts": 1795750239,
           "label": "BASH · python3 ~/.config"
+        },
+        {
+          "ts": 1795750257,
+          "label": "READ · /tmp/opencode/tg_"
+        },
+        {
+          "ts": 1795750273,
+          "label": "BASH · grep -nE \"poster|"
+        },
+        {
+          "ts": 1795750273,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750289,
+          "label": "BASH · sed -n '137,158p'"
+        },
+        {
+          "ts": 1795750306,
+          "label": "BASH · python3 ~/scripts"
+        },
+        {
+          "ts": 1795750306,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749008,
-      "updated_at": 1795750249
+      "updated_at": 1795750309
     },
     {
       "key": "req-20261127-061357-6f27b5",
@@ -2348,28 +2348,8 @@
       "step_label": "подключить живые данные и проверить",
       "step": 3,
       "total": 5,
-      "events": 76,
+      "events": 79,
       "trail": [
-        {
-          "ts": 1795749806,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749817,
-          "label": "BASH · DST=/home/nyaka/r"
-        },
-        {
-          "ts": 1795749817,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795749845,
-          "label": "READ · /tmp/opencode/das"
-        },
-        {
-          "ts": 1795749845,
-          "label": "THINK"
-        },
         {
           "ts": 1795749860,
           "label": "BASH · python3 /home/nya"
@@ -2541,10 +2521,30 @@
         {
           "ts": 1795750243,
           "label": "THINK"
+        },
+        {
+          "ts": 1795750262,
+          "label": "EDIT · /tmp/opencode/das"
+        },
+        {
+          "ts": 1795750262,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750283,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795750295,
+          "label": "BASH · python3 /home/nya"
+        },
+        {
+          "ts": 1795750295,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749237,
-      "updated_at": 1795750249
+      "updated_at": 1795750308
     },
     {
       "key": "req-20261127-061715-16abd6",
@@ -2567,32 +2567,8 @@
       "step_label": "Изучить правила ГОСТ и найти файлы",
       "step": 1,
       "total": 5,
-      "events": 20,
+      "events": 23,
       "trail": [
-        {
-          "ts": 1795750015,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795750015,
-          "label": "READ · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795750015,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795750025,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795750026,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795750026,
-          "label": "THINK"
-        },
         {
           "ts": 1795750033,
           "label": "READ · /home/nyaka/учеба"
@@ -2760,10 +2736,34 @@
         {
           "ts": 1795750246,
           "label": "THINK"
+        },
+        {
+          "ts": 1795750264,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750264,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750280,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795750280,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795750299,
+          "label": "BASH · cd /home/nyaka/уч"
+        },
+        {
+          "ts": 1795750299,
+          "label": "THINK"
         }
       ],
       "started_at": 1795749990,
-      "updated_at": 1795750249
+      "updated_at": 1795750310
     }
   ],
   "bars": [
@@ -2782,6 +2782,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 1.9,
   "plan_source": "progress.json",
-  "fetched_at": 1795750251,
-  "fetched_human": "2026-11-27 06:30:51 +0300"
+  "fetched_at": 1795750311,
+  "fetched_human": "2026-11-27 06:31:51 +0300"
 }
