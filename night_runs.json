@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.29,
-      "remaining_hours": 5.71,
-      "progress_pct": 71,
-      "cycles": 432,
-      "heartbeat_human": "22:30:01",
+      "elapsed_hours": 14.3,
+      "remaining_hours": 5.7,
+      "progress_pct": 72,
+      "cycles": 433,
+      "heartbeat_human": "22:31:01",
       "tree": {
         "phases": [
           {
@@ -78,7 +78,7 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 1,
+            "cycles": 2,
             "max": 12,
             "last": "MUTATE",
             "score": 4,
@@ -86,22 +86,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:31:50",
-            "cycle": 399,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
-          {
-            "clock": "21:33:05",
-            "cycle": 400,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:33:05",
             "cycle": 400,
@@ -565,15 +549,31 @@
             "action": "MUTATE",
             "score": 4,
             "note": "verify rc=1: claim_status\": \"STRUCTURAL_ONLY\",\n  \"defects\": [\n    \"STALE_EVIDENCE: mtime в"
+          },
+          {
+            "clock": "22:31:05",
+            "cycle": 433,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "22:31:05",
+            "cycle": 433,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: LE_ARTIFACT: mtime вне окна витка (age=188.2s)\",\n    \"STALE_EVIDENCE: mtime в"
           }
         ],
         "strategy": {
-          "version": 357,
-          "mutations": 356
+          "version": 358,
+          "mutations": 357
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 14.29,
-      "remaining_hours": 5.71,
-      "progress_pct": 71,
+      "elapsed_hours": 14.3,
+      "remaining_hours": 5.7,
+      "progress_pct": 72,
       "cycles": 438,
-      "heartbeat_human": "22:30:13",
+      "heartbeat_human": "22:31:13",
       "tree": {
         "phases": [
           {
@@ -1145,6 +1145,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795807815,
-  "fetched_human": "2026-11-27 22:30:15 +0300"
+  "fetched_at": 1795807873,
+  "fetched_human": "2026-11-27 22:31:14 +0300"
 }
