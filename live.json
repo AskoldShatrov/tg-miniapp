@@ -2079,7 +2079,7 @@
       "title": "Циклы учебного мандата",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 805,
+      "age_min": 806,
       "full": "pid 1958941, workspace night-runs/university-1126"
     },
     {
@@ -2087,7 +2087,7 @@
       "title": "Циклы мандата улучшения",
       "source": "progress",
       "claimed_human": "14:18:01",
-      "age_min": 805,
+      "age_min": 806,
       "full": "pid 1958952, workspace night-runs/complex-improvement-1126"
     },
     {
@@ -2095,22 +2095,14 @@
       "title": "Циклы движка в night-runs",
       "source": "progress",
       "claimed_human": "14:18:00",
-      "age_min": 805,
+      "age_min": 806,
       "full": "pid 1958933, workspace night-runs/scanfeed-v2-1126"
-    },
-    {
-      "id": "session-bb3ff073",
-      "title": "Системные решения вместо повторяющихся воп",
-      "source": "dsh",
-      "claimed_human": "03:43:51",
-      "age_min": 0,
-      "full": "Системные решения вместо повторяющихся воп"
     },
     {
       "id": "session-7eb7b39f",
       "title": "Мониторинг вкладок и автозапуск прогонов",
       "source": "dsh",
-      "claimed_human": "03:43:49",
+      "claimed_human": "03:44:54",
       "age_min": 0,
       "full": "Мониторинг вкладок и автозапуск прогонов"
     },
@@ -2118,49 +2110,57 @@
       "id": "session-fcb17084",
       "title": "Проверка NIR PDF и артефакта",
       "source": "dsh",
-      "claimed_human": "03:43:48",
+      "claimed_human": "03:44:53",
       "age_min": 0,
       "full": "Проверка NIR PDF и артефакта"
     },
     {
-      "id": "session-f5e9fcec",
-      "title": "Подбор бенчмарка и диагностика системы",
+      "id": "session-d70596bc",
+      "title": "Исправление трёх дефектов в реестре",
       "source": "dsh",
-      "claimed_human": "03:43:47",
+      "claimed_human": "03:44:52",
       "age_min": 0,
-      "full": "Подбор бенчмарка и диагностика системы"
+      "full": "Исправление трёх дефектов в реестре"
     },
     {
       "id": "session-57169781",
       "title": "Проверка критериев и запись артефакта",
       "source": "dsh",
-      "claimed_human": "03:43:46",
+      "claimed_human": "03:44:51",
       "age_min": 0,
       "full": "Проверка критериев и запись артефакта"
     },
     {
-      "id": "session-4ab85241",
-      "title": "Анализ прогресса сканфида человеческим язы",
+      "id": "session-bb3ff073",
+      "title": "Системные решения вместо повторяющихся воп",
       "source": "dsh",
-      "claimed_human": "03:43:24",
+      "claimed_human": "03:44:48",
       "age_min": 0,
-      "full": "Анализ прогресса сканфида человеческим язы"
+      "full": "Системные решения вместо повторяющихся воп"
     },
     {
       "id": "session-8e85d767",
       "title": "Ночной прогон: университет (pid 1917542)",
       "source": "dsh",
-      "claimed_human": "03:42:50",
-      "age_min": 1,
+      "claimed_human": "03:44:47",
+      "age_min": 0,
       "full": "Ночной прогон: университет (pid 1917542)"
     },
     {
-      "id": "session-f95d5d15",
-      "title": "Проверка критериев и запись артефакта",
+      "id": "session-f5e9fcec",
+      "title": "Подбор бенчмарка и диагностика системы",
       "source": "dsh",
-      "claimed_human": "03:42:35",
-      "age_min": 1,
-      "full": "Проверка критериев и запись артефакта"
+      "claimed_human": "03:44:38",
+      "age_min": 0,
+      "full": "Подбор бенчмарка и диагностика системы"
+    },
+    {
+      "id": "session-4ab85241",
+      "title": "Анализ прогресса сканфида человеческим язы",
+      "source": "dsh",
+      "claimed_human": "03:44:27",
+      "age_min": 0,
+      "full": "Анализ прогресса сканфида человеческим язы"
     }
   ],
   "queues": {
@@ -2190,20 +2190,8 @@
       "step_label": "Поиск данных об активных запросах",
       "step": 3,
       "total": 5,
-      "events": 42,
+      "events": 43,
       "trail": [
-        {
-          "ts": 1795739715,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739744,
-          "label": "BASH · tail -30 ~/shared"
-        },
-        {
-          "ts": 1795739744,
-          "label": "THINK"
-        },
         {
           "ts": 1795739796,
           "label": "BASH · python3 ~/.config"
@@ -2383,10 +2371,22 @@
         {
           "ts": 1795740217,
           "label": "THINK"
+        },
+        {
+          "ts": 1795740236,
+          "label": "BASH · timeout 40 google"
+        },
+        {
+          "ts": 1795740236,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740238,
+          "label": "RETRY · opencode-go/hy4-"
         }
       ],
       "started_at": 1795739112,
-      "updated_at": 1795740235
+      "updated_at": 1795740292
     },
     {
       "key": "req-20261127-032656-beb2f1",
@@ -2396,32 +2396,8 @@
       "step_label": "Разведка файлов и приложения",
       "step": 1,
       "total": 4,
-      "events": 58,
+      "events": 62,
       "trail": [
-        {
-          "ts": 1795739758,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795739775,
-          "label": "BASH · echo \"=== how kr2"
-        },
-        {
-          "ts": 1795739775,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795739784,
-          "label": "EDIT · /home/nyaka/учеба"
-        },
-        {
-          "ts": 1795739795,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
-        {
-          "ts": 1795739807,
-          "label": "BASH · cd /home/nyaka/уч"
-        },
         {
           "ts": 1795739807,
           "label": "THINK"
@@ -2589,10 +2565,34 @@
         {
           "ts": 1795740225,
           "label": "READ · /tmp/opencode/kr3"
+        },
+        {
+          "ts": 1795740243,
+          "label": "BASH · cd /tmp/opencode "
+        },
+        {
+          "ts": 1795740243,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795740255,
+          "label": "READ · /tmp/opencode/kr3"
+        },
+        {
+          "ts": 1795740270,
+          "label": "BASH · echo \"⟦ШАГ:4⟧\"; e"
+        },
+        {
+          "ts": 1795740286,
+          "label": "BASH · cat /tmp/opencode"
+        },
+        {
+          "ts": 1795740286,
+          "label": "THINK"
         }
       ],
       "started_at": 1795739216,
-      "updated_at": 1795740233
+      "updated_at": 1795740293
     }
   ],
   "bars": [
@@ -2611,6 +2611,6 @@
   "progress_updated_at": "2026-11-26T14:18:01+03:00",
   "plan_age_hours": 13.4,
   "plan_source": "progress.json",
-  "fetched_at": 1795740236,
-  "fetched_human": "2026-11-27 03:43:56 +0300"
+  "fetched_at": 1795740295,
+  "fetched_human": "2026-11-27 03:44:55 +0300"
 }
