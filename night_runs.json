@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.05,
-      "remaining_hours": 0.95,
-      "progress_pct": 52,
+      "elapsed_hours": 1.06,
+      "remaining_hours": 0.94,
+      "progress_pct": 53,
       "cycles": 63,
-      "heartbeat_human": "07:10:11",
+      "heartbeat_human": "07:11:11",
       "tree": {
         "phases": [
           {
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.05,
-      "remaining_hours": 0.95,
-      "progress_pct": 52,
+      "elapsed_hours": 1.06,
+      "remaining_hours": 0.94,
+      "progress_pct": 53,
       "cycles": 46,
-      "heartbeat_human": "07:10:11",
+      "heartbeat_human": "07:11:11",
       "tree": {
         "phases": [
           {
@@ -1162,11 +1162,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.05,
-      "remaining_hours": 0.95,
-      "progress_pct": 52,
-      "cycles": 79,
-      "heartbeat_human": "07:10:11",
+      "elapsed_hours": 1.06,
+      "remaining_hours": 0.94,
+      "progress_pct": 53,
+      "cycles": 80,
+      "heartbeat_human": "07:11:11",
       "tree": {
         "phases": [
           {
@@ -1177,6 +1177,15 @@
             "last": "PROMOTE",
             "score": 5,
             "verified": false
+          },
+          {
+            "id": "UNI-GOST-RESIDUAL",
+            "title": "ГОСТ-остатки по НИР/КП/КР3",
+            "cycles": 5,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
           },
           {
             "id": "UNI-PRIOR-INTAKE",
@@ -1278,15 +1287,6 @@
             "verified": false
           },
           {
-            "id": "UNI-GOST-RESIDUAL",
-            "title": "ГОСТ-остатки по НИР/КП/КР3",
-            "cycles": 4,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
-          },
-          {
             "id": "UNI-PIVOT-EVIDENCE",
             "title": "Универ: что реально сдано по PID/RK4/НИР/КП",
             "cycles": 4,
@@ -1315,14 +1315,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "02:12:48",
-            "cycle": 20,
-            "task": "UNI-HYPOTHESIS-DIVERGE",
-            "action": "WARMUP",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "02:17:31",
             "cycle": 21,
@@ -1794,19 +1786,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:11:19",
+            "cycle": 80,
+            "task": "UNI-GOST-RESIDUAL",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 79,
+        "events": 80,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795752630,
-  "fetched_human": "2026-11-27 07:10:30 +0300"
+  "fetched_at": 1795752690,
+  "fetched_human": "2026-11-27 07:11:30 +0300"
 }
