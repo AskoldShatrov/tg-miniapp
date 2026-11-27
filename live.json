@@ -2075,10 +2075,26 @@
   ],
   "active": [
     {
-      "id": "6750f8c4-2e0b-47",
+      "id": "b209121a-66e1-45",
       "title": "READ-ONLY analysis. Working dir /home/ny",
       "source": "dsh",
-      "claimed_human": "12:44:55",
+      "claimed_human": "12:45:52",
+      "age_min": 0,
+      "full": "READ-ONLY analysis. Working dir /home/ny"
+    },
+    {
+      "id": "session-612d16da",
+      "title": "Университетские задания и претензии",
+      "source": "dsh",
+      "claimed_human": "12:45:52",
+      "age_min": 0,
+      "full": "Университетские задания и претензии"
+    },
+    {
+      "id": "914a0479-c85c-43",
+      "title": "READ-ONLY analysis. Working dir /home/ny",
+      "source": "dsh",
+      "claimed_human": "12:45:49",
       "age_min": 0,
       "full": "READ-ONLY analysis. Working dir /home/ny"
     },
@@ -2086,57 +2102,41 @@
       "id": "session-c1e9e894",
       "title": "Моделирование, системные проблемы и Word-файл",
       "source": "dsh",
-      "claimed_human": "12:44:55",
+      "claimed_human": "12:45:49",
       "age_min": 0,
       "full": "Моделирование, системные проблемы и Word-файл"
     },
     {
-      "id": "session-612d16da",
-      "title": "Университетские задания и претензии",
+      "id": "6750f8c4-2e0b-47",
+      "title": "READ-ONLY analysis. Working dir /home/ny",
       "source": "dsh",
-      "claimed_human": "12:44:54",
+      "claimed_human": "12:45:47",
       "age_min": 0,
-      "full": "Университетские задания и претензии"
+      "full": "READ-ONLY analysis. Working dir /home/ny"
     },
     {
       "id": "cae4eefd-56be-4b",
       "title": "Задача: исправить деф",
       "source": "dsh",
-      "claimed_human": "12:44:51",
+      "claimed_human": "12:45:40",
       "age_min": 0,
       "full": "Задача: исправить деф"
-    },
-    {
-      "id": "b209121a-66e1-45",
-      "title": "READ-ONLY analysis. Working dir /home/ny",
-      "source": "dsh",
-      "claimed_human": "12:44:48",
-      "age_min": 0,
-      "full": "READ-ONLY analysis. Working dir /home/ny"
-    },
-    {
-      "id": "914a0479-c85c-43",
-      "title": "READ-ONLY analysis. Working dir /home/ny",
-      "source": "dsh",
-      "claimed_human": "12:44:46",
-      "age_min": 0,
-      "full": "READ-ONLY analysis. Working dir /home/ny"
-    },
-    {
-      "id": "session-8a5dfe1a",
-      "title": "Как идет работа над Сканфидом",
-      "source": "dsh",
-      "claimed_human": "12:44:45",
-      "age_min": 0,
-      "full": "Как идет работа над Сканфидом"
     },
     {
       "id": "session-f7092bc2",
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
-      "claimed_human": "12:38:29",
-      "age_min": 6,
+      "claimed_human": "12:45:21",
+      "age_min": 0,
       "full": "Подключение Graphify и инструментов инспекции"
+    },
+    {
+      "id": "session-8a5dfe1a",
+      "title": "Как идет работа над Сканфидом",
+      "source": "dsh",
+      "claimed_human": "12:45:09",
+      "age_min": 0,
+      "full": "Как идет работа над Сканфидом"
     }
   ],
   "queues": {
@@ -2166,32 +2166,8 @@
       "step_label": "пересобрать и проверить",
       "step": 5,
       "total": 5,
-      "events": 112,
+      "events": 115,
       "trail": [
-        {
-          "ts": 1795772219,
-          "label": "READ · /tmp/opencode/ans"
-        },
-        {
-          "ts": 1795772233,
-          "label": "BASH · sed -n '1,120p' /"
-        },
-        {
-          "ts": 1795772233,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795772261,
-          "label": "WRITE · /tmp/opencode/la"
-        },
-        {
-          "ts": 1795772261,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795772282,
-          "label": "EDIT · /tmp/opencode/las"
-        },
         {
           "ts": 1795772282,
           "label": "THINK"
@@ -2359,10 +2335,34 @@
         {
           "ts": 1795772693,
           "label": "THINK"
+        },
+        {
+          "ts": 1795772709,
+          "label": "BASH · sed -n '1140,1220"
+        },
+        {
+          "ts": 1795772709,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795772726,
+          "label": "BASH · grep -n \"url: BAS"
+        },
+        {
+          "ts": 1795772726,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795772743,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795772743,
+          "label": "THINK"
         }
       ],
       "started_at": 1795770589,
-      "updated_at": 1795772696
+      "updated_at": 1795772756
     },
     {
       "key": "req-20261127-121309-f0544b",
@@ -2587,6 +2587,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 8.2,
   "plan_source": "progress.json",
-  "fetched_at": 1795772696,
-  "fetched_human": "2026-11-27 12:44:56 +0300"
+  "fetched_at": 1795772757,
+  "fetched_human": "2026-11-27 12:45:57 +0300"
 }

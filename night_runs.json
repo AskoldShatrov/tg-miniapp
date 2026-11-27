@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.53,
-      "remaining_hours": 15.47,
+      "elapsed_hours": 4.55,
+      "remaining_hours": 15.45,
       "progress_pct": 23,
       "cycles": 81,
-      "heartbeat_human": "12:44:45",
+      "heartbeat_human": "12:45:45",
       "tree": {
         "phases": [
           {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.53,
-      "remaining_hours": 15.47,
+      "elapsed_hours": 4.55,
+      "remaining_hours": 15.45,
       "progress_pct": 23,
-      "cycles": 75,
-      "heartbeat_human": "12:44:45",
+      "cycles": 76,
+      "heartbeat_human": "12:45:45",
       "tree": {
         "phases": [
           {
@@ -591,11 +591,11 @@
           {
             "id": "SF-NIGHT-PAIR-WRITER-B",
             "title": "Writer-виток scanfeed B: death-tick сверка с честной парой",
-            "cycles": 7,
+            "cycles": 8,
             "max": 8,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
+            "last": "MUTATE",
+            "score": 5,
+            "verified": false
           },
           {
             "id": "SF-NIGHT-PAIR-WRITER",
@@ -617,22 +617,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "10:37:33",
-            "cycle": 17,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "MUTATE",
-            "score": 5,
-            "note": "RED.log старше старта витка на 8346 с"
-          },
-          {
-            "clock": "10:47:59",
-            "cycle": 18,
-            "task": "SF-DECISION-MEMORY-CALIB",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "10:47:59",
             "cycle": 18,
@@ -1096,19 +1080,35 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:45:04",
+            "cycle": 76,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:45:04",
+            "cycle": 76,
+            "task": "SF-NIGHT-PAIR-WRITER-B",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log старше старта витка на 30 с"
           }
         ],
         "strategy": {
-          "version": 14,
-          "mutations": 13
+          "version": 15,
+          "mutations": 14
         },
-        "events": 79,
+        "events": 81,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795772700,
-  "fetched_human": "2026-11-27 12:45:00 +0300"
+  "fetched_at": 1795772760,
+  "fetched_human": "2026-11-27 12:46:00 +0300"
 }
