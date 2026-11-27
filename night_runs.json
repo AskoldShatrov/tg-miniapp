@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 13.93,
-      "remaining_hours": 6.07,
+      "elapsed_hours": 13.95,
+      "remaining_hours": 6.05,
       "progress_pct": 70,
-      "cycles": 423,
-      "heartbeat_human": "22:08:31",
+      "cycles": 424,
+      "heartbeat_human": "22:09:31",
       "tree": {
         "phases": [
           {
@@ -69,30 +69,14 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
-            "cycles": 1,
+            "cycles": 2,
             "max": 12,
-            "last": "MUTATE",
-            "score": 5,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "21:25:35",
-            "cycle": 394,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "21:25:35",
-            "cycle": 394,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "21:26:50",
             "cycle": 395,
@@ -556,15 +540,31 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log старше старта витка на 22853 с"
+          },
+          {
+            "clock": "22:09:40",
+            "cycle": 424,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "22:09:40",
+            "cycle": 424,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "verify rc=1: TITUTION: текст `rc: 0` не подтверждён исполнением\",\n    \"NO_PREREG_LEDGER: н"
           }
         ],
         "strategy": {
-          "version": 355,
-          "mutations": 354
+          "version": 356,
+          "mutations": 355
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -572,11 +572,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 13.93,
-      "remaining_hours": 6.07,
+      "elapsed_hours": 13.95,
+      "remaining_hours": 6.05,
       "progress_pct": 70,
       "cycles": 429,
-      "heartbeat_human": "22:08:42",
+      "heartbeat_human": "22:09:43",
       "tree": {
         "phases": [
           {
@@ -1127,6 +1127,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795806539,
-  "fetched_human": "2026-11-27 22:08:59 +0300"
+  "fetched_at": 1795806598,
+  "fetched_human": "2026-11-27 22:09:59 +0300"
 }
