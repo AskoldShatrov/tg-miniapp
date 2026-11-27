@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.84,
-      "remaining_hours": 4.16,
+      "elapsed_hours": 3.86,
+      "remaining_hours": 4.14,
       "progress_pct": 48,
       "cycles": 36,
-      "heartbeat_human": "03:56:04",
+      "heartbeat_human": "03:57:04",
       "tree": {
         "phases": [
           {
@@ -407,11 +407,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.84,
-      "remaining_hours": 4.16,
+      "elapsed_hours": 3.86,
+      "remaining_hours": 4.14,
       "progress_pct": 48,
-      "cycles": 43,
-      "heartbeat_human": "03:56:04",
+      "cycles": 44,
+      "heartbeat_human": "03:57:04",
       "tree": {
         "phases": [
           {
@@ -489,9 +489,9 @@
           {
             "id": "UNI-NIR",
             "title": "НИР: гейты и версии",
-            "cycles": 3,
+            "cycles": 4,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 4,
             "verified": false
           },
@@ -867,19 +867,27 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 4,
             "note": "verify rc=1: =1795603115 file=1795740715; missing PASS:; missing FAIL:; missing OPEN:; mis"
+          },
+          {
+            "clock": "03:57:09",
+            "cycle": 44,
+            "task": "UNI-NIR",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "verify rc=1: able; missing PASS:; missing FAIL:; missing OPEN:; missing HANDOFF:; missing "
           }
         ],
         "strategy": {
-          "version": 22,
-          "mutations": 21
+          "version": 23,
+          "mutations": 22
         },
-        "events": 43,
+        "events": 44,
         "avg_score": 4.8,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795740977,
-  "fetched_human": "2026-11-27 03:56:17 +0300"
+  "fetched_at": 1795741039,
+  "fetched_human": "2026-11-27 03:57:19 +0300"
 }
