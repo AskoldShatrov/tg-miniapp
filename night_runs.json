@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.81,
-      "remaining_hours": 12.19,
+      "elapsed_hours": 7.82,
+      "remaining_hours": 12.18,
       "progress_pct": 39,
-      "cycles": 134,
-      "heartbeat_human": "16:01:25",
+      "cycles": 135,
+      "heartbeat_human": "16:02:25",
       "tree": {
         "phases": [
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "13:42:56",
-            "cycle": 93,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "13:42:56",
-            "cycle": 93,
-            "task": "IMP-NIGHT-PAIR-WRITER-B",
-            "action": "RETHINK_REQUIRED",
-            "score": 4,
-            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
-          },
           {
             "clock": "13:47:55",
             "cycle": 94,
@@ -547,13 +531,29 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
+          },
+          {
+            "clock": "16:01:35",
+            "cycle": 135,
+            "task": "SCOUT_OPEN",
+            "action": "ESCALATE_CONTINUE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "16:01:35",
+            "cycle": 135,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
           }
         ],
         "strategy": {
-          "version": 66,
-          "mutations": 65
+          "version": 67,
+          "mutations": 66
         },
-        "events": 176,
+        "events": 178,
         "avg_score": 0.0,
         "fail_streak": 1
       }
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.81,
-      "remaining_hours": 12.19,
+      "elapsed_hours": 7.82,
+      "remaining_hours": 12.18,
       "progress_pct": 39,
       "cycles": 156,
-      "heartbeat_human": "16:01:07",
+      "heartbeat_human": "16:02:07",
       "tree": {
         "phases": [
           {
@@ -1109,6 +1109,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795784487,
-  "fetched_human": "2026-11-27 16:01:27 +0300"
+  "fetched_at": 1795784548,
+  "fetched_human": "2026-11-27 16:02:28 +0300"
 }
