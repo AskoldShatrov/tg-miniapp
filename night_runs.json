@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.31,
-      "remaining_hours": 18.69,
+      "elapsed_hours": 1.33,
+      "remaining_hours": 18.67,
       "progress_pct": 7,
       "cycles": 11,
-      "heartbeat_human": "09:31:37",
+      "heartbeat_human": "09:32:37",
       "tree": {
         "phases": [
           {
@@ -152,11 +152,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.31,
-      "remaining_hours": 18.69,
+      "elapsed_hours": 1.33,
+      "remaining_hours": 18.67,
       "progress_pct": 7,
-      "cycles": 9,
-      "heartbeat_human": "09:31:37",
+      "cycles": 10,
+      "heartbeat_human": "09:32:37",
       "tree": {
         "phases": [
           {
@@ -171,10 +171,10 @@
           {
             "id": "SF-CLIP-CAPTURE-20H",
             "title": "Сканфид: настоящий клип убийства без OBS websocket",
-            "cycles": 1,
+            "cycles": 2,
             "max": 8,
-            "last": "MUTATE",
-            "score": 0,
+            "last": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
             "verified": false
           },
           {
@@ -267,19 +267,27 @@
             "action": "MUTATE",
             "score": 0,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "09:32:17",
+            "cycle": 10,
+            "task": "SF-CLIP-CAPTURE-20H",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 4,
+            "note": "verify rc=2: python3: can't open file '/home/nyaka/Documents/deepseek-harness/default-work"
           }
         ],
         "strategy": {
-          "version": 7,
-          "mutations": 6
+          "version": 8,
+          "mutations": 7
         },
-        "events": 10,
+        "events": 11,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795761119,
-  "fetched_human": "2026-11-27 09:31:59 +0300"
+  "fetched_at": 1795761185,
+  "fetched_human": "2026-11-27 09:33:05 +0300"
 }
