@@ -5,6 +5,9 @@
 (function (global) {
   'use strict';
 
+  function fmtRuDate(s){ var p=String(s||'').split('-'); return p.length===3 ? p[2]+'.'+p[1]+'.'+p[0] : String(s||''); }
+  function fmtRuTime(s){ var m=String(s||'').match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/); return m ? m[3]+'.'+m[2]+' '+m[4]+':'+m[5] : String(s||''); }
+
   var KEY = 'pairdev.library.articles.v1';
   var KEY_HIDDEN = 'pairdev.library.hidden.v1';
   var BASE_URL = 'https://askoldshatrov.github.io/tg-miniapp/';
@@ -27,8 +30,8 @@
     source: 'Учёба · PDF',
     folder: 'Учёба · PDF',
     date: '2026-11-27',
-    url: BASE_URL + 'pdfs/nir-final.pdf?v=2077e62406',
-    updated: '2026-11-27T00:00:00+03:00',
+    url: BASE_URL + 'pdfs/nir-final.pdf?v=20261127-1217',
+    updated: '2026-11-27T12:17:00+03:00',
     tags: ['НИР', 'компьютерное моделирование', 'практика', '37 стр', 'постоянная ссылка'],
     abstract: 'Отчёт по научно-исследовательской работе, 37 страниц. Адрес привязан к отпечатку файла (741ab27210): как только содержимое меняется, меняется и адрес, поэтому телефон не показывает старую копию. Титульник: подписи слева на 98 пт, значения справа на 310,4 пт, центр сетки совпадает с центром страницы; гейт сетки PASS.'
   }, {
@@ -42,6 +45,17 @@
     updated: '2026-11-27T12:10:00+03:00',
     tags: ['курсовой', 'КМвХиХТ', 'TLS', '27 стр', 'постоянная ссылка'],
     abstract: 'Пояснительная записка курсового проекта по компьютерному моделированию в химии и химической технологии, 27 страниц. Титульник на общей сетке с НИР: ярлыки на 97,8 пт, значения на 310,4 пт, разброс 0 пт. Адрес привязан к отпечатку файла, старая копия не вернётся.'
+  }, {
+    id: 'study-kr1-3-pdf-20261127',
+    title: 'КР1-3 · Моделирование систем · три работы в одном PDF (13 стр)',
+    authors: 'Шатров А. И. · группа 4291 · вариант 8',
+    source: 'Учёба · PDF',
+    folder: 'Учёба · PDF',
+    date: '2026-11-27',
+    url: BASE_URL + 'pdfs/kr1-2-3-modelirovanie.pdf?v=20261127-1216',
+    updated: '2026-11-27T12:16:00+03:00',
+    tags: ['контрольные работы', 'моделирование систем', 'КР1-3', '13 стр', 'постоянная ссылка'],
+    abstract: 'Три контрольные работы по моделированию систем в одном PDF. Титул на каждую работу, сквозная нумерация после первого титула. Заменяет одиночную КР3.'
   }, {
     id: 'study-kr3-modelirovanie-20261127',
     title: 'КР3 · Моделирование систем · исправленная редакция (7 стр)',
@@ -310,8 +324,8 @@
             var tags = (a.tags || []).map(function (t) { return '<span class="lb-tag">#' + esc(t) + '</span>'; }).join('');
             return '<article class="lb-card">' +
               '<div class="lb-meta">' + badge(a) +
-                (a.date ? '<span class="lb-date">' + esc(a.date) + '</span>' : '') +
-                (a.updated ? '<span class="lb-date" title="Обновлено">обновлено ' + esc(a.updated.slice(5,7) + '.' + a.updated.slice(8,10) + ' ' + a.updated.slice(11,16)) + '</span>' : '') +
+                (a.date ? '<span class="lb-date">' + esc(fmtRuDate(a.date)) + '</span>' : '') +
+                (a.updated ? '<span class="lb-date" title="Обновлено">обновлено ' + esc(fmtRuTime(a.updated)) + '</span>' : '') +
                 '<button class="lb-del" data-del="' + esc(a.id) + '" title="Убрать из библиотеки" aria-label="Удалить">✕</button>' +
               '</div>' +
               '<a class="lb-link" href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer">' + esc(a.title || deriveTitle(a.url)) + '</a>' +
