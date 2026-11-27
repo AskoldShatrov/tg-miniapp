@@ -1089,6 +1089,8 @@
       <!-- @owner:miniapp-progress @region:pbar: живой прогресс корпуса, источник — live.json:corpus -->
       <div id="liveProgressBar" class="pbar"></div>
       <!-- @auto:pbar-html:end -->
+      <div class="eyebrow" style="margin-top:12px">Запросы из Telegram · активные</div>
+      <div id="tgRequestsFolder" class="qbox"></div>
       <div class="qbox" id="liveQueues"></div>
       <div class="eyebrow" style="margin-top:12px">Незакрытые шаги плана · возраст ниже</div>
       <div class="live-strip" id="livePlanStamp">…</div>
@@ -4201,6 +4203,7 @@ const initTab = new URLSearchParams(location.search).get("tab");
 setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 </script>
 <script src="task-tree.js?v=20261121-0640"></script>
+<script src="tg-requests.js?v=20261127-0335"></script>
 <script>/* views-render: источник декларативных видов; views.js читает SRC или inline window.MINIAPP_VIEWS */ window.MINIAPP_VIEWS_SRC = "views.json";</script>
 <script src="views.js?v=20261125-1705"></script>
 <script src="pdf-hub.js?v=20261121-0650"></script>
