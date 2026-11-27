@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.66,
-      "remaining_hours": 16.34,
+      "elapsed_hours": 3.68,
+      "remaining_hours": 16.32,
       "progress_pct": 18,
-      "cycles": 53,
-      "heartbeat_human": "11:52:32",
+      "cycles": 54,
+      "heartbeat_human": "11:53:32",
       "tree": {
         "phases": [
           {
@@ -51,10 +51,10 @@
           {
             "id": "IMP-NIGHT-WATCHDOG-20H",
             "title": "Аудит свежих витков: что реально улучшилось и где регресс",
-            "cycles": 2,
+            "cycles": 3,
             "max": 3,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
+            "last": "RETHINK_REQUIRED",
+            "score": 4,
             "verified": false
           },
           {
@@ -68,22 +68,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:31:30",
-            "cycle": 3,
-            "task": "IMP-PHYSICAL-GATE-20H",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
-          {
-            "clock": "08:35:41",
-            "cycle": 4,
-            "task": "IMP-PHYSICAL-GATE-20H",
-            "action": "PROMOTE",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "08:43:10",
             "cycle": 5,
@@ -547,15 +531,31 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "11:53:40",
+            "cycle": 54,
+            "task": "IMP-NIGHT-WATCHDOG-20H",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "11:53:40",
+            "cycle": 54,
+            "task": "IMP-NIGHT-WATCHDOG-20H",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "RED.log старше старта витка на 330 с"
           }
         ],
         "strategy": {
-          "version": 16,
-          "mutations": 15
+          "version": 17,
+          "mutations": 16
         },
-        "events": 63,
+        "events": 65,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -563,11 +563,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.66,
-      "remaining_hours": 16.34,
+      "elapsed_hours": 3.68,
+      "remaining_hours": 16.32,
       "progress_pct": 18,
-      "cycles": 53,
-      "heartbeat_human": "11:52:32",
+      "cycles": 54,
+      "heartbeat_human": "11:53:32",
       "tree": {
         "phases": [
           {
@@ -1072,19 +1072,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "11:53:11",
+            "cycle": 54,
+            "task": "SF-DECISION-MEMORY-CALIB",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 14,
           "mutations": 13
         },
-        "events": 57,
+        "events": 58,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795769561,
-  "fetched_human": "2026-11-27 11:52:41 +0300"
+  "fetched_at": 1795769637,
+  "fetched_human": "2026-11-27 11:53:57 +0300"
 }

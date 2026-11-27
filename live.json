@@ -2078,7 +2078,7 @@
       "id": "cae4eefd-56be-4b",
       "title": "Задача: исправить деф",
       "source": "dsh",
-      "claimed_human": "11:52:36",
+      "claimed_human": "11:53:38",
       "age_min": 0,
       "full": "Задача: исправить деф"
     },
@@ -2086,7 +2086,7 @@
       "id": "session-341ae8aa",
       "title": "Настройка V2RayNG и мобильного интернета",
       "source": "dsh",
-      "claimed_human": "11:52:34",
+      "claimed_human": "11:53:26",
       "age_min": 0,
       "full": "Настройка V2RayNG и мобильного интернета"
     },
@@ -2095,7 +2095,7 @@
       "title": "Подключение Graphify и инструментов инспекции",
       "source": "dsh",
       "claimed_human": "11:52:26",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Подключение Graphify и инструментов инспекции"
     },
     {
@@ -2103,7 +2103,7 @@
       "title": "Как идет работа над Сканфидом",
       "source": "dsh",
       "claimed_human": "11:51:32",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Как идет работа над Сканфидом"
     },
     {
@@ -2111,7 +2111,7 @@
       "title": "Моделирование, системные проблемы и Word-файл",
       "source": "dsh",
       "claimed_human": "11:47:29",
-      "age_min": 5,
+      "age_min": 6,
       "full": "Моделирование, системные проблемы и Word-файл"
     }
   ],
@@ -2142,48 +2142,8 @@
       "step_label": "найти документы и примеры Голубковой",
       "step": 1,
       "total": 5,
-      "events": 187,
+      "events": 193,
       "trail": [
-        {
-          "ts": 1795767780,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795767799,
-          "label": "GREP · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795767799,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795767816,
-          "label": "READ · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795767816,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795767836,
-          "label": "EDIT · /home/nyaka/.conf"
-        },
-        {
-          "ts": 1795767854,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795767854,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795767886,
-          "label": "BASH · pdftotext -layout"
-        },
-        {
-          "ts": 1795767886,
-          "label": "THINK"
-        },
         {
           "ts": 1795767906,
           "label": "EDIT · /home/nyaka/.conf"
@@ -2335,57 +2295,61 @@
         {
           "ts": 1795769543,
           "label": "THINK"
+        },
+        {
+          "ts": 1795769557,
+          "label": "BASH · bash /home/nyaka/"
+        },
+        {
+          "ts": 1795769557,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795769566,
+          "label": "BASH · find /home/nyaka/"
+        },
+        {
+          "ts": 1795769579,
+          "label": "BASH · ls -la /home/nyak"
+        },
+        {
+          "ts": 1795769579,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795769589,
+          "label": "BASH · echo '=== check_s"
+        },
+        {
+          "ts": 1795769602,
+          "label": "READ · /home/nyaka/.conf"
+        },
+        {
+          "ts": 1795769602,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795769615,
+          "label": "BASH · echo '=== canonic"
+        },
+        {
+          "ts": 1795769615,
+          "label": "THINK"
         }
       ],
       "started_at": 1795763987,
-      "updated_at": 1795769557
+      "updated_at": 1795769620
     },
     {
       "key": "req-20261127-103932-f850fd",
       "session_id": "",
       "source": "photo",
       "label": "Пакет сообщений от пользователя: они пришли по очереди в реж",
-      "step_label": "Проверить файлы на дефекты по скриншотам",
-      "step": 2,
+      "step_label": "Исправить титульники и подписи",
+      "step": 3,
       "total": 6,
-      "events": 153,
+      "events": 157,
       "trail": [
-        {
-          "ts": 1795767993,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795767993,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795768022,
-          "label": "EDIT · /tmp/opencode/doc"
-        },
-        {
-          "ts": 1795768022,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795768054,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795768084,
-          "label": "READ · /tmp/opencode/doc"
-        },
-        {
-          "ts": 1795768084,
-          "label": "THINK"
-        },
-        {
-          "ts": 1795768108,
-          "label": "BASH · python3 ~/.config"
-        },
-        {
-          "ts": 1795768108,
-          "label": "THINK"
-        },
         {
           "ts": 1795769346,
           "label": "RETRY · opencode-go/hy4-"
@@ -2541,10 +2505,46 @@
         {
           "ts": 1795769546,
           "label": "THINK"
+        },
+        {
+          "ts": 1795769565,
+          "label": "READ · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795769565,
+          "label": "BASH · cd /tmp/opencode/"
+        },
+        {
+          "ts": 1795769565,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795769586,
+          "label": "BASH · echo \"=== подписи"
+        },
+        {
+          "ts": 1795769586,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795769602,
+          "label": "BASH · sed -n '1,37p' /h"
+        },
+        {
+          "ts": 1795769602,
+          "label": "THINK"
+        },
+        {
+          "ts": 1795769618,
+          "label": "EDIT · /home/nyaka/учеба"
+        },
+        {
+          "ts": 1795769618,
+          "label": "THINK"
         }
       ],
       "started_at": 1795765174,
-      "updated_at": 1795769556
+      "updated_at": 1795769619
     }
   ],
   "bars": [
@@ -2563,6 +2563,6 @@
   "progress_updated_at": "2026-11-27T04:34:55+03:00",
   "plan_age_hours": 7.3,
   "plan_source": "progress.json",
-  "fetched_at": 1795769558,
-  "fetched_human": "2026-11-27 11:52:38 +0300"
+  "fetched_at": 1795769621,
+  "fetched_human": "2026-11-27 11:53:41 +0300"
 }
