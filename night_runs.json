@@ -5,11 +5,11 @@
       "label": "complex improvement 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.3,
-      "remaining_hours": 0.7,
-      "progress_pct": 65,
+      "elapsed_hours": 1.32,
+      "remaining_hours": 0.68,
+      "progress_pct": 66,
       "cycles": 65,
-      "heartbeat_human": "07:25:41",
+      "heartbeat_human": "07:26:41",
       "tree": {
         "phases": [
           {
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.3,
-      "remaining_hours": 0.7,
-      "progress_pct": 65,
+      "elapsed_hours": 1.32,
+      "remaining_hours": 0.68,
+      "progress_pct": 66,
       "cycles": 48,
-      "heartbeat_human": "07:25:41",
+      "heartbeat_human": "07:26:41",
       "tree": {
         "phases": [
           {
@@ -1205,11 +1205,11 @@
       "label": "university 1126",
       "status": "идёт",
       "budget_hours": 2.0,
-      "elapsed_hours": 1.3,
-      "remaining_hours": 0.7,
-      "progress_pct": 65,
-      "cycles": 82,
-      "heartbeat_human": "07:25:41",
+      "elapsed_hours": 1.32,
+      "remaining_hours": 0.68,
+      "progress_pct": 66,
+      "cycles": 83,
+      "heartbeat_human": "07:26:41",
       "tree": {
         "phases": [
           {
@@ -1339,6 +1339,15 @@
             "verified": true
           },
           {
+            "id": "UNI-RK4-PREREG",
+            "title": "RK4: предрегистрация порога до прогона",
+            "cycles": 3,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "UNI-PID-VOICE",
             "title": "Уточнение от пользователя: Kp около 2 и подбор времени интегрирования",
             "cycles": 3,
@@ -1346,15 +1355,6 @@
             "last": "MUTATE",
             "score": 4,
             "verified": false
-          },
-          {
-            "id": "UNI-RK4-PREREG",
-            "title": "RK4: предрегистрация порога до прогона",
-            "cycles": 2,
-            "max": 5,
-            "last": "PROMOTE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "UNI-REQ-TRACE",
@@ -1367,14 +1367,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "02:27:02",
-            "cycle": 23,
-            "task": "UNI-META-REFLECT",
-            "action": "PROMOTE",
-            "score": 5,
-            "note": "RED.log отсутствует или старше 3600 с (standing proof)"
-          },
           {
             "clock": "02:30:48",
             "cycle": 24,
@@ -1846,19 +1838,27 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:26:50",
+            "cycle": 83,
+            "task": "UNI-RK4-PREREG",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
           "version": 46,
           "mutations": 45
         },
-        "events": 82,
+        "events": 83,
         "avg_score": 0.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795753552,
-  "fetched_human": "2026-11-27 07:25:52 +0300"
+  "fetched_at": 1795753611,
+  "fetched_human": "2026-11-27 07:26:51 +0300"
 }
