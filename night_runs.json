@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.62,
-      "remaining_hours": 8.38,
+      "elapsed_hours": 11.64,
+      "remaining_hours": 8.36,
       "progress_pct": 58,
       "cycles": 559,
-      "heartbeat_human": "17:14:32",
+      "heartbeat_human": "17:15:32",
       "tree": {
         "phases": [
           {
@@ -190,6 +190,15 @@
             "max": 5,
             "last": "WARMUP",
             "score": 2,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER-NIGHT-CURATION-M",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
             "verified": false
           }
         ],
@@ -689,11 +698,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.62,
-      "remaining_hours": 8.38,
+      "elapsed_hours": 11.64,
+      "remaining_hours": 8.36,
       "progress_pct": 58,
       "cycles": 571,
-      "heartbeat_human": "17:14:32",
+      "heartbeat_human": "17:15:32",
       "tree": {
         "phases": [
           {
@@ -1391,11 +1400,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.11,
-      "remaining_hours": 3.89,
-      "progress_pct": 51,
-      "cycles": 15,
-      "heartbeat_human": "17:14:20",
+      "elapsed_hours": 4.13,
+      "remaining_hours": 3.87,
+      "progress_pct": 52,
+      "cycles": 16,
+      "heartbeat_human": "17:15:20",
       "tree": {
         "phases": [
           {
@@ -1464,9 +1473,9 @@
           {
             "id": "CAP-VERIFY-PROOF-1128",
             "title": "Честный разбор отсутствия verify_ok в движке",
-            "cycles": 1,
+            "cycles": 2,
             "max": 2,
-            "last": "WARMUP",
+            "last": "MUTATE",
             "score": 4,
             "verified": true
           }
@@ -1655,19 +1664,35 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "17:15:37",
+            "cycle": 16,
+            "task": "CAP-VERIFY-PROOF-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "17:15:37",
+            "cycle": 16,
+            "task": "CAP-VERIFY-PROOF-1128",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 8,
-          "mutations": 7
+          "version": 9,
+          "mutations": 8
         },
-        "events": 23,
+        "events": 25,
         "avg_score": 4.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795875283,
-  "fetched_human": "2026-11-28 17:14:43 +0300"
+  "fetched_at": 1795875343,
+  "fetched_human": "2026-11-28 17:15:43 +0300"
 }
