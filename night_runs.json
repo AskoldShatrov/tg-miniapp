@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.6,
-      "remaining_hours": 13.4,
+      "elapsed_hours": 6.61,
+      "remaining_hours": 13.39,
       "progress_pct": 33,
-      "cycles": 544,
-      "heartbeat_human": "12:12:52",
+      "cycles": 545,
+      "heartbeat_human": "12:13:52",
       "tree": {
         "phases": [
           {
@@ -139,6 +139,15 @@
             "verified": true
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-J",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 3,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 2,
@@ -164,34 +173,9 @@
             "last": "WARMUP",
             "score": 2,
             "verified": false
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-J",
-            "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 2,
-            "max": 5,
-            "last": "RETHINK_REQUIRED",
-            "score": 7,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "08:32:16",
-            "cycle": 511,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "08:32:16",
-            "cycle": 511,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:33:31",
             "cycle": 512,
@@ -655,11 +639,27 @@
             "action": "RETHINK_REQUIRED",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:13:10",
+            "cycle": 545,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "12:13:10",
+            "cycle": 545,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 431,
-          "mutations": 430
+          "version": 432,
+          "mutations": 431
         },
         "events": 400,
         "avg_score": 0.0,
@@ -671,11 +671,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.6,
-      "remaining_hours": 13.4,
+      "elapsed_hours": 6.61,
+      "remaining_hours": 13.39,
       "progress_pct": 33,
       "cycles": 556,
-      "heartbeat_human": "12:12:52",
+      "heartbeat_human": "12:13:52",
       "tree": {
         "phases": [
           {
@@ -1352,6 +1352,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795857186,
-  "fetched_human": "2026-11-28 12:13:06 +0300"
+  "fetched_at": 1795857246,
+  "fetched_human": "2026-11-28 12:14:06 +0300"
 }
