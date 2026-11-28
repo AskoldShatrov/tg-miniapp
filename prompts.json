@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T02:39:08+00:00",
-  "generated_human": "28.11 02:39 UTC",
-  "as_of": 1795833546552,
+  "generated": "2026-11-28T02:40:08+00:00",
+  "generated_human": "28.11 02:40 UTC",
+  "as_of": 1795833606889,
   "stale_days": 1,
   "count": 1166,
   "groups": 9,
@@ -40,6 +40,58 @@
    ],
    "prompts": [
     {
+     "id": "ses-WQBgt1mSAE",
+     "text": "Мандат 20 часов. Пользователь прямо требует новый кадр и клип, а не отчёт. Вход: night-runs/direct-answer-draft-20261127.md (пауза 54806 от 05:26 без unpaused, GSI 1 игрок/раунд 0), reports/live_capture_gate.py (machino-гейт), ~/.dsh/skills/cs2-demo-capture/SKILL.md. Гейм-мод выключен: игра просто открыта и ест ресурсы; n никто in game — работать можно. НЕ пиши инструкции ручного управления и НЕ проси пользователя включить OBS. Рабочий путь доставки команд — перезапуск cs2.exe с ASCII cfg через +exec (маркеры execing/playing demo from/mirv_pov enabled в console.log), а не SendKeys/keybd_event в уже запущенную консоль. После захвата обязательно сними demo_pause и не оставляй demo_timescale 0. Через pc-bridge dispatch сними свежий снимок: cs2 cmdline, console markers (включая paused/unpaused), GSI (n, phase, round, activity), порт 4455, список клипов. Запиши снимок РОВНО по пути artifacts/live_snapshot.json с полями cs2/markers/gsi/port4455/clips. Гейт: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/live_capture_gate.py <snapshot> --max-age 300必須 rc=0. Дополнительно запиши свой md-артефакт с путями, sha256, mtime, командой и её rc. PROMISE: DONE только после rc=0 гейта.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-LIVE-DEMO-20H-c2.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795833601000,
+     "source": "session",
+     "title": "lree-SF-LIVE-DEMO-20H-c2",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795833601000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-3xxm7Rd6Lc",
+     "text": "ПРАКТИКА. На Windows-ПК через pc-bridge проверить 2-3 наиболее перспективных варианта из HUDV-001/002/003. Для каждого: запуск, демка spirit-vs-furia-m2-dust2.dem, скриншот, OCR/визуальная проверка, есть ли чужие HP/деньги в кадре, сохраняются ли прицел/kill feed/своё HP. Не менять config.json и пороги T29. Зафиксировать PASS/FAIL/OPEN с путями, SHA256, mtime и командами проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-004-c25.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795833600000,
+     "source": "session",
+     "title": "lree-HUDV-004-c25",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795833600000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-WQJXs2Y90N",
+     "text": "ПРАКТИКА. На Windows-ПК через pc-bridge проверить 2-3 наиболее перспективных варианта из HUDV-001/002/003. Для каждого: запуск, демка spirit-vs-furia-m2-dust2.dem, скриншот, OCR/визуальная проверка, есть ли чужие HP/деньги в кадре, сохраняются ли прицел/kill feed/своё HP. Не менять config.json и пороги T29. Зафиксировать PASS/FAIL/OPEN с путями, SHA256, mtime и командами проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-004-c27.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795833593000,
+     "source": "session",
+     "title": "lree-HUDV-004-c27",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795833593000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-LBTfNv6PVi",
+     "text": "ПРАКТИКА. На Windows-ПК через pc-bridge проверить 2-3 наиболее перспективных варианта из HUDV-001/002/003. Для каждого: запуск, демка spirit-vs-furia-m2-dust2.dem, скриншот, OCR/визуальная проверка, есть ли чужие HP/деньги в кадре, сохраняются ли прицел/kill feed/своё HP. Не менять config.json и пороги T29. Зафиксировать PASS/FAIL/OPEN с путями, SHA256, mtime и командами проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-004-c26.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795833572000,
+     "source": "session",
+     "title": "lree-HUDV-004-c26",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795833572000,
+     "is_stale": false
+    },
+    {
      "id": "ses-aoIMwLb3GO",
      "text": "ПРОРАБОТКА СКАНФИДА, калибровка cyan. Переобучить dot_quality под cyan-сигнал на НОВЫХ кадрах из R01/S01 (источник — 103-gsi-allplayers-fix.md, 64-radar-recalib-live.md). Вложенный 5-fold CV, сравнить ECE/Brier до и после, явная оговорка про утечку. Новый отчёт ~/overnight/open_tracks/S02-dot-quality-cyan.md. Гейт: ECE < 0.15 на holdout при n>=60. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
      "ts": 1795833541000,
@@ -58,45 +110,6 @@
      "is_stale": false
     },
     {
-     "id": "ses-WQBgt1mSAE",
-     "text": "Мандат 20 часов. Пользователь прямо требует новый кадр и клип, а не отчёт. Вход: night-runs/direct-answer-draft-20261127.md (пауза 54806 от 05:26 без unpaused, GSI 1 игрок/раунд 0), reports/live_capture_gate.py (machino-гейт), ~/.dsh/skills/cs2-demo-capture/SKILL.md. Гейм-мод выключен: игра просто открыта и ест ресурсы; n никто in game — работать можно. НЕ пиши инструкции ручного управления и НЕ проси пользователя включить OBS. Рабочий путь доставки команд — перезапуск cs2.exe с ASCII cfg через +exec (маркеры execing/playing demo from/mirv_pov enabled в console.log), а не SendKeys/keybd_event в уже запущенную консоль. После захвата обязательно сними demo_pause и не оставляй demo_timescale 0. Через pc-bridge dispatch сними свежий снимок: cs2 cmdline, console markers (включая paused/unpaused), GSI (n, phase, round, activity), порт 4455, список клипов. Запиши снимок РОВНО по пути artifacts/live_snapshot.json с полями cs2/markers/gsi/port4455/clips. Гейт: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/live_capture_gate.py <snapshot> --max-age 300必須 rc=0. Дополнительно запиши свой md-артефакт с путями, sha256, mtime, командой и её rc. PROMISE: DONE только после rc=0 гейта.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-LIVE-DEMO-20H-c2.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. \nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833540000,
-     "source": "session",
-     "title": "lree-SF-LIVE-DEMO-20H-c2",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795833540000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-3xxm7Rd6Lc",
-     "text": "ПРАКТИКА. На Windows-ПК через pc-bridge проверить 2-3 наиболее перспективных варианта из HUDV-001/002/003. Для каждого: запуск, демка spirit-vs-furia-m2-dust2.dem, скриншот, OCR/визуальная проверка, есть ли чужие HP/деньги в кадре, сохраняются ли прицел/kill feed/своё HP. Не менять config.json и пороги T29. Зафиксировать PASS/FAIL/OPEN с путями, SHA256, mtime и командами проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-004-c25.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833513000,
-     "source": "session",
-     "title": "lree-HUDV-004-c25",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795833513000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-LBTfNv6PVi",
-     "text": "ПРАКТИКА. На Windows-ПК через pc-bridge проверить 2-3 наиболее перспективных варианта из HUDV-001/002/003. Для каждого: запуск, демка spirit-vs-furia-m2-dust2.dem, скриншот, OCR/визуальная проверка, есть ли чужие HP/деньги в кадре, сохраняются ли прицел/kill feed/своё HP. Не менять config.json и пороги T29. Зафиксировать PASS/FAIL/OPEN с путями, SHA256, mtime и командами проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-004-c26.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833442000,
-     "source": "session",
-     "title": "lree-HUDV-004-c26",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795833442000,
-     "is_stale": false
-    },
-    {
      "id": "ses-8PBBW8tAnw",
      "text": "СКАНФИД. T4 OPEN: расширить REAL-набор до n>=60 кадров с FP>0, измерить precision/recall и ECE по dot_quality с Wilson CI и честным baseline. Гейт: n>=60, FP>0, ECE<0.15 после калибровки. Новый отчёт ~/overnight/cloud_tracks/C04-48324.md. Не трогать защищённые data/ и 52/73/103. ОБЯЗАТЕЛЬНО дополнительно запиши машино-читаемый результат в ~/overnight/cloud_tracks/C04-result.json с полями из cloud_gates.json (числа), иначе задача НЕ считается выполненной. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
      "ts": 1795833412000,
@@ -112,19 +125,6 @@
       "w2611200052463b06"
      ],
      "as_of": 1795833412000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-WQJXs2Y90N",
-     "text": "ПРАКТИКА. На Windows-ПК через pc-bridge проверить 2-3 наиболее перспективных варианта из HUDV-001/002/003. Для каждого: запуск, демка spirit-vs-furia-m2-dust2.dem, скриншот, OCR/визуальная проверка, есть ли чужие HP/деньги в кадре, сохраняются ли прицел/kill feed/своё HP. Не менять config.json и пороги T29. Зафиксировать PASS/FAIL/OPEN с путями, SHA256, mtime и командами проверки.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-hud-hide/artifacts/HUDV-004-c27.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833332000,
-     "source": "session",
-     "title": "lree-HUDV-004-c27",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795833332000,
      "is_stale": false
     },
     {
@@ -3288,14 +3288,14 @@
     {
      "id": "ses-4wWDFM7HC7",
      "text": "Один физический writer-виток без вопросов и без слова «готово» без проверки. Прочитай reports/family-mutation-prereg-20261127.md, reports/family-prereg-ledger.jsonl и реальные последние строки ledger.jsonl / delivery_ledger.jsonl своего workspace. Выбери ОДНО ещё не использованное семейство и сформулируй опровержимую гипотезу; формулировка ПРЕДСКАЗАНИЯ должна дословно совпасть с одной из разрешённых в family-prereg-ledger.jsonl (придуманное число, например ≥ 0.0833, гейт отвергнет как UNBOUND_PREDICTION). НЕ двигай замороженные пороги и эталоны. ОБЯЗАТЕЛЬНО в этом же витке обнови физические файлы <workspace>/RED.log (строка `errors=<число>`) и <workspace>/GREEN.log (строка `OK`): их mtime должен попасть в окно витка, иначе red_green_pair в движке не даст verify_ok. Артефакт обязан содержать строки: СЕМЕЙСТВО: <id>, ГИПОТЕЗА: ..., ПРЕДСКАЗАНИЕ: <разрешённая формулировка>, ПРЕДРЕГ: <id из family-prereg-ledger.jsonl>, КОМАНДА: <реальная исполняемая команда>, EVIDENCE: <путь внутри workspace>, SHA256: <64 hex хэш этого файла>. КОМАНДА исполняется гейтом через shlex.split(shell=False) с cwd=workspace и обязана вернуть 0; текст `rc: 0` на веру не принимается, `cd ... &&` и shell-операторы запрещены. Файл доказательства создай до артефакта. PASS гейта означает только структурный проход: outcome_status=pending; гипотезу не называй подтверждённой до команды `outcome`, которая перечитает физический источник. Запиши артефакт ровно по указанному пути, обнови RED.log и GREEN.log, только после этого выведи PROMISE: DONE.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/CONSULT-FAMILY-MUT-WRITER-V2-c448.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833539000,
+     "ts": 1795833599000,
      "source": "session",
      "title": "lree-CONSULT-FAMILY-MUT-WRITER-V2-c448",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795833539000,
+     "as_of": 1795833599000,
      "is_stale": false
     },
     {
@@ -8300,29 +8300,29 @@
    ],
    "prompts": [
     {
-     "id": "ses-4sor3H57Pz",
-     "text": "Один физический writer-виток без вопросов и без слова «готово» без проверки. Прочитай последние 80 строк /home/nyaka/evolution-work-researcher/ledger.jsonl и /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-WRITER-NIGHT-CURATION-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-WRITER-NIGHT-CURATION-cN.md: доля REFORMULATE за последние 80 витков, число verify_ok=true, причина холостого витка, команда проверки, её rc, путь артефакта, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log корня workspace. Порядок mtime RED ≤ артефакт ≤ GREEN. Сохрани сырые выходы RED и GREEN в файл <путь_артефакта с суффиксом .pair.json> с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0 гейта. Пороги 0.5, 180, 900 и 0.2 не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-c324.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833527000,
-     "source": "session",
-     "title": "lree-RSCH-WRITER-NIGHT-CURATION-c324",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "as_of": 1795833527000,
-     "is_stale": false
-    },
-    {
      "id": "ses-HkXGfaqi5g",
      "text": "Один физический writer-виток без вопросов и без слова «готово» без проверки. Прочитай reports/family-mutation-prereg-20261127.md, reports/family-prereg-ledger.jsonl и реальные последние строки ledger.jsonl / delivery_ledger.jsonl своего workspace. Выбери ОДНО ещё не использованное семейство и сформулируй опровержимую гипотезу; формулировка ПРЕДСКАЗАНИЯ должна дословно совпасть с одной из разрешённых в family-prereg-ledger.jsonl (придуманное число, например ≥ 0.0833, гейт отвергнет как UNBOUND_PREDICTION). НЕ двигай замороженные пороги и эталоны. ОБЯЗАТЕЛЬНО в этом же витке обнови физические файлы <workspace>/RED.log (строка `errors=<число>`) и <workspace>/GREEN.log (строка `OK`): их mtime должен попасть в окно витка, иначе red_green_pair в движке не даст verify_ok. Артефакт обязан содержать строки: СЕМЕЙСТВО: <id>, ГИПОТЕЗА: ..., ПРЕДСКАЗАНИЕ: <разрешённая формулировка>, ПРЕДРЕГ: <id из family-prereg-ledger.jsonl>, КОМАНДА: <реальная исполняемая команда>, EVIDENCE: <путь внутри workspace>, SHA256: <64 hex хэш этого файла>. КОМАНДА исполняется гейтом через shlex.split(shell=False) с cwd=workspace и обязана вернуть 0; текст `rc: 0` на веру не принимается, `cd ... &&` и shell-операторы запрещены. Файл доказательства создай до артефакта. PASS гейта означает только структурный проход: outcome_status=pending; гипотезу не называй подтверждённой до команды `outcome`, которая перечитает физический источник. Запиши артефакт ровно по указанному пути, обнови RED.log и GREEN.log, только после этого выведи PROMISE: DONE.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/CONSULT-FAMILY-MUT-WRITER-V2-c443.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795833525000,
+     "ts": 1795833590000,
      "source": "session",
      "title": "lree-CONSULT-FAMILY-MUT-WRITER-V2-c443",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795833525000,
+     "as_of": 1795833590000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-4sor3H57Pz",
+     "text": "Один физический writer-виток без вопросов и без слова «готово» без проверки. Прочитай последние 80 строк /home/nyaka/evolution-work-researcher/ledger.jsonl и /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-WRITER-NIGHT-CURATION-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-WRITER-NIGHT-CURATION-cN.md: доля REFORMULATE за последние 80 витков, число verify_ok=true, причина холостого витка, команда проверки, её rc, путь артефакта, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log корня workspace. Порядок mtime RED ≤ артефакт ≤ GREEN. Сохрани сырые выходы RED и GREEN в файл <путь_артефакта с суффиксом .pair.json> с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0 гейта. Пороги 0.5, 180, 900 и 0.2 не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-c324.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795833580000,
+     "source": "session",
+     "title": "lree-RSCH-WRITER-NIGHT-CURATION-c324",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795833580000,
      "is_stale": false
     },
     {
