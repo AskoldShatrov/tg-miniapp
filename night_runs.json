@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.12,
-      "remaining_hours": 16.88,
+      "elapsed_hours": 3.13,
+      "remaining_hours": 16.87,
       "progress_pct": 16,
       "cycles": 517,
-      "heartbeat_human": "08:44:10",
+      "heartbeat_human": "08:45:10",
       "tree": {
         "phases": [
           {
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.12,
-      "remaining_hours": 16.88,
+      "elapsed_hours": 3.13,
+      "remaining_hours": 16.87,
       "progress_pct": 16,
-      "cycles": 516,
-      "heartbeat_human": "08:43:47",
+      "cycles": 517,
+      "heartbeat_human": "08:44:47",
       "tree": {
         "phases": [
           {
@@ -735,30 +735,14 @@
           {
             "id": "SF-WRITER-NIGHT-CURATION-E",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 2,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "07:21:36",
-            "cycle": 475,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
-          {
-            "clock": "07:22:51",
-            "cycle": 476,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "07:24:06",
             "cycle": 477,
@@ -1222,19 +1206,35 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
+          },
+          {
+            "clock": "08:44:41",
+            "cycle": 517,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "08:44:41",
+            "cycle": 517,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 365,
-          "mutations": 364
+          "version": 366,
+          "mutations": 365
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795844653,
-  "fetched_human": "2026-11-28 08:44:13 +0300"
+  "fetched_at": 1795844715,
+  "fetched_human": "2026-11-28 08:45:15 +0300"
 }
