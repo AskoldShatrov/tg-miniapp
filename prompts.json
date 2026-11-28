@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-28T09:53:33+00:00",
-  "generated_human": "28.11 09:53 UTC",
-  "as_of": 1795859611231,
+  "generated": "2026-11-28T09:54:33+00:00",
+  "generated_human": "28.11 09:54 UTC",
+  "as_of": 1795859671357,
   "stale_days": 1,
-  "count": 1163,
+  "count": 1162,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -19,10 +19,11 @@
    "inbox.log",
    "opencode.db (сессии ноута)",
    "wants.json",
-   "replies.json",
-   "runtime/tmp-checkpoint/pc_user_msgs.json"
+   "replies.json"
   ],
-  "sources_skipped": [],
+  "sources_skipped": [
+   "runtime/tmp-checkpoint/pc_user_msgs.json (выгрузка с ПК ещё не настроена)"
+  ],
   "note": "группировка по темам; связи с хотелками (минимум 2 слова); ответ — реальная доставка из replies.json с префиксом want_id; as_of — время вопроса, is_stale — возраст доставки; сессии ноута — последние 800 с user-сообщениями из живой БД, до 2 текста на сессию (окно 3 дн), не вся история"
  },
  "groups": [
@@ -41,7 +42,7 @@
     {
      "id": "ses-EDu1Qgv54V",
      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795859609000,
+     "ts": 1795859664000,
      "source": "session",
      "title": "Малый радар в FACEIT spectator/overview",
      "source_label": "ноут",
@@ -52,7 +53,7 @@
       "w2611200052460530",
       "w2611200052465da0"
      ],
-     "as_of": 1795859609000,
+     "as_of": 1795859664000,
      "is_stale": false
     },
     {
@@ -1187,7 +1188,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795773246000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HKRLC6BP1R",
@@ -3663,7 +3664,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772079000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-uSKmcITI6D",
@@ -8167,7 +8168,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795773139000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7TEFZlZoUh",
@@ -8190,7 +8191,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772930000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-7IOAFlEaCP",
@@ -8213,7 +8214,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772837000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-ae1inQeJ4K",
@@ -8236,7 +8237,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772555000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-kZY2HITWtP",
@@ -8261,7 +8262,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772554000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-lQVPpD8A3f",
@@ -8284,7 +8285,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772214000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-v0EPyp8FWK",
@@ -8307,7 +8308,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772174000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261127122050",
@@ -12386,7 +12387,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772833000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-Q2Q4Bd4KVS",
@@ -12409,7 +12410,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772704000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-BlLiCH6fkz",
@@ -12434,7 +12435,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772561000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-JHRSbBunjv",
@@ -12457,7 +12458,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772410000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-9RubVAxsmj",
@@ -12482,7 +12483,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772273000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-zhJ1ak9GZ8",
@@ -12505,7 +12506,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795771992000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-JoQl8AQ68G",
@@ -14339,29 +14340,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795727751695,
      "as_of": 1795724490000,
-     "is_stale": true
-    },
-    {
-     "id": "pc-BY63UoAj3F",
-     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
-     "ts": 1795717085000,
-     "source": "pc",
-     "title": "Закачка и разбор T6.7",
-     "source_label": "ПК",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[pc-BY63UoAj3F] Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск чере",
-     "answer_short": "pc-BY63UoAj3F: Подключённый мост к сайтам работает на GitHub и YouTube; бол",
-     "answer_full": "Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск через него закрыт сервисами с ответами 403 и 451. Цифры на картинке про ECC устарели: сейчас 72 агента и 328 навыков, а не 73 и 302; поддержка OpenCode там бета.\n🟩 Скилл в OpenCode: CLI 1.6.1, пять каналов, ссылка в каноничной папке скиллов.\n🟩 Живой тест: GitHub 4 из 4, YouTube 3 из 3 — реальные результаты, не документация.\n🟨 ECC по исходникам: 72 агента и 328 навыков, а не 73 и 302; OpenCode — бета, дублирует гейты.\nШаги: пробовать скилл на конкретных ссылках с GitHub и YouTube; не включать логин и новые сайты без отдельного запроса; ECC и Ruflo — только выборочные инструкции под замер на одной задаче.\nВеб-канал дал 403 и 451 — это региональная блокировка, не поломка установки. Полный разбор записан в отчёт.\nСАМОИСЧЕРПАНИЕ: четыре гейта ответа PASS, презентация 8 PASS / 0 FAIL; логин и куки не трогались, конфиг OpenCode и задачи ПК не менялись.",
-     "answer_digest": {
-      "length": 1053,
-      "sha256": "b9bc47d39f34a03884cea77baa0b1ab4618ffc722b83d12c8248a85889dbe2e2"
-     },
-     "answer_text_id": "b9bc47d39f34a038",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795727751695,
-     "as_of": 1795717085000,
      "is_stale": true
     },
     {
@@ -20085,7 +20063,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795773005000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "tg-20261127124826",
@@ -20107,7 +20085,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772906000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-xYi1Fku34V",
@@ -20132,7 +20110,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795773270662,
      "as_of": 1795772630000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-EXHPcql0K3",
