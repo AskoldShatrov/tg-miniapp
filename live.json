@@ -255,10 +255,10 @@
       "task": "T6",
       "id": "T6.6",
       "title": "Live: активная закачка прямо сейчас",
-      "status": "done",
-      "note": "опрос pc-bridge :8898 каждые 2 мин",
+      "status": "running",
+      "note": "идёт закачка: python C:\\scanfeed\\hlae_calibration_capture.py --demo C:\\scanfeed\\demos…",
       "startedAt": "2026-11-19T08:22:05+03:00",
-      "updatedAt": "2026-11-28T13:17:29+03:00",
+      "updatedAt": "2026-11-28T13:23:31+03:00",
       "completedAt": "2026-11-28T13:17:29+03:00"
     },
     {
@@ -2075,68 +2075,76 @@
   ],
   "active": [
     {
-      "id": "session-efccd462",
-      "title": "Сессия без названия",
+      "id": "session-fc15a8b3",
+      "title": "Список скиллов агентов в Telegram",
       "source": "dsh",
-      "claimed_human": "13:22:48",
+      "claimed_human": "13:23:50",
       "age_min": 0,
-      "full": "Сессия без названия"
-    },
-    {
-      "id": "session-5b75c203",
-      "title": "Настройка микрофона для Дискорда и КС2",
-      "source": "dsh",
-      "claimed_human": "13:22:48",
-      "age_min": 0,
-      "full": "Настройка микрофона для Дискорда и КС2"
-    },
-    {
-      "id": "session-453a4303",
-      "title": "Запись артефакта с парными гейтами",
-      "source": "dsh",
-      "claimed_human": "13:22:47",
-      "age_min": 0,
-      "full": "Запись артефакта с парными гейтами"
-    },
-    {
-      "id": "c023184f-6933-48",
-      "title": "Ты — исследователь пе",
-      "source": "dsh",
-      "claimed_human": "13:22:47",
-      "age_min": 0,
-      "full": "Ты — исследователь пе"
+      "full": "Список скиллов агентов в Telegram"
     },
     {
       "id": "session-820248c9",
       "title": "Ночная прокачка агента лучшими скиллами",
       "source": "dsh",
-      "claimed_human": "13:22:42",
+      "claimed_human": "13:23:49",
       "age_min": 0,
       "full": "Ночная прокачка агента лучшими скиллами"
+    },
+    {
+      "id": "291106fa-9e5a-48",
+      "title": "Read-only research task in /home/nyaka.",
+      "source": "dsh",
+      "claimed_human": "13:23:49",
+      "age_min": 0,
+      "full": "Read-only research task in /home/nyaka."
+    },
+    {
+      "id": "session-453a4303",
+      "title": "Запись артефакта с парными гейтами",
+      "source": "dsh",
+      "claimed_human": "13:23:46",
+      "age_min": 0,
+      "full": "Запись артефакта с парными гейтами"
+    },
+    {
+      "id": "a3149fc8-ca8f-41",
+      "title": "Read-only research task. I need",
+      "source": "dsh",
+      "claimed_human": "13:23:43",
+      "age_min": 0,
+      "full": "Read-only research task. I need"
+    },
+    {
+      "id": "session-efccd462",
+      "title": "[ПРАВИЛО СТИЛЯ ОТВЕТА",
+      "source": "dsh",
+      "claimed_human": "13:23:43",
+      "age_min": 0,
+      "full": "[ПРАВИЛО СТИЛЯ ОТВЕТА"
     },
     {
       "id": "session-729ad6cb",
       "title": "Ночной writer-виток с проверками RED и GREEN",
       "source": "dsh",
-      "claimed_human": "13:22:42",
+      "claimed_human": "13:23:41",
       "age_min": 0,
       "full": "Ночной writer-виток с проверками RED и GREEN"
     },
     {
-      "id": "session-fc15a8b3",
-      "title": "Список скиллов агентов в Telegram",
+      "id": "c023184f-6933-48",
+      "title": "Ты — исследователь пе",
       "source": "dsh",
-      "claimed_human": "13:22:42",
+      "claimed_human": "13:23:40",
       "age_min": 0,
-      "full": "Список скиллов агентов в Telegram"
+      "full": "Ты — исследователь пе"
     },
     {
-      "id": "session-14398526",
-      "title": "Причины неудачи ночного прогона агентов",
-      "source": "dsh",
-      "claimed_human": "13:22:36",
+      "id": "T6/T6.6",
+      "title": "Live: активная закачка прямо сейчас",
+      "source": "progress",
+      "claimed_human": "13:23:31",
       "age_min": 0,
-      "full": "Причины неудачи ночного прогона агентов"
+      "full": "идёт закачка: python C:\\scanfeed\\hlae_calibration_capture.py --demo C:\\scanfeed\\demos…"
     }
   ],
   "queues": {
@@ -2169,10 +2177,20 @@
       "events": 0,
       "trail": [],
       "started_at": 1795861364,
-      "updated_at": 1795861367
+      "updated_at": 1795861426
     }
   ],
   "bars": [
+    {
+      "key": "task:T6",
+      "label": "T6 · Закачка и разбор демок (Windows-ПК)",
+      "done": 6,
+      "total": 7,
+      "unit": "шагов",
+      "color": "yellow",
+      "source": "progress.json",
+      "updated_at": "2026-11-28T13:23:31+03:00"
+    },
     {
       "key": "task:T29",
       "label": "T29 · Сканфид",
@@ -2181,13 +2199,13 @@
       "unit": "шагов",
       "color": "red",
       "source": "progress.json",
-      "updated_at": "2026-11-28T13:17:29+03:00"
+      "updated_at": "2026-11-28T13:23:31+03:00"
     }
   ],
-  "updatedAt": "2026-11-28T13:17:29+03:00",
-  "progress_updated_at": "2026-11-28T13:17:29+03:00",
-  "plan_age_hours": 0.1,
+  "updatedAt": "2026-11-28T13:23:31+03:00",
+  "progress_updated_at": "2026-11-28T13:23:31+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795861368,
-  "fetched_human": "2026-11-28 13:22:48 +0300"
+  "fetched_at": 1795861430,
+  "fetched_human": "2026-11-28 13:23:50 +0300"
 }
