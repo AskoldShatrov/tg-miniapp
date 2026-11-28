@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-28 18:30",
+ "generated": "2026-11-28 19:00",
  "window": {
   "start": "2026-11-28T03:10",
-  "end": "2026-11-28T15:08",
+  "end": "2026-11-28T15:39",
   "sessions": 157,
   "roots": 150
  },
@@ -23,18 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 310,
+   "median_s": 312,
    "max_s": 9726,
-   "last": "2026-11-28T15:08:33.255000+00:00",
+   "last": "2026-11-28T15:39:33.656000+00:00",
    "outcomes": {
     "waiting_user": 3,
-    "cancelled": 6,
     "done": 129,
+    "cancelled": 6,
     "error": 12
    },
    "example": [
-    "3DP6HAYF",
-    "U70ORNA5"
+    "U70ORNA5",
+    "foDsrNdP"
    ],
    "actual": [
     {
@@ -45,13 +45,13 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 109 из 150, ≈6 вызовов за раз",
+     "t": "в 110 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 130 из 150, ≈24 вызовов за раз",
+     "t": "в 130 из 150, ≈25 вызовов за раз",
      "d": 1
     },
     {
@@ -718,94 +718,100 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 10,
-   "median_s": 937,
-   "max_s": 1698,
-   "last": "2026-11-28T15:08:33.255000+00:00",
+   "runs": 11,
+   "median_s": 955,
+   "max_s": 1842,
+   "last": "2026-11-28T15:39:33.656000+00:00",
    "outcomes": {
     "waiting_user": 1,
-    "done": 9
+    "done": 10
    },
    "example": [
-    "eX11Ozm7",
-    "U70ORNA5"
+    "U70ORNA5",
+    "foDsrNdP"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 10"
+     "t": "запусков: 11"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 9 из 10",
+     "t": "в 9 из 11",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "pc-bridge-live",
+     "t": "в 2 из 11",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 9 из 10",
+     "t": "в 10 из 11",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 6 из 10",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "shell",
-     "t": "в 10 из 10, ≈55 вызовов за раз",
+     "t": "в 6 из 11",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 4 из 10",
+     "t": "в 5 из 11",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "shell",
+     "t": "в 11 из 11, ≈56 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 10 из 10, ≈8 вызовов за раз",
+     "t": "в 11 из 11, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "code-review",
-     "t": "в 2 из 10",
+     "t": "в 2 из 11",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 2 из 10",
+     "t": "в 2 из 11",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 3 из 10",
+     "t": "в 3 из 11",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 10 из 10, ≈13 вызовов за раз",
+     "t": "в 11 из 11, ≈13 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "answer-integrity",
-     "t": "в 4 из 10",
+     "t": "в 4 из 11",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: game-mode, pc-bridge-live, resources, slow-deliberation",
-     "t": "меньше 2 из 10",
+     "n": "реже: game-mode, resources, slow-deliberation",
+     "t": "меньше 2 из 11",
      "d": 1
     }
    ],
@@ -897,7 +903,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 13, с файлами 1",
+   "state": "Владельцев 14, с файлами 2",
    "level": "ok",
    "f": "C11"
   },
