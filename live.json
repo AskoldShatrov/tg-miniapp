@@ -255,11 +255,11 @@
       "task": "T6",
       "id": "T6.6",
       "title": "Live: активная закачка прямо сейчас",
-      "status": "running",
-      "note": "идёт закачка: python C:\\scanfeed\\hlae_calibration_capture.py --demo C:\\scanfeed\\demos…",
+      "status": "done",
+      "note": "опрос pc-bridge :8898 каждые 2 мин",
       "startedAt": "2026-11-19T08:22:05+03:00",
-      "updatedAt": "2026-11-28T13:23:31+03:00",
-      "completedAt": "2026-11-28T13:17:29+03:00"
+      "updatedAt": "2026-11-28T13:41:35+03:00",
+      "completedAt": "2026-11-28T13:41:35+03:00"
     },
     {
       "task": "T6",
@@ -2075,51 +2075,59 @@
   ],
   "active": [
     {
-      "id": "session-5b75c203",
-      "title": "Настройка микрофона для Дискорда и КС2",
+      "id": "79e8544c-a51f-4b",
+      "title": "Независимый слепой ау",
       "source": "dsh",
-      "claimed_human": "13:41:00",
+      "claimed_human": "13:41:58",
       "age_min": 0,
-      "full": "Настройка микрофона для Дискорда и КС2"
-    },
-    {
-      "id": "session-bb4f7d87",
-      "title": "План установки Equalizer APO с ReaPlugs",
-      "source": "dsh",
-      "claimed_human": "13:40:59",
-      "age_min": 0,
-      "full": "План установки Equalizer APO с ReaPlugs"
-    },
-    {
-      "id": "session-7bb2ba91",
-      "title": "Запись и проверка ночного артефакта",
-      "source": "dsh",
-      "claimed_human": "13:40:57",
-      "age_min": 0,
-      "full": "Запись и проверка ночного артефакта"
+      "full": "Независимый слепой ау"
     },
     {
       "id": "session-e598d74f",
       "title": "Writer-виток курации артефакта с гейтами",
       "source": "dsh",
-      "claimed_human": "13:40:56",
+      "claimed_human": "13:41:58",
       "age_min": 0,
       "full": "Writer-виток курации артефакта с гейтами"
+    },
+    {
+      "id": "session-7bb2ba91",
+      "title": "Запись и проверка ночного артефакта",
+      "source": "dsh",
+      "claimed_human": "13:41:58",
+      "age_min": 0,
+      "full": "Запись и проверка ночного артефакта"
+    },
+    {
+      "id": "session-5b75c203",
+      "title": "Настройка микрофона для Дискорда и КС2",
+      "source": "dsh",
+      "claimed_human": "13:41:55",
+      "age_min": 0,
+      "full": "Настройка микрофона для Дискорда и КС2"
     },
     {
       "id": "session-fc15a8b3",
       "title": "Список скиллов агентов в Telegram",
       "source": "dsh",
-      "claimed_human": "13:40:53",
+      "claimed_human": "13:41:54",
       "age_min": 0,
       "full": "Список скиллов агентов в Telegram"
+    },
+    {
+      "id": "session-bb4f7d87",
+      "title": "План установки Equalizer APO с ReaPlugs",
+      "source": "dsh",
+      "claimed_human": "13:41:42",
+      "age_min": 0,
+      "full": "План установки Equalizer APO с ReaPlugs"
     },
     {
       "id": "session-14398526",
       "title": "Причины неудачи ночного прогона агентов",
       "source": "dsh",
       "claimed_human": "13:40:23",
-      "age_min": 0,
+      "age_min": 1,
       "full": "Причины неудачи ночного прогона агентов"
     },
     {
@@ -2127,16 +2135,8 @@
       "title": "Ночная запись артефакта с проверкой шлюзов",
       "source": "dsh",
       "claimed_human": "13:39:51",
-      "age_min": 1,
+      "age_min": 2,
       "full": "Ночная запись артефакта с проверкой шлюзов"
-    },
-    {
-      "id": "session-729ad6cb",
-      "title": "Ночной writer-виток с проверками RED и GREEN",
-      "source": "dsh",
-      "claimed_human": "13:35:50",
-      "age_min": 5,
-      "full": "Ночной writer-виток с проверками RED и GREEN"
     }
   ],
   "queues": {
@@ -2160,16 +2160,6 @@
   "runs": [],
   "bars": [
     {
-      "key": "task:T6",
-      "label": "T6 · Закачка и разбор демок (Windows-ПК)",
-      "done": 6,
-      "total": 7,
-      "unit": "шагов",
-      "color": "yellow",
-      "source": "progress.json",
-      "updated_at": "2026-11-28T13:23:31+03:00"
-    },
-    {
       "key": "task:T29",
       "label": "T29 · Сканфид",
       "done": 5,
@@ -2177,13 +2167,13 @@
       "unit": "шагов",
       "color": "red",
       "source": "progress.json",
-      "updated_at": "2026-11-28T13:23:31+03:00"
+      "updated_at": "2026-11-28T13:41:35+03:00"
     }
   ],
-  "updatedAt": "2026-11-28T13:23:31+03:00",
-  "progress_updated_at": "2026-11-28T13:23:31+03:00",
-  "plan_age_hours": 0.3,
+  "updatedAt": "2026-11-28T13:41:35+03:00",
+  "progress_updated_at": "2026-11-28T13:41:35+03:00",
+  "plan_age_hours": 0.0,
   "plan_source": "progress.json",
-  "fetched_at": 1795862461,
-  "fetched_human": "2026-11-28 13:41:01 +0300"
+  "fetched_at": 1795862521,
+  "fetched_human": "2026-11-28 13:42:01 +0300"
 }
