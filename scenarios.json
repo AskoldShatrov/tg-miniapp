@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-28 14:00",
+ "generated": "2026-11-28 17:00",
  "window": {
-  "start": "2026-11-27T20:03",
-  "end": "2026-11-28T10:55",
+  "start": "2026-11-27T20:20",
+  "end": "2026-11-28T13:57",
   "sessions": 157,
   "roots": 150
  },
  "summary": {
   "skills": 69,
-  "skills_used": 15,
+  "skills_used": 17,
   "agents": 8,
   "agents_used": 0,
   "autofeed": 0,
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 310,
-   "max_s": 22747,
-   "last": "2026-11-28T10:55:14.610000+00:00",
+   "median_s": 306,
+   "max_s": 62152,
+   "last": "2026-11-28T13:57:05.289000+00:00",
    "outcomes": {
-    "waiting_user": 2,
-    "done": 136,
+    "waiting_user": 6,
+    "done": 132,
     "error": 12
    },
    "example": [
-    "6OHUIv9D",
-    "O95k7pUS"
+    "BEiCVr66",
+    "f3QLf3Pk"
    ],
    "actual": [
     {
@@ -44,7 +44,7 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 112 из 150, ≈6 вызовов за раз",
+     "t": "в 110 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
@@ -56,12 +56,12 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 107 из 150, ≈5 вызовов за раз",
+     "t": "в 106 из 150, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, draft-gate, dsh-plugin-discovery, game-mode, hypothesis-ch",
+     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, draft-gate, dsh-plugin-discovery, dsh-runtime-resilience, ",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -717,12 +717,12 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 13,
-   "median_s": 919,
-   "max_s": 22747,
+   "runs": 12,
+   "median_s": 850,
+   "max_s": 1698,
    "last": "2026-11-28T10:12:11.355000+00:00",
    "outcomes": {
-    "done": 13
+    "done": 12
    },
    "example": [
     "u1Qgv54V",
@@ -732,72 +732,90 @@
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 13"
+     "t": "запусков: 12"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 11 из 13",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "research-slowdown",
-     "t": "в 11 из 13",
+     "t": "в 10 из 12",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 3 из 13",
+     "t": "в 2 из 12",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "research-slowdown",
+     "t": "в 10 из 12",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 8 из 13",
+     "t": "в 7 из 12",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 5 из 13",
+     "t": "в 5 из 12",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 13 из 13, ≈57 вызовов за раз",
+     "t": "в 12 из 12, ≈56 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 13 из 13, ≈6 вызовов за раз",
+     "t": "в 12 из 12, ≈6 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "code-review",
+     "t": "в 2 из 12",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "в 2 из 12",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "slow-deliberation",
+     "t": "в 2 из 12",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 3 из 13",
+     "t": "в 3 из 12",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 13 из 13, ≈11 вызовов за раз",
+     "t": "в 12 из 12, ≈11 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "answer-integrity",
-     "t": "в 4 из 13",
+     "t": "в 4 из 12",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: code-review, game-mode, network-constraints, resources, show-in-answer, slow-deliberation",
-     "t": "меньше 3 из 13",
+     "n": "реже: game-mode, resources, show-in-answer",
+     "t": "меньше 2 из 12",
      "d": 1
     }
    ],
@@ -881,7 +899,7 @@
    "name": "agent-index",
    "when": "Каждые 30 мин",
    "what": "agent_index_build.py пересобирает AGENT-INDEX.md.",
-   "state": "AGENT-INDEX.md обновлён 0.4 ч назад",
+   "state": "AGENT-INDEX.md обновлён 0.1 ч назад",
    "level": "ok",
    "f": "C11"
   },
@@ -889,7 +907,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 29, с файлами 7",
+   "state": "Владельцев 26, с файлами 4",
    "level": "ok",
    "f": "C11"
   },
