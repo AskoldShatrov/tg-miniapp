@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T10:27:54+00:00",
-  "generated_human": "28.11 10:27 UTC",
-  "as_of": 1795861672689,
+  "generated": "2026-11-28T10:28:54+00:00",
+  "generated_human": "28.11 10:28 UTC",
+  "as_of": 1795861732649,
   "stale_days": 1,
   "count": 1163,
   "groups": 9,
@@ -39,6 +39,21 @@
     "w261121215151ef72"
    ],
    "prompts": [
+    {
+     "id": "ses-Gb6gPTcENq",
+     "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ АРТЕФАКТ. Прочитай /home/nyaka/Documents/deepseek-harness/default-workspace/reports/cap-plugin-trust-20261128.md если он есть; если нет — собери данные сам из npm registry и GitHub raw для dsh-tool-discovery и @ykurilov/agent-chat-history-search. Проверь совместимость engines.dsh с установленным 0.2.2-rc.5, лицензию, разрешённые поверхности (сеть/команды/ключи/запись файлов) и есть ли уже установленный bundle через read-only plugin_manager list_bundles. Запиши НОВЫЙ файл /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-TRUST-VERIFY-1128-*.md с маркером CAP-TRUST-VERIFY-1128, таблицей INSTALL/HOLD/REJECT и sha256 источников. Ничего не устанавливай и не меняй профиль.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-TRUST-VERIFY-1128-c7.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795861728000,
+     "source": "session",
+     "title": "lree-CAP-TRUST-VERIFY-1128-c7",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261120005246a1ca"
+     ],
+     "as_of": 1795861728000,
+     "is_stale": false
+    },
     {
      "id": "ses-z9ob7vwPVS",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ АРТЕФАКТ. Пороги заморожены в /home/nyaka/Documents/deepseek-harness/default-workspace/reports/cap-needs-preregistration-20261128.json: baseline ≤6 из 10, router ≥9 из 10, пороги двигать запрещено. Прогони python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/capability_router_gate.py check и selftest, зафиксируй rc и вывод. Самостоятельно пересчитай baseline по skill_preflight.py для всех 10 потребностей и сравни с записанным cap-baseline-20261128.json. Проверь, что это именно выигрыш в маршрутизации, а не в решении задач: честно отметь ограничение. Запиши НОВЫЙ файл /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AB-ROUTER-1128-*.md с маркером CAP-AB-ROUTER-1128, командами, rc, sha256 и вердиктом.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AB-ROUTER-1128-c6.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
@@ -22808,31 +22823,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795727751695,
      "as_of": 1795724231000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-pX6xdWOjuZ",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15672. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ w261124214938fe8f: Ответить на сообщение 20:46: прогресс-бар и реплай восстановлены, INVENTO не управляет ПК. Где: wants.json · . Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15672_run47607.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795724226000,
-     "source": "session",
-     "title": "AU15672: прогресс-бар и реплай",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск чере",
-     "answer_short": "w261119190741dca0: Подключённый мост к сайтам работает на GitHub и YouTube; бол",
-     "answer_full": "Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск через него закрыт сервисами с ответами 403 и 451. Цифры на картинке про ECC устарели: сейчас 72 агента и 328 навыков, а не 73 и 302; поддержка OpenCode там бета.\n🟩 Скилл в OpenCode: CLI 1.6.1, пять каналов, ссылка в каноничной папке скиллов.\n🟩 Живой тест: GitHub 4 из 4, YouTube 3 из 3 — реальные результаты, не документация.\n🟨 ECC по исходникам: 72 агента и 328 навыков, а не 73 и 302; OpenCode — бета, дублирует гейты.\nШаги: пробовать скилл на конкретных ссылках с GitHub и YouTube; не включать логин и новые сайты без отдельного запроса; ECC и Ruflo — только выборочные инструкции под замер на одной задаче.\nВеб-канал дал 403 и 451 — это региональная блокировка, не поломка установки. Полный разбор записан в отчёт.\nСАМОИСЧЕРПАНИЕ: четыре гейта ответа PASS, презентация 8 PASS / 0 FAIL; логин и куки не трогались, конфиг OpenCode и задачи ПК не менялись.",
-     "answer_digest": {
-      "length": 1053,
-      "sha256": "b9bc47d39f34a03884cea77baa0b1ab4618ffc722b83d12c8248a85889dbe2e2"
-     },
-     "answer_text_id": "b9bc47d39f34a038",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795727751695,
-     "as_of": 1795724226000,
      "is_stale": true
     },
     {
