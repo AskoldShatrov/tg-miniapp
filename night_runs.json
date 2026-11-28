@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.76,
-      "remaining_hours": 15.24,
+      "elapsed_hours": 4.78,
+      "remaining_hours": 15.22,
       "progress_pct": 24,
       "cycles": 534,
-      "heartbeat_human": "10:22:40",
+      "heartbeat_human": "10:23:40",
       "tree": {
         "phases": [
           {
@@ -644,11 +644,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.76,
-      "remaining_hours": 15.24,
+      "elapsed_hours": 4.78,
+      "remaining_hours": 15.22,
       "progress_pct": 24,
-      "cycles": 534,
-      "heartbeat_human": "10:22:48",
+      "cycles": 535,
+      "heartbeat_human": "10:23:48",
       "tree": {
         "phases": [
           {
@@ -769,6 +769,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-H",
+            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
+            "cycles": 2,
+            "max": 5,
+            "last": "RETHINK_REQUIRED",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 1,
@@ -776,34 +785,9 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-H",
-            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 1,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 2,
-            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:20:15",
-            "cycle": 501,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
-          {
-            "clock": "08:21:30",
-            "cycle": 502,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:22:45",
             "cycle": 503,
@@ -1267,19 +1251,35 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "10:24:04",
+            "cycle": 535,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "10:24:04",
+            "cycle": 535,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "RETHINK_REQUIRED",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 383,
-          "mutations": 382
+          "version": 384,
+          "mutations": 383
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795850585,
-  "fetched_human": "2026-11-28 10:23:05 +0300"
+  "fetched_at": 1795850647,
+  "fetched_human": "2026-11-28 10:24:07 +0300"
 }
