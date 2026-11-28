@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T06:14:31+00:00",
-  "generated_human": "28.11 06:14 UTC",
-  "as_of": 1795846466160,
+  "generated": "2026-11-28T06:15:32+00:00",
+  "generated_human": "28.11 06:15 UTC",
+  "as_of": 1795846527159,
   "stale_days": 1,
   "count": 1162,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-ua6f3fNmp2",
      "text": "Один виток замкнутого контура, без вопросов и без слова «готово» без проверки. Выбери ОДНО открытое улучшение из /home/nyaka/Documents/deepseek-harness/default-workspace/reports/continuous-research-loop-20261128.md (OPEN-1..OPEN-5) или из свежего отчёта /home/nyaka/evolution-work-researcher/artifacts/, которое реально можно внедрить новым исполняемым файлом в отдельной зоне /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research_apply_*.py. СНАЧАЛА прочитай источник и зафиксируй его точный путь. СНАЧАЛА до правки запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research_apply_gate.py check /home/nyaka/evolution-work-researcher 'artifacts/RSCH-APPLY-CLOSED-LOOP-c[0-9]*.md' /home/nyaka/evolution-work-researcher/artifacts/research-apply-red.json 900 ; ожидай rc=1, сохрани сырой вывод как JSON с verdict=FAIL в <артефакт>.red.json. Затем создай ровно один новый файл research_apply_<тема>.py в каталоге reports с настоящей проверкой и её selftest; добейся rc=0 и сохрани сырой вывод как JSON с verdict=PASS в <артефакт>.green.json. ПОСЛЕ этого напиши ровно один артефакт /home/nyaka/evolution-work-researcher/artifacts/RSCH-APPLY-CLOSED-LOOP-cN.md со строками FINDING: <путь>, FIX_PATH: <путь к research_apply_*.py>, FIX_SHA256: <64 hex>, RED_RC: 1, GREEN_RC: 0, DECISION_ID: SD-APPLY-<цикл>, PENDING_PATH: <путь>, VERDICT: PASS, а также командой проверки, её rc, путём, mtime, SHA256 самого артефакта и датой. Рядом создай <артефакт без .md>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at в ISO с +03:00 и порядком red_at <= mtime артефакта <= green_at. Добавь ОДНУ строку в /home/nyaka/Documents/deepseek-harness/default-workspace/reports/systemic-decisions.jsonl с id=DECISION_ID, fix_path, fix_sha256, gate_command='python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research_apply_gate.py selftest', red_rc=1, green_rc=0, owner, ts, why и reason. Добавь ОДНУ строку в /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research-apply-pending.jsonl с recipient, artifact_path, status=pending, created_at, confirm_time=null. НЕ редактируй state.json, ledger.jsonl, stop_hook/, strategy.json, tasks.jsonl, чужие записи реестра — только append новых строк. Пороги и k=0.95 не двигать. PROMISE: DONE только после rc=0 гейта research_apply_gate.py.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-APPLY-CLOSED-LOOP-c375.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795846464000,
+     "ts": 1795846523000,
      "source": "session",
      "title": "lree-RSCH-APPLY-CLOSED-LOOP-c375",
      "source_label": "ноут",
@@ -51,7 +51,20 @@
      "wants": [
       "cl-delivered-gate-nightly"
      ],
-     "as_of": 1795846464000,
+     "as_of": 1795846523000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-Q5qcSPOD5J",
+     "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-F-c523.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795846521000,
+     "source": "session",
+     "title": "lree-IMP-WRITER-NIGHT-CURATION-F-c523",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795846521000,
      "is_stale": false
     },
     {
@@ -4188,6 +4201,19 @@
    ],
    "prompts": [
     {
+     "id": "ses-8SO1k3m3wm",
+     "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 'artifacts/SF-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/SF-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-F-c524.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795846522000,
+     "source": "session",
+     "title": "lree-SF-WRITER-NIGHT-CURATION-F-c524",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795846522000,
+     "is_stale": false
+    },
+    {
      "id": "ses-eQlISVvxAz",
      "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 'artifacts/SF-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/SF-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-F-c523.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
      "ts": 1795846443000,
@@ -7562,29 +7588,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795726918074,
      "as_of": 1795716731000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-ZW54qNgOnz",
-     "text": "Дежурная writer-задача для выхода из SCOUT_OPEN. Вход — не чистый лист; прочитай последние артефакты и леджер. Обязательные поля: DELIVERED с путём, TG_MESSAGE_ID, DELIVERY_LOG, VERIFY_CMD, SHA256, MTIME, VERDICT: PASS. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-*.md и выведи PROMISE: DONE после реальной записи.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-c62.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795716531000,
-     "source": "session",
-     "title": "lree-SF-WRITER-STANDING-c62",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-ZW54qNgOnz] Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли н",
-     "answer_short": "ses-ZW54qNgOnz: Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю ши",
-     "answer_full": "Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли независимые доказательства пользы у таких больших наборов агентов и навыков.\nПока идёт разведка, measuring собственный контур: сколько у меня навыков и сколько места занимают их описания в контексте.\nРазведка по пользе больших наборов дала жёсткие данные: фокусированные наборы выигрывают у огромных, а описания сотен навыков съедают контекст. Добавляю в отчёт.\nОтчёт собран. Считаю контрольную сумму и собираю постер с одним выводом.\nБольшие наборы агентов полезны как библиотека процедур, но не как знак качества: короткие наборы выигрывают, а сотни навыков съедают контекст и делают часть невидимой.\nПОНЯТНО: простыми словами, ценность не в количестве папок, а в том, что процедура реально помогает. Когда навыков слишком много, модель видит только названия и описания, и часть просто теряется.\n**Главное:**\n🟦 В ECC сейчас 328 навыков и 72 агента — скрин обещал 302 и 73.\n🟩 С курируемыми навыками успех вырос с 33,9 до 50,5 процента; но малые наборы обходят огромные связки.\n🟥 У 773 навыков в ECC — 170 тысяч знаков описаний, в четыре раза больше лимита листинга.\n**Шаги:** взять только процедуры под конкретные задачи; держать активных навыков не больше трёх на сценарий; мерить вызовы инструментов, а не счётчик файлов.\n**Проверка:** у меня 71 навык и 23 тысячи знаков описаний — пока ниже порога, но рост надо контролировать. Пакет не ставил.",
-     "answer_digest": {
-      "length": 1547,
-      "sha256": "a20fa7231f7c70a036c8f4603c5d3840a2b71c73a32010580699dad3240c2105"
-     },
-     "answer_text_id": "a20fa7231f7c70a0",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795726918074,
-     "as_of": 1795716531000,
      "is_stale": true
     },
     {
@@ -11021,31 +11024,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795726918074,
      "as_of": 1795716657000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-b8ptKfvd64",
-     "text": "РАДАР. Проверить калибровку confidence детектора на свежих REAL-кадрах с ненулевым FP (иначе калибровка неидентифицируема). Извлечь кадры, посчитать ECE/Brier до и после. Гейт: n>=60, FP>0, ECE<0.15. Новый отчёт ~/overnight/cloud_tracks/C02-28594.md. Не перезаписывать 64/71/103 и data/. ОБЯЗАТЕЛЬНО дополнительно запиши машино-читаемый результат в ~/overnight/cloud_tracks/C02-result.json с полями из cloud_gates.json (числа), иначе задача НЕ считается выполненной. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795716587000,
-     "source": "session",
-     "title": "Калибровка confidence детектора РАДАР",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли н",
-     "answer_short": "w261119190741dca0: Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю ши",
-     "answer_full": "Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли независимые доказательства пользы у таких больших наборов агентов и навыков.\nПока идёт разведка, measuring собственный контур: сколько у меня навыков и сколько места занимают их описания в контексте.\nРазведка по пользе больших наборов дала жёсткие данные: фокусированные наборы выигрывают у огромных, а описания сотен навыков съедают контекст. Добавляю в отчёт.\nОтчёт собран. Считаю контрольную сумму и собираю постер с одним выводом.\nБольшие наборы агентов полезны как библиотека процедур, но не как знак качества: короткие наборы выигрывают, а сотни навыков съедают контекст и делают часть невидимой.\nПОНЯТНО: простыми словами, ценность не в количестве папок, а в том, что процедура реально помогает. Когда навыков слишком много, модель видит только названия и описания, и часть просто теряется.\n**Главное:**\n🟦 В ECC сейчас 328 навыков и 72 агента — скрин обещал 302 и 73.\n🟩 С курируемыми навыками успех вырос с 33,9 до 50,5 процента; но малые наборы обходят огромные связки.\n🟥 У 773 навыков в ECC — 170 тысяч знаков описаний, в четыре раза больше лимита листинга.\n**Шаги:** взять только процедуры под конкретные задачи; держать активных навыков не больше трёх на сценарий; мерить вызовы инструментов, а не счётчик файлов.\n**Проверка:** у меня 71 навык и 23 тысячи знаков описаний — пока ниже порога, но рост надо контролировать. Пакет не ставил.",
-     "answer_digest": {
-      "length": 1547,
-      "sha256": "a20fa7231f7c70a036c8f4603c5d3840a2b71c73a32010580699dad3240c2105"
-     },
-     "answer_text_id": "a20fa7231f7c70a0",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795726918074,
-     "as_of": 1795716587000,
      "is_stale": true
     },
     {
