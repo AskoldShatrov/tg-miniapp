@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.69,
-      "remaining_hours": 18.31,
-      "progress_pct": 8,
-      "cycles": 476,
-      "heartbeat_human": "07:18:40",
+      "elapsed_hours": 1.71,
+      "remaining_hours": 18.29,
+      "progress_pct": 9,
+      "cycles": 477,
+      "heartbeat_human": "07:19:40",
       "tree": {
         "phases": [
           {
@@ -69,7 +69,7 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-C",
             "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "MUTATE",
             "score": 4,
@@ -113,22 +113,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "22:24:25",
-            "cycle": 432,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: claim_status\": \"STRUCTURAL_ONLY\",\n  \"defects\": [\n    \"STALE_EVIDENCE: mtime в"
-          },
-          {
-            "clock": "22:31:05",
-            "cycle": 433,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "22:31:05",
             "cycle": 433,
@@ -592,11 +576,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "07:19:49",
+            "cycle": 477,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "07:19:49",
+            "cycle": 477,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 382,
-          "mutations": 381
+          "version": 383,
+          "mutations": 382
         },
         "events": 400,
         "avg_score": 0.0,
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.69,
-      "remaining_hours": 18.31,
-      "progress_pct": 8,
-      "cycles": 472,
-      "heartbeat_human": "07:18:47",
+      "elapsed_hours": 1.71,
+      "remaining_hours": 18.29,
+      "progress_pct": 9,
+      "cycles": 473,
+      "heartbeat_human": "07:19:47",
       "tree": {
         "phases": [
           {
@@ -672,7 +672,7 @@
           {
             "id": "SF-WRITER-NIGHT-CURATION-C",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "PROMOTE",
             "score": 7,
@@ -707,14 +707,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "22:07:34",
-            "cycle": 428,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "22:07:34",
             "cycle": 428,
@@ -1186,6 +1178,14 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:19:06",
+            "cycle": 473,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
@@ -1199,6 +1199,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795839532,
-  "fetched_human": "2026-11-28 07:18:52 +0300"
+  "fetched_at": 1795839591,
+  "fetched_human": "2026-11-28 07:19:51 +0300"
 }
