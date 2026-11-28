@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.35,
-      "remaining_hours": 11.65,
+      "elapsed_hours": 8.37,
+      "remaining_hours": 11.63,
       "progress_pct": 42,
-      "cycles": 555,
-      "heartbeat_human": "13:57:53",
+      "cycles": 556,
+      "heartbeat_human": "13:58:53",
       "tree": {
         "phases": [
           {
@@ -186,30 +186,14 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-L",
             "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATE",
+            "last": "RETHINK_REQUIRED",
             "score": 4,
             "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "08:46:43",
-            "cycle": 518,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
-          {
-            "clock": "08:54:03",
-            "cycle": 519,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:54:03",
             "cycle": 519,
@@ -673,11 +657,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:58:21",
+            "cycle": 556,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:58:21",
+            "cycle": 556,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 437,
-          "mutations": 436
+          "version": 438,
+          "mutations": 437
         },
         "events": 400,
         "avg_score": 0.0,
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.35,
-      "remaining_hours": 11.65,
+      "elapsed_hours": 8.37,
+      "remaining_hours": 11.63,
       "progress_pct": 42,
       "cycles": 568,
-      "heartbeat_human": "13:57:53",
+      "heartbeat_human": "13:58:53",
       "tree": {
         "phases": [
           {
@@ -1391,11 +1391,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.84,
-      "remaining_hours": 7.16,
+      "elapsed_hours": 0.86,
+      "remaining_hours": 7.14,
       "progress_pct": 11,
       "cycles": 11,
-      "heartbeat_human": "13:58:04",
+      "heartbeat_human": "13:59:04",
       "tree": {
         "phases": [
           {
@@ -1620,6 +1620,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795863496,
-  "fetched_human": "2026-11-28 13:58:16 +0300"
+  "fetched_at": 1795863558,
+  "fetched_human": "2026-11-28 13:59:18 +0300"
 }
