@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T16:36:27+00:00",
-  "generated_human": "28.11 16:36 UTC",
-  "as_of": 1795883783997,
+  "generated": "2026-11-28T16:37:29+00:00",
+  "generated_human": "28.11 16:37 UTC",
+  "as_of": 1795883846501,
   "stale_days": 1,
   "count": 1186,
   "groups": 9,
@@ -40,9 +40,26 @@
    ],
    "prompts": [
     {
+     "id": "ses-lPYmsS5Diz",
+     "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
+     "ts": 1795883844000,
+     "source": "session",
+     "title": "Малый радар в FACEIT spectator/overview",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [
+      "w261119190741dca0",
+      "w2611200052460530",
+      "w2611200052465da0"
+     ],
+     "as_of": 1795883844000,
+     "is_stale": false
+    },
+    {
      "id": "ses-Ij9jt4wRf0",
      "text": "ПРОРАБОТКА РАДАРА, новый источник. Источник: 78-top1000-dust2-ingest.md (307 dust2 матчей) и свежие FACEIT-демо. Задача: собрать НОВЫЙ набор кадров (не старые 20/92) с признаком cyan как_CT и проверить детектор радара на нём. ОБЯЗАТЕЛЬНО: записать новый отчёт ~/overnight/open_tracks/R01-radar-cyan-newcorpus.md — факт/расчёт/интерпретация/неизвестно, n, Wilson CI, отрицательный результат фиксировать так же. Гейт ДО проверки: recall > 0.50 при FP < 0.10 на n >= 100 кадрах. НЕ переоткрывать опровергнутое «красный = враг» и малый радар (см. 64, 89, MASTERPLAN-v2 §2.1). Не перезаписывать ~/turngame/data/ и существующие отчёты. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795883774000,
+     "ts": 1795883821000,
      "source": "session",
      "title": "Новый dust2-cyan-корпус для детектора радара",
      "source_label": "ноут",
@@ -54,7 +71,7 @@
       "w2611200052465da0",
       "w261120005246413c"
      ],
-     "as_of": 1795883774000,
+     "as_of": 1795883821000,
      "is_stale": false
     },
     {
@@ -3005,31 +3022,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795732125783,
      "as_of": 1795728238000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-HjyV8Sw37w",
-     "text": "Вход — не чистый лист; прочитай указанные источники и не начинай заново. Источники: reports/interview-decisions-20261126.md (4 раунда), reports/matt-retro-all-dialogues-20261126.md, evolution-work/unified-7d-1126/artifacts/, shared-repo/bots/miniapp/. HANDOFF со skills. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PRIOR-INTAKE-*.md. VERDICT: PASS только после реальной проверки с командой, rc, SHA256 и mtime. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-1126/artifacts/IMP-PRIOR-INTAKE-c2.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795727974000,
-     "source": "session",
-     "title": "lree-IMP-PRIOR-INTAKE-c2",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261121055339bfc8"
-     ],
-     "answer": "[w261121055339bfc8] Loading the required skills and digging for the lost context in parallel.\nSearching past sessions for the missing voice recordings and checking what transcription tools actually exist here.\nThe past-s",
-     "answer_short": "w261121055339bfc8: Loading the required skills and digging for the lost context",
-     "answer_full": "Loading the required skills and digging for the lost context in parallel.\nSearching past sessions for the missing voice recordings and checking what transcription tools actually exist here.\nThe past-session search mostly found today's meta-sessions, not the recordings. Narrowing to the actual files and the transcription tooling.\nFound the actual recordings and — importantly — their finished transcripts. Checking what the earlier error actually was.\nThe gate wants two more skills; also found the report from that exact earlier run. Loading what's missing and reading the report.\nAll facts are verified. Building the two-layer answer and the poster now.\nPoster has a clipped word and the integrity gate rejected the first line for a digit. Fixing both and rebuilding.\nДа, большие аудио разбираются: три записи по моделированию систем расшифрованы, а сбой был не в расшифровке.\n- Два диктофона дали 97 и 105 абзацев; голосовое дало настройку: усиление оставляем равным двум, время интегрирования — около 19,75 минуты.\n- Ошибка была в загрузке трёх файлов со скриншота — сервер отказал (HTTP 400), поэтому использованы локальные записи.\n- По скиллам: поиск — `dsh-plugin-discovery`, тесты — `skill-creator`; каталог DSH дал `dsh-skill-eval`.\nСАМОИСЧЕРПАНИЕ: 4 гейта PASS — human_readable, draft, answer_integrity, presentation (8 PASS / 0 FAIL). Отчёт от 26.11 12:27, sha256 `985e472a…`.",
-     "answer_digest": {
-      "length": 1388,
-      "sha256": "3a1f03cb88a33031bece19d64fb0f0691cf79c231a6ccf861404422236bea443"
-     },
-     "answer_text_id": "3a1f03cb88a33031",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795732125783,
-     "as_of": 1795727974000,
      "is_stale": true
     },
     {
