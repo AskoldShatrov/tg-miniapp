@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-28 20:00",
+ "generated": "2026-11-28 20:30",
  "window": {
   "start": "2026-11-28T03:15",
-  "end": "2026-11-28T16:37",
+  "end": "2026-11-28T17:21",
   "sessions": 157,
   "roots": 150
  },
@@ -23,18 +23,18 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 320,
+   "median_s": 322,
    "max_s": 9726,
-   "last": "2026-11-28T16:37:14.955000+00:00",
+   "last": "2026-11-28T17:21:43.386000+00:00",
    "outcomes": {
-    "done": 131,
+    "done": 132,
     "cancelled": 6,
     "waiting_user": 2,
-    "error": 11
+    "error": 10
    },
    "example": [
-    "9jt4wRf0",
-    "YmsS5Diz"
+    "J3NgE7nI",
+    "wH1q5Ccn"
    ],
    "actual": [
     {
@@ -45,19 +45,19 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 111 из 150, ≈6 вызовов за раз",
+     "t": "в 112 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 131 из 150, ≈25 вызовов за раз",
+     "t": "в 133 из 150, ≈26 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 105 из 150, ≈6 вызовов за раз",
+     "t": "в 107 из 150, ≈6 вызовов за раз",
      "d": 1
     },
     {
@@ -718,81 +718,87 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 14,
+   "runs": 16,
    "median_s": 1093,
    "max_s": 1842,
-   "last": "2026-11-28T16:37:14.955000+00:00",
+   "last": "2026-11-28T17:21:43.386000+00:00",
    "outcomes": {
-    "done": 14
+    "done": 16
    },
    "example": [
-    "9jt4wRf0",
-    "YmsS5Diz"
+    "J3NgE7nI",
+    "wH1q5Ccn"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 14"
+     "t": "запусков: 16"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 12 из 14",
+     "t": "в 14 из 16",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 13 из 14",
+     "t": "в 15 из 16",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 6 из 14",
+     "t": "в 7 из 16",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 14 из 14, ≈55 вызовов за раз",
+     "t": "в 16 из 16, ≈54 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 15 из 16, ≈11 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "network-constraints",
+     "t": "в 3 из 16",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 6 из 14",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "explore",
-     "t": "в 14 из 14, ≈10 вызовов за раз",
+     "t": "в 7 из 16",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 3 из 14",
+     "t": "в 3 из 16",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 14 из 14, ≈15 вызовов за раз",
+     "t": "в 16 из 16, ≈14 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "answer-integrity",
-     "t": "в 4 из 14",
+     "t": "в 4 из 16",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: code-review, game-mode, network-constraints, pc-bridge-live, resources, slow-deliberation",
-     "t": "меньше 3 из 14",
+     "n": "реже: code-review, game-mode, pc-bridge-live, resources, slow-deliberation",
+     "t": "меньше 3 из 16",
      "d": 1
     }
    ],
@@ -860,7 +866,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×128, opencode/deepseek-v4.1-flash-free ×2, opencode-go/hungerg-free ×1",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×130, opencode/deepseek-v4.1-flash-free ×2, opencode-go/hungerg-free ×1",
    "level": "ok",
    "f": "C13"
   },
