@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.82,
-      "remaining_hours": 13.18,
+      "elapsed_hours": 6.83,
+      "remaining_hours": 13.17,
       "progress_pct": 34,
-      "cycles": 546,
-      "heartbeat_human": "12:25:52",
+      "cycles": 547,
+      "heartbeat_human": "12:26:52",
       "tree": {
         "phases": [
           {
@@ -123,7 +123,7 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-J",
             "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
             "last": "PROMOTE",
             "score": 7,
@@ -173,17 +173,18 @@
             "last": "WARMUP",
             "score": 2,
             "verified": false
+          },
+          {
+            "id": "IMP-WRITER-NIGHT-CURATION-K",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:33:31",
-            "cycle": 512,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:34:46",
             "cycle": 513,
@@ -655,6 +656,14 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:26:56",
+            "cycle": 547,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
@@ -671,11 +680,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.82,
-      "remaining_hours": 13.18,
+      "elapsed_hours": 6.83,
+      "remaining_hours": 13.17,
       "progress_pct": 34,
-      "cycles": 557,
-      "heartbeat_human": "12:25:52",
+      "cycles": 558,
+      "heartbeat_human": "12:26:52",
       "tree": {
         "phases": [
           {
@@ -823,20 +832,20 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-M",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 3,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "SF-WRITER-NIGHT-CURATION",
             "title": "Writer-виток scanfeed: переформулировка заменена физической парой",
             "cycles": 2,
             "max": 2,
             "last": "RETHINK_REQUIRED",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-M",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 2,
-            "max": 5,
-            "last": "PROMOTE",
             "score": 7,
             "verified": true
           },
@@ -860,14 +869,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:44:41",
-            "cycle": 517,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:44:41",
             "cycle": 517,
@@ -1339,6 +1340,14 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:27:06",
+            "cycle": 558,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
@@ -1352,6 +1361,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795857975,
-  "fetched_human": "2026-11-28 12:26:15 +0300"
+  "fetched_at": 1795858035,
+  "fetched_human": "2026-11-28 12:27:15 +0300"
 }
