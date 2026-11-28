@@ -2333,7 +2333,10 @@ function pairChat(sent, replies){
   for(let j=0;j<rs.length;j++){
     if(!used[j]) out.push({rid:rs[j].rid||("r"+j),stray:true,rep:rs[j],t:rs[j].t,rid_match:false});
   }
-  return out.slice(-20);
+  /* Старые входящие ответы не имеют права вытеснить свежий pending:
+     оставляем до 20 связок и до 8 входящих, свежий запрос всегда виден. */
+  const kept=out.filter((p,i)=>!p.stray || i>=out.length-8);
+  return kept.slice(-28);
 }
 let chatSig="", chatPinned=true, chatUnread=0, lastRepCount=0;
 function atBottom(el){ return el.scrollHeight-el.scrollTop-el.clientHeight<56; }
