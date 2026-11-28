@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-27 23:30",
+ "generated": "2026-11-28 06:00",
  "window": {
-  "start": "2026-11-27T10:07",
-  "end": "2026-11-27T20:29",
+  "start": "2026-11-27T10:49",
+  "end": "2026-11-28T02:59",
   "sessions": 166,
   "roots": 150
  },
@@ -23,16 +23,16 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 361,
-   "max_s": 15537,
-   "last": "2026-11-27T20:29:25.135000+00:00",
+   "median_s": 363,
+   "max_s": 22747,
+   "last": "2026-11-28T02:59:45.698000+00:00",
    "outcomes": {
-    "waiting_user": 3,
-    "done": 147
+    "waiting_user": 4,
+    "done": 146
    },
    "example": [
-    "Qmm30wiR",
-    "xtsiXerH"
+    "giClsU0g",
+    "3StvHcio"
    ],
    "actual": [
     {
@@ -43,7 +43,7 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 45 из 150",
+     "t": "в 46 из 150",
      "d": 1
     },
     {
@@ -55,13 +55,13 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 122 из 150, ≈8 вызовов за раз",
+     "t": "в 123 из 150, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 31 из 150",
+     "t": "в 32 из 150",
      "d": 1
     },
     {
@@ -72,7 +72,7 @@
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, decision-memory, disk-triage, docx, draft-gate, game-mode,",
+     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, disk-triage, docx, draft-gate, game-mode, image-read, long",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -929,82 +929,82 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 34,
-   "median_s": 773,
-   "max_s": 11198,
-   "last": "2026-11-27T20:17:44.792000+00:00",
+   "runs": 36,
+   "median_s": 804,
+   "max_s": 22747,
+   "last": "2026-11-28T02:55:08.426000+00:00",
    "outcomes": {
     "waiting_user": 1,
-    "done": 33
+    "done": 35
    },
    "example": [
-    "VNjacSoB",
-    "BBW8tAnw"
+    "IMwLb3GO",
+    "F4kpd32Q"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 34"
+     "t": "запусков: 36"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 31 из 34",
+     "t": "в 32 из 36",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 31 из 34",
+     "t": "в 32 из 36",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 15 из 34",
-     "d": 1
-    },
-    {
-     "k": "tool",
-     "n": "explore",
-     "t": "в 30 из 34, ≈12 вызовов за раз",
+     "t": "в 17 из 36",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 34 из 34, ≈38 вызовов за раз",
+     "t": "в 36 из 36, ≈40 вызовов за раз",
+     "d": 1
+    },
+    {
+     "k": "tool",
+     "n": "explore",
+     "t": "в 31 из 36, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 7 из 34",
+     "t": "в 7 из 36",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 16 из 34",
+     "t": "в 17 из 36",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 34 из 34, ≈14 вызовов за раз",
+     "t": "в 36 из 36, ≈14 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "show-in-answer",
-     "t": "в 8 из 34",
+     "t": "в 8 из 36",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, disk-triage, docx, draft-gate, game-mode, image-read, long",
-     "t": "меньше 7 из 34",
+     "t": "меньше 7 из 36",
      "d": 1
     }
    ],
@@ -1088,7 +1088,7 @@
    "name": "agent-index",
    "when": "Каждые 30 мин",
    "what": "agent_index_build.py пересобирает AGENT-INDEX.md.",
-   "state": "AGENT-INDEX.md обновлён 0.0 ч назад",
+   "state": "AGENT-INDEX.md обновлён 0.4 ч назад",
    "level": "ok",
    "f": "C11"
   },
@@ -1096,8 +1096,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 26, с файлами 0",
-   "level": "warn",
+   "state": "Владельцев 39, с файлами 14",
+   "level": "ok",
    "f": "C11"
   },
   {
