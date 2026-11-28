@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.39,
-      "remaining_hours": 8.61,
+      "elapsed_hours": 11.41,
+      "remaining_hours": 8.59,
       "progress_pct": 57,
-      "cycles": 556,
-      "heartbeat_human": "17:00:32",
+      "cycles": 557,
+      "heartbeat_human": "17:01:32",
       "tree": {
         "phases": [
           {
@@ -157,6 +157,15 @@
             "verified": true
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-L",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 3,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 2,
@@ -182,26 +191,9 @@
             "last": "WARMUP",
             "score": 2,
             "verified": false
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-L",
-            "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 2,
-            "max": 5,
-            "last": "RETHINK_REQUIRED",
-            "score": 4,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "08:54:03",
-            "cycle": 519,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "RETHINK_REQUIRED",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
           {
             "clock": "09:00:41",
             "cycle": 520,
@@ -673,6 +665,14 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "17:01:23",
+            "cycle": 557,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.39,
-      "remaining_hours": 8.61,
+      "elapsed_hours": 11.41,
+      "remaining_hours": 8.59,
       "progress_pct": 57,
-      "cycles": 570,
-      "heartbeat_human": "17:00:32",
+      "cycles": 571,
+      "heartbeat_human": "17:01:32",
       "tree": {
         "phases": [
           {
@@ -859,6 +859,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-O",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 3,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "SF-WRITER-NIGHT-CURATION",
             "title": "Writer-виток scanfeed: переформулировка заменена физической парой",
             "cycles": 2,
@@ -866,15 +875,6 @@
             "last": "RETHINK_REQUIRED",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-O",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 2,
-            "max": 5,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
           },
           {
             "id": "CONSULT-FAMILY-MUT-WRITER",
@@ -896,14 +896,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:39:27",
-            "cycle": 527,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
           {
             "clock": "09:45:53",
             "cycle": 528,
@@ -1375,6 +1367,14 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "17:01:33",
+            "cycle": 571,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
@@ -1383,7 +1383,7 @@
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     },
     {
@@ -1391,11 +1391,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 3.88,
-      "remaining_hours": 4.12,
-      "progress_pct": 48,
-      "cycles": 13,
-      "heartbeat_human": "17:00:20",
+      "elapsed_hours": 3.9,
+      "remaining_hours": 4.1,
+      "progress_pct": 49,
+      "cycles": 14,
+      "heartbeat_human": "17:01:20",
       "tree": {
         "phases": [
           {
@@ -1455,9 +1455,9 @@
           {
             "id": "CAP-SKILL-EXEC-1128",
             "title": "Аудит исполняемых механизмов у маршрутизируемых скиллов",
-            "cycles": 1,
+            "cycles": 2,
             "max": 2,
-            "last": "MUTATE",
+            "last": "WARMUP",
             "score": 5,
             "verified": false
           },
@@ -1639,19 +1639,27 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "17:00:45",
+            "cycle": 14,
+            "task": "CAP-SKILL-EXEC-1128",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует"
           }
         ],
         "strategy": {
           "version": 8,
           "mutations": 7
         },
-        "events": 21,
+        "events": 22,
         "avg_score": 4.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795874437,
-  "fetched_human": "2026-11-28 17:00:37 +0300"
+  "fetched_at": 1795874497,
+  "fetched_human": "2026-11-28 17:01:37 +0300"
 }
