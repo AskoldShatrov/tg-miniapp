@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.44,
-      "remaining_hours": 12.56,
+      "elapsed_hours": 7.46,
+      "remaining_hours": 12.54,
       "progress_pct": 37,
-      "cycles": 550,
-      "heartbeat_human": "13:03:23",
+      "cycles": 551,
+      "heartbeat_human": "13:04:23",
       "tree": {
         "phases": [
           {
@@ -185,14 +185,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:36:01",
-            "cycle": 514,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:37:16",
             "cycle": 515,
@@ -664,11 +656,19 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "13:03:59",
+            "cycle": 551,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос task-contract"
           }
         ],
         "strategy": {
-          "version": 432,
-          "mutations": 431
+          "version": 433,
+          "mutations": 432
         },
         "events": 400,
         "avg_score": 0.0,
@@ -680,11 +680,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.44,
-      "remaining_hours": 12.56,
+      "elapsed_hours": 7.46,
+      "remaining_hours": 12.54,
       "progress_pct": 37,
-      "cycles": 562,
-      "heartbeat_human": "13:03:22",
+      "cycles": 563,
+      "heartbeat_human": "13:04:23",
       "tree": {
         "phases": [
           {
@@ -850,6 +850,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-N",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 2,
+            "max": 5,
+            "last": "RETHINK_REQUIRED",
+            "score": 3,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 1,
@@ -866,34 +875,9 @@
             "last": "MUTATE",
             "score": 2,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-N",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 1,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "09:01:32",
-            "cycle": 520,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "09:01:32",
-            "cycle": 520,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
           {
             "clock": "09:06:57",
             "cycle": 521,
@@ -1357,19 +1341,35 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:04:17",
+            "cycle": 563,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:04:17",
+            "cycle": 563,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "RETHINK_REQUIRED",
+            "score": 3,
+            "note": "нет completion promise"
           }
         ],
         "strategy": {
-          "version": 389,
-          "mutations": 388
+          "version": 390,
+          "mutations": 389
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795860220,
-  "fetched_human": "2026-11-28 13:03:41 +0300"
+  "fetched_at": 1795860281,
+  "fetched_human": "2026-11-28 13:04:41 +0300"
 }
