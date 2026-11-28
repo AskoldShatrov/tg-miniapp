@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.73,
-      "remaining_hours": 18.27,
+      "elapsed_hours": 1.74,
+      "remaining_hours": 18.26,
       "progress_pct": 9,
-      "cycles": 477,
-      "heartbeat_human": "07:20:40",
+      "cycles": 478,
+      "heartbeat_human": "07:21:40",
       "tree": {
         "phases": [
           {
@@ -113,14 +113,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "22:31:05",
-            "cycle": 433,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: LE_ARTIFACT: mtime вне окна витка (age=188.2s)\",\n    \"STALE_EVIDENCE: mtime в"
-          },
           {
             "clock": "22:41:38",
             "cycle": 434,
@@ -592,11 +584,19 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "07:21:04",
+            "cycle": 478,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
           }
         ],
         "strategy": {
-          "version": 383,
-          "mutations": 382
+          "version": 384,
+          "mutations": 383
         },
         "events": 400,
         "avg_score": 0.0,
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.73,
-      "remaining_hours": 18.27,
+      "elapsed_hours": 1.74,
+      "remaining_hours": 18.26,
       "progress_pct": 9,
-      "cycles": 474,
-      "heartbeat_human": "07:20:47",
+      "cycles": 475,
+      "heartbeat_human": "07:21:47",
       "tree": {
         "phases": [
           {
@@ -707,14 +707,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "22:08:50",
-            "cycle": 429,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "22:10:05",
             "cycle": 430,
@@ -1186,11 +1178,19 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
+          },
+          {
+            "clock": "07:21:36",
+            "cycle": 475,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
           }
         ],
         "strategy": {
-          "version": 338,
-          "mutations": 337
+          "version": 339,
+          "mutations": 338
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1199,6 +1199,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795839653,
-  "fetched_human": "2026-11-28 07:20:53 +0300"
+  "fetched_at": 1795839715,
+  "fetched_human": "2026-11-28 07:21:55 +0300"
 }
