@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.65,
-      "remaining_hours": 15.35,
+      "elapsed_hours": 4.66,
+      "remaining_hours": 15.34,
       "progress_pct": 23,
       "cycles": 534,
-      "heartbeat_human": "10:15:40",
+      "heartbeat_human": "10:16:40",
       "tree": {
         "phases": [
           {
@@ -644,11 +644,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.65,
-      "remaining_hours": 15.35,
+      "elapsed_hours": 4.66,
+      "remaining_hours": 15.34,
       "progress_pct": 23,
-      "cycles": 533,
-      "heartbeat_human": "10:15:48",
+      "cycles": 534,
+      "heartbeat_human": "10:16:48",
       "tree": {
         "phases": [
           {
@@ -780,30 +780,14 @@
           {
             "id": "SF-WRITER-NIGHT-CURATION-H",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 2,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:14:18",
-            "cycle": 500,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
-          {
-            "clock": "08:20:15",
-            "cycle": 501,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:20:15",
             "cycle": 501,
@@ -1267,19 +1251,35 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
+          },
+          {
+            "clock": "10:16:39",
+            "cycle": 534,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "10:16:39",
+            "cycle": 534,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 382,
-          "mutations": 381
+          "version": 383,
+          "mutations": 382
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795850162,
-  "fetched_human": "2026-11-28 10:16:02 +0300"
+  "fetched_at": 1795850223,
+  "fetched_human": "2026-11-28 10:17:03 +0300"
 }
