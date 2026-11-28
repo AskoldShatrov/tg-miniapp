@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.89,
-      "remaining_hours": 19.11,
-      "progress_pct": 4,
-      "cycles": 464,
-      "heartbeat_human": "06:30:09",
+      "elapsed_hours": 0.9,
+      "remaining_hours": 19.1,
+      "progress_pct": 5,
+      "cycles": 465,
+      "heartbeat_human": "06:31:09",
       "tree": {
         "phases": [
           {
@@ -113,14 +113,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:58:07",
-            "cycle": 420,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "21:59:23",
             "cycle": 421,
@@ -592,6 +584,14 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "06:30:51",
+            "cycle": 465,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.89,
-      "remaining_hours": 19.11,
-      "progress_pct": 4,
-      "cycles": 461,
-      "heartbeat_human": "06:30:17",
+      "elapsed_hours": 0.9,
+      "remaining_hours": 19.1,
+      "progress_pct": 5,
+      "cycles": 462,
+      "heartbeat_human": "06:31:17",
       "tree": {
         "phases": [
           {
@@ -679,6 +679,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-B",
+            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
+            "cycles": 2,
+            "max": 3,
+            "last": "RETHINK_REQUIRED",
+            "score": 3,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 1,
@@ -686,15 +695,6 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-B",
-            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 1,
-            "max": 3,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           },
           {
             "id": "SF-WRITER-NIGHT-CURATION-C",
@@ -707,22 +707,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:52:52",
-            "cycle": 421,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "21:52:52",
-            "cycle": 421,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
           {
             "clock": "21:54:07",
             "cycle": 422,
@@ -1186,19 +1170,35 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "06:30:40",
+            "cycle": 462,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "06:30:40",
+            "cycle": 462,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "RETHINK_REQUIRED",
+            "score": 3,
+            "note": "нет completion promise"
           }
         ],
         "strategy": {
-          "version": 334,
-          "mutations": 333
+          "version": 335,
+          "mutations": 334
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795836625,
-  "fetched_human": "2026-11-28 06:30:25 +0300"
+  "fetched_at": 1795836685,
+  "fetched_human": "2026-11-28 06:31:25 +0300"
 }
