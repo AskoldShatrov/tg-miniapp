@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.28,
-      "remaining_hours": 16.72,
-      "progress_pct": 16,
+      "elapsed_hours": 3.3,
+      "remaining_hours": 16.7,
+      "progress_pct": 17,
       "cycles": 519,
-      "heartbeat_human": "08:54:10",
+      "heartbeat_human": "08:55:10",
       "tree": {
         "phases": [
           {
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.28,
-      "remaining_hours": 16.72,
-      "progress_pct": 16,
-      "cycles": 518,
-      "heartbeat_human": "08:54:17",
+      "elapsed_hours": 3.3,
+      "remaining_hours": 16.7,
+      "progress_pct": 17,
+      "cycles": 519,
+      "heartbeat_human": "08:55:17",
       "tree": {
         "phases": [
           {
@@ -715,6 +715,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-E",
+            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
+            "cycles": 3,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "SF-WRITER-NIGHT-CURATION",
             "title": "Writer-виток scanfeed: переформулировка заменена физической парой",
             "cycles": 2,
@@ -722,15 +731,6 @@
             "last": "RETHINK_REQUIRED",
             "score": 7,
             "verified": true
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-E",
-            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 2,
-            "max": 5,
-            "last": "RETHINK_REQUIRED",
-            "score": 2,
-            "verified": false
           },
           {
             "id": "CONSULT-FAMILY-MUT-WRITER",
@@ -743,22 +743,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "07:26:36",
-            "cycle": 479,
-            "task": "SCOUT_OPEN",
-            "action": "TRIGGER_ROTATED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "07:26:36",
-            "cycle": 479,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "07:27:51",
             "cycle": 480,
@@ -1222,19 +1206,35 @@
             "action": "RETHINK_REQUIRED",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "08:54:37",
+            "cycle": 519,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "08:54:37",
+            "cycle": 519,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 367,
-          "mutations": 366
+          "version": 368,
+          "mutations": 367
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795845260,
-  "fetched_human": "2026-11-28 08:54:20 +0300"
+  "fetched_at": 1795845319,
+  "fetched_human": "2026-11-28 08:55:19 +0300"
 }
