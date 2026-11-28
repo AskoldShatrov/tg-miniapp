@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.51,
-      "remaining_hours": 8.49,
+      "elapsed_hours": 11.52,
+      "remaining_hours": 8.48,
       "progress_pct": 58,
-      "cycles": 557,
-      "heartbeat_human": "17:07:32",
+      "cycles": 558,
+      "heartbeat_human": "17:08:32",
       "tree": {
         "phases": [
           {
@@ -139,6 +139,15 @@
             "verified": false
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-L",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 4,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "IMP-NIGHT-WATCHDOG-20H",
             "title": "Аудит свежих витков: что реально улучшилось и где регресс",
             "cycles": 3,
@@ -153,15 +162,6 @@
             "cycles": 3,
             "max": 3,
             "last": "MUTATE",
-            "score": 4,
-            "verified": true
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-L",
-            "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 3,
-            "max": 5,
-            "last": "WARMUP",
             "score": 4,
             "verified": true
           },
@@ -194,14 +194,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:00:41",
-            "cycle": 520,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "09:00:41",
             "cycle": 520,
@@ -673,6 +665,14 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "17:07:40",
+            "cycle": 558,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "живые RED/GREEN.log устарели; принят immutable pair proof текущего витка"
           }
         ],
         "strategy": {
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.51,
-      "remaining_hours": 8.49,
+      "elapsed_hours": 11.52,
+      "remaining_hours": 8.48,
       "progress_pct": 58,
       "cycles": 571,
-      "heartbeat_human": "17:07:32",
+      "heartbeat_human": "17:08:32",
       "tree": {
         "phases": [
           {
@@ -1391,11 +1391,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.0,
-      "remaining_hours": 4.0,
+      "elapsed_hours": 4.01,
+      "remaining_hours": 3.99,
       "progress_pct": 50,
-      "cycles": 14,
-      "heartbeat_human": "17:07:20",
+      "cycles": 15,
+      "heartbeat_human": "17:08:20",
       "tree": {
         "phases": [
           {
@@ -1464,11 +1464,11 @@
           {
             "id": "CAP-VERIFY-PROOF-1128",
             "title": "Честный разбор отсутствия verify_ok в движке",
-            "cycles": 0,
+            "cycles": 1,
             "max": 2,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
           }
         ],
         "trail": [
@@ -1647,19 +1647,27 @@
             "action": "WARMUP",
             "score": 5,
             "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "17:08:16",
+            "cycle": 15,
+            "task": "CAP-VERIFY-PROOF-1128",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
           "version": 8,
           "mutations": 7
         },
-        "events": 22,
+        "events": 23,
         "avg_score": 4.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795874859,
-  "fetched_human": "2026-11-28 17:07:39 +0300"
+  "fetched_at": 1795874920,
+  "fetched_human": "2026-11-28 17:08:40 +0300"
 }
