@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.84,
-      "remaining_hours": 14.16,
+      "elapsed_hours": 5.86,
+      "remaining_hours": 14.14,
       "progress_pct": 29,
-      "cycles": 539,
-      "heartbeat_human": "11:27:22",
+      "cycles": 540,
+      "heartbeat_human": "11:28:22",
       "tree": {
         "phases": [
           {
@@ -130,6 +130,15 @@
             "verified": true
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-I",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 3,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 2,
@@ -155,26 +164,9 @@
             "last": "WARMUP",
             "score": 2,
             "verified": false
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-I",
-            "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 2,
-            "max": 5,
-            "last": "WARMUP",
-            "score": 4,
-            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:26:00",
-            "cycle": 506,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:27:15",
             "cycle": 507,
@@ -646,6 +638,14 @@
             "action": "WARMUP",
             "score": 4,
             "note": "RED.log старше старта витка на 176 с"
+          },
+          {
+            "clock": "11:28:21",
+            "cycle": 540,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
@@ -654,7 +654,7 @@
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     },
     {
@@ -662,11 +662,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.84,
-      "remaining_hours": 14.16,
+      "elapsed_hours": 5.86,
+      "remaining_hours": 14.14,
       "progress_pct": 29,
       "cycles": 546,
-      "heartbeat_human": "11:27:22",
+      "heartbeat_human": "11:28:22",
       "tree": {
         "phases": [
           {
@@ -1325,6 +1325,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795854460,
-  "fetched_human": "2026-11-28 11:27:40 +0300"
+  "fetched_at": 1795854521,
+  "fetched_human": "2026-11-28 11:28:41 +0300"
 }
