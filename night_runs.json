@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.37,
-      "remaining_hours": 11.63,
+      "elapsed_hours": 8.38,
+      "remaining_hours": 11.62,
       "progress_pct": 42,
       "cycles": 556,
-      "heartbeat_human": "13:58:53",
+      "heartbeat_human": "13:59:53",
       "tree": {
         "phases": [
           {
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.37,
-      "remaining_hours": 11.63,
+      "elapsed_hours": 8.38,
+      "remaining_hours": 11.62,
       "progress_pct": 42,
-      "cycles": 568,
-      "heartbeat_human": "13:58:53",
+      "cycles": 569,
+      "heartbeat_human": "13:59:53",
       "tree": {
         "phases": [
           {
@@ -868,6 +868,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-O",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 2,
+            "max": 5,
+            "last": "RETHINK_REQUIRED",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 1,
@@ -884,34 +893,9 @@
             "last": "MUTATE",
             "score": 2,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-O",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 1,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "09:32:27",
-            "cycle": 526,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "09:32:27",
-            "cycle": 526,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
           {
             "clock": "09:39:27",
             "cycle": 527,
@@ -1375,15 +1359,31 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:59:55",
+            "cycle": 569,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:59:55",
+            "cycle": 569,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "RETHINK_REQUIRED",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 395,
-          "mutations": 394
+          "version": 396,
+          "mutations": 395
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -1391,11 +1391,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.86,
-      "remaining_hours": 7.14,
+      "elapsed_hours": 0.87,
+      "remaining_hours": 7.13,
       "progress_pct": 11,
-      "cycles": 11,
-      "heartbeat_human": "13:59:04",
+      "cycles": 12,
+      "heartbeat_human": "14:00:04",
       "tree": {
         "phases": [
           {
@@ -1446,9 +1446,9 @@
           {
             "id": "CAP-PLUGIN-AB-1128",
             "title": "Планирование честного A/B эффекта расширения поиска инструментов",
-            "cycles": 1,
+            "cycles": 2,
             "max": 2,
-            "last": "MUTATE",
+            "last": "RETHINK_REQUIRED",
             "score": 5,
             "verified": false
           },
@@ -1607,19 +1607,35 @@
             "action": "MUTATE",
             "score": 5,
             "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "14:00:04",
+            "cycle": 12,
+            "task": "CAP-PLUGIN-AB-1128",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:00:04",
+            "cycle": 12,
+            "task": "CAP-PLUGIN-AB-1128",
+            "action": "RETHINK_REQUIRED",
+            "score": 5,
+            "note": "RED.log отсутствует"
           }
         ],
         "strategy": {
-          "version": 6,
-          "mutations": 5
+          "version": 7,
+          "mutations": 6
         },
-        "events": 17,
+        "events": 19,
         "avg_score": 4.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795863558,
-  "fetched_human": "2026-11-28 13:59:18 +0300"
+  "fetched_at": 1795863620,
+  "fetched_human": "2026-11-28 14:00:20 +0300"
 }
