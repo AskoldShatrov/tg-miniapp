@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.62,
-      "remaining_hours": 19.38,
+      "elapsed_hours": 0.63,
+      "remaining_hours": 19.37,
       "progress_pct": 3,
       "cycles": 456,
-      "heartbeat_human": "06:14:09",
+      "heartbeat_human": "06:15:09",
       "tree": {
         "phases": [
           {
@@ -599,11 +599,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.62,
-      "remaining_hours": 19.38,
+      "elapsed_hours": 0.63,
+      "remaining_hours": 19.37,
       "progress_pct": 3,
-      "cycles": 460,
-      "heartbeat_human": "06:14:17",
+      "cycles": 461,
+      "heartbeat_human": "06:15:17",
       "tree": {
         "phases": [
           {
@@ -681,30 +681,14 @@
           {
             "id": "SF-WRITER-NIGHT-CURATION-B",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 0,
+            "cycles": 1,
             "max": 3,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 7,
+            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "21:51:37",
-            "cycle": 420,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "21:51:37",
-            "cycle": 420,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
           {
             "clock": "21:52:52",
             "cycle": 421,
@@ -1168,11 +1152,27 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
+          },
+          {
+            "clock": "06:14:25",
+            "cycle": 461,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "06:14:25",
+            "cycle": 461,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
-          "version": 333,
-          "mutations": 332
+          "version": 334,
+          "mutations": 333
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1181,6 +1181,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795835661,
-  "fetched_human": "2026-11-28 06:14:21 +0300"
+  "fetched_at": 1795835720,
+  "fetched_human": "2026-11-28 06:15:20 +0300"
 }
