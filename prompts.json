@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-28T14:06:38+00:00",
-  "generated_human": "28.11 14:06 UTC",
-  "as_of": 1795874796695,
+  "generated": "2026-11-28T14:07:38+00:00",
+  "generated_human": "28.11 14:07 UTC",
+  "as_of": 1795874857074,
   "stale_days": 1,
-  "count": 1172,
+  "count": 1173,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -19,11 +19,10 @@
    "inbox.log",
    "opencode.db (сессии ноута)",
    "wants.json",
-   "replies.json"
+   "replies.json",
+   "runtime/tmp-checkpoint/pc_user_msgs.json"
   ],
-  "sources_skipped": [
-   "runtime/tmp-checkpoint/pc_user_msgs.json (выгрузка с ПК ещё не настроена)"
-  ],
+  "sources_skipped": [],
   "note": "группировка по темам; связи с хотелками (минимум 2 слова); ответ — реальная доставка из replies.json с префиксом want_id; as_of — время вопроса, is_stale — возраст доставки; сессии ноута — последние 800 с user-сообщениями из живой БД, до 2 текста на сессию (окно 3 дн), не вся история"
  },
  "groups": [
@@ -42,14 +41,14 @@
     {
      "id": "ses-PVL8er71RT",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c558.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795874794000,
+     "ts": 1795874854000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-L-c558",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795874794000,
+     "as_of": 1795874854000,
      "is_stale": false
     },
     {
@@ -5299,14 +5298,14 @@
     {
      "id": "ses-Y4zV7TbMhM",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ АРТЕФАКТ. Разбери, почему все витки движка workspace /home/nyaka/evolution-work/skill-upgrade-1128 имеют verify_ok=false: прочитай state.json, ledger.jsonl, код red_green_pair и immutable_pair_proof в /home/nyaka/scripts/background/evolution_engine/engine.py. Объясни разницу между живыми RED.log/GREEN.log и неизменяемым pair proof, почему подделка логов была бы обманом, и предложи минимальный легальный путь получить verify_ok=true для нового витка. Запиши НОВЫЙ файл /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-VERIFY-PROOF-1128-*.md с маркером CAP-VERIFY-PROOF-1128, строками кода и sha256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-VERIFY-PROOF-1128-c15.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795874794000,
+     "ts": 1795874853000,
      "source": "session",
      "title": "lree-CAP-VERIFY-PROOF-1128-c15",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795874794000,
+     "as_of": 1795874853000,
      "is_stale": false
     },
     {
@@ -15782,6 +15781,29 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795727751695,
      "as_of": 1795727532000,
+     "is_stale": true
+    },
+    {
+     "id": "pc-BY63UoAj3F",
+     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
+     "ts": 1795717085000,
+     "source": "pc",
+     "title": "Закачка и разбор T6.7",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-BY63UoAj3F] Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск чере",
+     "answer_short": "pc-BY63UoAj3F: Подключённый мост к сайтам работает на GitHub и YouTube; бол",
+     "answer_full": "Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск через него закрыт сервисами с ответами 403 и 451. Цифры на картинке про ECC устарели: сейчас 72 агента и 328 навыков, а не 73 и 302; поддержка OpenCode там бета.\n🟩 Скилл в OpenCode: CLI 1.6.1, пять каналов, ссылка в каноничной папке скиллов.\n🟩 Живой тест: GitHub 4 из 4, YouTube 3 из 3 — реальные результаты, не документация.\n🟨 ECC по исходникам: 72 агента и 328 навыков, а не 73 и 302; OpenCode — бета, дублирует гейты.\nШаги: пробовать скилл на конкретных ссылках с GitHub и YouTube; не включать логин и новые сайты без отдельного запроса; ECC и Ruflo — только выборочные инструкции под замер на одной задаче.\nВеб-канал дал 403 и 451 — это региональная блокировка, не поломка установки. Полный разбор записан в отчёт.\nСАМОИСЧЕРПАНИЕ: четыре гейта ответа PASS, презентация 8 PASS / 0 FAIL; логин и куки не трогались, конфиг OpenCode и задачи ПК не менялись.",
+     "answer_digest": {
+      "length": 1053,
+      "sha256": "b9bc47d39f34a03884cea77baa0b1ab4618ffc722b83d12c8248a85889dbe2e2"
+     },
+     "answer_text_id": "b9bc47d39f34a038",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795727751695,
+     "as_of": 1795717085000,
      "is_stale": true
     },
     {
