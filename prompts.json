@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T05:15:03+00:00",
-  "generated_human": "28.11 05:15 UTC",
-  "as_of": 1795842902204,
+  "generated": "2026-11-28T05:16:04+00:00",
+  "generated_human": "28.11 05:16 UTC",
+  "as_of": 1795842962957,
   "stale_days": 1,
   "count": 1162,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-TtUrfyISay",
      "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-D-c502.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795842896000,
+     "ts": 1795842957000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-D-c502",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795842896000,
+     "as_of": 1795842957000,
      "is_stale": false
     },
     {
@@ -4048,6 +4048,19 @@
    ],
    "prompts": [
     {
+     "id": "ses-rFT58nMnBk",
+     "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 'artifacts/SF-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/SF-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-D-c501.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795842953000,
+     "source": "session",
+     "title": "lree-SF-WRITER-NIGHT-CURATION-D-c501",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795842953000,
+     "is_stale": false
+    },
+    {
      "id": "ses-pRh31muJ6M",
      "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 'artifacts/SF-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/SF-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-D-c500.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
      "ts": 1795842858000,
@@ -7519,31 +7532,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795726918074,
      "as_of": 1795714293000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-6GkHi1ngbK",
-     "text": "ДЕМО. 100 новых FaceIT dust2 демо: запустить парсинг на ПК через pc-bridge, собрать duels, сверить с 307 уже в БД. Гейт: число новых дуэлей > 0 и отчёт с n. Новый отчёт ~/overnight/cloud_tracks/C09-28585.md. Не трогать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795713855000,
-     "source": "session",
-     "title": "C09-28585: новые дуэли FaceIT dust2",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли н",
-     "answer_short": "w261119190741dca0: Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю ши",
-     "answer_full": "Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли независимые доказательства пользы у таких больших наборов агентов и навыков.\nПока идёт разведка, measuring собственный контур: сколько у меня навыков и сколько места занимают их описания в контексте.\nРазведка по пользе больших наборов дала жёсткие данные: фокусированные наборы выигрывают у огромных, а описания сотен навыков съедают контекст. Добавляю в отчёт.\nОтчёт собран. Считаю контрольную сумму и собираю постер с одним выводом.\nБольшие наборы агентов полезны как библиотека процедур, но не как знак качества: короткие наборы выигрывают, а сотни навыков съедают контекст и делают часть невидимой.\nПОНЯТНО: простыми словами, ценность не в количестве папок, а в том, что процедура реально помогает. Когда навыков слишком много, модель видит только названия и описания, и часть просто теряется.\n**Главное:**\n🟦 В ECC сейчас 328 навыков и 72 агента — скрин обещал 302 и 73.\n🟩 С курируемыми навыками успех вырос с 33,9 до 50,5 процента; но малые наборы обходят огромные связки.\n🟥 У 773 навыков в ECC — 170 тысяч знаков описаний, в четыре раза больше лимита листинга.\n**Шаги:** взять только процедуры под конкретные задачи; держать активных навыков не больше трёх на сценарий; мерить вызовы инструментов, а не счётчик файлов.\n**Проверка:** у меня 71 навык и 23 тысячи знаков описаний — пока ниже порога, но рост надо контролировать. Пакет не ставил.",
-     "answer_digest": {
-      "length": 1547,
-      "sha256": "a20fa7231f7c70a036c8f4603c5d3840a2b71c73a32010580699dad3240c2105"
-     },
-     "answer_text_id": "a20fa7231f7c70a0",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795726918074,
-     "as_of": 1795713855000,
      "is_stale": true
     },
     {
