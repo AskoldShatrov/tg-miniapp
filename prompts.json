@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T04:40:52+00:00",
-  "generated_human": "28.11 04:40 UTC",
-  "as_of": 1795840851146,
+  "generated": "2026-11-28T04:41:52+00:00",
+  "generated_human": "28.11 04:41 UTC",
+  "as_of": 1795840911287,
   "stale_days": 1,
   "count": 1160,
   "groups": 9,
@@ -42,27 +42,27 @@
     {
      "id": "ses-J3mTXw20Zm",
      "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-D-c487.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795840842000,
+     "ts": 1795840909000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-D-c487",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795840842000,
+     "as_of": 1795840909000,
      "is_stale": false
     },
     {
      "id": "ses-Wo0eb4GSje",
      "text": "Один физический writer-виток без вопросов и без слова «готово» без проверки. Прочитай последние 80 строк /home/nyaka/evolution-work-researcher/ledger.jsonl и /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-WRITER-NIGHT-CURATION-C-cN.md: доля REFORMULATE за последние 80 витков, число verify_ok=true, причина холостого витка, команда проверки, её rc, путь артефакта, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log корня workspace. Порядок mtime RED ≤ артефакт ≤ GREEN. Сохрани сырые выходы RED и GREEN в файл <путь_артефакта с суффиксом .pair.json> с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0 гейта. Пороги 0.5, 180, 900 и 0.2 не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-D-c350.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795840826000,
+     "ts": 1795840908000,
      "source": "session",
      "title": "lree-RSCH-WRITER-NIGHT-CURATION-D-c350",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795840826000,
+     "as_of": 1795840908000,
      "is_stale": false
     },
     {
