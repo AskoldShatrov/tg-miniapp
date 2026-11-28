@@ -2175,6 +2175,18 @@ function dshFallback(payload){
   toast("Не отправлено: открой мини-ап кнопкой бота");
   return false;
 }
+function syncChatDelivery(rid, ok){
+  if(!rid || typeof CHAT==="undefined" || !CHAT) return;
+  const m=(CHAT.sent||[]).find(x=>String(x.rid||"")===String(rid));
+  if(!m) return;
+  const failed=ok===false;
+  if(m.failed!==failed){
+    m.failed=failed;
+    try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
+    if(typeof renderChat==="function") renderChat();
+    if(typeof renderStudioReplies==="function") renderStudioReplies();
+  }
+}
 function dshSend(payload, okText){
   var base=(LATEST_STATUS&&LATEST_STATUS.process_api_url)||MINIAPP_API_BASE;
   var init="";
@@ -2182,10 +2194,15 @@ function dshSend(payload, okText){
     init=(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)||
          (typeof tg!=="undefined"&&tg&&tg.initData)||"";
   }catch(e){}
-  var text=String(payload.text||payload.id||JSON.stringify(payload));
+  var text=String(payload.text||"").trim();
+  if(!text && payload.source==="miniapp_studio"){
+    text="Запрос из Студии: "+JSON.stringify({id:payload.id||"",kind:payload.kind||"",
+      sticker:payload.sticker||"",rating:payload.rating||0,links:payload.links||[]});
+  }
+  if(!text) text=String(payload.id||JSON.stringify(payload));
   var chatLike=/^miniapp_(chat|interview|interview_answer|studio)$/.test(String(payload.source||""));
-  if(chatLike && !init) return Promise.resolve(dshFallback(payload));
-  if(!base || typeof fetch!=="function") return Promise.resolve(dshFallback(payload));
+  if(chatLike && !init){ const ok=dshFallback(payload); syncChatDelivery(payload.rid,ok); return Promise.resolve(ok); }
+  if(!base || typeof fetch!=="function"){ const ok=dshFallback(payload); syncChatDelivery(payload.rid,ok); return Promise.resolve(ok); }
   return fetchTimed(base+"/dsh/task",{
     method:"POST",
     headers:{"Content-Type":"application/json","X-Telegram-Init-Data":init,
@@ -2198,9 +2215,10 @@ function dshSend(payload, okText){
     return r.json();
   }).then(function(j){
     if(!j || !j.ok) throw new Error("dsh/task rejected");
+    syncChatDelivery(payload.rid,true);
     if(okText) toast(okText);
     return true;
-  }).catch(function(){ return dshFallback(payload); });
+  }).catch(function(){ const ok=dshFallback(payload); syncChatDelivery(payload.rid,ok); return ok; });
 }
 function canSend(){ return dshAvailable(); }
 

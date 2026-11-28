@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.39,
-      "remaining_hours": 13.61,
+      "elapsed_hours": 6.41,
+      "remaining_hours": 13.59,
       "progress_pct": 32,
       "cycles": 542,
-      "heartbeat_human": "12:00:52",
+      "heartbeat_human": "12:01:52",
       "tree": {
         "phases": [
           {
@@ -163,6 +163,15 @@
             "max": 5,
             "last": "WARMUP",
             "score": 2,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER-NIGHT-CURATION-J",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
             "verified": false
           }
         ],
@@ -662,11 +671,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.39,
-      "remaining_hours": 13.61,
+      "elapsed_hours": 6.41,
+      "remaining_hours": 13.59,
       "progress_pct": 32,
-      "cycles": 553,
-      "heartbeat_human": "12:00:52",
+      "cycles": 554,
+      "heartbeat_human": "12:01:52",
       "tree": {
         "phases": [
           {
@@ -796,20 +805,20 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-L",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 4,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "SF-WRITER-NIGHT-CURATION-B",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
             "cycles": 3,
             "max": 3,
             "last": "MUTATE",
-            "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-L",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 3,
-            "max": 5,
-            "last": "PROMOTE",
             "score": 7,
             "verified": true
           },
@@ -842,14 +851,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:37:45",
-            "cycle": 515,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:37:45",
             "cycle": 515,
@@ -1321,6 +1322,14 @@
             "action": "PROMOTE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "12:01:50",
+            "cycle": 554,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
@@ -1334,6 +1343,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795856459,
-  "fetched_human": "2026-11-28 12:00:59 +0300"
+  "fetched_at": 1795856522,
+  "fetched_human": "2026-11-28 12:02:02 +0300"
 }
