@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T14:29:51+00:00",
-  "generated_human": "28.11 14:29 UTC",
-  "as_of": 1795876190404,
+  "generated": "2026-11-28T14:30:51+00:00",
+  "generated_human": "28.11 14:30 UTC",
+  "as_of": 1795876250335,
   "stale_days": 1,
   "count": 1176,
   "groups": 9,
@@ -42,14 +42,27 @@
     {
      "id": "ses-GTMqvG5ayW",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c562.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795876184000,
+     "ts": 1795876246000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-M-c562",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795876184000,
+     "as_of": 1795876246000,
+     "is_stale": false
+    },
+    {
+     "id": "ses-RhCke8UjW4",
+     "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/evolution-work-researcher ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher '/home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log. Затем напиши ровно один артефакт /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c<cycle>.md: долю REFORMULATE, число verify_ok=true, причину холостого витка, команду, rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти команду /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани proof RED/GREEN в <путь_артефакта>.pair.json. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c411.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795876241000,
+     "source": "session",
+     "title": "lree-RSCH-WRITER-NIGHT-CURATION-J-c411",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795876241000,
      "is_stale": false
     },
     {
@@ -73,29 +86,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795876116008,
      "as_of": 1795876013000,
-     "is_stale": false
-    },
-    {
-     "id": "ses-RhCke8UjW4",
-     "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/evolution-work-researcher ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher '/home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log. Затем напиши ровно один артефакт /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c<cycle>.md: долю REFORMULATE, число verify_ok=true, причину холостого витка, команду, rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти команду /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани proof RED/GREEN в <путь_артефакта>.pair.json. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c411.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875655000,
-     "source": "session",
-     "title": "lree-RSCH-WRITER-NIGHT-CURATION-J-c411",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-RhCke8UjW4] Запросы из Телеграма теперь видны в отдельной папке панели DeepSeek Harness.\n- 🟩 Группа «TG-запросы» стоит рядом с ночными прогонами; внутри неё `processes` — что выполняется сейчас, и `sessions` — св",
-     "answer_short": "ses-RhCke8UjW4: Запросы из Телеграма теперь видны в отдельной папке панели D",
-     "answer_full": "Запросы из Телеграма теперь видны в отдельной папке панели DeepSeek Harness.\n- 🟩 Группа «TG-запросы» стоит рядом с ночными прогонами; внутри неё `processes` — что выполняется сейчас, и `sessions` — связь с сохранённым разговором.\n- 🟩 Чат и мини-ап идут через один и тот же путь DSH; продолжение чужой старой сессии больше не уводит запрос в ночную группу.\n- 🟨 Оговорка: web-процесс DSH перезаписывает реестр, вотчер возвращает группу примерно за пять секунд — это обходной контур, а не коренное лечение.\nОткройте панель по адресу 127.0.0.1:3080 и отправьте тестовый запрос с телефона: карточка процесса появится в папке сразу. Самотест гейта прошёл зелёным проходом и красным отказом на сломанной настройке; живая проверка — PASS.",
-     "answer_digest": {
-      "length": 730,
-      "sha256": "ed265df9599fa0327bfb5b997aec92bd4a7a5eb677f8a8d1822774245fc2a032"
-     },
-     "answer_text_id": "ed265df9599fa032",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795875943578,
-     "as_of": 1795875655000,
      "is_stale": false
     },
     {
@@ -15226,7 +15216,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795789844339,
      "as_of": 1795789434000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-m5XZDe4adp",
@@ -15251,7 +15241,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795789844339,
      "as_of": 1795789178000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-nQRlGqoP8L",
@@ -15276,7 +15266,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795789844339,
      "as_of": 1795789143000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-HZA7X5D7ks",
@@ -19314,7 +19304,7 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795789844339,
      "as_of": 1795789237000,
-     "is_stale": false
+     "is_stale": true
     },
     {
      "id": "ses-PpCEN0G0W9",
