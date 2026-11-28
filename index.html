@@ -880,25 +880,20 @@
   </header>
 
   <nav class="tabs" id="tabs">
-    <!-- @owner:redesign-2026-11-21 @region:nav-5tabs: 5 табов из ergonomics-matrix (Ход|Задачи|Промпты|Атлас|Чат) -->
-    <button class="tab active" data-tab="live"><span>◉</span> Ход <span class="key">1</span></button>
+    <!-- @owner:chat-ergonomics-1128 @region:nav-primary: пять основных вкладок -->
+    <button class="tab active" data-tab="chat"><span>✉</span> Чат <span class="key">1</span></button>
     <button class="tab" data-tab="tasks"><span>✓</span> Задачи <span class="key">2</span></button>
     <button class="tab" data-tab="prompts"><span>⌘</span> Промпты <span class="key">3</span></button>
-    <button class="tab" data-tab="atlas"><span>▦</span> Атлас <span class="key">4</span></button>
-    <button class="tab" data-tab="chat"><span>✉</span> Чат <span class="key">5</span></button>
-    <button class="tab" data-tab="backup"><span>⤓</span> Резерв <span class="key">6</span></button>
-    <!-- @owner:library-tab @region:nav-library: вкладка «Библиотека» статей -->
-    <button class="tab" data-tab="library" title="Библиотека статей"><span>▤</span> Библио <span class="key">7</span></button>
-    <!-- @owner:library-tab @region:nav-library end -->
-    <!-- @owner:interview-tab @region:nav-interview: отдельная вкладка интервью -->
-    <button class="tab" data-tab="interview" title="Интервью по всем проектам"><span>🎙</span> Интервью <span class="key">8</span></button>
-    <!-- @owner:interview-tab @region:nav-interview end -->
-    <!-- @owner:tg-requests-tab @region:nav-tg: активные запросы из Telegram -->
-    <button class="tab" data-tab="tg" title="Активные запросы из Telegram"><span>⟲</span> TG-запросы <span class="tg-tab-live" id="tgTabLive"></span><span class="key">9</span></button>
-    <!-- @owner:tg-requests-tab @region:nav-tg end -->
-    <!-- @owner:night-runs @region:nav-night: ночные мандаты живут внутри вкладки «Ход» --->
-    <!-- @owner:redesign-2026-11-21 @region:nav-5tabs end -->
-      </nav>
+    <button class="tab" data-tab="live"><span>◉</span> Ход <span class="key">4</span></button>
+    <button class="tab tab-more" id="tabsMoreBtn" type="button" aria-expanded="false" aria-controls="tabsMore"><span>⋯</span> Ещё</button>
+  </nav>
+  <div class="tabs-more" id="tabsMore" hidden>
+    <button class="tab" data-tab="atlas"><span>▦</span> Атлас</button>
+    <button class="tab" data-tab="backup"><span>⤓</span> Резерв</button>
+    <button class="tab" data-tab="library"><span>▤</span> Библио</button>
+    <button class="tab" data-tab="interview"><span>🎙</span> Интервью</button>
+    <button class="tab" data-tab="tg"><span>⟲</span> TG-запросы <span class="tg-tab-live" id="tgTabLive"></span></button>
+  </div>
 
   <main id="main">
     <!-- @owner:redesign-2026-11-21 @region:task-subnav -->
@@ -1011,7 +1006,10 @@
     <section class="screen" id="screen-chat">
       <div class="chat-head">
         <div class="chat-peer"><span class="chat-ava">🤖</span><div><b>Оператор</b><small id="chatSub">агент · подключение…</small></div></div>
-        <span class="chat-live" title="связь с агентом">●</span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button class="chat-clear" id="chatClear" type="button" title="Скрыть старые сообщения только на этом экране">Очистить</button>
+          <span class="chat-live" title="связь с агентом">●</span>
+        </div>
       </div>
       <div class="chatwrap">
         <div class="chatlog" id="chatLog"></div>
@@ -1286,22 +1284,12 @@
   </main>
 
   <div class="hotbar">
-    <!-- @owner:redesign-2026-11-21 @region:hotbar-5 -->
-    <span class="hk"><kbd>1</kbd> Ход</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>2</kbd> Задачи</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>3</kbd> Промпты</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>4</kbd> Атлас</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>5</kbd> Чат</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>6</kbd> Резерв</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>7</kbd> Библио</span>
-    <span class="sep"></span>
-    <span class="hk"><kbd>Esc</kbd> Сброс</span>
+    <!-- @owner:chat-ergonomics-1128 @region:hotbar-primary -->
+    <span class="hk"><kbd>1</kbd> Чат</span><span class="sep"></span>
+    <span class="hk"><kbd>2</kbd> Задачи</span><span class="sep"></span>
+    <span class="hk"><kbd>3</kbd> Промпты</span><span class="sep"></span>
+    <span class="hk"><kbd>4</kbd> Ход</span><span class="sep"></span>
+    <span class="hk"><kbd>Esc</kbd> Чат</span>
   </div>
 
   <div class="toast" id="toast"></div>
