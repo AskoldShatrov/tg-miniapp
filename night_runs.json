@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.39,
-      "remaining_hours": 16.61,
+      "elapsed_hours": 3.4,
+      "remaining_hours": 16.6,
       "progress_pct": 17,
-      "cycles": 519,
-      "heartbeat_human": "09:00:10",
+      "cycles": 520,
+      "heartbeat_human": "09:01:10",
       "tree": {
         "phases": [
           {
@@ -103,6 +103,15 @@
             "verified": true
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-E",
+            "title": "Writer-виток audit:физическая пара вместо переформулировок",
+            "cycles": 3,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 2,
@@ -119,34 +128,9 @@
             "last": "RETHINK_REQUIRED",
             "score": 4,
             "verified": true
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-E",
-            "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 2,
-            "max": 5,
-            "last": "RETHINK_REQUIRED",
-            "score": 2,
-            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "07:23:34",
-            "cycle": 480,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
-          {
-            "clock": "07:24:49",
-            "cycle": 481,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "07:26:04",
             "cycle": 482,
@@ -610,15 +594,31 @@
             "action": "RETHINK_REQUIRED",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "09:00:41",
+            "cycle": 520,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "09:00:41",
+            "cycle": 520,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 413,
-          "mutations": 412
+          "version": 414,
+          "mutations": 413
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -626,11 +626,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 3.39,
-      "remaining_hours": 16.61,
+      "elapsed_hours": 3.4,
+      "remaining_hours": 16.6,
       "progress_pct": 17,
       "cycles": 519,
-      "heartbeat_human": "09:00:17",
+      "heartbeat_human": "09:01:17",
       "tree": {
         "phases": [
           {
@@ -1235,6 +1235,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795845627,
-  "fetched_human": "2026-11-28 09:00:27 +0300"
+  "fetched_at": 1795845686,
+  "fetched_human": "2026-11-28 09:01:26 +0300"
 }
