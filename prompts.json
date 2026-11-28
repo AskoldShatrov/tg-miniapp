@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T14:10:39+00:00",
-  "generated_human": "28.11 14:10 UTC",
-  "as_of": 1795875038066,
+  "generated": "2026-11-28T14:11:40+00:00",
+  "generated_human": "28.11 14:11 UTC",
+  "as_of": 1795875099235,
   "stale_days": 1,
   "count": 1173,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-BAD2M0RjZV",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-L-c559.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875033000,
+     "ts": 1795875098000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-L-c559",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875033000,
+     "as_of": 1795875098000,
      "is_stale": false
     },
     {
@@ -5312,14 +5312,14 @@
     {
      "id": "ses-XcyaxmFrEf",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ АРТЕФАКТ. Разбери, почему все витки движка workspace /home/nyaka/evolution-work/skill-upgrade-1128 имеют verify_ok=false: прочитай state.json, ledger.jsonl, код red_green_pair и immutable_pair_proof в /home/nyaka/scripts/background/evolution_engine/engine.py. Объясни разницу между живыми RED.log/GREEN.log и неизменяемым pair proof, почему подделка логов была бы обманом, и предложи минимальный легальный путь получить verify_ok=true для нового витка. Запиши НОВЫЙ файл /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-VERIFY-PROOF-1128-*.md с маркером CAP-VERIFY-PROOF-1128, строками кода и sha256.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-VERIFY-PROOF-1128-c16.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875027000,
+     "ts": 1795875095000,
      "source": "session",
      "title": "lree-CAP-VERIFY-PROOF-1128-c16",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875027000,
+     "as_of": 1795875095000,
      "is_stale": false
     },
     {
