@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-28 13:00",
+ "generated": "2026-11-28 13:30",
  "window": {
-  "start": "2026-11-27T19:25",
-  "end": "2026-11-28T09:50",
+  "start": "2026-11-27T19:40",
+  "end": "2026-11-28T10:28",
   "sessions": 157,
   "roots": 150
  },
  "summary": {
   "skills": 69,
-  "skills_used": 14,
+  "skills_used": 15,
   "agents": 8,
   "agents_used": 0,
   "autofeed": 0,
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 323,
+   "median_s": 320,
    "max_s": 22747,
-   "last": "2026-11-28T09:50:00.857000+00:00",
+   "last": "2026-11-28T10:28:26.044000+00:00",
    "outcomes": {
     "waiting_user": 2,
     "done": 136,
     "error": 12
    },
    "example": [
-    "EDYGTEyB",
-    "u1Qgv54V"
+    "ob7vwPVS",
+    "6gPTcENq"
    ],
    "actual": [
     {
@@ -56,12 +56,12 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 109 из 150, ≈5 вызовов за раз",
+     "t": "в 106 из 150, ≈5 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, draft-gate, game-mode, hypothesis-check, network-constrain",
+     "n": "реже: answer-integrity, anti-autism, code-review, cs2-demo-capture, draft-gate, dsh-plugin-discovery, game-mode, hypothesis-ch",
      "t": "меньше 30 из 150",
      "d": 1
     }
@@ -717,94 +717,87 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 12,
-   "median_s": 847,
+   "runs": 13,
+   "median_s": 919,
    "max_s": 22747,
-   "last": "2026-11-28T09:50:00.857000+00:00",
+   "last": "2026-11-28T10:12:11.355000+00:00",
    "outcomes": {
-    "waiting_user": 1,
-    "done": 11
+    "done": 13
    },
    "example": [
-    "EDYGTEyB",
-    "u1Qgv54V"
+    "u1Qgv54V",
+    "eX11Ozm7"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 12"
+     "t": "запусков: 13"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 10 из 12",
+     "t": "в 11 из 13",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 10 из 12",
+     "t": "в 11 из 13",
      "d": 1
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 3 из 12",
+     "t": "в 3 из 13",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 7 из 12",
+     "t": "в 8 из 13",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 4 из 12",
+     "t": "в 5 из 13",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 12 из 12, ≈55 вызовов за раз",
+     "t": "в 13 из 13, ≈57 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 12 из 12, ≈6 вызовов за раз",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "slow-deliberation",
-     "t": "в 2 из 12",
+     "t": "в 13 из 13, ≈6 вызовов за раз",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 3 из 12",
+     "t": "в 3 из 13",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 12 из 12, ≈11 вызовов за раз",
+     "t": "в 13 из 13, ≈11 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "answer-integrity",
-     "t": "в 4 из 12",
+     "t": "в 4 из 13",
      "d": 1
     },
     {
      "k": "skill",
-     "n": "реже: code-review, game-mode, network-constraints, resources, show-in-answer",
-     "t": "меньше 2 из 12",
+     "n": "реже: code-review, game-mode, network-constraints, resources, show-in-answer, slow-deliberation",
+     "t": "меньше 3 из 13",
      "d": 1
     }
    ],
@@ -856,7 +849,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 1",
+   "state": "Прогонов сейчас: 0",
    "level": "ok",
    "f": "C1"
   },
@@ -896,7 +889,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 25, с файлами 5",
+   "state": "Владельцев 27, с файлами 5",
    "level": "ok",
    "f": "C11"
   },
