@@ -1848,20 +1848,21 @@ function renderSessions(){
 /* ---------- keyboard ---------- */
 document.addEventListener("keydown",e=>{
   if(e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
-  /* @owner:redesign-2026-11-21 @region:hotkeys-5 */
-  if(e.key==="1"){setTab("live"); renderLive();}
+  /* @owner:chat-ergonomics-1128 @region:hotkeys-primary */
+  if(e.key==="1"){setTab("chat"); renderChat();}
   else if(e.key==="2"){setTab("tasks")}
   else if(e.key==="3"){setTab("prompts")}
-  else if(e.key==="4"){setTab("atlas"); renderAtlas()}
-  else if(e.key==="5"){setTab("chat"); renderChat()}
+  else if(e.key==="4"){setTab("live"); renderLive()}
+  else if(e.key==="5"){setTab("atlas"); renderAtlas()}
   else if(e.key==="6"){setTab("backup")}
   else if(e.key==="7"){setTab("library")}
+  else if(e.key==="8"){setTab("interview")}
   else if(e.key==="9"){setTab("tg"); if(typeof fetchTGRequests==="function") fetchTGRequests(true);}
   else if(e.key==="Escape"){
     $$("#tree .children").forEach(x=>x.classList.remove("open"));
     $$("#tree .twist").forEach(x=>x.classList.remove("open"));
     $$("#pList .p-children").forEach(x=>x.classList.remove("open"));
-    setTab("live"); toast("Сброс вида");
+    closeTabsMore(); setTab("chat"); toast("Возврат в чат");
   }
   else return;
   e.preventDefault();
@@ -2148,28 +2149,33 @@ if (reloadBtn) reloadBtn.addEventListener("click", () => {
 });
 
 /* --- DeepSeek Harness: единый канал задач мини-апа ----------------------
-   Все задачи уходят POST /dsh/task на process_api. Старый sendData остаётся
-   только явным фолбэком с честным сообщением в UI. */
+   Чат отправляется прямо в process_api и остаётся открытым. Telegram sendData
+   используется только для старых кнопок, не для чата/интервью/студии. */
+const MINIAPP_API_BASE="https://nyaka-miniapp-api-1128.loca.lt";
 function dshAvailable(){
-  try{ return !!((LATEST_STATUS&&LATEST_STATUS.process_api_url)||""); }
+  try{ return !!((LATEST_STATUS&&LATEST_STATUS.process_api_url)||MINIAPP_API_BASE); }
   catch(e){ return false; }
 }
 function dshFallback(payload){
-  /* В обычном браузере SDK всё равно создаёт tg.sendData, но он ничего не
-     отправляет. Раньше это давало ложный «задача ушла через OpenCode». */
+  var src=String(payload.source||"");
+  if(src==="miniapp_chat" || src==="miniapp_interview" ||
+     src==="miniapp_interview_answer" || src==="miniapp_studio"){
+    toast("Не отправлено: прямой канал недоступен. Нажми «Повторить»");
+    return false;
+  }
   var inTelegram=false;
   try{ inTelegram=!!((window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)||
        (typeof tg!=="undefined"&&tg&&tg.initData)); }catch(e){}
   if(inTelegram && typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
     tg.sendData(JSON.stringify(payload));
-    toast("Ушло боту — ответ появится здесь");
+    toast("Отправлено через Telegram");
     return true;
   }
   toast("Не отправлено: открой мини-ап кнопкой бота");
   return false;
 }
 function dshSend(payload, okText){
-  var base="";   // живой туннель отключён: отправка идёт через Telegram sendData
+  var base=(LATEST_STATUS&&LATEST_STATUS.process_api_url)||MINIAPP_API_BASE;
   var init="";
   try{
     init=(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)||
@@ -2177,19 +2183,23 @@ function dshSend(payload, okText){
   }catch(e){}
   var text=String(payload.text||payload.id||JSON.stringify(payload));
   if(!base || typeof fetch!=="function") return Promise.resolve(dshFallback(payload));
-  return fetch(base+"/dsh/task",{
+  return fetchTimed(base+"/dsh/task",{
     method:"POST",
-    headers:{"Content-Type":"application/json","X-Telegram-Init-Data":init},
+    headers:{"Content-Type":"application/json","X-Telegram-Init-Data":init,
+             "X-Bypass-Tunnel-Reminder":"true"},
     body:JSON.stringify({source:payload.source||"miniapp",text:text,
       user_id:payload.user_id||userID,rid:payload.rid||"",surface:payload.surface||"chat",
       session_id:payload.session_id||""})
-  }).then(function(r){ return r.json(); }).then(function(j){
+  },12000).then(function(r){
+    if(!r.ok) throw new Error("dsh/task HTTP "+r.status);
+    return r.json();
+  }).then(function(j){
     if(!j || !j.ok) throw new Error("dsh/task rejected");
     if(okText) toast(okText);
     return true;
   }).catch(function(){ return dshFallback(payload); });
 }
-function canSend(){ return dshAvailable() || (typeof tg!=="undefined" && tg && typeof tg.sendData==="function"); }
+function canSend(){ return dshAvailable(); }
 
 function sendToAgent(){
   const payload = {
@@ -2209,7 +2219,7 @@ const DATA_URLS = [
 ];
 const CHAT_KEY = "miniapp_chat_v1";
 const userID = String((((typeof tg !== "undefined" && tg && tg.initDataUnsafe || {}).user || {}).id) || "0");
-let CHAT = {sent:[], replies:{}};
+let CHAT = {sent:[], replies:{}, clearedAt:0};
 try { CHAT = JSON.parse(localStorage.getItem(CHAT_KEY) || JSON.stringify(CHAT)); } catch(e){}
 function escHtml(x){
   return String(x).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -2339,9 +2349,11 @@ function updateTyping(pairs){
 }
 function renderChat(){
   const log = $("#chatLog"); if(!log) return;
-  const reps = (CHAT.replies && CHAT.replies[userID]) || [];
-  const pairs = pairChat(CHAT.sent, reps);
-  const sig = JSON.stringify(pairs.map(p=>[p.rid,p.text,p.t||"",p.rep?p.rep.text:"",p.rep?p.rep.ts:"",p.rid_match?"id":"time"]));
+  const since=Number(CHAT.clearedAt||0);
+  const sent=(CHAT.sent||[]).filter(m=>!since || Number(m.ts||0)>=since);
+  const reps = ((CHAT.replies && CHAT.replies[userID]) || []).filter(r=>!since || Number(r.ts||0)*1000>=since);
+  const pairs = pairChat(sent, reps);
+  const sig = JSON.stringify(pairs.map(p=>[p.rid,p.text,p.t||"",p.rep?p.rep.text:"",p.rep?p.rep.ts:"",p.rid_match?"id":"time",p.failed?1:0,p.pending&&Date.now()-p.ts>120000?1:0]));
   updateTyping(pairs);
   /* Данные обновляются раз в 5 с. Если содержимое то же — не трогаем DOM:
      иначе перезапускается layout и скролл «дёргается» на каждом опросе. */
@@ -2357,20 +2369,23 @@ function renderChat(){
         richHtml(p.rep.text)+'<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div></div></div>');
       return;
     }
+    const stale=p.pending && !p.failed && p.ts && Date.now()-p.ts>120000;
     const state=p.pending && p.failed
       ? '<span class="pair-state fail">не отправлено</span>'
-      : p.pending ? '<span class="pair-state">ожидание</span>'
+      : p.pending ? '<span class="pair-state">'+(stale?'ответ задерживается':'доставлено · ждём ответ')+'</span>'
                   : '<span class="pair-state '+(p.rid_match?'by-id':'by-time')+'">'+
                     (p.rid_match?'ответ · по ID':'ответ · по времени')+'</span>';
     const req='<div class="msg me"><div class="mava">👤</div><div class="bubble">'+escHtml(p.text)+
       '<span class="mtime">'+escHtml(p.t)+'</span></div></div>';
     const rep=p.pending
       ? (p.failed
-         ? '<div class="pair-wait">⚠️ сообщение не ушло. Открой мини-ап кнопкой бота в Телеге и отправь снова</div>'
-         : '<div class="pair-wait">⏳ ушло боту · открой чат позже — ответ появится здесь</div>')
+         ? '<div class="pair-wait">⚠️ сообщение не ушло.<br><button class="chat-retry" type="button" data-retry-chat="'+escHtml(p.rid)+'">Повторить отправку</button></div>'
+         : stale
+           ? '<div class="pair-wait">Ответа пока нет.<br><button class="chat-retry" type="button" data-refresh-chat="1">Проверить ответ</button></div>'
+           : '<div class="pair-wait">Доставлено агенту · ответ появится здесь автоматически</div>')
       : '<div class="msg"><div class="mava">🤖</div><div class="bubble">'+richHtml(p.rep.text)+
         '<span class="mtime">'+escHtml(p.rep.t)+'</span></div></div>';
-    out.push('<div class="pair '+(p.pending?'pending':'done')+'">'+
+    out.push('<div class="pair '+(p.pending?(p.failed?'pending fail':'pending'):'done')+'">'+
       '<div class="pair-head"><span class="pair-no">#'+(i+1)+' · ЗАПРОС</span>'+state+
       '<span class="pair-time">'+escHtml(p.t)+'</span></div>'+
       '<div class="pair-body">'+req+rep+'</div></div>');
