@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.08,
-      "remaining_hours": 11.92,
+      "elapsed_hours": 8.1,
+      "remaining_hours": 11.9,
       "progress_pct": 40,
-      "cycles": 554,
-      "heartbeat_human": "13:41:53",
+      "cycles": 555,
+      "heartbeat_human": "13:42:53",
       "tree": {
         "phases": [
           {
@@ -186,30 +186,14 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-L",
             "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 0,
+            "cycles": 1,
             "max": 5,
-            "last": "—",
-            "score": 0,
-            "verified": false
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "08:39:46",
-            "cycle": 517,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
-          {
-            "clock": "08:46:43",
-            "cycle": 518,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:46:43",
             "cycle": 518,
@@ -673,15 +657,31 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос task-contract"
+          },
+          {
+            "clock": "13:42:17",
+            "cycle": 555,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:42:17",
+            "cycle": 555,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 436,
-          "mutations": 435
+          "version": 437,
+          "mutations": 436
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 0
       }
     },
     {
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.08,
-      "remaining_hours": 11.92,
+      "elapsed_hours": 8.1,
+      "remaining_hours": 11.9,
       "progress_pct": 40,
       "cycles": 565,
-      "heartbeat_human": "13:41:53",
+      "heartbeat_human": "13:42:53",
       "tree": {
         "phases": [
           {
@@ -1382,11 +1382,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.57,
-      "remaining_hours": 7.43,
+      "elapsed_hours": 0.59,
+      "remaining_hours": 7.41,
       "progress_pct": 7,
       "cycles": 8,
-      "heartbeat_human": "13:41:34",
+      "heartbeat_human": "13:42:34",
       "tree": {
         "phases": [
           {
@@ -1571,6 +1571,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795862524,
-  "fetched_human": "2026-11-28 13:42:04 +0300"
+  "fetched_at": 1795862584,
+  "fetched_human": "2026-11-28 13:43:04 +0300"
 }
