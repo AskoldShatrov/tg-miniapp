@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.37,
-      "remaining_hours": 18.63,
+      "elapsed_hours": 1.39,
+      "remaining_hours": 18.61,
       "progress_pct": 7,
-      "cycles": 473,
-      "heartbeat_human": "06:59:40",
+      "cycles": 474,
+      "heartbeat_human": "07:00:40",
       "tree": {
         "phases": [
           {
@@ -113,14 +113,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "22:14:41",
-            "cycle": 428,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "22:15:56",
             "cycle": 429,
@@ -592,6 +584,14 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "06:59:45",
+            "cycle": 474,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.37,
-      "remaining_hours": 18.63,
+      "elapsed_hours": 1.39,
+      "remaining_hours": 18.61,
       "progress_pct": 7,
-      "cycles": 469,
-      "heartbeat_human": "06:59:17",
+      "cycles": 470,
+      "heartbeat_human": "07:00:17",
       "tree": {
         "phases": [
           {
@@ -688,6 +688,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-C",
+            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
+            "cycles": 2,
+            "max": 5,
+            "last": "PROMOTE",
+            "score": 7,
+            "verified": true
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 1,
@@ -695,26 +704,9 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-C",
-            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 1,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "21:59:08",
-            "cycle": 426,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
           {
             "clock": "22:00:23",
             "cycle": 427,
@@ -1186,6 +1178,14 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:00:39",
+            "cycle": 470,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "PROMOTE",
+            "score": 7,
+            "note": ""
           }
         ],
         "strategy": {
@@ -1199,6 +1199,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795838382,
-  "fetched_human": "2026-11-28 06:59:42 +0300"
+  "fetched_at": 1795838441,
+  "fetched_human": "2026-11-28 07:00:41 +0300"
 }
