@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.66,
-      "remaining_hours": 8.34,
+      "elapsed_hours": 11.67,
+      "remaining_hours": 8.33,
       "progress_pct": 58,
       "cycles": 559,
-      "heartbeat_human": "17:16:32",
+      "heartbeat_human": "17:17:32",
       "tree": {
         "phases": [
           {
@@ -698,11 +698,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.66,
-      "remaining_hours": 8.34,
+      "elapsed_hours": 11.67,
+      "remaining_hours": 8.33,
       "progress_pct": 58,
-      "cycles": 571,
-      "heartbeat_human": "17:16:32",
+      "cycles": 572,
+      "heartbeat_human": "17:17:32",
       "tree": {
         "phases": [
           {
@@ -859,21 +859,21 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-O",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 4,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "SF-WRITER-NIGHT-CURATION-B",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
             "cycles": 3,
             "max": 3,
             "last": "MUTATE",
             "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-O",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 3,
-            "max": 5,
-            "last": "WARMUP",
-            "score": 4,
             "verified": true
           },
           {
@@ -905,14 +905,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:45:53",
-            "cycle": 528,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "09:45:53",
             "cycle": 528,
@@ -1384,6 +1376,14 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "17:17:12",
+            "cycle": 572,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
@@ -1400,11 +1400,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 4.15,
-      "remaining_hours": 3.85,
+      "elapsed_hours": 4.17,
+      "remaining_hours": 3.83,
       "progress_pct": 52,
-      "cycles": 16,
-      "heartbeat_human": "17:16:20",
+      "cycles": 17,
+      "heartbeat_human": "17:17:20",
       "tree": {
         "phases": [
           {
@@ -1680,19 +1680,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "17:16:52",
+            "cycle": 17,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос capability"
           }
         ],
         "strategy": {
-          "version": 9,
-          "mutations": 8
+          "version": 10,
+          "mutations": 9
         },
-        "events": 25,
+        "events": 26,
         "avg_score": 4.0,
         "fail_streak": 0
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795875403,
-  "fetched_human": "2026-11-28 17:16:43 +0300"
+  "fetched_at": 1795875467,
+  "fetched_human": "2026-11-28 17:17:47 +0300"
 }

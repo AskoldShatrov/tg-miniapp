@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T14:16:42+00:00",
-  "generated_human": "28.11 14:16 UTC",
-  "as_of": 1795875401220,
+  "generated": "2026-11-28T14:17:46+00:00",
+  "generated_human": "28.11 14:17 UTC",
+  "as_of": 1795875463262,
   "stale_days": 1,
   "count": 1174,
   "groups": 9,
@@ -42,27 +42,27 @@
     {
      "id": "ses-KGFGoVJWe2",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c560.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875400000,
+     "ts": 1795875460000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-M-c560",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875400000,
+     "as_of": 1795875460000,
      "is_stale": false
     },
     {
      "id": "ses-kEcMAe6sEj",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/evolution-work-researcher ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher '/home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log. Затем напиши ровно один артефакт /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c<cycle>.md: долю REFORMULATE, число verify_ok=true, причину холостого витка, команду, rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти команду /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани proof RED/GREEN в <путь_артефакта>.pair.json. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c410.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875399000,
+     "ts": 1795875421000,
      "source": "session",
      "title": "lree-RSCH-WRITER-NIGHT-CURATION-J-c410",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875399000,
+     "as_of": 1795875421000,
      "is_stale": false
     },
     {
@@ -5453,14 +5453,14 @@
     {
      "id": "ses-cf6tYrf81y",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c572.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875398000,
+     "ts": 1795875432000,
      "source": "session",
      "title": "lree-SF-WRITER-NIGHT-CURATION-O-c572",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875398000,
+     "as_of": 1795875432000,
      "is_stale": false
     },
     {
