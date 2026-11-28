@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.99,
-      "remaining_hours": 19.01,
+      "elapsed_hours": 1.0,
+      "remaining_hours": 19.0,
       "progress_pct": 5,
-      "cycles": 465,
-      "heartbeat_human": "06:36:09",
+      "cycles": 466,
+      "heartbeat_human": "06:37:09",
       "tree": {
         "phases": [
           {
@@ -76,6 +76,15 @@
             "verified": false
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-B",
+            "title": "Writer-виток audit:физическая пара вместо переформулировок",
+            "cycles": 3,
+            "max": 3,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 2,
@@ -94,15 +103,6 @@
             "verified": true
           },
           {
-            "id": "IMP-WRITER-NIGHT-CURATION-B",
-            "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 2,
-            "max": 3,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
-          },
-          {
             "id": "IMP-WRITER-NIGHT-CURATION-C",
             "title": "Writer-виток audit:физическая пара вместо переформулировок",
             "cycles": 0,
@@ -113,22 +113,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:59:23",
-            "cycle": 421,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "21:59:23",
-            "cycle": 421,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос stop-hook"
-          },
           {
             "clock": "22:00:38",
             "cycle": 422,
@@ -592,11 +576,27 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "06:36:42",
+            "cycle": 466,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "06:36:42",
+            "cycle": 466,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 377,
-          "mutations": 376
+          "version": 378,
+          "mutations": 377
         },
         "events": 400,
         "avg_score": 0.0,
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.99,
-      "remaining_hours": 19.01,
+      "elapsed_hours": 1.0,
+      "remaining_hours": 19.0,
       "progress_pct": 5,
-      "cycles": 466,
-      "heartbeat_human": "06:36:17",
+      "cycles": 467,
+      "heartbeat_human": "06:37:17",
       "tree": {
         "phases": [
           {
@@ -707,14 +707,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:56:37",
-            "cycle": 424,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:56:37",
             "cycle": 424,
@@ -1186,6 +1178,14 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "06:36:55",
+            "cycle": 467,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "RETHINK_BLOCKED",
+            "score": 0,
+            "note": ""
           }
         ],
         "strategy": {
@@ -1199,6 +1199,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795836987,
-  "fetched_human": "2026-11-28 06:36:27 +0300"
+  "fetched_at": 1795837047,
+  "fetched_human": "2026-11-28 06:37:27 +0300"
 }
