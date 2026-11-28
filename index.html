@@ -2374,8 +2374,8 @@ function updateTyping(pairs){
 function renderChat(){
   const log = $("#chatLog"); if(!log) return;
   const since=Number(CHAT.clearedAt||0);
-  const sent=(CHAT.sent||[]).filter(m=>!since || Number(m.ts||0)>=since);
-  const reps = ((CHAT.replies && CHAT.replies[userID]) || []).filter(r=>!since || Number(r.ts||0)*1000>=since);
+  const sent=(CHAT.sent||[]).filter(m=>!since || Number(m.ts||0)>=since*1000-999);
+  const reps = ((CHAT.replies && CHAT.replies[userID]) || []).filter(r=>!since || Number(r.ts||0)>=since);
   const pairs = pairChat(sent, reps);
   const sig = JSON.stringify(pairs.map(p=>[p.rid,p.text,p.t||"",p.rep?p.rep.text:"",p.rep?p.rep.ts:"",p.rid_match?"id":"time",p.failed?1:0,p.pending&&Date.now()-p.ts>120000?1:0]));
   updateTyping(pairs);
@@ -2434,7 +2434,7 @@ if(chatJump) chatJump.addEventListener("click",()=>{
   chatPinned=true; chatUnread=0; log.scrollTop=log.scrollHeight; updateJump();
 });
 function clearChatVisual(){
-  CHAT.clearedAt=Date.now()+1;
+  CHAT.clearedAt=Math.floor(Date.now()/1000);
   try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
   chatSig=""; chatPinned=true; chatUnread=0;
   renderChat();
