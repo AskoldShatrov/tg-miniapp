@@ -11,6 +11,8 @@
   'use strict';
 
   var KEY = 'casino.gacha.v1';
+  // Временно скрыто по запросу; для возврата вкладки выставить true.
+  var TAB_VISIBLE = false;
   var PITY_EPIC = 20; // гарантия эпика+ на 20-м кручении без эпика
 
   /* контент как данные: редкость × предмет × ценность */
@@ -308,6 +310,16 @@
       var main = doc.getElementById('main');
       if (!main) return null;
       main.appendChild(host);
+    }
+    if (TAB_VISIBLE) {
+      var nav = doc.getElementById('tabs');
+      if (nav && !nav.querySelector('[data-tab="gacha"]')) {
+        var btn = doc.createElement('button');
+        btn.className = 'tab'; btn.setAttribute('data-tab', 'gacha');
+        btn.innerHTML = '<span>✨</span> Гача <span class="key">7</span>';
+        btn.addEventListener('click', function () { if (typeof root.setTab === 'function') root.setTab('gacha'); });
+        nav.appendChild(btn);
+      }
     }
     return host;
   }

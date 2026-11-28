@@ -7,6 +7,8 @@
 
   var root = typeof window !== 'undefined' ? window : globalThis;
   var KEY = 'pairdev_casino_v1';
+  // Временно скрыто по запросу; для возврата вкладки выставить true.
+  var TAB_VISIBLE = false;
 
   /* ---------- чистая логика (тестируется без DOM) ---------- */
   var core = {
@@ -231,6 +233,29 @@
       var main = doc.getElementById('main');
       if (!main) return null;
       main.appendChild(host);
+    }
+    if (TAB_VISIBLE) {
+      var nav = doc.getElementById('tabs');
+      if (nav && !nav.querySelector('[data-tab="casino"]')) {
+        var btn = doc.createElement('button');
+        btn.className = 'tab';
+        btn.setAttribute('data-tab', 'casino');
+        btn.innerHTML = '<span>🎰</span> Казино <span class="key">6</span>';
+        btn.addEventListener('click', function () {
+          if (typeof root.setTab === 'function') root.setTab('casino');
+        });
+        nav.appendChild(btn);
+      }
+      var hb = doc.querySelector('.hotbar');
+      if (hb && !doc.getElementById('csnHotkey')) {
+        var sep = doc.createElement('span'); sep.className = 'sep';
+        var hk = doc.createElement('span'); hk.className = 'hk'; hk.id = 'csnHotkey';
+        hk.innerHTML = '<kbd>6</kbd> Казино';
+        var hks = hb.querySelectorAll('.hk');
+        var last = hks[hks.length - 1];
+        if (last) { hb.insertBefore(sep, last); hb.insertBefore(hk, last); }
+        else { hb.appendChild(sep); hb.appendChild(hk); }
+      }
     }
     return host;
   }
