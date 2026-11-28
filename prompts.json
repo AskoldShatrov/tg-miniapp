@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T05:33:10+00:00",
-  "generated_human": "28.11 05:33 UTC",
-  "as_of": 1795843988953,
+  "generated": "2026-11-28T05:34:10+00:00",
+  "generated_human": "28.11 05:34 UTC",
+  "as_of": 1795844049012,
   "stale_days": 1,
   "count": 1162,
   "groups": 9,
@@ -42,7 +42,7 @@
     {
      "id": "ses-e9DgN1I3eU",
      "text": "Один виток замкнутого контура, без вопросов и без слова «готово» без проверки. Выбери ОДНО открытое улучшение из /home/nyaka/Documents/deepseek-harness/default-workspace/reports/continuous-research-loop-20261128.md (OPEN-1..OPEN-5) или из свежего отчёта /home/nyaka/evolution-work-researcher/artifacts/, которое реально можно внедрить новым исполняемым файлом в отдельной зоне /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research_apply_*.py. СНАЧАЛА прочитай источник и зафиксируй его точный путь. СНАЧАЛА до правки запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research_apply_gate.py check /home/nyaka/evolution-work-researcher 'artifacts/RSCH-APPLY-CLOSED-LOOP-c[0-9]*.md' /home/nyaka/evolution-work-researcher/artifacts/research-apply-red.json 900 ; ожидай rc=1, сохрани сырой вывод как JSON с verdict=FAIL в <артефакт>.red.json. Затем создай ровно один новый файл research_apply_<тема>.py в каталоге reports с настоящей проверкой и её selftest; добейся rc=0 и сохрани сырой вывод как JSON с verdict=PASS в <артефакт>.green.json. ПОСЛЕ этого напиши ровно один артефакт /home/nyaka/evolution-work-researcher/artifacts/RSCH-APPLY-CLOSED-LOOP-cN.md со строками FINDING: <путь>, FIX_PATH: <путь к research_apply_*.py>, FIX_SHA256: <64 hex>, RED_RC: 1, GREEN_RC: 0, DECISION_ID: SD-APPLY-<цикл>, PENDING_PATH: <путь>, VERDICT: PASS, а также командой проверки, её rc, путём, mtime, SHA256 самого артефакта и датой. Рядом создай <артефакт без .md>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at в ISO с +03:00 и порядком red_at <= mtime артефакта <= green_at. Добавь ОДНУ строку в /home/nyaka/Documents/deepseek-harness/default-workspace/reports/systemic-decisions.jsonl с id=DECISION_ID, fix_path, fix_sha256, gate_command='python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research_apply_gate.py selftest', red_rc=1, green_rc=0, owner, ts, why и reason. Добавь ОДНУ строку в /home/nyaka/Documents/deepseek-harness/default-workspace/reports/research-apply-pending.jsonl с recipient, artifact_path, status=pending, created_at, confirm_time=null. НЕ редактируй state.json, ledger.jsonl, stop_hook/, strategy.json, tasks.jsonl, чужие записи реестра — только append новых строк. Пороги и k=0.95 не двигать. PROMISE: DONE только после rc=0 гейта research_apply_gate.py.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-APPLY-CLOSED-LOOP-c371.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795843982000,
+     "ts": 1795844043000,
      "source": "session",
      "title": "lree-RSCH-APPLY-CLOSED-LOOP-c371",
      "source_label": "ноут",
@@ -51,7 +51,7 @@
      "wants": [
       "cl-delivered-gate-nightly"
      ],
-     "as_of": 1795843982000,
+     "as_of": 1795844043000,
      "is_stale": false
     },
     {
