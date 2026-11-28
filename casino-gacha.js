@@ -159,6 +159,9 @@
     '.gch-cell b{font:800 10px/1 var(--fm);color:var(--overlay2)}',
     '.gch-cell .gch-r{position:absolute;top:5px;right:6px;width:8px;height:8px;border-radius:50%}'
   ].join('');
+  if (TAB_VISIBLE) {
+    CSS += '.tabs .tab{flex:1 1 14%;min-width:0;min-height:44px;white-space:nowrap;overflow:hidden}';
+  }
 
   function injectCSS() {
     if (root.document && !root.document.getElementById('gch-style')) {

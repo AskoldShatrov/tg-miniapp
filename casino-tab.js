@@ -163,6 +163,10 @@
     '.csn-card button.ghost{background:var(--surface0);color:var(--subtext1)}',
     '.csn-card .csn-disclaimer{font:600 11px/1.45 var(--ff);color:var(--overlay0)}'
   ].join('');
+  if (TAB_VISIBLE) {
+    CSS += '.tabs .tab{flex:1 1 16%;min-width:0;min-height:44px;white-space:nowrap;overflow:hidden}' +
+      '.tabs .tab .key{display:none}';
+  }
 
   function injectCSS() {
     if (root.document && !root.document.getElementById('csn-style')) {
@@ -290,7 +294,11 @@
       if (e.key === 'Escape') {
         var m = root.document.getElementById('csnModal');
         if (m && !m.hidden) { e.preventDefault(); closeJackpot(); }
+        return;
       }
+      if (!TAB_VISIBLE) return;
+      if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName || '')) return;
+      if (e.key === '6' && typeof root.setTab === 'function') root.setTab('casino');
     });
   }
 
@@ -304,6 +312,14 @@
     patchSetTab();
     bindKeys();
     renderAll();
+    if (TAB_VISIBLE) {
+      /* Глубокняя ссылка ?tab=casino: исходный скрипт отклонил её до нашей установки. */
+      try {
+        if (new URLSearchParams(root.location.search).get('tab') === 'casino' && typeof root.setTab === 'function') {
+          root.setTab('casino');
+        }
+      } catch (e) { /* без deep-link вкладка открывается кнопкой */ }
+    }
   }
 
   function $(s, r) { return (r || root.document).querySelector(s); }
