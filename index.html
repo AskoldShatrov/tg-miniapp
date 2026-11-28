@@ -2344,7 +2344,7 @@ function pairChat(sent, replies){
     const q=qs[i]; let idx=-1;
     for(let j=ri;j<rs.length;j++){
       if(used[j] || rs[j].rid || !q.ts || !rs[j].ts) continue;
-      if(rs[j].ts>=q.ts-1000){ idx=j; break; }
+      if(rs[j].ts>=q.ts){ idx=j; break; }
     }
     const rep=idx>=0?rs[idx]:null;
     if(idx>=0){ used[idx]=true; ri=idx+1; }
