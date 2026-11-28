@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.91,
-      "remaining_hours": 12.09,
+      "elapsed_hours": 7.93,
+      "remaining_hours": 12.07,
       "progress_pct": 40,
       "cycles": 552,
-      "heartbeat_human": "13:31:53",
+      "heartbeat_human": "13:32:53",
       "tree": {
         "phases": [
           {
@@ -680,11 +680,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.91,
-      "remaining_hours": 12.09,
+      "elapsed_hours": 7.93,
+      "remaining_hours": 12.07,
       "progress_pct": 40,
       "cycles": 564,
-      "heartbeat_human": "13:31:53",
+      "heartbeat_human": "13:32:53",
       "tree": {
         "phases": [
           {
@@ -1373,11 +1373,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 4.0,
-      "elapsed_hours": 0.4,
-      "remaining_hours": 3.6,
+      "elapsed_hours": 0.42,
+      "remaining_hours": 3.58,
       "progress_pct": 10,
-      "cycles": 6,
-      "heartbeat_human": "13:31:28",
+      "cycles": 7,
+      "heartbeat_human": "13:32:58",
       "tree": {
         "phases": [
           {
@@ -1410,10 +1410,10 @@
           {
             "id": "CAP-TRUST-VERIFY-1128",
             "title": "Верификация доверия кандидатов на установку",
-            "cycles": 0,
+            "cycles": 1,
             "max": 2,
-            "last": "—",
-            "score": 0,
+            "last": "MUTATE",
+            "score": 5,
             "verified": false
           }
         ],
@@ -1489,19 +1489,35 @@
             "action": "RETHINK_REQUIRED",
             "score": 5,
             "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:32:51",
+            "cycle": 7,
+            "task": "CAP-TRUST-VERIFY-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:32:51",
+            "cycle": 7,
+            "task": "CAP-TRUST-VERIFY-1128",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует"
           }
         ],
         "strategy": {
-          "version": 3,
-          "mutations": 2
+          "version": 4,
+          "mutations": 3
         },
-        "events": 9,
+        "events": 11,
         "avg_score": 4.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 3,
-  "fetched_at": 1795861917,
-  "fetched_human": "2026-11-28 13:31:57 +0300"
+  "fetched_at": 1795861978,
+  "fetched_human": "2026-11-28 13:32:58 +0300"
 }
