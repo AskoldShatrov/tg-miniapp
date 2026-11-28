@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T03:34:26+00:00",
-  "generated_human": "28.11 03:34 UTC",
-  "as_of": 1795836864908,
+  "generated": "2026-11-28T03:35:26+00:00",
+  "generated_human": "28.11 03:35 UTC",
+  "as_of": 1795836925112,
   "stale_days": 1,
   "count": 1161,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-LnjMemm5pg",
      "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 'artifacts/IMP-WRITER-NIGHT-CURATION-B-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/IMP-WRITER-NIGHT-CURATION-B-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-B-c466.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795836855000,
+     "ts": 1795836923000,
      "source": "session",
      "title": "lree-IMP-WRITER-NIGHT-CURATION-B-c466",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795836855000,
+     "as_of": 1795836923000,
      "is_stale": false
     },
     {
@@ -3786,7 +3786,7 @@
     {
      "id": "ses-zn6WpcbpEZ",
      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795836853000,
+     "ts": 1795836919000,
      "source": "session",
      "title": "R02: малый радар в spectator/overview",
      "source_label": "ноут",
@@ -3797,7 +3797,7 @@
       "w2611200052460530",
       "w2611200052465da0"
      ],
-     "as_of": 1795836853000,
+     "as_of": 1795836919000,
      "is_stale": false
     },
     {
