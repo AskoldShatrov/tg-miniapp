@@ -3984,7 +3984,7 @@ function studioSend(sid){
   const c=studioCards().find(x=>x.id===sid);
   const payload={ source:"miniapp_studio", id:sid, kind:c?c.kind:"",
     sticker:c?studioSticker(c):"", rating:SMAN.rating[sid]||0,
-    links:(SMAN.links[sid]||[]), user_id:userID, ts:Date.now() };
+    links:(SMAN.links[sid]||[]), user_id:userID, ts:Date.now(), rid:"st"+Date.now() };
   /* Записываем отправку в общий чат: панель «Ответ» в Студии pairing'ит
      reply из того же replies.json, что и чат (переменная CHAT.replies). */
   CHAT.sent.push({ text:"◈ "+(c?(c.kind||"идея"):"стикер")+": "+(c?(studioSticker(c)||c.id):sid),
