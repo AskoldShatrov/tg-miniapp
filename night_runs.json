@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.24,
-      "remaining_hours": 18.76,
+      "elapsed_hours": 1.25,
+      "remaining_hours": 18.75,
       "progress_pct": 6,
-      "cycles": 467,
-      "heartbeat_human": "06:51:09",
+      "cycles": 468,
+      "heartbeat_human": "06:52:09",
       "tree": {
         "phases": [
           {
@@ -105,30 +105,14 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-C",
             "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATE",
+            "last": "RETHINK_REQUIRED",
             "score": 4,
             "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "22:04:22",
-            "cycle": 423,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "22:04:22",
-            "cycle": 423,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 5,
-            "note": "RED.log старше старта витка на 22853 с"
-          },
           {
             "clock": "22:09:40",
             "cycle": 424,
@@ -592,11 +576,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "06:52:15",
+            "cycle": 468,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "06:52:15",
+            "cycle": 468,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "RETHINK_REQUIRED",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 379,
-          "mutations": 378
+          "version": 380,
+          "mutations": 379
         },
         "events": 400,
         "avg_score": 0.0,
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.24,
-      "remaining_hours": 18.76,
+      "elapsed_hours": 1.25,
+      "remaining_hours": 18.75,
       "progress_pct": 6,
       "cycles": 468,
-      "heartbeat_human": "06:51:17",
+      "heartbeat_human": "06:52:17",
       "tree": {
         "phases": [
           {
@@ -1199,6 +1199,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795837894,
-  "fetched_human": "2026-11-28 06:51:34 +0300"
+  "fetched_at": 1795837955,
+  "fetched_human": "2026-11-28 06:52:35 +0300"
 }
