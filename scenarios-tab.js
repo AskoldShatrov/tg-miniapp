@@ -364,15 +364,15 @@
   window.QrunScenarios = { mount: mount };
 })();
 
-/* Казино — отдельный оффлайн-модуль вкладки. Подключаем динамически, чтобы не
-   править index.html (файл может быть занят другим агентом). Модуль сам
-   регистрирует кнопку и секцию, деградирует молча, если файла нет. */
+/* Казино — отдельный оффлайн-модуль. Подключаем динамически, чтобы не
+   править index.html (файл может быть занят другим агентом). Видимость вкладки
+   регулируется TAB_VISIBLE внутри casino-tab.js; модуль деградирует молча. */
 (function () {
   try {
     if (document.getElementById('csn-boot')) return;
     var s = document.createElement('script');
     s.id = 'csn-boot';
-    s.src = 'casino-tab.js?v=20261122-1';
+    s.src = 'casino-tab.js?v=20261128-hidden2';
     (document.head || document.body).appendChild(s);
   } catch (e) { /* без казино апп продолжает работать */ }
 })();
