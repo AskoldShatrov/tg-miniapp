@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.32,
-      "remaining_hours": 8.68,
+      "elapsed_hours": 11.34,
+      "remaining_hours": 8.66,
       "progress_pct": 57,
       "cycles": 556,
-      "heartbeat_human": "16:56:32",
+      "heartbeat_human": "16:57:32",
       "tree": {
         "phases": [
           {
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 11.32,
-      "remaining_hours": 8.68,
+      "elapsed_hours": 11.34,
+      "remaining_hours": 8.66,
       "progress_pct": 57,
       "cycles": 570,
-      "heartbeat_human": "16:56:32",
+      "heartbeat_human": "16:57:32",
       "tree": {
         "phases": [
           {
@@ -1385,9 +1385,273 @@
         "avg_score": 0.0,
         "fail_streak": 1
       }
+    },
+    {
+      "id": "skill-upgrade-1128",
+      "label": "skill upgrade 1128",
+      "status": "идёт",
+      "budget_hours": 8.0,
+      "elapsed_hours": 3.83,
+      "remaining_hours": 4.17,
+      "progress_pct": 48,
+      "cycles": 13,
+      "heartbeat_human": "16:57:20",
+      "tree": {
+        "phases": [
+          {
+            "id": "CAP-AUDIT-MECH-1128",
+            "title": "Аудит исполняемых механизмов подключённых скиллов",
+            "cycles": 2,
+            "max": 2,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "CAP-DISCOVER-FOUR-1128",
+            "title": "Независимый четырёхисточниковый поиск скиллов прокачки",
+            "cycles": 2,
+            "max": 2,
+            "last": "WARMUP",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "CAP-AB-ROUTER-1128",
+            "title": "Проверка выигрыша роутера потребностей против базы",
+            "cycles": 2,
+            "max": 2,
+            "last": "RETHINK_REQUIRED",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "CAP-TRUST-VERIFY-1128",
+            "title": "Верификация доверия кандидатов на установку",
+            "cycles": 2,
+            "max": 2,
+            "last": "WARMUP",
+            "score": 2,
+            "verified": false
+          },
+          {
+            "id": "CAP-GEN-HOLDOUT3-1128",
+            "title": "Третий независимый набор: измерить обобщение роутера",
+            "cycles": 2,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "CAP-PLUGIN-AB-1128",
+            "title": "Планирование честного A/B эффекта расширения поиска инструментов",
+            "cycles": 2,
+            "max": 2,
+            "last": "RETHINK_REQUIRED",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "CAP-SKILL-EXEC-1128",
+            "title": "Аудит исполняемых механизмов у маршрутизируемых скиллов",
+            "cycles": 1,
+            "max": 2,
+            "last": "MUTATE",
+            "score": 5,
+            "verified": false
+          },
+          {
+            "id": "CAP-VERIFY-PROOF-1128",
+            "title": "Честный разбор отсутствия verify_ok в движке",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "13:07:50",
+            "cycle": 0,
+            "task": "LEDGER_INIT",
+            "action": "INIT",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:07:50",
+            "cycle": 1,
+            "task": "CAP-AUDIT-MECH-1128",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: FAIL pattern=/home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AUDI"
+          },
+          {
+            "clock": "13:07:50",
+            "cycle": 2,
+            "task": "CAP-AUDIT-MECH-1128",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: FAIL pattern=/home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AUDI"
+          },
+          {
+            "clock": "13:11:46",
+            "cycle": 3,
+            "task": "CAP-DISCOVER-FOUR-1128",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:17:56",
+            "cycle": 4,
+            "task": "CAP-DISCOVER-FOUR-1128",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:22:04",
+            "cycle": 5,
+            "task": "CAP-AB-ROUTER-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:22:04",
+            "cycle": 5,
+            "task": "CAP-AB-ROUTER-1128",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:27:10",
+            "cycle": 6,
+            "task": "CAP-AB-ROUTER-1128",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:27:10",
+            "cycle": 6,
+            "task": "CAP-AB-ROUTER-1128",
+            "action": "RETHINK_REQUIRED",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:32:51",
+            "cycle": 7,
+            "task": "CAP-TRUST-VERIFY-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:32:51",
+            "cycle": 7,
+            "task": "CAP-TRUST-VERIFY-1128",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:41:20",
+            "cycle": 8,
+            "task": "CAP-TRUST-VERIFY-1128",
+            "action": "WARMUP",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/C"
+          },
+          {
+            "clock": "13:45:10",
+            "cycle": 9,
+            "task": "CAP-GEN-HOLDOUT3-1128",
+            "action": "WARMUP",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:47:37",
+            "cycle": 10,
+            "task": "CAP-GEN-HOLDOUT3-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:47:37",
+            "cycle": 10,
+            "task": "CAP-GEN-HOLDOUT3-1128",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "13:53:59",
+            "cycle": 11,
+            "task": "CAP-PLUGIN-AB-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:53:59",
+            "cycle": 11,
+            "task": "CAP-PLUGIN-AB-1128",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "14:00:04",
+            "cycle": 12,
+            "task": "CAP-PLUGIN-AB-1128",
+            "action": "MUTATED_AFTER_3_FAIL",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:00:04",
+            "cycle": 12,
+            "task": "CAP-PLUGIN-AB-1128",
+            "action": "RETHINK_REQUIRED",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          },
+          {
+            "clock": "14:04:39",
+            "cycle": 13,
+            "task": "CAP-SKILL-EXEC-1128",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "14:04:39",
+            "cycle": 13,
+            "task": "CAP-SKILL-EXEC-1128",
+            "action": "MUTATE",
+            "score": 5,
+            "note": "RED.log отсутствует"
+          }
+        ],
+        "strategy": {
+          "version": 8,
+          "mutations": 7
+        },
+        "events": 21,
+        "avg_score": 4.0,
+        "fail_streak": 1
+      }
     }
   ],
-  "count": 2,
-  "fetched_at": 1795874192,
-  "fetched_human": "2026-11-28 16:56:32 +0300"
+  "count": 3,
+  "fetched_at": 1795874253,
+  "fetched_human": "2026-11-28 16:57:33 +0300"
 }
