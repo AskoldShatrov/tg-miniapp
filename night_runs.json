@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.51,
-      "remaining_hours": 15.49,
+      "elapsed_hours": 4.53,
+      "remaining_hours": 15.47,
       "progress_pct": 23,
       "cycles": 532,
-      "heartbeat_human": "10:07:40",
+      "heartbeat_human": "10:08:40",
       "tree": {
         "phases": [
           {
@@ -644,11 +644,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.51,
-      "remaining_hours": 15.49,
+      "elapsed_hours": 4.53,
+      "remaining_hours": 15.47,
       "progress_pct": 23,
-      "cycles": 531,
-      "heartbeat_human": "10:07:48",
+      "cycles": 532,
+      "heartbeat_human": "10:08:48",
       "tree": {
         "phases": [
           {
@@ -744,9 +744,9 @@
           {
             "id": "SF-WRITER-NIGHT-CURATION-G",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "MUTATED_AFTER_3_FAIL",
+            "last": "MUTATE",
             "score": 2,
             "verified": false
           },
@@ -779,22 +779,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:05:12",
-            "cycle": 499,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "08:05:12",
-            "cycle": 499,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
           {
             "clock": "08:14:18",
             "cycle": 500,
@@ -1258,19 +1242,35 @@
             "action": "MUTATED_AFTER_3_FAIL",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "10:08:47",
+            "cycle": 532,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "10:08:47",
+            "cycle": 532,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 380,
-          "mutations": 379
+          "version": 381,
+          "mutations": 380
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795849678,
-  "fetched_human": "2026-11-28 10:07:59 +0300"
+  "fetched_at": 1795849739,
+  "fetched_human": "2026-11-28 10:08:59 +0300"
 }
