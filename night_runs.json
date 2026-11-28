@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.23,
-      "remaining_hours": 19.77,
+      "elapsed_hours": 0.25,
+      "remaining_hours": 19.75,
       "progress_pct": 1,
       "cycles": 448,
-      "heartbeat_human": "05:51:09",
+      "heartbeat_human": "05:52:09",
       "tree": {
         "phases": [
           {
@@ -81,6 +81,15 @@
             "cycles": 2,
             "max": 12,
             "last": "RETHINK_BLOCKED",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "IMP-WRITER-NIGHT-CURATION",
+            "title": "Writer-виток аудита: переформулировка заменена физической парой",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
             "score": 0,
             "verified": false
           }
@@ -581,11 +590,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.23,
-      "remaining_hours": 19.77,
+      "elapsed_hours": 0.25,
+      "remaining_hours": 19.75,
       "progress_pct": 1,
-      "cycles": 451,
-      "heartbeat_human": "05:50:47",
+      "cycles": 452,
+      "heartbeat_human": "05:51:47",
       "tree": {
         "phases": [
           {
@@ -653,14 +662,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:44:06",
-            "cycle": 414,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос death-tick"
-          },
           {
             "clock": "21:45:22",
             "cycle": 415,
@@ -1132,11 +1133,19 @@
             "action": "REFORMULATE",
             "score": 0,
             "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос consult"
+          },
+          {
+            "clock": "05:51:16",
+            "cycle": 452,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос rethink"
           }
         ],
         "strategy": {
-          "version": 324,
-          "mutations": 323
+          "version": 325,
+          "mutations": 324
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1145,6 +1154,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795834274,
-  "fetched_human": "2026-11-28 05:51:14 +0300"
+  "fetched_at": 1795834334,
+  "fetched_human": "2026-11-28 05:52:14 +0300"
 }
