@@ -381,6 +381,29 @@
   .typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
   @keyframes blink{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
 
+  /* @owner:chat-ergonomics-1128 @region:chat-css: один экран, крупный ввод, компактная лента */
+  #screen-chat.active{display:flex;flex-direction:column;height:100%;min-height:0}
+  #screen-chat .chat-head{flex:0 0 auto;margin-bottom:8px}
+  #screen-chat .chatwrap{flex:1 1 auto;min-height:120px;display:flex}
+  #screen-chat .chatlog{flex:1 1 auto;height:100%;max-height:none;min-height:0}
+  #screen-chat .composer{flex:0 0 auto;position:sticky;bottom:0;z-index:5;background:var(--base);
+    padding-bottom:calc(5px + env(safe-area-inset-bottom))}
+  #screen-chat .quick{flex:0 0 auto;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  #screen-chat .quick::-webkit-scrollbar{display:none}
+  #screen-chat .quick button{flex:0 0 auto;min-height:40px;padding:10px 11px}
+  .chat-clear{min-height:40px;padding:8px 11px;border:1px solid var(--surface1);border-radius:10px;
+    background:var(--surface0);color:var(--subtext1);font:700 11px/1 var(--ff);cursor:pointer}
+  .chat-retry{min-height:40px;margin-top:7px;padding:8px 12px;border:0;border-radius:10px;
+    background:var(--blue);color:var(--crust);font:700 11px/1 var(--ff);cursor:pointer}
+  .pair{padding:6px 8px;border-radius:12px;background:transparent;border:0;border-left:0}
+  .pair.pending,.pair.done,.pair.stray{border-left:0}
+  .pair-head{margin:0 0 5px 2px}
+  .pair-no{display:none}
+  .pair-body{padding-left:0}
+  .pair .bubble{font-size:13px}
+  .pair-wait{padding-left:0}
+  @media (max-width:600px){ .hotbar{display:none} }
+
   /* ---------- tree screen ---------- */
   .summary{display:flex;gap:8px;margin-bottom:14px}
   .stat{
@@ -658,13 +681,12 @@
   .src-api{font:700 9px/1 var(--fm);color:var(--green);margin-left:6px}
 
   /* ===== студия идей: второй слой + стикер ===== */
-  /* @owner:redesign-2026-11-21 @region:tabs-5-css: 5 табов в один ряд */
+  /* @owner:redesign-2026-11-21 @region:tabs-5-css: 5 основных вкладок, остальные в «Ещё» */
   nav.tabs{flex-wrap:nowrap;gap:5px}
-  .tab{flex:1 1 calc(20% - 5px);min-width:0;font-size:11px;padding:8px 3px;gap:4px}
-  @media (max-width:420px){ .tab .key{display:none} .tab{font-size:10.5px} }
-  /* @owner:library-tab @region:library-tabs-css: 7 вкладок в один ряд без переполнения */
-  nav.tabs .tab{flex:1 1 0;min-width:0}
-  /* @owner:library-tab @region:library-css */
+  nav.tabs>.tab{flex:1 1 0;min-width:0;min-height:44px;font-size:11px;padding:8px 3px;gap:4px}
+  nav.tabs>.tab-more{flex:0 0 52px}
+  @media (max-width:420px){ .tab .key{display:none} nav.tabs>.tab{font-size:10.5px} }
+  /* @owner:library-tab @region:library-tabs-css end */
   #library-tab{padding:14px 14px 30px;max-width:720px;margin:0 auto}
   #library-tab .lb-head{margin-bottom:12px}
   #library-tab .lb-title{display:flex;align-items:center;gap:8px;font:800 20px/1.2 var(--ff);color:var(--text)}
