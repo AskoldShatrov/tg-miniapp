@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.42,
-      "remaining_hours": 19.58,
+      "elapsed_hours": 0.43,
+      "remaining_hours": 19.57,
       "progress_pct": 2,
-      "cycles": 450,
-      "heartbeat_human": "06:02:09",
+      "cycles": 451,
+      "heartbeat_human": "06:03:09",
       "tree": {
         "phases": [
           {
@@ -95,14 +95,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:48:07",
-            "cycle": 412,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:48:07",
             "cycle": 412,
@@ -574,11 +566,19 @@
             "action": "RETHINK_REQUIRED",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "06:02:58",
+            "cycle": 451,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос night-curation"
           }
         ],
         "strategy": {
-          "version": 369,
-          "mutations": 368
+          "version": 370,
+          "mutations": 369
         },
         "events": 400,
         "avg_score": 0.0,
@@ -590,11 +590,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.42,
-      "remaining_hours": 19.58,
+      "elapsed_hours": 0.43,
+      "remaining_hours": 19.57,
       "progress_pct": 2,
       "cycles": 455,
-      "heartbeat_human": "06:02:17",
+      "heartbeat_human": "06:03:17",
       "tree": {
         "phases": [
           {
@@ -1163,6 +1163,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795834937,
-  "fetched_human": "2026-11-28 06:02:17 +0300"
+  "fetched_at": 1795834997,
+  "fetched_human": "2026-11-28 06:03:17 +0300"
 }
