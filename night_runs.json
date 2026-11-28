@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.54,
-      "remaining_hours": 15.46,
+      "elapsed_hours": 4.56,
+      "remaining_hours": 15.44,
       "progress_pct": 23,
-      "cycles": 532,
-      "heartbeat_human": "10:09:40",
+      "cycles": 533,
+      "heartbeat_human": "10:10:40",
       "tree": {
         "phases": [
           {
@@ -121,6 +121,15 @@
             "verified": true
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-G",
+            "title": "Writer-виток audit:физическая пара вместо переформулировок",
+            "cycles": 3,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 2,
@@ -137,34 +146,9 @@
             "last": "RETHINK_REQUIRED",
             "score": 4,
             "verified": true
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-G",
-            "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 2,
-            "max": 5,
-            "last": "RETHINK_BLOCKED",
-            "score": 0,
-            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "07:57:47",
-            "cycle": 498,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "07:59:02",
-            "cycle": 499,
-            "task": "IMP-WRITER-NIGHT-CURATIO",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:07:07",
             "cycle": 500,
@@ -628,15 +612,31 @@
             "action": "RETHINK_BLOCKED",
             "score": 0,
             "note": ""
+          },
+          {
+            "clock": "10:10:29",
+            "cycle": 533,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "10:10:29",
+            "cycle": 533,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 424,
-          "mutations": 423
+          "version": 425,
+          "mutations": 424
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 1
+        "fail_streak": 2
       }
     },
     {
@@ -644,11 +644,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 4.54,
-      "remaining_hours": 15.46,
+      "elapsed_hours": 4.56,
+      "remaining_hours": 15.44,
       "progress_pct": 23,
-      "cycles": 532,
-      "heartbeat_human": "10:09:48",
+      "cycles": 533,
+      "heartbeat_human": "10:10:48",
       "tree": {
         "phases": [
           {
@@ -776,17 +776,18 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
+          },
+          {
+            "id": "SF-WRITER-NIGHT-CURATION-H",
+            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:14:18",
-            "cycle": 500,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATED_AFTER_3_FAIL",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "08:14:18",
             "cycle": 500,
@@ -1258,11 +1259,19 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "10:10:02",
+            "cycle": 533,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
           }
         ],
         "strategy": {
-          "version": 381,
-          "mutations": 380
+          "version": 382,
+          "mutations": 381
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1271,6 +1280,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795849799,
-  "fetched_human": "2026-11-28 10:09:59 +0300"
+  "fetched_at": 1795849859,
+  "fetched_human": "2026-11-28 10:10:59 +0300"
 }
