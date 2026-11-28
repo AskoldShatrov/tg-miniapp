@@ -2343,8 +2343,8 @@ function pairChat(sent, replies){
     if(out[i]) continue;
     const q=qs[i]; let idx=-1;
     for(let j=ri;j<rs.length;j++){
-      if(used[j] || rs[j].rid) continue;
-      if(!q.ts || !rs[j].ts || rs[j].ts>=q.ts-1000){ idx=j; break; }
+      if(used[j] || rs[j].rid || !q.ts || !rs[j].ts) continue;
+      if(rs[j].ts>=q.ts-1000){ idx=j; break; }
     }
     const rep=idx>=0?rs[idx]:null;
     if(idx>=0){ used[idx]=true; ri=idx+1; }
@@ -3982,9 +3982,10 @@ function studioBind(){
 function studioSend(sid){
   if(!canSend()){ toast("Нет канала к агенту: открой мини-ап через бота"); return; }
   const c=studioCards().find(x=>x.id===sid);
+  const ts=Date.now();
   const payload={ source:"miniapp_studio", id:sid, kind:c?c.kind:"",
     sticker:c?studioSticker(c):"", rating:SMAN.rating[sid]||0,
-    links:(SMAN.links[sid]||[]), user_id:userID, ts:Date.now(), rid:"st"+Date.now() };
+    links:(SMAN.links[sid]||[]), user_id:userID, ts:ts, rid:"st"+ts };
   /* Записываем отправку в общий чат: панель «Ответ» в Студии pairing'ит
      reply из того же replies.json, что и чат (переменная CHAT.replies). */
   CHAT.sent.push({ text:"◈ "+(c?(c.kind||"идея"):"стикер")+": "+(c?(studioSticker(c)||c.id):sid),
