@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.04,
-      "remaining_hours": 17.96,
+      "elapsed_hours": 2.06,
+      "remaining_hours": 17.94,
       "progress_pct": 10,
       "cycles": 486,
-      "heartbeat_human": "07:39:40",
+      "heartbeat_human": "07:40:40",
       "tree": {
         "phases": [
           {
@@ -617,11 +617,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 2.04,
-      "remaining_hours": 17.96,
+      "elapsed_hours": 2.06,
+      "remaining_hours": 17.94,
       "progress_pct": 10,
-      "cycles": 482,
-      "heartbeat_human": "07:39:47",
+      "cycles": 483,
+      "heartbeat_human": "07:40:47",
       "tree": {
         "phases": [
           {
@@ -706,6 +706,15 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-D",
+            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
+            "cycles": 2,
+            "max": 5,
+            "last": "RETHINK_REQUIRED",
+            "score": 2,
+            "verified": false
+          },
+          {
             "id": "CONSULT-FAMILY-MUT-WRITER",
             "title": "Консультант: содержательная мутация семейства эвристик, не переформули",
             "cycles": 1,
@@ -713,34 +722,9 @@
             "last": "RETHINK_BLOCKED",
             "score": 0,
             "verified": false
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-D",
-            "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
-            "cycles": 1,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
           }
         ],
         "trail": [
-          {
-            "clock": "22:31:21",
-            "cycle": 439,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 4,
-            "note": "verify rc=1: claim_status\": \"STRUCTURAL_ONLY\",\n  \"defects\": [\n    \"STALE_EVIDENCE: mtime в"
-          },
-          {
-            "clock": "22:39:28",
-            "cycle": 440,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "WARMUP",
-            "score": 7,
-            "note": ""
-          },
           {
             "clock": "22:47:44",
             "cycle": 441,
@@ -1204,19 +1188,35 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "07:40:39",
+            "cycle": 483,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "07:40:39",
+            "cycle": 483,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "RETHINK_REQUIRED",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
-          "version": 346,
-          "mutations": 345
+          "version": 347,
+          "mutations": 346
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     }
   ],
   "count": 2,
-  "fetched_at": 1795840792,
-  "fetched_human": "2026-11-28 07:39:53 +0300"
+  "fetched_at": 1795840853,
+  "fetched_human": "2026-11-28 07:40:53 +0300"
 }
