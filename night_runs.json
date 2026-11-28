@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.23,
-      "remaining_hours": 11.77,
+      "elapsed_hours": 8.25,
+      "remaining_hours": 11.75,
       "progress_pct": 41,
       "cycles": 555,
-      "heartbeat_human": "13:50:53",
+      "heartbeat_human": "13:51:53",
       "tree": {
         "phases": [
           {
@@ -689,11 +689,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 8.23,
-      "remaining_hours": 11.77,
+      "elapsed_hours": 8.25,
+      "remaining_hours": 11.75,
       "progress_pct": 41,
-      "cycles": 566,
-      "heartbeat_human": "13:50:53",
+      "cycles": 567,
+      "heartbeat_human": "13:51:53",
       "tree": {
         "phases": [
           {
@@ -884,17 +884,18 @@
             "last": "MUTATE",
             "score": 2,
             "verified": false
+          },
+          {
+            "id": "SF-WRITER-NIGHT-CURATION-O",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 0,
+            "max": 5,
+            "last": "—",
+            "score": 0,
+            "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "09:20:04",
-            "cycle": 524,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "RETHINK_REQUIRED",
-            "score": 2,
-            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
-          },
           {
             "clock": "09:26:03",
             "cycle": 525,
@@ -1366,11 +1367,19 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:51:22",
+            "cycle": 567,
+            "task": "SCOUT_OPEN",
+            "action": "REFORMULATE",
+            "score": 0,
+            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос task-contract"
           }
         ],
         "strategy": {
-          "version": 393,
-          "mutations": 392
+          "version": 394,
+          "mutations": 393
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1382,11 +1391,11 @@
       "label": "skill upgrade 1128",
       "status": "идёт",
       "budget_hours": 8.0,
-      "elapsed_hours": 0.72,
-      "remaining_hours": 7.28,
+      "elapsed_hours": 0.74,
+      "remaining_hours": 7.26,
       "progress_pct": 9,
       "cycles": 10,
-      "heartbeat_human": "13:51:04",
+      "heartbeat_human": "13:52:04",
       "tree": {
         "phases": [
           {
@@ -1595,6 +1604,6 @@
     }
   ],
   "count": 3,
-  "fetched_at": 1795863072,
-  "fetched_human": "2026-11-28 13:51:12 +0300"
+  "fetched_at": 1795863129,
+  "fetched_human": "2026-11-28 13:52:09 +0300"
 }
