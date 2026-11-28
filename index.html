@@ -2312,7 +2312,7 @@ function pairChat(sent, replies){
     for(let j=0;j<rs.length;j++){
       if(used[j] || !rs[j].rid || rs[j].rid!==q.rid) continue;
       used[j]=true;
-      out[i]={rid:q.rid,text:q.text,ts:q.ts,t:q.t,rep:rs[j],pending:false,rid_match:true};
+      out[i]={rid:q.rid,text:q.text,ts:q.ts,t:q.t,rep:rs[j],pending:false,rid_match:true,failed:q.failed};
       break;
     }
   }
@@ -2327,7 +2327,7 @@ function pairChat(sent, replies){
     }
     const rep=idx>=0?rs[idx]:null;
     if(idx>=0){ used[idx]=true; ri=idx+1; }
-    out[i]={rid:q.rid,text:q.text,ts:q.ts,t:q.t,rep:rep,pending:!rep,rid_match:false};
+    out[i]={rid:q.rid,text:q.text,ts:q.ts,t:q.t,rep:rep,pending:!rep,rid_match:false,failed:q.failed};
   }
   /* Неразобранные ответы — отдельные входящие карточки, не подмена запросов. */
   for(let j=0;j<rs.length;j++){
@@ -2409,6 +2409,22 @@ if(chatJump) chatJump.addEventListener("click",()=>{
   const log=$("#chatLog"); if(!log) return;
   chatPinned=true; chatUnread=0; log.scrollTop=log.scrollHeight; updateJump();
 });
+function clearChatVisual(){
+  CHAT.clearedAt=Date.now();
+  try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
+  chatSig=""; chatPinned=true; chatUnread=0;
+  renderChat();
+  toast("Старые сообщения скрыты · задачи продолжаются");
+}
+const chatClear=$("#chatClear");
+if(chatClear) chatClear.addEventListener("click",clearChatVisual);
+if(chatLogNode) chatLogNode.addEventListener("click",e=>{
+  const retry=e.target.closest("[data-retry-chat]");
+  if(retry){ retryChat(retry.getAttribute("data-retry-chat")); return; }
+  if(e.target.closest("[data-refresh-chat]")){
+    refreshReplies(); toast("Проверяю ответы…");
+  }
+});
 async function refreshReplies(){
   for(const base of DATA_URLS){
     try{
@@ -2484,6 +2500,20 @@ function sendChat(){
   }
   if(sent && typeof sent.then==="function") sent.then(markNotSent);
   else markNotSent(sent);
+}
+function retryChat(oldRid){
+  const m=(CHAT.sent||[]).find(x=>String(x.rid||"")===String(oldRid||""));
+  if(!m) return;
+  const rid=Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  m.rid=rid; m.ts=Date.now(); m.t=new Date().toTimeString().slice(0,8); m.failed=false;
+  try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
+  renderChat();
+  const sent=dshSend({source:"miniapp_chat",text:m.text,user_id:userID,rid:rid,
+           session_id:interviewSession()},"Повторная отправка принята");
+  function done(ok){
+    if(ok===false && m.rid===rid){ m.failed=true; try{localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT));}catch(e){} renderChat(); }
+  }
+  if(sent && typeof sent.then==="function") sent.then(done); else done(sent);
 }
 const chatBtn = $("#chatSend"); if(chatBtn) chatBtn.addEventListener("click", sendChat);
 const chatInp = $("#chatInput"); if(chatInp) chatInp.addEventListener("keydown", e => {
