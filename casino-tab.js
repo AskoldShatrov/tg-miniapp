@@ -159,10 +159,7 @@
     '.csn-card input{width:100%;min-height:46px;padding:0 12px;border-radius:12px;border:1px solid var(--surface2);background:var(--crust);color:var(--text);font:800 16px/1 var(--fm);text-align:center}',
     '.csn-card button{min-height:46px;border:0;border-radius:12px;background:var(--blue);color:#11111b;font:800 14px/1 var(--ff);cursor:pointer}',
     '.csn-card button.ghost{background:var(--surface0);color:var(--subtext1)}',
-    '.csn-card .csn-disclaimer{font:600 11px/1.45 var(--ff);color:var(--overlay0)}',
-    /* 6-й таб: исходный CSS рассчитан на 5 — переопределяем локально, не трогая index.html */
-    '.tabs .tab{flex:1 1 16%;min-width:0;min-height:44px;white-space:nowrap;overflow:hidden}',
-    '.tabs .tab .key{display:none}'
+    '.csn-card .csn-disclaimer{font:600 11px/1.45 var(--ff);color:var(--overlay0)}'
   ].join('');
 
   function injectCSS() {
@@ -222,8 +219,7 @@
       '</div>';
   }
 
-  /* Вкладка регистрируется сама: index.html может быть занят другим агентом,
-     поэтому модуль не требует правки разметки. Если разметка уже есть — используем её. */
+  /* Экран сохраняется для совместимости, но кнопка и hotkey скрыты по запросу. */
   function ensureHost() {
     var doc = root.document;
     if (!doc) return null;
@@ -235,27 +231,6 @@
       var main = doc.getElementById('main');
       if (!main) return null;
       main.appendChild(host);
-    }
-    var nav = doc.getElementById('tabs');
-    if (nav && !nav.querySelector('[data-tab="casino"]')) {
-      var btn = doc.createElement('button');
-      btn.className = 'tab';
-      btn.setAttribute('data-tab', 'casino');
-      btn.innerHTML = '<span>🎰</span> Казино <span class="key">6</span>';
-      btn.addEventListener('click', function () {
-        if (typeof root.setTab === 'function') root.setTab('casino');
-      });
-      nav.appendChild(btn);
-    }
-    var hb = doc.querySelector('.hotbar');
-    if (hb && !doc.getElementById('csnHotkey')) {
-      var sep = doc.createElement('span'); sep.className = 'sep';
-      var hk = doc.createElement('span'); hk.className = 'hk'; hk.id = 'csnHotkey';
-      hk.innerHTML = '<kbd>6</kbd> Казино';
-      var hks = hb.querySelectorAll('.hk');
-      var last = hks[hks.length - 1];
-      if (last) { hb.insertBefore(sep, last); hb.insertBefore(hk, last); }
-      else { hb.appendChild(sep); hb.appendChild(hk); }
     }
     return host;
   }
@@ -290,10 +265,7 @@
       if (e.key === 'Escape') {
         var m = root.document.getElementById('csnModal');
         if (m && !m.hidden) { e.preventDefault(); closeJackpot(); }
-        return;
       }
-      if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName || '')) return;
-      if (e.key === '6' && typeof root.setTab === 'function') root.setTab('casino');
     });
   }
 
@@ -307,12 +279,6 @@
     patchSetTab();
     bindKeys();
     renderAll();
-    /* Глубокняя ссылка ?tab=casino: исходный скрипт отклонил её до нашей установки. */
-    try {
-      if (new URLSearchParams(root.location.search).get('tab') === 'casino' && typeof root.setTab === 'function') {
-        root.setTab('casino');
-      }
-    } catch (e) { /* без deep-link вкладка открывается кнопкой */ }
   }
 
   function $(s, r) { return (r || root.document).querySelector(s); }
