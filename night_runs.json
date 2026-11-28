@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.51,
-      "remaining_hours": 12.49,
+      "elapsed_hours": 7.52,
+      "remaining_hours": 12.48,
       "progress_pct": 38,
       "cycles": 551,
-      "heartbeat_human": "13:07:23",
+      "heartbeat_human": "13:08:23",
       "tree": {
         "phases": [
           {
@@ -680,11 +680,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.51,
-      "remaining_hours": 12.49,
+      "elapsed_hours": 7.52,
+      "remaining_hours": 12.48,
       "progress_pct": 38,
       "cycles": 563,
-      "heartbeat_human": "13:07:23",
+      "heartbeat_human": "13:08:23",
       "tree": {
         "phases": [
           {
@@ -1367,9 +1367,93 @@
         "avg_score": 0.0,
         "fail_streak": 1
       }
+    },
+    {
+      "id": "skill-upgrade-1128",
+      "label": "skill upgrade 1128",
+      "status": "идёт",
+      "budget_hours": 4.0,
+      "elapsed_hours": 0.01,
+      "remaining_hours": 3.99,
+      "progress_pct": 0,
+      "cycles": 2,
+      "heartbeat_human": "13:08:28",
+      "tree": {
+        "phases": [
+          {
+            "id": "CAP-AUDIT-MECH-1128",
+            "title": "Аудит исполняемых механизмов подключённых скиллов",
+            "cycles": 2,
+            "max": 2,
+            "last": "WARMUP",
+            "score": 4,
+            "verified": false
+          },
+          {
+            "id": "CAP-DISCOVER-FOUR-1128",
+            "title": "Независимый четырёхисточниковый поиск скиллов прокачки",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "CAP-AB-ROUTER-1128",
+            "title": "Проверка выигрыша роутера потребностей против базы",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          },
+          {
+            "id": "CAP-TRUST-VERIFY-1128",
+            "title": "Верификация доверия кандидатов на установку",
+            "cycles": 0,
+            "max": 2,
+            "last": "—",
+            "score": 0,
+            "verified": false
+          }
+        ],
+        "trail": [
+          {
+            "clock": "13:07:50",
+            "cycle": 0,
+            "task": "LEDGER_INIT",
+            "action": "INIT",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:07:50",
+            "cycle": 1,
+            "task": "CAP-AUDIT-MECH-1128",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: FAIL pattern=/home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AUDI"
+          },
+          {
+            "clock": "13:07:50",
+            "cycle": 2,
+            "task": "CAP-AUDIT-MECH-1128",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: FAIL pattern=/home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AUDI"
+          }
+        ],
+        "strategy": {
+          "version": 1,
+          "mutations": 0
+        },
+        "events": 3,
+        "avg_score": 4.0,
+        "fail_streak": 2
+      }
     }
   ],
-  "count": 2,
-  "fetched_at": 1795860462,
-  "fetched_human": "2026-11-28 13:07:42 +0300"
+  "count": 3,
+  "fetched_at": 1795860522,
+  "fetched_human": "2026-11-28 13:08:42 +0300"
 }
