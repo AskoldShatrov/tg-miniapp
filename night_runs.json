@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.11,
-      "remaining_hours": 13.89,
+      "elapsed_hours": 6.13,
+      "remaining_hours": 13.87,
       "progress_pct": 31,
-      "cycles": 540,
-      "heartbeat_human": "11:43:22",
+      "cycles": 541,
+      "heartbeat_human": "11:44:22",
       "tree": {
         "phases": [
           {
@@ -112,6 +112,15 @@
             "verified": false
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-I",
+            "title": "Writer-виток audit: исправленный контракт артефакта",
+            "cycles": 4,
+            "max": 5,
+            "last": "WARMUP",
+            "score": 3,
+            "verified": false
+          },
+          {
             "id": "IMP-NIGHT-WATCHDOG-20H",
             "title": "Аудит свежих витков: что реально улучшилось и где регресс",
             "cycles": 3,
@@ -126,15 +135,6 @@
             "cycles": 3,
             "max": 3,
             "last": "MUTATE",
-            "score": 4,
-            "verified": true
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-I",
-            "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 3,
-            "max": 5,
-            "last": "WARMUP",
             "score": 4,
             "verified": true
           },
@@ -167,14 +167,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:27:15",
-            "cycle": 507,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:28:30",
             "cycle": 508,
@@ -646,6 +638,14 @@
             "action": "WARMUP",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "11:44:36",
+            "cycle": 541,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "WARMUP",
+            "score": 3,
+            "note": "нет completion promise"
           }
         ],
         "strategy": {
@@ -654,7 +654,7 @@
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -662,11 +662,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 6.11,
-      "remaining_hours": 13.89,
+      "elapsed_hours": 6.13,
+      "remaining_hours": 13.87,
       "progress_pct": 31,
       "cycles": 550,
-      "heartbeat_human": "11:43:22",
+      "heartbeat_human": "11:44:22",
       "tree": {
         "phases": [
           {
@@ -1334,6 +1334,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795855429,
-  "fetched_human": "2026-11-28 11:43:49 +0300"
+  "fetched_at": 1795855490,
+  "fetched_human": "2026-11-28 11:44:50 +0300"
 }
