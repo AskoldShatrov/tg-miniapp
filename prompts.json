@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-28T16:51:56+00:00",
-  "generated_human": "28.11 16:51 UTC",
-  "as_of": 1795884712761,
+  "generated": "2026-11-28T16:53:03+00:00",
+  "generated_human": "28.11 16:53 UTC",
+  "as_of": 1795884778334,
   "stale_days": 1,
-  "count": 1187,
+  "count": 1188,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -19,11 +19,10 @@
    "inbox.log",
    "opencode.db (сессии ноута)",
    "wants.json",
-   "replies.json"
+   "replies.json",
+   "runtime/tmp-checkpoint/pc_user_msgs.json"
   ],
-  "sources_skipped": [
-   "runtime/tmp-checkpoint/pc_user_msgs.json (выгрузка с ПК ещё не настроена)"
-  ],
+  "sources_skipped": [],
   "note": "группировка по темам; связи с хотелками (минимум 2 слова); ответ — реальная доставка из replies.json с префиксом want_id; as_of — время вопроса, is_stale — возраст доставки; сессии ноута — последние 800 с user-сообщениями из живой БД, до 2 текста на сессию (окно 3 дн), не вся история"
  },
  "groups": [
@@ -42,7 +41,7 @@
     {
      "id": "ses-lPYmsS5Diz",
      "text": "ПРОРАБОТКА РАДАРА, новая гипотеза. Проверить, даёт ли spectator/overview режим в НОВОМ корпусе FACEIT-демо доступ к малому радару (ранее физически недоступен в обоих режимах — 64, 89). Если нет — зафиксировать отрицательный результат с n и причиной. Новый отчёт ~/overnight/open_tracks/R02-radar-spectator-newcorpus.md. Гейт: найден хотя бы 1 валидный кадр с малым радаром и allplayers>0. Не перезаписывать data/. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795884701000,
+     "ts": 1795884772000,
      "source": "session",
      "title": "Малый радар в FACEIT spectator/overview",
      "source_label": "ноут",
@@ -53,7 +52,7 @@
       "w2611200052460530",
       "w2611200052465da0"
      ],
-     "as_of": 1795884701000,
+     "as_of": 1795884772000,
      "is_stale": false
     },
     {
@@ -25923,6 +25922,29 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795732125783,
      "as_of": 1795728296000,
+     "is_stale": true
+    },
+    {
+     "id": "pc-BY63UoAj3F",
+     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
+     "ts": 1795717085000,
+     "source": "pc",
+     "title": "Закачка и разбор T6.7",
+     "source_label": "ПК",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "answer": "[pc-BY63UoAj3F] Loading the required skills and digging for the lost context in parallel.\nSearching past sessions for the missing voice recordings and checking what transcription tools actually exist here.\nThe past-s",
+     "answer_short": "pc-BY63UoAj3F: Loading the required skills and digging for the lost context",
+     "answer_full": "Loading the required skills and digging for the lost context in parallel.\nSearching past sessions for the missing voice recordings and checking what transcription tools actually exist here.\nThe past-session search mostly found today's meta-sessions, not the recordings. Narrowing to the actual files and the transcription tooling.\nFound the actual recordings and — importantly — their finished transcripts. Checking what the earlier error actually was.\nThe gate wants two more skills; also found the report from that exact earlier run. Loading what's missing and reading the report.\nAll facts are verified. Building the two-layer answer and the poster now.\nPoster has a clipped word and the integrity gate rejected the first line for a digit. Fixing both and rebuilding.\nДа, большие аудио разбираются: три записи по моделированию систем расшифрованы, а сбой был не в расшифровке.\n- Два диктофона дали 97 и 105 абзацев; голосовое дало настройку: усиление оставляем равным двум, время интегрирования — около 19,75 минуты.\n- Ошибка была в загрузке трёх файлов со скриншота — сервер отказал (HTTP 400), поэтому использованы локальные записи.\n- По скиллам: поиск — `dsh-plugin-discovery`, тесты — `skill-creator`; каталог DSH дал `dsh-skill-eval`.\nСАМОИСЧЕРПАНИЕ: 4 гейта PASS — human_readable, draft, answer_integrity, presentation (8 PASS / 0 FAIL). Отчёт от 26.11 12:27, sha256 `985e472a…`.",
+     "answer_digest": {
+      "length": 1388,
+      "sha256": "3a1f03cb88a33031bece19d64fb0f0691cf79c231a6ccf861404422236bea443"
+     },
+     "answer_text_id": "3a1f03cb88a33031",
+     "answer_source": "replies.json",
+     "delivered_ts": 1795732125783,
+     "as_of": 1795717085000,
      "is_stale": true
     },
     {
