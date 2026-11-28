@@ -129,8 +129,11 @@
   /* @owner:parallel-edit @region:focus-visible end */
   /* @owner:parallel-edit @region:hick-tabs-css */
   .tab-more{flex:0 0 auto}
-  .tabs-more{display:flex;gap:6px}
+  .tabs-more{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:8px 12px;
+    border-bottom:1px solid var(--surface0);background:rgba(17,17,27,.22)}
   .tabs-more[hidden]{display:none}
+  .tabs-more .tab{min-height:44px;font-size:10.5px;padding:8px 3px}
+  @media (max-width:420px){ .tabs-more{grid-template-columns:repeat(3,1fr)} }
   /* @owner:parallel-edit @region:hick-tabs-css end */
   .tab .key{
     font:700 9px/1 var(--fm); color:var(--overlay0);
