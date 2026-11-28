@@ -155,8 +155,7 @@
     '.gch-cell{position:relative;aspect-ratio:1;border-radius:14px;background:var(--mantle);border:1px solid var(--surface1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:26px}',
     '.gch-cell.locked{filter:grayscale(1);opacity:.35}',
     '.gch-cell b{font:800 10px/1 var(--fm);color:var(--overlay2)}',
-    '.gch-cell .gch-r{position:absolute;top:5px;right:6px;width:8px;height:8px;border-radius:50%}',
-    '.tabs .tab{flex:1 1 14%;min-width:0;min-height:44px;white-space:nowrap;overflow:hidden}'
+    '.gch-cell .gch-r{position:absolute;top:5px;right:6px;width:8px;height:8px;border-radius:50%}'
   ].join('');
 
   function injectCSS() {
@@ -309,14 +308,6 @@
       var main = doc.getElementById('main');
       if (!main) return null;
       main.appendChild(host);
-    }
-    var nav = doc.getElementById('tabs');
-    if (nav && !nav.querySelector('[data-tab="gacha"]')) {
-      var btn = doc.createElement('button');
-      btn.className = 'tab'; btn.setAttribute('data-tab', 'gacha');
-      btn.innerHTML = '<span>✨</span> Гача <span class="key">7</span>';
-      btn.addEventListener('click', function () { if (typeof root.setTab === 'function') root.setTab('gacha'); });
-      nav.appendChild(btn);
     }
     return host;
   }
