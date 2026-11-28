@@ -136,13 +136,15 @@
     var html=tracks.slice(-6).map(function(t){
       var s1="on", s2=(t.state!=="sent"?"on":""), s3=(t.state==="done"?"on":"");
       var ans=t.rep ? '<div class="uw-ans">'+esc(t.rep.text)+"</div>" : "";
-      return '<div class="uw-track'+(t.state==="done"?" done":"")+'" data-rid="'+esc(t.rid)+'" data-state="'+t.state+'">'+
-        '<div class="uw-q">'+esc(t.text)+"</div>"+
-        '<div class="uw-steps">'+
-          '<span class="uw-step '+s1+'">отправлено ✓</span><span class="uw-arrow">→</span>'+
+      var cls=t.state==="done"?" done":(t.state==="failed"?" failed":"");
+      var steps=t.state==="failed"
+        ? '<span class="uw-step on">ошибка · повтори в Чат</span>'
+        : '<span class="uw-step '+s1+'">отправлено ✓</span><span class="uw-arrow">→</span>'+
           '<span class="uw-step '+s2+'">думает ⋯</span><span class="uw-arrow">→</span>'+
-          '<span class="uw-step '+s3+'">готово ✓</span>'+
-        "</div>"+ans+"</div>";
+          '<span class="uw-step '+s3+'">готово ✓</span>';
+      return '<div class="uw-track'+cls+'" data-rid="'+esc(t.rid)+'" data-state="'+t.state+'">'+
+        '<div class="uw-q">'+esc(t.text)+"</div>"+
+        '<div class="uw-steps">'+steps+"</div>"+ans+"</div>";
     }).join("");
     if(stray.length){
       html+=stray.map(function(r){
@@ -217,11 +219,8 @@
         }
       }
       if(sent&&typeof sent.then==="function")sent.then(mark);else mark(sent);
-    }else if(typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
-      tg.sendData(JSON.stringify(payload));
-      if(typeof toast==="function")toast("Отправлено через Telegram");
     }else if(typeof toast==="function"){
-      toast("Канал отправки недоступен");
+      toast("Канал отправки недоступен — задача не отправлена");
     }
     return rid;
   }

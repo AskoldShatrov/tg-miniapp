@@ -2495,9 +2495,9 @@ function sendChat(){
      отказал: помечаем именно её, а не все сообщения в чате. */
   function markNotSent(ok){
     if(ok!==false) return;
-    const last=CHAT.sent[CHAT.sent.length-1];
-    if(last && last.rid===rid){
-      last.failed=true;
+    const m=(CHAT.sent||[]).find(x=>String(x.rid||"")===String(rid));
+    if(m){
+      m.failed=true;
       try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
       renderChat();
       toast("Не отправлено: открой мини-ап кнопкой бота в Телеге");
@@ -4374,6 +4374,6 @@ setTab(TAB_IDS.indexOf(initTab) >= 0 ? initTab : "chat");
 <script src="views.js?v=20261125-1705"></script>
 <script src="pdf-hub.js?v=20261121-0650"></script>
 <script src="voice-nav.js?v=20261121-0645"></script>
-<script src="unified-workspace.js?v=20261128-chat1"></script>
+<script src="unified-workspace.js?v=20261128-chat2"></script>
 </body>
 </html>
