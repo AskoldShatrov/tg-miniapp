@@ -1289,6 +1289,7 @@
     <span class="hk"><kbd>2</kbd> Задачи</span><span class="sep"></span>
     <span class="hk"><kbd>3</kbd> Промпты</span><span class="sep"></span>
     <span class="hk"><kbd>4</kbd> Ход</span><span class="sep"></span>
+    <span class="hk"><kbd>5</kbd> Атлас</span><span class="sep"></span>
     <span class="hk"><kbd>Esc</kbd> Чат</span>
   </div>
 
@@ -1374,7 +1375,7 @@ function toast(msg){
 /* ---------- tabs ---------- */
 /* @owner:redesign-2026-11-21 @region:tabs-js: 5 табов; tasks = дерево+вердикты+сессии+вопросы */
 const TAB_IDS=["chat","tasks","prompts","live","atlas","backup","library","interview","tg"];
-const PRIMARY_TABS=["chat","tasks","prompts","live"];
+const PRIMARY_TABS=["chat","tasks","prompts","live","atlas"];
 const TASK_SUBS=["tree","decisions","sessions","questions","studio","scenarios"];
 function closeTabsMore(){
   const box=$("#tabsMore"), btn=$("#tabsMoreBtn");

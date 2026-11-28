@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-28 11:30",
+ "generated": "2026-11-28 12:00",
  "window": {
-  "start": "2026-11-27T19:13",
-  "end": "2026-11-28T07:25",
+  "start": "2026-11-27T19:14",
+  "end": "2026-11-28T08:49",
   "sessions": 157,
   "roots": 150
  },
@@ -10,7 +10,7 @@
   "skills": 69,
   "skills_used": 13,
   "agents": 8,
-  "agents_used": 1,
+  "agents_used": 0,
   "autofeed": 0,
   "roots": 150
  },
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 320,
+   "median_s": 322,
    "max_s": 22747,
-   "last": "2026-11-28T07:25:44.963000+00:00",
+   "last": "2026-11-28T08:49:19.178000+00:00",
    "outcomes": {
-    "done": 137,
-    "error": 12,
-    "waiting_user": 1
+    "waiting_user": 2,
+    "done": 136,
+    "error": 12
    },
    "example": [
-    "6cXMDwiA",
-    "NaeKzahk"
+    "NaeKzahk",
+    "S56XiEXG"
    ],
    "actual": [
     {
@@ -44,13 +44,13 @@
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 110 из 150, ≈7 вызовов за раз",
+     "t": "в 111 из 150, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 130 из 150, ≈22 вызовов за раз",
+     "t": "в 130 из 150, ≈23 вызовов за раз",
      "d": 1
     },
     {
@@ -717,81 +717,82 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 8,
-   "median_s": 897,
+   "runs": 9,
+   "median_s": 876,
    "max_s": 22747,
-   "last": "2026-11-28T03:44:40.357000+00:00",
+   "last": "2026-11-28T08:49:19.178000+00:00",
    "outcomes": {
+    "waiting_user": 1,
     "done": 8
    },
    "example": [
-    "6WpcbpEZ",
-    "z6FHyEl4"
+    "z6FHyEl4",
+    "S56XiEXG"
    ],
    "actual": [
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 8"
+     "t": "запусков: 9"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 7 из 8",
-     "d": 1
-    },
-    {
-     "k": "skill",
-     "n": "scanfeed",
-     "t": "в 4 из 8",
+     "t": "в 8 из 9",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 7 из 8",
+     "t": "в 8 из 9",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 2 из 8",
+     "t": "в 2 из 9",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "scanfeed",
+     "t": "в 5 из 9",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 8 из 8, ≈53 вызовов за раз",
+     "t": "в 9 из 9, ≈52 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 8 из 8, ≈7 вызовов за раз",
+     "t": "в 9 из 9, ≈7 вызовов за раз",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 3 из 8",
+     "t": "в 3 из 9",
      "d": 2
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 2 из 8",
+     "t": "в 2 из 9",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 8 из 8, ≈12 вызовов за раз",
+     "t": "в 8 из 9, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, code-review, network-constraints, show-in-answer, slow-deliberation",
-     "t": "меньше 2 из 8",
+     "t": "меньше 2 из 9",
      "d": 1
     }
    ],
@@ -843,7 +844,7 @@
    "name": "Автофид гипотез",
    "when": "Непрерывно",
    "what": "Берёт провалы из hypothesis_backlog.jsonl и запускает перепроверку через run_guarded.py.",
-   "state": "Прогонов сейчас: 0",
+   "state": "Прогонов сейчас: 1",
    "level": "ok",
    "f": "C1"
   },
@@ -883,8 +884,8 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 19, с файлами 0",
-   "level": "warn",
+   "state": "Владельцев 23, с файлами 3",
+   "level": "ok",
    "f": "C11"
   },
   {
