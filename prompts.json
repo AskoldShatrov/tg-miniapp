@@ -1,10 +1,10 @@
 {
  "meta": {
-  "generated": "2026-11-28T10:23:52+00:00",
-  "generated_human": "28.11 10:23 UTC",
-  "as_of": 1795861430777,
+  "generated": "2026-11-28T10:24:53+00:00",
+  "generated_human": "28.11 10:24 UTC",
+  "as_of": 1795861491358,
   "stale_days": 1,
-  "count": 1164,
+  "count": 1163,
   "groups": 9,
   "users": {
    "1869196044": "Аскольд",
@@ -19,10 +19,11 @@
    "inbox.log",
    "opencode.db (сессии ноута)",
    "wants.json",
-   "replies.json",
-   "runtime/tmp-checkpoint/pc_user_msgs.json"
+   "replies.json"
   ],
-  "sources_skipped": [],
+  "sources_skipped": [
+   "runtime/tmp-checkpoint/pc_user_msgs.json (выгрузка с ПК ещё не настроена)"
+  ],
   "note": "группировка по темам; связи с хотелками (минимум 2 слова); ответ — реальная доставка из replies.json с префиксом want_id; as_of — время вопроса, is_stale — возраст доставки; сессии ноута — последние 800 с user-сообщениями из живой БД, до 2 текста на сессию (окно 3 дн), не вся история"
  },
  "groups": [
@@ -41,7 +42,7 @@
     {
      "id": "ses-iweX11Ozm7",
      "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795861428000,
+     "ts": 1795861487000,
      "source": "session",
      "title": "REAL-60 для сканфида T4 OPEN",
      "source_label": "ноут",
@@ -53,7 +54,7 @@
       "w2611200052468b4b",
       "w261120005246135d"
      ],
-     "as_of": 1795861428000,
+     "as_of": 1795861487000,
      "is_stale": false
     },
     {
@@ -3147,14 +3148,14 @@
     {
      "id": "ses-z9ob7vwPVS",
      "text": "ТОЛЬКО ЧТЕНИЕ + ОДИН НОВЫЙ АРТЕФАКТ. Пороги заморожены в /home/nyaka/Documents/deepseek-harness/default-workspace/reports/cap-needs-preregistration-20261128.json: baseline ≤6 из 10, router ≥9 из 10, пороги двигать запрещено. Прогони python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/capability_router_gate.py check и selftest, зафиксируй rc и вывод. Самостоятельно пересчитай baseline по skill_preflight.py для всех 10 потребностей и сравни с записанным cap-baseline-20261128.json. Проверь, что это именно выигрыш в маршрутизации, а не в решении задач: честно отметь ограничение. Запиши НОВЫЙ файл /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AB-ROUTER-1128-*.md с маркером CAP-AB-ROUTER-1128, командами, rc, sha256 и вердиктом.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work/skill-upgrade-1128/artifacts/CAP-AB-ROUTER-1128-c6.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795861424000,
+     "ts": 1795861487000,
      "source": "session",
      "title": "lree-CAP-AB-ROUTER-1128-c6",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795861424000,
+     "as_of": 1795861487000,
      "is_stale": false
     },
     {
@@ -18818,29 +18819,6 @@
      "answer_source": "replies.json",
      "delivered_ts": 1795727751695,
      "as_of": 1795724490000,
-     "is_stale": true
-    },
-    {
-     "id": "pc-BY63UoAj3F",
-     "text": "Продолжи проект T6 «Закачка и разбор демок» на Windows-ПК. Проверь C:\\faceit_demos_new и C:\\faceit_demos, сверь реальное количество zst/распарсенных JSON с шагом T6.7 (остаток 125 демо). Если есть незакачанные ID — продолжи закачку существующим скриптом c09_73_download.py; если закачка завершена — запусти парсинг и проверь наличие JSON. НЕ трогай старые наборы и чужие файлы. Итог: сколько демо добавлено/распарсено, конкретные пути, что осталось. Отчёт пиши в outbox.",
-     "ts": 1795717085000,
-     "source": "pc",
-     "title": "Закачка и разбор T6.7",
-     "source_label": "ПК",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[pc-BY63UoAj3F] Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск чере",
-     "answer_short": "pc-BY63UoAj3F: Подключённый мост к сайтам работает на GitHub и YouTube; бол",
-     "answer_full": "Подключённый мост к сайтам работает на GitHub и YouTube; большую библиотеку инструкций для агента не ставил — она дублирует вашу систему.\nПростыми словами: скилл виден в OpenCode, общий веб-поиск через него закрыт сервисами с ответами 403 и 451. Цифры на картинке про ECC устарели: сейчас 72 агента и 328 навыков, а не 73 и 302; поддержка OpenCode там бета.\n🟩 Скилл в OpenCode: CLI 1.6.1, пять каналов, ссылка в каноничной папке скиллов.\n🟩 Живой тест: GitHub 4 из 4, YouTube 3 из 3 — реальные результаты, не документация.\n🟨 ECC по исходникам: 72 агента и 328 навыков, а не 73 и 302; OpenCode — бета, дублирует гейты.\nШаги: пробовать скилл на конкретных ссылках с GitHub и YouTube; не включать логин и новые сайты без отдельного запроса; ECC и Ruflo — только выборочные инструкции под замер на одной задаче.\nВеб-канал дал 403 и 451 — это региональная блокировка, не поломка установки. Полный разбор записан в отчёт.\nСАМОИСЧЕРПАНИЕ: четыре гейта ответа PASS, презентация 8 PASS / 0 FAIL; логин и куки не трогались, конфиг OpenCode и задачи ПК не менялись.",
-     "answer_digest": {
-      "length": 1053,
-      "sha256": "b9bc47d39f34a03884cea77baa0b1ab4618ffc722b83d12c8248a85889dbe2e2"
-     },
-     "answer_text_id": "b9bc47d39f34a038",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795727751695,
-     "as_of": 1795717085000,
      "is_stale": true
     },
     {
