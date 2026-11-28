@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.59,
-      "remaining_hours": 18.41,
+      "elapsed_hours": 1.61,
+      "remaining_hours": 18.39,
       "progress_pct": 8,
-      "cycles": 475,
-      "heartbeat_human": "07:12:40",
+      "cycles": 476,
+      "heartbeat_human": "07:13:40",
       "tree": {
         "phases": [
           {
@@ -67,6 +67,15 @@
             "verified": false
           },
           {
+            "id": "IMP-WRITER-NIGHT-CURATION-C",
+            "title": "Writer-виток audit:физическая пара вместо переформулировок",
+            "cycles": 4,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "IMP-NIGHT-WATCHDOG-20H",
             "title": "Аудит свежих витков: что реально улучшилось и где регресс",
             "cycles": 3,
@@ -80,15 +89,6 @@
             "title": "Writer-виток audit:физическая пара вместо переформулировок",
             "cycles": 3,
             "max": 3,
-            "last": "MUTATE",
-            "score": 4,
-            "verified": true
-          },
-          {
-            "id": "IMP-WRITER-NIGHT-CURATION-C",
-            "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 3,
-            "max": 5,
             "last": "MUTATE",
             "score": 4,
             "verified": true
@@ -113,22 +113,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "22:18:27",
-            "cycle": 431,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "RETHINK_BLOCKED",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "22:24:25",
-            "cycle": 432,
-            "task": "CONSULT-FAMILY-MUT-WRITE",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "22:24:25",
             "cycle": 432,
@@ -592,11 +576,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "07:12:55",
+            "cycle": 476,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "07:12:55",
+            "cycle": 476,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 381,
-          "mutations": 380
+          "version": 382,
+          "mutations": 381
         },
         "events": 400,
         "avg_score": 0.0,
@@ -608,11 +608,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 1.59,
-      "remaining_hours": 18.41,
+      "elapsed_hours": 1.61,
+      "remaining_hours": 18.39,
       "progress_pct": 8,
       "cycles": 472,
-      "heartbeat_human": "07:12:17",
+      "heartbeat_human": "07:13:17",
       "tree": {
         "phases": [
           {
@@ -1199,6 +1199,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795839163,
-  "fetched_human": "2026-11-28 07:12:43 +0300"
+  "fetched_at": 1795839223,
+  "fetched_human": "2026-11-28 07:13:43 +0300"
 }
