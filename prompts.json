@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T14:20:45+00:00",
-  "generated_human": "28.11 14:20 UTC",
-  "as_of": 1795875643588,
+  "generated": "2026-11-28T14:21:45+00:00",
+  "generated_human": "28.11 14:21 UTC",
+  "as_of": 1795875703870,
   "stale_days": 1,
   "count": 1175,
   "groups": 9,
@@ -40,16 +40,29 @@
    ],
    "prompts": [
     {
+     "id": "ses-CRIZbHeUax",
+     "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/complex-improvement-20h-1127/artifacts/IMP-WRITER-NIGHT-CURATION-M-c561.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795875701000,
+     "source": "session",
+     "title": "lree-IMP-WRITER-NIGHT-CURATION-M-c561",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795875701000,
+     "is_stale": false
+    },
+    {
      "id": "ses-RhCke8UjW4",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/evolution-work-researcher ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher '/home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log. Затем напиши ровно один артефакт /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c<cycle>.md: долю REFORMULATE, число verify_ok=true, причину холостого витка, команду, rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти команду /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани proof RED/GREEN в <путь_артефакта>.pair.json. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-J-c411.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875637000,
+     "ts": 1795875655000,
      "source": "session",
      "title": "lree-RSCH-WRITER-NIGHT-CURATION-J-c411",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875637000,
+     "as_of": 1795875655000,
      "is_stale": false
     },
     {
@@ -5466,14 +5479,14 @@
     {
      "id": "ses-JvpP40PHqm",
      "text": "Один физический writer-виток без вопросов. Сначала запусти machine-гейт контракта: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_task_contract_gate.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 ; он обязан вернуть rc=0. Затем СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 '/home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c<cycle>.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c[0-9]*.md и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-O-c573.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795875633000,
+     "ts": 1795875699000,
      "source": "session",
      "title": "lree-SF-WRITER-NIGHT-CURATION-O-c573",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795875633000,
+     "as_of": 1795875699000,
      "is_stale": false
     },
     {
@@ -14757,31 +14770,6 @@
      "user": "1",
      "wants": [],
      "as_of": 1795727419000,
-     "is_stale": true
-    },
-    {
-     "id": "ses-Q1fqJGZZ7V",
-     "text": "ПРОВЕРКА ГИПОТЕЗЫ AU15662. Источник: autofeed:wants. Гипотеза: РЕАЛИЗОВАТЬ ХОТЕЛКУ w2611200241438cdc: Проанализировать, во что впираюсь и почему так мало результата. Где: wants.json · Просьба 02:24: анализ прошлой истории даже без ПК.. Вердикт на входе: неизвестно. ЖИВОЙ БЭКЛОГ (единственный): /home/nyaka/scripts/background/hypothesis_backlog.jsonl. Файла ~/overnight/hypothesis_backlog.jsonl НЕ существует — не открывай его. СОЗДАЙ НОВЫЙ отчёт по пути /home/nyaka/overnight/hypothesis/AU15662_run47613.md через `python3 ~/.config/opencode/scripts/hypothesis_report.py init ...`. Этот файл ещё НЕ существует: НЕ вызывай read/grep по нему до создания — File not found здесь ожидаем. (факт/расчёт/интерпретация/неизвестно; отрицательный результат фиксируй так же, как успех). Не перезаписывай чужие отчёты и data/. Перед работой вызови инструмент skill ровно так: skill с аргументом {\"id\": \"hypothesis-check\"} (не текстом, не «agent-capacity»). Для глубокого обзора темы — skill с {\"id\": \"research-slowdown\"}. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill: research-slowdown для глубоких тем, hypothesis-check для проверки гипотез, studio-taste/show-in-answer для наглядного результата, network-constraints для сети. Если ни один не подходит — скажи почему. ГЛАВНОЕ: сначала собери доступные факты БЫСТРО (локальные файлы, уже существующие inbox-артефакты) и ЗАПИШИ ПРОМЕЖУТОЧНЫЙ ОТЧЁТ с вердиктом в свой report-файл в первые 10 минут. Только потом делай медленные зонды pc-bridge (они висят до 300 с каждый). Если зонд не прошёл — зафиксируй OPEN в уже записанном отчёте, НЕ оставляй файл-шаблон.",
-     "ts": 1795727359000,
-     "source": "session",
-     "title": "Гипотеза AU15662 по хотелке w2611200241438cdc",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [
-      "w261119190741dca0"
-     ],
-     "answer": "[w261119190741dca0] Смотрю приложенный скрин, чтобы понять, какой именно скилл вы имеете в виду.\nСкрин на диске отсутствует — файл уже убран очисткой. Подключаю скилл поиска контекста и проверяю ленту входящих, чтобы вос",
-     "answer_short": "w261119190741dca0: Смотрю приложенный скрин, чтобы понять, какой именно скилл в",
-     "answer_full": "Смотрю приложенный скрин, чтобы понять, какой именно скилл вы имеете в виду.\nСкрин на диске отсутствует — файл уже убран очисткой. Подключаю скилл поиска контекста и проверяю ленту входящих, чтобы восстановить, о каком репозитории речь.\nСкрин убран, но контекст восстановлен: речь о навыке `agent-reach` из репозитория `Panniantong/Agent-Reach`. Он уже добавлен в систему симлинком от 00:04 — повторно не добавляю, берусь за анализ.\nИспользую навык `agent-reach` (канал github) для проверки живого состояния установки.\nУстановка живая: 14 каналов, из них готовы только два, два сломаны. Пишу отчёт с этими цифрами и жду разбор репозитория.\nРазбор репозитория готов. Собираю постер с честным вердиктом: добавлен, но рабочая часть узкая.\nНавык agent-reach уже добавлен, но работает частично: из четырнадцати каналов готовы два, а веб сломан — польза остаётся на специфичных платформах.\nПОНЯТНО: простыми словами, инструмент умеет читать сайты и соцсети, но у него нет своего парсера — он управляет другими программами. Сейчас работают только GitHub и YouTube, а обычный веб-поиск не работает.\n**Главное:**\n🟩 Симлинк навыка создан в 00:04, версия 1.6.1 — повторно ставить не нужно.\n🟨 Из четырнадцати каналов готовы github и youtube; веб и v2ex сломаны.\n🟥 Внешний аудит нашёл утечку cookie и мутации установщика; независимого обзора нет.\n**Шаги:** проверять живой канал перед задачей; не логиниться и не давать ключи без вашей команды; для веба пока пользоваться встроенными инструментами.\n**Проверка:** ничего не менял — симлинк появился до моего анализа, конфиг бота, активные задачи ПК и состояние не тронуты.",
-     "answer_digest": {
-      "length": 1608,
-      "sha256": "48ef6282270a6e512fe7a06a16dfe18dd251be4095387ea47af689399c6f7ac6"
-     },
-     "answer_text_id": "48ef6282270a6e51",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795728587329,
-     "as_of": 1795727359000,
      "is_stale": true
     },
     {
