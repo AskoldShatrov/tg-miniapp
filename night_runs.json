@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.1,
-      "remaining_hours": 19.9,
-      "progress_pct": 0,
-      "cycles": 442,
-      "heartbeat_human": "05:43:09",
+      "elapsed_hours": 0.12,
+      "remaining_hours": 19.88,
+      "progress_pct": 1,
+      "cycles": 443,
+      "heartbeat_human": "05:44:09",
       "tree": {
         "phases": [
           {
@@ -33,11 +33,11 @@
           {
             "id": "CONSULT-FAMILY-MUT-WRITER-V2",
             "title": "Консультант V2: содержательная мутация семейства с RED/GREEN внутри ви",
-            "cycles": 11,
+            "cycles": 12,
             "max": 12,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
+            "last": "WARMUP",
+            "score": 4,
+            "verified": false
           },
           {
             "id": "IMP-PHYSICAL-GATE-20H",
@@ -86,14 +86,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "21:41:51",
-            "cycle": 407,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "21:41:51",
             "cycle": 407,
@@ -565,6 +557,14 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "05:44:02",
+            "cycle": 443,
+            "task": "CONSULT-FAMILY-MUT-WRITE",
+            "action": "WARMUP",
+            "score": 4,
+            "note": "verify rc=1: claim_status\": \"STRUCTURAL_ONLY\",\n  \"defects\": [\n    \"STALE_EVIDENCE: mtime в"
           }
         ],
         "strategy": {
@@ -573,7 +573,7 @@
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -581,11 +581,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 0.1,
-      "remaining_hours": 19.9,
-      "progress_pct": 0,
+      "elapsed_hours": 0.12,
+      "remaining_hours": 19.88,
+      "progress_pct": 1,
       "cycles": 448,
-      "heartbeat_human": "05:42:47",
+      "heartbeat_human": "05:43:47",
       "tree": {
         "phases": [
           {
@@ -1145,6 +1145,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795833792,
-  "fetched_human": "2026-11-28 05:43:12 +0300"
+  "fetched_at": 1795833852,
+  "fetched_human": "2026-11-28 05:44:12 +0300"
 }
