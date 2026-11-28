@@ -2410,7 +2410,7 @@ if(chatJump) chatJump.addEventListener("click",()=>{
   chatPinned=true; chatUnread=0; log.scrollTop=log.scrollHeight; updateJump();
 });
 function clearChatVisual(){
-  CHAT.clearedAt=Date.now();
+  CHAT.clearedAt=Date.now()+1;
   try{ localStorage.setItem(CHAT_KEY,JSON.stringify(CHAT)); }catch(e){}
   chatSig=""; chatPinned=true; chatUnread=0;
   renderChat();
