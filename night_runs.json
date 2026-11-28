@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.96,
-      "remaining_hours": 12.04,
+      "elapsed_hours": 7.98,
+      "remaining_hours": 12.02,
       "progress_pct": 40,
-      "cycles": 552,
-      "heartbeat_human": "13:34:53",
+      "cycles": 553,
+      "heartbeat_human": "13:35:53",
       "tree": {
         "phases": [
           {
@@ -132,11 +132,11 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-K",
             "title": "Writer-виток audit: исправленный контракт артефакта",
-            "cycles": 4,
+            "cycles": 5,
             "max": 5,
-            "last": "MUTATE",
-            "score": 7,
-            "verified": true
+            "last": "RETHINK_REQUIRED",
+            "score": 3,
+            "verified": false
           },
           {
             "id": "IMP-NIGHT-WATCHDOG-20H",
@@ -185,22 +185,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "08:38:31",
-            "cycle": 516,
-            "task": "SCOUT_OPEN",
-            "action": "ESCALATE_CONTINUE",
-            "score": 0,
-            "note": ""
-          },
-          {
-            "clock": "08:38:31",
-            "cycle": 516,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:39:46",
             "cycle": 517,
@@ -664,15 +648,31 @@
             "action": "MUTATE",
             "score": 7,
             "note": ""
+          },
+          {
+            "clock": "13:35:27",
+            "cycle": 553,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:35:27",
+            "cycle": 553,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "RETHINK_REQUIRED",
+            "score": 3,
+            "note": "нет completion promise"
           }
         ],
         "strategy": {
-          "version": 434,
-          "mutations": 433
+          "version": 435,
+          "mutations": 434
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 0
+        "fail_streak": 1
       }
     },
     {
@@ -680,11 +680,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 7.96,
-      "remaining_hours": 12.04,
+      "elapsed_hours": 7.98,
+      "remaining_hours": 12.02,
       "progress_pct": 40,
-      "cycles": 564,
-      "heartbeat_human": "13:34:53",
+      "cycles": 565,
+      "heartbeat_human": "13:35:53",
       "tree": {
         "phases": [
           {
@@ -832,21 +832,21 @@
             "verified": true
           },
           {
+            "id": "SF-WRITER-NIGHT-CURATION-N",
+            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
+            "cycles": 4,
+            "max": 5,
+            "last": "MUTATE",
+            "score": 4,
+            "verified": true
+          },
+          {
             "id": "SF-WRITER-NIGHT-CURATION-B",
             "title": "Writer-виток scanfeed:физическая пара вместо переформулировок",
             "cycles": 3,
             "max": 3,
             "last": "MUTATE",
             "score": 7,
-            "verified": true
-          },
-          {
-            "id": "SF-WRITER-NIGHT-CURATION-N",
-            "title": "Writer-виток scanfeed: исправленный контракт артефакта",
-            "cycles": 3,
-            "max": 5,
-            "last": "MUTATE",
-            "score": 4,
             "verified": true
           },
           {
@@ -878,22 +878,6 @@
           }
         ],
         "trail": [
-          {
-            "clock": "09:08:12",
-            "cycle": 522,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
-          {
-            "clock": "09:14:04",
-            "cycle": 523,
-            "task": "SF-WRITER-NIGHT-CURATION",
-            "action": "MUTATE",
-            "score": 0,
-            "note": ""
-          },
           {
             "clock": "09:14:04",
             "cycle": 523,
@@ -1357,11 +1341,27 @@
             "action": "MUTATE",
             "score": 4,
             "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
+          },
+          {
+            "clock": "13:35:33",
+            "cycle": 565,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 0,
+            "note": ""
+          },
+          {
+            "clock": "13:35:33",
+            "cycle": 565,
+            "task": "SF-WRITER-NIGHT-CURATION",
+            "action": "MUTATE",
+            "score": 4,
+            "note": "VERDICT=FAIL: доставлено, но не прорыв; score<=4 < promote=5.0"
           }
         ],
         "strategy": {
-          "version": 391,
-          "mutations": 390
+          "version": 392,
+          "mutations": 391
         },
         "events": 400,
         "avg_score": 0.0,
@@ -1370,6 +1370,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795862098,
-  "fetched_human": "2026-11-28 13:34:58 +0300"
+  "fetched_at": 1795862160,
+  "fetched_human": "2026-11-28 13:36:00 +0300"
 }
