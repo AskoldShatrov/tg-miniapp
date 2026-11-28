@@ -5,11 +5,11 @@
       "label": "complex improvement 20h 1127",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.03,
-      "remaining_hours": 14.97,
+      "elapsed_hours": 5.05,
+      "remaining_hours": 14.95,
       "progress_pct": 25,
-      "cycles": 536,
-      "heartbeat_human": "10:38:49",
+      "cycles": 537,
+      "heartbeat_human": "10:39:49",
       "tree": {
         "phases": [
           {
@@ -150,22 +150,14 @@
           {
             "id": "IMP-WRITER-NIGHT-CURATION-H",
             "title": "Writer-виток audit:физическая пара вместо переформулировок",
-            "cycles": 1,
+            "cycles": 2,
             "max": 5,
-            "last": "MUTATE",
+            "last": "WARMUP",
             "score": 2,
             "verified": false
           }
         ],
         "trail": [
-          {
-            "clock": "08:22:15",
-            "cycle": 503,
-            "task": "SCOUT_OPEN",
-            "action": "REFORMULATE",
-            "score": 0,
-            "note": "SCOUT OPEN → переформулировка скаута, не остановка; новый запрос treadmill"
-          },
           {
             "clock": "08:23:30",
             "cycle": 504,
@@ -637,6 +629,14 @@
             "action": "MUTATE",
             "score": 2,
             "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
+          },
+          {
+            "clock": "10:39:52",
+            "cycle": 537,
+            "task": "IMP-WRITER-NIGHT-CURATIO",
+            "action": "WARMUP",
+            "score": 2,
+            "note": "нет свежего артефакта под шаблон /home/nyaka/Documents/deepseek-harness/default-workspace/"
           }
         ],
         "strategy": {
@@ -645,7 +645,7 @@
         },
         "events": 400,
         "avg_score": 0.0,
-        "fail_streak": 2
+        "fail_streak": 0
       }
     },
     {
@@ -653,11 +653,11 @@
       "label": "Сканфид-мандат",
       "status": "идёт",
       "budget_hours": 20.0,
-      "elapsed_hours": 5.03,
-      "remaining_hours": 14.97,
+      "elapsed_hours": 5.05,
+      "remaining_hours": 14.95,
       "progress_pct": 25,
       "cycles": 537,
-      "heartbeat_human": "10:38:54",
+      "heartbeat_human": "10:39:54",
       "tree": {
         "phases": [
           {
@@ -1289,6 +1289,6 @@
     }
   ],
   "count": 2,
-  "fetched_at": 1795851555,
-  "fetched_human": "2026-11-28 10:39:15 +0300"
+  "fetched_at": 1795851615,
+  "fetched_human": "2026-11-28 10:40:15 +0300"
 }
