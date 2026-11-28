@@ -63,6 +63,7 @@
     ".uw-track{padding:7px 9px;border:1px solid var(--surface1);border-left:2px solid var(--yellow);",
       "border-radius:9px;background:var(--mantle)}",
     ".uw-track.done{border-left-color:var(--green)}",
+    ".uw-track.failed{border-left-color:var(--maroon)}",
     ".uw-track .uw-q{font:600 11px/1.4 var(--ff);color:var(--text);word-break:break-word}",
     ".uw-track .uw-steps{display:flex;align-items:center;gap:5px;margin-top:6px;font:700 9px/1 var(--fm)}",
     ".uw-track .uw-step{color:var(--overlay0)}",
@@ -203,37 +204,24 @@
     renderTracks();
 
     var payload={source:"miniapp_chat",text:text,user_id:uid(),rid:rid,engine:"dsh"};
-    /* Публичный Mini App работает через Telegram sendData. process_api_url
-       намеренно не используется: старый кеш Pages мог вернуть мёртвый туннель,
-       а fetch без таймаута тогда навсегда уходил в ожидание. */
-    var apiBase="";
-    var initData="";
-    try{
-      initData=(window.Telegram && window.Telegram.WebApp &&
-                window.Telegram.WebApp.initData) ||
-               (typeof tg!=="undefined" && tg && tg.initData) || "";
-    }catch(e){}
-
-    function legacyFallback(){
-      if (typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
-        tg.sendData(JSON.stringify(payload));
-        if (typeof toast==="function") toast("API недоступен — задача ушла через OpenCode");
-      } else if (typeof toast==="function"){
-        toast("API недоступен и sendData нет — задача не отправлена");
+    if(typeof dshSend==="function"){
+      var sent=dshSend(payload,"Задача принята DeepSeek Harness");
+      function mark(ok){
+        if(ok===false){
+          var m=(CHAT.sent||[]).find(function(x){return x.rid===rid;});
+          if(m)m.failed=true;
+          var tr=tracks.find(function(x){return x.rid===rid;}); if(tr)tr.state="failed";
+          try{localStorage.setItem("miniapp_chat_v1",JSON.stringify(CHAT));}catch(e){}
+          renderTracks();
+          if(typeof toast==="function")toast("Не отправлено — повтори в Чат");
+        }
       }
-    }
-
-    if (apiBase && typeof fetch==="function"){
-      fetch(apiBase+"/dsh/task",{
-        method:"POST",
-        headers:{"Content-Type":"application/json","X-Telegram-Init-Data":initData},
-        body:JSON.stringify(payload)
-      }).then(function(r){ return r.json(); }).then(function(j){
-        if(!j || !j.ok) throw new Error("dsh/task rejected");
-        if (typeof toast==="function") toast("Задача принята DeepSeek Harness");
-      }).catch(legacyFallback);
-    } else {
-      legacyFallback();
+      if(sent&&typeof sent.then==="function")sent.then(mark);else mark(sent);
+    }else if(typeof tg!=="undefined" && tg && typeof tg.sendData==="function"){
+      tg.sendData(JSON.stringify(payload));
+      if(typeof toast==="function")toast("Отправлено через Telegram");
+    }else if(typeof toast==="function"){
+      toast("Канал отправки недоступен");
     }
     return rid;
   }
