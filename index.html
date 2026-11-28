@@ -402,7 +402,7 @@
   .pair-body{padding-left:0}
   .pair .bubble{font-size:13px}
   .pair-wait{padding-left:0}
-  @media (max-width:600px){ .hotbar{display:none} }
+  @media (max-width:600px){ .app>.hotbar{display:none!important} }
 
   /* ---------- tree screen ---------- */
   .summary{display:flex;gap:8px;margin-bottom:14px}
@@ -2182,6 +2182,8 @@ function dshSend(payload, okText){
          (typeof tg!=="undefined"&&tg&&tg.initData)||"";
   }catch(e){}
   var text=String(payload.text||payload.id||JSON.stringify(payload));
+  var chatLike=/^miniapp_(chat|interview|interview_answer|studio)$/.test(String(payload.source||""));
+  if(chatLike && !init) return Promise.resolve(dshFallback(payload));
   if(!base || typeof fetch!=="function") return Promise.resolve(dshFallback(payload));
   return fetchTimed(base+"/dsh/task",{
     method:"POST",
