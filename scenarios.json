@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-28 08:30",
+ "generated": "2026-11-28 09:00",
  "window": {
-  "start": "2026-11-27T12:47",
-  "end": "2026-11-28T05:15",
-  "sessions": 160,
+  "start": "2026-11-27T13:31",
+  "end": "2026-11-28T05:55",
+  "sessions": 158,
   "roots": 150
  },
  "summary": {
@@ -23,17 +23,17 @@
    "status": "warn",
    "status_text": "Расходится с задуманным",
    "runs": 150,
-   "median_s": 324,
+   "median_s": 323,
    "max_s": 22747,
-   "last": "2026-11-28T05:15:33.409000+00:00",
+   "last": "2026-11-28T05:55:52.146000+00:00",
    "outcomes": {
-    "done": 137,
-    "error": 12,
-    "waiting_user": 1
+    "waiting_user": 4,
+    "done": 134,
+    "error": 12
    },
    "example": [
-    "UrfyISay",
-    "T58nMnBk"
+    "eepfcASJ",
+    "c21hoTrb"
    ],
    "actual": [
     {
@@ -44,13 +44,13 @@
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 35 из 150",
+     "t": "в 33 из 150",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 105 из 150, ≈8 вызовов за раз",
+     "t": "в 109 из 150, ≈7 вызовов за раз",
      "d": 1
     },
     {
@@ -62,7 +62,7 @@
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 117 из 150, ≈7 вызовов за раз",
+     "t": "в 116 из 150, ≈7 вызовов за раз",
      "d": 1
     },
     {
@@ -271,12 +271,12 @@
    "when": "«где лежит X», «как устроено X»",
    "status": "warn",
    "status_text": "Работает в обход",
-   "runs": 5,
-   "median_s": 919,
+   "runs": 4,
+   "median_s": 1034,
    "max_s": 1698,
    "last": "2026-11-28T03:44:40.357000+00:00",
    "outcomes": {
-    "done": 5
+    "done": 4
    },
    "example": [
     "6WpcbpEZ",
@@ -286,85 +286,85 @@
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 5"
-    },
-    {
-     "k": "skill",
-     "n": "hypothesis-check",
-     "t": "в 5 из 5",
-     "d": 1
+     "t": "запусков: 4"
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 2 из 5",
+     "t": "в 1 из 4",
+     "d": 1
+    },
+    {
+     "k": "skill",
+     "n": "hypothesis-check",
+     "t": "в 4 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 5 из 5",
+     "t": "в 4 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 2 из 5",
+     "t": "в 2 из 4",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 5 из 5, ≈45 вызовов за раз",
+     "t": "в 4 из 4, ≈51 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 5 из 5, ≈13 вызовов за раз",
+     "t": "в 4 из 4, ≈12 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 2 из 5",
+     "t": "в 2 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "code-review",
-     "t": "в 1 из 5",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "sub",
      "n": "explore",
-     "t": "в 5 из 5",
+     "t": "в 4 из 4",
      "d": 2
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 5 из 5, ≈21 вызовов за раз",
+     "t": "в 4 из 4, ≈21 вызовов за раз",
      "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "cheap",
-     "t": "в 3 из 5",
-     "d": 2
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 1 из 5",
+     "t": "в 1 из 4",
      "d": 1
     },
     {
      "k": "skill",
      "n": "answer-integrity",
-     "t": "в 1 из 5",
+     "t": "в 1 из 4",
      "d": 1
+    },
+    {
+     "k": "sub",
+     "n": "cheap",
+     "t": "в 2 из 4",
+     "d": 2
     }
    ],
    "declared": [
@@ -769,12 +769,12 @@
    "when": "Открытая тема из памяти чата",
    "status": "idle",
    "status_text": "Блок",
-   "runs": 26,
-   "median_s": 869,
+   "runs": 24,
+   "median_s": 890,
    "max_s": 22747,
    "last": "2026-11-28T03:44:40.357000+00:00",
    "outcomes": {
-    "done": 26
+    "done": 24
    },
    "example": [
     "6WpcbpEZ",
@@ -784,72 +784,66 @@
     {
      "k": "agent",
      "n": "build",
-     "t": "запусков: 26"
+     "t": "запусков: 24"
     },
     {
      "k": "skill",
      "n": "hypothesis-check",
-     "t": "в 24 из 26",
+     "t": "в 22 из 24",
      "d": 1
     },
     {
      "k": "skill",
      "n": "research-slowdown",
-     "t": "в 24 из 26",
+     "t": "в 22 из 24",
      "d": 1
     },
     {
      "k": "skill",
      "n": "scanfeed",
-     "t": "в 12 из 26",
+     "t": "в 11 из 24",
      "d": 1
     },
     {
      "k": "skill",
      "n": "network-constraints",
-     "t": "в 6 из 26",
+     "t": "в 6 из 24",
      "d": 1
     },
     {
      "k": "tool",
      "n": "shell",
-     "t": "в 26 из 26, ≈42 вызовов за раз",
+     "t": "в 24 из 24, ≈44 вызовов за раз",
      "d": 1
     },
     {
      "k": "tool",
      "n": "explore",
-     "t": "в 23 из 26, ≈9 вызовов за раз",
+     "t": "в 21 из 24, ≈9 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "cs2-demo-capture",
-     "t": "в 5 из 26",
+     "t": "в 5 из 24",
      "d": 1
-    },
-    {
-     "k": "sub",
-     "n": "explore",
-     "t": "в 5 из 26",
-     "d": 2
     },
     {
      "k": "skill",
      "n": "pc-bridge-live",
-     "t": "в 11 из 26",
+     "t": "в 11 из 24",
      "d": 1
     },
     {
      "k": "tool",
      "n": "правки",
-     "t": "в 26 из 26, ≈14 вызовов за раз",
+     "t": "в 24 из 24, ≈15 вызовов за раз",
      "d": 1
     },
     {
      "k": "skill",
      "n": "реже: answer-integrity, code-review, disk-triage, draft-gate, progress, resources, show-in-answer, slow-deliberation, strange-",
-     "t": "меньше 5 из 26",
+     "t": "меньше 5 из 24",
      "d": 1
     }
    ],
@@ -917,7 +911,7 @@
    "name": "failover-plugin",
    "when": "Каждый запрос; проба free раз в 12 мин",
    "what": "Цепочка моделей из opencode.jsonc.",
-   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×127, opencode-go/hungerg-free ×2, opencode/seaglass-alpha-free ×1",
+   "state": "Цепочка: opencode-go/hy4-flash-free → opencode-go/hungerg-free. По факту: opencode-go/hy4-flash-free ×128, opencode/seaglass-alpha-free ×1, opencode-go/seaglass-alpha-free ×1",
    "level": "ok",
    "f": "C13"
   },
@@ -941,7 +935,7 @@
    "name": "conflict-keeper",
    "when": "По таймеру или вызову",
    "what": "conflict_guard.py scan: активные сессии, их файлы, пересечения → CONFLICT-MAP.json.",
-   "state": "Владельцев 27, с файлами 5",
+   "state": "Владельцев 30, с файлами 5",
    "level": "ok",
    "f": "C11"
   },
