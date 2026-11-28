@@ -1,8 +1,8 @@
 {
  "meta": {
-  "generated": "2026-11-28T03:54:33+00:00",
-  "generated_human": "28.11 03:54 UTC",
-  "as_of": 1795838072088,
+  "generated": "2026-11-28T03:55:37+00:00",
+  "generated_human": "28.11 03:55 UTC",
+  "as_of": 1795838133240,
   "stale_days": 1,
   "count": 1160,
   "groups": 9,
@@ -42,14 +42,14 @@
     {
      "id": "ses-GVfeeSJgPh",
      "text": "Один физический writer-виток без вопросов и без слова «готово» без проверки. Прочитай последние 80 строк /home/nyaka/evolution-work-researcher/ledger.jsonl и /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night-run-watchdog-latest.json. СНАЧАЛА до создания артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/evolution-work-researcher 'artifacts/RSCH-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и маркер errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/RSCH-WRITER-NIGHT-CURATION-C-cN.md: доля REFORMULATE за последние 80 витков, число verify_ok=true, причина холостого витка, команда проверки, её rc, путь артефакта, mtime, SHA256, дата и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log корня workspace. Порядок mtime RED ≤ артефакт ≤ GREEN. Сохрани сырые выходы RED и GREEN в файл <путь_артефакта с суффиксом .pair.json> с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0 гейта. Пороги 0.5, 180, 900 и 0.2 не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/evolution-work-researcher/artifacts/RSCH-WRITER-NIGHT-CURATION-C-c339.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795838068000,
+     "ts": 1795838132000,
      "source": "session",
      "title": "lree-RSCH-WRITER-NIGHT-CURATION-C-c339",
      "source_label": "ноут",
      "user_id": "1869196044",
      "user": "Аскольд",
      "wants": [],
-     "as_of": 1795838068000,
+     "as_of": 1795838132000,
      "is_stale": false
     },
     {
@@ -3849,6 +3849,19 @@
    ],
    "prompts": [
     {
+     "id": "ses-Bc1iiBf2PS",
+     "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 'artifacts/SF-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/SF-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-C-c470.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
+     "ts": 1795838120000,
+     "source": "session",
+     "title": "lree-SF-WRITER-NIGHT-CURATION-C-c470",
+     "source_label": "ноут",
+     "user_id": "1869196044",
+     "user": "Аскольд",
+     "wants": [],
+     "as_of": 1795838120000,
+     "is_stale": false
+    },
+    {
      "id": "ses-dujWpQLQNk",
      "text": "Один физический writer-виток без вопросов. СНАЧАЛА до артефакта запусти: python3 /home/nyaka/Documents/deepseek-harness/default-workspace/reports/night_pair_gate_v2.py /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127 'artifacts/SF-WRITER-NIGHT-CURATION-C-c[0-9]*.md' VERDICT 900 ; запиши rc=1 и errors= в RED.log корня workspace. Затем напиши ровно один артефакт artifacts/SF-WRITER-NIGHT-CURATION-C-cN.md: долю REFORMULATE за последние 80 витков, число verify_ok=true, причину холостого витка, команду проверки, её rc, путь, mtime, SHA256, дату и VERDICT. ПОСЛЕ этого снова запусти ту же команду и запиши rc=0 и OK в GREEN.log. Сохрани сырые выходы RED и GREEN в <путь_артефакта>.pair.json с полями artifact_path, artifact_sha256, red_output, red_sha256, red_at, green_output, green_sha256, green_at. PROMISE: DONE только после rc=0. Пороги не двигать.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-20h-1127/artifacts/SF-WRITER-NIGHT-CURATION-C-c469.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
      "ts": 1795838028000,
@@ -7591,29 +7604,6 @@
      "is_stale": true
     },
     {
-     "id": "ses-b9H303jjea",
-     "text": "Дежурная writer-задача для выхода из SCOUT_OPEN. Вход — не чистый лист; прочитай последние артефакты и леджер. Обязательные поля: DELIVERED с путём, TG_MESSAGE_ID, DELIVERY_LOG, VERIFY_CMD, SHA256, MTIME, VERDICT: PASS. ИНТЕРВЬЮ-КОНТРАКТ: радарные задачи не добавлять; порог гейта не двигать; kill-switch ~/.config/opencode/LONG_RUN_STOP; артефакт с SHA256. Пиши только в /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-*.md и выведи PROMISE: DONE после реальной записи.\n\nЗапиши артефакт ровно по пути: /home/nyaka/Documents/deepseek-harness/default-workspace/night-runs/scanfeed-v2-1126/artifacts/SF-WRITER-STANDING-c39.md\nАртефакт обязан содержать: задачу, команду проверки,её rc, путь, mtime, SHA256 файла и дату. ТРЕБУЙ АРТЕФАКТ: запиши файл до обещания PROMISE: DONE. ПРОВЕРКА: приложи точную команду проверки и её rc в артефакт. СУЗЬ ШАГ: один артефакт, один гейт, без побочных правок. СВЕЖИЙ КОНТЕКСТ: не переиспользуй старый вывод, перечитай источник. ДОКАЗАТЕЛЬСТВО: укажи путь, размер, mtime и SHA256 артефакта.\nВыведи строку PROMISE: DONE ТОЛЬКО после того, как файл записан.",
-     "ts": 1795707480000,
-     "source": "session",
-     "title": "lree-SF-WRITER-STANDING-c39",
-     "source_label": "ноут",
-     "user_id": "1869196044",
-     "user": "Аскольд",
-     "wants": [],
-     "answer": "[ses-b9H303jjea] Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли н",
-     "answer_short": "ses-b9H303jjea: Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю ши",
-     "answer_full": "Продолжаю в той же сессии. Изучаю ECC из скрина и отвечаю шире — насколько вообще полезны большие наборы агентов и навыков.\nПодключаю две параллельные разведки: что именно лежит внутри ECC и есть ли независимые доказательства пользы у таких больших наборов агентов и навыков.\nПока идёт разведка, measuring собственный контур: сколько у меня навыков и сколько места занимают их описания в контексте.\nРазведка по пользе больших наборов дала жёсткие данные: фокусированные наборы выигрывают у огромных, а описания сотен навыков съедают контекст. Добавляю в отчёт.\nОтчёт собран. Считаю контрольную сумму и собираю постер с одним выводом.\nБольшие наборы агентов полезны как библиотека процедур, но не как знак качества: короткие наборы выигрывают, а сотни навыков съедают контекст и делают часть невидимой.\nПОНЯТНО: простыми словами, ценность не в количестве папок, а в том, что процедура реально помогает. Когда навыков слишком много, модель видит только названия и описания, и часть просто теряется.\n**Главное:**\n🟦 В ECC сейчас 328 навыков и 72 агента — скрин обещал 302 и 73.\n🟩 С курируемыми навыками успех вырос с 33,9 до 50,5 процента; но малые наборы обходят огромные связки.\n🟥 У 773 навыков в ECC — 170 тысяч знаков описаний, в четыре раза больше лимита листинга.\n**Шаги:** взять только процедуры под конкретные задачи; держать активных навыков не больше трёх на сценарий; мерить вызовы инструментов, а не счётчик файлов.\n**Проверка:** у меня 71 навык и 23 тысячи знаков описаний — пока ниже порога, но рост надо контролировать. Пакет не ставил.",
-     "answer_digest": {
-      "length": 1547,
-      "sha256": "a20fa7231f7c70a036c8f4603c5d3840a2b71c73a32010580699dad3240c2105"
-     },
-     "answer_text_id": "a20fa7231f7c70a0",
-     "answer_source": "replies.json",
-     "delivered_ts": 1795726918074,
-     "as_of": 1795707480000,
-     "is_stale": true
-    },
-    {
      "id": "tg-20261125195456",
      "text": "Окей что дальше по сканфиду",
      "ts": 1795625696000,
@@ -8256,7 +8246,7 @@
     {
      "id": "ses-zxz6FHyEl4",
      "text": "ПРОРАБОТКА СКАНФИДА, T4 OPEN — расширение REAL-набора. Нужно n>=60 REAL кадров с ненулевым FP для калибровки confidence (сейчас n=20, fp=0, ECE 0.4176). Источник: свежие FACEIT dust2 демо + GSI allplayers как truth. Извлечь новые кадры, измерить precision/recall, ECE с Wilson CI по dot_quality; сделать честный baseline. Новый отчёт ~/overnight/open_tracks/S01-scanfeed-real60.md. Гейт ДО проверки: n>=60, FP>0, ECE после калибровки < 0.15. Не трогать защищённые data/ и существующие отчёты 52/73/103. ОБЯЗАТЕЛЬНО перед работой загрузи подходящий скилл через tool skill (research-slowdown, hypothesis-check, studio-taste/show-in-answer, network-constraints); если ни один не подходит — скажи почему.",
-     "ts": 1795837995000,
+     "ts": 1795838108000,
      "source": "session",
      "title": "Калибровка confidence S01-scanfeed REAL60",
      "source_label": "ноут",
@@ -8268,7 +8258,7 @@
       "w2611200052468b4b",
       "w261120005246135d"
      ],
-     "as_of": 1795837995000,
+     "as_of": 1795838108000,
      "is_stale": false
     },
     {
